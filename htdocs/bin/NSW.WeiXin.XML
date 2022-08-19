@@ -1,0 +1,1207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NSW.WeiXin</name>
+    </assembly>
+    <members>
+        <member name="M:NSW.WeiXin.WeiXinApi.GetResultByMsgType(System.String)">
+            <summary>
+            根据消息类型得到回复消息
+            </summary>
+            <param name="msgType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.Subscribe">
+            <summary>
+            订阅事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.ResponseText">
+            <summary>
+            回复消息
+            </summary>
+            <param name="postStr"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.responseNews">
+            <summary>
+            回复图文消息
+            </summary>
+            <param name="postStr"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.Search1">
+            <summary>
+            “数字+#”的组合查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.Search2(System.String@)">
+            <summary>
+            关键词内置搜索
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.Search3(System.String@)">
+            <summary>
+            分类查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.Search4(System.String@)">
+            <summary>
+            混合查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.GetContentByNo(System.Xml.XmlDocument,System.String)">
+            <summary>
+            根据微信用户输入No得到相应的内容
+            </summary>
+            <param name="doc"></param>
+            <param name="no"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinApi.CheckSignature">
+            <summary>
+            验证微信签名
+            </summary>
+            * 将token、timestamp、nonce三个参数进行字典序排序
+            * 将三个参数字符串拼接成一个字符串进行sha1加密
+            * 开发者获得加密后的字符串可与signature对比，标识该请求来源于微信。
+            <returns></returns>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinApi.Token">
+            <summary>
+             
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinApi.SubscribeMsg">
+            <summary>
+            订阅的发送消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinApi.MSiteDomain">
+            <summary>
+            手机网站域名
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinApi.DefaultMsg">
+            <summary>
+            手机网站域名
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinApi.KeyWords">
+            <summary>
+            手机内置的关键词查询
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsMsg.ToUserName">
+            <summary>
+            接收方帐号（收到的OpenID） 
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsMsg.FromUserName">
+            <summary>
+            开发者微信号  
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsMsg.CreateTime">
+             <summary>
+            消息创建时间 
+             </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsMsg.ArticleCount">
+             <summary>
+            消息数量 
+             </summary>
+        </member>
+        <member name="T:NSW.WeiXin.WeiXinTools">
+            <summary>
+            微信常用方法
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.WeiXinTools.LogFiles">
+            <summary>
+            日志文件存放位置
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.LogInfo(System.String[])">
+            <summary>
+            写入日志文件
+            </summary>
+            <param name="args">错误消息</param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.LogInfo(System.Exception)">
+            <summary>
+            写入日志文件
+            </summary>
+            <param name="e">错误异常</param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.LogInfo(NSW.WeiXin.JsonReturnCode)">
+            <summary>
+            写入日志文件
+            </summary>
+            <param name="e">错误异常</param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.Write(System.String)">
+            <summary>
+            写入文件
+            </summary>
+            <param name="input"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.ParseUnixTimeToTime(System.String)">
+            <summary>
+            unix时间转换为datetime
+            </summary>
+            <param name="timeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.ParseDateTimeToInt(System.DateTime)">
+            <summary>
+            把提供过来的DateTime转换为unixtime
+            </summary>
+            <param name="time">DateTime,如果为null,则是当前时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.ParseDateTimeToInt">
+            <summary>
+            把当前的时间转换为unixtime
+            </summary>
+            <param name="time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.CheckSignature(System.String,System.String,System.String,System.String)">
+            <summary>
+            验证微信签名是否正确 Token在配置文件里面做修改
+            </summary>
+            <param name="signature"></param>
+            <param name="timestamp"></param>
+            <param name="nonce"></param>
+            <param name="qc">多帐号标识符</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetSignature(System.String,System.String,System.String)">
+            <summary>
+            获取微信签名
+            </summary>
+            <param name="timestamp"></param>
+            <param name="nonce"></param>
+            <param name="qc">多帐号标识符</param>
+            <returns></returns>
+        </member>
+        <member name="F:NSW.WeiXin.WeiXinTools.path">
+            <summary>
+            存放xml的路径
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetMenuDTByXML">
+            <summary>
+            获取自定义菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.UpdateMune(NSW.WeiXin.Entityies.WXMenu)">
+            <summary>
+            修改
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.SerObject(System.Object)">
+            <summary>
+            序列化为文件
+            </summary>
+            <param name="xmlobj"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.Deserialize">
+            <summary>
+            反序列化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetWXMenulist">
+            <summary>
+            获取微信菜单类WXMenu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetXMLNode(System.Xml.XmlDocument,System.String)">
+            <summary>
+            获取xml节点内容 默认Trim
+            </summary>
+            <param name="xml">XMLDocument</param>
+            <param name="nodename">节点名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetJsonReturnCode(System.String)">
+            <summary>
+            微信自定义返回码
+            </summary>
+            <param name="returnvalue">微信返回的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.SaveObjectNotify(System.String,System.String,System.String,System.DateTime,System.String,System.Boolean,System.String,System.String,System.Int32)">
+            <summary>
+            保存日志信息
+            </summary>
+            <param name="formuser">formuser</param>
+            <param name="msgid">msgid</param>
+            <param name="msgtype">msgtype</param>
+            <param name="content">content</param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.SaveObjectNotify(NSW.Entities.tbWeiXinLog)">
+            <summary>
+            保存日志信息
+            </summary>
+            <param name="model"></param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetUserName(System.String,System.Int32)">
+            <summary>
+            获取用户昵称ID[自增长]
+            </summary>
+            <param name="formUser"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetUserSessionids">
+            <summary>
+            获取用户Sessionid
+            </summary>
+            <returns>为空的话为空</returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetUserSessionids(System.String)">
+            <summary>
+            设置用户Sessionid[wxuid]
+            </summary>
+            <param name="uid">uid</param>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetUserSessionid">
+            <summary>
+            获取用户Sessionid
+            </summary>
+            <returns>为空的话返回值为-1</returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            判断是否为空
+            </summary>
+            <param name="input"></param>
+            <param name="defaultvalue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetCurrentDomain">
+            <summary>
+            获取当前域名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetAbsolutePath(System.String)">
+            <summary>
+            获取文件的绝对地址
+            </summary>
+            <param name="file">文件的地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetDomainPath(System.String)">
+            <summary>
+            获取文件的网络地址
+            </summary>
+            <param name="file">文件的地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinTools.GetDefaultKeyWord(System.Int32)">
+            <summary>
+            获取默认的 未匹配关键词回复
+            即最小的那个值
+            </summary>
+            <param name="uid">用户帐户ID</param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsItems.Title">
+             <summary>
+            图文消息标题 
+             </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsItems.Description">
+             <summary>
+            图文消息描述 
+             </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsItems.PicUrl">
+             <summary>
+            图片链接，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80。
+             </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.NewsItems.Url">
+             <summary>
+            点击图文消息跳转链接 
+             </summary>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.TextMsg.instance(System.String,System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fromUserName">开发者微信号</param>
+            <param name="toUserName">接收方帐号（收到的OpenID） </param>
+            <param name="content">回复的消息内容,长度不超过2048字节 </param>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.TextMsg.ToUserName">
+            <summary>
+            接收方帐号（收到的OpenID） 
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.TextMsg.FromUserName">
+            <summary>
+            开发者微信号  
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.TextMsg.CreateTime">
+             <summary>
+            消息创建时间 
+             </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.TextMsg.Content">
+            <summary>
+            回复的消息内容,长度不超过2048字节 
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.WXMenu">
+            <summary>
+            微信自定义菜单
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.WXMenu.GetJsonString(System.Int32)">
+            <summary>
+            获取已经格式化好的json字符串
+            </summary>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.ID">
+            <summary>
+            ID 主键
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.PID">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Order">
+            <summary>
+            排序ID,默认为50
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Title">
+            <summary>
+            title 名称
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Type">
+            <summary>
+            Type 类型,是view 还是click[默认为click]
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.PictureURL">
+            <summary>
+            PictureURL 图片路径(如果name前面有小图标点缀的话)
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.URL">
+            <summary>
+            链接地址
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Enable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Key">
+            <summary>
+            如果是click事件时的key信息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.Count">
+            <summary>
+            点击数
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.WXMenu.UID">
+            <summary>
+            关联用户ID
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.HttpMethod.GET">
+            <summary>
+            Get
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.HttpMethod.POST">
+            <summary>
+            Post
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.GetAccessTokenUrl">
+            <summary>
+            获取ACCESS_TOKEN {0}=>appid {1}=>secret
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.menuurl">
+            <summary>
+            自定义菜单原始url {type}=>  {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MenuDeleteUrl">
+            <summary>
+            删除自定义菜单 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MenuCreateUrl">
+            <summary>
+            创建自定义菜单 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MenuGetUrl">
+            <summary>
+            获取自定义菜单 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MessageCustomSendUrl">
+            <summary>
+            发送信息/多客服 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MediaUploadUrl">
+            <summary>
+            上传多媒体{0}=>access_token{1}=>type
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MediaUploadNewsUrl">
+            <summary>
+            上传图文消息素材 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.MediaGetUrl">
+            <summary>
+            下载(获取)媒体素材 {0}=>access_token{1}=>media_id
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.GetFollowUsers">
+            <summary>
+            获取关注者列表  {0}=>access_token{1}=>next_openid 第一个拉取的OPENID，不填默认从头开始拉取
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.GetFollowUserInfo">
+            <summary>
+            获取用户基本信息 {0}=>access_token{1}=>openid{2}=>lang语言
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.GroupGet">
+            <summary>
+            查询所有分组 [get]  {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.GroupCreat">
+            <summary>
+            创建分组 [post]  {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.SendAllByGroup">
+            <summary>
+            根据分组进行群发 {0}=>access_token
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.NetHelperURL.SendAllByUserlist">
+            <summary>
+            根据OpenID列表群发 {0}=>access_token
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.NetHelper">
+            <summary>
+            网络请求类
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.GetAccessToken(System.Int32)">
+            <summary>
+            获取Access_Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.DeleteMenu(System.Int32)">
+            <summary>
+            删除自定义菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.CreateMenu(System.Int32)">
+            <summary>
+            创建自定义菜单
+            </summary>
+            <param name="uid">UID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.GetMenu(System.Int32)">
+            <summary>
+            获取自定义菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.SendMessage(System.String,System.Int32)">
+            <summary>
+            发送客服消息
+            </summary>
+            <param name="input">纯文字形式的</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.SendMessage(System.String,NSW.WeiXin.ResponseMsgType,System.String,System.Int32)">
+            <summary>
+            发送客服消息
+            </summary>
+            <param name="touser">要发送的openid</param>
+            <param name="type">发送的消息类型[只有news]</param>
+            <param name="input">数据信息</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.GetGroupListToJson(System.Int32)">
+            <summary>
+            获取分组信息
+            </summary>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.UploadMedia(NSW.WeiXin.UploadMediaFileType,System.String,System.Int32)">
+            <summary>
+            上传多媒体文件接口
+            </summary>
+            <param name="type">多媒体类型</param>
+            <param name="file">文件完整地址</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.UploadMediaID(NSW.WeiXin.UploadMediaFileType,System.String,System.Int32)">
+            <summary>
+            上传多媒体文件接口 并更新相对应的媒体id和时间[tbweixinnews]
+            上传的素材会向tbweixinsource 表里面更新或者插入数据
+            </summary>
+            <param name="type">多媒体类型</param>
+            <param name="file">文件完整地址</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.UploadNews(System.String,System.Int32)">
+            <summary>
+            上传图文News接口
+            </summary>
+            <param name="articlesJson"></param>
+            <param name="uid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.SendAllMessageByGroup(System.String,System.Int32)">
+            <summary>
+            分组群发
+            </summary>
+            <param name="jsonCode">格式化好的json数据</param>
+            <param name="uid">帐户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.SendGroupMessage(System.String,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            群发信息
+            </summary>
+            <param name="groupid">单一分组</param>
+            <param name="sourceID">tbWeiXinSourceID</param>
+            <param name="allSend">是否全部发送</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.InsertGroupSendLog(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            群发消息日志记录
+            </summary>
+            <param name="uid"></param>
+            <param name="sourceID"></param>
+            <param name="gid"></param>
+        </member>
+        <member name="M:NSW.WeiXin.NetHelper.UpdateMediaIDAndSaveMPNewsSource(System.Int32,System.Int32)">
+            <summary>
+            更新mediaid并上传图文素材
+            </summary>
+            <param name="sourceID">素材ID</param>
+            <param name="uid">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.IBaseMessage">
+            <summary>
+            信息基类接口
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.BaseMessage">
+            <summary>
+            信息基类
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.IBaseEvent">
+            <summary>
+            事件基类接口
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.IBaseEvent.Event">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.IBaseEvent.EventKey">
+            <summary>
+            事件KEY值，与自定义菜单接口中KEY值对应
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.BaseEvent">
+            <summary>
+            事件基类接口
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.BaseEvent.Event">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.BaseEvent.EventKey">
+            <summary>
+            事件KEY值，Key值或者URL链接
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.WeiXinConfig.Get(System.String)">
+            <summary>
+            获取值/Config/weixin.config
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.SubscribeContent">
+            <summary>
+            订阅内容设置 首次关注时的消息回复
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.Token">
+            <summary>
+            Token
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.AppId">
+            <summary>
+            AppId  
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.AppSecret">
+            <summary>
+            AppSecret
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.ZhanNei">
+            <summary>
+            站内选择信息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WeiXinConfig.AddUserCount">
+            <summary>
+            最多添加多少个用户信息
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.IGroupSendMessagesType">
+            <summary>
+            群发消息实体接口
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.SendMessages">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.SendMessages.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.SendMessages.#ctor(System.String,NSW.WeiXin.ResponseMsgType,NSW.WeiXin.Entityies.ISendMessagesType)">
+            <summary>
+            发送信息
+            </summary>
+            <param name="touser">用户的OpenID</param>
+            <param name="types">消息类型</param>
+            <param name="t">消息内容,实体</param>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.SendMessages.instance(System.String,NSW.WeiXin.ResponseMsgType,NSW.WeiXin.Entityies.ISendMessagesType)">
+            <summary>
+            添加发送消息 
+            </summary>
+            <param name="touser">用户的OpenID</param>
+            <param name="types">消息类型</param>
+            <param name="t">消息内容,实体</param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.SendMessages.touser">
+            <summary>
+            用户的OpenID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.SendMessages.msgtype">
+            <summary>
+            发送消息类型
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.SendMessages.entity">
+            <summary>
+            发送消息实体
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.ISendMessagesType">
+            <summary>
+            发送消息实体接口
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.text">
+            <summary>
+            发送文本消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.text.content">
+            <summary>
+            文本消息内容
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.image">
+            <summary>
+            发送图片消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.image.media_id">
+            <summary>
+            发送的图片的媒体ID
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.voice">
+            <summary>
+            发送语音消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.voice.media_id">
+            <summary>
+            发送的语音的媒体ID
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.video">
+            <summary>
+            发送视频消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.video.media_id">
+            <summary>
+            发送的视频的媒体ID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.video.thumb_media_id">
+            <summary>
+            缩略图的媒体ID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.video.title">
+            <summary>
+            视频消息的标题*
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.video.description">
+            <summary>
+            视频消息的描述*
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.music">
+            <summary>
+            发送音乐消息
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.music.#ctor(System.String,System.String,System.String)">
+            <summary>
+            发送音乐消息
+            </summary>
+            <param name="url">音乐链接</param>
+            <param name="hqurl">高品质音乐链接，wifi环境优先使用该链接播放音乐</param>
+            <param name="thumbid">缩略图的媒体ID</param>
+        </member>
+        <member name="M:NSW.WeiXin.Entityies.music.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            发送音乐消息
+            </summary>
+            <param name="url">音乐链接</param>
+            <param name="hqurl">高品质音乐链接，wifi环境优先使用该链接播放音乐</param>
+            <param name="thumbid">缩略图的媒体ID</param>
+            <param name="title">音乐标题*可以为空</param>
+            <param name="desc">音乐描述*可以为空</param>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.music.musicurl">
+            <summary>
+            音乐链接
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.music.hqmusicurl">
+            <summary>
+            高品质音乐链接，wifi环境优先使用该链接播放音乐
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.music.thumb_media_id">
+            <summary>
+            缩略图的媒体ID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.music.title">
+            <summary>
+            音乐标题*
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.music.description">
+            <summary>
+            音乐描述*
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.news">
+            <summary>
+            发送图文消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.news.articles">
+            <summary>
+            文本消息内容
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.articles">
+            <summary>
+            文章
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.articles.title">
+            <summary>
+            标题*
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.articles.description">
+            <summary>
+            描述*
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.articles.url">
+            <summary>
+            点击后跳转的链接*
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.articles.picurl">
+            <summary>
+            图文消息的图片链接*，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Entityies.Events">
+            <summary>
+            事件基础消息
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.Entityies.Events.Content">
+            <summary>
+            回复内容
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.ParserFactory">
+            <summary>
+            接收服务器数据的解析器
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.ParserFactory.EventMessage">
+            <summary>
+            事件处理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.WeiXin.ParserFactory.FilledDataInfo(System.Data.DataRow[])">
+            <summary>
+            格式化为可返回的数据信息 如果rows为null,返回为空
+            </summary>
+            <param name="rows">查询到的数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.WeiXin.ErrorMessage">
+            <summary>
+            错误消息类
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ErrorMessage.TokenError">
+            <summary>
+            Token不能为空,格式不正确
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ErrorMessage.InvalidRequest">
+            <summary>
+            无效请求
+            </summary>
+        </member>
+        <member name="M:NSW.WeiXin.ErrorMessage.ThorwException(System.String)">
+            <summary>
+            抛出异常并写入日志(仅有错误的导常消息)
+            </summary>
+            <param name="errormsg">异常信息</param>
+        </member>
+        <member name="M:NSW.WeiXin.ErrorMessage.ThorwException(System.Exception)">
+            <summary>
+            抛出异常并写入日志(错误消息 + 代码位置)
+            </summary>
+            <param name="errormsg">异常信息</param>
+        </member>
+        <member name="T:NSW.WeiXin.RequestMsgType">
+            <summary>
+            接收消息类型
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Location">
+            <summary>
+            地理位置
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Image">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Voice">
+            <summary>
+            语音
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Link">
+            <summary>
+            连接信息
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.RequestMsgType.Event">
+            <summary>
+            事件推送
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Event">
+            <summary>
+            当RequestMsgType类型为Event时，Event属性的类型
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.ENTER">
+            <summary>
+            进入会话（似乎已从官方API中移除）
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.LOCATION">
+            <summary>
+            地理位置（似乎已从官方API中移除）
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.subscribe">
+            <summary>
+            订阅
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.unsubscribe">
+            <summary>
+            取消订阅
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.CLICK">
+            <summary>
+            自定义菜单点击事件
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.scan">
+            <summary>
+            二维码扫描
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.VIEW">
+            <summary>
+            URL跳转
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Event.MASSSENDJOBFINISH">
+            <summary>
+            事件推送群发结果
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.ResponseMsgType">
+            <summary>
+            发送消息类型
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.News">
+            <summary>
+            新闻
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Music">
+            <summary>
+            音乐
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Image">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Voice">
+            <summary>
+            声音
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Video">
+            <summary>
+            视频
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ResponseMsgType.Transfer_Customer_Service">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.ButtonType">
+            <summary>
+            菜单按钮类型
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ButtonType.click">
+            <summary>
+            点击
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.ButtonType.view">
+            <summary>
+            查看 Url
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.UploadMediaFileType">
+            <summary>
+            上传媒体文件类型
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.UploadMediaFileType.image">
+            <summary>
+            图片: 128K，支持JPG格式
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.UploadMediaFileType.voice">
+            <summary>
+            语音：256K，播放长度不超过60s，支持AMR\MP3格式
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.UploadMediaFileType.video">
+            <summary>
+            视频：1MB，支持MP4格式
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.UploadMediaFileType.thumb">
+            <summary>
+            thumb：64KB，支持JPG格式
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.UploadMediaFileType.news">
+            <summary>
+            图文消息
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.ReturnCode">
+            <summary>
+            返回码（JSON）
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.GroupMessageStatus">
+            <summary>
+            群发消息返回状态
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Language">
+            <summary>
+            语言
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Language.zh_CN">
+            <summary>
+            中文简体
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Language.zh_TW">
+            <summary>
+            中文繁体
+            </summary>
+        </member>
+        <member name="F:NSW.WeiXin.Language.en">
+            <summary>
+            英文
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.JsonReturnCode">
+            <summary>
+            JSON返回结果（用于菜单接口等）
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.JsonUploadResult">
+            <summary>
+            上传媒体文件返回结果
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WXGroup.id">
+            <summary>
+            组ID
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WXGroup.name">
+            <summary>
+            组名称
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.WXGroup.count">
+            <summary>
+            组内会员数
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.JsonSendResult">
+            <summary>
+            发送信息后的结果
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.JsonSendResult.type">
+            <summary>
+            媒体文件类型，分别有图片（image）、语音（voice）、视频（video）和缩略图（thumb），图文消息为news
+            </summary>
+        </member>
+        <member name="P:NSW.WeiXin.JsonSendResult.msg_id">
+            <summary>
+            消息ID
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.Articles">
+            <summary>
+            向服务器发送图文信息
+            </summary>
+        </member>
+        <member name="T:NSW.WeiXin.article">
+            <summary>
+            图文信息的实例
+            </summary>
+        </member>
+    </members>
+</doc>

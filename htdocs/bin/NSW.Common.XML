@@ -1,0 +1,1535 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NSW.Common</name>
+    </assembly>
+    <members>
+        <member name="T:NSW.Utls.StringUtls">
+            <summary>
+            字符串常用工具
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.SubString(System.String,System.Int32,System.String)">
+            <summary>
+            字符串如果操过指定长度则将超出的部分用指定字符串代替
+            </summary>
+            <param name="p_SrcString">要检查的字符串</param>
+            <param name="p_Length">指定长度</param>
+            <param name="p_TailString">用于替换的字符串</param>
+            <returns>截取后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.SubString(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            取指定长度的字符串
+            </summary>
+            <param name="p_SrcString">要检查的字符串</param>
+            <param name="p_StartIndex">起始位置</param>
+            <param name="p_Length">指定长度</param>
+            <param name="p_TailString">用于替换的字符串</param>
+            <returns>截取后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.RemoveTag(System.String)">
+            <summary>
+            通过正则表达式清空html标识符,返回纯文本
+            </summary>
+            <param name="body">网页内容</param>
+            <returns>不含html语法的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Ellipsis(System.String,System.Int32)">
+            <summary>
+            截取字符串，超出以省略号代替
+            </summary>
+            <param name="inputString">源字符串</param>
+            <param name="len">截取长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.GetStringIndex(System.String,System.String)">
+            <summary>
+            在源字符串中查找指定的字符串的所有索引
+            </summary>
+            <param name="source">源字符串</param>
+            <param name="findString">指定的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.GetRendomIndex(System.Int32,System.Int32)">
+            <summary>
+            生成小于指定最大值、指定个数的随机数列表
+            </summary>
+            <param name="count">要获取的随机数个数</param>
+            <param name="max">指定随机数最大值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.RendomReplace(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            随机查找和替换文本内容中的关键词为带链接的关键词
+            </summary>
+            <param name="source">源字符串</param>
+            <param name="findString">要替换的字符串，必须以字符串为键，以链接为值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.RendomReplace(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32)">
+            <summary>
+            查找和替换文本内容中的关键词为带链接的关键词，并指定替换的次数
+            </summary>
+            <param name="source">源文本</param>
+            <param name="findString">要替换的文本字典，必须以字符串为键，以链接为值</param>
+            <param name="repeatCount">指定的重复次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.CreateURLListByCode(System.String,System.String,System.String,System.String)">
+            <summary>
+            循环把制定分隔付的内容变成超链接
+            </summary>
+            <param name="InputString">录入字符串</param>
+            <param name="URL">网页超链接</param>
+            <param name="CssName">样式表名称</param>
+            <param name="InputCode">特定分割字符串</param>
+            <returns>超链接</returns>
+        </member>
+        <!-- 对于成员“M:NSW.Utls.StringUtls.CreateURLListByCode(System.String,System.String,System.String,System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NSW.Utls.StringUtls.GetStringLength(System.String)">
+            <summary>
+            获取字符长度（一个中文字符为 2 个长度）
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Split(System.String,System.String)">
+            <summary>
+            把分隔符字符串拆分为字符串数组
+            </summary>
+            <param name="inputStr">输入字符串</param>
+            <param name="splitter">分隔符(字符串)</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.FilterSql(System.String)">
+            <summary>
+            过滤SQL危险字符
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Filt_BadString(System.String,System.Collections.Hashtable)">
+            <summary>
+            过滤用户发表的脏话,脏话设置在web.config文件的BadString键进行设置
+            </summary>
+            <param name="InputString">输入字符串</param>
+            <param name="Badwords">脏话数据库[哈希表]，键代表要替换的字符串,值代表替换的结果</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Filt_JS(System.String)">
+            <summary>
+            过滤JS代码
+            </summary>
+            <param name="InputString">输入字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Filt_XMLBadCode(System.String)">
+            <summary>
+            过滤XMLBadCode代码
+            </summary>
+            <param name="InputString">输入字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.SubmitString(System.String,System.String,System.String)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="Content">一行字符串内容</param>
+            <param name="StartString">开始字符串</param>
+            <param name="EndString">结束字符串</param>
+            <returns>截取后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.MD5(System.String)">
+            <summary>
+            生成 32 MD5 加密字符串（小写）
+            </summary>
+            <param name="srcStr">源字符串</param>
+            <returns>将源字符串加密为MD5后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.MD5Big(System.String)">
+            <summary>
+            生成 32 MD5 加密字符串（大写）
+            </summary>
+            <param name="srcStr">源字符串</param>
+            <returns>将源字符串加密为MD5后的字符串</returns>
+        </member>
+        <member name="T:NSW.Utls.StringUtls.Encryption">
+            <summary>
+            加密工具
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Encryption.Encrypt(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="srcStr">将被加密的字符串</param>
+            <returns>加密后的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.StringUtls.Encryption.Decrypt(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="srcStr">将被解密的字符串</param>
+            <returns>解密后的字符串</returns>
+        </member>
+        <member name="T:NSW.Utls.Image.RotatedVisibleVerifyCode">
+            <summary>
+            旋转的可视验证码图象
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.Image.RotatedVisibleVerifyCode.GetRandomString(System.Int32,NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode)">
+            <summary>
+            生成随机字符串
+            </summary>
+            <param name="length">字符串的长度</param>
+            <param name="mode">随机字符模式</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.Image.RotatedVisibleVerifyCode.ShowValidationCode(System.Int32@,System.Int32,System.Int32,NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            显示验证码
+            </summary>
+            <param name="seed">随机数辅助种子</param>
+            <param name="strLen">验证码字符长度</param>
+            <param name="fontSize">字体大小</param>
+            <param name="mode">随机字符模式</param>
+            <param name="clrFont">字体颜色</param>
+            <param name="clrBg">背景颜色</param>
+        </member>
+        <member name="T:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode">
+            <summary>
+            随机字符模式
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode.LowerLetter">
+            <summary>
+            小写字母
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode.UpperLetter">
+            <summary>
+            大写字母
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode.Letter">
+            <summary>
+            混合大小写字母
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode.Digital">
+            <summary>
+            数字
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.Image.RotatedVisibleVerifyCode.RandomStringMode.Mix">
+            <summary>
+            混合数字与大小字母
+            </summary>
+        </member>
+        <member name="T:NSW.Common.WebGDI">
+            <summary>
+            WebGDI : 文字图片、水印图片。
+            </summary>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetThumbnailImage(System.Int32,System.Int32,System.String,System.String,System.Int32,System.Int32,System.Drawing.Font)">
+            <summary>
+            生成缩微图，并加上阴影文字
+            </summary>
+            <param name="Width">生成缩微图的宽度</param>
+            <param name="Height">生成缩微图的高度</param>
+            <param name="SourceImg"></param>
+            <param name="Text"></param>
+            <param name="Left"></param>
+            <param name="Top"></param>
+            <param name="font">new Font("Fixedsys", 9, FontStyle.Regular)</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetThumbnailImage(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            生成缩微图，并加上阴影文字
+            </summary>
+            <param name="Width">生成缩微图的宽度</param>
+            <param name="Height">生成缩微图的高度</param>
+            <param name="SourceImg"></param>
+            <param name="Text"></param>
+            <param name="Left"></param>
+            <param name="Top"></param>
+            <param name="font">new Font("Fixedsys", 9, FontStyle.Regular)</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetWaterMarkTextImage(System.String,System.String,System.String,NSW.Common.wmPosition,System.String)">
+            <summary>
+            在一张图片的指定位置处加入水印文字
+            </summary>
+            <param name="SourceImage">指定源图片的绝对路径</param>
+            <param name="Text">指定文本</param>
+            <param name="fontFamily">文本字体</param>
+            <param name="textPos">指定位置</param>
+            <param name="SaveImage">保存图片的绝对路径</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetWaterMarkTextImage(System.String,System.String,System.String,NSW.Common.wmPosition,System.String,System.Drawing.Color,System.Drawing.Color,System.Boolean,System.Single,System.Int32)">
+            <summary>
+            在一张图片的指定位置处加入水印文字
+            </summary>
+            <param name="SourceImage">指定源图片的绝对路径</param>
+            <param name="Text">指定文本</param>
+            <param name="fontFamily">文本字体</param>
+            <param name="textPos">指定位置</param>
+            <param name="SaveImage">保存图片的绝对路径</param>
+            <param name="fontColor">字体颜色</param>
+            <param name="shadowColor">阴影颜色</param>
+            <param name="drawShadow">是否绘画阴影</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetWaterMarkPicImage(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            在一张图片的指定位置处加入一张具有水印效果的图片
+            </summary>
+            <param name="SourceImage">指定源图片的绝对路径</param>
+            <param name="WaterMarkImage">指定水印图片的绝对路径</param>
+            <param name="wmPos">指定位置：0左上,1左下,2中上,3正中,4中下,5右上,6右下</param>
+            <param name="SaveImage">保存图片的绝对路径</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetWaterMarkPicImage(System.String,System.String,NSW.Common.wmPosition,System.String,System.Single)">
+            <summary>
+            在一张图片的指定位置处加入一张具有水印效果的图片
+            </summary>
+            <param name="SourceImage">指定源图片的绝对路径</param>
+            <param name="WaterMarkImage">指定水印图片的绝对路径</param>
+            <param name="wmPos">指定位置：0左上,1左下,2中上,3正中,4中下,5右上,6右下</param>
+            <param name="SaveImage">保存图片的绝对路径</param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetWarterMarkPicTextImage(System.String,System.String,System.String,System.String,NSW.Common.wmPosition,NSW.Common.wmPosition,System.String)">
+            <summary>
+            在一张图片的指定位置处加入一张具有水印效果的图片和一段文本
+            </summary>
+            <param name="SourceImage"></param>
+            <param name="WaterMarkImage"></param>
+            <param name="Text"></param>
+            <param name="fontFamily"></param>
+            <param name="wmPos"></param>
+            <param name="textPos"></param>
+            <param name="SaveImage"></param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.MakeSpamImageGen(System.String,System.String)">
+            <summary>
+            生成验证码图片
+            </summary>
+            <param name="sessionName"></param>
+            <param name="str"></param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.JustImage(System.String,System.Int32,System.Int32)">
+            <summary>
+            检测指定图片是否符合标准
+            </summary>
+            <param name="imgLoc"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Common.WebGDI.ImageMark(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="imgLoc"></param>
+            <param name="wmLoc"></param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.ImageMark(System.String,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="imgLoc"></param>
+            <param name="wmLoc"></param>
+            <param name="wmAlign"></param>
+        </member>
+        <member name="M:NSW.Common.WebGDI.GetEncoderInfo(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.Common.wmPosition">
+            <summary>
+            水印效果在源图片中的位置
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.MM">
+            <summary>
+            绝对居中
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.LT">
+            <summary>
+            左上
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.LB">
+            <summary>
+            左下
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.CT">
+            <summary>
+            中上
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.CB">
+            <summary>
+            中下
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.RT">
+            <summary>
+            右上
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.RB">
+            <summary>
+            右下
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.LM">
+            <summary>
+            左中
+            </summary>
+        </member>
+        <member name="F:NSW.Common.wmPosition.RM">
+            <summary>
+            右中
+            </summary>
+        </member>
+        <member name="M:Oran.Utls.OKeywords.SetKeyword(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根据关键字更新文章的内容,做到站内互相连接,返回HTML代码
+            </summary>
+            <param name="Content">当前需要设置站内互联的资讯文本</param>
+            <param name="KeywordMax">当前文本里面最多能够匹配多少个关键词，不能太多，防止搜索引擎屏蔽</param>
+            <param name="KeywordRepeat">关键词在文本里面重复的最大次数，默认值:1</param>
+            <param name="ColumnID">用户关键词所在的栏目ColumnID,能够递归所有的下面的关键词</param>
+            <returns>HTML代码,字符串string</returns>
+        </member>
+        <member name="M:Oran.Utls.OKeywords.GetIndexOf(System.String,System.String)">
+            <summary>
+            检查字符串在长字符串出现的位置数组
+            </summary>
+            <param name="FindString">要查找的目标字符串，类型：字符串</param>
+            <param name="Content">被查找的字符串，类型：字符串</param>
+            <returns>字符串出现的位置列表，类型：数组</returns>
+        </member>
+        <member name="M:Oran.Utls.OKeywords.GetRendom(System.Int32,System.Int32)">
+            <summary>
+            获取不相同的随机数
+            </summary>
+            <param name="Count">获取随机数的个数，类型：整形</param>
+            <param name="Max">最大的整数，类型：整形</param>
+            <returns>返回指定个数的随机数</returns>
+        </member>
+        <member name="T:NSW.ComUtls">
+            <summary>
+            常用实用方法
+            </summary>
+        </member>
+        <member name="F:NSW.ComUtls.SQL_STR">
+            <summary>
+            SQL敏感字符
+            </summary>
+        </member>
+        <member name="M:NSW.ComUtls.OutputPinYin(System.String)">
+            <summary>
+            把汉字转换为全拼输入
+            </summary>
+            <param name="hz">录入的汉字，类型：字符串</param>
+            <returns>经过转换的拼音全拼字符串</returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetHanZiTable">
+            <summary>
+            把汉字表存放到Cache里面
+            </summary>
+        </member>
+        <member name="M:NSW.ComUtls.GetAbsolutePath(System.String,System.String)">
+            <summary>
+            返回绝对路径
+            </summary>
+            <param name="url">地址</param>
+            <param name="domain">域名（结尾不带'/'）</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.IsContainsSqlChar(System.String)">
+            <summary>
+            检查输入的字符是否有sql敏感字符
+            </summary>
+            <param name="inputStr">输入字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.ToggleUrlParameter(System.String,System.String)">
+            <summary>
+            附加URL参数
+            </summary>
+            <param name="name">参数名</param>
+            <param name="val">参数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetInstalledFonts">
+            <summary>
+            获取操作系统中已安装字体的列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetSubsiteDomain">
+            <summary>
+            获取二级域名段（如，oran.nsw88.com，获取oran部分，如果是www.nsw88.com，或非三节域名则返回string.Empty）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.CheckBothRadio(System.Boolean,System.Web.UI.WebControls.RadioButton,System.Web.UI.WebControls.RadioButton)">
+            <summary>
+            设置两个单选按钮其中一个选中
+            </summary>
+            <param name="bChecked">为‘是’的单选按钮是否选中</param>
+            <param name="rdoNo">为‘否’的单选按钮</param>
+            <param name="rdoYes">为‘是’的单选按钮</param>
+        </member>
+        <!-- 对于成员“M:NSW.ComUtls.QueryString(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NSW.ComUtls.ReplaceTag(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            替换标签为指定文本，自动添加{$$}标识符（!!注意!!字典里标签不需要加{$$}）
+            </summary>
+            <param name="srcStr">源字符串</param>
+            <param name="dic">替换的标签和值对</param>
+            <returns>替换后的文本</returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetSelectHtml(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据数据源生成下拉列表HTML代码
+            </summary>
+            <param name="dt">数据源</param>
+            <param name="textFieldName">文本域字段名</param>
+            <param name="valFieldName">值域字段名</param>
+            <param name="selectedVal">被选中的值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="defaultVal">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetSelectHtml(System.Data.DataTable,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            根据数据源获取下拉列表HTML代码
+            </summary>
+            <param name="dt">数据源</param>
+            <param name="elmId">下拉列表元素ID</param>
+            <param name="textFieldName">文本域字段名</param>
+            <param name="valFieldName">值域字段名</param>
+            <param name="selectedVal">被选中的值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="defaultVal">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.AddRefreshMeta(System.Web.UI.Page,System.Int32,System.String)">
+            <summary>
+            添加自动刷新的 Meta
+            </summary>
+            <param name="page">引用的页面</param>
+            <param name="delay">延时时间</param>
+            <param name="url">目标URL</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddScriptFile(System.Web.UI.Page,System.String)">
+            <summary>
+            添加脚本文件
+            </summary>
+            <param name="page">引用的页面</param>
+            <param name="filepath">脚本文件路径</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCssFile(System.Web.UI.Page,System.String)">
+            <summary>
+            注册CSS文件到页面
+            </summary>
+            <param name="page">引用的页面</param>
+            <param name="filepath">样式文件路径</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddMeta(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            为网页添加 Meta（元）
+            </summary>
+            <param name="page">将要添加 Meta 的aspx页面</param>
+            <param name="name">Meta 名</param>
+            <param name="content">Meta 内容</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddLink(System.Web.UI.Page,System.String,System.String,System.String)">
+            <summary>
+            为网页添加Link
+            </summary>
+            <param name="page">将要添加 Meta 的aspx页面</param>
+            <param name="href">Href 属性值</param>
+            <param name="rel">Rel 属性值</param>
+            <param name="type">Type 属性值</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByValue(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            通过值设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="val">将设定选中项的值</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByValue(System.Web.UI.WebControls.DropDownList,System.Int32)">
+            <summary>
+            通过值设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="val">将设定选中项的值</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByValue(System.Web.UI.HtmlControls.HtmlSelect,System.Int32)">
+            <summary>
+            通过值设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="val">将设定选中项的值</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByValue(System.Web.UI.HtmlControls.HtmlSelect,System.String)">
+            <summary>
+            通过显示的字符串设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="text">将设定选中项的显示的字符串</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByText(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            通过显示的字符串设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="text">将设定选中项的显示的字符串</param>
+        </member>
+        <member name="M:NSW.ComUtls.SetSelectedItemByText(System.Web.UI.HtmlControls.HtmlSelect,System.String)">
+            <summary>
+            通过显示的字符串设定下拉列表的选定项
+            </summary>
+            <param name="ddl">下拉列表对象</param>
+            <param name="text">将设定选中项的显示的字符串</param>
+        </member>
+        <member name="M:NSW.ComUtls.CheckPostSource">
+            <summary>
+            判断发言是否来自外部,如果网页递交合法，返回true,否则返回false
+            </summary>
+            <returns>如果网页递交合法，返回true,否则返回false</returns>
+        </member>
+        <member name="M:NSW.ComUtls.BindListControl(System.ComponentModel.IListSource,System.Web.UI.WebControls.ListControl,System.String,System.String)">
+            <summary>
+            绑定列表控件（注：不适用于Repeater等循环列表控件！）
+            </summary>
+            <param name="dataSource">数据源，可以是DataTable或DataSet等</param>
+            <param name="ctr">列表控件对象</param>
+            <param name="textFieldName">要绑定显示的文本字段名</param>
+            <param name="valueFieldName">要绑定的值字段名</param>
+            <remarks>Author:LiShilin@Gmail.Com</remarks>
+        </member>
+        <member name="M:NSW.ComUtls.BindListControl(System.ComponentModel.IListSource,System.Web.UI.WebControls.ListControl,System.String,System.String,System.Web.UI.WebControls.ListItem[])">
+            <summary>
+            绑定列表控件，带有默认选项（注：不适用于Repeater等循环列表控件！）
+            </summary>
+            <param name="dataSource">数据源，可以是DataTable或DataSet等</param>
+            <param name="ctr">列表控件对象</param>
+            <param name="textFieldName">要绑定显示的文本字段名</param>
+            <param name="valueFieldName">要绑定的值字段名</param>
+            <param name="defaultItem">额外增加的默认选项</param>
+            <remarks>Author:LiShilin@Gmail.Com</remarks>
+        </member>
+        <member name="M:NSW.ComUtls.BindListControl(System.Collections.IList,System.Web.UI.WebControls.ListControl)">
+            <summary>
+            从数组数据源绑定列表控件，列表控件中每一项的text和value都相同（注：不适用于Repeater等循环列表控件！）
+            </summary>
+            <param name="dataSource">数据源，如数组等</param>
+            <param name="ctr">列表控件对象</param>
+            <remarks>Author:LiShilin@Gmail.Com</remarks>
+        </member>
+        <member name="M:NSW.ComUtls.GetFields(BlueCrystal.Data.Field[])">
+            <summary>
+            获取查询的字段
+            </summary>
+            <param name="args">NBear字段对象组</param>
+            <returns>SQL查询字段</returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetFields(System.Boolean,BlueCrystal.Data.Field[])">
+            <summary>
+            获取查询的字段
+            </summary>
+            <param name="containCommon">是否包含通用的字段，如：[ID],[Enable],[InputTime],[OrderID]，如果设置为False,则不带这些通用字段名称,如果True，则带上上述字段名称</param>
+            <param name="args">NBear字段对象组</param>
+            <returns>查询字段名称</returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetSQLWhere(System.Collections.SortedList)">
+            <summary>
+            通过SortedList表获取查询语句,键的格式必须为"KeyName,char,0,=",
+            其中KeyName代表字段名成,char代表字段的类型是字符串类型,
+            int代表整形,0代表字段的默认值,=代表查询的条件(大于,大于等于,小于,小于等于,like等),
+            通过这种方式,不需要书写复杂繁琐的SQL查询条件语句
+            </summary>
+            <param name="mySortedList">数组键值对，键的格式必须为"KeyName,char,0,=",
+            其中KeyName代表字段名成,
+            char代表字段的类型是字符串类型,
+            int代表整形,0代表字段的默认值,=代表查询的条件(大于,大于等于,小于,小于等于,like等)</param>
+            <returns>不包含where的查询字符串组合</returns>
+        </member>
+        <member name="M:NSW.ComUtls.UrlEncode(System.String)">
+            <summary>
+            返回 URL 字符串的编码结果
+            </summary>
+            <param name="str">字符串</param>
+            <returns>编码结果</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseDouble(System.String,System.Double)">
+            <summary>
+            对一个字符串解浮点类型，若解析失败，则返回 defaultVal 值
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>浮点类型</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseFloat(System.String,System.Single)">
+            <summary>
+            对一个字符串解单精度浮点类型，若解析失败，则返回 defaultVal 值
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>单精度浮点类型</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseIntRound(System.Int32,System.Int32)">
+            <summary>
+            对两个整数进行除法运算，
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>int类型</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseBool(System.String,System.Boolean)">
+            <summary>
+            对一个字符串解布尔值类型，若解析失败，则返回 defaultVal 值
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>布尔值类型</returns>
+        </member>
+        <member name="M:NSW.ComUtls.CheckEmail(System.String)">
+            <summary>
+            检查E-Mail格式是否正确
+            </summary>
+            <param name="email">电子邮件地址</param>
+            <returns>输入的电子邮件地址格式是否正确</returns>
+        </member>
+        <member name="M:NSW.ComUtls.IsForbiddenIP(System.String)">
+            <summary>
+            检查客户端IP地址是否已被封杀
+            </summary>
+            <param name="forbiddenIPs">被封杀的IP（段），支持通配符*</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.IsForbiddenIP(System.String,System.String)">
+            <summary>
+            检查输入IP是否已被封杀
+            </summary>
+            <param name="forbiddenIPs">被封杀的IP（段），支持通配符*</param>
+            <param name="ip">输入IP</param>
+            <returns>IP是否被封杀</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ShiftLineToEnter(System.String)">
+            <summary>
+            替换竖线为硬换行符
+            </summary>
+            <param name="src">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.ShiftEnterToLine(System.String)">
+            <summary>
+            置换换行符为竖线
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SplitByEnter(System.String)">
+            <summary>
+            将多行字符串襞成字符串数组
+            </summary>
+            <param name="src">源字符串（!!NOTICE!!字符串里不可有竖线|）</param>
+            <returns>数组</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ShiftEnterToBr(System.String)">
+            <summary>
+            置换换行符为HTML换行标签
+            </summary>
+            <param name="src">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.ShiftBrToEnter(System.String)">
+            <summary>
+            置换HTML换行标签为硬换行符
+            </summary>
+            <param name="src">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.GetWeekDay">
+            <summary>
+            获取当前日期的星期中文名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.CheckIDsFormat(System.String)">
+            <summary>
+            检查字符串格式是否形如 1(,2,3,4)*
+            </summary>
+            <param name="ids">批量 ID</param>
+            <returns>格式是否合法</returns>
+        </member>
+        <member name="M:NSW.ComUtls.CheckBatchEmail(System.String)">
+            <summary>
+            检查一批 E-Mail 地址（单角分号分隔）
+            </summary>
+            <param name="src">批量 E-Mail 地址</param>
+            <returns>格式是否合法</returns>
+        </member>
+        <member name="M:NSW.ComUtls.FormatDateTime(System.DateTime)">
+            <summary>
+            获取格式化后的日期时间
+            </summary>
+            <param name="time">日期时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.BindDataToDropDownList(System.Web.UI.WebControls.DropDownList,System.Collections.ICollection,System.String,System.String)">
+            <summary>
+            绑定数据至 WEB 下拉列表
+            </summary>
+            <param name="ddl">WEB 下拉列表</param>
+            <param name="dataSource">数据源（如果为 null 则不绑定数据）</param>
+            <param name="textField">下拉列表文本字段名</param>
+            <param name="valueField">下拉列表值字段名</param>
+        </member>
+        <member name="M:NSW.ComUtls.BindDataToDropDownList(System.Web.UI.HtmlControls.HtmlSelect,System.Collections.ICollection,System.String,System.String)">
+            <summary>
+            绑定数据至 HTML服务器控件 下拉列表
+            </summary>
+            <param name="ddl">HTML 服务器控件下拉列表</param>
+            <param name="dataSource">数据源（如果为 null 则不绑定数据）</param>
+            <param name="textField">下拉列表文本字段名</param>
+            <param name="valueField">下拉列表值字段名</param>
+        </member>
+        <member name="M:NSW.ComUtls.ParseDecimal(System.String,System.Decimal)">
+            <summary>
+            对一个字符串解金额浮点类型，若解析失败，则返回 defaultVal 值
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>金额浮点类型</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseInt(System.Object,System.Int32)">
+            <summary>
+            对一个字符串解整数，若解析失败，则返回 defaultVal 值
+            </summary>
+            <param name="o">将被解析字符串</param>
+            <param name="defaultVal">当解析失败返回的默认值</param>
+            <returns>整数</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseDateTime(System.String)">
+            <summary>
+            尝试对一个字符串解析为 DateTime，解析失败则返回当前时间
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <returns>时间</returns>
+        </member>
+        <member name="M:NSW.ComUtls.ParseDateTime(System.String,System.DateTime)">
+            <summary>
+            尝试对一个字符串解析为 DateTime，解析失败则返回默认值
+            </summary>
+            <param name="s">将被解析字符串</param>
+            <param name="dftVal">默认值</param>
+            <returns>时间</returns>
+        </member>
+        <member name="M:NSW.ComUtls.FillRanking(System.Web.UI.WebControls.DropDownList,System.Int32,System.Int32)">
+            <summary>
+            对一个下拉列表填充数字
+            </summary>
+            <param name="ddl">WEB服务器控件下拉列表</param>
+            <param name="start">开始的数字（包括）</param>
+            <param name="end">结束的数字（不包括）</param>
+        </member>
+        <member name="M:NSW.ComUtls.BindToRepeater(System.Web.UI.WebControls.Repeater,System.Collections.ICollection)">
+            <summary>
+            绑定数据到一个Repeater控件
+            </summary>
+            <param name="rpt">Repeater控件</param>
+            <param name="dataSource">数据源</param>
+        </member>
+        <member name="M:NSW.ComUtls.CutIp(System.String,System.Int32)">
+            <summary>
+            删节IP形式为 0.0.*.*
+            </summary>
+            <param name="ip">原始 IP</param>
+            <param name="len">将被截取的段数</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SendMail(System.String,System.String,System.String,System.Boolean,System.Int32)">
+            <summary>
+            在有限次数里尝试发送电子邮件直到成功发送
+            </summary>
+            <param name="batchTo">收件人（多个收件人以半角分号分隔）</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件主体内容</param>
+            <param name="isHtml">邮件主体是否HTML格式</param>
+            <param name="times">最大尝试发送次数</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SendMail(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            发送电子邮件
+            </summary>
+            <param name="to">收件人（仅支持单个收件人）</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件内容，支持 HTML</param>
+            <param name="isHtml">邮件主体是否为HTML格式</param>
+        </member>
+        <member name="M:NSW.ComUtls.SendMail(System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            发送电子邮件
+            </summary>
+            <param name="to">收件人（仅支持单个收件人）</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件内容，支持 HTML</param>
+            <param name="isHtml">邮件主体是否为HTML格式</param>
+        </member>
+        <member name="M:NSW.ComUtls.GetAppWebConfig(System.String)">
+            <summary>
+            根据键名获取web.config/appsettings的值
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SetAppWebConfig(System.String,System.String,System.String)">
+            <summary>
+            根据键修改web.config/appsettings配置文件
+            </summary>
+            <param name="key">键</param>
+            <param name="newValue">新值</param>
+            <param name="path">配置文件物理路径</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddSession(System.String,System.Object)">
+            <summary>
+            添加对象至Session
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+        </member>
+        <member name="M:NSW.ComUtls.RemoveSession(System.String)">
+            <summary>
+            根据键移除Session集里的对象
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:NSW.ComUtls.GetSession(System.String)">
+            <summary>
+            根据键获取Session值
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SetSession(System.String,System.Object)">
+            <summary>
+            根据键更新Session值
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddApp(System.String,System.Object)">
+            <summary>
+            添加对象至Applicatin
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+        </member>
+        <member name="M:NSW.ComUtls.RemoveApp(System.String)">
+            <summary>
+            根据键移除Application集里的对象
+            </summary>
+            <param name="key">键</param>
+        </member>
+        <member name="M:NSW.ComUtls.GetApp(System.String)">
+            <summary>
+            根据键获取Application值
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SetApp(System.String,System.Object)">
+            <summary>
+            根据键更新Application值
+            </summary>
+            <param name="key"></param>
+            <param name="val"></param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCache(System.String,System.Object,System.Web.Caching.CacheDependency,System.DateTime,System.TimeSpan)">
+            <summary>
+            添加对象至Cache
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+            <param name="dependencies">缓存依赖项，若无依赖项则传递null</param>
+            <param name="absoultExpiration">绝对过期时间，如果无绝对过期时间，则传递 null</param>
+            <param name="slidingExpiration">平滑过期时间，如无平滑过期时间，则传递 null</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCache(System.String,System.Object)">
+            <summary>
+            添加缓存，默认为绝对过期（20分钟）
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCache(System.String,System.Object,System.DateTime)">
+            <summary>
+            添加缓存，绝对时间后过期
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+            <param name="expiration">绝对过期时间</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCache(System.String,System.Object,System.TimeSpan)">
+            <summary>
+            添加缓存，平滑时间过期
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+            <param name="slidingExpiration">平滑过期时间</param>
+        </member>
+        <member name="M:NSW.ComUtls.RemoveCache(System.String)">
+            <summary>
+            移除缓存
+            </summary>
+            <param name="key">键</param>
+        </member>
+        <member name="M:NSW.ComUtls.GetCache(System.String)">
+            <summary>
+            获取缓存
+            </summary>
+            <param name="key">键</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.SetCache(System.String,System.Object)">
+            <summary>
+            更新缓存
+            </summary>
+            <param name="key">键</param>
+            <param name="val">值</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCookie(System.String,System.String,System.Int32)">
+            <summary>
+            添加cookie
+            </summary>
+            <param name="name">COOKIE名</param>
+            <param name="val">COOKIE值</param>
+            <param name="expiration">过期时间</param>
+        </member>
+        <member name="M:NSW.ComUtls.AddCookie(System.String,System.String)">
+            <summary>
+            添加会话cookie（浏览器关闭就过期的cookie）
+            </summary>
+            <param name="name">COOKIE名</param>
+            <param name="val">COOKIE值</param>
+        </member>
+        <member name="M:NSW.ComUtls.GetCookie(System.String)">
+            <summary>
+            获取cookie的值
+            </summary>
+            <param name="name">COOKIE名</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.ComUtls.RemoveCookie(System.String)">
+            <summary>
+            删除cookie
+            </summary>
+            <param name="name">COOKIE名</param>
+        </member>
+        <member name="P:NSW.ComUtls.HostAddress">
+            <summary>
+            用户计算机IP地址
+            </summary>
+        </member>
+        <member name="T:NSW.Utls.XmlUtls">
+            <summary>
+            XML文件的操作
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.XmlUtls.Read(System.String,System.String)">
+            <summary>
+            根据键读取/config/config的值
+            </summary>
+            <param name="key">键</param>
+            <param name="path">路径</param>
+            <returns>对应键的值</returns>
+        </member>
+        <member name="M:NSW.Utls.XmlUtls.ReadAll(System.String)">
+            <summary>
+            读取 cs.config 配置文件的所有键
+            </summary>
+            <returns>值组</returns>
+        </member>
+        <member name="M:NSW.Utls.XmlUtls.Set(System.String,System.String,System.String)">
+            <summary>
+            修改配置文件
+            </summary>
+            <param name="key">键</param>
+            <param name="strValue">新值</param>
+        </member>
+        <member name="M:NSW.Utls.XmlUtls.Set(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            批量修改配置文件
+            </summary>
+            <param name="keys">键组</param>
+            <param name="newValues">值组</param>
+        </member>
+        <member name="T:NSW.Utls.UserControls">
+            <summary>
+            字符串常用工具
+            </summary>
+        </member>
+        <member name="T:NSW.Utls.UserControls.CheckBoxList">
+            <summary>
+            CheckBoxList的常用方法
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.UserControls.CheckBoxList.DataBind(System.Web.UI.WebControls.CheckBoxList,System.Collections.ICollection,System.String,System.String,System.String[])">
+            <summary>
+            把数据源绑定在CheckBoxList控件上
+            </summary>
+            <param name="cbl">CheckBoxList控件</param>
+            <param name="ic">数据源</param>
+            <param name="TextField">数据源显示文本的字段名称</param>
+            <param name="ValueField">数据源显示值的字段名称</param>
+            <param name="SelectedValue">选择值(字符串数组)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.CheckBoxList.DataBind(System.Web.UI.WebControls.CheckBoxList,System.Collections.ICollection,System.String,System.String)">
+            <summary>
+            把数据源绑定在CheckBoxList控件上
+            </summary>
+            <param name="cbl">CheckBoxList控件</param>
+            <param name="ic">数据源</param>
+            <param name="TextField">数据源显示文本的字段名称</param>
+            <param name="ValueField">数据源显示值的字段名称</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.CheckBoxList.SetValues(System.Web.UI.WebControls.CheckBoxList,System.String[])">
+            <summary>
+            设置多选矿的默认值
+            </summary>
+            <param name="cbl">多选框的控件对象</param>
+            <param name="SelectedValue">多选值[]</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.CheckBoxList.GetSelectValue(System.Web.UI.WebControls.CheckBoxList)">
+            <summary>
+            获取多选框的选择字符串
+            </summary>
+            <param name="cbl">多选框的控件对象</param>
+            <returns>返回逗号分隔符的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.UserControls.CheckBoxList.GetSelectText(System.Web.UI.WebControls.CheckBoxList)">
+            <summary>
+            获取多选框的选择字符串
+            </summary>
+            <param name="cbl">多选框的控件对象</param>
+            <returns>返回逗号分隔符的字符串</returns>
+        </member>
+        <member name="T:NSW.Utls.UserControls.RadioButtonList">
+            <summary>
+            RadioButtonList的常用方法
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.UserControls.RadioButtonList.SetSelectIndex(System.Web.UI.WebControls.RadioButtonList,System.String)">
+            <summary>
+            根据用户提供的选定值设置单选框,如果用户提供的值不存在,则不进行选定
+            </summary>
+            <param name="rad">RadioButtonList控件</param>
+            <param name="SelectValue">用户提供的选定值(字符串型)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.RadioButtonList.SetSelectText(System.Web.UI.WebControls.RadioButtonList,System.String)">
+            <summary>
+            根据用户提供的选定值设置单选框,如果用户提供的值不存在,则不进行选定
+            </summary>
+            <param name="rad">RadioButtonList控件</param>
+            <param name="SelectValue">用户提供的选定值(字符串型)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.RadioButtonList.DataBind(System.Web.UI.WebControls.RadioButtonList,System.Collections.ICollection,System.String,System.String,System.String)">
+            <summary>
+            目的：数据邦定
+            函数：DataBind
+            参数：RadioButtonList控件对象，接口，文本字段，值字段、默认值
+            返回：无
+            </summary>
+            
+        </member>
+        <member name="T:NSW.Utls.UserControls.ListBox">
+            <summary>
+            ListBox的常用方法
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.DataBind(System.Web.UI.WebControls.ListBox,System.Collections.ICollection,System.String,System.String,System.String[])">
+            <summary>
+            把数据源绑定在ListBox控件上
+            </summary>
+            <param name="lb">ListBox控件</param>
+            <param name="ic">数据源</param>
+            <param name="TextField">数据源显示文本的字段名称</param>
+            <param name="ValueField">数据源显示值的字段名称</param>
+            <param name="SelectedValue">选择值(字符串数组)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.DataBind(System.Web.UI.WebControls.ListBox,System.Collections.ICollection,System.String,System.String)">
+            <summary>
+            把数据源绑定在ListBox控件上
+            </summary>
+            <param name="lb">ListBox控件</param>
+            <param name="ic">数据源</param>
+            <param name="TextField">数据源显示文本的字段名称</param>
+            <param name="ValueField">数据源显示值的字段名称</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.SetValues(System.Web.UI.WebControls.ListBox,System.String[])">
+            <summary>
+            设置列表框的默认值
+            </summary>
+            <param name="lb">列表框的控件对象</param>
+            <param name="SelectedValue">多选值[]</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.SetTexts(System.Web.UI.WebControls.ListBox,System.String[])">
+            <summary>
+            设置列表框的默认值
+            </summary>
+            <param name="lb">列表框的控件对象</param>
+            <param name="SelectedText">多选值[]</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.GetSelectValue(System.Web.UI.WebControls.ListBox)">
+            <summary>
+            获取列表框的选择字符串,以,分割开
+            </summary>
+            <param name="lb">列表框的控件对象</param>
+            <returns>返回逗号分隔符的字符串</returns>
+        </member>
+        <member name="M:NSW.Utls.UserControls.ListBox.GetSelectText(System.Web.UI.WebControls.ListBox)">
+            <summary>
+            获取列表框的选择字符串,以,分割开
+            </summary>
+            <param name="lb">列表框的控件对象</param>
+            <returns>返回逗号分隔符的字符串</returns>
+        </member>
+        <member name="T:NSW.Utls.UserControls.DropdownList">
+            <summary>
+            DropdownList的常用方法
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.UserControls.DropdownList.Init(System.Web.UI.WebControls.DropDownList)">
+            <summary>
+            初始化下拉选框
+            </summary>
+            <param name="dpl">DropDownList控件</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.DropdownList.Insert(System.Web.UI.WebControls.DropDownList,System.Int32,System.String,System.String)">
+            <summary>
+            新增下拉选项
+            </summary>
+            <param name="dpl">DropDownList控件</param>
+            <param name="Index">新增选项插进的位置(整形)</param>
+            <param name="Value">选项值(字符型)</param>
+            <param name="Text">选购文本(字符串)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.DropdownList.SetSelectIndex(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            根据用户提供的选定值设置下拉框,如果用户提供的值不存在,则不进行选定
+            </summary>
+            <param name="dpl">DropDownList控件</param>
+            <param name="SelectValue">用户提供的选定值(字符串型)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.DropdownList.SetSelectText(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            根据用户提供的选定值设置下拉框,如果用户提供的值不存在,则不进行选定
+            </summary>
+            <param name="dpl">DropDownList控件</param>
+            <param name="SelectText">用户提供的选择文本(字符串型)</param>
+        </member>
+        <member name="M:NSW.Utls.UserControls.DropdownList.DataBind(System.Web.UI.WebControls.DropDownList,System.Collections.ICollection,System.String,System.String,System.String,System.String)">
+            <summary>
+            把数据源绑定在DropDownList控件上
+            </summary>
+            <param name="dpl">DropDownList控件</param>
+            <param name="ic">数据源</param>
+            <param name="TextField">数据源显示文本的字段名称</param>
+            <param name="ValueField">数据源显示值的字段名称</param>
+            <param name="DefaultText">默认文本</param>
+            <param name="DefaultValue">默认值</param>
+        </member>
+        <member name="T:NSW.Utls.IOUtls">
+            <summary>
+            文件IO类操作
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.CheckFileType(System.String,System.String)">
+            <summary>
+            检查文件扩展名是否与指定的相符
+            </summary>
+            <param name="exts">允许的扩展名，多个扩展名以竖线（|）分隔，形如：.jpg|.png|.gif</param>
+            <param name="filePath">文件完整路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">完整文件物理路径</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.DeleteFile(System.String,System.String@)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">完整文件物理路径</param>
+            <param name="errMsg">操作失败错误消息</param>
+            <returns>操作是否成功</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.GetMapPath(System.String)">
+            <summary>
+            获得当前绝对路径
+            </summary>
+            <param name="strPath">指定的路径</param>
+            <returns>绝对路径</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.ResponseFile(System.String,System.String,System.String)">
+            <summary>
+            以指定的ContentType输出到浏览器，可以用来进行文件的防盗链
+            </summary>
+            <param name="filepath">要输出的文件所在物理路径，必须是全路径</param>
+            <param name="filename">输出浏览器显示给用户看的文件名</param>
+            <param name="filetype">将文件输出时设置的ContentType</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.ReadFile(System.String,System.Text.Encoding)">
+            <summary>
+            以文件流的形式读取指定文件的内容
+            </summary>
+            <param name="file">指定的文件及其全路径</param>
+            <returns>返回 String</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.ReadFile(System.String)">
+            <summary>
+            以文件流的形式读取指定文件的内容，默认为UTF8编码
+            </summary>
+            <param name="file">指定的文件及其全路径</param>
+            <returns>返回 String</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.WriteFile(System.String,System.String)">
+            <summary>
+            以文件流的形式将内容写入到指定文件中（如果该文件或文件夹不存在则创建）
+            </summary>
+            <param name="file">文件名和指定路径</param>
+            <param name="fileContent">文件内容</param>
+            <returns>返回布尔值</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.WriteFile(System.String,System.String,System.Boolean)">
+            <summary>
+            以文件流的形式将内容写入到指定文件中（如果该文件或文件夹不存在则创建）
+            </summary>
+            <param name="file">文件名和指定路径</param>
+            <param name="fileContent">文件内容</param>
+            <param name="Append">是否追加指定内容到该文件中</param>
+            <returns>返回布尔值</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.WriteFile(System.String,System.String,System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            生成HTML页
+            </summary>
+            <param name="htmlfilename">生成文件的名称</param>
+            <param name="templateFilePath">模板文件的路径</param>
+            <param name="targetPath">HTML文件存放目录</param>
+            <param name="htmlCode">HTML文件的编码格式</param>
+            <param name="keyValue">替换内容键值对</param>
+            <returns>返回文件名</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.getDirectoryAllInfos(System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            获取指定目录下的所有目录及其文件信息
+            </summary>
+            <param name="dir">文件夹</param>
+            <param name="method">获取方式。</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.searchDirectoryAllInfo(System.String,System.String)">
+            <summary>
+            获取指定目录下的文件信息
+            </summary>
+            <param name="d">实例化的目录</param>
+            <param name="method">获取方式。仅获取文件结构 </param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.getDirectoryAllInfo(System.IO.DirectoryInfo,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            获取指定目录下的所有目录及其文件信息
+            </summary>
+            <param name="d">实例化的目录</param>
+            <param name="method">获取方式。1、仅获取文件夹结构  2、仅获取文件结构  3、同时获取文件和文件夹信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.copyDT(System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            将两个结构一样的 DataTable 组合成一个 DataTable
+            </summary>
+            <param name="parent"></param>
+            <param name="child"></param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.getDirInfos(System.String)">
+            <summary>
+            获取指定文件夹的信息，如：文件夹大小，文件夹数，文件数
+            </summary>
+            <param name="dir">指定文件夹路径</param>
+            <returns>返回 String</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.getDirectoryInfos(System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            获取指定目录的目录信息
+            </summary>
+            <param name="dir">指定目录</param>
+            <param name="method">获取方式。1、仅获取文件夹结构  2、仅获取文件结构  3、同时获取文件和文件夹信息</param>
+            <returns>返回 DataTable</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.IsExist(System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            判断文件或文件夹是否存在
+            </summary>
+            <param name="file">指定文件及其路径</param>
+            <param name="method">判断方式</param>
+            <returns>返回布尔值</returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.Create(System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            新建文件或文件夹
+            </summary>
+            <param name="file">文件或文件夹及其路径</param>
+            <param name="method">新建方式</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.CopyFile(System.String,System.String)">
+            <summary>
+            复制文件，如果目标文件已经存在则覆盖掉
+            </summary>
+            <param name="oldFile">源文件</param>
+            <param name="newFile">目标文件</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.CopyFileStream(System.String,System.String)">
+            <summary>
+            以流的形式复制拷贝文件
+            </summary>
+            <param name="oldPath">源文件</param>
+            <param name="newPath">目标文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.CopyDirectory(System.String,System.String)">
+            <summary>
+            复制文件夹中的所有内容及其子目录所有文件
+            </summary>
+            <param name="oldDir">源文件夹及其路径</param>
+            <param name="newDir">目标文件夹及其路径</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.Move(System.String,System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            移动文件或文件夹
+            </summary>
+            <param name="oldFile">原始文件或文件夹</param>
+            <param name="newFile">目标文件或文件夹</param>
+            <param name="method">移动方式：1、为移动文件，2、为移动文件夹</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.Delete(System.String,NSW.Utls.IOUtls.FsoMethod)">
+            <summary>
+            删除文件或文件夹
+            </summary>
+            <param name="file">文件或文件夹及其路径</param>
+            <param name="method">删除方式：1、为删除文件，2、为删除文件夹</param>
+        </member>
+        <member name="M:NSW.Utls.IOUtls.SystemFileCheck(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.Utls.IOUtls.FsoMethod">
+            <summary>
+            文件系统的处理对象
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.IOUtls.FsoMethod.Folder">
+            <summary>
+            仅用于处理文件夹
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.IOUtls.FsoMethod.File">
+            <summary>
+            仅用于处理文件
+            </summary>
+        </member>
+        <member name="F:NSW.Utls.IOUtls.FsoMethod.All">
+            <summary>
+            文件和文件夹都参与处理
+            </summary>
+        </member>
+        <member name="T:NSW.Utls.MQuery">
+            <summary>
+            通用数据操作抽象类
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.MQuery.GetBatch(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            分页读取数据，返回数据表
+            </summary>
+            <param name="tabName">数据表名</param>
+            <param name="pk">主键字段名</param>
+            <param name="fields">读取的字段集，半角逗号分隔</param>
+            <param name="sqlOrder">排序类型，不需要带 order 关键词</param>
+            <param name="sqlWhere">查看条件，不需要带 where 关键词</param>
+            <param name="pageSize">页大小，即每页读取多少条数据</param>
+            <param name="pageIndex">页码，即读取第几页的数据</param>
+            <param name="totalRcd">总记录数，如果传递非正整数，存储过程将计算并返回总记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.MQuery.GetBatch(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            分页读取数据，返回数据表
+            </summary>
+            <param name="tabName">数据表名</param>
+            <param name="pk">主键字段名</param>
+            <param name="fields">读取的字段集，半角逗号分隔</param>
+            <param name="sqlOrder">排序类型，不需要带 order 关键词</param>
+            <param name="sqlWhere">查看条件，不需要带 where 关键词</param>
+            <param name="pageSize">页大小，即每页读取多少条数据</param>
+            <param name="pageIndex">页码，即读取第几页的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.MQuery.GetBatch(System.String,System.String,System.String,System.String)">
+            <summary>
+            批量读取数据，返回数据表
+            </summary>
+            <param name="tabName">数据表名</param>
+            <param name="pk">主键字段名</param>
+            <param name="fields">读取的字段集，半角逗号分隔</param>
+            <param name="sqlOrder">排序类型，不需要带 order 关键词</param>
+            <param name="sqlWhere">查看条件，不需要带 where 关键词</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Utls.MQuery.GetBatch(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            批量读取数据，返回数据表
+            </summary>
+            <param name="tabName">数据表名</param>
+            <param name="pk">主键字段名</param>
+            <param name="fields">读取的字段集，半角逗号分隔</param>
+            <param name="sqlOrder">排序类型，不需要带 order 关键词</param>
+            <param name="sqlWhere">查看条件，不需要带 where 关键词</param>
+            <param name="rcdCnt">最大读取数据记录数</param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.Utls.DataBaseSystem">
+            <summary>
+            精简数据库工具类抽象类
+            </summary>
+        </member>
+        <member name="M:NSW.Utls.DataBaseSystem.Query(System.String)">
+            <summary>
+            执行 SQL 语句，返回 DataTable
+            </summary>
+            <param name="cmdText">SQL 语句</param>
+            <returns>DataTable（数据表）</returns>
+        </member>
+    </members>
+</doc>

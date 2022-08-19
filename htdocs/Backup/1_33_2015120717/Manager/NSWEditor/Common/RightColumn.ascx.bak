@@ -1,0 +1,229 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ManagerUserControl.RightColumn, qwt" enableviewstate="false" %>
+<div class="bd_side" id="webChannel">
+	<h2 class="channel_tit f_fw"><%=ColumnTitle %></h2>
+	<ul class="channel_list f_cb">
+        <asp:Repeater runat="server" ID="rpt"><ItemTemplate>
+		<li oid=<%#Eval("ID") %>> 
+			<input class="channel_wz f_fl" value="<%#Eval("Title") %>" />
+			<span class="channel_tits f_fl"><%#Eval("ReName")%></span>
+			<span class="channel_num f_fl"><%#GetPostSum(Container,"(<em class=\"this_nums\">{0}</em>)") %></span>
+			<i class="channel_icn1"></i>
+            <%if (IsDel){ %><i class="channel_icn2"></i><%}%>
+			<i class="channel_icn3">保存</i>
+		</li>
+        </ItemTemplate></asp:Repeater>
+	</ul>
+    <%if (IsShowAdd)
+      { %>
+	<div class="f_mt10 div_warp">
+		<input type="text" class="com_input bor1 clear_word f_mb10" value="" />
+		<span class="add_chel"><i></i>添加</span>
+	</div>
+    <%} %>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var IsDel = <%=IsDel.ToString().ToLower() %>;
+        loadJs("js/other/ajax.js", function () {
+            var ManagerSideBar = function () { }
+            ManagerSideBar.prototype = {
+                constructor: ManagerSideBar,
+                init: function () {
+                    this.Blur(); //失去焦点返回默认
+                    this.Edit(); //快速编辑
+                    this.Save(); //保存频道
+                    this.Add(); //添加
+                    this.Del(); //删除
+
+                    $(document).on("click", "span.channel_tits", function () {
+                        window.location = window.location.pathname + "?cid=" + $(this).parents("li").attr("oid") + "#div_1";
+                    });
+
+                },
+                EditBlur: function (par) {
+                    par = $(par);
+                    var num = par.find('.channel_num'),
+				        belong = par.find('.channel_belong'),
+				        tit = par.find('.channel_tits'),
+				        len = par.find(".channel_belong").length;
+
+                    num.show();
+                    belong.show();
+                    tit.show();
+                    $('.channel_icn3').hide();
+                    par.find(".channel_wz").hide();
+                    par.removeClass("editing");
+                    if (len <= 0) {
+                        par.find('.channel_icn2').show();
+                    }
+                    par.find('.channel_icn1').show();
+                    par.find('.channel_wz').val(tit.text());
+                },
+                Blur: function () {	/*焦点失去  编辑状态返回默认状态*/
+                    var _h = this;
+                    $('#webChannel').on("blur", ".channel_wz", function (parm) {
+                        var me = this;
+                        var par = $(me).parents("li");
+                        var hd = setTimeout(function () { _h.EditBlur(par); }, 200); //让保存事件优先触发
+                        par.data("hd", hd);
+                    });
+                },
+                Edit: function () {	/*-网页所在频道---快捷编辑-*/
+                    $('#webChannel').on('click', '.channel_icn1', function (event) {
+                        var par = $(this).parent(),
+			                num = par.find('.channel_num'),
+			                belong = par.find('.channel_belong'),
+			                tit = par.find('.channel_tits'),
+			                tits = tit.text().trim().replace(/(\s*├*-*)(\S*)/ig, function ($0, $1, $2) {
+			                    var v = $1;
+			                    if (v) {
+			                        tit.attr("pl", v);
+			                    }
+			                    return $2;
+			                });
+
+
+                        par.find('.channel_wz').val(tits).show().focus();
+                        num.hide();
+                        belong.hide();
+                        tit.hide();
+                        $(this).hide();
+                        par.addClass("editing");
+                        par.find('.channel_icn2').hide();
+                        par.find('.channel_icn3').show();
+                    });
+                },
+                Save: function () {//保存频道
+                    var _h = this;
+                    $('#webChannel').on('click', '.channel_icn3', function (event) {
+
+                        var par = $(this).parent(),
+			                len = par.find(".channel_belong").length,
+			                cval = par.find('.channel_wz').val(),
+			                num = par.find('.channel_num'),
+			                belong = par.find('.channel_belong'),
+			                tit = par.find('.channel_tits');
+
+                        var hd = par.data("hd");
+                        if (hd) {
+                            clearTimeout(hd);
+                        }
+
+                        num.show();
+                        belong.show();
+                        var pl = par.find(".channel_tits").attr("pl")||" ";
+                        if (par.find(".channel_tits").text().replace(pl,"") != cval && cval != "") {
+                            _PostAjax("RightColumn", {
+                                pagetitle: PageTitle,
+                                title: cval,
+                                oid: par.attr("oid")
+                            }, function (msg) {
+                                var data = _Json(msg);
+                                if (data.error) {
+                                    //保存成功
+                                    _alert(data.msg, true);
+                                    tit.text((tit.attr("pl") || "") + cval).show();
+                                } else {
+                                    //添加失败
+                                    _alert(data.msg);
+                                    par.find('.channel_wz').val(tit.text());
+                                }
+                            })
+                        } else {
+                            _h.EditBlur(par);
+                        }
+
+                        par.removeClass("editing");
+                        par.find('.channel_wz').hide();
+                        if (len <= 0) {
+                            par.find('.channel_icn2').show();
+                        }
+                        par.find('.channel_icn1').show();
+                        par.find('.channel_icn3').hide();
+                    });
+                },
+                Temp: [
+                    '<li>',
+			        '    <input class="channel_wz f_fl" value="">',
+			        '    <span class="channel_tits f_fl"></span>',
+			        '    <span class="channel_num f_fl">(<em class="this_nums">0</em>)</span>',
+			        '    <i class="channel_icn1"></i>',
+			        (IsDel?'    <i class="channel_icn2"></i>':""),
+			        '    <i class="channel_icn3">保存</i>',
+		            '</li>'
+                ].join(''),
+                Add: function () {
+                    var me = this;
+                    $("#webChannel").on("click", ".add_chel", function () {
+                        var par = $(this).parent(),
+                            input = par.find("input.com_input"),
+                            value = input.val().trim();
+                        if (value == "") {
+                            _alert("请输入标题！");
+                            return;
+                        }
+
+                        if (par.parent().find("input.channel_wz[value='" + value + "']").length) {
+                            _alert("已存在相同名称的分类！");
+                            return;
+                        }
+
+                        _PostAjax("RightColumn", {
+                            pagetitle: PageTitle,
+                            title: value
+                        }, function (msg) {
+                            var data = _Json(msg);
+                            if (data.error) {
+                                //添加成功
+                                _alert(data.msg, true, function () {
+                                    var ul = $("ul.channel_list");
+                                    var fli = ul.children(":first");
+
+                                    ul.append(me.Temp);
+                                    var li = ul.children(":last");
+                                    li.attr("oid", data.oid);
+
+                                    if(fli.length){
+                                        var tit = fli.find('.channel_tits'),
+			                            pl = tit.text().trim().replace(/(\s*├*-*)(\S*)/ig, function ($0, $1, $2) {
+                                            return $1;
+			                            });
+                                        pl = pl||"";
+                                        li.find(".channel_wz").val(value).end().find(".channel_tits").text(pl + value);
+                                    }else{
+                                        li.find(".channel_wz").val(value).end().find(".channel_tits").text(value);
+                                    }
+                                    input.val("");
+                                });
+                            } else {
+                                _alert(data.msg);
+                            }
+                        })
+                    })
+                },
+                Del: function () {
+                    $("#webChannel").on("click", ".channel_icn2", function () {
+                        var par = $(this).parent();
+
+                        _confirm("是否确定删除？", function () {
+                            _PostAjax("RightColumn", {
+                                oid: par.attr("oid"),
+                                isdelete: true
+                            }, function (msg) {
+                                var data = _Json(msg);
+                                if (data.error) {
+                                    _alert(data.msg, true, function () {
+                                        par.remove();
+                                    });
+                                } else {
+                                    _alert(data.msg);
+                                }
+                            })
+                        })
+                    })
+                }
+            };
+            new ManagerSideBar().init();
+        });
+    })
+</script>

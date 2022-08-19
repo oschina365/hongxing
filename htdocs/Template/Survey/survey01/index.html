@@ -1,0 +1,76 @@
+﻿#parses("$temppath/Common/Header.html")
+<div class="ks_body">
+    <div class="clear"></div>
+    <div class="content01">
+    <div class="kaoshi">
+        <div class="survey">
+            <div class="surveyhead">
+                <h1><span>$thisobj.title</span></h1>
+                <div class="clear"></div>
+            </div>
+
+            <div class="surveycontent">
+                <form>
+                    <fieldset class="fieldset01">
+                        #foreach($row in $rows)
+                        <!--多行文本框-->
+                        <div class="div_question" id="field_$row.id">
+                            <div class="div_title_question_all">
+                                <div class="div_topic_question"><b>$index.</b></div>
+                                <div class="div_title_question">
+                                    $row.title
+                                    #if($row.isrequired)
+                                        #if($row.type=="checkbox")
+                                            <span class="qtypetip">&nbsp;[<b>最少</b>选择<b>1</b>项]</span>
+                                        #else
+                                            <span style="color:red;">&nbsp;*</span>&nbsp;<span class="font-a0">（最少1字）</span>
+                                        #end
+                                    #end
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="div_table_radio_question">
+                                <div class="div_table_clear_top"></div>
+                                #if($row.type=="text")
+                                <input name="${row.type}_$row.id" class="inputtext q_$row.type" type="text" value="" maxlength="$row.Length" />
+                                #elseif($row.type=="textarea")
+                                <textarea name="${row.type}_$row.id" class="inputtext q_$row.type" maxlength="$row.Length"></textarea>
+                                #elseif($row.type=="radio" || $row.type=="checkbox")
+                                <ul class="ulradiocheck">
+                                    #foreach($row_ in $surveytools.GetDataTableByOther($row.other).rows)
+                                    <li style="width:99%;">
+                                        <input name="${row.type}_$row.id" class="q_$row.type" type="$row.type" value="$row_.value" id="q_${index}_${row.id}" $nt.getthree($row_.selected,' checked="checked"','')/>
+                                        <label for="q_${index}_${row.id}">$row_.title</label>
+                                    </li>
+                                    #end
+                                    <div class="clear"></div>
+                                </ul>
+                                #elseif($row.type=="select")
+                                    <select style="width:99%;" name="${row.type}_$row.id" class="q_$row.type">
+                                        #foreach($row_ in $surveytools.GetDataTableByOther($row.other).rows)
+                                        <option value="$row_.value" $nt.getthree($row_.selected,' selected="selected"','')>$row_.title</option>
+                                        #end
+                                    </select>
+                                #end
+                                <div class="div_table_clear_bottom"></div>
+                            </div>
+                            <div class="div_ins_question">$nt.getthree($row.shortdesc.equals(''),"","提示：$row.shortdesc")</div>
+                        </div>
+                        #end
+                    </fieldset>
+                    <input value="立即提交" type="button"  class="submitbutton"/>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        SetForm("form", $fieldsjosn);
+    })
+</script>
+#parses("$temppath/Common/Footer.html")

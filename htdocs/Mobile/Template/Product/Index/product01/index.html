@@ -1,0 +1,25 @@
+﻿#parses("$mtemppath/Common/Header.html?cssname=main")
+#parses("$mtemppath/Common/BackPreviousControl.html?curtype=$!columntype")
+#includes("$mtemppath/Common/SearchControl.html")
+
+<div class="g-bd">
+    #parses("$mtemppath/Common/locl.html")
+    <div class="m-con-2">
+        #paging($rows "%{}")
+        #foreach($row in $rows)
+        <a href="$row.MPageURL" title="$row.Title" class="s-babg">
+            #set($index_ = $index%2)
+            <dl class="$nt.GetThree($index_,"prolistbgfa","prolistbgfff")">
+                <dt><img src="$mbt.GetMobilePath($row)" alt="$row.Title" width="$row.Width" height="$row.Height" /></dt>
+                <h3 class="s-wc">$row.title</h3>
+                <p>$row.shortdesc</p>
+                <span></span>
+                <div class="clear"></div>
+            </dl>
+        </a>
+        #end
+        <div class="clear"></div>
+    </div>
+    #parses("$mtemppath/Common/paging.html")
+</div>
+#parses("$mtemppath/Common/Footer.html")

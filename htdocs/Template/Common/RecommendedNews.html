@@ -1,0 +1,51 @@
+﻿#*
+随机资讯
+*#
+#set($curtype = $columntypes.news)
+#set($keyvalues01 = "%{selectcount=1,otherwhere='isTop=1 and photopath!=\'\''}")
+#set($keyvalues = "%{selectcount=16,orderby='newid()',otherwhere='isCommend=1'}")
+<style type="text/css">
+.new-s dl{width: 732px;margin: 0 auto;padding-top:25px;height:194px;}
+.new-s dl dt {height:180px;width: 297px;float: left;position: relative;border-bottom: 1px solid #e2e2e2}
+.new-s dl dt img{width: 300px;height: 162px;}
+.new-s dl dt p{background:url(/Skins/Default/img/index/new_03.png) no-repeat;width: 296px;height: 28px;display: inline-block;position: absolute;top:132px;left:2px;font: 14px 'Microsoft  YaHei';color: #fff;text-align: center;line-height: 28px}
+.new-s dl dd{width: 405px;float: right;height:180px;border-bottom: 1px solid #e2e2e2; position:relative;}
+.new-s dl dd p{color: #353e47;font-size: 16px;font-weight: bold;margin-bottom:8px;}
+.new-s dl dd span{font-size: 14px ;color: #353e47;display:inline-block;width: 405px;line-height: 28px; height:112px; overflow:hidden;}
+.new-s dl dd a{display: inline-block;font: 12px 'Microsoft YaHei','微软雅黑';color: #fd8d00; float:right; position:absolute; bottom:15px; right:5px;}
+.news_random ul li a{ color:#353e47;padding-top:2px;}
+.news_random ul{ padding-top:0; margin:0 auto;}
+.news_random ul li{width:350px; padding:0; font-size:12px;}
+.news_random ul li.fr{ float:right;}
+</style>
+<div class="RandomNews">
+    <h4 class="diysr">
+       <span class="diysr_news"> 推荐资讯
+        <i> / Recommended News</i></span>
+        <div class="clear"></div>
+        <div class="line"></div>
+    </h4>
+    <div class="news_random news_random_ new-s">
+        #set($currows = $nt.GetDetailed($curtype,$keyvalues01).rows)
+        #foreach($row in $currows)
+        <dl>
+		    <dt><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="$sitedomain$row.photopath" alt="$row.title" title="$row.title" /><p>$row.title</p></a></dt>
+		    <dd>
+                <p>$row.title</p>
+                <span>$row.shortdesc</span>
+                <a href="$sitedomain$row.PageUrl" title="更多详情" target="_blank">【更多详情】</a>
+            </dd>
+	    </dl>
+        #end
+        ###set($keyvalues.otherwhere = $nt.GetNotIn($currows,"isCommend=1"))
+        <ul>
+        #foreach($row in $nt.GetDetailed($curtype,$keyvalues).rows)
+        <li class="#if($index%2==0)fr#else fl#end">
+            <span class="fr">$row.ShowTime.ToString("yyyy-MM-dd")</span>
+            <a target="_blank" href="$sitedomain$row.PageUrl" title="$row.title">$row.title</a>
+        </li>
+        #end
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>

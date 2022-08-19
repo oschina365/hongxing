@@ -1,0 +1,503 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NSW.Entities</name>
+    </assembly>
+    <members>
+        <member name="P:NSW.Entities.tbWeiXinNews.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.PID">
+            <summary>
+            PID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.Title">
+            <summary>
+            图文标题 必填
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.Author">
+            <summary>
+            图文作者
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.PhotoPath">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.PhotoMediaID">
+            <summary>
+            图片素材ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.ShortDesc">
+            <summary>
+            单图文简介
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.Content">
+            <summary>
+            图文内容
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.IsCoverPic">
+            <summary>
+            是否显示图文封面
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.BaseURL">
+            <summary>
+            源图片链接地址
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.UID">
+            <summary>
+            帐户用户ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinNews.InputTime">
+            <summary>
+            图文录入时间 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.SendGroupID">
+            <summary>
+            群发的分组ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.SendUsers">
+            <summary>
+            群发的用户列表 openid$$openid
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.InputTime">
+            <summary>
+            群发时间
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.SendCount">
+            <summary>
+            群发总数 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.SuccessCount">
+            <summary>
+            群发成功总数
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.FailureCount">
+            <summary>
+            群发失败总数
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.UID">
+            <summary>
+            帐户用户ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.Content">
+            <summary>
+            群发的消息内容
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.MsgID">
+            <summary>
+            群发的消息ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.Status">
+            <summary>
+            群发的消息状态
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinGrouplog.TotalCount">
+            <summary>
+            group_id下粉丝数；或者openid_list中的粉丝数
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.Title">
+            <summary>
+            素材名
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.MediaType">
+            <summary>
+            素材类型
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.InputTime">
+            <summary>
+            素材录入时间 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.OverdueTime">
+            <summary>
+            素材过期时间 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.MediaID">
+            <summary>
+            素材源ID[微信服务器返回]
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.UID">
+            <summary>
+            帐户用户ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinSource.Content">
+            <summary>
+            内容[图文消息的内容 即mediatype 为mpnews|news的内容]
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.Name">
+             <summary>
+            备注,注明微信帐号信息
+             </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.Token">
+            <summary>
+            Token信息
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.Appid">
+            <summary>
+            Appid   自定义菜单要用到
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.AppSecret">
+            <summary>
+            AppSecret   自定义菜单要用到
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.Content">
+            <summary>
+            内容  首次关注回复
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.InputTime">
+            <summary>
+            录入时间 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.Enable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.GUID">
+            <summary>
+            GUID 微信唯一标识
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.BaseID">
+            <summary>
+            微信原始ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.TPToken">
+            <summary>
+            第三方Token
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinUsers.TPURL">
+            <summary>
+            第三方URL
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.Title">
+            <summary>
+            标题,注明关键词用途
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.Keys">
+            <summary>
+            关键词信息
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.KeyType">
+            <summary>
+            回复信息类型 true 文字 false 图文
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.IsGlobal">
+            <summary>
+            是否是模糊匹配
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.URL">
+            <summary>
+            链接
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.MTitle">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.PhotoPath">
+            <summary>
+            图片地址
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.ShortDesc">
+            <summary>
+            简介描述
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.Hits">
+            <summary>
+            点击数【匹配数】
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.OrderID">
+            <summary>
+            排序ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.InputTime">
+            <summary>
+            录入时间 
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.Enable">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinKeyWord.UID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.UserName">
+            <summary>
+            UserName
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.Message">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.MsgType">
+            <summary>
+            消息类型 :news text view click
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.InputTime">
+            <summary>
+            录入时间
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiXinLog.FormUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.ID">
+            <summary>
+            ID自增长
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.URL">
+            <summary>
+            微网页地址
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.ShortDesc">
+            <summary>
+            微网页备注
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.AddHead">
+            <summary>
+            是否添加手机头部，1表示添加，0表示不添加
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.AddFooter">
+            <summary>
+            是否添加手机底部，1表示添加，0表示不添加
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.Content">
+            <summary>
+            自定义微网页内容
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.Hits">
+            <summary>
+            浏览次数
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.PageTitle">
+            <summary>
+            SEO中设置微网页标题
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.MetaKeyword">
+            <summary>
+            SEO中设置微网页关键词
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.MetaDescription">
+            <summary>
+            SEO中设置微网页描述
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.QrCode">
+            <summary>
+            二维码路径
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.Enable">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.OrderID">
+            <summary>
+            排序数
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.InputTime">
+            <summary>
+            录入时间
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.AddKefu">
+            <summary>
+            是否添加在线客服，1表示添加 0表示不添加
+            </summary>
+        </member>
+        <member name="P:NSW.Entities.tbWeiPage.AddLiuYan">
+            <summary>
+            是否添加在线留言，1表示添加 0表示不添加
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.ID">
+            <summary>
+            ID自增长
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.URL">
+            <summary>
+            微网页地址
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.ShortDesc">
+            <summary>
+            微网页备注
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.AddHead">
+            <summary>
+            是否添加手机头部，1表示添加，0表示不添加
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.AddFooter">
+            <summary>
+            是否添加手机底部，1表示添加，0表示不添加
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.Content">
+            <summary>
+            自定义微网页内容
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.Hits">
+            <summary>
+            浏览次数
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.PageTitle">
+            <summary>
+            SEO中设置微网页标题
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.MetaKeyword">
+            <summary>
+            SEO中设置微网页关键词
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.MetaDescription">
+            <summary>
+            SEO中设置微网页描述
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.QrCode">
+            <summary>
+            二维码路径
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.Enable">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.OrderID">
+            <summary>
+            排序数
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.InputTime">
+            <summary>
+            录入时间
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.AddKefu">
+            <summary>
+            是否添加在线客服，1表示添加 0表示不添加
+            </summary>
+        </member>
+        <member name="F:NSW.Entities.tbWeiPage._.AddLiuYan">
+            <summary>
+            是否添加在线留言，1表示添加 0表示不添加
+            </summary>
+        </member>
+    </members>
+</doc>

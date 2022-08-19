@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <title></title>
+    <link href="/Skins/Default/resetcommon.css" rel="stylesheet" type="text/css" />
+    <link href="/Skins/Default/Index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/JS/NSW_Index.js"></script>
+    <script type="text/javascript" src="/js/addForm.js"></script>
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    <script type="text/javascript">
+        function $qs(paraNm) {
+            var args = new Object();
+            var query = location.search.substring(1);
+            var pairs = query.split("&");
+            for (var i = 0; i < pairs.length; ++i) {
+                var pos = pairs[i].indexOf('=');
+                if (!pos) continue;
+                var paraNm2 = pairs[i].substring(0, pos);
+                var vlu = pairs[i].substring(pos + 1);
+                vlu = decodeURIComponent(vlu);
+                args[paraNm2] = vlu;
+            }
+            return args[paraNm];
+        }
+        var id = $qs("id");
+        if (id && id > 0) {
+            GetFroms(document.body, id, id);
+        }
+    </script>
+</body>
+</html>

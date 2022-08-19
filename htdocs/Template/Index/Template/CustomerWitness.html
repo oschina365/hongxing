@@ -1,0 +1,22 @@
+﻿#set($curtype = $columntypes.news)
+#*
+#set($currow=$nt.getcolumn($curtype,$cursid))
+#if($currow)
+    #set($columnurl=$nt.getcolumnurl($curtype,$currow))
+#end
+*#
+#if(!$selectcount)
+    #set($selectcount = 20)
+#end
+#set($keyvalues = "%{selectcount=$selectcount,otherwhere=$!cursqlwhere,sid=$cursid,otherfields='Authord'}")
+#foreach($row in $nt.GetDetailed($curtype,$keyvalues).rows)
+<dl class="#if($index%2==0)fl#else fr#end">
+    <dt><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="/js/load.gif" _src="$sitedomain$row.photopath"  alt="$row.title" title="$row.title" /></a></dt>
+	<dd>
+        <i>$row.title</i>
+        <p>$row.Authord</p>
+		<span>$nt.getsubstring($row.shortdesc,140)</span>
+        <a href="$sitedomain$row.PageUrl" title="了解详情" target="_blank" class="ljxq">了解详情>></a>
+    </dd>
+</dl>
+#end

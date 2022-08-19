@@ -1,0 +1,43 @@
+﻿#parses("$temppath/Common/Header.html")
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("search","product_index")
+</div>
+<div class="content">
+    <div class="plc">
+        <span class="red_x">当前位置：</span>
+        <a href="/">首页</a> $loctemp
+        搜索：$page.SqlKeyword
+    </div>
+    <div class="search_con">
+        #foreach($row in $rows)
+        <div class="${row.type}_search searchs ">
+            <dl class="sear_dl sear_product">
+                <dt><a  href="$page.SiteDomain$row.PageUrl"  title="$row.ReTitle" target="_blank"><img src="$page.SiteDomain$row.PhotoPath" title="$row.ReTitle" alt="$row.ReTitle" /></a></dt>
+                <dd>
+                    <h4><a  href="$page.SiteDomain$row.PageUrl"  title="$row.ReTitle" target="_blank">$row.Title</a></h4>
+                    <p>$row.ShortDesc</p>
+                    <span><a href="$page.SiteDomain$row.PageUrl" title="查看详情" target="_blank">查看详情 >></a></span>
+                </dd>
+            </dl>
+        </div>                
+        #end
+        #if(!$rows||$rows.count==0)
+        <div id="nodata">数据更新中......</div>
+        #end
+        <div class="clear"></div>
+        #parse("$temppath/Common/paging.html")
+        <div class="clear"></div>
+        <div class="rele_search">
+            <h5>相关搜索</h5>
+            <ul>
+                #foreach($row in $rsrows)
+                <li><a href="index.aspx?kwd=$nt.UrlEncode($row.title)&objtype=$!page.ObjectType">$row.title</a></li>
+                #end
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+#parses("$temppath/Common/Footer.html")

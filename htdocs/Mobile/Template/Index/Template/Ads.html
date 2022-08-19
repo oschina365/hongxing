@@ -1,0 +1,16 @@
+﻿#if(!$keyname)
+    #set($keyname="mobile_flash")
+#end
+#set($data = $nt.getads($keyname))
+<div class="g-adv j-slide-auto">
+	<ul class="m-box">
+        #foreach($row in $data.rows)
+        <li><a href="$row.url" title="$row.shortdesc"><img src="/Mobile/Images/web/grey.gif" data-src="$row.photopath" alt="$row.shortdesc" /></a></li>
+        #end
+	</ul>
+      <ul class="m-cnt">
+      #foreach($row in $data.rows)
+        <li></li>
+      #end
+    </ul>
+</div>

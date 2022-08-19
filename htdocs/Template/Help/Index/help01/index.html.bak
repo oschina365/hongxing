@@ -1,0 +1,39 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<link href="/template/help/help02/StyleSheet.css" rel="stylesheet" type="text/css" />
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+#set($dvs = $mt.GetColumnDataView($columntype,1,"isTop=1",""))
+<div class="content">
+    #parse("$temppath/Common/locl.html")
+    <div class="a_nav content clearfix">
+        <ul class="clearfix">
+            #foreach($row in $dvs)
+            <li sid='$row.sid' class="li_$index"><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="a_fz" id="a2">
+        <div class="content clearfix">
+            #set($row = $nt.getcolumn($columntype,25))
+            #if($row.shortdesc.length > 0)
+                $row.shortdesc
+            #end
+            #if(!$row.isShowIntroduction && $row.ShowDetail > 0)
+                #set($obj = $nt.GetEntity($columntype,$row.ShowDetail))
+                #if($obj.content)
+                <div class="age_li_about age_li_about_960">$obj.content</div>
+                #end
+            #end
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")
+<script type="text/javascript">
+    $(function () {
+        $(".a_nav li:eq(0)").addClass("cur");
+    })
+</script>

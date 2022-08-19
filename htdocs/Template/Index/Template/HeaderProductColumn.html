@@ -1,0 +1,35 @@
+﻿<div class="erji">
+    #foreach($row in $mt.GetColumnDataView($columntypes.product,"ParentID=1 and id<>'76'"))
+        <span class="span_$index"><a class="sp_a" href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title"><i><img src="$row.Icon"  /></i>$row.title</a>
+            <div class="sanji sanji_$index">                
+                <em>
+                #set($rows___ = $mt.GetColumnDataView($columntypes.product,"ParentID=$row.id"))
+                #foreach($row in $rows___)
+                <a #if($index==1) class="cur" #end href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title"><i>$row.title</i></a>
+                #end
+                </em>
+                <b >
+                #foreach($row in $rows___)
+                <a #if($index==1) style='display:block'#end href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title"><img src="$row.photopath" alt="$row.title" /></a>
+                #end
+                </b>
+            </div>
+        </span>
+    #end       
+</div>
+<script type="text/javascript">
+    $(".erji span").each(function (i) {
+        $(".erji .span_"+i).mouseover(function () {          
+            $(this).addClass("cur").siblings("span").removeClass("cur");
+            $(this).children(".sanji").show().parent().siblings("span").children(".sanji").hide();
+        }).eq(0).trigger("mouseover");
+
+        $(".sanji_" + i + " em a").mouseover(function () {
+            var _index = $(this).parent().children("a").index(this);
+            $(this).addClass("cur").siblings("a").removeClass("cur");
+            $(this).parent().siblings("b").find("a").eq(_index).show().siblings("a").hide();
+        }).eq(0).trigger("mouseover");
+    });
+
+</script>
+

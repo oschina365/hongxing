@@ -1,0 +1,3 @@
+﻿<connectionStrings>
+  <add name="ConnectString_Local" connectionString="server=58.67.215.24;uid=hongx_f;pwd=hongxinnsw88;database=hongx;"/>
+</connectionStrings>

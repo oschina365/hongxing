@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="True" inherits="NSW.Web.Manager.admin_logout, qwt" enableviewstate="false" enableviewstatemac="false" %>

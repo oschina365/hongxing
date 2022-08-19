@@ -1,0 +1,8 @@
+﻿<ul class="news_ul">
+    #foreach($row in $rows)
+    <li>
+        <a href="$sc.GetColumnURLBySID($thisrow.sid,$columntype)" title="$row.ColumnName">$row.ColumnName</a>
+        <a href="$sitedomain$row.PageUrl" target="_blank" title="$row.title">$row.title</a><span class="last">[$row.ShowTime.ToString("MM-dd HH:mm")]</span>
+    </li>
+    #end
+</ul>

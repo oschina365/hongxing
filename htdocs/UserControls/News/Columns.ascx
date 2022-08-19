@@ -1,0 +1,2 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="NSW.Web.UserControls.News.Columns, qwt" enableviewstate="false" %>
+<%=MyTool.WarpHeaderFooter(NSW.Web.API.ColumnType.News,MyTool.GetNewsColumnHtml(QS("sid"))) %>

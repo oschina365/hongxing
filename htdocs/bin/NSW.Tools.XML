@@ -1,0 +1,3027 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NSW.Tools</name>
+    </assembly>
+    <members>
+        <member name="T:NVTools.SurveyTools">
+             <summary>
+            用于试卷调查
+             </summary>
+        </member>
+        <member name="T:MyTool">
+             <summary>
+            $mt 的摘要说明
+             </summary>
+        </member>
+        <member name="M:MyTool.GetProductColumnHtml(System.String)">
+            <summary>
+            获取产品分类副导航
+            </summary>
+            <param name="CurSID">当前SID</param>
+            <returns>产品分类副导航 string</returns>
+        </member>
+        <member name="M:MyTool.GetProductProjectColumnHtml(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取产品或方案副导航
+            </summary>
+            <param name="pp">ColumnType.Product||ColumnType.Project</param>
+            <param name="CurSID">当前SID</param>
+            <returns>获取产品或方案副导航 string</returns>
+        </member>
+        <member name="M:MyTool.GetProductProjectColumnHtml(NSW.Web.API.ColumnType,System.String,System.Boolean)">
+            <summary>
+            获取产品或方案副导航
+            </summary>
+            <param name="pp">ColumnType.Product||ColumnType.Project</param>
+            <param name="CurSID">SID</param>
+            <param name="isthree">是否有三级分类</param>
+            <returns>获取产品或方案副导航 string</returns>
+        </member>
+        <member name="M:MyTool.GetNewsColumnHtml(System.String)">
+            <summary>
+            获取资讯副导航
+            </summary>
+            <param name="CurSID">当前SID</param>
+            <returns>资讯副导航 string</returns>
+        </member>
+        <member name="M:MyTool.GetHelpAgentColumnHtml(System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            获取帮助或招商加盟副导航
+            </summary>
+            <param name="pp">ColumnType.Help||ColumnType.Agent</param>
+            <param name="CurSID">当前SID</param>
+            <returns>获取帮助或招商加盟副导航 string</returns>
+        </member>
+        <member name="M:MyTool.GetColumnHtml(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            根据ColumnType类别，和SID获取分类URL
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="CurSID">SID</param>
+            <returns>获取分类URL string</returns>
+        </member>
+        <member name="M:MyTool.GetColumnHtml(NSW.Web.API.ColumnType,System.String,System.Boolean)">
+            <summary>
+            获取分类副导航
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="CurSID">SID</param>
+            <param name="isthree">是否包含三级分类</param>
+            <returns>分类副导航</returns>
+        </member>
+        <member name="M:MyTool.GetColumnTreeByColumnType(NSW.Web.API.ColumnType)">
+            <summary>
+            获取分类树
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <returns>分类树 DataTable</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(NSW.Web.API.ColumnType,System.Int32,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="sqlWhere">过滤条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(NSW.Web.API.ColumnType,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(System.Data.DataTable,System.Int32)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="DT">要过滤的DataTable</param>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnDataView(System.Data.DataTable,System.Int32,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="DT">要过滤的DataTable</param>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:MyTool.GetColumnHtmlByDataRow(System.Data.DataRow,System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            row DataRow
+            temp string
+            CurSID 选中的SID
+            type 类型
+            </summary>
+        </member>
+        <member name="M:MyTool.GetSearchKeyWord(System.String,System.Int32,System.String)">
+            <summary>
+            获取搜索关键词
+            </summary>
+            <param name="MARK">MARK</param>
+            <param name="SelectCount">查询条数,如果为0的话调用参数总配置的长度=>  5个</param>
+            <param name="appendSplit">关键词中间添加的间隔符</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.SubString(System.Web.UI.WebControls.RepeaterItem,System.Int32,System.String)">
+            <summary>
+            截取字符串(默认去除空格)
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.SubString(System.Object,System.Int32,System.String)">
+            <summary>
+            截取字符串(默认去除空格)
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.SubString(System.Object,System.Int32,System.String,System.Boolean)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <param name="isTrim">是否要去除空格</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.GetContentPic(System.String,System.String)">
+            <summary>
+            如果少于3张图片则不进行画册的展示
+            </summary>
+            <param name="Content"></param>
+            <param name="template"> 如 &lt;li&gt;&lt;a href=&quot;{src}&quot; title=&quot;图片描述&quot;&gt;{source}&lt;/a&gt;&lt;/li&gt;</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.GetContentPic(System.String,System.String,System.Int32)">
+            <summary>
+            如果少于3张图片则不进行画册的展示
+            </summary>
+            <param name="Content"></param>
+            <param name="template"> 如 &lt;li&gt;&lt;a href=&quot;{src}&quot; title=&quot;图片描述&quot;&gt;{source}&lt;/a&gt;&lt;/li&gt;</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.GetProductAttributeValue(System.Object,System.Object,System.String)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="attributeID">属性ID</param>
+            <param name="attr">产品属性</param>
+            <param name="temp">模板</param>
+            <returns>{key}:{val} string</returns>
+        </member>
+        <member name="M:MyTool.GetAttributeValue(System.Object,System.Object,System.String,System.Boolean)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="attributeID">属性ID</param>
+            <param name="attr">产品或者方案属性</param>
+            <param name="temp">模板</param>
+            <returns>{key}:{val} string</returns>
+        </member>
+        <member name="M:MyTool.GetFomartDateTime(System.String,System.Int32)">
+            <summary>
+            返回格式化后的时间
+            </summary>
+            <param name="datetime">时间字符串</param>
+            <param name="fomartType">1、2000-01-01(默认)；2、2000-01-01 23:59:59；3、2000年01月01日；4、2000年01月01日 23:59:59；</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.GetLink">
+            <summary>
+            获取友情链接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyTool.GetOtherPhotos(System.String)">
+            <summary>
+            获取缩略图大图
+            </summary>
+            <param name="OtherPhotos">缩略图大图</param>
+            <returns>缩略图大图 string[]</returns>
+        </member>
+        <member name="M:MyTool.GetOtherPhotosByIndex(System.String,System.Int32)">
+            <summary>
+            获取第N个缩略图大图
+            </summary>
+            <param name="OtherPhotos">缩略图大图</param>
+            <param name="index">第几个</param>
+            <returns>缩略图大图 string</returns>
+        </member>
+        <member name="M:MyTool.Split(System.String,System.String)">
+            <summary>
+            获取分割数组
+            </summary>
+            <param name="photoName">字段</param>
+            <param name="sp">分隔符</param>
+            <returns>分割之后的数组 string[]</returns>
+        </member>
+        <member name="M:MyTool.GetSplitByIndex(System.String,System.String,System.Int32)">
+            <summary>
+            获取分割数组
+            </summary>
+            <param name="photoName">字段</param>
+            <param name="sp">分隔符</param>
+            <param name="index">第几个</param>
+            <returns>获取分割之后第几个 string</returns>
+        </member>
+        <member name="M:MyTool.GetRelevantNewss(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            根据标签获取相关资讯
+            </summary>
+            <param name="sTags">标签</param>
+            <param name="srcProdId">要排除的产品</param>
+            <param name="queryFields">查询字段</param>
+            <param name="top">前几条</param>
+            <returns>相关资讯 DataTable</returns>
+        </member>
+        <member name="M:MyTool.GetRelevantProducts(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            根据标签获取相关产品
+            </summary>
+            <param name="sTags">标签</param>
+            <param name="srcProdId">要排除的产品</param>
+            <param name="queryFields">查询字段</param>
+            <param name="top">前几条</param>
+            <returns>相关产品 DataTable</returns>
+        </member>
+        <member name="M:MyTool.Clear">
+            <summary>
+            清除MyTools的静态缓存
+            </summary>
+        </member>
+        <member name="T:NSWSafe">
+             <summary>
+            NSWSafe 的摘要说明
+             </summary>
+        </member>
+        <member name="T:NSW.Web.Mobile.CreateHTML">
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateHelpHtml(System.Int32,System.String)">
+            <summary>
+            生成帮助文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的帮助文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteHelpHtml(NSW.Entities.VW_Help,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateAgentHtml(System.Int32,System.String)">
+            <summary>
+            生成帮助文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的帮助文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteAgentsHtml(NSW.Entities.VW_Agent,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateWeiPageHTML(System.Int32,System.String,System.Boolean)">
+            <summary>
+            生成方案文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的方案文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+            <param name="modelType">生成类型，true：PC网站的的推广页。false：手机网站的微网页</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteWeiPageHtml(NSW.Entities.tbWeiPage,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+            <param name="modelType">生成类型，true：PC网站的的推广页。false：手机网站的微网页</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateProjectHtml(System.Int32,System.String)">
+            <summary>
+            生成方案文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的方案文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteProjectHtml(NSW.Entities.VW_Project,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetHeaderHtml">
+            <summary>
+            获取公共头部HTML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetFooterHtml">
+            <summary>
+            获取公共底部HTML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateSiteMapHtml">
+            <summary>
+            批量生成静态页
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetSiteMapHeaderHtml">
+            <summary>
+            获取站点地图的头部
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetSiteMapFooterHtml">
+            <summary>
+            获取公共底部HTML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.UpdateUrlToMobile(System.String)">
+            <summary>
+            将PC的url更改成Mobile的url
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateSiteMapHtmlIndex(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            根据索引生成静态页
+            </summary>
+            <param name="drNews">站点地图栏目的信息</param>
+            <param name="templateHtmlPath">模板文件路径</param>
+            <param name="targetFolderPath">静态页存放路径</param>
+            <param name="htmlFileName">静态页初始名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateSiteMapXMLIndex(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            根据索引生成静态页
+            </summary>
+            <param name="drNews">站点地图栏目的信息</param>
+            <param name="templateHtmlPath">模板文件路径</param>
+            <param name="targetFolderPath">静态页存放路径</param>
+            <param name="htmlFileName">静态页初始名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateSiteMapXML">
+            <summary>
+            批量生成XML静态页
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetShareCode(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},NSW.Web.API.ColumnType)">
+            <summary>
+            分享
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.OnTheNext(System.Collections.Generic.Dictionary{System.String,System.String},NSW.Web.API.ColumnType,System.Data.DataRow)">
+            <summary>
+            上一页，下一页
+            </summary>
+            <param name="dic">dic</param>
+            <param name="type">类型</param>
+            <param name="row">实体类转DataRow</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateNewsHtml(System.Int32,System.String)">
+            <summary>
+            生成帮助文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的帮助文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteNewsHtml(NSW.Entities.VW_News,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetRelevantArticle(NSW.Entities.VW_News)">
+            <summary>
+            获取相关文章（根据TAG调用）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetLastArticle">
+            <summary>
+            获取推荐的文章 
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetRelevantProducts(NSW.Entities.VW_Product)">
+            <summary>
+            获取相关产品Html
+            </summary>
+            <returns>相关产品Html</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetRelevantNewss(NSW.Entities.VW_Product)">
+            <summary>
+            获取相关资讯Html
+            </summary>
+            <returns>相关产品Html</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.GetProductAttributeDetail(NSW.Entities.VW_Product,System.String)">
+            <summary>
+            获取产品的详细属性
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.WriteProductHtml(NSW.Entities.VW_Product,System.String,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的产品对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateHTML.CreateProductHtml(System.Int32,System.String,System.String)">
+            <summary>
+            生成产品静态页主函数入口，如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：products-99999.html
+            </summary>
+            <param name="prodIdList">要生成的产品id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+            /// <param name="modelName">模板名称</param>
+        </member>
+        <member name="T:NSW.Web.Tools.CreateHTML">
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+             <summary>
+            CreateHTML 的摘要说明
+             </summary>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantProducts(NSW.Entities.VW_Project)">
+            <summary>
+            获得配套产品
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetProjectAttributeDetail(NSW.Entities.VW_Project)">
+            <summary>
+            获取方案的详细属性
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantProjects(NSW.Entities.VW_Project)">
+            <summary>
+            获取相关方案Html
+            </summary>
+            <returns>相关方案Html</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantNewss(NSW.Entities.VW_Project)">
+            <summary>
+            获取相关资讯Html
+            </summary>
+            <returns>相关方案Html</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteProjectHtml(NSW.Entities.VW_Project,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的方案对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateProjectHtml(System.Int32,System.String)">
+            <summary>
+            生成方案静态页主函数入口，如果当前方案属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的方案，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：Projects-99999.html
+            </summary>
+            <param name="prodIdList">要生成的方案id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetHeaderHtml(System.Int32)">
+            <summary>
+            获取公共头部HTML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetFooterHtml">
+            <summary>
+            获取公共底部HTML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateSiteMapHtml">
+            <summary>
+            批量生成静态页
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateSiteMapHtmlIndex(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            根据索引生成静态页
+            </summary>
+            <param name="drNews">站点地图栏目的信息</param>
+            <param name="templateHtmlPath">模板文件路径</param>
+            <param name="targetFolderPath">静态页存放路径</param>
+            <param name="htmlFileName">静态页初始名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateSiteMapXMLIndex(System.Data.DataTable,System.String,System.String,System.String)">
+            <summary>
+            根据索引生成静态页
+            </summary>
+            <param name="drNews">站点地图栏目的信息</param>
+            <param name="templateHtmlPath">模板文件路径</param>
+            <param name="targetFolderPath">静态页存放路径</param>
+            <param name="htmlFileName">静态页初始名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateSiteMapXML">
+            <summary>
+            批量生成XML静态页
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetQRCode(System.String,System.String,System.String)">
+            <summary>
+            获取新闻的手机二维码信息入口
+            如果有手机网站的话
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateData(System.Object)">
+            <summary>
+            根据实体类得到表结构
+            </summary>
+            <param name="model">实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.FillDataRow(System.Object)">
+            <summary>
+            实体类转换成DataTable
+            </summary>
+            <param name="modelList">实体类列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetImagePathes(System.String[])">
+            <summary>
+            获取图片路径JS
+            </summary>
+            <param name="arrPath">所有图片路径数组</param>
+            <returns>图片路径JS</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.SetDictionary(System.Collections.Generic.Dictionary{System.String,System.String},NSW.Web.API.ColumnType,System.Data.DataRow)">
+            <summary>
+            通用
+            </summary>
+            <param name="dic">字典集</param>
+            <param name="type">类别</param>
+            <param name="row">实体类转DataRow</param>
+            <returns>VelocityContext</returns>
+        </member>
+        <!-- 对于成员“M:NSW.Web.Tools.CreateHTML.AddMergeDictionary(System.Collections.Generic.Dictionary{System.String,System.String},System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NSW.Web.Tools.CreateHTML.GetImageDomain(System.Boolean)">
+            <summary>
+            获取图片域名 如果PC和手机都没有的话返回默认域名
+            </summary>
+            <param name="isMobile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetReplaceContentWithImageDomain(System.String,System.Boolean)">
+            <summary>
+            替换内容里面的图片为域名
+            </summary>
+            <param name="content">内容</param>
+            <param name="isMobile">是否是手机</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.OnTheNext(System.Collections.Generic.Dictionary{System.String,System.String},NSW.Web.API.ColumnType,System.Data.DataRow)">
+            <summary>
+            上一页，下一页
+            </summary>
+            <param name="dic">dic</param>
+            <param name="type">类型</param>
+            <param name="row">实体类转DataRow</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteDownloadHtml(NSW.Entities.VW_Download,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的软件对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateDownloadHtml(System.Int32,System.String)">
+            <summary>
+            生成软件静态页主函数入口，如果当前软件属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的软件，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：products-99999.html
+            </summary>
+            <param name="prodIdList">要生成的软件id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantArticle(NSW.Entities.VW_News)">
+            <summary>
+            获取相关文章（根据TAG调用）
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetSimilarArticle(NSW.Entities.VW_News)">
+            <summary>
+            获取相关文章 
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetLastArticle">
+            <summary>
+            获取最新发布的文章 
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateNewsHtml(System.Int32,System.String)">
+            <summary>
+            生成资讯静态页主函数入口,如果当前文章属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的文章，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：news-99999.html
+            </summary>
+            <param name="prodIdList">要生成的文章id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteNewsHtml(NSW.Entities.VW_News,System.String,System.String,System.String,System.String@)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的新闻对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateAgentHtml(System.Int32,System.String)">
+            <summary>
+            生成帮助文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：Agents-99999.html
+            </summary>
+            <param name="prodIdList">要生成的帮助文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteAgentHtml(NSW.Entities.VW_Agent,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetProductAttributeDetail(NSW.Entities.VW_Product,System.String@)">
+            <summary>
+            获取产品的详细属性
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantProducts(NSW.Entities.VW_Product)">
+            <summary>
+            获取相关产品Html
+            </summary>
+            <returns>相关产品Html</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.GetRelevantNewss(NSW.Entities.VW_Product)">
+            <summary>
+            获取相关资讯Html
+            </summary>
+            <returns>相关产品Html</returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteProductHtml(NSW.Entities.VW_Product,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的产品对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateProductHtml(System.Int32,System.String)">
+            <summary>
+            生成产品静态页主函数入口，如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：products-99999.html
+            </summary>
+            <param name="prodIdList">要生成的产品id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.CreateHelpHtml(System.Int32,System.String)">
+            <summary>
+            生成帮助文档静态页主函数入口,如果当前产品属于编辑状态，可以不用设置当前的文件名称[即采用原有的文件地址],如果设置了新的文件名称,则静态页的文件地址以新的文件名称为准,如果是新录入的产品，则必须提供静态页面的物理地址，否则系统将会采用随机数进行文件的命名,格式为：helps-99999.html
+            </summary>
+            <param name="prodIdList">要生成的帮助文档id,整形</param>
+            <param name="targetFileName">要生成静态页的物理文件名称</param>
+        </member>
+        <member name="M:NSW.Web.Tools.CreateHTML.WriteHelpHtml(NSW.Entities.VW_Help,System.String,System.String,System.String)">
+            <summary>
+            写入html文件的方法(模板替换)
+            </summary>
+            <param name="model">要写入的帮助对象</param>
+            <param name="otherPage">返回其他页的地址，以逗号,间隔</param>
+            <returns>静态页的物理地址</returns>
+        </member>
+        <member name="T:MuneXML">
+             <summary>
+            MuneXML 的摘要说明
+             </summary>
+        </member>
+        <member name="P:MuneXML.OID">
+            <summary>
+            当前ID
+            </summary>
+        </member>
+        <member name="P:MuneXML.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:MuneXML.ReTitle">
+            <summary>
+            副标题
+            </summary>
+        </member>
+        <member name="P:MuneXML.URL">
+            <summary>
+            链接地址,如果没有的话可以为空或者为#,也可以添加一些脚本 如: javascript:alert('客观您好!');
+            </summary>
+        </member>
+        <member name="P:MuneXML.Order">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:MuneXML.ParentID">
+            <summary>
+            父级ID
+            </summary>
+        </member>
+        <member name="P:MuneXML.Target">
+            <summary>
+            是否新窗口中打开
+            </summary>
+        </member>
+        <member name="P:MuneXML.CssName">
+            <summary>
+            样式名称
+            </summary>
+        </member>
+        <member name="P:MuneXML.Enable">
+            <summary>
+            是否启用,默认禁用
+            </summary>
+        </member>
+        <member name="P:MuneXML.MenuType">
+            <summary>
+            导航类型 1 头部导航 2 底部导航
+            </summary>
+        </member>
+        <member name="P:MuneXML.IsRel">
+            <summary>
+            是否添加 a 标签里面的rel='nofollow' 默认不添加
+            </summary>
+        </member>
+        <member name="T:ColumnExtend">
+            <summary>
+            分类扩展类
+            </summary>
+        </member>
+        <member name="P:ColumnExtend.ID">
+            <summary>
+            //ID
+            </summary>
+        </member>
+        <member name="P:ColumnExtend.UrlType">
+            <summary>
+            //栏目类型
+            </summary>
+        </member>
+        <member name="P:ColumnExtend.Width">
+            <summary>
+            //宽 默认为0即没有宽
+            </summary>
+        </member>
+        <member name="P:ColumnExtend.Height">
+            <summary>
+            //高 默认为0即没有高
+            </summary>
+        </member>
+        <member name="M:ColumnExtendXMLTools.ReadInfo(System.Int32,NSW.Web.API.ColumnType)">
+            <summary>
+            读取某个节点
+            </summary>
+            <param name="id"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ColumnExtendXMLTools.Deserialize">
+            <summary>
+            反序列化得到全部的xml文档
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WebService.WebServiceHelper">
+             <summary>
+            Webservice 的摘要说明
+             </summary>
+        </member>
+        <member name="M:WebService.TemplateMarket.RedirectErrorPage(System.String)">
+            <summary>
+            转向到消息提示页面
+            </summary>
+            <param name="errorMsg">消息内容</param>
+        </member>
+        <member name="T:NSW.Web.API.SyncUser">
+            <summary>
+            SyncUser 的摘要说明
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.ShortMD5(System.String)">
+            <summary>
+            生成16位MD5加密字符串
+            </summary>
+            <param name="srcStr">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.sPE_Items">
+            <summary>
+            创建一个二维数组，将元素名和值存入其中
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.API_Enable">
+            <summary>
+            定义网站会员数据库是否同步，默认同步
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.API_Key">
+            <summary>
+            定义API的ID
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.API_Urls">
+            <summary>
+            定义需要同步的网站系统地址,例如：博客@@http://你的网站地址/博客安装目录/oblogresponse.asp|论坛@@http://你的网站地址/动易安装目录/API/API_Response.asp
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.InstallDir">
+            <summary>
+            接口文档的所在目录,默认是根路径
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.API_Timeout">
+            <summary>
+            定义允许系统超时时间，默认是10秒
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.arrAPIUrls">
+            <summary>
+            定义超链接数组
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.arrUrlsSP2">
+            <summary>
+            定义超链接数组
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.sMyXmlDoc">
+            <summary>
+            定义一个XMLDoc对象，默认为空对象
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SyncUser.sMyXmlHTTP">
+            <summary>
+            定义一个XmlHTTP对象，默认为空对象
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.#ctor">
+            <summary>
+            无参数构造函数
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.IniParameter">
+            <summary>
+            初始化参数
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.prepareXML(System.Boolean)">
+            <summary>
+            生成要发送的数据
+            </summary>
+            <param name="vIsQuest">vIsQuest True=发送请求；False=响应请求</param>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.prepareData(System.Boolean)">
+            <summary>
+            从XML中获取用户信息
+            </summary>
+            <param name="vIsQuest">vIsQuest True=请求格式；False=响应格式</param>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.getNodeText(System.String)">
+            <summary>
+            获取XML文件中指定节点的文本
+            </summary>
+            <param name="strNodeName">strNodeName   ----节点名称</param>
+            <returns>解析出来的文本值</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.setNodeText(System.String,System.String)">
+            <summary>
+            设置XML文件中指定节点的文本
+            </summary>
+            <param name="strNodeName">strNodeName   ----节点名称</param>
+            <param name="strNodeText">strNodeText   ----要设置的文本</param>
+            <returns>0 = 设置成功; 否则返回Err.Description</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.IsNode(System.String)">
+            <summary>
+            检查一个Node是否存在且文本不为空
+            </summary>
+            <param name="strNodeName">strNodeName   ----节点名称</param>
+            <returns>True or False</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.createXmlDom">
+            <summary>
+            创建尽可能高版本的MSXML对象
+            </summary>
+            <returns>True - 创建sMyXmlDoc成功,False - 服务器不支持MSXML对象</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.createXmlHttp">
+            <summary>
+            创建尽可能高版本的ServerXMLHTTP对象
+            </summary>
+            <returns>True - 创建sMyXmlDoc成功,False - 服务器不支持ServerXMLHTTP对象</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.WriteErrXml">
+            <summary>
+            把错误信息写到XML里面
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.WriteXml">
+            <summary>
+            把信息写到XML里面
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.exchangeGender(System.String)">
+            <summary>
+            把性别定义为同一的标准,男性为1,女性为0
+            </summary>
+            <param name="iSex">性别名称</param>
+            <returns>性别0,1</returns>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.RollbackUser(System.Int32)">
+            <summary>
+            删除用户数据
+            </summary>
+            <param name="startIndex">索引</param>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.SendPost">
+            <summary>
+            处理远程系统的通讯，用异步方式发送请求
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.AddErrorString(System.String)">
+            <summary>
+            把错误信息添加进来进行临时保管
+            </summary>
+            <param name="Msg">错误信息(字符串)</param>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.ClearErrorString">
+            <summary>
+            清空错误字符串
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SyncUser.ShowUserError(System.String,System.String)">
+            <summary>
+            循环把错误信息里面的内容显示出来
+            </summary>
+            <param name="btnTitle">返回按钮的Text,默认值为null</param>
+            <param name="RefferURL">返回页面的全路径,默认为null</param>
+        </member>
+        <member name="P:NSW.Web.API.SyncUser.errorInfor">
+            <summary>
+            定义错误信息数组
+            </summary>
+        </member>
+        <member name="P:NSW.Web.API.SyncUser.FindError">
+            <summary>
+            定义是否包含错误,默认没有错误
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.String.StringRegexHTML(System.String)">
+            <summary>
+            将文本里面的HTML标签替换掉，转换成纯文本的格式返回
+            </summary>
+            <param name="Content">传递的字符串</param>
+            <returns>返回正则替换后的字符串</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.String.StringRegex(System.String)">
+            <summary>
+            剔除PC网站Content内容里面没用的标签
+            </summary>
+            <param name="Content">传递的字符串</param>
+            <returns>返回正则替换后的字符串</returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.String.getMobileSmallImg(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            压缩图片
+            </summary>
+            <param name="ht">需要压缩的图片src</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.String.getHtml(System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            替换原始Content中的img的src
+            前面的步骤是：获得所有的img的src
+            找出需要压缩的图片（宽度大于280的），存储在字典里面，key为原来的src,value为需要压缩的src
+            对图片进行压缩,将压缩后的src存储在字典里，key为原来的src,value为压缩后的src
+            然后接下来该方法要完成的是：根据得到的压缩后的src的字典，和原始的Content，因为得到的字典的key和Content里面需要压缩的src是一样的，
+            所以可以根据key去替换
+            </summary>
+            <param name="replaceDic"></param>
+            <param name="sHtmlText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Mobile.String.FilterSql(System.String)">
+            <summary>
+            过滤SQL危险字符
+            </summary>
+            <param name="src"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetProductColumnHtml(System.String)">
+            <summary>
+            获取产品分类副导航
+            </summary>
+            <param name="CurSID">当前SID</param>
+            <returns>产品分类副导航 string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetProductProjectColumnHtml(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取产品或方案副导航
+            </summary>
+            <param name="pp">ColumnType.Product||ColumnType.Project</param>
+            <param name="CurSID">当前SID</param>
+            <returns>获取产品或方案副导航 string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetProductProjectColumnHtml(NSW.Web.API.ColumnType,System.String,System.Boolean)">
+            <summary>
+            获取产品或方案副导航
+            </summary>
+            <param name="pp">ColumnType.Product||ColumnType.Project</param>
+            <param name="CurSID">SID</param>
+            <param name="isthree">是否有三级分类</param>
+            <returns>获取产品或方案副导航 string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetNewsColumnHtml(System.String)">
+            <summary>
+            获取资讯副导航
+            </summary>
+            <param name="CurSID">当前SID</param>
+            <returns>资讯副导航 string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetHelpAgentColumnHtml(System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            获取帮助或招商加盟副导航
+            </summary>
+            <param name="pp">ColumnType.Help||ColumnType.Agent</param>
+            <param name="CurSID">当前SID</param>
+            <returns>获取帮助或招商加盟副导航 string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnHtml(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            根据ColumnType类别，和SID获取分类URL
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="CurSID">SID</param>
+            <returns>获取分类URL string</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnHtml(NSW.Web.API.ColumnType,System.String,System.Boolean)">
+            <summary>
+            获取分类副导航
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="CurSID">SID</param>
+            <param name="isthree">是否包含三级分类</param>
+            <returns>分类副导航</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnTreeByColumnType(NSW.Web.API.ColumnType)">
+            <summary>
+            获取分类树
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <returns>分类树 DataTable</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(NSW.Web.API.ColumnType,System.Int32,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="sqlWhere">过滤条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(NSW.Web.API.ColumnType,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(System.Data.DataTable,System.Int32)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="DT">要过滤的DataTable</param>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnDataView(System.Data.DataTable,System.Int32,System.String,System.String)">
+            <summary>
+            获取过滤之后的DataView
+            </summary>
+            <param name="DT">要过滤的DataTable</param>
+            <param name="type">ColumnType类别</param>
+            <param name="pid">父ID</param>
+            <param name="sqlWhere">其他过滤条件</param>
+            <param name="orderBy">排序条件</param>
+            <returns>过滤之后的DataView</returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnHtmlByDataRow(System.Data.DataRow,System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            row DataRow
+            temp string
+            CurSID 选中的SID
+            type 类型
+            </summary>
+        </member>
+        <member name="M:Tools.MyTool_.GetSearchKeyWord(System.String,System.Int32,System.String)">
+            <summary>
+            获取搜索关键词
+            </summary>
+            <param name="MARK">MARK</param>
+            <param name="SelectCount">查询条数,如果为0的话调用参数总配置的长度=>  5个</param>
+            <param name="appendSplit">关键词中间添加的间隔符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.FillAImage(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            填充图片信息（加链接）
+            </summary>
+            <param name="Container"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.FillAImage(System.Web.UI.WebControls.RepeaterItem,System.Boolean)">
+            <summary>
+            填充图片信息（加链接）
+            </summary>
+            <param name="Container"></param>
+            <param name="Container">是否是首页的图片 _src</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.FillA(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            填充链接
+            </summary>
+            <param name="Container"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.FillImage(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            填充图片
+            </summary>
+            <param name="Container"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetPhotoPath(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            获取图片,默认PC
+            </summary>
+            <param name="Container">Repeater的Container</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetPhotoPath(System.Web.UI.WebControls.RepeaterItem,System.Boolean)">
+            <summary>
+            获取图片地址
+            </summary>
+            <param name="Container">Repeater的Container</param>
+            <param name="isMobile">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetPageURL(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            获取静态页链接,默认PC
+            </summary>
+            <param name="Container">Repeater的Container</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetPageURL(System.Web.UI.WebControls.RepeaterItem,System.Boolean)">
+            <summary>
+            获取静态页链接
+            </summary>
+            <param name="Container">Repeater的Container</param>
+            <param name="isMobile">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetColumnPageURL(System.Web.UI.WebControls.RepeaterItem,NSW.Web.API.ColumnType)">
+            <summary>
+            获取静态页链接
+            </summary>
+            <param name="Container">Repeater的Container</param>
+            <param name="isMobile">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.SubString(System.Web.UI.WebControls.RepeaterItem,System.Int32,System.String)">
+            <summary>
+            截取字符串(默认去除空格)
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.SubString(System.Object,System.Int32,System.String)">
+            <summary>
+            截取字符串(默认去除空格)
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.SubString(System.Object,System.Int32,System.String,System.Boolean)">
+            <summary>
+            截取字符串
+            </summary>
+            <param name="obj">要截取的对象</param>
+            <param name="intLen">要截取的长度</param>
+            <param name="suffix">要填充的字符</param>
+            <param name="isTrim">是否要去除空格</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetContentPic(System.String,System.String)">
+            <summary>
+            如果少于3张图片则不进行画册的展示
+            </summary>
+            <param name="Content"></param>
+            <param name="template"> 如 &lt;li&gt;&lt;a href=&quot;{src}&quot; title=&quot;图片描述&quot;&gt;{source}&lt;/a&gt;&lt;/li&gt;</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetContentPic(System.String,System.String,System.Int32)">
+            <summary>
+            如果少于3张图片则不进行画册的展示
+            </summary>
+            <param name="Content"></param>
+            <param name="template"> 如 &lt;li&gt;&lt;a href=&quot;{src}&quot; title=&quot;图片描述&quot;&gt;{source}&lt;/a&gt;&lt;/li&gt;</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.GetFomartDateTime(System.String,System.Int32)">
+            <summary>
+            返回格式化后的时间
+            </summary>
+            <param name="datetime">时间字符串</param>
+            <param name="fomartType">1、2000-01-01(默认)；2、2000-01-01 23:59:59；3、2000年01月01日；4、2000年01月01日 23:59:59；</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tools.MyTool_.WarpImg_Src(System.Object,System.Object,System.Object)">
+            <summary>
+            PageURL 界面路径
+            Title 标题
+            PhotoPath 图片路径
+            </summary>
+        </member>
+        <member name="M:Tools.MyTool_.WarpImg_Src(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            RepeaterItem obj，必须包含PageURL和Title以及PhotoPath
+            </summary>
+        </member>
+        <member name="M:Tools.MyTool_.WarpA(System.Web.UI.WebControls.RepeaterItem)">
+            <summary>
+            RepeaterItem obj，必须包含PageURL和Title
+            </summary>
+        </member>
+        <member name="M:Tools.MyTool_.GetLink">
+            <summary>
+            获取友情链接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.OConfig2.AppWebConfigSet.SetAppWebConfig(System.String,System.String,System.String)">
+            <summary>
+            修改web.config/appsettings配置文件
+            </summary>
+            <param name="key">键</param>
+            <param name="newValue">新值</param>
+            <param name="path">配置文件物理路径</param>
+        </member>
+        <member name="M:NSW.OConfig2.AppWebConfigSet.SetAppWebConfig(System.String,System.String)">
+            <summary>
+            修改web.config/appsettings配置文件
+            </summary>
+            <param name="key">键</param>
+            <param name="newValue">新值</param>
+        </member>
+        <member name="T:NSW.OConfig2.SMTP">
+            <summary>
+            SMPT配置
+            </summary>
+        </member>
+        <member name="M:NSW.OConfig2.SMTP.GetConfig(System.String)">
+            <summary>
+            获取配置，屏蔽了一些关键的不能直接获取
+            </summary>
+            <param name="key">key</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.OConfig2.SMTP.GetMunelist">
+            <summary>
+            获取导航munelist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.OConfig2.SMTP.GetHeader(System.Boolean)">
+            <summary>
+            获取头部导航
+            true,不带span  false.带span
+            </summary>
+            <param name="modeltype">true,带span的</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.OConfig2.SMTP.GetFooter(System.String)">
+            <summary>
+            获取底部导航
+            </summary>
+            <param name="splitType">导航与导航间的填充如 "|"</param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.P_img_width">
+            <summary>
+            ProductPwd
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.IsSubSite">
+            <summary>
+            是否启用分站关键词
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.P_img_height">
+            <summary>
+            ProductPwd
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.lianxfangs">
+            <summary>
+            联系方式
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Enlablelx">
+            <summary>
+            是否开启联系方式
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ImPosition">
+            <summary>
+            在线客服显示的位置
+            True是右边[默认]
+            False是左边
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ImTopOffSet">
+            <summary>
+            在线客服高度显示
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.BeiAn">
+            <summary>
+            是否开启联系方式
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ReName">
+            <summary>
+            获取公司短名称
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.EnableBaiduEditor">
+            <summary>
+            是否启用新编辑器【百度编辑器】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.SinaWeibo">
+            <summary>
+            新浪微博【全地址】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.TXWeibo">
+            <summary>
+            腾讯微博【全地址】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.TongJi">
+            <summary>
+            其统计工具：百度 cnzz 51啦等等
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.OtherLinks">
+            <summary>
+            OtherLinks
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.KeFu">
+            <summary>
+            在线客服： 如Talk99 EC 51客服等等
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.SmallSize">
+            <summary>
+            上传缩略图的大小 单位：M【默认1M】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.BigSize">
+            <summary>
+            上传大图的大小 单位：M【默认2M】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.EditSize">
+            <summary>
+            编辑器的大小 单位：M【默认2M】
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProjectImgWidth">
+            <summary>
+            方案图片大小：宽
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProjectImgHeight">
+            <summary>
+            方案图片大小：高
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ManagerLogo">
+            <summary>
+            网站后台LOGO
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.IsDirectorylevel">
+            <summary>
+            是否启用全站配置目录级
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.SiteMapColumn">
+            <summary>
+            网站地图参数 分类之前用|分隔,产品|新闻|帮助|方案|加盟
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.SiteMapHelpColumnType">
+            <summary>
+            网站地图参数 看帮助是生成分类(True)还是生成单篇(False)
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.IsMobileActivePath">
+            <summary>
+            是否启用手机网站静态跳转
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.MobileActivePathConfig">
+            <summary>
+            手机网站静态跳转文件
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProductShortDescExtend">
+            <summary>
+            产品详细页右侧信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProductExtendNavigate">
+            <summary>
+            扩展导航
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.HelpCateInfo">
+            <summary>
+            帮助副导航信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProductCateInfo">
+            <summary>
+            产品副导航信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ProjectCateInfo">
+            <summary>
+            方案副导航信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.NewsCateInfo">
+            <summary>
+            新闻副导航信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.AgentCateInfo">
+            <summary>
+            加盟副导航信息
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.KeyWordsSelectCount">
+            <summary>
+            关键词查询数量 默认5
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.ExpressLane">
+            <summary>
+            备用编辑器
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.kefuqq">
+            <summary>
+            售后客服QQ
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.kefutel">
+            <summary>
+            售后客服电话号码
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.kefuqqs">
+            <summary>
+            售后客服QQ2
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.IsOverrideManagerPath">
+            <summary>
+            是否启用重写后台管理路径,默认为False
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.PCImageDomain">
+            <summary>
+            PC图片域名
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.MCImageDomain">
+            <summary>
+            手机图片域名
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.BottomCode">
+            <summary>
+            底部二维码
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.BottomLogo">
+            <summary>
+            底部LOG
+            </summary>
+        </member>
+        <member name="T:NSW.OConfig2.SMTP.Talk99">
+            <summary>
+            Talk99配置
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.IsEnableTalk99">
+            <summary>
+            是否启用Talk99
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.Talk99ID">
+            <summary>
+            talk99id
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.TanTouID">
+            <summary>
+            探头ID
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.GroupID">
+            <summary>
+            分组ID
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.KefuID">
+            <summary>
+            客服ID
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.CallPhone">
+            <summary>
+            CallPhone
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.SMTP.Talk99.ImagePath">
+            <summary>
+            Talk99图片
+            </summary>
+        </member>
+        <member name="T:NSW.OConfig2.PrivateSet">
+            <summary>
+            私有设置
+            </summary>
+        </member>
+        <member name="M:NSW.OConfig2.PrivateSet.UpdatetbExpandURL(System.String,System.Int32,System.String)">
+            <summary>
+            更新tbExpandURL表的分类数据
+            </summary>
+            <param name="sid">更新后的当前分类的</param>
+            <param name="id">当前ID</param>
+            <param name="UrlType">栏目类型</param>
+        </member>
+        <member name="M:NSW.OConfig2.PrivateSet.UpdatetbExpandURL(System.String,System.String,System.String)">
+            <summary>
+            更新tbExpandURL表的分类数据
+            </summary>
+            <param name="sid">更新后的当前分类的SID</param>
+            <param name="resid">更新前的当前分类的SID</param>
+            <param name="UrlType">栏目类型</param>
+        </member>
+        <member name="M:NSW.OConfig2.PrivateSet.DeleteExpandURLButton(System.Object,System.Int32,NSW.Web.API.ColumnType)">
+            <summary>
+            删除tbExpandURL表的分类数据
+            </summary>
+            <param name="sender">System.Web.UI.WebControls.Button</param>
+            <param name="oid">当前分类ID</param>
+            <param name="types">删除类型</param>
+        </member>
+        <member name="M:NSW.OConfig2.PrivateSet.DeleteExpandURLLinkButton(System.Object,System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            删除tbExpandURL表的分类数据
+            </summary>
+            <param name="sender">System.Web.UI.WebControls.LinkButton</param>
+            <param name="chkItem">分类组ID    如: 2,3,4</param>
+            <param name="types">删除类型</param>
+        </member>
+        <member name="F:NSW.OConfig2.PrivateSet._temppath">
+            <summary>
+            模版路径，例如/Template/
+            </summary>
+        </member>
+        <member name="F:NSW.OConfig2.PrivateSet._productdiretorie">
+            <summary>
+            产品默认模版
+            </summary>
+        </member>
+        <member name="F:NSW.OConfig2.PrivateSet._projectdiretorie">
+            <summary>
+            方案默认模版
+            </summary>
+        </member>
+        <member name="F:NSW.OConfig2.PrivateSet._templateSuffix">
+            <summary>
+            模版后缀
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.OverrideManagerPath">
+            <summary>
+            重写后台管理路径
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.IsOut">
+            <summary>
+            重写后台管理路径
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.xtuser">
+            <summary>
+            牛商学堂用户名
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.xtpass">
+            <summary>
+            牛商学堂密码
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.xtaddress">
+            <summary>
+            牛商学堂登录地址
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.mbuser">
+            <summary>
+            模版市场用户
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.mbpass">
+            <summary>
+            模版市场密码
+            </summary>
+        </member>
+        <member name="P:NSW.OConfig2.PrivateSet.mbaddress">
+            <summary>
+            模版市场地址
+            </summary>
+        </member>
+        <member name="T:NSW.Web.Module.URLMobileModule">
+             <summary>
+            URLModule (URL重写)
+             </summary>
+        </member>
+        <member name="M:NSW.Web.Module.URLMobileModule.GetRewriteMobileURL(System.Web.HttpContext)">
+            <summary>
+            module设置手机网站首页地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Module.URLMobileModule.GetRewriteMobilePath(System.String)">
+            <summary>
+            获取真实路径(搜索顺序News,Product)
+            </summary>
+            <param name="path">请求路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Module.URLMobileModule.CheckSalesMansNum">
+            <summary>
+            判断业务员的数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.Web.Mobile.CreateMobile">
+            <summary>
+            CreateHTML 的摘要说明
+            </summary>
+        </member>
+        <member name="M:NSW.Web.Mobile.CreateMobile.GetDirByName(System.String,System.String,System.Boolean)">
+            <summary>
+            读取指定文件夹下面的文件名称或者文件夹名称
+            方法功能：传入父文件夹名称和扩展名，遍历下面的子文件夹以及文件名称(带扩展名)
+            扩展名如果为空则表示是读取该路径下的子文件夹名称，否则是读取该路径下的指定扩展名的文件名称
+            </summary>
+            <param name="ParentDicName">父文件夹名称</param>
+            <param name="Extension">扩展名称</param>
+            /// <param name="isFullPath">是否获取文件的绝对路径</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:NSW.Web.Mobile.CreateMobile.SplitToP(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="T:NSW.Web.Excel">
+             <summary>
+            Excel 的摘要说明
+             </summary>
+        </member>
+        <member name="T:FormTemplate">
+             <summary>
+            FormTemplate 的摘要说明
+             </summary>
+        </member>
+        <member name="T:NVTools.Tools">
+            <summary>
+            $nt 工具类
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.SqlTemp">
+            <summary>
+            获取详细信息SQL模板
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.DetailedOrderBy">
+            <summary>
+            详细查询默认排序
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.DetailedFields">
+            <summary>
+            详细查询默认查询字段
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.SqlWhere">
+            <summary>
+            详细查询默认查询条件
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.ColumOrderBy">
+            <summary>
+            获取栏目。默认排序
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.ColumSqlWhere">
+            <summary>
+            获取栏目。默认条件
+            </summary>
+        </member>
+        <member name="F:NVTools.Tools.ColumFields">
+            <summary>
+            获取栏目。默认查询字段
+            </summary>
+        </member>
+        <member name="M:NVTools.Tools.GetRelated(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取关联的资讯、产品、方案等等
+            </summary>
+            <param name="type">类别</param>
+            <param name="ids">关联的产品或者资讯ID，1,2,3,4,5,6</param>
+            <returns>返回关联的资讯、产品、方案 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetSubstring(System.Object,System.Int32)">
+            <summary>
+            返回截取的字符串
+            </summary>
+            <param name="ShortDesc">要截取的字符串</param>
+            <param name="len">截取的长度</param>
+            <returns>返回截取的字符串 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetSubstring(System.Object,System.Int32,System.String)">
+            <summary>
+            返回截取的字符串
+            </summary>
+            <param name="ShortDesc">要截取的字符串</param>
+            <param name="len">截取的长度</param>
+            <param name="end">截取后的后缀，例如...</param>
+            <returns>返回截取的字符串 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetDataTable(System.String)">
+            <summary>
+            根据SQL查询数据
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns>SQL查询数据 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetDataTable(System.String,System.Boolean)">
+            <summary>
+            根据SQL查询数据
+            </summary>
+            <param name="sql">SQL语句</param>
+            <param name="cache">是否缓存</param>
+            <returns>SQL查询数据 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.UrlEncode(System.String)">
+            <summary>
+            对要传递到URL上的文字进行处理
+            </summary>
+            <param name="kwd">关键词</param>
+            <returns>Context.Server.UrlEncode(kwd) 处理之后的文字 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.UrlDecode(System.String)">
+            <summary>
+            对URL传过来的参数进行解码
+            </summary>
+            <param name="kwd">关键词</param>
+            <returns>Context.Server.UrlDecode(kwd) 处理之后的文字 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetAds(System.String)">
+            <summary>
+            根据广告关键词获取
+            </summary>
+            <param name="keyName">广告关键词</param>
+            <returns>广告数据集 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetAd(System.String)">
+            <summary>
+            根据广告关键词获取
+            </summary>
+            <param name="keyName">广告关键词</param>
+            <returns>单条广告 DataRow，没有的话返回null</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(NSW.Web.API.ColumnType,System.Data.DataRow)">
+            <summary>
+            根据ColumnType类型和分类DataRow，获取URL
+            </summary>
+            <param name="type">ColumnType类型，有Product,News,Help,Agent,Project</param>
+            <param name="row">分类DataRow</param>
+            <returns>分类URL string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(NSW.Web.API.ColumnType,System.Data.DataRowView)">
+            <summary>
+            根据ColumnType类型和分类DataRowView，获取URL
+            </summary>
+            <param name="type">ColumnType类型，有Product,News,Help,Agent,Project</param>
+            <param name="row">分类DataRowView</param>
+            <returns>分类URL string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            根据ColumnType类型和SID获取分类URL
+            </summary>
+            <param name="type">ColumnType类型，有Product,News,Help,Agent,Project</param>
+            <param name="SID">SID</param>
+            <returns>分类URL string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(System.String,System.String)">
+            <summary>
+            根据类型和SID获取分类URL
+            </summary>
+            <param name="type">类型有Product,News,Help,Agent,Project</param>
+            <param name="SID">SID</param>
+            <returns>分类URL string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(NSW.Web.API.ColumnType,System.String,System.String)">
+            <summary>
+            根据ColumnType类型和SID和默认url获取分类URL
+            </summary>
+            <param name="type">类型有Product,News,Help,Agent,Project</param>
+            <param name="SID">SID</param>
+            <param name="def">默认URL</param>
+            <returns>有这分类时返回URL，没有时返回默认 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumn(NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            根据ColumnType类型和SID获取分类DataRow
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <param name="SID">SID</param>
+            <returns>分类DataRow</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumn(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            根据ColumnType类型和分类ID获取分类DataRow
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <param name="ID">分类ID</param>
+            <returns>分类DataRow</returns>
+        </member>
+        <member name="M:NVTools.Tools.Format(System.String,System.Object[])">
+            <summary>
+            格式化字符串，模拟string.Format(temp, values)
+            </summary>
+            <param name="temp">模版</param>
+            <param name="values">可变参数objects</param>
+            <returns>格式化之后的字符串 string</returns>
+        </member>
+        <member name="F:NVTools.Tools.HD_KEYS">
+            <summary>
+            GetHybridDictionary用到的关键词
+            </summary>
+        </member>
+        <member name="M:NVTools.Tools.GetHybridDictionary(System.Object[])">
+            <summary>
+            根据传的参数获取HybridDictionary
+            </summary>
+            <param name="keyvalues">可变参数，例如("where","isTop=1","sid","0001")</param>
+            <returns>返回处理之后的HybridDictionary，例如%{where="isTop=1",sid="0001"}</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetDetailed(System.String,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            根据表名和HybridDictionary集合查询数据
+            </summary>
+            <param name="type">表名</param>
+            <param name="Conditions">
+            查询条件集合：
+            where 查询条件，默认值为Enable=1
+            fields 查询字段，默认值为ID,Title
+            selectcount 查询数量，默认值为-1
+            orderby 排序，默认值为 OrderID Asc,InputTime Desc
+            otherfields 其他查询字段，默认值为string.Empty
+            otherwheres 其他查询条件，默认值为string.Empty
+            cache 是否缓存该数据，默认值为配置里面的DefaultCache
+            </param>
+            <returns>查询数据的结果 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetDetailed(NSW.Web.API.ColumnType,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            根据ColumnType和HybridDictionary集合查询数据
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <param name="Conditions">
+            查询条件集合：
+            where 查询条件，默认值为Enable=1
+            fields 查询字段，默认值为ID,Title,SID,ColumnID,ColumnName,PageURL,URL,PhotoPath,PhotoName,ShortDesc,InputTime,ShowTime
+            sid 分类SID，默认值为string.Empty
+            selectcount 查询数量，默认值为-1
+            orderby 排序，默认值为 OrderID Asc,InputTime Desc
+            othercolumns 是否查询从属分类，只用于产品和方案，默认值为fasle
+            otherfields 其他查询字段，默认值为string.Empty
+            otherwheres 其他查询条件，默认值为string.Empty
+            cache 是否缓存该数据，默认值为配置里面的DefaultCache
+            </param>
+            <returns>查询数据的结果 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumns(NSW.Web.API.ColumnType,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            根据ColumnType类型和HybridDictionary查询
+            </summary>
+            <param name="type">ColumnType类型，类型有Product,News,Help,Agent,Project</param>
+            <param name="Conditions">
+            查询条件集合
+            where 查询条件，默认值为Enable=1
+            fields 查询字段，默认值为ID,Title,SID,Directory,ExpandURL,URL,ShortDesc,PhotoPath,Icon,PhotoName,ParentID
+            sid 分类SID，默认值为string.Empty
+            selectcount 查询数量，默认值为-1
+            orderby 排序，默认值为 OrderID Asc,ID Asc
+            otherfields 其他查询字段，默认值为string.Empty
+            otherwheres 其他查询条件，默认值为string.Empty
+            cache 是否缓存该数据，默认值为配置里面的DefaultCache
+            </param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumns(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            根据ColumnType类别和分类父ID获取子分类结果集DataView
+            </summary>
+            <param name="type">ColumnType类别</param>
+            <param name="ParentID">父ID</param>
+            <returns>子分类结果集DataView</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetNotNull(System.String,System.String)">
+            <summary>
+            获取非空的字符串
+            </summary>
+            <param name="st">参数</param>
+            <param name="def">默认参数</param>
+            <returns>参数为空时返回默认，反之返回参数 string</returns>
+        </member>
+        <!-- 对于成员“M:NVTools.Tools.GetColumnsLoc(System.String,System.String,System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:NVTools.Tools.GetKeyValue(System.Object,System.Object)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.Tools.GetColumnTitle(NSW.Web.API.ColumnType)">
+            <summary>
+            获取了分类栏目标题
+            </summary>
+            <param name="Type">Help,News,Agent,Product,Project等枚举</param>
+            <returns>分类栏目标题 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnTitle(System.String)">
+            <summary>
+            获取了分类栏目标题
+            </summary>
+            <param name="Type">Help,News,Agent,Product,Project等关键词</param>
+            <returns>分类栏目标题 string</returns>
+        </member>
+        <member name="M:NVTools.Tools.LoadUserControl(System.String)">
+            <summary>
+            加载.ascx控件
+            </summary>
+            <param name="path">控件路径</param>
+            <returns>控件生成的html string</returns>
+        </member>
+        <member name="M:NVTools.Tools.LoadUserControl(System.String,System.Boolean)">
+            <summary>
+            加载.ascx控件
+            </summary>
+            <param name="path">控件路径</param>
+            <param name="NoCache">是否缓存</param>
+            <returns>控件生成的html string</returns>
+        </member>
+        <member name="M:NVTools.Tools.LoadUserControl(System.String,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            加载.ascx控件
+            </summary>
+            <param name="path">控件路径</param>
+            <param name="hd">参数集合，为HybridDictionary类型</param>
+            <returns>控件生成的html string</returns>
+        </member>
+        <member name="M:NVTools.Tools.LoadUserControl(System.String,System.Collections.Specialized.HybridDictionary,System.Boolean)">
+            <summary>
+            加载.ascx控件
+            </summary>
+            <param name="path">控件路径</param>
+            <param name="hd">参数集合，为HybridDictionary类型</param>
+            <param name="NoCache">是否缓存</param>
+            <returns>控件生成的html string</returns>
+        </member>
+        <member name="M:NVTools.Tools.Split(System.String,System.String)">
+            <summary>
+            把字符串分割成字符串数组
+            </summary>
+            <param name="str">要分割的字符串</param>
+            <param name="sp">分割字符</param>
+            <returns>字符串数组 string[]</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetTop(System.Data.DataTable,System.Int32)">
+            <summary>
+            获取DataTable前几条数据，获取完之后DataTable前几个数据会移除掉
+            </summary>
+            <param name="dt">DataTable 数据集</param>
+            <param name="top">前几条</param>
+            <returns>获取DataTable前几条数据 DataTable</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetTop(System.Data.DataView,System.Int32)">
+            <summary>
+            获取DataView前几条数据，获取完之后DataTable前几个数据会移除掉
+            </summary>
+            <param name="dt">DataView 数据集</param>
+            <param name="top">前几条</param>
+            <returns>获取DataView前几条数据 DataView</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetIndex(System.Object,System.Int32)">
+            <summary>
+            获取集合（IEnumerable）第几条数据
+            </summary>
+            <param name="rows">数据集</param>
+            <param name="index">几条</param>
+            <returns>集合（IEnumerable）的第几条数据 Object</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetTop(System.Data.DataRowCollection,System.Int32)">
+            <summary>
+            获取DataRowCollection（DataTable.Rows）前几条数据，获取之后，原来的结果集会移除这几条数据
+            </summary>
+            <param name="rows">DataRowCollection 数据集</param>
+            <param name="top">前几条</param>
+            <returns>获取DataRowCollection（DataTable.Rows）前几条数据</returns>
+        </member>
+        <!-- 对于成员“M:NVTools.Tools.GetScripts”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.Tools.AddScript(System.String)">
+            <summary>
+            添加js到HttpContext.Current.Items，之后使用GetScripts获取集合
+            </summary>
+            <param name="url">js路径</param>
+        </member>
+        <member name="M:NVTools.Tools.AddScript(System.String,System.String)">
+            <summary>
+            添加js到HttpContext.Current.Items，之后使用GetScripts获取集合
+            </summary>
+            <param name="key">关键词</param>
+            <param name="url">js路径</param>
+        </member>
+        <member name="M:NVTools.Tools.RemoveScript(System.String)">
+            <summary>
+            从HttpContext.Current.Items移除关键为key的JS
+            </summary>
+            <param name="key">关键词</param>
+        </member>
+        <!-- 对于成员“M:NVTools.Tools.GetStyles”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.Tools.AddStyle(System.String)">
+            <summary>
+            添加css到HttpContext.Current.Items，之后使用GetStyles获取集合
+            </summary>
+            <param name="url">css路径</param>
+        </member>
+        <member name="M:NVTools.Tools.AddStyle(System.String,System.String)">
+            <summary>
+            添加css到HttpContext.Current.Items，之后使用GetStyles获取集合
+            </summary>
+            <param name="key">关键词</param>
+            <param name="url">css路径</param>
+        </member>
+        <member name="M:NVTools.Tools.RemoveStyle(System.String)">
+            <summary>
+            从HttpContext.Current.Items移除关键为key的样式
+            </summary>
+            <param name="key">关键词</param>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnType(System.String)">
+            <summary>
+            根据字符串，获取ColumnType枚举
+            </summary>
+            <param name="type">字符类型，如Product,Project,News,Help,Agent</param>
+            <returns>ColumnType</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetThree(System.Object,System.Object,System.Object)">
+            <summary>
+            模拟三元运算
+            </summary>
+            <param name="isTrue">为空、为空字符串、不等于0时返回false,反之返回true</param>
+            <param name="obj1">value1</param>
+            <param name="obj2">value1</param>
+            <returns>isTrue为true是返回value1,返回返回value2</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetThree(System.Object,System.Object,System.Object,System.Object)">
+            <summary>
+            模拟三元运算
+            </summary>
+            <param name="isTrue">为空、为空字符串、不等于i时返回false,反之返回true</param>
+            <param name="obj1">value1</param>
+            <param name="obj2">value1</param>
+            <param name="i">用于isTrue为int时比较值</param>
+            <returns>isTrue为true是返回value1,返回返回value2</returns>
+        </member>
+        <member name="M:NVTools.Tools.Equals(System.Object,System.Object)">
+            <summary>
+            比较
+            </summary>
+            <param name="ob01">ob01</param>
+            <param name="ob02">ob02</param>
+            <returns>ob01.Equals(ob02) bool</returns>
+        </member>
+        <!-- 对于成员“M:NVTools.Tools.LessThan(System.Int32,System.Int32,System.Object,System.Object)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:NVTools.Tools.GetNotIn(System.Collections.IEnumerable)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:NVTools.Tools.GetNotIn(System.Collections.IEnumerable,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.Tools.GetSQL(System.Collections.IEnumerable,System.String,System.String,System.String)">
+            <summary>
+            返回拼接SQL,and (Title Like'%12%' or Title Like'%13%' )
+            </summary>
+            <param name="rows">要循环的Row集合</param>
+            <param name="RowField">查询Row的列名</param>
+            <param name="Field">设置条件的字段</param>
+            <param name="temp">查询条件模板 and {0} Like'%{1}%'</param>
+            <returns>and (Title Like'%12%' or Title Like'%13%' )</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetEntity(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            根据ColumnType类型和ID，获取单个实体类,VW_Help、VW_Agent、VW_Product、VW_Project、VW_News
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <param name="OID">ID</param>
+            <returns>获取单个实体类,VW_Help、VW_Agent、VW_Product、VW_Project、VW_News</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetProductColumnURL(System.Int32)">
+            <summary>
+            根据产品分类ID，获取产品分类URL
+            </summary>
+            <param name="ColumnID">分类ID</param>
+            <returns>产品分类URL string</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetColumnURL(NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            ColumnType类型，分类ID，获取分类URL
+            </summary>
+            <param name="type">ColumnType类型</param>
+            <param name="ColumnID">分类ID</param>
+            <returns>分类URL string</returns>
+        </member>
+        <!-- 对于成员“M:NVTools.Tools.GetEmptyDictionary”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.Tools.GetNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            假如第一个为空字符串，则返回第二个
+            </summary>
+            <param name="val1">val1</param>
+            <param name="val2">val2</param>
+            <returns>!string.IsNullOrEmpty(val1) ? val1 : val2</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseBool(System.String)">
+            <summary>
+            转换成bool类型，默认值false
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成bool类型</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseDateTime(System.String)">
+            <summary>
+            转换成DateTime类型，默认值DateTime.Now
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成DateTime</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseDecimal(System.String)">
+            <summary>
+            转换成decimal类型，默认值0
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成decimal</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseDouble(System.String)">
+            <summary>
+            转换成double类型，默认值0
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成double</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseFloat(System.String)">
+            <summary>
+            转换成float类型，默认值0
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成float</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseInt(System.String)">
+            <summary>
+            转换成int类型，默认值0
+            </summary>
+            <param name="i">要转换的字符</param>
+            <returns>转换成int</returns>
+        </member>
+        <member name="M:NVTools.Tools.ParseIntRound(System.Int32,System.Int32)">
+            <summary>
+            Round
+            </summary>
+            <param name="i">参数1</param>
+            <param name="n">参数2</param>
+            <returns>(m % n) == 0?(m / n):(m / n) + 1</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetSessionUser">
+            <summary>
+            获取当前登录会员
+            </summary>
+            <returns>当前登录会员实体类tbUser</returns>
+        </member>
+        <member name="M:NVTools.Tools.CheckPassport">
+            <summary>
+            判断是否登录
+            </summary>
+            <returns>是否登录了，true,false</returns>
+        </member>
+        <member name="M:NVTools.Tools.IsAuthority(System.Data.DataRow)">
+            <summary>
+            判断是否包含了当前登录会员会员组
+            </summary>
+            <param name="row">分类获取单篇</param>
+            <returns>啊</returns>
+        </member>
+        <member name="M:NVTools.Tools.ShowMsgPage(System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            消息错误提示
+            </summary>
+            <param name="btnTitle">按钮标题</param>
+            <param name="btnHref">按钮URL</param>
+            <param name="defaultHref">默认URL</param>
+            <param name="delay">延迟多少秒</param>
+            <param name="msg">消息</param>
+            <param name="msgType">消息类型</param>
+        </member>
+        <member name="M:NVTools.Tools.GetMunes(System.Int32,System.Int32)">
+            <summary>
+            获取菜单
+            </summary>
+            <param name="MenuType">菜单类型，1主导航，2底部导航</param>
+            <param name="ParentID">父ID</param>
+            <returns>System.Data.DataRow[]</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetMuneUrl(System.Data.DataRow,System.String)">
+            <summary>
+            根据菜单DataRow，和temp获取，{target},{title},{retitle},{cssname},{cssname_},{oid},{rel},{url}
+            </summary>
+            <param name="item">System.Data.DataRow item</param>
+            <param name="Temp">模板</param>
+            <returns>返回替换之后的字符串</returns>
+        </member>
+        <member name="M:NVTools.Tools.FilterDataTable(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            查询DataTable里面的数据
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="RowFilter">过滤条件</param>
+            <param name="Sort">排序条件</param>
+            <returns>过滤后的数据集 DataView</returns>
+        </member>
+        <member name="M:NVTools.Tools.DateTimeToString(System.DateTime,System.String,System.String)">
+            <summary>
+            格式化日期
+            </summary>
+            <param name="time">日期</param>
+            <param name="strFormat">输出格式</param>
+            <param name="cultureName">区域性标识符</param>
+            <returns>格式化之后的日期</returns>
+        </member>
+        <member name="M:NVTools.Tools.GetChar(System.String)">
+            <summary>
+            因为模板里面传参不能直接穿char类型的
+            </summary>
+            <param name="str">字符串</param>
+        </member>
+        <member name="M:NVTools.NTools.GetOther(System.String,System.String,System.String)">
+            <summary>
+            根据模板获取其他字段，其他查询条件等等。例如
+            ###{otherfields='1,2,3,4,5,6,7,8,9'}
+            ###{otherfields_10='1,2,3,4,5,6,7,8,9'}
+            </summary>
+            <param name="key">关键词，例如otherwhere</param>
+            <param name="TempPath">模板路径</param>
+            <param name="SID">SID</param>
+            <returns>其他条件</returns>
+        </member>
+        <member name="M:NVTools.NTools.GetShowedFields(NSW.Web.API.ColumnType,System.String,System.String)">
+            <summary>
+            获取类型列表页查询的字段
+            </summary>
+            <param name="type">类型</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:NVTools.NTools.SetColumnSeo(System.Nullable{NSW.Web.API.ColumnType},System.String,NVelocity.VelocityContext)">
+            <summary>
+            设置SEO
+            </summary>
+            <param name="columnType">类型</param>
+            <param name="SID">SID</param>
+            <param name="context">VelocityContext</param>
+            <returns>DataRow</returns>
+        </member>
+        <member name="M:NVTools.NTools.SetSeo(NVelocity.VelocityContext,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            设置SEO
+            </summary>
+            <param name="context"></param>
+            <param name="titleKeyWords"></param>
+            <param name="pageTitle"></param>
+            <param name="title"></param>
+            <param name="metaDesc"></param>
+            <param name="metaKwd"></param>
+        </member>
+        <member name="M:NVTools.NTools.GetColumnTempPath(System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            根据类别和sid获取分类模版
+            </summary>
+            <param name="sid">sid</param>
+            <param name="type">类别</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:NVTools.NTools.GetMobileColumnTempPath(System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            根据类别和sid获取手机分类模版
+            </summary>
+            <param name="sid">sid</param>
+            <param name="type">类别</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:NVTools.NTools.GetIndexTempPath(NSW.Web.API.ColumnType)">
+            <summary>
+            获取中心页模板
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.GetMobileIndexTempPath(NSW.Web.API.ColumnType)">
+            <summary>
+            获取手机中心页模板
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.GetOtherTempPath(System.String,System.String)">
+            <summary>
+            获取其他页模板
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.GetMobileOtherTempPath(System.String,System.String)">
+            <summary>
+            获取手机其他页模板
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.GetTempPath(System.String,System.String)">
+            <summary>
+            获取模板，加载js，css
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.Loc(System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Int32,NSW.Web.API.ColumnType,System.Int32)">
+            <summary>
+            递归获取当前位置
+            </summary>
+            <param name="dic"></param>
+            <param name="parentID"></param>
+            <param name="Type"></param>
+            <param name="max"></param>
+        </member>
+        <member name="M:NVTools.NTools.UrlConvertor(System.String)">
+            <summary>
+            本地路径转换成URL相对路径
+            </summary>
+            <param name="imagesurl1">本地路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.UrlConvertorLocal(System.String)">
+            <summary>
+            相对路径转换成服务器本地物理路径
+            </summary>
+            <param name="imagesurl1">相对路径转</param>
+            <returns></returns>
+        </member>
+        <member name="M:NVTools.NTools.WriteJson(System.Boolean,System.String)">
+            <summary>
+            输出字符串
+            </summary>
+            <param name="str">字符串</param>
+        </member>
+        <member name="M:NVTools.NTools.GetInstance(System.Type,System.String)">
+            <summary>
+            根据接口和className，返回实例
+            </summary>
+            <param name="InterfaceType">接口类型</param>
+            <param name="className">类名</param>
+            <returns>返回实例 Object</returns>
+        </member>
+        <member name="P:NVTools.NTools.SitePage">
+            <summary>
+            获取或设置网页SEO优化缓冲
+            </summary>
+        </member>
+        <member name="T:NVTools.MobileTools">
+             <summary>
+            $mbt 的摘要说明
+             </summary>
+        </member>
+        <member name="F:NVTools.MobileTools.SqlTemp">
+            <summary>
+            SQL模板
+            </summary>
+        </member>
+        <member name="F:NVTools.MobileTools.DetailedOrderBy">
+            <summary>
+            详细查询默认排序
+            </summary>
+        </member>
+        <member name="F:NVTools.MobileTools.DetailedFields">
+            <summary>
+            详细查询默认查询字段
+            </summary>
+        </member>
+        <member name="F:NVTools.MobileTools.SqlWhere">
+            <summary>
+            详细查询默认查询条件
+            </summary>
+        </member>
+        <member name="M:NVTools.MobileTools.GetDetailed(System.String,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            根据表名和HybridDictionary集合查询数据
+            </summary>
+            <param name="type">表名</param>
+            <param name="Conditions">
+            查询条件集合：
+            where 查询条件，默认值为Enable=1
+            fields 查询字段，默认值为ID,Title
+            selectcount 查询数量，默认值为-1
+            orderby 排序，默认值为 OrderID Asc,InputTime Desc
+            otherfields 其他查询字段，默认值为string.Empty
+            otherwheres 其他查询条件，默认值为string.Empty
+            cache 是否缓存该数据，默认值为配置里面的DefaultCache
+            </param>
+            <returns>查询数据的结果 DataTable</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetDetailed(NSW.Web.API.ColumnType,System.Collections.Specialized.HybridDictionary)">
+            <summary>
+            根据ColumnType和HybridDictionary集合查询数据
+            </summary>
+            <param name="type">表名</param>
+            <param name="Conditions">
+            查询条件集合：
+            where 查询条件，默认值为Enable=1
+            fields 查询字段，默认值为ID,Title,SID,ColumnID,ColumnName,MPageURL,PhotoPath,PhotoName,MobilePath,Width,Height,ShortDesc,InputTime,ShowTime
+            sid 分类SID，默认值为string.Empty
+            selectcount 查询数量，默认值为-1
+            orderby 排序，默认值为 OrderID Asc,InputTime Desc
+            othercolumns 是否查询从属分类，只用于产品和方案，默认值为fasle
+            otherfields 其他查询字段，默认值为string.Empty
+            otherwheres 其他查询条件，默认值为string.Empty
+            cache 是否缓存该数据，默认值为配置里面的DefaultCache
+            </param>
+            <returns>查询数据的结果 DataTable</returns>
+        </member>
+        <!-- 对于成员“M:NVTools.MobileTools.GetColumnsLoc(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:NVTools.MobileTools.GetKeyValue(System.Object,System.Object)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NVTools.MobileTools.GetColumnTitle(NSW.Web.API.ColumnType)">
+            <summary>
+            获取了分类栏目标题
+            </summary>
+            <param name="Type">Help,News,Agent,Product,Project等枚举</param>
+            <returns>分类栏目标题 string</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetColumnTitle(System.String)">
+            <summary>
+            获取了分类栏目标题
+            </summary>
+            <param name="Type">Help,News,Agent,Product,Project等关键词</param>
+            <returns>分类栏目标题 string</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetMobilePath(NSW.Entities.VW_Help)">
+            <summary>
+            根据实体类获取手机图片
+            </summary>
+            <param name="help">帮助实体类</param>
+            <returns>手机图片 string</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetMobilePath(NSW.Entities.VW_Agent)">
+            <summary>
+            根据实体类获取手机图片
+            </summary>
+            <param name="help">招商加盟实体类</param>
+            <returns>手机图片 string</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetMobilePath(System.Data.DataRowView)">
+            <summary>
+            获取手机图片
+            </summary>
+            <param name="rv">包含MobilePath，PhotoPath，Width，Height的数据</param>
+            <returns>手机图片路径 string</returns>
+        </member>
+        <member name="M:NVTools.MobileTools.GetMobilePath(System.Data.DataRow)">
+            <summary>
+            获取手机图片
+            </summary>
+            <param name="row">包含MobilePath，PhotoPath，Width，Height的数据</param>
+            <returns>手机图片路径 string</returns>
+        </member>
+        <member name="T:NSW.Web.API.ColumnType">
+            <summary>
+            $columntypes，ColumnType
+            </summary>
+        </member>
+        <member name="T:NSW.Web.API.SysCommon">
+            <summary>
+            $sc SysCommon 的摘要说明
+            </summary>
+        </member>
+        <member name="F:NSW.Web.API.SysCommon.FillDataSplit">
+            <summary>
+            $#$
+            </summary>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.RemoveSpecifyHtml(System.String)">
+            <summary>
+            删除HTML标签
+            </summary>
+            <param name="ctx">需要处理的HTML字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.RemoveSpecifyHtml(System.String,System.String[])">
+            <summary>
+            删除HTML标签
+            </summary>
+            <param name="ctx">需要处理的HTML字符串</param>
+            <param name="holdTags">保留标签</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.RemoveSpecifyHtml(System.String,System.String)">
+            <summary>
+            删除HTML标签
+            </summary>
+            <param name="ctx">需要处理的HTML字符串</param>
+            <param name="holdTags">保留标签</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdDetailsCodeByInfo(System.String,System.String,System.String)">
+            <summary>
+            获取详细页面的广告信息
+            </summary>
+            <param name="currentInput">当前方案的广告信息，OBJ.Photoname</param>
+            <param name="columnInput">分类的广告信息Column.Photoname</param>
+            <param name="defaultkeyword">默认的广告信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdDetailsCodeByInfo(System.String)">
+            <summary>
+            获取详细页面的广告信息
+            </summary>
+            <param name="input">OBJ.Photoname</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdDetailsCodeByInfo(System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            获取详细页面的广告信息
+            </summary>
+            <param name="isBg">是否是背景</param>
+            <param name="imgpath">图片路径</param>
+            <param name="imgalt">图片标签</param>
+            <param name="imgurl">图片链接</param>
+            <returns>广告代码</returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdCodeByKeyNameM(System.String)">
+            <summary>
+            通用广告代码，如果是背景的话就是背景
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdCodeByKeyNameM_(System.String,System.String)">
+            <summary>
+            通用广告代码，如果是背景的话就是背景
+            </summary>
+            <param name="keyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAdCodeByInfo(System.String,NSW.Web.API.ColumnType,System.String)">
+            <summary>
+            获取广告信息
+            </summary>
+            <param name="sid">当前文案的SID</param>
+            <param name="types">文案所属分类</param>
+            <param name="defaultkeyword">文案所属分类的默认关键词</param>
+            <returns>广告信息</returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetCommonInfomations(System.Collections.Generic.Dictionary{System.String,System.String}@)">
+            <summary>
+            替换通用信息 Dictionary
+            site_domain,site_name,leftlx,
+            </summary>
+            <param name="dic"></param>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetColumnURLBySID(System.String,NSW.Web.API.ColumnType)">
+            <summary>
+            通过SID获取分类链接【如果没有找到则返回配置域名】
+            </summary>
+            <param name="sid">SID</param>
+            <param name="types">栏目类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetAttr(System.String,System.String)">
+            <summary>
+            获取属性值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetProductAttribute(System.Int32)">
+            <summary>
+            获取产品的全部属性
+            </summary>
+            <param name="attr">产品ID</param>
+            <returns>返回值只有li，请在外部添加ul</returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetProductAttribute(System.Int32,System.Int32[])">
+            <summary>
+            获取产品单个属性
+            </summary>
+            <param name="modelID">产品ID</param>
+            <param name="arrId">属性ID数组</param>
+            <returns>返回值只有li，请在外部添加ul</returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.ChangeImageSize(System.Int32,NSW.Web.API.ColumnType,System.String@)">
+            <summary>
+            帮助，新闻，加盟。小图图片压缩
+            </summary>
+            <param name="type"></param>
+            <param name="oldFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.ChangeImageSize(NSW.Web.API.ColumnType,System.String@)">
+            <summary>
+            产品和方案小图图片压缩
+            </summary>
+            <param name="type"></param>
+            <param name="oldFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.IsNullOrEmpty(System.String,System.String)">
+            <summary>
+            为空判断
+            </summary>
+            <param name="input">输入值</param>
+            <param name="defaultInput">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.FillColumnData(System.String,NSW.Web.API.ColumnType,System.Boolean)">
+            <summary>
+            填充分类信息
+            </summary>
+            <param name="template">如输入:&#60;li id="{0}"&#62;{1}&#60;/li&#62;  输出:&#60;li id="1"&#62;根分类&#60;/li&#62; </param>
+            <param name="types">分类类型</param>
+            <param name="isRoot">是否包含根分类</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.FillMobileActivePathFileinfo(System.String)">
+            <summary>
+            获取PC静态页跳转手机页的js文件信息
+            </summary>
+            <param name="mobilepage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.Split(System.String,System.String,System.StringSplitOptions)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <param name="split">如果为空或者为Null的话就是 $#$</param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.API.SysCommon.GetParsePage(System.String,System.String,System.String)">
+            <summary>
+            获取解析页面的链接
+            </summary>
+            <param name="parsepage">要解析的页面</param>
+            <param name="sid">sid</param>
+            <param name="page">page 可以为null则表示没有分页</param>
+            <returns></returns>
+        </member>
+        <member name="T:NSW.Web.OSwitch">
+             <summary>
+            网站附加功能开关
+             </summary>
+        </member>
+        <member name="F:NSW.Web.OSwitch.RelevantProduct">
+            <summary>
+            是否启用联想销售
+            </summary>
+        </member>
+        <member name="T:NSW.Web.MyTools">
+            <summary>
+            一般工具函数
+            </summary>
+        </member>
+        <member name="M:NSW.Web.MyTools.SetPager(Oran.WebControl.OranPager,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+            <param name="pagerMain"></param>
+            <param name="RecordCountVariable"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <param name="SkinPath"></param>
+        </member>
+        <member name="M:NSW.Web.MyTools.SetPager(Oran.WebControl.OranPager,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+        </member>
+        <member name="M:NSW.Web.MyTools.InitPointSign(System.Data.DataTable)">
+            <summary>
+            为购物车产品列表添加产品消耗积分标识
+            </summary>
+            <param name="dtProd"></param>
+        </member>
+        <!-- 对于成员“M:NSW.Web.MyTools.CreateURLListByCodes(System.String,System.String,System.String,System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:NSW.Web.MyTools.SetPager2(Oran.WebControl.OranPager,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+            <param name="pagerMain"></param>
+            <param name="RecordCountVariable"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <param name="SkinPath"></param>
+        </member>
+        <member name="M:NSW.Web.MyTools.SetPager2(Oran.WebControl.OranPager,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+        </member>
+        <member name="M:NSW.Web.MyTools.SetAdminPager(Oran.WebControl.IndexNavigator,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+            <param name="pagerMain"></param>
+            <param name="RecordCountVariable"></param>
+            <param name="PageSize"></param>
+            <param name="PageIndex"></param>
+            <param name="SkinPath"></param>
+        </member>
+        <member name="M:NSW.Web.MyTools.SetAdminPager(Oran.WebControl.IndexNavigator,System.Int32,System.Int32,System.Int32,System.String,System.Boolean,System.String)">
+            <summary>
+            设置分类控件
+            </summary>
+        </member>
+        <member name="T:XMLTool">
+             <summary>
+            XMLTool 的摘要说明
+             </summary>
+        </member>
+        <member name="M:XMLTool.GetXML(System.String)">
+            <summary>
+            获取xml
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XMLTool.UpdateMune(System.String,MuneXML)">
+            <summary>
+            修改
+            </summary>
+            <param name="path"></param>
+            <param name="model"></param>
+        </member>
+        <member name="T:UploadTools">
+             <summary>
+            UploadTools 的摘要说明
+             </summary>
+        </member>
+        <member name="T:Uploader">
+            <summary>
+            UEditor编辑器通用上传类
+            </summary>
+        </member>
+        <member name="M:Uploader.upFile(System.Web.HttpContext,System.String,System.String[],System.Int32)">
+             上传文件的主处理方法
+             @param HttpContext
+             @param string
+             @param  string[]
+            @param int
+             @return Hashtable
+        </member>
+        <member name="M:Uploader.upScrawl(System.Web.HttpContext,System.String,System.String,System.String)">
+             * 上传涂鸦的主处理方法
+              * @param HttpContext
+              * @param string
+              * @param  string[]
+              *@param string
+              * @return Hashtable
+        </member>
+        <member name="M:Uploader.getOtherInfo(System.Web.HttpContext,System.String)">
+            获取文件信息
+            @param context
+            @param string
+            @return string
+        </member>
+        <member name="M:Uploader.getUploadInfo">
+            获取上传信息
+            @return Hashtable
+        </member>
+        <member name="M:Uploader.reName">
+            重命名文件
+            @return string
+        </member>
+        <member name="M:Uploader.checkType(System.String[])">
+            文件类型检测
+            @return bool
+        </member>
+        <member name="M:Uploader.checkSize(System.Int32)">
+            文件大小检测
+            @param int
+            @return bool
+        </member>
+        <member name="M:Uploader.getFileExt">
+            获取文件扩展名
+            @return string
+        </member>
+        <member name="M:Uploader.createFolder">
+            按照日期自动创建存储文件夹
+        </member>
+        <member name="M:Uploader.deleteFolder(System.String)">
+            删除存储文件夹
+            @param string
+        </member>
+        <member name="T:Config">
+            <summary>
+            Config 的摘要说明
+            </summary>
+        </member>
+        <member name="T:NSW.Web.Module.URLModule">
+             <summary>
+            URLModule (URL重写)
+             </summary>
+        </member>
+        <member name="M:NSW.Web.Module.URLModule.CheckNSW_safe(System.Web.HttpContext)">
+            <summary>
+            防注入 跨站脚本攻击（XSS）、SQL注入攻击等恶意攻击行为。
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:NSW.Web.Module.URLModule.GetRewritePath(System.String)">
+            <summary>
+            获取真实路径(搜索顺序News,Product)
+            </summary>
+            <param name="path">请求路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:NSW.Web.Tools.kefu.GetIMParameters(System.Data.DataTable)">
+            <summary>
+            获取在线客服参数
+            </summary>
+            <param name="dt">在线客分组数据表</param>
+            <returns></returns>
+        </member>
+        <member name="P:NSW.Web.Tools.kefu.TopOffset">
+            <summary>
+            获取或设置 top 座标补偿
+            </summary>
+        </member>
+        <member name="P:NSW.Web.Tools.kefu.IMString">
+            <summary>
+            获取或设置在线客服
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,53 @@
+﻿#set($curtype = $columntypes.news)
+#set($keyvalues = "%{selectcount=$selectcount,otherfields='ShortTitle,CustomFields01',othercolumns=$thistrue}")
+#set($keyvaluesBest = "%{selectcount=$selectcount,otherwhere='isBest=1',otherfields='ShortTitle'}")
+#set($rows = $mt.GetColumnDataView($curtype,"ParentID=$curid"))
+<div class="g-anal content plug" data-src='[".an-t ul li",".g-anal div.c-r-tab",""]' fn="TabCat">
+  <div class="an-t">
+    <span><a href="$columnurl" title="大家都喜欢的案例" target="_blank">大家都喜欢的案例</a></span>
+    <ul> 
+        #foreach($row in $rows)
+        <li #if($index == $rows.count) class="none" #elseif($index==1) class="ts" #end><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+        #end
+    </ul>
+    <em><a href="$columnurl" title="更多" target="_blank">更多>></a></em>
+  </div>
+  <div class="an-c">
+    <div class="c-l" >
+      $site.GetAdCodeByKeyName("index_cases")
+      <b><a class="le" href="$columnurl" title="案例精选" target="_blank">案例精选</a><a class="ri" href="$columnurl" title="更多" target="_blank">更多>></a></b>
+      <ul id="cjwt">
+       #set($keyvaluesBest.sid = $cursid)
+       #foreach($row in $nt.GetDetailed($curtype,$keyvaluesBest).rows)
+        <li><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank">【$row.ShowTime.ToString("MM.dd")】$nt.getsubstring($row.ShortTitle,20)</a></li>
+       #end
+      </ul>
+    </div>
+    <div class="c-r">  
+    #foreach($row in $rows)
+    <div class="c-r-tab">
+    #set($keyvalues.sid = $row.sid)
+      <ul>
+       #foreach($row in $nt.GetDetailed($curtype,$keyvalues).rows)
+        <li><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="/js/load.gif" _src="$sitedomain$row.photopath" alt="$row.title" title="$row.title" /><span>$row.ShortTitle</span></a></li>
+      #end
+      </ul>
+     </div>
+     #end
+    </div>
+  </div>
+  <div class="an-b">
+      <ul>
+        <li><a title="免费上门量尺"><img src="/Skins/Default/Img/index/gmg_06.png" alt="免费上门量尺" /><span><b>免费</b>上门量尺</span></a></li>
+        <li><a title="免费量身定制"><img src="/Skins/Default/Img/index/gmg_09.png" alt="免费量身定制" /><span><b>免费</b>量身定制</span></a></li>
+        <li><a title="免费出3D效果图"><img src="/Skins/Default/Img/index/gmg_11.png" alt="免费出3D效果图" /><span><b>免费</b>出3D效果图</span></a></li>
+        <li><a title="免费上门安装"><img src="/Skins/Default/Img/index/gmg_13.png" alt="免费上门安装" /><span><b>免费</b>上门安装</span></a></li>
+        <li class="none"><a title="免费保修，终身维护"><img src="/Skins/Default/Img/index/gmg_15.png" alt="免费保修，终身维护" /><span><b>免费</b>保修，终身维护</span></a></li>
+      </ul>
+    </div>
+</div>
+<script type="text/javascript">
+        $(function () {
+            new Marquee("cjwt", 0, 1, 240, 95, 50, 0, 1000, 22);
+        });
+</script>

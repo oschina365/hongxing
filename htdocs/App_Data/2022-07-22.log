@@ -1,0 +1,137 @@
+
+ 
+记录时间：2022-07-22 01:03:55,658 
+线程ID:[15] 
+日志级别：  ERROR 
+描述： 
+NVelocity.Runtime.RuntimeException: Error during object introspection. Check inner exception for details. Node literal gettop($nt.GetRelated($curtype,$row.MsgProductIDs).rows,4) Line 15 Column 31 ---> NVelocity.Exception.MethodInvocationException: Invocation of method 'GetRelated' in  NVTools.Tools threw exception System.NotSupportedException : GetDataTable Error: 在从服务器接收结果时发生传输级错误。 (provider: TCP 提供程序, error: 0 - 信号灯超时时间已到) ---> System.NotSupportedException: GetDataTable Error: 在从服务器接收结果时发生传输级错误。 (provider: TCP 提供程序, error: 0 - 信号灯超时时间已到)
+   在 NVEngine.Tools.NVControlsTools.GetDataTable(String sql, Boolean cache)
+   在 NVTools.Tools.GetRelated(ColumnType type, String ids)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Value(IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTMethod.EvalParameters(Object[] parameters, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 NVelocity.Runtime.Parser.Node.ASTMethod.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Execute(Object o, IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTReference.Value(IInternalContextAdapter context)
+   在 NVelocity.Runtime.Parser.Node.ASTSetDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.ASTBlock.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Directive.Foreach.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVEngine.Directive.ParsesDirective.RenderTemplate(Template template, String arg, TextWriter writer, IInternalContextAdapter context)
+ 
+
+ 
+记录时间：2022-07-22 01:03:55,714 
+线程ID:[15] 
+日志级别：  ERROR 
+描述： 
+
+用户名：
+客户机IP：54.222.162.101,42.7.43.56,119.249.50.85
+操作系统：Unknown
+游览器：Chrome
+实际URL：/index.html
+真实请求URL：http://www.hongxin.com.cn/mobile/index.aspx
+请求方式：GET
+来源URL：
+请求UserAgent：Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2527.1237 Mobile Safari/537.36
+请求头部：
+Connection=keep-alive
+Via=Baidu-CDN-Node1,Baidu-CDN-Node2,Baidu-CDN-Node3
+Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Language=zh,zh-CN;q=0.9
+Host=www.hongxin.com.cn
+User-Agent=Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2527.1237 Mobile Safari/537.36
+X-Forwarded-Proto=http
+X-Forwarded-Host=www.hongxin.com.cn
+X-Via=Baidu-CDN-Node1,Baidu-CDN-Node2,Baidu-CDN-Node3
+Baidu-CDN-Request-ID=1658422998902-195412514-42.7.43.56-1
+upgrade-insecure-requests=1
+X-Forwarded-For=54.222.162.101,42.7.43.56,119.249.50.85
+Baidu-CDN-TTL=3
+Ohc-Upstream-Id=a7c231016a6be6d4,cb134560fa2e98e3,da1b61ca0b538669
+X-REWRITE-URL=/index.html
+执行方法：
+方法1：ParsesDirective.RenderTemplate(NVelocity.Template template , System.String arg , System.IO.TextWriter writer , NVelocity.Context.IInternalContextAdapter context)
+方法2：ParsesDirective.Render(NVelocity.Context.IInternalContextAdapter context , System.IO.TextWriter writer , NVelocity.Runtime.Parser.Node.INode node)
+方法3：ASTDirective.Render(NVelocity.Context.IInternalContextAdapter context , System.IO.TextWriter writer)
+方法4：SimpleNode.Render(NVelocity.Context.IInternalContextAdapter context , System.IO.TextWriter writer)
+方法5：Template.Merge(NVelocity.Context.IContext context , System.IO.TextWriter writer)
+方法6：NVTempHelp.GetHtmlByTemp(System.String templatdir , System.String path , NVelocity.VelocityContext vltContext)
+方法7：NVTempHelp.GetHtmlByTemp(System.String path , NVelocity.VelocityContext vltContext)
+方法8：index.Page_Load(System.Object sender , System.EventArgs e)
+方法9：CalliHelper.EventArgFunctionCaller(IntPtr fp , System.Object o , System.Object t , System.EventArgs e)
+
+ 
+
+ 
+记录时间：2022-07-22 01:03:55,715 
+线程ID:[15] 
+日志级别：  DEBUG 
+描述： 
+/mobile/template/index/Template/ProductColumnList.html
+ 
+
+ 
+记录时间：2022-07-22 01:03:55,715 
+线程ID:[15] 
+日志级别：  ERROR 
+描述： 
+System.Exception: Temp Error：/mobile/template/index/Template/ProductColumnList.html
+Error during object introspection. Check inner exception for details. Node literal gettop($nt.GetRelated($curtype,$row.MsgProductIDs).rows,4) Line 15 Column 31
+   在 NVEngine.Directive.ParsesDirective.RenderTemplate(Template template, String arg, TextWriter writer, IInternalContextAdapter context)
+   在 NVEngine.Directive.ParsesDirective.Render(IInternalContextAdapter context, TextWriter writer, INode node)
+   在 NVelocity.Runtime.Parser.Node.ASTDirective.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Runtime.Parser.Node.SimpleNode.Render(IInternalContextAdapter context, TextWriter writer)
+   在 NVelocity.Template.Merge(IContext context, TextWriter writer)
+   在 NVEngine.NVTempHelp.GetHtmlByTemp(String templatdir, String path, VelocityContext vltContext)
+ 
+
+ 
+记录时间：2022-07-22 01:03:55,716 
+线程ID:[15] 
+日志级别：  ERROR 
+描述： 
+
+用户名：
+客户机IP：54.222.162.101,42.7.43.56,119.249.50.85
+操作系统：Unknown
+游览器：Chrome
+实际URL：/index.html
+真实请求URL：http://www.hongxin.com.cn/mobile/index.aspx
+请求方式：GET
+来源URL：
+请求UserAgent：Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2527.1237 Mobile Safari/537.36
+请求头部：
+Connection=keep-alive
+Via=Baidu-CDN-Node1,Baidu-CDN-Node2,Baidu-CDN-Node3
+Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Language=zh,zh-CN;q=0.9
+Host=www.hongxin.com.cn
+User-Agent=Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2527.1237 Mobile Safari/537.36
+X-Forwarded-Proto=http
+X-Forwarded-Host=www.hongxin.com.cn
+X-Via=Baidu-CDN-Node1,Baidu-CDN-Node2,Baidu-CDN-Node3
+Baidu-CDN-Request-ID=1658422998902-195412514-42.7.43.56-1
+upgrade-insecure-requests=1
+X-Forwarded-For=54.222.162.101,42.7.43.56,119.249.50.85
+Baidu-CDN-TTL=3
+Ohc-Upstream-Id=a7c231016a6be6d4,cb134560fa2e98e3,da1b61ca0b538669
+X-REWRITE-URL=/index.html
+执行方法：
+方法1：NVTempHelp.GetHtmlByTemp(System.String templatdir , System.String path , NVelocity.VelocityContext vltContext)
+方法2：NVTempHelp.GetHtmlByTemp(System.String path , NVelocity.VelocityContext vltContext)
+方法3：index.Page_Load(System.Object sender , System.EventArgs e)
+方法4：CalliHelper.EventArgFunctionCaller(IntPtr fp , System.Object o , System.Object t , System.EventArgs e)
+方法5：CalliEventHandlerDelegateProxy.Callback(System.Object sender , System.EventArgs e)
+方法6：Control.OnLoad(System.EventArgs e)
+方法7：BasePage.OnLoad(System.EventArgs e)
+方法8：Control.LoadRecursive
+方法9：Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint , Boolean includeStagesAfterAsyncPoint)
+
+ 

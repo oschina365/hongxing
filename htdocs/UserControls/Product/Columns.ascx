@@ -1,0 +1,2 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="NSW.Web.UserControls.Product.UserControls_Product_Columns, qwt" enableviewstate="false" %>
+<%=MyTool.WarpHeaderFooter(NSW.Web.API.ColumnType.Product,MyTool.GetProductColumnHtml(QS("sid"))) %>

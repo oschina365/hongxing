@@ -1,0 +1,15 @@
+﻿#set($curtype = $columntypes.product)
+
+<div class="cp-l">
+    <h3>红鑫产品中心</h3>
+    <div class="lcc">
+    #foreach($row in $mt.GetColumnDataView($curtype,"ParentID=1 and isTop=1"))
+    <h4><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title"><i><img src="$row.Icon"  /></i>$row.title</a></h4>
+    <ul class="clearfix">
+        #foreach($row in $mt.GetColumnDataView($curtype,"ParentID=$row.id"))
+        <li><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+        #end          
+    </ul>
+    #end      
+    </div>
+</div>

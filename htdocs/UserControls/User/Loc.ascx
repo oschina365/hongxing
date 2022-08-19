@@ -1,0 +1,2 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="NSW.Web.UserControls.User.Loc, qwt" enableviewstate="false" %>
+<div class="u_crumbs"><span class="corange">当前位置：</span><a href="/">首页</a><asp:Literal runat="server" ID="ltl"></asp:Literal></div>

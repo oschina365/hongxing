@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.News.Page01, qwt" enableviewstate="false" enableviewstatemac="false" %>

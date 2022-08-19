@@ -1,0 +1,23 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="NSWEditor_NSWEditor, qwt" enableviewstate="false" %>
+<script charset="utf-8" src="NSWEditor/kindeditor.js"></script>
+<textarea name="content_<%=ID %>" style="width:<%=Width%>px;height:<%=Height%>px;visibility:hidden;" id="<%=ID %>"><%=Value%></textarea>
+<script type="text/javascript">
+    (function () {
+        var ID = "#<%=ID %>";
+        if ("<%=NSW.BLL.Admin.CheckPassport() %>" == "False") {
+            alert("您尚未登录！");
+            return;
+        }
+        KindEditor.ready(function (K) {
+            var data = {resizeType: 1, width: '100%',ImgData: {<%=GetImgData() %>},tempType:'<%=Types %>',SimpleMode:<%=SimpleMode.ToString().ToLower() %>};
+            var key = "<%=ID %>_Data";
+            data = jQuery.extend(data,window[key] || {});
+            editor = K.create(ID,data);
+            if(data.loadstyles){
+                editor.addStyles(data.loadstyles);
+            }
+            $(ID).data("editor", editor);
+        });
+    })();
+</script>
+

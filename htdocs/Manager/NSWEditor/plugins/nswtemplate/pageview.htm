@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <title>预览</title>
+    <link href="/Css/reset.css" rel="stylesheet" type="text/css" />
+    <script src="/JS/JQuery.js" type="text/javascript"></script>
+    <style type="text/css">
+        body { width: 750px; margin: 0 auto; }
+        div, p { clear: both; margin: 0; padding: 0; }
+        .fd-clr:after { clear: both; content: " "; display: block; height: 0; }
+        .BORDER, .RESIZE { border: 1px dashed #ccc; padding: 1px; }
+        .mceContentBody .WARN-TIPS { float: left; position: relative; border: 3px solid #f7ede6; border-radius: 3px; margin-bottom: 15px; }
+        .mceContentBody .WARN-TIPS:after { clear: both; content: " "; display: block; height: 0; }
+        .WARN-TIPS .Md-arrow-lb, .WARN-TIPS .Md-arrow-lt, .WARN-TIPS .Md-arrow-rt, .WARN-TIPS .Md-arrow-rb { position: absolute; background: url(http://img.china.alibaba.com/cms/upload/offer/template/global/bg-ta.png) no-repeat 0 0; width: 22px; height: 14px; overflow: hidden; }
+        .WARN-TIPS .Md-arrow-lt { left: 40px; top: -13px; background-position: 0 -15px; }
+        .WARN-TIPS .Md-arrow-lb { left: 40px; bottom: -13px; }
+        .WARN-TIPS .Md-content { float: left; border: 1px solid #ffcfa5; background: #fff; padding: 10px; color: #ff7300; font-weight: 400; font-size: 12px; }
+        .UPLOAD { display: inline-block; border: 1px solid #d9d9d9; border-radius: 3px; padding: 0 35px; height: 42px; line-height: 42px; background-color: #f4f4f4; color: #666; font-weight: 700; cursor: pointer; }
+    </style>
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+    function getLocalTemplateModel(url, data, func) {
+        $.post(url, data, func);
+    }
+    function $qs(paraNm) {
+        var args = new Object();
+        var query = location.search.substring(1);
+        var pairs = query.split("&");
+        for (var i = 0; i < pairs.length; ++i) {
+            var pos = pairs[i].indexOf('=');
+            if (!pos) continue;
+            var paraNm2 = pairs[i].substring(0, pos);
+            var vlu = pairs[i].substring(pos + 1);
+            vlu = decodeURIComponent(vlu);
+            args[paraNm2] = vlu;
+        }
+        return args[paraNm];
+    }
+
+    function gav(xMsg, key) {
+        var jMsg = $(xMsg);
+        var s = $(jMsg.find("node[key=" + key + "]")).text();
+        return s;
+    }
+    getLocalTemplateModel("/ajax.ashx?action=gettpl&t=" + Math.random(), { oid: $qs("id") }, function (rsp) {
+        if (gav(rsp, "state") == "1") {
+            $("body").append(gav(rsp, "msg"));
+        } else {
+            oops();
+        }
+    });
+
+    function oops() {
+        $("body").css({ fontSize: "16px", textAlign: "center",color:"Green",fontWeight:"bold" }).append("哎呀...没有了！您刚才的记录被删除了！！！");
+    }
+
+</script>
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<configuration>
+  <!--url rewrite-->
+  <configSections>
+    <section name="rewriter" requirePermission="false" type="Intelligencia.UrlRewriter.Configuration.RewriterConfigurationSectionHandler, Intelligencia.UrlRewriter" />
+    <sectionGroup name="NSW">
+      <section name="HttpCompress" type="NSW.Web.API.Configuration" />
+    </sectionGroup>
+  </configSections>
+  <NSW>
+    <HttpCompress compressionType="GZip">
+      <IncludedMimeTypes>
+        <add mime="text/html" />
+      </IncludedMimeTypes>
+      <!--配置不压缩何种类型资源            
+		   <ExcludedMimeTypes>   
+			   <add mime="text/html" />  
+		   </ExcludedMimeTypes> 
+		   注意：ExcludedMimeTypes及IncludedMimeTypes只需要配置一个就可以，如果像上面那样配置ExcludeMimeTypes的话，则表明除html类型的资源外，其它资源都会被压缩-->
+      <ExcludedPaths>
+        <!--设定不启用压缩的页面路径，下面设定了nocompress目录下的default.aspx页面将不会启用压缩功能,但其它页面则正常启用压缩-->
+        <add path="/Manager/" />
+      </ExcludedPaths>
+    </HttpCompress>
+  </NSW>
+  <!--end url rewrite-->
+  <appSettings configSource="Config\Appsetting.config">
+  </appSettings>
+  <connectionStrings configSource="Config\ConnectionString.config">
+  </connectionStrings>
+  <rewriter file="~/Config/URLReWrite.config" />
+  <system.web>
+    <httpHandlers>
+      <add verb="*" path="*.html" type="System.Web.StaticFileHandler" />
+      <add path="*.shtml" verb="*" type="System.Web.UI.PageHandlerFactory" validate="true" />
+      <add path="*.aspx" verb="*" type="System.Web.UI.PageHandlerFactory" validate="true" />
+    </httpHandlers>
+    <httpModules>
+      <add name="URLModule" type="NSW.Web.Module.URLModule" />
+      <add type="Intelligencia.UrlRewriter.RewriterHttpModule,Intelligencia.UrlRewriter" name="UrlRewriter" />
+    </httpModules>
+    <httpRuntime maxRequestLength="2097151" executionTimeout="3600" />
+    <compilation debug="true">
+      <assemblies>
+        <add assembly="System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+      </assemblies>
+    </compilation>
+    <authentication mode="Windows" />
+        
+        <customErrors mode="RemoteOnly" defaultRedirect="GenericErrorPage.htm">
+            <error statusCode="403" redirect="NoACcess.htm" />       
+            <error statusCode="404" redirect="FileNotFound.htm" />
+        </customErrors> 
+        
+    <customErrors mode="Off" defaultRedirect="error.htm?msg=0">
+      <error statusCode="403" redirect="error.htm?msg=2" />
+      <error statusCode="404" redirect="notfound.aspx" />
+      <error statusCode="500" redirect="error.htm?msg=4" />
+    </customErrors>
+    <sessionState mode="InProc" timeout="300" />
+    <pages enableViewState="false" validateRequest="false" enableViewStateMac="false">
+      <controls>
+        <add tagPrefix="CurrentPosition" tagName="CurrentPosition" src="~/Manager/NSWEditor/Common/CurrentPosition.ascx" />
+        <add tagPrefix="SpanCurrentPosition" tagName="SpanCurrentPosition" src="~/Manager/NSWEditor/Common/SpanCurrentPosition.ascx" />
+        <add tagPrefix="SelectRelevant" tagName="SelectRelevant" src="~/Manager/NSWEditor/Common/SelectRelevant.ascx" />
+        <add tagPrefix="radio_control" tagName="radio_control" src="~/Manager/NSWEditor/Common/radio_control.ascx" />
+        <add tagPrefix="ThumbnailImage" tagName="ThumbnailImage" src="~/Manager/NSWEditor/Common/ThumbnailImage.ascx" />
+        <add tagPrefix="RelevantColumn" tagName="RelevantColumn" src="~/Manager/NSWEditor/Common/RelevantColumn.ascx" />
+        <add tagPrefix="RightColumn" tagName="RightColumn" src="~/Manager/NSWEditor/Common/RightColumn.ascx" />
+        <add tagPrefix="NSW" tagName="UEditor" src="~/Manager/NSWEditor/Common/NSWEditor.ascx" />
+        <!--*************** 购物车:start ***************-->
+        <!--购物车当前位置-->
+        <add tagPrefix="CartLoc" tagName="CartLoc" src="~/UserControls/Cart/Loc.ascx" />
+        <!--底部向导-->
+        <add tagPrefix="BottomHelp" tagName="BottomHelp" src="~/UserControls/Product/BottomHelp.ascx" />
+        <!--*************** 购物车:end ***************-->
+        <!--*************** 前台页面:start ***************-->
+        <!--
+				<add tagPrefix="ucHeader" tagName="ucHeader" src="~/UserControls/Common/Header.ascx"/>
+				<add tagPrefix="ucFooter" tagName="ucFooter" src="~/UserControls/Common/Footer.ascx"/>
+				-->
+        <add tagPrefix="ucLocL" tagName="ucLocL" src="~/UserControls/Common/LocL.ascx" />
+        <!--*************** 前台页面:end ***************-->
+        <!--*************** 会员中心:start ***************-->
+        <!--当前位置-->
+        <add tagPrefix="UserLoc" tagName="UserLoc" src="~/UserControls/User/Loc.ascx" />
+        <!--行为操作-->
+        <add tagPrefix="UserActions" tagName="UserActions" src="~/UserControls/User/Actions.ascx" />
+        <!--*************** 会员中心:end ***************-->
+        <!--分页控件-->
+        <add assembly="Oran.WebControl.OranPager" namespace="Oran.WebControl" tagPrefix="OranPager" />
+        <!--OranRegion 地区控件-->
+        <add assembly="OranChinaRegion" namespace="Oran.WebControl" tagPrefix="chinaRegion" />
+        <!--在线线客服-->
+        <add tagPrefix="Kefu" tagName="Kefu" src="~/UserControls/IM/Kefu.ascx" />
+      </controls>
+    </pages>
+    <identity impersonate="false" />
+    <globalization requestEncoding="utf-8" responseEncoding="utf-8" fileEncoding="utf-8" />
+    <!--<machineKey validation="3DES" validationKey="319B474B1D2B7A87C996B280450BB36506A95AEDF9B51211" decryptionKey="280450BB36319B474C996B506A95AEDF9B51211B1D2B7A87" decryption="3DES"/>-->
+  </system.web>
+  <system.webServer>
+   
+    <handlers>
+      <add name="myurl" path="*.html" verb="*" modules="IsapiModule" scriptProcessor="C:\Windows\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll" resourceType="Unspecified" preCondition="classicMode,runtimeVersionv2.0,bitness32" />
+    </handlers>
+    <urlCompression doDynamicCompression="false" />
+  </system.webServer>
+</configuration>

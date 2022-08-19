@@ -1,0 +1,64 @@
+﻿<ul>
+    content:[
+        text:[
+            <li class="{field_warp}">
+                <span class="tit">{title}：</span>
+                <input type="text" name="{name}" class="{name}" />
+                {required}
+            </li>
+        ]
+
+        textarea:[
+            <li class="{field_warp}">
+                <span class="tit">{title}：</span>
+                <textarea name="{name}" class="{name}"></textarea>
+                {required}
+            </li>
+        ]
+
+        radio:[
+            <li class="li_{type} {field_warp}">
+                <span class="tit">{title}：</span>
+                radio_list:[
+                    <input type="radio" name="{name}" value="{val}"><label>{txt}</label>
+                ]
+            </li>
+        ]
+
+        checkbox:[
+            <li class="{field_warp}">
+                <span class="tit">{title}：</span>
+                checkbox_list:[
+                    <input type="checkbox" name="{name}" value="{val}"><label>{txt}</label>
+                ]
+            </li>
+        ]
+
+        select:[
+            <li class="{field_warp}">
+                <span class="tit">{title}：</span>
+                <select name="{name}">
+                    select_list:[
+                        <option value="{val}">{txt}</option>
+                    ]
+                </select>
+            </li>
+        ]
+
+        vcode:[
+            <li class="liVer">
+                <span class="tit">验证码：</span>
+                <input type="text" class="sp verify" name="verifycode">
+                <img alt="pic" src="/Tools/ValidCodes.aspx" onclick="this.src='/Tools/ValidCodes.aspx?' + new Date().getTime()" title="点击切换" class="vic" style="vertical-align:middle;margin-left:5px;">
+            </li>
+        ]
+
+        required:[
+            <i>*</i>
+        ]
+    ]
+    <li class="li_bn">
+        <input type="button" value="提交" class="submit">
+        <input type="button" value="重置" class="reset">
+    </li>
+</ul>

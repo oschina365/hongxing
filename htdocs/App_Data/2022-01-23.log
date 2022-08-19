@@ -1,0 +1,29 @@
+
+ 
+记录时间：2022-01-23 23:59:38,887 
+线程ID:[7] 
+日志级别：  ERROR 
+描述： 
+System.Net.WebException: 远程服务器返回错误: (500) 内部服务器错误。
+   在 System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   在 NSW.Admin.Tools.AdminTools.<>c__DisplayClass3.<GetUrltoHtmlAsync>b__2(IAsyncResult asyncResult)
+ 
+
+ 
+记录时间：2022-01-23 23:59:38,906 
+线程ID:[7] 
+日志级别：  ERROR 
+描述： 
+
+执行方法：
+方法1：<>c__DisplayClass3.<GetUrltoHtmlAsync>b__2(System.IAsyncResult asyncResult)
+方法2：LazyAsyncResult.Complete(IntPtr userToken)
+方法3：ContextAwareResult.CompleteCallback(System.Object state)
+方法4：ExecutionContext.runTryCode(System.Object userData)
+方法5：RuntimeHelpers.ExecuteCodeWithGuaranteedCleanup(TryCode code , CleanupCode backoutCode , System.Object userData)
+方法6：ExecutionContext.RunInternal(System.Threading.ExecutionContext executionContext , System.Threading.ContextCallback callback , System.Object state)
+方法7：ExecutionContext.Run(System.Threading.ExecutionContext executionContext , System.Threading.ContextCallback callback , System.Object state)
+方法8：ContextAwareResult.Complete(IntPtr userToken)
+方法9：LazyAsyncResult.ProtectedInvokeCallback(System.Object result , IntPtr userToken)
+
+ 

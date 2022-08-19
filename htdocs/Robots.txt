@@ -1,0 +1,14 @@
+User-Agent: * 
+User-agent: *
+Disallow: /Manager/
+Disallow: /User/
+Disallow: /UserControls/
+Disallow: /Config/
+Disallow: /Css/
+Disallow: /JS/
+Disallow: /API/
+Disallow: /Component/
+Disallow: /NSWEditor/
+Disallow: /Template/
+Disallow: /Skins/
+Disallow: /Plug/

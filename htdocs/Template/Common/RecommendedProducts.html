@@ -1,0 +1,27 @@
+﻿#*
+随机产品
+*#
+#set($curtype = $columntypes.product)
+#set($keyvalues = "%{selectcount=4,orderby='newid()',otherwhere='isCommend=1',otherfields='CustomFields01'}")
+#set($data=$nt.GetDetailed($curtype,$keyvalues))
+<div class="RandomNews">
+    <h4 class="diysr">
+        <span>展厅家具<i>Store Show</i></span><a href="/product" title="更多产品" target="_blank"><b>查看更多 >></b></a>
+    </h4>
+    <div class="news_random">
+        #set($rows__ = $data.rows)
+        #foreach($row in $rows__)
+        #set($index_ = $index % 4)
+        <dl class="Random_pd Random_pd_$index_">
+            <dt>
+                <a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="$sitedomain$row.PhotoPath" alt="$row.title" title="$row.title" /></a>
+            </dt>
+            <dd>
+                <a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><b>$row.title</b></a><p><span>$nt.getsubstring($row.ShortDesc,32)</span><span>$row.CustomFields01</span></p>
+            </dd>
+        </dl>
+        #end
+
+        <div class="clear"></div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ManagerUserControl.RelevantColumn, qwt" enableviewstate="false" %>
+<div class="f_cb f_mt25 <%=CssName %>">
+	<label class="add_label f_fl"><span class="f_pdl15">相关分类</span></label>
+	<div class="add_r f_fl">
+		<dl class="sv_checkbox f_fl">
+			<dt>请选择产品分类</dt>
+			<dd>
+			    <asp:DropDownList runat="server" CssClass="pass_faq fr_select" ID="ddlSelectColumn" multiple="multiple" size="5"></asp:DropDownList>	
+			</dd>
+		</dl>
+		<div class="sv_check_btn f_fl"><span class="sv_add">添 加</span><span class="sv_dele">删 除</span></div>
+		<dl class="sv_checkbox f_fl">
+            <dt class="pr"><a href="###" class="pro_up"></a><a href="###" class="pro_down"></a>已选分类</dt>
+			<dd>
+                <select multiple="multiple" size="5" class="pass_faq fl_select"></select>
+                <asp:HiddenField runat="server" ID="hdSelectColumnValue" />
+			</dd>
+		</dl>	
+	</div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        Timeout(function () {
+            loadJs("js/other/selectRelevant.js", function () {
+                var id = "<%=hdSelectColumnValue.ClientID %>";
+                var me = $("#" + id);
+                new RelevantColumn(me);
+            });
+        });
+    })
+</script>

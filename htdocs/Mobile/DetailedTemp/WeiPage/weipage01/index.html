@@ -1,0 +1,21 @@
+﻿<!--头部开始-->
+{$HeaderHtml$}  
+<link href="/Mobile/Css/weipage.css" rel="stylesheet" type="text/css" />
+<!--中间部分-->
+<div class="miniweb_con">
+    {$MiddleHtml$}
+</div>
+<!--在线留言 -->
+{$LiuYanHtml$}
+<!--底部开始-->
+{$FooterHtml$} 
+<script type="text/javascript">
+    var WeiPageId={$WeiPageId$};
+    $(function (){       
+        try {
+            UpdateWeiPageHits(WeiPageId);
+        } catch (e) {
+    
+        }
+    });
+</script>

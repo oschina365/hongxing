@@ -1,0 +1,25 @@
+﻿<div class="ban-ss">
+  <div class="banan-t content">
+    <p>
+      <b>热门搜索词：</b>
+      $mt.GetSearchKeyWord($mark,0,"")
+    </p>
+    <div class="banan-tr form">
+      <input class="inp01s keypress" button="#sousuo"  type="text" defvalue="请输入关键字……" id="seachkeywords">
+      <a >
+        <span>
+           <select class=""  id="select">
+	            <option value="">不限栏目</option>
+                #set($curtype = $columntypes.product)
+                 #foreach($row in $mt.GetColumnDataView($curtype,"ParentID=1"))
+                <option value="$row.sid">$row.title</option>
+                #end                           	
+	        </select>
+        </span>
+      </a>
+
+      <input class="inp02s" type="bottom" id="sousuo">
+    </div>
+  </div>
+</div>
+<script src="/JS/select2css.js" type="text/javascript"></script>

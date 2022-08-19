@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="index, qwt" enableviewstate="false" enableviewstatemac="false" %>

@@ -1,0 +1,13 @@
+﻿#*
+当前位置控件
+*#
+#if(!$dic)
+    #set($dic = $nt.GetColumnsLoc($columntype.tostring(),$!sid,false))
+#end
+<div class="plc">
+    <span class="red_x">当前位置：</span>
+    <a href="$sitedomain/" title="首页">首页</a>
+    #foreach($lo in $dic)
+        $loctemp<a href="$lo.Value" title="$lo.Key">$lo.Key</a>
+    #end
+</div>

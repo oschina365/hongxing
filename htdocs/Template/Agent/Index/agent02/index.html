@@ -1,0 +1,36 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+<div class="content">
+    <div class="right">
+        <div class="righttop"></div>
+        <div class="right_main">
+            #parse("$temppath/Common/locl.html")
+            <div class="agent_con">
+                <div class="age_li_about">
+                    #if($g.HelpDefaultID>0)
+                        #set($thisobj=$nt.GetEntity($columntype,$g.AgentDefaultID))
+                        #if($thisobj)
+                            $thisobj.Content
+                        #end
+                    #end
+                    #if(!$thisobj)
+                    <div id="nodata">数据更新中......</div>
+                    #end
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="rightbot"></div>
+        #parse("$temppath/Common/RecommendedProducts.html")
+        #parse("$temppath/Common/RecommendedNews.html")
+    </div>
+        
+    <div class="left">
+        #parses("$temppath/$columntype/column.html")
+        $c2.leftLx
+    </div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")

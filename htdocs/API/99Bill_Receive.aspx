@@ -1,0 +1,2 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.API._99Bill_Receive, qwt" enableviewstate="false" enableviewstatemac="false" %>
+<result><%=rtnOk %></result><redirecturl><%=rtnUrl %></redirecturl>

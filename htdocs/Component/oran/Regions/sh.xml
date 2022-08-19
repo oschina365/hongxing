@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--上海-->
+<!--http://www.code-studio.net LikeCode-->
+<regions>
+  <region>上海</region>
+  <region>黄浦区</region>
+  <region>徐汇区</region>
+  <region>长宁区</region>
+  <region>静安区</region>
+  <region>普陀区</region>
+  <region>闸北区</region>
+  <region>虹口区</region>
+  <region>杨浦区</region>
+  <region>闵行区</region>
+  <region>宝山区</region>
+  <region>嘉定区</region>
+  <region>浦东新区</region>
+  <region>金山区</region>
+  <region>松江区</region>
+  <region>青浦区</region>
+  <region>奉贤区</region>
+  <region>崇明县</region>
+</regions>

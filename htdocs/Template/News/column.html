@@ -1,0 +1,81 @@
+﻿#*
+副导航
+*#
+#if($sid)
+    #set($cur = !$sid)
+    #set($cursid=$sid)
+    
+    #if($sid.indexOf('0001,0012')>=0)
+    <div class="leib2 leib2s">
+        <div class="tit">
+            成功案例
+        </div>
+        <div class="nr">
+            #set($columnrows02 = $mt.GetColumnDataView($columntype,12))
+            #if($columnrows02.count > 0)
+            <ul>
+            #foreach($row in $columnrows02)
+                <li sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+            </ul>
+            #end           
+        </div>
+    </div>
+    #end
+
+    <div class="leib2 leib2_news">
+        <div class="tit">
+            新闻资讯
+        </div>
+        <div class="nr">
+            #set($columnrows02 = $mt.GetColumnDataView($columntype,11))
+            #if($columnrows02.count > 0)
+            <ul>
+            #foreach($row in $columnrows02)
+                <li sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+            </ul>
+            #end           
+        </div>
+    </div>
+
+    #if($sid.indexOf('0001,0011')>=0)
+    <div class="leib2 leib2s">
+        <div class="tit">
+            成功案例
+        </div>
+        <div class="nr">
+            #set($columnrows02 = $mt.GetColumnDataView($columntype,12))
+            #if($columnrows02.count > 0)
+            <ul>
+            #foreach($row in $columnrows02)
+                <li sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+            </ul>
+            #end           
+        </div>
+    </div>
+    #end
+#else
+<div class="leib2">
+    <div class="tit">
+        $!nt.GetColumnTitle($columntype)
+        <i>News Center</i>
+    </div>
+    <div class="nr">
+        #foreach($row in $mt.GetColumnDataView($columntype,1))
+            <h3 sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></h3>
+            #set($columnrows02 = $mt.GetColumnDataView($columntype,$row.id))
+            #if($columnrows02.count > 0)
+            <ul>
+            #foreach($row in $columnrows02)
+                <li sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+            </ul>
+            #end
+        #end
+    </div>
+</div>
+#end
+
+#set($columnrows02='')

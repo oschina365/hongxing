@@ -1,0 +1,36 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>$!pagetitle</title>
+    <meta name="keywords" content="$!meta_keywords" />
+    <meta name="description" content="$!meta_description" />
+    #foreach($css in $nt.GetStyles())
+    <link key="$css.key" href="$css.value.url" rel="stylesheet" type="text/css" />
+    #end
+    <link rel="apple-touch-icon-precomposed" href="/Mobile/images/common/touch-icon.png" />
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body$nt.getThree($!isDetailed," id='Details_Page'","")>
+<div$nt.getThree($!cssname," class='$!cssname'","")>
+#if(!$sid)
+    #set($sid = $page.sid)
+    #if(!$sid && $request)
+        #set($sid = $request.sid)
+    #end
+#end

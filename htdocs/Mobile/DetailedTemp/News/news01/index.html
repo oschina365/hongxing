@@ -1,0 +1,74 @@
+﻿{$HeaderHtml$} 
+<link href="/Mobile/Css/news.css" rel="stylesheet" type="text/css" />
+<!--新闻详细页-->
+<div class="g-bd">
+    <!--新闻导航-->
+    {$loc$}
+    <div class="m-con">
+        <!--新闻标题-->
+        <div class="u-mtit f-tc">
+            <h1 class="s-wc">{$title$}</h1>
+            <p>{$InputTime$}&nbsp;{$Reffer$}</p>
+        </div>
+        <!--新闻内容-->
+        <div id="content" class="m-mcon">
+            {$content$}
+        </div>
+        <!--分页-->
+        <div id="setPage" class="g-page f-tc">
+            <a id="up" class="u-pup" href="javascript:void(0)">上一页</a>
+            <a id="qw" class="u-sa" href="javascript:void(0)">余下全文</a>
+            <p id="pCount"><span class="u-pnum">1</span>/5</p>
+            <a id="next" class="u-pne" href="javascript:void(0)">下一页</a>
+        </div>
+        <!--分享-->
+        <div class="m-share">
+                <div class="m-ico">
+                    <span>分享到：</span>
+                    <a href="{$ShareSina$}" class="u-ico-1"></a>
+                    <a href="{$ShareWeibo$}" class="u-ico-2"></a>
+                    <a href="{$ShareQz$}" class="u-ico-3"></a>
+                    <div class="clear"></div>
+                </div>
+                
+         </div>
+
+        <!--关于手机的相关新闻-->
+        <div class="m-about">
+            {$RelevantArticle$}
+        </div>
+     
+        <!--推荐产品-->
+        <div class="m-rec j-slide-np">
+            <a href="#1" class="s-wc">
+                <h2 class="m-tit z-spe"><span class="u-ico"></span>推荐产品</h2>
+            </a>
+            <div class="m-con">
+                <div class="prev"></div>
+                <div class="m-nowr">
+                    <div class="m-box">
+                        {$divConmadProduct$}
+                    </div>
+                </div>
+                <div class="next"></div>
+            </div>
+        </div>
+        <!--热点推荐-->
+        <div class="m-about">
+            <h2 class="m-tit z-spe s-wc">热点推荐</h2>
+            <p class="list">
+                {$cntrCommandArticle$}
+            </p>
+        </div>
+    </div>
+</div>
+<!--底部开始-->
+{$FooterHtml$} 
+<script type="text/javascript">
+    $(function (){       
+        GetCommentById("reply", 3,{$ID$}, "{$type$}");
+        SetPageCount('{$GetType$}',{$ID$},{$PageCount$},'{$currPageUrl$}');        
+    });
+</script>
+
+

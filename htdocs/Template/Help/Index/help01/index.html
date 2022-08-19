@@ -1,0 +1,38 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<link href="/template/help/help01/StyleSheet.css" rel="stylesheet" type="text/css" />
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+#set($dvs = $mt.GetColumnDataView($columntype,1,"enable=1","OrderID asc"))
+<div class="content">
+    #parse("$temppath/Common/locl.html")
+    <div class="a_nav content clearfix">
+        <ul class="clearfix">
+            #foreach($row in $dvs)
+            <li sid='$row.sid' class="li_$index"><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="a_fz" id="a2">
+        <div class="content clearfix">
+            #if($g.HelpDefaultID>0)
+                #set($thisobj=$nt.GetEntity($columntype,$g.HelpDefaultID))
+                #if($thisobj)
+                    $thisobj.Content
+                #end
+            #end
+            #if(!$thisobj)
+            <div id="nodata">数据更新中......</div>
+            #end
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")
+<script type="text/javascript">
+    $(function () {
+        $(".a_nav li:eq(0)").addClass("cur");
+    })
+</script>

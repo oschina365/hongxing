@@ -1,0 +1,11 @@
+﻿</div>
+#foreach($css in $nt.GetStyles())
+<link key="$css.key" href="$css.value.url" rel="stylesheet" type="text/css" />
+#end
+#foreach($js in $nt.GetScripts())
+<script type="text/javascript" key="$js.key" src="$js.value.url"></script>
+#end
+     </script>-->
+    <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?be518259b9bd320fa77e6e8ed06e09c7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
+</body>
+</html>

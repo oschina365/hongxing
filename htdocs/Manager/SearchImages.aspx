@@ -1,0 +1,234 @@
+﻿ <%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Manager.SearchImages, qwt" enableviewstate="false" enableviewstatemac="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head runat="server">
+    <title><%= ItemName %></title>
+    <link href="skins/base/gallery.css" rel="stylesheet" type="text/css"/>
+    <link href="skins/base/products.css" rel="stylesheet" type="text/css"/>
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body style="height:400px;width:700px;margin:0 auto; overflow:hidden;">
+<style type="text/css">
+div.album_select{ margin-top:10px;}
+div.viewlist{margin-top:10px;}
+div.view_area{ height:165px;}
+div.insertList{padding-top:18px;}
+div.padlr20{ padding:0 10px 29px 12px;padding-bottom:0;}
+
+.album_select li,.insertimg_list li{ height:88px;overflow:hidden;}
+.album_select li a,.insertimg_list li a{ height:68px;}
+.album_select li img,.insertimg_list li img{max-height:68px;}
+
+.md_hide{ height:95px;}
+div.view_area{ height:118px;}
+
+div.insertList{ padding-top:12px; margin-left:14px;}
+
+.md_prev, .md_next{ margin-top:32px;}
+.album_select li i.pro_view{ bottom:23px;}
+.album_select li{ display:inline-block;}
+ul.f_cb{ width:101%; margin-left:-3px; display:block; position:relative;}
+.album_select li p{ line-height:17px;} 
+
+#infscr-loading div{line-height: 100px;text-align: center;width: 100px;display: inline-block; font-weight:bold; color:#f08300;}
+</style>
+<form id="form1" runat="server">
+    <div class="photo_block">
+		<!-- 选择相册 -->
+		<div class="loadbar f_cb f_ml20 form_search">
+            <label class="f_fl f_mr25">请选择相册</label>
+			<span class="clear_bd f_fl cho_album">
+				<asp:DropDownList ID="ddlColumnID" CssClass="pass_faq" runat="server"></asp:DropDownList>
+				<i class="revise_sub"></i>
+			</span>
+			<label class="f_fl f_ml25 f_mr20">图片名称</label>
+			<div class="search_so f_fl">
+				<input class="so_text f_fl clear_word" name="kwd" type="text">
+                <input type="hidden" name="ddlFields" value="[Title]" />
+				<input class="so_btn f_csp f_fl" type="button" onclick="SearchObjectByGet(this)" />
+			</div>
+		</div>
+		<!-- 选择相册 end-->
+	</div>
+	<div class="acc_cont_x padlr20 f_cb">
+        <div class="album_select f_mt20" style="height:188px; overflow:hidden; overflow-y:visible;">
+		    <ul class="f_cb">
+                <asp:Repeater ID="rptMain" runat="server"><ItemTemplate>
+			    <li pictureid="<%#Eval("ID") %>" id="p_<%#Eval("ID") %>">
+                    <i class="v_select"></i>
+                    <i class="pro_view"></i>
+                    <a href="javascript:;"><img src="<%#Eval("Path") %>" title="<%#Eval("Title") %>" /></a>
+                    <p><%#Eval("Title") %></p>
+                </li>
+                </ItemTemplate></asp:Repeater>
+                <li style="width: 98%;text-align: center; line-height:125px; height:100%;padding:0px; height:125px;" runat="server" visible="false" id="noImg">暂无图片...</li>
+		    </ul>
+	    </div>
+
+	    <!-- 预览图列表 -->
+	    <div class="viewlist bord_gray f_mt20">
+		    <div class="view_tips">预览插入的图片（缩略图限<span id="max"></span>张，样张图限6张）</div>
+		    <div class="view_area">
+			    <div class="insertList f_cb">
+				    <div class="md_prev f_fl f_csp" id="prev_01"><img src="skins/Img/leftjt.gif" /></div>
+				    <div class="md_hide f_fl">
+					    <ul class="insertimg_list f_cb ThumbnailImage" data-src='{"width":"112","show":"5","prev":"#prev_01","next":"#next_01"}'></ul>
+					</div>
+					<div class="md_next f_fl f_csp" id="next_01"><img src="skins/Img/rightjt.gif" /></div>
+			    </div>
+		    </div>	
+	    </div>
+    </div>
+</form>
+</body>
+<script src="js/easyui/jquery.infinitescroll.min.js" type="text/javascript"></script>
+<script src="js/easyui/jquery.masonry.min.js" type="text/javascript"></script>
+<script src="js/other/thumbnailImage.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        var $container = $('ul.f_cb:eq(0)');
+        $container.imagesLoaded(function () {
+            $container.masonry({
+                itemSelector: '.item',
+                columnWidth: 240
+            });
+        });
+
+        $container.infinitescroll({
+            navSelector: '#page-nav', //分页导航的选择器  
+            nextSelector: '#page-nav a', //下页连接的选择器  
+            itemSelector: '.album_select li', //你要检索的所有项目的选择器  
+            binder: $container.parent(),
+            loading: {
+                finishedMsg: '已经没有了', //结束显示信息  
+                img: 'http://i.imgur.com/6RMhx.gif', //loading图片
+                msgText: "正在加载中"
+            },
+            pathParse: function (url, page) {
+                url = url.replace(/(page=\d*)&*/i, "");
+                var sp = "&";
+                if (url.indexOf("?") == -1) {
+                    sp = "?";
+                }
+                return [url + sp + "page=", ""];
+            }
+        },
+        //作为回调函数触发masonry  
+        function (newElements) {
+            // 当加载时隐藏所有新项目  
+            var $newElems = $(newElements).css({ opacity: 0 });
+            // 在添加到masonry布局之前保证图片载入  
+            $newElems.imagesLoaded(function () {
+                // 现在可以显示所有的元素了  
+                $newElems.animate({ opacity: 1 });
+                $container.masonry('appended', $newElems, true);
+            });
+        });
+    });  
+</script>
+<%
+    string url = Request.Url.ToString();
+    int index = url.ToLower().IndexOf("searchimages");
+    if (index > 0) {
+        url = url.Substring(index);
+    }
+%>
+<div id="page-nav"><a href="<%=url%>"></a></div>
+<script type="text/javascript">
+    //点击图片展示效果
+    var pictureEnlarge = function (src) {
+        loadCss("skins/fancybox/jquery.fancybox.css", window.top.document);
+        loadJs("js/easyui/jquery.fancybox.js", function () {
+            try {
+                var host = "http[s]?://(www.)?" + window.location.host;
+                var reg = new RegExp("(" + host.replace(/\\/, '\\').replace(/\//, '\/') + ")", "ig");
+                src = src.replace(reg, "");
+            } catch (e) {
+                console.log(e);
+            }
+            window.top.$.fancybox.open(
+                [
+                    {
+                        href: src,
+                        title: src
+                    }
+                ], {
+                    _autoWidth: true,
+                    autoResize: false,
+                    autoSize: false
+                }
+            );
+        }, window.top.document);
+    }
+    $(function () {
+        var max = window.parent._MAX_ || 100;
+        $("#max").text(max);
+        var lis = $(".album_select li");
+        if (max == 1) {
+            $(document).on("click", ".album_select li", function (event) {
+                if (event && event.target && event.target.tagName == "I" && $(event.target).hasClass("pro_view")) {
+                    pictureEnlarge($(this).find("img").attr("src"));
+                    return;
+                }
+                lis = $(".album_select li").filter(".zon").removeClass("zon");
+                $(this).addClass("zon");
+                $("ul.insertimg_list").empty();
+                var li = $(this).clone();
+                li.find("i").remove().end().append('<i class="pro_view"></i><i class="v_dele"></i>');
+                $("ul.insertimg_list").append(li);
+                li.attr("id", "n_" + li.attr("id"));
+            })
+        } else {
+            $(document).on("click", ".album_select li", function (event) {
+                if (event && event.target && event.target.tagName == "I" && $(event.target).hasClass("pro_view")) {
+                    pictureEnlarge($(this).find("img").attr("src"));
+                    return;
+                }
+                if ($(this).hasClass("zon")) {
+                    var pictureid = $(this).attr("pictureid");
+                    $("#n_p_" + pictureid).remove();
+                    $(this).removeClass("zon");
+                } else {
+                    if ($("ul.insertimg_list li").length > max - 1) {
+                        _alert("缩略图限" + max + "张！", false);
+                        return;
+                    } else {
+                        $(this).addClass("zon");
+                        var li = $(this).clone();
+                        li.find("i").remove().end().append('<i class="pro_view"></i><i class="v_dele"></i>');
+                        $("ul.insertimg_list").append(li);
+                        li.attr("id", "n_" + li.attr("id"));
+
+                        SetDraggableLi(li);
+                    }
+                }
+            })
+        }
+        $(document).on("click", "i.v_dele", function (event) {
+            event.stopPropagation();
+            var li = $(this).parents("li");
+            $("#p_" + li.attr("pictureid")).removeClass("zon");
+            li.remove();
+        })
+        $(window.parent.document.body).find("#_count_").text("<%=Count %>");
+
+        $(document).on("click", "ul.insertimg_list li i.pro_view", function (event) {
+            event.stopPropagation();
+            pictureEnlarge($(this).parent().find("img").attr("src"));
+            return false;
+        })
+    })
+    window._clear_ = function () {
+        $("i.v_dele").click();
+    }
+</script>
+</html>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head><title>网站消息提示</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+*{padding:0;margin:0;border:0}
+body{font-family: verdana, arial, helvetica, sans-serif;background-color: #aaa;text-align: center;}
+.box{border-right: #777 1px solid;padding-right: 20px;border-top: #777 1px solid;padding-left: 125px;font-size: 12px;background: url(/img/graffiti-logo.gif) #fff no-repeat 22px 43px;padding-bottom: 20px;margin: 150px auto auto;border-left: #777 1px solid;width: 450px;color: #333;line-height: 1.5em;padding-top: 25px;border-bottom: #777 1px solid;text-align: left;}
+.box H3{padding-left: 12px;font-weight: bold;font-size: 14px;margin: -25px -20px 20px -125px;color: #fff;line-height: 28px;background-color: #777;}
+#spTimeout{font-weight:bold;color:#f39700;font-size:14px;margin-right:5px}
+</style>
+<script type="text/javascript">
+function $qs(paraNm) {
+    var args = new Object();
+    var query = location.search.substring(1);
+    var pairs = query.split("&");
+    for (var i = 0; i < pairs.length; ++i) {
+        var pos = pairs[i].indexOf('=');
+        if (!pos) continue;
+        var paraNm2 = pairs[i].substring(0, pos);
+        var vlu = pairs[i].substring(pos + 1);
+        vlu = decodeURIComponent(vlu);
+        args[paraNm2] = vlu;
+    }
+    return args[paraNm];
+}
+var errs = new Array("未知的错误", "错误的操作", "403禁止访问：访问被拒绝。", "404找不到文件或目录。", "500服务器内部错误。");
+var TIMEOUT=10;
+var i1=window.setInterval(function(){
+    document.getElementById("spTimeout").innerHTML=TIMEOUT;
+    --TIMEOUT;
+    if(TIMEOUT<0){
+        window.clearInterval(i1);
+        location.href="/";
+    }
+},1000)
+</script>
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+<div class="box">
+    <h3>网站消息提示</h3>
+    <div style="height:60px">
+        <p><script type="text/javascript">document.write(errs[$qs('msg')]);</script></p>
+        <div>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="history.back()">返回上一页</a></li>
+                <li><a href="/"><span id="spTimeout"><script type="text/javascript">document.write(TIMEOUT);</script></span>秒后自动返回网站首页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body></html>

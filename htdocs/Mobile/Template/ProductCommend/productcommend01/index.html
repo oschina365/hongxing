@@ -1,0 +1,13 @@
+﻿#parses("$mtemppath/Common/Header.html?cssname=main")
+#parses("$mtemppath/Common/BackPreviousControl.html?curtype=$!columntype")
+#includes("$mtemppath/Common/SearchControl.html")
+
+#paging($rows "%{otherwhere='isCommend=1'}")
+<div class="g-bd">
+    #set($rows_ = $mt.GetColumnDataView($columntype,"ID = 1"))
+    #set($thisrow = $rows_.get_item(0))
+    #parses("$mtemppath/Universal/${columntype}_list_${thisrow.MShowDetail}.html")
+
+    #parses("$mtemppath/Common/paging.html")
+</div>
+#parses("$mtemppath/Common/Footer.html")

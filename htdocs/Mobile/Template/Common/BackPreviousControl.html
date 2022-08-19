@@ -1,0 +1,8 @@
+﻿#if(!$curtype || $curtype=="")
+    #set($curtype=$columntypes.help)
+#end
+<div class="g-back">
+    <a href="javascript:history.go(-1);" class="u-bp f-fl"></a>
+    <a href="/mobile/tools/ListNav.aspx?type=$curtype" class="u-bl f-fr"></a>
+    <a href="/mobile/" class="u-bh f-fr"></a>
+</div>

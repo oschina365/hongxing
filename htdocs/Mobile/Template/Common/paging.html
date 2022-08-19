@@ -1,0 +1,13 @@
+﻿#if($pageSplit && $pageSplit.PageCount>1)
+<div class="g-page f-tc">
+    <a id="btnPageUp" class="u-pup" onclick="return SetListPage('pageUp','')"  href="javascript:void(0)">上一页</a>
+    <div class="pager-select">
+        <div class="page_number"><span class="u-pnum">$pageSplit.PageIndex</span>/<span class="u-allpage">$pageSplit.PageCount</span><em class="page-icon"></em></div>
+        <select class="select_box" id="drpPageIndex" onchange="return SetListPage('',this.value)"></select>
+    </div>
+    <div style="display:none";>
+        <span id="lblPageIndex" class="u-pnum">$pageSplit.PageIndex</span>/<span id="lblTotalCount" >$pageSplit.PageCount</span>
+    </div>
+     <a id="btnPageDown" class="u-pne" onclick="return SetListPage('pageNext','')"  href="javascript:void(0)">下一页</a>
+</div>
+#end

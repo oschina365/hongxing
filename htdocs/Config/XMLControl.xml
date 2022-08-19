@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ArrayOfXMLControl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  <XMLControl>
+    <ID>1</ID>
+    <Title>头部控件</Title>
+    <ShortDesc />
+    <Type>1</Type>
+    <Path>/Template/Common/Header.html</Path>
+    <Code>#parses("$temppath/Common/Header.html")</Code>
+    <Enable>true</Enable>
+    <OrderID>50</OrderID>
+  </XMLControl>
+
+  <XMLControl>
+    <ID>2</ID>
+    <Title>底部控件</Title>
+    <ShortDesc />
+    <Type>1</Type>
+    <Path>/Template/Common/Footer.html</Path>
+    <Code>#parses("$temppath/Common/Footer.html")</Code>
+    <Enable>true</Enable>
+    <OrderID>50</OrderID>
+  </XMLControl>
+
+  <XMLControl>
+    <ID>3</ID>
+    <Title>推荐资讯</Title>
+    <ShortDesc />
+    <Type>1</Type>
+    <Path>/Template/Common/RecommendedNews.html</Path>
+    <Code>#parses("$temppath/Common/RecommendedNews.html")</Code>
+    <Enable>true</Enable>
+    <OrderID>50</OrderID>
+  </XMLControl>
+
+  <XMLControl>
+    <ID>4</ID>
+    <Title>推荐产品</Title>
+    <ShortDesc />
+    <Type>1</Type>
+    <Path>/Template/Common/RecommendedProducts.html</Path>
+    <Code>#parses("$temppath/Common/RecommendedProducts.html")</Code>
+    <Enable>true</Enable>
+    <OrderID>50</OrderID>
+  </XMLControl>
+
+  <XMLControl>
+    <ID>5</ID>
+    <Title>当前位置</Title>
+    <ShortDesc />
+    <Type>1</Type>
+    <Path>/Template/Common/locl.html</Path>
+    <Code>#parses("$temppath/Common/locl.html")</Code>
+    <Enable>true</Enable>
+    <OrderID>50</OrderID>
+  </XMLControl>
+  
+</ArrayOfXMLControl>

@@ -1,0 +1,129 @@
+﻿{$HeaderHtml$}
+<script type="text/javascript">
+    var OBJ_TITLE = "{$title$}";
+    var OBJ_ID = "{$ID$}";
+    var SID = "{$SID$}";
+    //图片路径数组
+    var ARR_IMG_PATH = [{$ImagePathes$}];
+    window.jqzooms_ = false;
+    var jqzooms = function(src){
+        if(!window.jqzooms_){
+            $(function(){
+                $(".jqzoom").jqzoom({ title: false, zoomWidth: 340, zoomHeight: 340, xOffset: 4 });
+            })
+            window.jqzooms_= true;
+        }
+    }
+</script>
+{$AuthorityLayer$}
+<div class="topadcs">{$detailed_ad$}</div>
+<div class="content">
+    <div class="rightl">
+        <div class="righttop"></div>
+        <div class="plc"><span class="red_x">当前位置：</span>{$Loc$}</div>
+        <div class="rightbot"></div>
+        <div class="righttop"></div>
+        <div class="pro_main">
+            <div id="printableview">
+                <div class="pleft">
+                    <div class="mainbox">
+                        <div class="maincont">
+                            <div class="prodetailsinfo">
+                                <div class="proviewbox">
+                                    <div class="probigshow">
+                                        <a class="jqzoom" href="{$site_domain$}{$MainPhoto$}" title="{$title$}">
+                                            <img src="{$site_domain$}{$MainPhoto$}" alt="{$title$}" title="{$title$}" onload="jqzooms(this)" onerror="jqzooms(this)" class="js_goods_image_url"></a>
+                                    </div>
+                                    <div class="div_prothumb">
+                                        <div class="thumbporbox">
+                                            <ul class="ul_prothumb" id="img_list">
+                                            </ul>
+                                        </div>
+                                        <span class="span_prev span_prevb">prev</span><span class="span_next span_nextb">next</span>
+                                    </div>
+                                    <div class="div_prolinks">
+                                        <a id="a_enlarge" onclick="viewBigImage({$ID$})" href="#">查看全部大图</a>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pright">
+                    {$productshortdescextend$}
+                </div>
+<!--
+                <div class="clear"></div>
+                <div class="fenlei">
+                    <div class="tit">
+                        {$DetailExtend$}
+                        <div class="clear"></div>
+                    </div>
+                </div>
+-->
+                <div class="clear"></div>
+                <div class="proinfo " id="detailvalue0">
+                    {$attrs$} {$Content$}<div class="clear"></div>{$lianxnr$}
+                </div>
+                {$DetailExtendValue$}
+                <div class="pro_key">{$keywords$}</div>
+                <div class="online" id="tbForm1">
+                    <h2 id="caigou">采购：<span>{$title$}</span></h2>
+                    <ul class="clearfix">
+                        <li class="li01">
+                            <span><em class="red_x">*</em>联系人：</span><input type="text" id="txtContact" class="inp1" name="" />
+                        </li>
+                        <li class="li02">
+                            <span><em class="red_x">*</em>手机：</span><input type="text" id="txtMobile" class="inp2" name="" />
+                        </li>
+                        <li class="li01">
+                            <span>公司名称：</span><input type="text" id="txtCompName" class="inp7" name="" />
+                        </li>
+                        <li class="li03">
+                            <span>邮箱：</span><input type="text" id="txtEmail" class="inp3" name="" />
+                        </li>
+                        <li style="display: none;" class="li03">
+                            <span>电话：</span><input type="text" id="txtMobile" class="inp3" name="" />
+                        </li>
+                        <li style="display: none;" class="li03">
+                            <span>地址：</span>
+                            <input type="text" id="txtAddr" class="inp3" name="" />
+                        </li>
+                        <li class="li04">
+                            <span><em class="red_x">*</em>采购意向：</span><textarea id="txtContent" class="inp4" rows="" cols="" name="" /></textarea>
+                        </li>
+                        <li class="li05">
+                            <span><em class="red_x">*</em>验证码：</span><input type="text" id="txtValidate" class="inp5" name="" /><img alt="验证码" id="imgvalidate" style="vertical-align: middle;cursor: pointer" src="/Tools/ValidCodes.aspx" onclick="this.src='/Tools/ValidCodes.aspx?'+new Date().getTime()" onerror="this.src='/Tools/ValidCodes.aspx?'+new Date().getTime()" />
+                        </li>
+                        <li class="li06">
+                            <input type="button" class="b15 btn1" onclick="submitOrder(this,{$ID$})" value="提 交" name="" />
+                            <input type="button" value="重 填" onclick="emptyText('tbForm1')" class="b15 btn2" name="" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+            {$RelevantNews$}
+        </div>
+        <div class="rightbot"></div>
+    </div>
+    <div class="leftr">
+        {$Columns$}
+        <div id="divHistoryRecommentCntr"></div>
+        <div id="divHistoryCntr" class="leib2" style="display: none;"></div>
+        {$leftlx$}
+    </div>
+    <div class="clear"></div>
+</div>
+<!--content:end-->
+<script type="text/javascript">
+    productLoad();
+
+    if ($("div.leftr").height() - $("div.rightl").height() > 500) {
+        $("#divHistoryRecommentCntr").hide();
+    } else {
+        $("#divHistoryRecommentCntr").show();
+    }
+</script>
+{$FooterHtml$}

@@ -1,0 +1,11 @@
+﻿#parses("$mtemppath/Common/Header.html?cssname=main")
+#parses("$mtemppath/Common/BackPreviousControl.html?curtype=$!columntype")
+#includes("$mtemppath/Common/SearchControl.html")
+#parses("$mtemppath/Common/locl.html")
+
+#paging($rows "%{sid=$!sid}")
+<div class="g-bd">
+    #parses("$mtemppath/Universal/news_list_${thisrow.MShowDetail}.html")
+    #parses("$mtemppath/Common/paging.html")
+</div>
+#parses("$mtemppath/Common/Footer.html")

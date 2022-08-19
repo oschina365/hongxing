@@ -1,0 +1,2 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="NSW.Web.UserControls.Cart.Loc, qwt" enableviewstate="false" %>
+<div class="cart_crumbs">当前位置：<a href="/">首页</a> &raquo; <a href="cart.aspx">我的购物车</a><asp:Literal runat="server" ID="ltl"></asp:Literal></div>

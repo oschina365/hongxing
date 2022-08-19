@@ -1,0 +1,2 @@
+﻿<%@ control language="C#" autoeventwireup="true" inherits="ManagerUserControl.radio_controls, qwt" enableviewstate="false" %>
+<span class="<%=CssName %><%=hdRadioButton.Checked?" "+CurCssName:"" %> radio"<%=string.IsNullOrEmpty(GroupName)?"":" name='"+GroupName+"'" %> cur="<%=CurCssName %>"><%=Text %><asp:RadioButton ID="hdRadioButton" CssClass="dn" runat="server" /></span>

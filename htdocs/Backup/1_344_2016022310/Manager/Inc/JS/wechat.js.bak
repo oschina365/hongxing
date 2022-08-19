@@ -1,0 +1,377 @@
+﻿//(function () {
+var SIGLE_TEMPLATE = "{$title$}$#${$author$}$#${$image$}$#${$cover$}$#${$shortdesc$}$#${$content$}$#${$baseurl$}";
+var TEMPLATE = "{$title$}$#${$author$}$#${$image$}$#${$cover$}$#${$content$}$#${$baseurl$}";
+function _$$(v) {
+    if (v) {
+        return $("#" + v);
+    } else {
+        return null;
+    }
+}
+var editor = $("#Ueditor").data("editor");
+var NSW = {
+    uid: $("#ddlColumnID").val(),
+    readyinit: false,
+    selector: {
+        editorBase: 'iframe_found',
+        editorTitle: 'edit_title',
+        editorAuthor: 'edit_author',
+        editorThumb: 'edit_thumb',
+        editorFRM: 'checkfrm',
+        editorDesc: 'editor_desc',
+        editorContent: 'nsweditor',
+        editorURL: 'editor_url',
+        appmsgView: 'appmsg_view',
+        appmsgAdd: 'appmsgadd'
+    },
+    items: '<div class="appmsg_item" id="appmsgitem{$id$}">' +
+                   '<img class="js_appmsg_thumb appmsg_thumb" src="">' +
+                   '<i class="appmsg_thumb default">缩略图</i>' +
+                   '<h4 class="appmsg_title">' +
+                   '<a href="javascript:;">标题</a></h4>' +
+                   '<div class="appmsg_edit_mask">' +
+                   '<a class="icon18_common edit_gray js_edit" href="javascript:void(0);">编辑</a> <a class="icon18_common del_gray js_del" href="javascript:void(0);">删除</a>' +
+                   '</div><div class="arrow_in"></div><textarea></textarea><div class="clear"></div></div>',
+    resetEditor: function () {//初始化编辑区域的内容
+        _$$(this.selector.editorBase).find("input:text,textarea").val("");
+        $("#edit_thumb").val("");
+        if (window._imgs_) {
+            window._imgs_.ShowImg();
+        }
+        if (editor) {
+            editor.html("");
+        }
+        _$$(this.selector.editorFRM).removeAttr("checked").parent().removeClass("z_select"); //.attr("checked", false);
+        $("#pview").html('');
+    },
+    bindCurrent: function ($src) {//编辑的时候赋值
+        this.changeEditor($src);
+
+        $src.addClass("current").siblings().removeClass("current");
+        var _t = this;
+        $.each(NSW.selector, function (i, v) {
+            _t._getVal($src, v);
+        });
+    },
+    _getVal: function ($src, attr) {//编辑的时候赋值
+        var val = $src.attr(attr);
+        val = val == undefined ? "" : val;
+        switch (attr) {
+            case NSW.selector.editorTitle:
+                _$$(NSW.selector.editorTitle).val(val);
+                break;
+            case NSW.selector.editorAuthor:
+                _$$(NSW.selector.editorAuthor).val(val);
+                break;
+            //            case NSW.selector.editorThumb:     
+            //                if (val) {     
+            //                    _$$(NSW.selector.editorThumb).val(val);     
+            //                    $("#pview").html('<img src="' + val + '" width="100" height="100" /><a href="javascript:;" id="delthumb">删除</a>');     
+            //                } else {     
+            //                    $("#pview").html('');     
+            //                    _$$(NSW.selector.editorThumb).val('');     
+            //                }     
+            //                if (window._imgs_) {     
+            //                    window._imgs_.ShowImg();     
+            //                }     
+            //                break;     
+            case NSW.selector.editorFRM:
+                var true_ = (val != "" && val == "true");
+                if (true_) {
+                    _$$(NSW.selector.editorFRM).parent().addClass("z_select");
+                } else {
+                    _$$(NSW.selector.editorFRM).parent().removeClass("z_select");
+                }
+                _$$(NSW.selector.editorFRM).attr("checked", true_);
+                break;
+            case NSW.selector.editorThumb:
+                _$$(NSW.selector.editorThumb).val(val);
+                if (window._imgs_) {
+                    window._imgs_.ShowImg();
+                }
+                break;
+            case NSW.selector.editorDesc:
+                _$$(NSW.selector.editorDesc).val(val);
+                break;
+            case NSW.selector.editorURL:
+                _$$(NSW.selector.editorURL).val(val);
+                break;
+            case NSW.selector.editorContent:
+                if (editor) {
+                    editor.html($src.find("textarea").val());
+                }
+                break;
+            default:
+
+                break;
+        }
+    },
+    updateImage: function (imgpath) { //上传图片后添加图片信息
+        $(".appmsg_content .current").addClass("has_thumb").attr(NSW.selector.editorThumb, imgpath).find("img.appmsg_thumb").attr("src", imgpath);
+    },
+    changeEditor: function ($src) {//切换的时候 先存值 内容
+        if ($src.attr("id") == "appmsgitem1") {
+            $(".othertip").hide().siblings(".itips").show();
+        }
+        else {
+            $(".othertip").show().siblings(".itips").hide();
+        }
+        if ($(".appmsg_item").length == 1) {
+            _$$(NSW.selector.editorDesc).parents(".appmsg_edit_item").show();
+        } else {
+            _$$(NSW.selector.editorDesc).parents(".appmsg_edit_item").hide();
+        }
+    },
+
+    initValue: function (attr, value) {
+        var $current = $(".appmsg_content .current");
+        if (attr == this.selector.editorFRM) {
+            //alert(value);
+            $current.attr("checked", value);
+        } else if (attr == this.selector.editorContent) {
+            $current.find("textarea").val(value).trigger("hasValue");
+        } else {
+            $current.attr(attr, value).trigger("hasValue");
+        }
+    }
+};
+//删除
+$(".js_del").live("click", function () {
+    NSW.resetEditor();
+    $(this).parents(".appmsg_item").remove();
+});
+//编辑
+$(".js_edit").live("click", function () {
+    NSW.bindCurrent($(this).parents(".appmsg_item"));
+});
+//添加左侧图文个数显示
+_$$(NSW.selector.appmsgAdd).click(function (event, datainfo) {
+    if ($(".appmsg_content .appmsg_item").size() >= 8) {
+        _alert("只能添加8条信息");
+        return;
+    }
+    if (typeof datainfo === "string" && $(".appmsg_content .appmsg_item").size() == 1 && !NSW.readyinit) {
+        NSW.readyinit = true; 
+    }
+    else {
+        //添加
+        $(this).before($(NSW.items));
+    }
+
+    var $current = $(".appmsg_content .appmsg_item:last");
+    //设置
+    $current.addClass("current").siblings().removeClass("current");
+    $current.find(".js_edit").trigger("click");
+    //添加默认值
+    if (typeof (datainfo) === "string") {
+        var sigledata = datainfo.split("$#$");
+        if (sigledata.length == 7) {//单个
+            $.each(sigledata, function (i, v) {
+                switch (i) {
+                    case 0: //标题
+                        NSW.initValue(NSW.selector.editorTitle, v);
+                        break;
+                    case 1: //作者
+                        NSW.initValue(NSW.selector.editorAuthor, v);
+                        break;
+                    case 2: //图片
+                        NSW.updateImage(v);
+                        break;
+                    case 3: //封面
+                        NSW.initValue(NSW.selector.editorFRM, v);
+                        break;
+                    case 4:
+                        NSW.initValue(NSW.selector.editorDesc, v);
+                        break;
+                    case 5:
+                        NSW.initValue(NSW.selector.editorContent, v);
+                        break;
+                    case 6:
+                        NSW.initValue(NSW.selector.editorURL, v);
+                        break;
+                    default:
+                        break;
+                }
+            });
+        } else if (sigledata.length == 6) {//多个
+            $.each(sigledata, function (i, v) {
+                switch (i) {
+                    case 0: //标题
+                        NSW.initValue(NSW.selector.editorTitle, v);
+                        break;
+                    case 1: //作者
+                        NSW.initValue(NSW.selector.editorAuthor, v);
+                        break;
+                    case 2: //图片
+                        NSW.updateImage(v);
+                        break;
+                    case 3: //封面
+                        NSW.initValue(NSW.selector.editorFRM, v);
+                        break;
+                    case 4:
+                        NSW.initValue(NSW.selector.editorContent, v);
+                        break;
+                    case 5:
+                        NSW.initValue(NSW.selector.editorURL, v);
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }
+        $current.find(".js_edit").trigger("click");
+    }
+});
+
+//_$$(NSW.selector.editorBase).find("#edit_thumb").change(function () {
+//    var div = $("div.appmsg_content .current");
+//    if (div.length) {
+//        div.find("textarea").val($(this).html());
+//    }
+//})
+
+_$$(NSW.selector.editorBase).find("input:text,textarea").keyup(function () {//动态显示值
+    var _id = $(this).attr("id");
+    var val = $.trim($(this).val());
+    switch (_id) {
+        case NSW.selector.editorTitle:
+            $(".appmsg_content .current").attr(NSW.selector.editorTitle, val).find(".appmsg_title a").html(val);
+            break;
+        case NSW.selector.editorAuthor:
+            $(".appmsg_content .current").attr(NSW.selector.editorAuthor, val);
+            break;
+        case NSW.selector.editorDesc:
+            $(".appmsg_content .current").attr(NSW.selector.editorDesc, val);
+            break;
+        case NSW.selector.editorURL:
+            $(".appmsg_content .current").attr(NSW.selector.editorURL, val);
+            break;
+        default:
+
+            break;
+    }
+});
+var editorFRMClik = function () {
+    var _tmp = typeof $(this).attr("checked") === "string" && $(this).attr("checked") == "checked";
+    $(".appmsg_content .current").attr(NSW.selector.editorFRM, _tmp);
+}
+//初始第一条信息
+var _firstVal = setInterval(function () {
+    if (editor) {
+        clearInterval(_firstVal);
+        $(".js_edit:first").trigger("click");
+    }
+}, 500);
+//保存时候综合信息
+function saveWXGroup() {
+    if ($("#ddlColumnID").val() != NSW.uid) //帐户选择触发comfirm
+    {
+        if (confirm("重新选择群发帐户会导致消息丢失，是否继续？")) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        var val = "";
+        var ischeck = true;
+        var dataarr = [];
+        $(".appmsg_content .appmsg_item").each(function (ii) {
+            var data = checkData($(this));
+            if (!data.state) {
+                $(this).addClass("appmsg_error");
+                ischeck = false;
+                NSW.bindCurrent($(this));
+                alert(data.msg);
+                return false;
+            } else {
+                $(this).removeClass("appmsg_error");
+                dataarr.push(data.datainfo);
+            }
+        });
+
+        if (ischeck) { //如果验证通过,保存数据
+            var ok = dataarr.join(CONTENT_SPLTER);
+            $("#hdnAllContent").val(ok);
+            return true;
+        }
+        return false;
+    }
+}
+//验证数据信息 title,thumb,content 
+//true 验证成功,false验证失败
+function checkData($src) {
+    var b = { state: true, msg: "", datainfo: $(".appmsg_content .appmsg_item").length == 1 ? SIGLE_TEMPLATE : TEMPLATE };
+    var val = null;
+    $.each(NSW.selector, function (i, v) {
+        val = $src.attr(v);
+        if (i == "editorTitle") {
+            if (val == undefined || ($.trim(val).length > 64 && $.trim(val).length != 0)) {
+                b.state = false;
+                b.msg = "标题不能为空且长度不能超过64字";
+                return false;
+            }
+            else { b.datainfo = b.datainfo.replace(/\{\$title\$\}/gi, val); }
+        } else if (i == "editorAuthor") {
+            if (val != undefined && $.trim(val).length > 8) {
+                b.state = false;
+                b.msg = "作者不能超过8个字";
+                return false;
+            }
+            b.datainfo = b.datainfo.replace(/\{\$author\$\}/gi, val === undefined ? "" : val);
+        } else if (i == "editorThumb") {
+            if (val == undefined || $.trim(val) == "") {
+                b.state = false;
+                b.msg = "必须插入一张图片";
+                return false;
+            } else { b.datainfo = b.datainfo.replace(/\{\$image\$\}/gi, val); }
+        } else if (i == "editorContent") {
+            val = $src.find("textarea").val();
+            if ($.trim(val).length > 2e4 || $.trim(val).length == 0) {
+                b.state = false;
+                b.msg = "正文不能为空且长度不能超过" + 2e4 + "字";
+                return false;
+            } else { b.datainfo = b.datainfo.replace(/\{\$content\$\}/gi, val); }
+        } else if ($(".appmsg_item").length == 1 && i == "editorDesc") {
+            if (val == undefined || $.trim(val).length > 120) {
+                b.state = false;
+                b.msg = "摘要不能为空且长度不能超过120字";
+                return false;
+            } else { b.datainfo = b.datainfo.replace(/\{\$shortdesc\$\}/gi, val); }
+        } else if (i == "editorFRM") {
+            b.datainfo = b.datainfo.replace(/\{\$cover\$\}/gi, val === undefined ? "false" : val);
+        } else if (i == "editorURL") {
+            b.datainfo = b.datainfo.replace(/\{\$baseurl\$\}/gi, val === undefined ? "" : val);
+        }
+    });
+    return b;
+}
+var CONTENT_SPLTER = "$##||$";
+function initValue() {
+    var val = $("#hdnAllContent").val(); //$("#html").html(); //$("#hdnAllContent").val();
+    if (val) {
+        var data = val.split(CONTENT_SPLTER);
+        if (data.length > 0) {
+            $.each(data, function (iindex, ivalue) {
+                _$$(NSW.selector.appmsgAdd).trigger("click", ivalue);
+            });
+        }
+    }
+}
+initValue();
+function initSelectValue(data) {
+    if (typeof data === "object") {
+        $.post("Handler/WAjax.ashx?action=getwxnewslite&t=" + Math.random(), {
+            types: data.types,
+            typesinfo: data.typesinfo,
+            dataid: data.dataid
+        }, function (msg) {
+            if (msg != "" && msg.indexOf("</html>") == -1) {
+                $("#hdnAllContent").val(msg);
+                initValue();
+            } else {
+                alert("拉取信息失败！请联系网站开发人员！");
+            }
+        });
+    }
+}
+//})();

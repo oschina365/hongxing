@@ -1,0 +1,109 @@
+﻿{$HeaderHtml$}
+<script type="text/javascript">
+    var OBJ_TITLE = "{$title$}";
+    var OBJ_ID = "{$ID$}";
+    var AUTHORITY_ID = "{$AuthorityID$}";
+    var SID = "{$SID$}";
+    //图片路径数组
+    var ARR_IMG_PATH = [{$ImagePathes$}];
+    var Hits=200;
+</script>
+{$AuthorityLayer$}
+<div class="topadcs">{$detailed_ad$}</div>
+<div class="pb_tu">
+    <div class="content">
+        您现在的位置：{$Loc$}
+    </div>
+</div>
+<div class="content">
+    <dl class="cpx1">
+        <dt>
+            <em id="gund"><img src="{$temppath$}Img/pub/cxx1.jpg" /><img src="{$temppath$}Img/pub/cxx1.jpg" /></em>
+            <i><a href="javascript:;" class="prev"><img src="{$temppath$}Img/Index/to_l.png" alt="<" /></a></i>
+            <b><a href="javascript:;" class="next"><img src="{$temppath$}Img/Index/to_r.png" alt=">" /></a></b>
+        </dt>
+        <dd>
+            <h4><a href="{$CurrentURL$}">{$title$}</a></h4>
+            <div class="shortdesc_div">
+                <h5>产品规格</h5>
+                {$ShortDesc$}
+            </div>
+            <span><a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" title="点击咨询我们">点击咨询我们</a></span>
+        </dd>
+    </dl>
+    <span class="pb_h pb_h2"><a href="javascript:;">产品详细参数及特点</a><i>/ characteristics</i></span>
+</div>
+<div class="cpx2w">
+    <div class="content">
+        {$Content$}
+    </div>
+</div>
+           
+<div class="content">
+    #parses("./XiangGuanAnLi.htm")
+</div>
+
+<div class="list1">
+    <div class="cpx_dg">
+        <span class="pb_h pb_h2 pb_h3"><a href="javascript:;">立即订购</a><i>/ OUR POWER</i></span>
+        <div class="biaod">
+            <ul>
+                <li><span>联系人：</span><input name="contact" type="text" class="k1" tips="联系人" required="true" value="" />*</li>
+                <li><span>电话号码：</span><input name="tel" type="text" class="k1"  required="true" value=""/>*</li>
+                <li><span>电子邮件：</span><input name="email" type="text" class="k1" /></li>
+                <li><span>订购意向描述：</span><textarea cols="" rows="" class="k2" name="shortdesc" tips="订购意向描述" required="true"></textarea>*</li>
+                <li><span>验证码：</span><input name="vali" type="text" class="k1" style="width:100px;" required="true" /><img id="yzm" src="/Tools/ValidCodes.aspx" title="点击切换" style="cursor:pointer; vertical-align:middle;" onclick="this.src='/Tools/ValidCodes.aspx?'+new Date().getTime()" alt="验证码" /></li>
+            </ul>
+            <div class="anniu1">
+                <img src="{$temppath$}Img/pub/btn1.jpg" alt="重置" class="reset" />
+                <img src="{$temppath$}Img/pub/btn2.jpg" alt="立即提交" class="submit" />
+            </div>
+        </div>
+        <div class="dg_fr">
+            <div class="tel"><span>{$servicetel$}</span>轻松一键   立即连通</div>
+            <div class="tixing"><span>温馨提示：</span>没有找到您的需要的？没有关系，说出您的需求，我们为您按需求定制；个性、独特的包装我们都能为您提供设计</div>
+        </div>
+    </div>
+</div>
+
+{$ExpressLane$}
+
+<script type="text/javascript">
+    $(function () {
+        if (ARR_IMG_PATH.length) {
+            var div = $("#gund");
+            var temp = '<img src="{src}" alt="{alt}" title="{title}" />';
+            for (var i = 0; i < ARR_IMG_PATH.length; i++) {
+                div.append(temp
+                    .replace("{src}", ARR_IMG_PATH[i])
+                    .replace("{alt}", OBJ_TITLE)
+                    .replace("{title}", OBJ_TITLE)
+                );
+            }
+        }
+        loadJs("/js/jquery.SuperSlide.2.1.1.js", function () {
+            var gundwarp = $("#gund").parent();
+            gundwarp.slide({ mainCell: "#gund", autoPlay: true });
+        })
+        loadJs("/js/Validation.js", function () {
+            Validation($("div.biaod"), "submitorder", function (msg, reset) {
+                var sta = gav(msg, "state");
+                var sMsg = gav(msg, "msg");
+                if (sta == "1") {
+                    $a(sMsg, 1);
+                    if (reset) {
+                        reset();
+                    }
+                } else {
+                    $a(sMsg);
+                }
+            }, null, {
+                oid: OBJ_ID,
+                compName: "",
+                mobile: "",
+                addr: ""
+            });
+        })
+    })
+</script>
+{$FooterHtml$}

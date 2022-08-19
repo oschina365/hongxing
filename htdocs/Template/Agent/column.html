@@ -1,0 +1,27 @@
+﻿#*
+副导航
+*#
+#if($sid)
+    #set($cur = !$sid)
+    #set($cursid=$sid)
+#end
+<div class="leib2">
+    <div class="tit">
+        $!nt.GetColumnTitle($columntype)
+        <i>Agent Center</i>
+    </div>
+    <div class="nr">
+        #foreach($row in $mt.GetColumnDataView($columntype,1))
+            <h3 sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></h3>
+            #set($columnrows02 = $mt.GetColumnDataView($columntype,$row.id))
+            #if($columnrows02.count > 0)
+            <ul>
+            #foreach($row in $columnrows02)
+                <li sid='$row.sid'><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+            </ul>
+            #end
+        #end
+    </div>
+</div>
+#set($columnrows02='')

@@ -1,0 +1,37 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+<div class="content">
+    <div class="right">
+        <div class="righttop"></div>
+        <div class="right_main">
+            ###parse("$temppath/Common/locl.html")
+            <div class="news_con" >
+                #paging($rows "%{}")
+             <ul class="inf_lc">
+                #foreach($row in $rows)
+                <li>       
+                    <h4><b>$row.ShowTime.ToString("dd")</b><span>$row.ShowTime.ToString("yyyy-MM")</span></h4>
+                    <p>
+                        <b><a href="$sitedomain$row.PageUrl" target="_blank" title="$row.title">$row.title</a></b>
+                        <span>$nt.getsubstring($row.ShortDesc,148)</span>
+                    </p>
+                    <a href="$sitedomain$row.PageUrl" target="_blank" title="查看详情" class="fr">查看详情>></a>
+                </li>
+                #end    
+            </ul>
+                <div class="clear"></div>
+                #parse("$temppath/Common/paging.html")
+            </div>
+        </div>
+        <div class="rightbot"></div>
+    </div>
+        
+    <div class="left">
+        #parses("$temppath/$columntype/column.html")
+        $c2.leftLx
+    </div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")

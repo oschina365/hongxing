@@ -1,0 +1,275 @@
+﻿/*问卷最外层div*/
+ .survey{width:845px;line-height:20px; word-wrap: break-word; padding:0; margin:0 auto;font-family:"微软雅黑","Lucida Grande",Helvetica,Arial,Verdana,sans-serif}
+ .surveyhead{line-height: 20px; text-align: center;width:96%;padding:20px 2%;} 
+ .surveyhead h1{font-size:20px; font-weight: bold; color: #19a8ee; vertical-align: middle;margin:0;padding:15px 0; line-height:24px;}
+ .q_textarea{ width:96.5%; height:120px;}
+ .q_text{ width:96.5%;}
+.surveydescription /*描述*/
+{
+    color:#555555;
+    line-height:24px;
+    text-align:left;
+    font-size:14px;
+    padding-bottom:15px;
+    border-bottom:1px dashed #ccc;
+    margin-left:0;
+    margin-top:20px;
+    text-indent:2em;
+}
+.font-a0{color:#a0a0a0;}
+.surveycontent /*问卷主体*/
+{
+    margin:0;width:100%;
+    padding-bottom:20px;
+}
+.errorMessage /*填写问卷错误的样式*/
+{
+    color:Red;
+    margin-left:20px;
+}
+/*
+************问题的总框架*********
+*/
+.div_question
+{  
+    border:2px solid  white;
+    padding:4px 4px 15px 4px;
+    clear:both;
+    margin:2px auto;
+    width:96%;
+    height:auto;
+}
+/*
+************鼠标经过*********
+*/
+.div_question_mouseover {
+    border:2px solid  #fdb553;
+     cursor: pointer;
+     padding:4px;
+}
+ 
+/*
+************鼠标离开*********
+*/
+.div_question_mouseout {
+    cursor:pointer;
+}
+/*
+************问答题被选中*********
+*/
+.div_question_onclick
+{
+ border:2px solid  #66CAFF;
+ padding:4px;
+}
+.div_question_error
+{
+ border:2px solid  red;
+ padding:4px;
+}
+/*
+************问题里面的题号*********
+*/
+.div_topic_question{
+    font-weight:bold;
+    width:28px;
+    float:left;
+}
+
+.div_topic_page_question{/* 页数，设计问卷*/
+    padding-top:1px;
+    font-weight:bold;
+}
+/*
+************问题里面的标题*********
+*/
+.div_title_question_all{/**/
+    padding-top:2px;
+    font-size:15px;
+    color:#444444;
+     font-weight:bold;
+    height:auto;
+    line-height:20px;
+}
+.div_title_question
+{  
+    /*width:94%;
+    float:left;*/
+    overflow:hidden;zoom:1;
+}
+.div_title_page_question{
+    font-weight:bold;font-size: 14px;
+}
+.div_title_cut_question{
+  font-size:14px;
+}
+/*
+************按钮的框*********
+*/
+.div_table_question{
+ float:right;
+ display:block;
+ margin-bottom:4px;
+ height:25px;
+ clear:both;
+ /*border:1px solid #6290d2;*/
+}
+.div_table_question_hide
+{
+    display:none;
+}
+
+/*
+************问题容器*********
+*/
+.div_table_radio_question{
+   clear:both;/*清空题号与标题的Float,另起一行*/
+   padding-top:5px; 
+   padding-left:24px;
+   padding-bottom:2px;
+   font-size:14px; 
+   color:#333333;
+   _padding-left:27px;
+   border-bottom:1px solid #EFEFEF;
+   /*width:90%;*/
+}
+.div_table_radio_question select {
+border: 1px solid #7F9DB9;
+padding: 3px;
+vertical-align: middle;
+}
+.div_table_radio_question .inputtext
+{
+    line-height:22px;
+    padding:2px;
+}
+.div_table_clear_top
+{
+    clear:both;
+    margin-top:4px;
+}
+.div_table_clear_bottom
+{
+    clear:both;
+    margin-bottom:10px;
+}
+.div_table_radio_question ul
+{
+   /* width:100%;*/
+}
+.div_table_radio_question li
+{
+ float:left;
+ list-style-type:none;
+}
+.ulradiocheck li{
+  line-height:30px;
+  position:relative;
+  cursor:pointer;
+}
+.ulradiocheck li input
+{
+    position:absolute; top:10px;_top:6px;
+}
+.ulradiocheck li label
+{
+    display:block;
+    padding-left:20px;
+     vertical-align:middle;
+}
+tr.labelname
+{
+    background:#eff6fb;
+}
+tr.labelname b
+{
+    color:#666;font-size:16px;
+}
+/*************预缆中的提示**********/
+.div_ins_question
+{
+ padding-top:8px; 
+ color:#666666;
+ padding-left:20px;
+ line-height:18px;
+ clear:both;/*清空问题容器的float*/
+}
+.option 
+{
+	font-size:12px;
+	background-color:#cdd7cc;
+	
+}
+
+/*
+************问答题标题属性的样式*********
+*/
+.div_title_attr_question {
+ border:1px solid #cccccc;
+ margin:5px 10px 10px;
+ padding:5px;
+ font-size:12px;   
+ background:#cfe7ff;
+}
+/*
+************问答题应用按钮的div的样式*********
+*/
+.div_btn_confirm_attr_question{
+   margin:5px 10px 10px;
+   padding:5px;
+   font-size:12px; 
+   float:right;
+}
+/*
+************问答题类型属性的样式*********
+*/
+.div_type_attr_question{
+   border:1px solid #6290d2;
+   margin:5px 10px 10px;
+   padding:5px;
+    font-size:12px; 
+}
+
+.div_jump_attr_question{
+   border:1px solid #6290d2;
+   margin:5px 10px 10px;
+   padding:5px;
+   font-size:12px; 
+}
+
+/*
+************问答题默认值的样式*********
+*/
+.ks_body{ background:#f4f4f4;}
+.content01{ background:#fff; margin:20px auto; width:960px;}
+.div_default_attr_question {
+ border:1px solid #cccccc;
+ margin:5px 10px 10px;
+ padding:5px;
+ background:#cfe7ff;
+ font-size:12px; 
+}
+.qtypetip
+{
+    color:#0066FF;
+    font-weight:normal;
+    font-size:14px;
+}
+legend{display:none;}
+fieldset{border:0;}
+ .inputtext
+{
+    border:solid 1px #7F9DB9;
+}
+
+input.submitbutton
+{
+    display:inline-block;height:30px; line-height:30px; border:0;cursor:pointer;background:#f17819;font-size:15px;color:#fff;font-weight:bold;
+    border-radius:5px; padding: 0 15px;
+    overflow:visible;
+    margin:0 auto; display:block;
+}
+input.submitbutton_hover,input.submitbutton:hover
+{
+    background:#fda420;
+}

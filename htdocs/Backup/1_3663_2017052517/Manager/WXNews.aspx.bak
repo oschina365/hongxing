@@ -1,0 +1,286 @@
+﻿<%@ page language="C#" autoeventwireup="True" enableeventvalidation="false" inherits="NSW.Web.Manager.WXNews, qwt" enableviewstate="true" enableviewstatemac="false" %>
+
+<%@ Register Src="Inc/uc/XuanZe.ascx" TagName="XuanZe" TagPrefix="XuanZe" %>
+<%@ Register Assembly="Oran.WebControl.IndexNavigator" Namespace="Oran.WebControl" TagPrefix="IndexNavi" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head id="Head1" runat="server">
+    <title><%= ItemName %>（<%= OID > 0 ? "Object ID: " + OID : "新建对象" %>）</title>
+    <link href="skins/base/news.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<script type="text/javascript">
+    window.EditPage = true;
+    window.Ueditor_Data = {
+        afterBlur: function () {
+            var div = $("div.appmsg_content div.current");
+            if (div.length) {
+                div.find("textarea").val(this.unhtml(this.html()));
+            }
+        }
+    }
+    $(function () {
+        $("#edit_thumb").bind("change_", function () {
+            var div = $("div.appmsg_content div.current");
+            var val = $(this).val();
+            if (div.length) {
+                div.attr("edit_thumb", val).addClass("has_thumb").find("img.appmsg_thumb").attr("src", val);
+            }
+        })
+    })
+</script>
+<CurrentPosition:CurrentPosition runat="server" ID="currentPosition"/>
+<link href="Skins/wechat.css" rel="stylesheet" type="text/css" />
+<div class="col_main">
+    <form id="form2" runat="server" onsubmit="return saveWXGroup();top.refreshList=true;">
+	    <div class="add_cont pad300 j_recordCon_c f_cb">
+	        <!-- 帮助基本信息 -->
+            <div class="cont1">
+				<div class="f_cb">
+					<label class="add_label f_fl"><i class="red_point">*</i>群发公众号</label>
+					<div class="add_r f_fl">
+						<div class="f_cb add_sv">
+							<span class="clear_bd s_selt f_fl pt43 f_mr15">
+                                <asp:DropDownList ID="ddlColumnID" OnSelectedIndexChanged="initchange" AutoPostBack="true" runat="server"  CssClass="pass_faq">
+                                    <asp:ListItem Value="1" Selected="True">文本</asp:ListItem>
+                                    <asp:ListItem Value="2">图文</asp:ListItem>
+                                </asp:DropDownList>
+								<i class="revise_sub"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+                
+                <div class="f_cb f_mt25">
+					<label class="add_label f_fl"><i class="red_point">*</i>群发消息名称</label>
+					<div class="add_r f_fl">
+						<div class="f_cb add_sv">
+							<span class="clear_bd f_fl p_inp1"><asp:TextBox ID="txtTitle" runat="server" CssClass="com_input clear_word"></asp:TextBox><i class="clear_x"></i></span>
+						</div>
+                        <i class="i_shortdesc">给所群发的消息起个名字，方便自己区分和查找。</i>
+					</div>
+				</div>
+
+                <div class="f_cb f_mt25">
+					<label class="add_label f_fl">
+                        <i class="red_point">*</i>群发消息内容<br />
+                        <span id="Related" style="display:block; border:1px solid #dcdcdc; width:100px; text-align:center; height:28px; line-height:28px; margin-top:5px; cursor:pointer;">
+                            <i class="addtab_mark"></i>
+                            添加已有内容
+                        </span>
+                    </label>
+					<div class="add_r f_fl">
+                        <div class="appmsg multi editing">
+                            <div class="appmsg_content">
+                                <div class="appmsg_itemmain appmsg_item" id="appmsgitem1">
+                                    <div class="appmsg_info">
+                                        <div class="appmsg_date">
+                                        </div>
+                                    </div>
+                                    <div class="cover_appmsg_item">
+                                        <h4 class="appmsg_title">
+                                            <a href="javascript:;">标题</a>
+                                        </h4>
+                                        <div class="appmsg_thumb_wrp">
+                                            <img class="appmsg_thumb" src="" />
+                                            <i class="appmsg_thumb default">封面图片</i>
+                                        </div>
+                                        <div class="appmsg_edit_mask">
+                                            <a class="icon18_common edit_gray js_edit" href="javascript:;">编辑</a>
+                                        </div>
+                                        <div class="arrow_in"></div>
+                                        <textarea></textarea>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" id="appmsgadd" class="appmsg_add"><i>+</i> </a>
+                            </div>
+                        </div>
+                        <div class="media_edit_area" id="iframe_found">
+                            <div class="inner">
+                                <div class="appmsg_edit_item">
+                                    <label for="" class="frm_label">标题</label>
+                                    <span class="frm_input_box">
+                                        <span class="clear_bd">
+                                            <input type="text" class="txt frm_input js_title com_input clear_word" id="edit_title" />
+                                            <i class="clear_x"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="appmsg_edit_item">
+                                    <label for="" class="frm_label">
+                                        <strong class="title">作者</strong>
+                                        <p class="itips l">（选填）</p>
+                                    </label>
+                                    <span class="frm_input_box">
+                                        <span class="clear_bd">
+                                            <input type="text" class="txt frm_input js_author com_input clear_word" id="edit_author" />
+                                            <i class="clear_x"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="appmsg_edit_item">
+                                    <label for="" class="frm_label">
+                                        <strong class="title">封面</strong>
+                                        <p class="js_cover_tip itips">（大图片建议尺寸：900像素 * 500像素 jpg或png格式 <em style="display:none;">文件大小不能超过1M</em>）</p>
+                                        <p class="js_cover_tip itips othertip" style="display:none;">（小图片建议尺寸：200像素 * 200像素 jpg或png格式 <em style="display:none;">文件大小不能超过64KB</em>）</p>
+                                    </label>
+                                    <div class="btns">
+                                        <div class="f_fl f_csp upload_img"><span><em class="load_small"></em>点击上传</span></div>
+                                        <input id="edit_thumb" type="hidden" value="" />
+                                        <p class="frm_tips">
+                                            <p class="clear"></p>
+                                            <p class="nsw_check_box mt10">
+                                                <span class="ck_box mt5">
+                                                    <input type="checkbox" class="frm_checkbox dn" id="checkfrm" onclick="editorFRMClik(this);" />
+                                                </span>
+                                                <label class="ck_text">封面图片显示在正文中</label>
+                                            </p>
+                                        </p>
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                var btn = $("div.upload_img");
+                                                btn.bind("click", function () {
+                                                    _alert("正在加载插件，请稍后重试...");
+                                                })
+                                                var related = $("#Related");
+                                                related.bind("click", function () {
+                                                    _alert("正在加载插件，请稍后重试...");
+                                                })
+                                                loadJs("js/common/editor.js", function () {
+                                                    btn.unbind("click");
+                                                    related.unbind("click");
+                                                    window._imgs_ = new img_gallerywindow($("div.upload_img"), {
+                                                        input: "edit_thumb",
+                                                        directory: "qt",
+                                                        max: 1
+                                                    });
+                                                    window.WXNews_ = new WXNews($("div.upload_img"), {
+                                                        UpdateCallback: function (data) {
+                                                            initSelectValue(data.data);
+                                                            var me = this;
+                                                            me.hide();
+                                                        }
+                                                    });
+                                                    related.bind("click", function () {
+                                                        window.WXNews_.show();
+                                                    })
+                                                })
+                                            })
+                                        </script>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="js_desc_area appmsg_edit_item dn" style="display:none;">
+                                    <label for="" class="frm_label"><strong class="title">摘要</strong><p class="itips l">（选填）</p></label>
+                                    <div class="frm_textarea_box">
+                                        <div class="f_cb add_typeset bord_gray">
+						                    <textarea name="txtVideoCode" rows="2" cols="20" id="editor_desc" class="js_desc frm_textarea text_area tx1"></textarea>
+					                    </div>
+                                    </div>
+                                </div>
+                                <div class="js_desc_area dn appmsg_edit_item">
+                                    <label for="" class="frm_label">正文</label>
+                                    <NSW:UEditor ID="Ueditor" runat="server" Width="500" />
+                                </div>
+                                <div class="js_url_area dn appmsg_edit_item">
+                                    <label for="" class="frm_label">
+                                        <strong class="title">原文链接</strong><p class="itips l">（选填）</p>
+                                    </label>
+                                    <span class="frm_input_box">
+                                        <span class="clear_bd">
+                                            <input type="text" class="txt frm_input js_url com_input clear_word" id="editor_url" />
+                                            <i class="clear_x"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="js_url_area dn appmsg_edit_item" id="appmsg_view">
+                                    <input type="button" value="点击查看左侧预览" class="appmsg_view" id="appmsg_views" />
+                                </div>
+                            </div>
+                            <p class="clear"></p>
+                        </div>
+                        <p class="clear"></p>
+					</div>
+				</div>
+
+                <div class="f_cb f_mt25">
+					<label class="add_label f_fl"><span class="f_pdl15">选择要发送的用户组</span></label>
+                    <div class="add_r f_fl">
+                        <dl class="sv_checkbox f_fl" style=" height:auto;width:40%;">
+                            <dt class="pr">
+                                用户组
+                            </dt>
+			                <dd style=" height:auto; width:100%;">
+                                <asp:ListBox runat="server" ID="listgroup"  SelectionMode="Multiple" class="pass_faq fl_select" Width="100%" Height="250px"></asp:ListBox>
+                                <textarea id="hdnAllContent" name="hdnAllContent" style="display: none;"></textarea>
+			                </dd>
+		                </dl>
+                        <div class="nsw_check_box" style=" margin-top:120px;">
+                            <span class="ck_box mt5">
+                                <asp:CheckBox runat="server" ID="checkall" onclick='if(this.checked){$("#listgroup option").attr("selected", true);}else{$("#listgroup option").attr("selected", false);}' CssClass="dn" />
+                            </span>
+                            <label class="ck_text">全部发送</label>
+                        </div>
+					</div>
+				</div>
+
+                <div class="f_cb f_mt25 dn">
+                    <label class="add_label f_fl"><span class="f_pdl15">录入时间</span></label>
+				    <div class="add_r f_fl">
+                        <div class="f_cb controls_calendar">
+                            <asp:TextBox CssClass="com_input clear_word calendar_tx f_fl" MaxLength="16" ID="txtInputTime" runat="server"></asp:TextBox><i class="calendar_icon f_fr f_csp"></i>
+					    </div>
+				    </div>
+                </div>
+
+            </div>
+
+            <!--按钮-->
+            <div class="f_cb f_mt25">
+                <label class="add_label f_fl"><span class="f_pdl15"></span></label>
+                <div class="add_r f_fl">
+                    <!-- 保存并返回 -->
+			        <div class="view_btn f_mt30" returnurl="close">
+                        <span class="e_btn1 f_csp fl"><i class="insert_icon"></i><asp:Button CommandName="return" runat="server" Text="保 存" onclick="btnSubmit_Click" OnClientClick="return ValidateForm(this);" /></span>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </form>
+</div>
+<%--
+<div id="html" style=" display:none">
+厦义一品浅析：企业宣传片制作创意来源于“看”的方法$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$创意通常被我们看成是非常神秘的东西，而企业宣传片制作创意并非想象的那样难以捉摸，而是来源于我们的生活，创意是创造性的思维过程，下面小编根据多年经验总结，宣传片制作创意的来源。$#$<p style="text-indent: 2em; text-align: left;">创意通常被我们看成是非常神秘的东西，而企业宣传片制作创意并非想象的那样难以捉摸，而是来源于我们的生活，创意是创造性的思维过程，下面小编根据多年经验总结，宣传片制作创意的来源。</p><p style="text-indent: 2em; text-align: left;">1、企业宣传片制作创意来源于&ldquo;看&rdquo;的方法</p><p style="text-indent: 2em; text-align: left;">事物之间的关系是相当复杂的，从不同的角度来思考，得出的结论可能就会有很大的不同。</p><p style="text-indent: 2em; text-align: left;">我们在企业宣传片制作创意的过程中，当一种思路进行不下去，无法产生创造性的想法时，换个角度。换种思考的方法，或许很快就能发现另一片天空。由此看来，企业宣传片制作创意的产生意识来源于我们对事物不同的看法中。</p><p style="text-indent: 2em; text-align: left;">2、企业宣传片制作创意来源于兴趣</p><p style="text-indent: 2em; text-align: left;">兴趣对于企业宣传片制作创意的形成也是有着重要影响的，也是企业宣传片制作创意的一个重要来源。只是对某个问题产生了兴趣，我们的思维才能够兴奋和活跃，我们的想象力和创造力才能充分得到发挥。假如对某个事物丝毫也不感兴趣，那又怎么可能会不断地认识它、研究它呢?既然不去认识，不去研究，企业宣传片制作创意灵感又将从何而来呢?</p><p style="text-indent: 2em; text-align: left;">3、企业宣传片制作创意来源于幻想</p><p style="text-indent: 2em; text-align: left;">企业宣传片制作创意的产生，很大程度上也是来源于我们的幻想。想象力是我们人类特有的一种思维能力。想象力的发挥，能使我们突破各种思维定势以及条件，环境的阻隔，使我们的创造性思维得到最大限度的发挥。很多看似不可以的事情，正是由于大胆合理的想象，才能为了现实。</p><p style="text-indent: 2em; text-align: left;">4、企业宣传片制作创意来源于生活</p><p style="text-indent: 2em; text-align: left;">我们日常的生活，是企业宣传片制作创意最主要的来源。生活是丰富多彩的，它能为企业宣传片制作创意提供大量的有价值的素材，而且能引发我们企业宣传片制作创意的灵感，很多优秀的企业宣传片制作创意都是源于对生活深入细致观察的结果。另外，企业宣传片制作创意的产生也是为了满足实际的需要，只有贴近生活，人们才能更好地接受这些新奇的想法或电子，企业宣传片制作创意才能更容易取得成功。</p><p style="text-indent: 2em; text-align: left;">5、企业宣传片制作创意来源于积累</p><p style="text-indent: 2em; text-align: left;">俗话说机遇只垂青于有准备的头脑，企业宣传片制作创意的发生也是这样。如果我们平时没有对知识、经验的广泛积累，那么要有好的企业宣传片制作创意几乎是不可能的。灵感的获得也许知识一瞬间的事，然而在灵感到来之前却是需要有大量的思考和准备过程来铺垫的。正如树上掉落的苹果砸到牛顿，他发现了万有引力定律;而有过相似被砸经历的其他人，他们又发现了什么呢?可见，面对同样的际遇，有准备与无准备之间的差距就是这么大。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypqxqyxc_1_page1.html$##||$厦义一品课堂：视频营销五大优势$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$“网络视频营销”指的是企业将各种视频短片以各种形式放到互联网上，达到一定宣传目的的营销手段。网络视频广告的形式类似于电视视频短片，平台却在互联网上。“视频”与“互联网”的结合，让这种创新营销形式具备了两者的优点：它具有电视短片的种种特征，例如感染力强、形式内容多样、肆意创意等等，又具有互联网营销的优势，例如互动性、主动传播性、传播速度快、成本低廉等等。可以说，网络视频营销，是将电视广告与互联网营销两者“宠爱”集于一身。$#$<p style="text-indent: 2em; text-align: left;">&ldquo;网络视频营销&rdquo;指的是企业将各种视频短片以各种形式放到互联网上，达到一定宣传目的的营销手段。网络视频广告的形式类似于电视视频短片，平台却在互联网上。&ldquo;视频&rdquo;与&ldquo;互联网&rdquo;的结合，让这种创新营销形式具备了两者的优点：它具有电视短片的种种特征，例如感染力强、形式内容多样、肆意创意等等，又具有互联网营销的优势，例如互动性、主动传播性、传播速度快、成本低廉等等。可以说，网络视频营销，是将电视广告与互联网营销两者&ldquo;宠爱&rdquo;集于一身。</p><p style="text-indent: 2em; text-align: left;">成本低廉</p><p style="text-indent: 2em; text-align: left;">在国外，让许多公司开始尝试网络视频广告的一个重要原因，就是网络视频营销投入的成本与传统的广告价格差太大了。一支电视广告，投入几十万甚至上千万都是很正常的事情，而几千块钱就可以搞定一支网络视频短片。甚至，一个好创意，几个员工，就可以做一个好短片，免费放到视频网站上进行传播。与此同时，低廉的价格却带来非常高的性价比。根据Burst 
+Media 公司完成的研究结果表明，56.3% 
+的在线视频观众可以记起视频里的广告内容。一支流传甚广的视频可以让公司以极小的成本获得极大的曝光。也正因为如此，虽然互联网视频广告的影响力越来越大，但是公司为此付出的资金却不会有多大增长。&ldquo;在线视频广告的支出对于电视广告而言可以算是九牛之一毛，而且这种情况起码会持续十年。&rdquo;根据eMarketer 
+调研机构在去年11 月份发布的调研数据，2006 年互联网广告支出仅仅是电视广告的0.6%，而在2010 年，这个数字有望上升到3.3%。</p><p style="text-indent: 2em; text-align: left;">毫无疑问，在这种情况下，那些准备削减广告预算的公司必定会向视频营销求援。有一个典型案例：英国饮料制造商Britvic 公司削减了百维可(Tango) 
+牌果味饮料的电视广告预算，转而投奔了互联网。他们设计了一个恶搞索尼公司最新液晶电视广告的视频，其中巧妙地放入了自己的产品。在投放互联网后，这个恶搞视频被大肆转载，宣传效果出人意料，Tango 
+饮料也成了青年们的潮流饮品。</p><p style="text-indent: 2em; text-align: left;">目标精准</p><p style="text-indent: 2em; text-align: left;">与传统营销方式的一个最大不同，网络营销能够比较精确地找到企业想找的那群潜在消费者。作为网络营销最新兴的方式，网络视频营销则是更精准地发挥了这一特性。</p><p style="text-indent: 2em; text-align: left;">例如YouTube上有&ldquo;群(Group)&rdquo;的设置。这是在网络上有着相同视频兴趣倾向的网民的集合。YouTube 通过目标锁定(Targeting) 
+识别特定受众群，并通过有效的可行途径影响他们，发掘、培养他们的兴趣点。令人感兴趣的内容能吸引受众，而受众的不断支持、回复、上传又能产生良好的内容。一传一受的交互方式，促进了群组织的形成。那么，广告商在特定的群投放产品，例如广告商在汽车群投放视频广告，或者在这个群征集作品，就能取得不错的效果。</p><p style="text-indent: 2em; text-align: left;">从这个角度来讲，在企业选择过程中，网络视频公司平台价值的测定就与传统媒体不同。在电视媒体中，更多的观众、更高的收视率意味着更多的广告收入、更多的利润，视频网站则不然，观众的数量并不一定意味着更多的广告收入，有时候小数量的观众要比数量众多的观众更有价值&mdash;如果这些小数量的观众做一些广告主更喜欢的事情( 
+比如点击广告，购买产品，并访问其他的相关网页等等)。</p><p style="text-indent: 2em; text-align: left;">概而言之，衡量一家视频网站价值高低的因素比衡量一家传统媒体要丰富广泛得多，许多因素共同发挥作用来决定网络视频公司的价值高低。例如前几年星巴克公司向Video 
+Egg 投资了1200 万美元，Video Egg 之所以获得投资者的青睐是因为观众对VideoEgg 网站上赞助商广告的高点击率。据统计，Video Egg 
+上广告的&ldquo;点击通过&rdquo;率超过了1%，而同行业竞争对手的点击率只有千分之几。</p><p style="text-indent: 2em; text-align: left;">互动+主动</p><p style="text-indent: 2em; text-align: left;">互联网营销具有互动性，这一点也被视频营销所继承。YouTube 
+编者和读者之间的回复便很好地证明了这一点：用户利用文字视频可新建对发布者的回复，也可以就回复进行回复，另外，观看者的回复也为该节目造势，有较高争议率的节目点击率也往往高调飙升。与此同时，网友还会把他们认为有趣的节目转贴在自己博客或者其他论坛中，让视频广告进行主动性的&ldquo;病毒式传播&rdquo;，让宣传片大范围传播出去，而不费企业任何推广费用和精力。这一优势是电视广告不具备的。</p><p style="text-indent: 2em; text-align: left;">与此同时，与其他互联网营销形式不同，视频感染力更强，因此引起网友的主动传播性也更强。</p><p style="text-indent: 2em; text-align: left;">2006 年11月，一支叫作&ldquo;如何在YouTube上现眼&rdquo;的视频在两天内吸引到了40 
+万的观看次数。视频中，顶着鸟窝头的年轻人在镜头前完成了各种各样悲剧性的演出，似乎命运在任何时候都与他作对。在看热闹的心态趋势下，网民们把这段视频&ldquo;点&rdquo;上了排行榜的第一名，并且传播到各大网站中。虽然这段视频看起来简单而粗糙，像极了&ldquo;家庭滑稽录像&rdquo;里的作品。不过，在视频结束后，观众会在页面上发现这其实是松下&ldquo;不可否认的电视&rdquo;(Undeniable 
+TV) 
+的活动广告。这个活动让人们用视频&ldquo;描述某件不可否认的事情&rdquo;，获胜者将会获得一台液晶电视和手持摄像机。最终，这个活动吸引到了十几万人参与其中，取得了非常好的效果。</p><p style="text-indent: 2em; text-align: left;">传播神速</p><p style="text-indent: 2em; text-align: left;">视频营销的这个特性已经在诸多案例中显露无疑。列举一个美国竞选的例子：在2006 年8 
+月，美国弗吉尼亚州的共和党参议员候选人乔治&middot;艾伦在一次演讲中发现台下有一名印度裔的听众，结果他无意之间称呼这位听众为&ldquo;非洲短尾猿&rdquo;，这种说法带有很强的种族歧视色彩，这段视频被传到YouTube上，在非常短的时间被愤怒的网民们复制粘贴、快速传播，导致艾伦的名声在几个月的时间快速下降，最终落选。</p><p style="text-indent: 2em; text-align: left;">效果可测</p><p style="text-indent: 2em; text-align: left;">在种种叙述在线视频营销的语句中，可以看到大量的数字：&ldquo;网络搜索集团评出几大视频网站&mdash;YouTube、MSN Video、YahooVideo、AOL 
+Video、iFilm，这些网站的访问量是美国五大广播电视网网站访问量的两倍，且用户在前者的停留时间达12 分钟/ 次，长于后者的8 分钟/ 
+次。&rdquo;&ldquo;这段视频短片，被点击3000 万次，转载5000 次并附有2400 条评论。&rdquo;</p><p style="text-indent: 2em; text-align: left;">种种数字让企业视频营销的&ldquo;每一笔费用都可以找出花在了哪里&rdquo;。收集网友的评论，也可以总结这次视频广告的得失，大大提高效果监测率。</p><p style="text-indent: 2em; text-align: left;">总之，借用优酷网CEO 
+古永锵的话，&ldquo;视频营销&rdquo;是将&ldquo;有趣、有用、有效&rdquo;的&ldquo;三有&rdquo;原则与&ldquo;快者为王&rdquo;结合在一起。这正是越来越多企业选择网络视频作为自己营销手段的原因。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypktspyx_1_page1.html$##||$厦义一品为您介绍持续火热的视频营销$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$除非在过去几年你一直坚持只看那种老派的二极管电视，否则你肯定见证了视频广告营销逐渐变得至关重要的过程。事实上，AOL平台提供的数据显示，YouTube上的付费广告客户远超其他在线平台。eMarketer提供的数据表明，美国在线视频观众人数有望在2013年～2017年之间增加2200万人以上。$#$<p style="text-indent: 2em; text-align: left;">除非在过去几年你一直坚持只看那种老派的二极管电视，否则你肯定见证了视频广告营销逐渐变得至关重要的过程。事实上，AOL平台提供的数据显示，YouTube上的付费广告客户远超其他在线平台。eMarketer提供的数据表明，美国在线视频观众人数有望在2013年～2017年之间增加2200万人以上。</p><p style="text-indent: 2em; text-align: left;">&ldquo;视频营销最终会成为最高效的营销手法，因为它真的有效果。&rdquo;Pixability创始人兼CEO Bettina 
+Hein说。这家公司位于波士顿，基于YouTube平台提供视频营销解决方案。&ldquo;明星的背书和商业的推动让视频内容创作者数量大涨，我们将看到更多来自不同行业的品牌出现独立的视频创作者。他们跨界吸取灵感，共同创作内容。&rdquo;</p><p style="text-indent: 2em; text-align: left;">在线视频的美妙之处在于用户的互动和销量转化都有迹可循，这是传统电视广告从来没做到过的。美国国家风投协会(NVCA)提供的最新数据表明，在过去一年中有4041家VC在视频行业有所投资，超过10%(约455个)的投资给了娱乐媒体类创业公司，而这类公司的业务都聚焦于为企业传播品牌，提高销售表现。</p><p style="text-indent: 2em; text-align: left;">那么，在线视频将发展至何处?创业者该如何搭上这趟火热的班车?</p><p style="text-indent: 2em; text-align: left;">众包平台推动了独立的视频制作人向基于用户产出视频的小公司发展。通过与Tongal.com、Poptent.com或Zooppa.com等众包平台合作，一家公司就可以通过全世界几千名视频制作人的力量来完成一段作品。这本身就是一种传播&mdash;&mdash;企业在这个过程中让人知道了自身的故事，激发了观众的兴趣，提升了知名度，增加了流量。</p><p style="text-indent: 2em; text-align: left;">另外，企业也在通过视频中的植入式广告寻求营销机会，这种策略不再是电视或电影的专利。通过与YouTube的视频制作者沟通，找到最精准的目标用户，企业可以达到一石多鸟的效果&mdash;&mdash;既创造了内容，也找到了受众，得到了欢迎。Branded 
+Entertainment Network、Sponsify、MediaSpike和Brandertainer都是从事此类业务的公司。</p><p style="text-indent: 2em; text-align: left;">最终，这些互联网公司将形成在线视频联盟。一个公司在以往可能会开通一个YouTube频道，由某个部门的人才产出创意和内容。但现在有Collective 
+Digital Studio、StyleHaul和ChannelFlip这样的第三方公司帮你写代码、众筹、管理版权、寻找观众甚至直接销售商品。</p><p style="text-indent: 2em; text-align: left;">事实证明，企业要讲出自己的故事，就不能再闭门造车。在竞争激烈的年代，一定要以比以往开放得多的姿态吸取外部资源，增加创造力。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypwnjscx_1_page1.html$##||$视频营销领跑网络营销新时代$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$现在的中国，已经进入全面互联网时代，各种各样的信息犹如一条条江河，最后全部汇入互联网这片汪洋大海之中。而随之兴起的网络营销，也越来越成熟，方式也越来越多。不过，随着网络应用技术的愈加完善，技能水平越来越高明，网络营销方式也随之更新换代，而今天，我们要说的就是一种前沿并且越来越流行的营销方式：视频营销。$#$<p style="text-indent: 2em; text-align: left;">现在的中国，已经进入全面互联网时代，各种各样的信息犹如一条条江河，最后全部汇入互联网这片汪洋大海之中。而随之兴起的网络营销，也越来越成熟，方式也越来越多。不过，随着网络应用技术的愈加完善，技能水平越来越高明，网络营销方式也随之更新换代，而今天，我们要说的就是一种前沿并且越来越流行的营销方式：视频营销。</p><p style="text-indent: 2em; text-align: left;">纵观中国互联网内的一些在线视频网站，优酷网、酷6网、腾讯视频，搜狐视频等，他们都已经聚集了相当大的一部分网民成为他们的忠实粉丝。相比电视，用电脑网络观看电视节目似乎更加的方便。于是，每天登陆视频网站观看自己爱看的视频已经成了绝大多数网民网络生活的日常习惯。也因此衍生了许多的网络电视入驻家用电脑。</p><p style="text-indent: 2em; text-align: left;">那么，视频营销从何而来呢?</p><p style="text-indent: 2em; text-align: left;">新分享传媒视频营销</p><p style="text-indent: 2em; text-align: left;">这点，不用我多说，大家都可以联想到不论是在线视频，还是网络电视，在它们播放影片前，都会插播广告，这就算是视频营销最简单的一种，同时也是应用最广泛的一种。这种方式虽然简单，但缺点同样明显，它一定程度上属于强迫观看，浏览者不是自愿的，笔者就曾经很烦这种广告。它能起到的作用，只能是通过一遍又一遍的播放，让浏览者对产品的印象逐渐加深，至于购买欲望，则因为它的强迫性，降低了不止一个档次。</p><p style="text-indent: 2em; text-align: left;">还有一种方式，就是科教视频宣传，它的视频内容相对狭窄许多，一般是一些系列性质的教学、讲座、科研、记录等等内容的视频。这种方式较前一种要好的多，优点在于目的性很强，浏览者通过题目便可知其讲述的主要内容，所以，可以选择看，或是不看。缺点就是浏览人群比较确定，一般人搜索这类视频都是带有同样的目的性，这就决定了，这类视频的浏览率虽然不高，但浏览质量都是很高的，在视频里边穿插宣传图样，是个很不错的主意。</p><p style="text-indent: 2em; text-align: left;">有没有一种视频方式，优点能够兼顾以上两种呢?</p><p style="text-indent: 2em; text-align: left;">答案是肯定的。大家应该都还记得2010年年底一部红透整个网络的视频短片《老男孩》，视频的内容我就不多说了，我只能说它是一部相当成功的视频营销案例，通过它，人们记住了肖大宝和王小帅，也就是现实中的肖央和王太利，同时也记住了这个组合、这个团队，他们很成功的利用了属于&ldquo;70后&rdquo;&ldquo;80后&rdquo;的集体回忆，赢得了所有网民的心。类似影片还有前段时间上映了的《玩大的》，故事从伴随了80后长大的&ldquo;红白机&rdquo;&ldquo;街机&rdquo;入手，同样讲述了80后的爱情与友谊之中的辛酸故事，也受到了广大网友的好评。而视频的制作者巨人网络也借助此片，着实为他们的《征途2》狠狠的宣传了一把。</p><p style="text-indent: 2em; text-align: left;">这种视频，也称微电影，所达到的效果，是前面讲的视频营销方式所不能达到的。它们能精准的把握浏览者的每一个情感细胞，让浏览者自然的观看视频，记住产品，从而达到营销手段。并且，微电影还只是新型视频营销中其中的一种表现形式，视频营销还可以发挥其更大的作用，比如说目前渐渐流传开来的具有销售力的营销型视频。</p><p style="text-indent: 2em; text-align: left;">营销型视频是商时代社会化媒体繁荣发展衍生出视频营销的产物，源于网民网络购物习惯的转变和网络媒体传播的特点，是一种视频营销整体解决方案，不能窄义的理解为视频表现形态。借助营销型视频，企业可以塑造更高的公信力、更直观地表达出企业的核心竞争力，同时也能够帮助企业打造更高效的视觉销售平台。在当下的网络营销战争中，营销型视频将成为一款非常强大的营销利器。</p>$#$http://www.xyyp88.com/Mobile/MArticles/spyxlpwlyx_1_page1.html$##||$厦义一品分享：如何让视频成为病毒式传播$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$利用视频平台来给营销已经不是新鲜事情。国外就利用youtube来做视频传播，比如我之前提起过的will it blend? Where the hell is Matt 国内的利用youku， tudou等平台来做视频传播的案例也很多。不论是作为中国视频传播的经典之作百度更懂中文的三部曲(什么唐伯虎篇，潘金莲篇)，还是让人恶心的什么最牛的电信，移动公司接线员，也有中规中矩的联想的视频<<如果爱>>一类的作品$#$<p style="text-indent: 2em; text-align: left;">利用视频平台来给营销已经不是新鲜事情。国外就利用youtube来做视频传播，比如我之前提起过的will it blend? Where the hell 
+is Matt 国内的利用youku， 
+tudou等平台来做视频传播的案例也很多。不论是作为中国视频传播的经典之作百度更懂中文的三部曲(什么唐伯虎篇，潘金莲篇)，还是让人恶心的什么最牛的电信，移动公司接线员，也有中规中矩的联想的视频&lt;&lt;如果爱&gt;&gt;一类的作品。</p><p style="text-indent: 2em; text-align: left;">正如周杰伦的歌&lt;&lt;牛仔很忙&gt;&gt;唱的那样，现在互联网上知识太丰富，娱乐的材料也很多，谁有空看你长篇文字叙述呢?相对于软文，内容营销，我个人更喜欢视频营销这种营销模式。你想讲什么，通过视频让人一目了然，软文，能有多少人看，多数人传播呢? 
+软文的娱乐精神，不如视频。</p><p style="text-indent: 2em; text-align: left;">既然视频营销ROI这么高，为什么我们企业无动于衷呢?结合我之前给江浙中小企业咨询的经验。唐兴通认为无外乎以下几点原因：1.完全不懂还可以利用视频来给自己企业做宣传;2.没有多媒体制作人员，认为做视频传播很麻烦;3.投入产出比，不确定;其实我们不一定需要很好的制作，不是公司非得拍的像好莱坞的视频才拿出来放到视频平台上来，你太认真了，可能用户直觉就说，看这家伙又在忽悠我，抵触情绪还大，对手抢先在你的视频下跟帖说，软文，广告，接下来的营销力就遭受很大的考验。你完全可以用自己的智慧，开创一个经典的视频病毒传播。</p><p style="text-indent: 2em; text-align: left;">那么如何让你视频能够广泛传播出去呢?我认为需要注意以下几个方面：</p><p style="text-indent: 2em; text-align: left;">1.视频的内容</p><p style="text-indent: 2em; text-align: left;">视频的内容是关键，不是每段视频都会成为大家传播的。内容需要平时不常见的，超过人的想象力的承受力的。你必须做超出平常人的承受力，夸大，再夸张，让内容更具心理震撼力。做普通内容的，不如做温情的视频相对可靠。</p><p style="text-indent: 2em; text-align: left;">结合自己品牌的定位，营销的策略，做相关内容的制作。</p><p style="text-indent: 2em; text-align: left;">2.视频的传播机会点</p><p style="text-indent: 2em; text-align: left;">视频的传播，我们也需要抓住传播的时间点问题。比如我之前给一个快速消费品在春节做视频的传播。我抓住中国家的文化，大雪阻挡不了游子回家的亲情。结合中国的春节文化，生肖文化，我们很愉快的达到我们传播的目的。</p><p style="text-indent: 2em; text-align: left;">和事件营销和类似，我们企业应该抓住大家的注意力，进行营销。正如我经常对客户讲的，你目标客户注意力集中在那里，那里就是我们革命的根据地。不要放过每次机会，不论是奥运会，还是三聚氰胺，还是台湾最近的自然灾害。只要我们用心，我们完全可以在视频营销中有大作为。抓住机会，就是成功的一半。</p><p style="text-indent: 2em; text-align: left;">3.视频的创意</p><p style="text-indent: 2em; text-align: left;">视频营销也是需要自己的个性的，不要仅仅认为：视频传播，就是搞笑视频; 
+搞笑视频是一个优秀的视频传播形式。之所以大家会传播你的视频，很大部分是看重你的创意。如果你的创意，灵魂是很平静，太普通。没人会传播你。圈内的许多朋友给我抱怨，随着中国的创意和用户欣赏水平越来越高，用户视觉，情感都疲劳了，要想真心感动用户，对我们活动创意人员提出更高的挑战。就如前段日子诺基亚做了一个视频病毒营销：一个手机被鱼吃掉了，几个月后当这条鱼被抓到后，诺基亚手机还是可以继续使用。说明什么?防水，耐用的诺基亚。</p><p style="text-indent: 2em; text-align: left;">创意就是灵魂，没创意就一边打酱油去吧。</p><p style="text-indent: 2em; text-align: left;">4.视频的亲民性/情感性</p><p style="text-indent: 2em; text-align: left;">视频传播中，我们制作内容时候，一个容易犯的错误是：没有站在用户的角度思考，做的视频和用户有距离感，不那么亲切。这是一个大忌。最好的视频传播，完全以用户的角度来制作视频的，而不是像我之前在博客里写过联想视频传播中，大张旗鼓的再视频中表述是联想赞助的。欲盖弥彰。另外比如传播平台的选择，视频title标记，keyword优化，SEM等方面的视频传播注意事项，鉴于篇幅，不作赘叙。</p><p style="text-indent: 2em; text-align: left;">结语：视频传播，转化为病毒传播是我期望的，我们不能保证我们每个视频都会成为广泛传播的病毒。不过我们在制作过程中还是应该遵循这些原则，做优秀的传播视频。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypfxrhrs_1_page1.html$##||$厦义一品课堂：-如何进行网络视频传播营销$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$利用视频平台来给营销已经不是新鲜事情。国外就利用youtube来做视频传播，比如我之前提起过的will it blend? Where the hell is Matt 国内的利用youku， tudou等平台来做视频传播的案例也很多。不论是作为中国视频传播的经典之作百度更懂中文的三部曲(什么唐伯虎篇，潘金莲篇)，还是让人恶心的什么最牛的电信，移动公司接线员，也有中规中矩的联想的视频<<如果爱>>一类的作品。$#$<p style="text-indent: 2em; text-align: left;">利用视频平台来给营销已经不是新鲜事情。国外就利用youtube来做视频传播，比如我之前提起过的will it blend? Where the hell 
+is Matt 国内的利用youku， 
+tudou等平台来做视频传播的案例也很多。不论是作为中国视频传播的经典之作百度更懂中文的三部曲(什么唐伯虎篇，潘金莲篇)，还是让人恶心的什么最牛的电信，移动公司接线员，也有中规中矩的联想的视频&lt;&lt;如果爱&gt;&gt;一类的作品。</p><p style="text-indent: 2em; text-align: left;">正如周杰伦的歌&lt;&lt;牛仔很忙&gt;&gt;唱的那样，现在互联网上知识太丰富，娱乐的材料也很多，谁有空看你长篇文字叙述呢?相对于软文，内容营销，我个人更喜欢视频营销这种营销模式。你想讲什么，通过视频让人一目了然，软文，能有多少人看，多数人传播呢? 
+软文的娱乐精神，不如视频。</p><p style="text-indent: 2em; text-align: left;">既然视频营销ROI这么高，为什么我们企业无动于衷呢?结合我之前给江浙中小企业咨询的经验。唐兴通认为无外乎以下几点原因：1.完全不懂还可以利用视频来给自己企业做宣传;2.没有多媒体制作人员，认为做视频传播很麻烦;3.投入产出比，不确定;其实我们不一定需要很好的制作，不是公司非得拍的像好莱坞的视频才拿出来放到视频平台上来，你太认真了，可能用户直觉就说，看这家伙又在忽悠我，抵触情绪还大，对手抢先在你的视频下跟帖说，软文，广告，接下来的营销力就遭受很大的考验。你完全可以用自己的智慧，开创一个经典的视频病毒传播。</p><p style="text-indent: 2em; text-align: left;">那么如何让你视频能够广泛传播出去呢?我认为需要注意以下几个方面：</p><p style="text-indent: 2em; text-align: left;">1. 视频的内容</p><p style="text-indent: 2em; text-align: left;">视频的内容是关键，不是每段视频都会成为大家传播的。内容需要平时不常见的，超过人的想象力的承受力的。你必须做超出平常人的承受力，夸大，再夸张，让内容更具心理震撼力。做普通内容的，不如做温情的视频相对可靠。</p><p style="text-indent: 2em; text-align: left;">结合自己品牌的定位，营销的策略，做相关内容的制作。</p><p style="text-indent: 2em; text-align: left;">2. 视频的传播机会点</p><p style="text-indent: 2em; text-align: left;">视频的传播，我们也需要抓住传播的时间点问题。比如我之前给一个快速消费品在春节做视频的传播。我抓住中国家的文化，大雪阻挡不了游子回家的亲情。结合中国的春节文化，生肖文化，我们很愉快的达到我们传播的目的。</p><p style="text-indent: 2em; text-align: left;">和事件营销和类似，我们企业应该抓住大家的注意力，进行营销。正如我经常对客户讲的，你目标客户注意力集中在那里，那里就是我们革命的根据地。不要放过每次机会，不论是奥运会，还是三聚氰胺，还是台湾最近的自然灾害。只要我们用心，我们完全可以在视频营销中有大作为。抓住机会，就是成功的一半。</p><p style="text-indent: 2em; text-align: left;">3. 视频的创意</p><p style="text-indent: 2em; text-align: left;">视频营销也是需要自己的个性的，不要仅仅认为：视频传播，就是搞笑视频; 
+搞笑视频是一个优秀的视频传播形式。之所以大家会传播你的视频，很大部分是看重你的创意。如果你的创意，灵魂是很平静，太普通。没人会传播你。圈内的许多朋友给我抱怨，随着中国的创意和用户欣赏水平越来越高，用户视觉，情感都疲劳了，要想真心感动用户，对我们活动创意人员提出更高的挑战。就如前段日子诺基亚做了一个视频病毒营销：一个手机被鱼吃掉了，几个月后当这条鱼被抓到后，诺基亚手机还是可以继续使用。说明什么?防水，耐用的诺基亚。</p><p style="text-indent: 2em; text-align: left;">创意就是灵魂，没创意就一边打酱油去吧。</p><p style="text-indent: 2em; text-align: left;">4. 视频的亲民性/情感性</p><p style="text-indent: 2em; text-align: left;">视频传播中，我们制作内容时候，一个容易犯的错误是：没有站在用户的角度思考，做的视频和用户有距离感，不那么亲切。这是一个大忌。最好的视频传播，完全以用户的角度来制作视频的，而不是像我之前在博客里写过联想视频传播中，大张旗鼓的再视频中表述是联想赞助的。欲盖弥彰。另外比如传播平台的选择，视频title标记，keyword优化，SEM等方面的视频传播注意事项，鉴于篇幅，不作赘叙。</p><p style="text-indent: 2em; text-align: left;">结语：视频传播，转化为病毒传播是我期望的，我们不能保证我们每个视频都会成为广泛传播的病毒。不过我们在制作过程中还是应该遵循这些原则，做优秀的传播视频。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypktrhjx_1_page1.html$##||$厦义一品浅析产品定位五步法$#$$#$/UploadFiles/Others/20150826153012_54784.jpg$#$0$#$目标市场定位是一个市场细分与目标市场选择的过程，即明白为谁服务(Who)。在市场分化的今天，任何一家公司和任何一种产品的目标顾客都不可能是所有的人，对于选择目标顾客的过程，需要确定细分市场的标准对整体市场进行细分，对细分后的市场进行评估，最终确定所选择的目标市场。$#$<p style="text-indent: 2em; text-align: left;">第一步:目标市场定位</p><p style="text-indent: 2em; text-align: left;">目标市场定位是一个市场细分与目标市场选择的过程，即明白为谁服务(Who)。在市场分化的今天，任何一家公司和任何一种产品的目标顾客都不可能是所有的人，对于选择目标顾客的过程，需要确定细分市场的标准对整体市场进行细分，对细分后的市场进行评估，最终确定所选择的目标市场。</p><p style="text-indent: 2em; text-align: left;">目标市场定位策略：</p><p style="text-indent: 2em; text-align: left;">&middot;无视差异，对整个市场仅提供一种产品;</p><p style="text-indent: 2em; text-align: left;">&middot;重视差异，为每一个细分的子市场提供不同的产品;</p><p style="text-indent: 2em; text-align: left;">&middot;仅选择一个细分后的子市场，提供相应的产品。</p><p style="text-indent: 2em; text-align: left;">第二步:产品需求定位</p><p style="text-indent: 2em; text-align: left;">产品需求定位，是了解需求的过程，即满足谁的什么需要(What)。产品定位过程是细分目标市场并进行子市场选择的过程。这里的细分目标市场是对选择后的目标市场进行细分，选择一个或几个目标子市场的过程。对目标市场的需求确定，不是根据产品的类别进行，也不是根据消费者的表面特性来进行，而是根据顾客的需求价值来确定。顾客在购买产品时，总是为了获取某种产品的价值。产品价值组合是由产品功能组合实现的，不同的顾客对产品有着不同的价值诉求，这就要求提供与诉求点相同的产品。在这一环节，需要调研需求，这些需求的获得可以指导新产品开发或产品改进。</p><p style="text-indent: 2em; text-align: left;">第三步:产品测试定位</p><p style="text-indent: 2em; text-align: left;">企业产品测试定位是对企业进行产品创意或产品测试.即确定企业提供何种产品或提供的产品是否满足需求(IF)，该环节主要是进行企业自身产品的设计或改进。通过使用符号或者实体形式来展示产品(未开发和已开发)的特性，考察消费者对产品概念的理解、偏好、接受。这一环节测试研究需要从心理层面到行为层面来深入探究。以获得消费者对某一产品概念的整体接受情况。</p><p style="text-indent: 2em; text-align: left;">内容提示：</p><p style="text-indent: 2em; text-align: left;">&middot;考察产品概念的可解释性与传播性;</p><p style="text-indent: 2em; text-align: left;">&middot;同类产品的市场开发度分析：</p><p style="text-indent: 2em; text-align: left;">&middot;产品属性定位与消费者需求的关联分析：</p><p style="text-indent: 2em; text-align: left;">&middot;对消费者的选择购买意向分析。</p><p style="text-indent: 2em; text-align: left;">首先，需要进行产品概念与顾客认知、接受的对应分析，针对某一给定产品或概念，主要考察其可解释性与可传播性。很多成功的企业家并不一定是新产品的研发者，而是新概念的定义和推广者。</p><p style="text-indent: 2em; text-align: left;">其次，同类产品的市场开发度分析，包括产品渗透水平和渗透深度、主要竞争品牌的市场表现已开发度、消费者可开发度、市场竞争空隙机会，用来衡量产品概念的可推广度与偏爱度。从可信到偏爱，这里有一个层次的加深。有时，整个行业都会面临消费者的信任危机，此时推出新品就面临着产品概念的不被信任与不被认可的危机。</p><p style="text-indent: 2em; text-align: left;">再次.分析实际意义上的产品价格和功能等产品属性定位与消费者需求的关联。因为产品概念的接受和理解程度再高，如果没有对产品的需求.如果产品的功能不是恰恰满足了消费者某方面的需求，或者消费者的这种需求有很多的产品给予了很好的满足，这一产品概念仍然很难有好的市场前景。通过对影响产品定位和市场需求的因素关联分析，对产品的设计、开发和商业化进程作出调整。</p><p style="text-indent: 2em; text-align: left;">最后，探究消费者是否可能将心理的接受与需求转化为行为上的购买与使用，即对消费者的选择购买意向进行分析，以进行企业自身产品定位的最终效果测定。针对企业自身产品定位环节，这一层面包括新产品开发研究、概念测试、产品测试、命名研究、包装测试、产品价格研究等。</p><p style="text-indent: 2em; text-align: left;">第四步:差异化价值点定位</p><p style="text-indent: 2em; text-align: left;">差异化价值点定位即需要解决目标需要、企业提供产品以及竞争各方的特点的结合问题，同时，要考虑提炼的这些独特点如何与其他营销属性综合(Which)。在上述研究的基础上，结合基于消费者的竞争研究.进行营销属性的定位，一般的产品独特销售价值定位方法(USP)包括从产品独特价值特色定位、从产品解决问题特色定位、从产品使用场合时机定位、从消费者类型定位、从竞争品牌对比定位、从产品类别的游离定位、综合定位等。在此基础上，需要进行相应的差异化品牌形象定位与推广。</p><p style="text-indent: 2em; text-align: left;">第五步:营销组合定位</p><p style="text-indent: 2em; text-align: left;">营销组合定位即如何满足需要(How)，它是进行营销组合定位的过程。在确定满足目标顾客的需求与企业提供的产品之后，需要设计一个营销组合方案并实施这个方案，使定位到位。这不仅仅是品牌推广的过程，也是产品价格、渠道策略和沟通策略有机组合的过程。正如菲利普.科特勒所言，解决定位问题，能帮助企业解决营销组合问题。营销组合&mdash;&mdash;产品、价格、渠道、促销&mdash;&mdash;是定位战略战术运用的结果。在有的情况下，到位过程也是一个再定位的过程。因为在产品差异化很难实现时，必须通过营销差异化来定位。今天，你推出任何一种新产品畅销不过一个月，就马上会有模仿品出现在市场上，而营销差异化要比产品模仿难得多。因此，仅有产品定位已经远远不够，企业必须从产品定位扩展至整个营销的定位。</p>$#$http://www.xyyp88.com/Mobile/MArticles/xyypqxcpdw_1_page1.html"
+</div>
+--%>
+<script src="Inc/JS/wechat.js" type="text/javascript"></script>
+</body>
+</html>

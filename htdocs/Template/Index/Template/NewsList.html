@@ -1,0 +1,34 @@
+﻿#set($curtype = $columntypes.news)
+#set($currow=$nt.getcolumn($curtype,$cursid))
+#if($currow)
+    #set($columnurl=$nt.getcolumnurl($curtype,$currow))
+#end
+#if(!$selectcount)
+    #set($selectcount = 20)
+#end
+#set($keyvalues = "%{selectcount=$selectcount,sid=$cursid,otherfields=''}")
+#set($keyvalues01 = "%{selectcount=1,sid=$cursid,otherwhere='isTop=1'}")
+
+<div class="n_l fl">
+    <h3><a href="$!columnurl" title="$columnname" target="_blank">$columnname</a></h3>
+    #set($rows = $nt.GetDetailed($curtype,$keyvalues01).rows)
+    #foreach($row in $rows)
+    <dl>
+    <dt><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="/js/load.gif" _src="$sitedomain$row.photopath" alt="$row.title" title="$row.title" /></a></dt>
+    <dd>
+        <h4><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank">$nt.getsubstring($row.shortdesc,28)</a></h4>
+        <p>$nt.getsubstring($row.shortdesc,100)<a href="$sitedomain$row.PageUrl" title="查看详情" target="_blank">【查看详情】</a></p>
+    </dd>
+    </dl>
+    #end
+    <div class="clear"></div>
+    #set($keyvalues.otherwhere = $nt.GetNotIn($rows))
+    <div class="dt_list">
+    <ul>
+        #foreach($row in $nt.GetDetailed($curtype,$keyvalues).rows)
+        <li><span>$row.ShowTime.ToString("yyyy.MM.dd")</span><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank">* $nt.getsubstring($row.shortdesc,20)</a></li>
+        #end
+    </ul>
+    <h5><a href="$!columnurl" title="查看更多$columnname" target="_blank">more</a></h5>
+    </div>
+</div>

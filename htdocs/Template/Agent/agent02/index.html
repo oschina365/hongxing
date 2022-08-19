@@ -1,0 +1,46 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<div class="topadcs">
+    $sc.GetAdCodeByInfo($page.sid,$columntype,"${columntype}_index")
+</div>
+#set($dvs = $mt.GetColumnDataView($columntype,1,"enable=1","OrderID asc"))
+<div class="content">
+    #parse("$temppath/Common/locl.html")
+    <div class="a_nav content clearfix">
+        <ul class="clearfix">
+            #foreach($row in $dvs)
+            <li sid='$row.sid' class="$nt.GetThree($sid.equals($row.sid),'cur','') li_$index"><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="a_fz" id="a2">
+        <div class="content clearfix">
+            #if($thisrow.shortdesc.length > 0)
+                $thisrow.shortdesc
+            #end
+            #if($content.length > 0)
+                <div class="age_li_about age_li_about_960">$content</div>
+            #end
+            #if($thisrow.showtype > 1)
+                <div class="a_fz_con_${thisrow.showtype}_$thisrow.id">
+                    #parse("$temppath/Universal/news_list_showtype_${thisrow.showtype}.html")
+                    <div class="clear"></div>
+                </div>
+            #end
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+    SetFenLei("$thisrow.ID", { "3": "jxsjz" }, "$thisrow.ShowType", "div.a_fz");
+    if ($thisrow.showtype == 3) {
+        $(function () {
+            loadJs("/plug/fancybox/jquery.fancybox-1.3.4.pack.js", function () {
+                loadCss("/plug/fancybox/jquery.fancybox-1.3.4.css");
+                $("a.group").fancybox();
+            })
+        })
+    }
+</script>
+#parses("$temppath/Common/Footer.html")

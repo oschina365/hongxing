@@ -1,0 +1,15 @@
+﻿#set($curtype = $columntypes.product)
+#foreach($row in $nt.GetColumns($curtype,"%{otherwhere='isbest=1'}").rows)
+#set($keyvalues="%{selectcount=10,otherwhere='isBest=1'}")
+<h4 class="diysr diysr_list">
+    <a title="$row.title" href="$nt.GetColumnURL($curtype,$row)">$row.title</a>
+    <div class="line"></div>
+</h4>
+<div class="product_index_warp">
+    #set($keyvalues.sid = $row.sid)
+    #set($rows__ = $nt.GetDetailed($curtype,$keyvalues).rows)
+    #parse("$temppath/Universal/productList.html")
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+#end

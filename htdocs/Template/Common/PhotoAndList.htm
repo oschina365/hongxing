@@ -1,0 +1,52 @@
+﻿#*
+缩略图+列表
+*#
+#set($curtype = $columntypes.news)
+#set($keyvalues="%{sid='$cursid'}")
+
+#set($keyvalues.selectcount = 1)
+#set($keyvalues.otherwhere = "PhotoPath!='' and isTop=1")
+#set($rows = $nt.GetDetailed($curtype,$keyvalues).rows)
+#if(!$rows)
+    #set($keyvalues.otherwhere = "isTop=1")
+    #set($rows = $nt.GetDetailed($curtype,$keyvalues).rows)
+#end
+#foreach($row in $rows)
+<dl>
+    <dt><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank"><img src="$sitedomain$row.PhotoPath" alt="$row.title" title="$row.title" /></a></dt>
+    <dd>
+        <h3><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank">$row.title</a></h3>
+        <p>$nt.GetSubstring($row.shortdesc,244)</p>
+        <span><a href="$sitedomain$row.PageUrl" title="查看详情" target="_blank">查看详情</a></span>
+    </dd>
+</dl>
+#end
+<div class="clear"></div>
+#set($keyvalues.selectcount = 10)
+#if($rows)
+    #set($keyvalues.otherwhere = $nt.GetNotIn($rows))
+#else
+    #set($keyvalues.otherwhere = "")
+#end
+#set($rows = $nt.GetDetailed($curtype,$keyvalues).rows)
+<div class="news_m">
+    <ul class="new_listdqdt">
+        #foreach($row in $rows)
+        <li><a href="$sitedomain$row.PageUrl" title="$row.title" target="_blank">$row.title</a></li>
+        #end
+    </ul>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".new_listdqdt").each(function () {
+            if ($(this).find("li").size() > 0) {
+                if ($(this).find("li").size() % 2 == 0) {
+                    $(this).find("li:last").addClass("nobor");
+                    $(this).find("li:last").prev().addClass("nobor");
+                } else {
+                    $(this).find("li:last").addClass("nobor");
+                }
+            }
+        })
+    })
+</script>

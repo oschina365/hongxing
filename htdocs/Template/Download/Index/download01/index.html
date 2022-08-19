@@ -1,0 +1,54 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+<div class="content">
+    <div class="rightl">
+        <div class="righttop"></div>
+        #parse("$temppath/Common/locl.html")
+        <div class="pro_main">
+            #*获取分页数据*#
+            #paging($rows "%{pagesize=20,fields='*',sqlwhere=''}")
+
+            #set($rows__ = $rows)
+
+            <div class="stfs">
+                    <table>
+                      <tr class="as">
+                        <td style="width:28%">文件标题</td>
+                        
+                        <td style="width:47%">文件描述</td>
+                        <td  style="width:15%">录入时间</td>
+                        <td style="width:10%">操作</td>
+                      </tr>
+                     #foreach($row in $rows)
+                      <tr #if($index%2==0) class="odd" #end>
+                        <td><a href="/Tools/Download.aspx?filepath=$row.downloadurl" target="_blank" title="$row.title">$row.title</a></td>
+                        <td>$row.shortdesc</td>
+                        <td>$row.inputtime.ToString("yyyy-MM-dd")</td>
+                        <td><a class="dowBtn"  href="/Tools/Download.aspx?filepath=$row.downloadurl" target="_blank" title="点击下载">点击下载</a></td>
+                      </tr>
+                      #end
+
+                    </table>
+            </div>
+
+                            
+
+           #if($rows.count == 0)
+            <div id="nodata">数据更新中......</div>
+            #end
+
+            <div class="clear"></div>
+            #parse("$temppath/Common/paging.html")
+        </div>
+
+    </div>
+    <div class="leftr">
+        #parses("$temppath/$columntype/column.html")
+        $c2.leftLx
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")

@@ -1,0 +1,33 @@
+﻿#set($curtype = $columntypes.news)
+#set($cursid="0001,0002,0008")
+#set($currow=$nt.getcolumn($curtype,$cursid))
+#set($columnurl=$nt.getcolumnurl($curtype,$currow))
+#if(!$selectcount)
+    #set($selectcount = 20)
+#end
+#set($keyvalues = "%{sid=$cursid,selectcount=$selectcount}")
+<div class="cpx_anl">
+    <div class="pb_h pb_h2 pb_h3">
+        <span>
+            <a href="javascript:;" class="prev"><img src="${detailed_temppath}Img/pub/jiao1.jpg" alt="<" /></a>
+            <a href="javascript:;" class="next"><img src="${detailed_temppath}Img/pub/jiao2.jpg" alt=">" /></a>
+        </span>
+        <a href="$columnurl" target="_blank" title="相关案例">相关案例</a><i>/ OUR POWER</i>
+    </div>
+    <div id="gd02">
+        #foreach($row in $nt.GetDetailed($curtype,$keyvalues).rows)
+        <dl>
+            <dt><a href="$row.PageUrl" title="$row.title"><img src="$row.PhotoPath " alt="$row.title"  title="$row.title" /></a></dt>
+            <dd><a href="$row.PageUrl" title="$row.title">$row.title</a></dd>
+        </dl>
+        #end
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        loadJs("/js/jquery.SuperSlide.2.1.1.js", function () {
+            var gundwarp = $("#gd02").parent();
+            gundwarp.slide({ mainCell: "#gd02", autoPlay: true, effect: "leftLoop", vis: 4 });
+        })
+    })
+</script>

@@ -1,0 +1,30 @@
+﻿{$HeaderHtml$}
+<script type="text/javascript">
+    var OBJ_TITLE = "{$title$}";
+    var OBJ_ID = "{$ID$}";
+    var SID = "{$SID$}";
+</script>
+{$AuthorityLayer$}
+<div class="topadcs">{$detailed_ad$}</div>
+#set($dvs = $mt.GetColumnDataView($columntype,1,"enable=1","OrderID asc"))
+<!--content:start-->
+<div class="content">
+    <div class="a_nav content clearfix">
+        <ul class="clearfix">
+            #foreach($row in $dvs)
+            <li sid='$row.sid' class="$nt.GetThree($sid.equals($row.sid),'cur','') li_$index"><a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a></li>
+            #end
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="plc rows" style=" display:none"><span class="red_x">当前位置：</span>{$Loc$}</div>
+    <div class="allcontent">
+        {$Content$}
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    {$type$} Load();
+</script>
+<!--content:end-->
+{$FooterHtml$}

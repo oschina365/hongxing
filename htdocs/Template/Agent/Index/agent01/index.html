@@ -1,0 +1,43 @@
+﻿#parses("$temppath/Common/Header.html" "%{MARK=$columntype.tostring()}")
+<div class="topadcs">
+    $sc.GetAdCodeByKeyNameM("${columntype}_index")
+</div>
+<div class="content">
+    <div class="right">
+        <div class="righttop"></div>
+        <div class="right_main">
+            #parse("$temppath/Common/locl.html")
+            <div class="news_con">
+                #paging($rows "%{pagesize=10,fields='*',sqlwhere='',order=''}")
+                #foreach($row in $rows)
+                <dl class="news_dl">
+                    <dt class="png">
+                        <span class="dt_2">
+                            $row.ShowTime.ToString("yyyy")
+                        </span>
+                        <span class="dt_3">
+                            $row.ShowTime.ToString("MM-dd")
+                        </span>
+                    </dt>
+                    <dd>
+                        <span><a href="$sitedomain$row.PageUrl" target="_blank" title="$row.title" class="dt_1">$row.title</a></span>
+                        $row.ShortDesc
+                    </dd>
+                </dl>
+                #end
+                <div class="clear"></div>
+                #parse("$temppath/Common/paging.html")
+            </div>
+        </div>
+        <div class="rightbot"></div>
+        #parse("$temppath/Common/RecommendedProducts.html")
+        #parse("$temppath/Common/RecommendedNews.html")
+    </div>
+        
+    <div class="left">
+        #parses("$temppath/$columntype/column.html")
+        $c2.leftLx
+    </div>
+</div>
+<div class="clear"></div>
+#parses("$temppath/Common/Footer.html")
