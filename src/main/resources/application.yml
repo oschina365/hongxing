@@ -2,3 +2,21 @@ spring:
   web:
     resources:
       static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/, classpath:/templates/
+  mvc:
+    date-format: yyyy-MM-dd
+    view:
+      prefix: /templates/
+      suffix: .ftl
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: false
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    suffix: .ftl
+    request-context-attribute: request
+    settings:
+      number_format: '0.##'   #数字格式化，无小数点

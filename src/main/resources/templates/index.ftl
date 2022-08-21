@@ -1,4 +1,5 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+﻿<#include "common/layout.ftl"/>
+<@html title_="武汉办公家具-办公桌椅-红鑫办公室家具定制厂家-办公家具-办公家具厂">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta content="telephone=no" name="format-detection"/>
@@ -46,72 +47,7 @@
     </div>
 </div>
 
-<div class="g-top">
-    <div class="header">
-        <div class="nav">
-            <p class="fr">
-                <a href="#">收藏网站</a>|
-                <a href="">常见问题</a>|
-                <a href="">联系红鑫</a>|
-                <a href="">网站地图</a>
-            </p>您好，欢迎来到红鑫武汉办公家具官网！
-        </div>
-        <div class="top">
-            <div class="logo"><a href=""><img src="Skins/Default/Img/Common/top_24.jpg" alt="武汉办公家具"/></a></div>
-            <div class="zi1">武汉办公家具大型生产厂家<p>打造<span>线上预约+线下体验</span>全新模式</p></div>
-            <div class="tel"><p>全国服务热线：<span>400-678-5198</span></p></div>
-            <div class="lb"><a href="">免费领取1980元进店大礼包！</a></div>
-        </div>
-        <div class="menu">
-            <ul>
-                <li>
-                    <a class="tfs" href="">办公家具分类</a>
-                    <div class="erji">
-                  <span><a href=""><i><img src="Skins/Default/Img/Common/ic_03.png" alt=""/></i>办公区域分类</a>
-                    <div class="sanji">
-                      <em>
-                        <a href=""><i>总裁-总经理</i></a>
-                        <a href=""><i>总监-经理</i></a>
-                        <a href=""><i>主管-职员</i></a>
-                        <a href=""><i>前台、公共休息区</i></a>
-                        <a href=""><i>会议室区域</i></a>
-                        <a href=""><i>接待洽谈区</i></a>
-                      </em>
-                      <b><a href=""><img src="Skins/Default/Img/Common/lj.jpg" alt=""/></a></b>
-                    </div>
-                 </span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_10.png" alt=""/></i>办公行业分类</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_12.png" alt=""/></i>大班台系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_14.png" alt=""/></i>办公屏风系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_16.png" alt=""/></i>办公桌系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_18.png" alt=""/></i>会议桌系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_21.png" alt=""/></i>办公椅系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_24.png" alt=""/></i>文件柜系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_27.png" alt=""/></i>办公前台系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_29.png" alt=""/></i>沙发茶几系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_32.png" alt=""/></i>高隔断系列</a></span>
-                        <span><a href=""><i><img src="Skins/Default/Img/Common/ic_34.png" alt=""/></i>办公装饰系列</a></span>
-                    </div>
-                </li>
-                <!-- <li><a href="">红鑫首页</a></li>
-                 <li><a href="">工程案例</a></li>
-                 <li><a href="">办公家具定制</a></li>
-                 <li class="ts"><a href="">线下体验馆</a></li>
-                 <li><a href="">资质荣誉</a></li>
-                 <li><a href="">关于红鑫</a></li>
-                 <li class="none"><a href="">联系我们</a></li>-->
-
-                <li class="cur"><a href="/" title="红鑫首页">红鑫首页</a></li>
-                <li><a href="cgal.html" title="工程案例">工程案例</a></li>
-                <li><a href="helps/dzfw.html" title="办公家具定制">办公家具定制</a></li>
-                <li class="ts"><a href="xxtyg.html" title="直营展厅">直营展厅</a></li>
-                <li><a href="helps/ryzz.html" title="资质荣誉">资质荣誉</a></li>
-                <li><a href="helps/aboutus.html" title="关于红鑫">关于红鑫</a></li>
-                <li><a href="helps/contactus.html" title="联系我们">联系我们</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<#include "common/g_top.ftl"/>
 
 <div class="banan">
   <span class="content">
@@ -513,56 +449,6 @@
     </div>
 </div>
 
-<div class="g-bot">
-    <div class="bot content">
-        <div class="bot-t">
-            <ul>
-                <li class="cur"><a href="">红鑫首页 </a></li>
-                <li><a href="">工程案例</a></li>
-                <li><a href="">办公家具定制 </a></li>
-                <li><a href="">线下体验馆</a></li>
-                <li><a href=""> 资质荣誉</a></li>
-                <li><a href="">关于红鑫</a></li>
-                <li><a href="">联系我们</a></li>
-                <li><a href="">网站地图</a></li>
-            </ul>
-        </div>
-        <div class="bot-c">
-            <ul>
-                <li><i><img src="Skins/Default/Img/Common/bot_19.jpg" alt=""/></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：</b></li>
-                <li><i><img src="Skins/Default/Img/Common/bot_22.jpg" alt=""/></i>座机：027-83939586</i></li>
-                <li><i><img src="Skins/Default/Img/Common/bot_26.jpg" alt=""/></i>地址：武汉市汉口发展大道222号华南国际广场A座26楼</li>
-                <li><i><img src="Skins/Default/Img/Common/bot_27.jpg" alt=""/></i>传真：027-86822542</i></li>
-                <li><i><img src="Skins/Default/Img/Common/bot_30.jpg" alt=""/></i>全国服务热线：400-865-1288/400-678-5198</li>
-                <li><i><img src="Skins/Default/Img/Common/bot_31.jpg" alt=""/></i>邮箱：hongxin@hongxin.com.cn</li>
-            </ul>
-            <em><a href=""><img src="Skins/Default/Img/Common/bot_12.jpg" alt=""/></a></em>
-            <span><img src="Skins/Default/Img/Common/bot_15.jpg" alt=""/></span>
-        </div>
-        <div class="link">
-            <p><a class="a1" href="">友情链接</a><a class="a2" href="">申请友情链接>></a></p>
-            <span>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-        <a href="">友情链接</a>
-      </span>
-        </div>
-    </div>
-</div>
-
 </body>
 <!--[if IE 6]>
 <script src="JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
@@ -575,4 +461,4 @@
     /* change it to what suits you! */
 </script>
 <![endif]-->
-</html>
+</@html>
