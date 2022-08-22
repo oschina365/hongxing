@@ -66,13 +66,7 @@
                     <a href="">时尚办公家具</a>
                     <a href="">办公家具定制</a>
                 </p>
-                <div class="banan-tr">
-                    <input class="inp01" type="text" value="请输入关键字……">
-                    <a href=""><span>不限栏目</span></a>
-                    <a href=""><span>不限栏目2</span></a>
-                    <a href=""><span>不限栏目</span></a>
-                    <input class="inp02" type="bottom">
-                </div>
+                <#include "common/category_list.ftl"/>
             </div>
         </div>
         <div class="g-one content">

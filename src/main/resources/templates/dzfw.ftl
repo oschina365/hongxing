@@ -2,19 +2,19 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
         <title>武汉办公家具定制,办公室家具品牌,办公桌椅定制-红鑫家俱</title>
-        <meta name="keywords" content="武汉办公家具定制,武汉办公桌椅定制,办公家具定制厂家"/>
-        <meta name="description"
-              content="武汉办公家具定制品牌-红鑫办公家具,免费提供专属办公空间设计解决方案,免费上门安装,终身维护.提供高品质的办公家具定制,包括文件柜、办公屏风、办公桌椅定制.服务热线：400-678-5198"/>
+        <meta name="keywords" content="武汉办公家具定制,武汉办公桌椅定制,办公家具定制厂家" />
+        <meta name="description" content="武汉办公家具定制品牌-红鑫办公家具,免费提供专属办公空间设计解决方案,免费上门安装,终身维护.提供高品质的办公家具定制,包括文件柜、办公屏风、办公桌椅定制.服务热线：400-678-5198" />
         <script src="/JS/MobileRewrite.js" type="text/javascript"></script>
-        <script type="text/javascript">uaredirect("/Mobile/Mhelps/dzfw.html");</script>
-        <link key="resetcommon" href="/Skins/Default/resetcommon.css" rel="stylesheet"
-              type="text/css"/>
-        <link key="style" href="/Skins/Default/Style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            uaredirect("/Mobile/Mhelps/dzfw.html");
+        </script>
+        <link key="resetcommon" href="/Skins/Default/resetcommon.css" rel="stylesheet" type="text/css" />
+        <link key="style" href="/Skins/Default/Style.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" key="NSW_Details" src="/JS/NSW_Details.js"></script>
-        <meta name="format-detection" content="telephone=no"/>
+        <meta name="format-detection" content="telephone=no" />
         <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 
         <style>
@@ -79,8 +79,11 @@
             <div class='cs_img'>
             </div>
             <div class='cs_btn'>红鑫家具旗舰店
-                <li><a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="./js/158995871.jpg" width="120" alt=""></a></li>
+                <li>
+                    <a href="https://hongxin.tmall.com/" target="_black">
+                        <img src="./js/158995871.jpg" width="120" alt="">
+                    </a>
+                </li>
             </div>
         </div>
         <!-- 代码部分end -->
@@ -113,11 +116,11 @@
             <div class="banan-t content">
                 <p>
                     <b>热门搜索词：</b>
-                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a><a href="/product/"
-                                                                              title="武汉红鑫办公家具">武汉红鑫办公家具</a><a
-                            href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
+                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a>
+                    <a href="/product/" title="武汉红鑫办公家具">武汉红鑫办公家具</a>
+                    <a href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
                 </p>
-                <#include "common/category_list.ftl"/>
+                <#include "common/category_list.ftl" />
             </div>
         </div>
         <script src="/JS/select2css.js" type="text/javascript"></script>
@@ -126,7 +129,7 @@
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "help";
@@ -158,12 +161,12 @@
             var SID = "0001,0009";
         </script>
 
-        <div class="topadcs"><a class="fullad" href="/product/" title="五大免费,全行业独此一家"
-                                style="background:url(/uploadfiles/pictures/others/20161108200130_9664.jpg) no-repeat center top;"></a>
+        <div class="topadcs">
+            <a class="fullad" href="/product/" title="五大免费,全行业独此一家" style="background:url(/uploadfiles/pictures/others/20161108200130_9664.jpg) no-repeat center top;"></a>
         </div>
         <!--content:start-->
         <div class="content">
-            <#include "common/a_nav.ftl"/>
+            <#include "common/a_nav.ftl" />
             <div class="clear"></div>
             <div class="plc rows" style=" display:none">
                 <span class="red_x">当前位置：</span>
@@ -660,32 +663,44 @@
                 <script type="text/javascript" src="/js/Time.js"></script>
                 <div class="zs content">
                     <h3>
-                        <img src="/uploadfiles/pictures/help/zsz.jpg" alt="武汉办公家具定制"/>
+                        <img src="/uploadfiles/pictures/help/zsz.jpg" alt="武汉办公家具定制" />
                     </h3>
                     <ul>
                         <li>
-                            <a class="cur"><em><img src="/uploadfiles/pictures/help/zs_03.png" alt="办公家具定制"/></em>
+                            <a class="cur">
+                                <em>
+                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="办公家具定制" />
+                                </em>
                                 <p>
                                     网上预约<span>免费量尺</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a><em><img src="/uploadfiles/pictures/help/zs_03.png" alt="武汉办公家具定做"/></em>
+                            <a>
+                                <em>
+                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="武汉办公家具定做" />
+                                </em>
                                 <p>
                                     上门量尺<span>设计方案</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a><em><img src="/uploadfiles/pictures/help/zs_03.png" alt="定做武汉办公家具"/></em>
+                            <a>
+                                <em>
+                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="定做武汉办公家具" />
+                                </em>
                                 <p>
                                     到店看方案<span>签订合同</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a><em><img src="/uploadfiles/pictures/help/zs_03.png" alt="定制武汉办公家具"/></em>
+                            <a>
+                                <em>
+                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="定制武汉办公家具" />
+                                </em>
                                 <p>
                                     产品配送<span>安装售后</span>
                                 </p>
@@ -696,29 +711,40 @@
                 <div class="fs content">
                     <ul>
                         <li>
-                            <a><img src="/uploadfiles/pictures/help/fst_03.png" alt="办公家具定制厂家"/>企业接待台<br/>
+                            <a>
+                                <img src="/uploadfiles/pictures/help/fst_03.png" alt="办公家具定制厂家" />企业接待台
+                                <br />
                                 定制</a>
                         </li>
                         <li>
-                            <a><img src="/uploadfiles/pictures/help/fst_05.png" alt="武汉办公室家具定制"/>自定义办公区<br/>
+                            <a>
+                                <img src="/uploadfiles/pictures/help/fst_05.png" alt="武汉办公室家具定制" />自定义办公区
+                                <br />
                                 定制</a>
                         </li>
                         <li>
-                            <a><img src="/uploadfiles/pictures/help/fst_07.png" alt="武汉办公桌椅定制"/>个性洽谈区<br/>
+                            <a>
+                                <img src="/uploadfiles/pictures/help/fst_07.png" alt="武汉办公桌椅定制" />个性洽谈区
+                                <br />
                                 定制</a>
                         </li>
                         <li>
-                            <a><img src="/uploadfiles/pictures/help/fst_09.png" alt="武汉办公桌定制"/>多功能会议区<br/>
+                            <a>
+                                <img src="/uploadfiles/pictures/help/fst_09.png" alt="武汉办公桌定制" />多功能会议区
+                                <br />
                                 定制</a>
                         </li>
                         <li>
-                            <a><img src="/uploadfiles/pictures/help/fst_11.png" alt="武汉文件柜定制"/>异形展示柜<br/>
+                            <a>
+                                <img src="/uploadfiles/pictures/help/fst_11.png" alt="武汉文件柜定制" />异形展示柜
+                                <br />
                                 定制</a>
                         </li>
                     </ul>
                     <h3>
                         <a href="javascript:void(0);" onclick="doyoo.util.openChat('g=');return false;"="" title="免费预约量尺
-                        "><em>如果您的需求没有列出，不妨填下表格或打个电话<span>400-678-5198</span>，红鑫家具会给您惊喜！</em>
+                        ">
+                        <em>如果您的需求没有列出，不妨填下表格或打个电话<span>400-678-5198</span>，红鑫家具会给您惊喜！</em>
                         <p>
                             免费预约量尺
                         </p>
@@ -728,11 +754,10 @@
                 <div class="qs content">
                     <div class="qs-l fl">
                         <h4>
-                            <img src="/uploadfiles/pictures/help/qsz.png" alt="武汉办公家具定制"/>
+                            <img src="/uploadfiles/pictures/help/qsz.png" alt="武汉办公家具定制" />
                         </h4>
                         <p class="ps_time">
-                            剩余时间：<i id="day_show">23</i> 天<i id="hour_show">12</i> 时<i id="minute_show">45</i> 分<i
-                                    id="second_show">32</i> 秒
+                            剩余时间：<i id="day_show">23</i> 天<i id="hour_show">12</i> 时<i id="minute_show">45</i> 分<i id="second_show">32</i> 秒
                         </p>
                         <ul>
                             <li>
@@ -754,7 +779,8 @@
                         <h5>
                             <a href="javascript:void(0);" onclick="doyoo.util.openChat('g=');return false;"="" title="
                             点击咨询">
-                            <input value="点击咨询" type="button"/> </a>
+                            <input value="点击咨询" type="button" />
+                            </a>
                         </h5>
                     </div>
                     <div class="qs-r fr">
@@ -771,33 +797,49 @@
                     <div class="pk-c">
                         <div class="pk-l fl">
                             <h1>
-                                <a><img src="/uploadfiles/pictures/help/pk_06.jpg" alt="武汉办公家具定制"/></a>
+                                <a>
+                                    <img src="/uploadfiles/pictures/help/pk_06.jpg" alt="武汉办公家具定制" />
+                                </a>
                             </h1>
                             <ul>
                                 <li class="l1">
-                                    <img src="/uploadfiles/pictures/help/pk_11.jpg" alt="武汉办公家具定做"/> <em>优势一</em><span>正规大型家具企业，通过ISO9001质量体系认证、14001环境管理体系认证、18001健康体系认证</span>
+                                    <img src="/uploadfiles/pictures/help/pk_11.jpg" alt="武汉办公家具定做" />
+                                    <em>优势一</em>
+                                    <span>正规大型家具企业，通过ISO9001质量体系认证、14001环境管理体系认证、18001健康体系认证</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_21.jpg" alt="武汉办公室家具定制"/> <em>优势二</em><span>可开具正规机打普票和增值税发票</span>
+                                    <img src="/uploadfiles/pictures/help/pk_21.jpg" alt="武汉办公室家具定制" />
+                                    <em>优势二</em>
+                                    <span>可开具正规机打普票和增值税发票</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_26.jpg" alt="办公家具定做"/> <em>优势三</em><span>自有大型办公家具展厅，先看实物在购买，售后有保障</span>
+                                    <img src="/uploadfiles/pictures/help/pk_26.jpg" alt="办公家具定做" />
+                                    <em>优势三</em>
+                                    <span>自有大型办公家具展厅，先看实物在购买，售后有保障</span>
                                 </li>
                             </ul>
                         </div>
                         <div class="pk-l fr">
                             <h1>
-                                <a><img src="/uploadfiles/pictures/help/pk.jpg" alt="定制办公家具厂"/></a>
+                                <a>
+                                    <img src="/uploadfiles/pictures/help/pk.jpg" alt="定制办公家具厂" />
+                                </a>
                             </h1>
                             <ul>
                                 <li class="l1">
-                                    <img src="/uploadfiles/pictures/help/pk_14.jpg" alt="办公家具定制厂家"/> <em>缺点一</em><span>规模小，产品质量和售后无保障</span>
+                                    <img src="/uploadfiles/pictures/help/pk_14.jpg" alt="办公家具定制厂家" />
+                                    <em>缺点一</em>
+                                    <span>规模小，产品质量和售后无保障</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_22.jpg" alt="办公家具定制公司"/> <em>缺点二</em><span>普通小型企业只能开具手写发票</span>
+                                    <img src="/uploadfiles/pictures/help/pk_22.jpg" alt="办公家具定制公司" />
+                                    <em>缺点二</em>
+                                    <span>普通小型企业只能开具手写发票</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_25.jpg" alt="武汉办公家具厂家"/> <em>缺点三</em><span>小型卖场，随时可能转让，无售后</span>
+                                    <img src="/uploadfiles/pictures/help/pk_25.jpg" alt="武汉办公家具厂家" />
+                                    <em>缺点三</em>
+                                    <span>小型卖场，随时可能转让，无售后</span>
                                 </li>
                             </ul>
                         </div>
@@ -817,16 +859,16 @@
                     </div>
                 </div>
                 <div class="mf content">
-                    <img src="/uploadfiles/pictures/help/mf.jpg" alt="办公家具定制厂家"/>
+                    <img src="/uploadfiles/pictures/help/mf.jpg" alt="办公家具定制厂家" />
                 </div>
                 <div class="xz content">
                     <h2>
-                        他们都选择了<em>红鑫</em><span>说不定您身边的朋友，也是红鑫家具的合作伙伴哦~</span>
+                        他们都选择了<em>红鑫</em>
+                        <span>说不定您身边的朋友，也是红鑫家具的合作伙伴哦~</span>
                     </h2>
                     <p>
-                        <img src="/uploadfiles/pictures/help/xz_02.jpg" alt="武汉办公家具定制"/> <a class="gd2"
-                                                                                            href="/cgal.html"
-                                                                                            target="_blank">查看更多</a>
+                        <img src="/uploadfiles/pictures/help/xz_02.jpg" alt="武汉办公家具定制" />
+                        <a class="gd2" href="/cgal.html" target="_blank">查看更多</a>
                     </p>
                 </div>
             </div>
@@ -851,42 +893,71 @@
                 </div>
                 <div class="bot-c">
                     <ul>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_19.jpg"
-                                    alt="武汉办公家具"/></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：<a
-                                        href="http://beian.miit.gov.cn/" target="_blank"
-                                        rel="nofollow">鄂ICP备12004884号</a></b></li>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机"/></i>座机：027-61520188</i></li>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址"/></i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" />
+                            </i>武汉红鑫家俱有限公司<b>版权所有</b>
+                            <b>备案号：<a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">鄂ICP备12004884号</a>
+                            </b>
                         </li>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_27.jpg"
-                                    alt="传真"/></i>电话：18207180190/18207180195</i></li>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线"/></i>全国服务热线：400-678-5198
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" />
+                            </i>座机：027-61520188</i>
                         </li>
-                        <li><i><img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱"/></i>邮箱：hongxin@hongxin.com.cn
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" />
+                            </i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
                         </li>
-                        <li><i><img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案"/></i>
-                            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                                document.write(unescape("%3Cspan id='cnzz_stat_icon_1260852450'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260852450%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-                            <meta name="baidu-site-verification" content="rsU7PwgDP3"/>
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" />
+                            </i>电话：18207180190/18207180195</i>
                         </li>
-                        <li><a href="123132" target="_blank">鄂公网安备42011102000251号 </a></li>
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" />
+                            </i>全国服务热线：400-678-5198
+                        </li>
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" />
+                            </i>邮箱：hongxin@hongxin.com.cn
+                        </li>
+                        <li>
+                            <i>
+                                <img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案" />
+                            </i>
+                            <script type="text/javascript">
+                                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                                document.write(unescape("%3Cspan id='cnzz_stat_icon_1260852450'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260852450%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+                            </script>
+                            <meta name="baidu-site-verification" content="rsU7PwgDP3" />
+                        </li>
+                        <li>
+                            <a href="123132" target="_blank">鄂公网安备42011102000251号 </a>
+                        </li>
                     </ul>
-                    <em><a href="/" title="红鑫家俱"><img
-                                    src="/uploadfiles/pictures/setting/20161024153608_7175.jpg"
-                                    alt="武汉红鑫家俱有限公司" title="武汉红鑫家俱有限公司"/></a></em>
-                    <span class="spanewm"><img src="/uploadfiles/pictures/setting/20161201103707_8253.png"
-                                               alt="武汉办公家具"/></span>
+                    <em>
+                        <a href="/" title="红鑫家俱">
+                            <img src="/uploadfiles/pictures/setting/20161024153608_7175.jpg" alt="武汉红鑫家俱有限公司" title="武汉红鑫家俱有限公司" />
+                        </a>
+                    </em>
+                    <span class="spanewm">
+						<img src="/uploadfiles/pictures/setting/20161201103707_8253.png" alt="武汉办公家具" />
+					</span>
                 </div>
                 <div class="link">
-                    <p><a class="a1" href="/friendlink/" title="友情链接" target="_blank">友情链接</a><a
-                                class="a2" href="/friendlink/apply.aspx" title="申请友情链接入口" target="_blank">申请友情链接>></a>
+                    <p>
+                        <a class="a1" href="/friendlink/" title="友情链接" target="_blank">友情链接</a>
+                        <a class="a2" href="/friendlink/apply.aspx" title="申请友情链接入口" target="_blank">申请友情链接>></a>
                     </p>
                     <span>
-             <a href="http://hongxin.com.cn" title="武汉办公家具定制" target="_blank">武汉办公家具定制</a>
-            <a href="http://www.51yyjj.com" title="上海办公家具" target="_blank">上海办公家具</a>
-            <a href="https://whhxbg.1688.com/?spm=a2615.2177701.autotrace-topNav.1.2ce721370i9Wm" title="红鑫家具商城"
-               target="_blank">红鑫家具商城</a>
-        </span>
+						<a href="http://hongxin.com.cn" title="武汉办公家具定制" target="_blank">武汉办公家具定制</a>
+						<a href="http://www.51yyjj.com" title="上海办公家具" target="_blank">上海办公家具</a>
+						<a href="https://whhxbg.1688.com/?spm=a2615.2177701.autotrace-topNav.1.2ce721370i9Wm" title="红鑫家具商城" target="_blank">红鑫家具商城</a>
+					</span>
                 </div>
             </div>
         </div>
@@ -905,10 +976,8 @@
         <![endif]-->
         <script src="/JS/rollup.min.js" type="text/javascript"></script>
 
-        <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
-                defer="defer"></script>
-        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer"
-                style="display:none;"></script>
+        <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" defer="defer"></script>
+        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer" style="display:none;"></script>
         <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
         <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
     </body>
