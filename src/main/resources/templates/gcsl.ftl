@@ -1,127 +1,127 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
-    <title>工厂实力 - 武汉办公家具|办公桌椅生产厂家厂商报价直销|办公家具定制厂家|武汉红鑫办公家具厂</title>
-    <meta name="keywords" content="武汉办公家具,武汉办公桌椅,办公家具定制厂家,办公前台,办公室办公沙发,武汉办公家具公司,办公家具定制厂家,"/>
-    <meta name="description"
-          content="武汉办公家具，武汉红鑫办公家具20年品质沉淀，主营办公家具、保密文件柜定做、办公桌椅、武汉大小型会议桌椅厂家、档案密集柜报价、钢制铁皮文件柜厂家、储物柜、洽谈桌、武汉办公桌椅、办公前台、大班台等、武汉办公家具定制：400-678-5198"/>
-    <link key="resetcommon" href="/Skins/default/resetcommon.css" rel="stylesheet" type="text/css"/>
-    <link key="style" href="/Skins/default/Style.css" rel="stylesheet" type="text/css"/>
-    <link key="stylesheet" href="/template/help/help01/stylesheet.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" key="nsw_jcia" src="/JS/NSW_JCIA.js"></script>
-    <meta name="format-detection" content="telephone=no"/>
-    <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+        <title>工厂实力 - 武汉办公家具|办公桌椅生产厂家厂商报价直销|办公家具定制厂家|武汉红鑫办公家具厂</title>
+        <meta name="keywords" content="武汉办公家具,武汉办公桌椅,办公家具定制厂家,办公前台,办公室办公沙发,武汉办公家具公司,办公家具定制厂家,"/>
+        <meta name="description"
+              content="武汉办公家具，武汉红鑫办公家具20年品质沉淀，主营办公家具、保密文件柜定做、办公桌椅、武汉大小型会议桌椅厂家、档案密集柜报价、钢制铁皮文件柜厂家、储物柜、洽谈桌、武汉办公桌椅、办公前台、大班台等、武汉办公家具定制：400-678-5198"/>
+        <link key="resetcommon" href="/Skins/default/resetcommon.css" rel="stylesheet" type="text/css"/>
+        <link key="style" href="/Skins/default/Style.css" rel="stylesheet" type="text/css"/>
+        <link key="stylesheet" href="/template/help/help01/stylesheet.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" key="nsw_jcia" src="/JS/NSW_JCIA.js"></script>
+        <meta name="format-detection" content="telephone=no"/>
+        <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 
 
-    <style>
-        #cs_box {
-            width: 120px;
-            height: 0px;
-            color: #FFF;
-            background: #54a7ff;
-            position: fixed;
-            right: 5px;
-            top: 100px;
-            border-radius: 10px;
-            z-index: 1000
-        }
+        <style>
+            #cs_box {
+                width: 120px;
+                height: 0px;
+                color: #FFF;
+                background: #54a7ff;
+                position: fixed;
+                right: 5px;
+                top: 100px;
+                border-radius: 10px;
+                z-index: 1000
+            }
 
-        #cs_box span {
-            height: 20px;
-            line-height: 20px;
-            display: block;
-        }
+            #cs_box span {
+                height: 20px;
+                line-height: 20px;
+                display: block;
+            }
 
-        .cs_title {
-            font-size: 14px;
-            margin: 0px;
-            font-weight: bold;
-        }
+            .cs_title {
+                font-size: 14px;
+                margin: 0px;
+                font-weight: bold;
+            }
 
-        .cs_img {
-            width: 120px;
-            height: 0px;
-            background: #FFF;
-            margin: 2px;
-            background-image: url()
-        }
+            .cs_img {
+                width: 120px;
+                height: 0px;
+                background: #FFF;
+                margin: 2px;
+                background-image: url()
+            }
 
-        .cs_info {
-            font-size: 12px;
-            margin: 0px 10px;
-            overflow: hidden;
-            text-align: center;
-        }
+            .cs_info {
+                font-size: 12px;
+                margin: 0px 10px;
+                overflow: hidden;
+                text-align: center;
+            }
 
-        .cs_btn {
-            width: 120px;
-            height: 25px;
-            background: #333;
-            margin: 0px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            line-height: 25px;
-            color: #FFF;
-            text-align: center;
-            cursor: pointer;
-        }
-    </style>
-
-
-</head>
-<body>
-<!-- 代码部分begin -->
-<div id='cs_box'>
+            .cs_btn {
+                width: 120px;
+                height: 25px;
+                background: #333;
+                margin: 0px 10px;
+                border-radius: 5px;
+                font-size: 12px;
+                line-height: 25px;
+                color: #FFF;
+                text-align: center;
+                cursor: pointer;
+            }
+        </style>
 
 
-    <div class='cs_img'>
-    </div>
-
-    <div class='cs_btn'>红鑫家具旗舰店
-
-        <li><a href="https://hongxin.tmall.com/" target="_black">
-                <img src="./js/158995871.jpg" width="120" alt=""></a></li>
-
-    </div>
+    </head>
+    <body>
+        <!-- 代码部分begin -->
+        <div id='cs_box'>
 
 
-</div>
+            <div class='cs_img'>
+            </div>
 
-<!-- 代码部分end -->
+            <div class='cs_btn'>红鑫家具旗舰店
+
+                <li><a href="https://hongxin.tmall.com/" target="_black">
+                        <img src="./js/158995871.jpg" width="120" alt=""></a></li>
+
+            </div>
 
 
-</body>
+        </div>
+
+        <!-- 代码部分end -->
 
 
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
-</head>
-<body>
-<div class="pfb">
-    <div class="fb content">
-        <ul class="fb_ul">
-            <li>
-                <a class="fb_a fb_a_f" href="/product/">办公家具分类</a>|
-                <div class="erji">
+    </body>
+
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    </head>
+    <body>
+        <div class="pfb">
+            <div class="fb content">
+                <ul class="fb_ul">
+                    <li>
+                        <a class="fb_a fb_a_f" href="/product/">办公家具分类</a>|
+                        <div class="erji">
             <span class="span_1"><a class="sp_a" href="/aytfl.html" title="按用途分类"><i><img
                                 src="/uploadfiles/pictures/product/20161025150552_7352.png"/></i>按用途分类</a>
             <div class="sanji sanji_1">
@@ -154,8 +154,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_2"><a class="sp_a" href="/axyfl.html" title="按行业分类"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134113_2206.png"/></i>按行业分类</a>
+                            <span class="span_2"><a class="sp_a" href="/axyfl.html" title="按行业分类"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134113_2206.png"/></i>按行业分类</a>
             <div class="sanji sanji_2">
                 <em>
                                                 <a class="cur" href="/zfjg.html" title="政府机关"><i>政府机关</i></a>
@@ -184,8 +184,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_3"><a class="sp_a" href="/dbtxl.html" title="大班台系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134127_0534.png"/></i>大班台系列</a>
+                            <span class="span_3"><a class="sp_a" href="/dbtxl.html" title="大班台系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134127_0534.png"/></i>大班台系列</a>
             <div class="sanji sanji_3">
                 <em>
                                                 <a class="cur" href="/bsdbt.html" title="板式大班台"><i>板式大班台</i></a>
@@ -212,8 +212,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_4"><a class="sp_a" href="/bgpfxl.html" title="办公屏风系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134145_7575.png"/></i>办公屏风系列</a>
+                            <span class="span_4"><a class="sp_a" href="/bgpfxl.html" title="办公屏风系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134145_7575.png"/></i>办公屏风系列</a>
             <div class="sanji sanji_4">
                 <em>
                                                 <a class="cur" href="/bggdkz.html" title="办公隔断卡座"><i>办公隔断卡座</i></a>
@@ -233,8 +233,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_5"><a class="sp_a" href="/bgzxl.html" title="办公桌系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134201_0774.png"/></i>办公桌系列</a>
+                            <span class="span_5"><a class="sp_a" href="/bgzxl.html" title="办公桌系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134201_0774.png"/></i>办公桌系列</a>
             <div class="sanji sanji_5">
                 <em>
                                                 <a class="cur" href="/bsbgz.html" title="板式办公桌"><i>板式办公桌</i></a>
@@ -256,8 +256,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_6"><a class="sp_a" href="/hyzxl.html" title="会议桌系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134217_9623.png"/></i>会议桌系列</a>
+                            <span class="span_6"><a class="sp_a" href="/hyzxl.html" title="会议桌系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134217_9623.png"/></i>会议桌系列</a>
             <div class="sanji sanji_6">
                 <em>
                                                 <a class="cur" href="/smhyz.html" title="实木会议桌"><i>实木会议桌</i></a>
@@ -285,8 +285,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_7"><a class="sp_a" href="/bgyxl.html" title="办公椅系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134237_2074.png"/></i>办公椅系列</a>
+                            <span class="span_7"><a class="sp_a" href="/bgyxl.html" title="办公椅系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134237_2074.png"/></i>办公椅系列</a>
             <div class="sanji sanji_7">
                 <em>
                                                 <a class="cur" href="/pmdby.html" title="皮面大班椅"><i>皮面大班椅</i></a>
@@ -318,8 +318,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_8"><a class="sp_a" href="/wjgxl.html" title="文件柜系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134250_7662.png"/></i>文件柜系列</a>
+                            <span class="span_8"><a class="sp_a" href="/wjgxl.html" title="文件柜系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134250_7662.png"/></i>文件柜系列</a>
             <div class="sanji sanji_8">
                 <em>
                                                 <a class="cur" href="/smsg.html" title="实木书柜"><i>实木书柜</i></a>
@@ -347,8 +347,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_9"><a class="sp_a" href="/bgqtxl.html" title="办公前台系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134259_7637.png"/></i>办公前台系列</a>
+                            <span class="span_9"><a class="sp_a" href="/bgqtxl.html" title="办公前台系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134259_7637.png"/></i>办公前台系列</a>
             <div class="sanji sanji_9">
                 <em>
                                                 <a class="cur" href="/bsqt.html" title="板式前台"><i>板式前台</i></a>
@@ -365,8 +365,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_10"><a class="sp_a" href="/sfcjxl.html" title="沙发茶几系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134317_6637.png"/></i>沙发茶几系列</a>
+                            <span class="span_10"><a class="sp_a" href="/sfcjxl.html" title="沙发茶几系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134317_6637.png"/></i>沙发茶几系列</a>
             <div class="sanji sanji_10">
                 <em>
                                                 <a class="cur" href="/qpsssf.html" title="气派舒适沙发"><i>气派舒适沙发</i></a>
@@ -393,8 +393,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_11"><a class="sp_a" href="/ggdxl.html" title="高隔断系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134330_3775.png"/></i>高隔断系列</a>
+                            <span class="span_11"><a class="sp_a" href="/ggdxl.html" title="高隔断系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134330_3775.png"/></i>高隔断系列</a>
             <div class="sanji sanji_11">
                 <em>
                                                 <a class="cur" href="/gdjhx.html" title="高档加厚型"><i>高档加厚型</i></a>
@@ -410,8 +410,8 @@
                                 </b>
             </div>
         </span>
-                    <span class="span_12"><a class="sp_a" href="/bgzsxl.html" title="办公装饰系列"><i><img
-                                        src="/uploadfiles/pictures/product/20161027134341_8931.png"/></i>办公装饰系列</a>
+                            <span class="span_12"><a class="sp_a" href="/bgzsxl.html" title="办公装饰系列"><i><img
+                                                src="/uploadfiles/pictures/product/20161027134341_8931.png"/></i>办公装饰系列</a>
             <div class="sanji sanji_12">
                 <em>
                                                 <a class="cur" href="/bgdt.html" title="办公地毯"><i>办公地毯</i></a>
@@ -431,60 +431,61 @@
                                 </b>
             </div>
         </span>
+                        </div>
+                        <script type="text/javascript">
+                            $(".erji span").each(function (i) {
+                                $(".erji .span_" + i).mouseover(function () {
+                                    $(this).addClass("cur").siblings("span").removeClass("cur");
+                                    $(this).children(".sanji").show().parent().siblings("span").children(".sanji").hide();
+                                }).eq(0).trigger("mouseover");
+
+                                $(".sanji_" + i + " em a").mouseover(function () {
+                                    var _index = $(this).parent().children("a").index(this);
+                                    $(this).addClass("cur").siblings("a").removeClass("cur");
+                                    $(this).parent().siblings("b").find("a").eq(_index).show().siblings("a").hide();
+                                }).eq(0).trigger("mouseover");
+                            });
+
+                        </script>
+
+                    </li>
+                    <li><a class="fb_a" href="/">首页</a>|</li>
+                    <li><a class="fb_a" href="/cgal.html">工程案例图</a>|</li>
+                    <li><a class="ts fb_a" href="/xxtyg.html">直营展厅</a></li>
+                </ul>
+                <div class="fsr form">
+                    <input class="inp01s keypress" button="#sousuotow" type="text" defvalue="请输入热门关键词"
+                           id="seachkeywordstow">
+                    <input class="inp02s" type="bottom" id="sousuotow">
                 </div>
-                <script type="text/javascript">
-                    $(".erji span").each(function (i) {
-                        $(".erji .span_" + i).mouseover(function () {
-                            $(this).addClass("cur").siblings("span").removeClass("cur");
-                            $(this).children(".sanji").show().parent().siblings("span").children(".sanji").hide();
-                        }).eq(0).trigger("mouseover");
-
-                        $(".sanji_" + i + " em a").mouseover(function () {
-                            var _index = $(this).parent().children("a").index(this);
-                            $(this).addClass("cur").siblings("a").removeClass("cur");
-                            $(this).parent().siblings("b").find("a").eq(_index).show().siblings("a").hide();
-                        }).eq(0).trigger("mouseover");
-                    });
-
-                </script>
-
-            </li>
-            <li><a class="fb_a" href="/">首页</a>|</li>
-            <li><a class="fb_a" href="/cgal.html">工程案例图</a>|</li>
-            <li><a class="ts fb_a" href="/xxtyg.html">直营展厅</a></li>
-        </ul>
-        <div class="fsr form">
-            <input class="inp01s keypress" button="#sousuotow" type="text" defvalue="请输入热门关键词" id="seachkeywordstow">
-            <input class="inp02s" type="bottom" id="sousuotow">
+                <em>400-678-5198</em>
+            </div>
         </div>
-        <em>400-678-5198</em>
-    </div>
-</div>
 
-<div class="g-top">
-    <div class="header">
-        <div class="nav">
-            <p class="fr">
-                <a href="javascript:void(0);" onclick="javascript:addBookmark(this)" title="收藏本站">收藏网站</a>|
-                <a href="/jjcs.html" title="常见问题" target="_blank">常见问题</a>|
-                <a href="/helps/contactus.html" target="_blank" title="联系红鑫">联系红鑫</a>|
-                <a href="/sitemap.html" title="网站地图" target="_blank">网站地图</a>
-            </p>您好，欢迎来到红鑫办公家具官网！
-        </div>
-        <div class="top">
-            <div class="logo"><a href="/" title="武汉红鑫家俱有限公司"><img
-                            src="/uploadfiles/pictures/setting/20161024153605_3011.jpg" alt="武汉办公家具"
-                            title="武汉办公家具"/></a></div>
-            <div class="zi1">办公家具整体配套大型生产厂家<p>5000㎡自营体验馆为您<span>省时省心更省钱！</span></p></div>
-            <div class="tel"><p><span>400-678-5198</span><span>027-83939586</span></p></div>
-            <div class="lb"><a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
-                               title="立即咨询免费领取1980元进店大礼包！" target="_blank">免费领取1980元进店大礼包！</a></div>
-        </div>
-        <div class="menu">
-            <ul class="ul_col">
-                <li>
-                    <a class="tfs" href="/product/">办公家具分类</a>
-                    <div class="erji">
+        <div class="g-top">
+            <div class="header">
+                <div class="nav">
+                    <p class="fr">
+                        <a href="javascript:void(0);" onclick="javascript:addBookmark(this)" title="收藏本站">收藏网站</a>|
+                        <a href="/jjcs.html" title="常见问题" target="_blank">常见问题</a>|
+                        <a href="/helps/contactus.html" target="_blank" title="联系红鑫">联系红鑫</a>|
+                        <a href="/sitemap.html" title="网站地图" target="_blank">网站地图</a>
+                    </p>您好，欢迎来到红鑫办公家具官网！
+                </div>
+                <div class="top">
+                    <div class="logo"><a href="/" title="武汉红鑫家俱有限公司"><img
+                                    src="/uploadfiles/pictures/setting/20161024153605_3011.jpg" alt="武汉办公家具"
+                                    title="武汉办公家具"/></a></div>
+                    <div class="zi1">办公家具整体配套大型生产厂家<p>5000㎡自营体验馆为您<span>省时省心更省钱！</span></p></div>
+                    <div class="tel"><p><span>400-678-5198</span><span>027-83939586</span></p></div>
+                    <div class="lb"><a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
+                                       title="立即咨询免费领取1980元进店大礼包！" target="_blank">免费领取1980元进店大礼包！</a></div>
+                </div>
+                <div class="menu">
+                    <ul class="ul_col">
+                        <li>
+                            <a class="tfs" href="/product/">办公家具分类</a>
+                            <div class="erji">
             <span class="span_1"><a class="sp_a" href="/aytfl.html" title="按用途分类"><i><img
                                 src="/uploadfiles/pictures/product/20161025150552_7352.png"/></i>按用途分类</a>
             <div class="sanji sanji_1">
@@ -517,8 +518,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_2"><a class="sp_a" href="/axyfl.html" title="按行业分类"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134113_2206.png"/></i>按行业分类</a>
+                                <span class="span_2"><a class="sp_a" href="/axyfl.html" title="按行业分类"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134113_2206.png"/></i>按行业分类</a>
             <div class="sanji sanji_2">
                 <em>
                                                 <a class="cur" href="/zfjg.html" title="政府机关"><i>政府机关</i></a>
@@ -547,8 +548,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_3"><a class="sp_a" href="/dbtxl.html" title="大班台系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134127_0534.png"/></i>大班台系列</a>
+                                <span class="span_3"><a class="sp_a" href="/dbtxl.html" title="大班台系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134127_0534.png"/></i>大班台系列</a>
             <div class="sanji sanji_3">
                 <em>
                                                 <a class="cur" href="/bsdbt.html" title="板式大班台"><i>板式大班台</i></a>
@@ -575,8 +576,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_4"><a class="sp_a" href="/bgpfxl.html" title="办公屏风系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134145_7575.png"/></i>办公屏风系列</a>
+                                <span class="span_4"><a class="sp_a" href="/bgpfxl.html" title="办公屏风系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134145_7575.png"/></i>办公屏风系列</a>
             <div class="sanji sanji_4">
                 <em>
                                                 <a class="cur" href="/bggdkz.html" title="办公隔断卡座"><i>办公隔断卡座</i></a>
@@ -596,8 +597,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_5"><a class="sp_a" href="/bgzxl.html" title="办公桌系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134201_0774.png"/></i>办公桌系列</a>
+                                <span class="span_5"><a class="sp_a" href="/bgzxl.html" title="办公桌系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134201_0774.png"/></i>办公桌系列</a>
             <div class="sanji sanji_5">
                 <em>
                                                 <a class="cur" href="/bsbgz.html" title="板式办公桌"><i>板式办公桌</i></a>
@@ -619,8 +620,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_6"><a class="sp_a" href="/hyzxl.html" title="会议桌系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134217_9623.png"/></i>会议桌系列</a>
+                                <span class="span_6"><a class="sp_a" href="/hyzxl.html" title="会议桌系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134217_9623.png"/></i>会议桌系列</a>
             <div class="sanji sanji_6">
                 <em>
                                                 <a class="cur" href="/smhyz.html" title="实木会议桌"><i>实木会议桌</i></a>
@@ -648,8 +649,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_7"><a class="sp_a" href="/bgyxl.html" title="办公椅系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134237_2074.png"/></i>办公椅系列</a>
+                                <span class="span_7"><a class="sp_a" href="/bgyxl.html" title="办公椅系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134237_2074.png"/></i>办公椅系列</a>
             <div class="sanji sanji_7">
                 <em>
                                                 <a class="cur" href="/pmdby.html" title="皮面大班椅"><i>皮面大班椅</i></a>
@@ -681,8 +682,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_8"><a class="sp_a" href="/wjgxl.html" title="文件柜系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134250_7662.png"/></i>文件柜系列</a>
+                                <span class="span_8"><a class="sp_a" href="/wjgxl.html" title="文件柜系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134250_7662.png"/></i>文件柜系列</a>
             <div class="sanji sanji_8">
                 <em>
                                                 <a class="cur" href="/smsg.html" title="实木书柜"><i>实木书柜</i></a>
@@ -710,8 +711,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_9"><a class="sp_a" href="/bgqtxl.html" title="办公前台系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134259_7637.png"/></i>办公前台系列</a>
+                                <span class="span_9"><a class="sp_a" href="/bgqtxl.html" title="办公前台系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134259_7637.png"/></i>办公前台系列</a>
             <div class="sanji sanji_9">
                 <em>
                                                 <a class="cur" href="/bsqt.html" title="板式前台"><i>板式前台</i></a>
@@ -728,8 +729,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_10"><a class="sp_a" href="/sfcjxl.html" title="沙发茶几系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134317_6637.png"/></i>沙发茶几系列</a>
+                                <span class="span_10"><a class="sp_a" href="/sfcjxl.html" title="沙发茶几系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134317_6637.png"/></i>沙发茶几系列</a>
             <div class="sanji sanji_10">
                 <em>
                                                 <a class="cur" href="/qpsssf.html" title="气派舒适沙发"><i>气派舒适沙发</i></a>
@@ -756,8 +757,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_11"><a class="sp_a" href="/ggdxl.html" title="高隔断系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134330_3775.png"/></i>高隔断系列</a>
+                                <span class="span_11"><a class="sp_a" href="/ggdxl.html" title="高隔断系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134330_3775.png"/></i>高隔断系列</a>
             <div class="sanji sanji_11">
                 <em>
                                                 <a class="cur" href="/gdjhx.html" title="高档加厚型"><i>高档加厚型</i></a>
@@ -773,8 +774,8 @@
                                 </b>
             </div>
         </span>
-                        <span class="span_12"><a class="sp_a" href="/bgzsxl.html" title="办公装饰系列"><i><img
-                                            src="/uploadfiles/pictures/product/20161027134341_8931.png"/></i>办公装饰系列</a>
+                                <span class="span_12"><a class="sp_a" href="/bgzsxl.html" title="办公装饰系列"><i><img
+                                                    src="/uploadfiles/pictures/product/20161027134341_8931.png"/></i>办公装饰系列</a>
             <div class="sanji sanji_12">
                 <em>
                                                 <a class="cur" href="/bgdt.html" title="办公地毯"><i>办公地毯</i></a>
@@ -794,48 +795,49 @@
                                 </b>
             </div>
         </span>
-                    </div>
-                    <script type="text/javascript">
-                        $(".erji span").each(function (i) {
-                            $(".erji .span_" + i).mouseover(function () {
-                                $(this).addClass("cur").siblings("span").removeClass("cur");
-                                $(this).children(".sanji").show().parent().siblings("span").children(".sanji").hide();
-                            }).eq(0).trigger("mouseover");
+                            </div>
+                            <script type="text/javascript">
+                                $(".erji span").each(function (i) {
+                                    $(".erji .span_" + i).mouseover(function () {
+                                        $(this).addClass("cur").siblings("span").removeClass("cur");
+                                        $(this).children(".sanji").show().parent().siblings("span").children(".sanji").hide();
+                                    }).eq(0).trigger("mouseover");
 
-                            $(".sanji_" + i + " em a").mouseover(function () {
-                                var _index = $(this).parent().children("a").index(this);
-                                $(this).addClass("cur").siblings("a").removeClass("cur");
-                                $(this).parent().siblings("b").find("a").eq(_index).show().siblings("a").hide();
-                            }).eq(0).trigger("mouseover");
-                        });
+                                    $(".sanji_" + i + " em a").mouseover(function () {
+                                        var _index = $(this).parent().children("a").index(this);
+                                        $(this).addClass("cur").siblings("a").removeClass("cur");
+                                        $(this).parent().siblings("b").find("a").eq(_index).show().siblings("a").hide();
+                                    }).eq(0).trigger("mouseover");
+                                });
 
-                    </script>
+                            </script>
 
-                </li>
-            </ul>
-            <ul>
-                <li><a href="/" title="红鑫首页">红鑫首页</a></li>
-                <li><a href="/cgal.html" title="工程案例">工程案例</a></li>
-                <li><a href="/helps/dzfw.html" title="办公家具定制">办公家具定制</a></li>
-                <li class="ts"><a href="/xxtyg.html" title="直营展厅">直营展厅</a></li>
-                <li><a href="/ryzz.html" title="资质荣誉">资质荣誉</a></li>
-                <li><a href="/helps/aboutus.html" title="关于红鑫">关于红鑫</a></li>
-                <li><a href="/helps/contactus.html" title="联系我们">联系我们</a></li>
-            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="/" title="红鑫首页">红鑫首页</a></li>
+                        <li><a href="/cgal.html" title="工程案例">工程案例</a></li>
+                        <li><a href="/helps/dzfw.html" title="办公家具定制">办公家具定制</a></li>
+                        <li class="ts"><a href="/xxtyg.html" title="直营展厅">直营展厅</a></li>
+                        <li><a href="/ryzz.html" title="资质荣誉">资质荣誉</a></li>
+                        <li><a href="/helps/aboutus.html" title="关于红鑫">关于红鑫</a></li>
+                        <li><a href="/helps/contactus.html" title="联系我们">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="ban-ss">
-    <div class="banan-t content">
-        <p>
-            <b>热门搜索词：</b>
-            <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a><a href="/product/" title="武汉红鑫办公家具">武汉红鑫办公家具</a><a
-                    href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
-        </p>
-        <div class="banan-tr form">
-            <input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……" id="seachkeywords">
-            <a>
+        <div class="ban-ss">
+            <div class="banan-t content">
+                <p>
+                    <b>热门搜索词：</b>
+                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a><a href="/product/"
+                                                                              title="武汉红鑫办公家具">武汉红鑫办公家具</a><a
+                            href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
+                </p>
+                <div class="banan-tr form">
+                    <input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……" id="seachkeywords">
+                    <a>
         <span>
            <select class="" id="select">
 	            <option value="">不限栏目</option>
@@ -854,190 +856,198 @@
                                 <option value="0001,0076">其它</option>
                 	        </select>
         </span>
-            </a>
+                    </a>
 
-            <input class="inp02s" type="bottom" id="sousuo">
-        </div>
-    </div>
-</div>
-<script src="/JS/select2css.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function () {
-        $('.ban-ss').before($('.topadcs'));
-    });
-</script>
-<link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript">
-    initCommonHeader();
-    var MARK = "help";
-    var SID = "0001,0014";
-
-    $(function () {
-        $(".menu ul.ul_col li").hover(function () {
-            $(this).css("zIndex", "10000").children(".erji").show();
-            $(this).addClass("cur").siblings("li").removeClass("cur");
-        }, function () {
-            $(this).children(".erji").hide();
-            $(this).removeClass("cur")
-        });
-    });
-
-    $(function () {
-        $(".pfb ul.fb_ul li").hover(function () {
-            $(this).css("zIndex", "10000").children(".erji").show();
-            $(this).addClass("cur").siblings("li").removeClass("cur");
-        }, function () {
-            $(this).children(".erji").hide();
-            $(this).removeClass("cur")
-        });
-    });
-</script>
-<div class="topadcs">
-    <a class="fullad" href="/helps/aboutus.html" title="关于红鑫"
-       style="background:url(/uploadfiles/pictures/others/20171215112810_8713.jpg) no-repeat center top;"></a>
-</div>
-<div class="content">
-
-    <div class="plc">
-        <span class="red_x">当前位置：</span>
-        <a href="/" title="首页">首页</a>
-        &raquo; <a href="/gcsl" title="工厂实力">工厂实力</a>
-    </div>
-    <#include "common/a_nav.ftl"/>
-    <div class="clear"></div>
-    <div class="a_fz" id="a2">
-        <div class="content clearfix">
-
-            <div class="a_fz_con_3_14">
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20161024134254_0075.jpg" title="红鑫家具厂房车间"><img
-                                    src="/uploadfiles/pictures/help/20161024134249_2027.jpg" alt="红鑫家具厂房车间"
-                                    title="红鑫家具厂房车间"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20161024134254_0075.jpg"
-                                     title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
-                </dl>
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20161024134236_5685.jpg" title="红鑫家具厂房车间"><img
-                                    src="/uploadfiles/pictures/help/20161024134231_8713.jpg" alt="红鑫家具厂房车间"
-                                    title="红鑫家具厂房车间"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20161024134236_5685.jpg"
-                                     title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
-                </dl>
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20161024134220_3116.jpg" title="红鑫家具厂房车间"><img
-                                    src="/uploadfiles/pictures/help/20161024134211_0821.jpg" alt="红鑫家具厂房车间"
-                                    title="红鑫家具厂房车间"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20161024134220_3116.jpg"
-                                     title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
-                </dl>
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20161024134158_4333.jpg" title="红鑫家具厂房车间"><img
-                                    src="/uploadfiles/pictures/help/20161024134150_9829.jpg" alt="红鑫家具厂房车间"
-                                    title="红鑫家具厂房车间"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20161024134158_4333.jpg"
-                                     title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
-                </dl>
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20161024134134_4180.jpg" title="红鑫家具厂房车间"><img
-                                    src="/uploadfiles/pictures/help/20161024134129_1847.jpg" alt="红鑫家具厂房车间"
-                                    title="红鑫家具厂房车间"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20161024134134_4180.jpg"
-                                     title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
-                </dl>
-                <dl class="dl_2">
-                    <dt><a target="_blank" rel="group" class="group"
-                           href="/uploadfiles/pictures/help/20170916170128_6987.jpg" title="红鑫家具厂家外景"><img
-                                    src="/uploadfiles/pictures/help/20170916170323_2743.jpg" alt="红鑫家具厂家外景"
-                                    title="红鑫家具厂家外景"/></a></dt>
-                    <dd class="p"><a rel="group2" class="group2"
-                                     href="/uploadfiles/pictures/help/20170916170128_6987.jpg"
-                                     title="红鑫家具厂家外景">红鑫家具厂家外景</a></dd>
-                </dl>
-                <div class="clear"></div>
+                    <input class="inp02s" type="bottom" id="sousuo">
+                </div>
             </div>
+        </div>
+        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function () {
+                $('.ban-ss').before($('.topadcs'));
+            });
+        </script>
+        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript">
+            initCommonHeader();
+            var MARK = "help";
+            var SID = "0001,0014";
+
+            $(function () {
+                $(".menu ul.ul_col li").hover(function () {
+                    $(this).css("zIndex", "10000").children(".erji").show();
+                    $(this).addClass("cur").siblings("li").removeClass("cur");
+                }, function () {
+                    $(this).children(".erji").hide();
+                    $(this).removeClass("cur")
+                });
+            });
+
+            $(function () {
+                $(".pfb ul.fb_ul li").hover(function () {
+                    $(this).css("zIndex", "10000").children(".erji").show();
+                    $(this).addClass("cur").siblings("li").removeClass("cur");
+                }, function () {
+                    $(this).children(".erji").hide();
+                    $(this).removeClass("cur")
+                });
+            });
+        </script>
+        <div class="topadcs">
+            <a class="fullad" href="/helps/aboutus.html" title="关于红鑫"
+               style="background:url(/uploadfiles/pictures/others/20171215112810_8713.jpg) no-repeat center top;"></a>
+        </div>
+        <div class="content">
+
+            <div class="plc">
+                <span class="red_x">当前位置：</span>
+                <a href="/" title="首页">首页</a>
+                &raquo; <a href="/gcsl" title="工厂实力">工厂实力</a>
+            </div>
+            <#include "common/a_nav.ftl"/>
             <div class="clear"></div>
+            <div class="a_fz" id="a2">
+                <div class="content clearfix">
+
+                    <div class="a_fz_con_3_14">
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20161024134254_0075.jpg" title="红鑫家具厂房车间"><img
+                                            src="/uploadfiles/pictures/help/20161024134249_2027.jpg" alt="红鑫家具厂房车间"
+                                            title="红鑫家具厂房车间"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20161024134254_0075.jpg"
+                                             title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
+                        </dl>
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20161024134236_5685.jpg" title="红鑫家具厂房车间"><img
+                                            src="/uploadfiles/pictures/help/20161024134231_8713.jpg" alt="红鑫家具厂房车间"
+                                            title="红鑫家具厂房车间"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20161024134236_5685.jpg"
+                                             title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
+                        </dl>
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20161024134220_3116.jpg" title="红鑫家具厂房车间"><img
+                                            src="/uploadfiles/pictures/help/20161024134211_0821.jpg" alt="红鑫家具厂房车间"
+                                            title="红鑫家具厂房车间"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20161024134220_3116.jpg"
+                                             title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
+                        </dl>
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20161024134158_4333.jpg" title="红鑫家具厂房车间"><img
+                                            src="/uploadfiles/pictures/help/20161024134150_9829.jpg" alt="红鑫家具厂房车间"
+                                            title="红鑫家具厂房车间"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20161024134158_4333.jpg"
+                                             title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
+                        </dl>
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20161024134134_4180.jpg" title="红鑫家具厂房车间"><img
+                                            src="/uploadfiles/pictures/help/20161024134129_1847.jpg" alt="红鑫家具厂房车间"
+                                            title="红鑫家具厂房车间"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20161024134134_4180.jpg"
+                                             title="红鑫家具厂房车间">红鑫家具厂房车间</a></dd>
+                        </dl>
+                        <dl class="dl_2">
+                            <dt><a target="_blank" rel="group" class="group"
+                                   href="/uploadfiles/pictures/help/20170916170128_6987.jpg" title="红鑫家具厂家外景"><img
+                                            src="/uploadfiles/pictures/help/20170916170323_2743.jpg" alt="红鑫家具厂家外景"
+                                            title="红鑫家具厂家外景"/></a></dt>
+                            <dd class="p"><a rel="group2" class="group2"
+                                             href="/uploadfiles/pictures/help/20170916170128_6987.jpg"
+                                             title="红鑫家具厂家外景">红鑫家具厂家外景</a></dd>
+                        </dl>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="clear"></div>
-<div class="g-bot">
-    <div class="bot content">
-        <div class="bot-t">
-            <a href="/" title="红鑫首页">红鑫首页</a><a href="/cgal.html" title="工程案例">工程案例</a><a href="/helps/dzfw.html"
-                                                                                          title="办公家具定制">办公家具定制</a><a
-                    href="/xxtyg.html" title="自营体验馆">自营体验馆</a><a href="/ryzz.html" title="资质荣誉">资质荣誉</a><a
-                    href="/helps/aboutus.html" title="关于红鑫">关于红鑫</a><a href="/helps/contactus.html"
-                                                                       title="联系我们">联系我们</a><a
-                    href="/sitemap.html" title="网站地图" target="_blank">网站地图</a>
-        </div>
-        <div class="bot-c">
-            <ul>
-                <li><i><img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具"/></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：<a
-                                href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">鄂ICP备12004884号-1</a></b>
-                </li>
-                <li><i><img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机"/></i>座机：027-61520188</i></li>
-                <li><i><img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址"/></i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼</li>
-                <li><i><img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真"/></i>电话：18207180190/18207180195</i></li>
-                <li><i><img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线"/></i>全国服务热线：400-678-5198</li>
-                <li><i><img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱"/></i>邮箱：hongxin@hongxin.com.cn</li>
-                <li><i><img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案"/></i>
-                    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                        document.write(unescape("%3Cspan id='cnzz_stat_icon_1260852450'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260852450%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
-                    <meta name="baidu-site-verification" content="rsU7PwgDP3"/>
-                </li>
-                <li><a href="123132" target="_blank">鄂公网安备42011102000251号 </a></li>
-            </ul>
-            <em><a href="/" title="红鑫家俱"><img src="/uploadfiles/pictures/setting/20161024153608_7175.jpg"
-                                              alt="武汉红鑫家俱有限公司" title="武汉红鑫家俱有限公司"/></a></em>
-            <span class="spanewm"><img src="/uploadfiles/pictures/setting/20161201103707_8253.png" alt="武汉办公家具"/></span>
-        </div>
-        <div class="link">
-            <p><a class="a1" href="/friendlink/" title="友情链接" target="_blank">友情链接</a><a class="a2"
-                                                                                         href="/friendlink/apply.aspx"
-                                                                                         title="申请友情链接入口"
-                                                                                         target="_blank">申请友情链接>></a>
-            </p>
-            <span>
+        <div class="clear"></div>
+        <div class="g-bot">
+            <div class="bot content">
+                <div class="bot-t">
+                    <a href="/" title="红鑫首页">红鑫首页</a><a href="/cgal.html" title="工程案例">工程案例</a><a
+                            href="/helps/dzfw.html"
+                            title="办公家具定制">办公家具定制</a><a
+                            href="/xxtyg.html" title="自营体验馆">自营体验馆</a><a href="/ryzz.html" title="资质荣誉">资质荣誉</a><a
+                            href="/helps/aboutus.html" title="关于红鑫">关于红鑫</a><a href="/helps/contactus.html"
+                                                                               title="联系我们">联系我们</a><a
+                            href="/sitemap.html" title="网站地图" target="_blank">网站地图</a>
+                </div>
+                <div class="bot-c">
+                    <ul>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_19.jpg"
+                                    alt="武汉办公家具"/></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：<a
+                                        href="http://beian.miit.gov.cn/" target="_blank"
+                                        rel="nofollow">鄂ICP备12004884号-1</a></b>
+                        </li>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机"/></i>座机：027-61520188</i></li>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址"/></i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
+                        </li>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_27.jpg"
+                                    alt="传真"/></i>电话：18207180190/18207180195</i></li>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线"/></i>全国服务热线：400-678-5198
+                        </li>
+                        <li><i><img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱"/></i>邮箱：hongxin@hongxin.com.cn
+                        </li>
+                        <li><i><img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案"/></i>
+                            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                                document.write(unescape("%3Cspan id='cnzz_stat_icon_1260852450'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260852450%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                            <meta name="baidu-site-verification" content="rsU7PwgDP3"/>
+                        </li>
+                        <li><a href="123132" target="_blank">鄂公网安备42011102000251号 </a></li>
+                    </ul>
+                    <em><a href="/" title="红鑫家俱"><img src="/uploadfiles/pictures/setting/20161024153608_7175.jpg"
+                                                      alt="武汉红鑫家俱有限公司" title="武汉红鑫家俱有限公司"/></a></em>
+                    <span class="spanewm"><img src="/uploadfiles/pictures/setting/20161201103707_8253.png"
+                                               alt="武汉办公家具"/></span>
+                </div>
+                <div class="link">
+                    <p><a class="a1" href="/friendlink/" title="友情链接" target="_blank">友情链接</a><a class="a2"
+                                                                                                 href="/friendlink/apply.aspx"
+                                                                                                 title="申请友情链接入口"
+                                                                                                 target="_blank">申请友情链接>></a>
+                    </p>
+                    <span>
              <a href="http://hongxin.com.cn" title="武汉办公家具定制" target="_blank">武汉办公家具定制</a>
             <a href="http://www.51yyjj.com" title="上海办公家具" target="_blank">上海办公家具</a>
             <a href="https://whhxbg.1688.com/?spm=a2615.2177701.autotrace-topNav.1.2ce721370i9Wm" title="红鑫家具商城"
                target="_blank">红鑫家具商城</a>
         </span>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $(".bot-t a:last").addClass("none");
-</script>
+        <script type="text/javascript">
+            $(".bot-t a:last").addClass("none");
+        </script>
 
-<div id="roll" style="display: block;">
-    <div title="回到顶部" id="roll_top"></div>
-</div>
-<!--[if IE 6]>
-<script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
-<script type="text/javascript">
-    DD_belatedPNG.fix('*');
-</script>
-<![endif]-->
-<script src="/JS/rollup.min.js" type="text/javascript"></script>
+        <div id="roll" style="display: block;">
+            <div title="回到顶部" id="roll_top"></div>
+        </div>
+        <!--[if IE 6]>
+        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            DD_belatedPNG.fix('*');
+        </script>
+        <![endif]-->
+        <script src="/JS/rollup.min.js" type="text/javascript"></script>
 
-<script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
-        defer="defer"></script>
-<script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer"
-        style="display:none;"></script>
-<script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
-<script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
-</body>
+        <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
+                defer="defer"></script>
+        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer"
+                style="display:none;"></script>
+        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
+        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
+    </body>
 </html>
 <script type="text/javascript">
     SetFenLei("14", {"10": "RYZZ", "14": "GCSL"}, "3", "div.a_fz");
