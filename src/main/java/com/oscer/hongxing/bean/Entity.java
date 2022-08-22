@@ -8,7 +8,6 @@ import com.oscer.hongxing.db.DbQuery;
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.CollectionUtils;
 
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -416,7 +415,7 @@ public abstract class Entity implements Serializable {
     }
 
     public List<? extends Entity> get(List<Long> ids) {
-        if (CollectionUtils.isEmpty(ids)) {
+        if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
         StringBuilder sql = new StringBuilder("SELECT * FROM " + rawTableName() + " WHERE id IN (");
@@ -458,7 +457,7 @@ public abstract class Entity implements Serializable {
      */
     @SuppressWarnings({"rawtypes"})
     public List loadList(List<? extends Number> p_pids) {
-        if (CollectionUtils.isEmpty(p_pids)) {
+        if (CollectionUtil.isEmpty(p_pids)) {
             return null;
         }
         List<Long> pids_l = p_pids.stream().map(Number::longValue).collect(Collectors.toList());
@@ -490,7 +489,7 @@ public abstract class Entity implements Serializable {
             }
         }
 
-        if (CollectionUtils.isEmpty(no_cache_ids)) {
+        if (CollectionUtil.isEmpty(no_cache_ids)) {
             return prjs;
         }
 
@@ -785,7 +784,7 @@ public abstract class Entity implements Serializable {
             return null;
         }
         List<Number> numbers = DbQuery.get(databaseName()).query_slice(Number.class, sql, page, size, params);
-        if (CollectionUtils.isEmpty(numbers)) {
+        if (CollectionUtil.isEmpty(numbers)) {
             return null;
         }
         List<Long> ids = numbers.stream().map(Number::longValue).collect(Collectors.toList());

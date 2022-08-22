@@ -10,7 +10,8 @@
         </div>
         <div class="top">
             <div class="logo"><a href="/" title="武汉红鑫家俱有限公司"><img
-                            src="/uploadfiles/pictures/setting/20161024153605_3011.jpg" alt="武汉办公家具" title="武汉办公家具"/></a></div>
+                            src="/uploadfiles/pictures/setting/20161024153605_3011.jpg" alt="武汉办公家具"
+                            title="武汉办公家具"/></a></div>
             <div class="zi1">办公家具整体配套大型生产厂家<p>5000㎡自营体验馆为您<span>省时省心更省钱！</span></p></div>
             <div class="tel"><p><span>400-678-5198</span><span>027-83939586</span></p></div>
             <div class="lb"><a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
@@ -35,17 +36,22 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/zczjl.html" title="总裁-总经理"><img
-                                            src="/uploadfiles/pictures/product/20170113172024_1068.jpg" alt="总裁-总经理"/></a>
+                                            src="/uploadfiles/pictures/product/20170113172024_1068.jpg"
+                                            alt="总裁-总经理"/></a>
                                 <a href="/zjjl.html" title="总监-经理"><img
-                                            src="/uploadfiles/pictures/product/20161029152557_8573.jpg" alt="总监-经理"/></a>
+                                            src="/uploadfiles/pictures/product/20161029152557_8573.jpg"
+                                            alt="总监-经理"/></a>
                                 <a href="/zgzy.html" title="主管-职员"><img
-                                            src="/uploadfiles/pictures/product/20161029152659_7578.jpg" alt="主管-职员"/></a>
+                                            src="/uploadfiles/pictures/product/20161029152659_7578.jpg"
+                                            alt="主管-职员"/></a>
                                 <a href="/qtggxxq.html" title="前台、公共休闲区"><img
                                             src="/uploadfiles/pictures/product/20170827160603_0489.jpg" alt="前台、公共休闲区"/></a>
                                 <a href="/hysqy.html" title="会议室区域"><img
-                                            src="/uploadfiles/pictures/product/20161029152841_1116.jpg" alt="会议室区域"/></a>
+                                            src="/uploadfiles/pictures/product/20161029152841_1116.jpg"
+                                            alt="会议室区域"/></a>
                                 <a href="/jdqtq.html" title="接待洽谈区"><img
-                                            src="/uploadfiles/pictures/product/20170827155919_1928.jpg" alt="接待洽谈区"/></a>
+                                            src="/uploadfiles/pictures/product/20170827155919_1928.jpg"
+                                            alt="接待洽谈区"/></a>
                                 </b>
             </div>
         </span>
@@ -95,13 +101,17 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/bsdbt.html" title="板式大班台"><img
-                                            src="/uploadfiles/pictures/product/20161029155111_9649.jpg" alt="板式大班台"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155111_9649.jpg"
+                                            alt="板式大班台"/></a>
                                 <a href="/smdbt.html" title="实木大班台"><img
-                                            src="/uploadfiles/pictures/product/20161029154300_9908.jpg" alt="实木大班台"/></a>
+                                            src="/uploadfiles/pictures/product/20161029154300_9908.jpg"
+                                            alt="实木大班台"/></a>
                                 <a href="/bszbt.html" title="板式中班台"><img
-                                            src="/uploadfiles/pictures/product/20161029154329_6955.jpg" alt="板式中班台"/></a>
+                                            src="/uploadfiles/pictures/product/20161029154329_6955.jpg"
+                                            alt="板式中班台"/></a>
                                 <a href="/smzbt.html" title="实木中班台"><img
-                                            src="/uploadfiles/pictures/product/20161029155149_4431.jpg" alt="实木中班台"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155149_4431.jpg"
+                                            alt="实木中班台"/></a>
                                 <a href="/csmdbt.html" title="全实木办公家具"><img
                                             src="/uploadfiles/pictures/product/20161029155136_3813.jpg" alt="全实木办公家具"/></a>
                                 </b>
@@ -122,9 +132,11 @@
                                    title="办公隔断卡座"><img src="/uploadfiles/pictures/product/20171111135522_4969.jpg"
                                                        alt="办公隔断卡座"/></a>
                                 <a href="/kfbgpf.html" title="开放办公屏风"><img
-                                            src="/uploadfiles/pictures/product/20161029155528_2176.jpg" alt="开放办公屏风"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155528_2176.jpg"
+                                            alt="开放办公屏风"/></a>
                                 <a href="/gjzhz.html" title="钢架组合桌"><img
-                                            src="/uploadfiles/pictures/product/20161029155536_4710.jpg" alt="钢架组合桌"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155536_4710.jpg"
+                                            alt="钢架组合桌"/></a>
                                 </b>
             </div>
         </span>
@@ -141,9 +153,11 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/bsbgz.html" title="板式办公桌"><img
-                                            src="/uploadfiles/pictures/product/20161029155653_3724.jpg" alt="板式办公桌"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155653_3724.jpg"
+                                            alt="板式办公桌"/></a>
                                 <a href="/gjbgz.html" title="钢架办公桌"><img
-                                            src="/uploadfiles/pictures/product/20161029155701_9579.jpg" alt="钢架办公桌"/></a>
+                                            src="/uploadfiles/pictures/product/20161029155701_9579.jpg"
+                                            alt="钢架办公桌"/></a>
                                 <a href="/sjz.html" title="升降桌"><img
                                             src="/uploadfiles/pictures/product/20210529091120_0582.jpg" alt="升降桌"/></a>
                                 <a href="/smtpbgz.html" title="实木贴皮办公桌"><img
@@ -166,9 +180,11 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/smhyz.html" title="实木会议桌"><img
-                                            src="/uploadfiles/pictures/product/20170827151140_8963.jpg" alt="实木会议桌"/></a>
+                                            src="/uploadfiles/pictures/product/20170827151140_8963.jpg"
+                                            alt="实木会议桌"/></a>
                                 <a href="/bshyz.html" title="板式会议桌"><img
-                                            src="/uploadfiles/pictures/product/20161029160029_6978.jpg" alt="板式会议桌"/></a>
+                                            src="/uploadfiles/pictures/product/20161029160029_6978.jpg"
+                                            alt="板式会议桌"/></a>
                                 <a href="/pxz.html" title="培训桌"><img
                                             src="/uploadfiles/pictures/product/20161029160040_3944.jpg" alt="培训桌"/></a>
                                 <a href="/yjt.html" title="演讲台"><img
@@ -197,9 +213,11 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/pmdby.html" title="皮面大班椅"><img
-                                            src="/uploadfiles/pictures/product/20161029160528_4769.jpg" alt="皮面大班椅"/></a>
+                                            src="/uploadfiles/pictures/product/20161029160528_4769.jpg"
+                                            alt="皮面大班椅"/></a>
                                 <a href="/wmdby.html" title="网面大班椅"><img
-                                            src="/uploadfiles/pictures/product/20161029160536_5164.jpg" alt="网面大班椅"/></a>
+                                            src="/uploadfiles/pictures/product/20161029160536_5164.jpg"
+                                            alt="网面大班椅"/></a>
                                 <a href="/wmzyy.html" title="网面转椅"><img
                                             src="/uploadfiles/pictures/product/20161029160545_1059.jpg" alt="网面转椅"/></a>
                                 <a href="/gdy.html" title="固定椅"><img
@@ -233,9 +251,11 @@
                                 <a href="/bssg.html" title="板式书柜"><img
                                             src="/uploadfiles/pictures/product/20161029162204_4199.jpg" alt="板式书柜"/></a>
                                 <a href="/gzwjg.html" title="钢制文件柜"><img
-                                            src="/uploadfiles/pictures/product/20161029162213_7614.jpg" alt="钢制文件柜"/></a>
+                                            src="/uploadfiles/pictures/product/20161029162213_7614.jpg"
+                                            alt="钢制文件柜"/></a>
                                 <a href="/gzgyg.html" title="钢制更衣柜"><img
-                                            src="/uploadfiles/pictures/product/20161029162222_4089.jpg" alt="钢制更衣柜"/></a>
+                                            src="/uploadfiles/pictures/product/20161029162222_4089.jpg"
+                                            alt="钢制更衣柜"/></a>
                                 <a href="/dg.html" title="地柜"><img
                                             src="/uploadfiles/pictures/product/20161029162230_2993.jpg" alt="地柜"/></a>
                                 <a href="/bxg.html" title="保险柜"><img
@@ -281,7 +301,8 @@
                                    title="气派舒适沙发"><img src="/uploadfiles/pictures/product/20170827151455_1404.jpg"
                                                        alt="气派舒适沙发"/></a>
                                 <a href="/ssxxsf.html" title="时尚休闲沙发"><img
-                                            src="/uploadfiles/pictures/product/20170827154408_0307.jpg" alt="时尚休闲沙发"/></a>
+                                            src="/uploadfiles/pictures/product/20170827154408_0307.jpg"
+                                            alt="时尚休闲沙发"/></a>
                                 <a href="/bysf.html" title="布艺沙发"><img
                                             src="/uploadfiles/pictures/product/20170827152451_6185.jpg" alt="布艺沙发"/></a>
                                 <a href="/mcj.html" title="木茶几"><img
@@ -302,9 +323,11 @@
                                 </em>
                 <b>
                                 <a style='display:block' href="/gdjhx.html" title="高档加厚型"><img
-                                            src="/uploadfiles/pictures/product/20161029163638_6809.jpg" alt="高档加厚型"/></a>
+                                            src="/uploadfiles/pictures/product/20161029163638_6809.jpg"
+                                            alt="高档加厚型"/></a>
                                 <a href="/jjptx.html" title="经济普通型"><img
-                                            src="/uploadfiles/pictures/product/20161029163648_6654.jpg" alt="经济普通型"/></a>
+                                            src="/uploadfiles/pictures/product/20161029163648_6654.jpg"
+                                            alt="经济普通型"/></a>
                                 </b>
             </div>
         </span>
@@ -325,7 +348,8 @@
                                 <a href="/zsh.html" title="装饰灯"><img
                                             src="/uploadfiles/pictures/product/20161029164513_3823.jpg" alt="装饰灯"/></a>
                                 <a href="/sphzsh.html" title="饰品和装饰画"><img
-                                            src="/uploadfiles/pictures/product/20170615110452_0265.jpg" alt="饰品和装饰画"/></a>
+                                            src="/uploadfiles/pictures/product/20170615110452_0265.jpg"
+                                            alt="饰品和装饰画"/></a>
                                 <a href="/zscl.html" title="装饰窗帘"><img src="" alt="装饰窗帘"/></a>
                                 </b>
             </div>
@@ -351,12 +375,18 @@
             </ul>
             <ul>
                 <li <#if currentUrl?? && currentUrl=='/'>class="cur"</#if> ><a href="/" title="红鑫首页">红鑫首页</a></li>
-                <li <#if currentUrl?? && currentUrl=='/gcal'>class="cur"</#if> ><a href="/gcal" title="工程案例">工程案例</a></li>
-                <li <#if currentUrl?? && currentUrl=='/dzfw'>class="cur"</#if> ><a href="/dzfw" title="办公家具定制">办公家具定制</a></li>
-                <li <#if currentUrl?? && currentUrl=='/zyzt'>class="cur"</#if> ><a href="/zyzt" title="直营展厅">直营展厅</a></li>
-                <li <#if currentUrl?? && currentUrl=='/ryzz'>class="cur"</#if>><a href="/ryzz" title="资质荣誉">资质荣誉</a></li>
-                <li <#if currentUrl?? && currentUrl=='/about'>class="cur"</#if>><a href="/about" title="关于红鑫">关于红鑫</a></li>
-                <li <#if currentUrl?? && currentUrl=='/contact'>class="cur"</#if>><a href="/contact" title="联系我们">联系我们</a></li>
+                <li <#if currentUrl?? && currentUrl=='/gcal'>class="cur"</#if> ><a href="/gcal" title="工程案例">工程案例</a>
+                </li>
+                <li <#if currentUrl?? && currentUrl=='/dzfw'>class="cur"</#if> ><a href="/dzfw"
+                                                                                   title="办公家具定制">办公家具定制</a></li>
+                <li <#if currentUrl?? && currentUrl=='/zyzt'>class="cur"</#if> ><a href="/zyzt" title="直营展厅">直营展厅</a>
+                </li>
+                <li <#if currentUrl?? && currentUrl=='/ryzz'>class="cur"</#if>><a href="/ryzz" title="资质荣誉">资质荣誉</a>
+                </li>
+                <li <#if currentUrl?? && currentUrl=='/about'>class="cur"</#if>><a href="/about" title="关于红鑫">关于红鑫</a>
+                </li>
+                <li <#if currentUrl?? && currentUrl=='/contact'>class="cur"</#if>><a href="/contact"
+                                                                                     title="联系我们">联系我们</a></li>
             </ul>
         </div>
     </div>

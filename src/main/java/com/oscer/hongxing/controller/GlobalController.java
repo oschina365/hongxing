@@ -80,4 +80,24 @@ public class GlobalController extends BaseController{
         return "contact";
     }
 
+    /**
+     * 代理品牌
+     *
+     * @return
+     */
+    @GetMapping("/dlpp")
+    public String dlpp() {
+        return "dlpp";
+    }
+
+    /**
+     * 工厂实力
+     *
+     * @return
+     */
+    @GetMapping("/gcsl")
+    public String gcsl() {
+        return "gcsl";
+    }
+
 }
