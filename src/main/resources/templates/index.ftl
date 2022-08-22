@@ -38,8 +38,7 @@
     <body>
         <div class="pfb">
             <div class="fb content">
-                <b><a class="cur" href="">武汉办公家具分类</a>|<a href="">首页</a>|<a href="">工程案例</a>|<a class="ts"
-                                                                                                href="">线下体验馆</a></b>
+                <b><a class="cur" href="">武汉办公家具分类</a>|<a href="">首页</a>|<a href="">工程案例</a>|<a class="ts" href="/zyzt">直营展厅</a></b>
                 <div class="fsr">
                     <input class="inp01" type="text" value="请输入办公家具类关键词">
                     <input class="inp02" type="bottom">
@@ -69,6 +68,8 @@
                 </p>
                 <div class="banan-tr">
                     <input class="inp01" type="text" value="请输入关键字……">
+                    <a href=""><span>不限栏目</span></a>
+                    <a href=""><span>不限栏目2</span></a>
                     <a href=""><span>不限栏目</span></a>
                     <input class="inp02" type="bottom">
                 </div>

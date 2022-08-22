@@ -2,14 +2,14 @@
     <div class="bot content">
         <div class="bot-t">
             <ul>
-                <li class="cur"><a href="">红鑫首页 </a></li>
-                <li><a href="">工程案例</a></li>
-                <li><a href="">办公家具定制 </a></li>
+                <li class="cur"><a href="/">红鑫首页 </a></li>
+                <li><a href="/gcal">工程案例</a></li>
+                <li><a href="/dzfw">办公家具定制 </a></li>
                 <li><a href="">线下体验馆</a></li>
-                <li><a href=""> 资质荣誉</a></li>
-                <li><a href="">关于红鑫</a></li>
-                <li><a href="">联系我们</a></li>
-                <li><a href="">网站地图</a></li>
+                <li><a href="/ryzz"> 资质荣誉</a></li>
+                <li><a href="/about">关于红鑫</a></li>
+                <li><a href="/contact">联系我们</a></li>
+                <li><a href="/sitemap">网站地图</a></li>
             </ul>
         </div>
         <div class="bot-c">

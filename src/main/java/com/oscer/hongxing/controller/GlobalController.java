@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @since 2022-08-18 16:57:08
  */
 @Controller
-public class GlobalController extends BaseController{
+public class GlobalController extends BaseController {
 
     /**
      * 首页
@@ -98,6 +98,16 @@ public class GlobalController extends BaseController{
     @GetMapping("/gcsl")
     public String gcsl() {
         return "gcsl";
+    }
+
+    /**
+     * 网站地图
+     *
+     * @return
+     */
+    @GetMapping("/sitemap")
+    public String sitemap() {
+        return "sitemap";
     }
 
 }
