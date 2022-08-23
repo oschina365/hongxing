@@ -16,4 +16,6 @@ public class ManageController extends BaseController {
     public String index() {
         return "/manager/index";
     }
+
+
 }

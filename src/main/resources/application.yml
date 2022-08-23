@@ -20,3 +20,8 @@ spring:
     request-context-attribute: request
     settings:
       number_format: '0.##'   #数字格式化，无小数点
+  redis:
+    host: 192.168.0.210
+    port: 30679
+    timeout: 0
+    password: ztf@123

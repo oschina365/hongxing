@@ -110,4 +110,15 @@ public class GlobalController extends BaseController {
         return "sitemap";
     }
 
+
+    /**
+     * 在线留言
+     *
+     * @return
+     */
+    @GetMapping("/leaveword")
+    public String leaveword() {
+        return "leaveword";
+    }
+
 }

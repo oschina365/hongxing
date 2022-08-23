@@ -45,10 +45,10 @@
                             <input id="txtValidCode" runat="server" MaxLength="4" autocomplete='off' class="ver_code"
                                    type="text" tips="验证码" placeholder="请输入验证码"/>
                             <span class="ver_img">
-                        <img id="Codes" src="/captcha/?key=managerCode"
+                            <img id="Codes" src="/captcha/?key=managerCode"
                              onerror="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"
                              onclick="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"/>
-                    </span>
+                            </span>
                         </div>
                         <button onclick="login_check();" class="login_btn">登&nbsp;录</button>
                     </form>
