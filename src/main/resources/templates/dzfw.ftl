@@ -3,7 +3,6 @@
 <body>
         <!-- 代码部分begin -->
         <div id='cs_box'>
-
             <div class='cs_img'>
             </div>
             <div class='cs_btn'>红鑫家具旗舰店
@@ -16,7 +15,6 @@
         </div>
         <!-- 代码部分end -->
     </body>
-
     <script>
         var _hmt = _hmt || [];
         (function () {

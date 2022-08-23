@@ -2,6 +2,8 @@ package com.oscer.hongxing;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +32,149 @@ public class MemberSignTest {
 
     @Resource
     public StringRedisTemplate stringRedisTemplate;
+
+    /**
+     * 获取两个日期之间的所有日期(字符串格式, 按天计算)
+     *
+     * @param startTime String 开始时间 yyyy-MM-dd
+     * @param endTime  String 结束时间 yyyy-MM-dd
+     * @return
+     */
+    public static List<String> getBetweenDays(String startTime, String endTime) throws ParseException {
+        if (StringUtils.isEmpty(startTime) || StringUtils.isEmpty(endTime)) {
+            return null;
+        }
+        // 1、定义转换格式
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date start = df.parse(startTime);
+        Date end = df.parse(endTime);
+        if (start == null || end == null) {
+            return null;
+        }
+        List<String> result = new ArrayList<>();
+
+        Calendar tempStart = Calendar.getInstance();
+        tempStart.setTime(start);
+
+        tempStart.add(Calendar.DAY_OF_YEAR, 1);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar tempEnd = Calendar.getInstance();
+        tempEnd.setTime(end);
+        result.add(sdf.format(start));
+        while (tempStart.before(tempEnd)) {
+            result.add(sdf.format(tempStart.getTime()));
+            tempStart.add(Calendar.DAY_OF_YEAR, 1);
+        }
+        return result;
+    }
+
+
+    /**
+     * 当前日期是否符合连签
+     *
+     * @param memberActivityInfo 会员活动信息
+     * @param continueSignCount  连签天数
+     * @param startDate          活动开始日期
+     * @param endDate            活动结束日期
+     * @return {@link ActivityRelationRuleVO}
+     */
+    private static List<String> getRewardDays(MemberActivityInfo memberActivityInfo, int continueSignCount, String startDate, String endDate) {
+        ActivityRuleVO activityRule = memberActivityInfo.getActivityRule();
+        if (activityRule == null
+                || !Objects.equals(1, memberActivityInfo.getActivityRule().getContinuousSignStatus())) {
+            return Collections.emptyList();
+        }
+        List<String> rewardDays = new ArrayList<>();
+        try {
+            List<String> betweenDays = getBetweenDays(startDate, endDate);
+            for (int i = 0; i < betweenDays.size(); i++) {
+                if (i <= (continueSignCount - 1)) {
+                    continue;
+                }
+                ActivityRelationRuleVO ruleVO = getActivityRelationRuleVO(memberActivityInfo, (i - continueSignCount));
+                if (ruleVO == null) {
+                    continue;
+                }
+                rewardDays.add(betweenDays.get(i));
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return rewardDays;
+    }
+
+    /**
+     * 按照连续签到天数进行升序
+     *
+     * @param ruleInfoList 会员活动规则表
+     * @return {@link List}
+     */
+    private static List<MemberActivityRuleInfo> orderBySignDay(List<MemberActivityRuleInfo> ruleInfoList) {
+        if (CollectionUtil.isEmpty(ruleInfoList)) {
+            return Collections.emptyList();
+        }
+        // 升序排列
+        ruleInfoList.sort((a, b) ->
+                a.getActivityRelationRule().getContinuousSignDays() - b.getActivityRelationRule().getContinuousSignDays()
+        );
+        return ruleInfoList;
+    }
+
+    /**
+     * 获取符合连签条件的连签规则
+     *
+     * @param memberActivityInfo 会员活动信息
+     * @param continueSignCount  连签天数
+     * @return {@link ActivityRelationRuleVO}
+     */
+    private static ActivityRelationRuleVO getActivityRelationRuleVO(MemberActivityInfo memberActivityInfo, int continueSignCount) {
+        if (continueSignCount <= 1) {
+            return null;
+        }
+        ActivityRuleVO activityRule = memberActivityInfo.getActivityRule();
+        ActivityRelationRuleVO relationRuleVO = null;
+        // 符合连签的集合
+        List<MemberActivityRuleInfo> conditionRuleInfoList = new ArrayList<>();
+        if (activityRule == null
+                || !Objects.equals(1, memberActivityInfo.getActivityRule().getContinuousSignStatus())) {
+            return null;
+        }
+        // 连续签到奖励规则
+        List<MemberActivityRuleInfo> ruleInfoList = orderBySignDay(memberActivityInfo.getMemberActivityRuleInfoList());
+        if (CollectionUtil.isNotEmpty(ruleInfoList)) {
+            for (MemberActivityRuleInfo memberActivityRuleInfo : ruleInfoList) {
+                relationRuleVO = memberActivityRuleInfo.getActivityRelationRule();
+                // 签到任务领取上限
+                Integer receiveLimit = relationRuleVO.getReceiveLimit();
+                // 该规则需要连续签到的天数
+                Integer continuousSignDays = relationRuleVO.getContinuousSignDays();
+                if (receiveLimit == null || receiveLimit <= 0) {
+                    // 不限领
+                    if (continueSignCount % continuousSignDays == 0) {
+                        conditionRuleInfoList.add(memberActivityRuleInfo);
+                    }
+                } else {
+                    if (continueSignCount % continuousSignDays == 0
+                            && (continueSignCount / continuousSignDays) <= receiveLimit) {
+                        conditionRuleInfoList.add(memberActivityRuleInfo);
+                    }
+                }
+            }
+        }
+        if (CollectionUtil.isNotEmpty(conditionRuleInfoList)) {
+            conditionRuleInfoList = orderBySignDay(conditionRuleInfoList);
+            relationRuleVO = conditionRuleInfoList.get(conditionRuleInfoList.size() - 1).getActivityRelationRule();
+        }
+        return relationRuleVO;
+    }
+
+    public static void main(String[] args) {
+        String s = "{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"14\",\"tenantCode\":\"10000001\",\"activityCode\":null,\"activityName\":\"签到\",\"describeInfo\":\"1.每日签到可以获得日签奖励，连续签到可以获得连签奖励； 2.每日最多可签到1次，断签不需要重新从头签到，但会重新计算连签天数； 3.活动以及奖励最终解释权归商家所有。\",\"activityType\":7,\"subType\":2,\"limitValue\":25,\"startTime\":null,\"endTime\":null,\"useShop\":null,\"isNotice\":0,\"activityStatus\":2,\"userScope\":null,\"activityRuleJson\":\"{\\\"continuousSignStatus\\\":1}\",\"activityGiftJson\":\"{\\\"integral\\\":2,\\\"grow\\\":2}\",\"isDelete\":0,\"memberActivityRuleInfoList\":[{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"1\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":2,\\\"integral\\\":1,\\\"grow\\\":1,\\\"receiveLimit\\\":1}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":2,\"integral\":1,\"grow\":1,\"receiveLimit\":1}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"3\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":4,\\\"integral\\\":\\\"\\\",\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":4,\"integral\":null,\"grow\":1,\"receiveLimit\":1}}],\"createStartTime\":null,\"createEndTime\":null,\"stayPageTime\":null,\"activityRule\":{\"continuousSignStatus\":1,\"jumpLink\":null,\"stayPageTime\":null},\"activityGift\":{\"integral\":2,\"grow\":2}}";
+        MemberActivityInfo info = JSONObject.parseObject(s,MemberActivityInfo.class);
+        List<String> rewardDays = getRewardDays(info, 1, "2022-08-24", "2022-09-10");
+        System.out.println(rewardDays);
+    }
 
     /**
      * 获取连续签到天数
@@ -65,7 +210,7 @@ public class MemberSignTest {
 
     @Test
     public void signDetail() {
-        String s = "{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"14\",\"tenantCode\":\"10000001\",\"activityCode\":null,\"activityName\":\"签到\",\"describeInfo\":\"1.每日签到可以获得日签奖励，连续签到可以获得连签奖励； 2.每日最多可签到1次，断签不需要重新从头签到，但会重新计算连签天数； 3.活动以及奖励最终解释权归商家所有。\",\"activityType\":7,\"subType\":2,\"limitValue\":25,\"startTime\":null,\"endTime\":null,\"useShop\":null,\"isNotice\":0,\"activityStatus\":2,\"userScope\":null,\"activityRuleJson\":\"{\\\"continuousSignStatus\\\":1}\",\"activityGiftJson\":\"{\\\"integral\\\":2,\\\"grow\\\":2}\",\"isDelete\":0,\"memberActivityRuleInfoList\":[{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"1\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":2,\\\"integral\\\":1,\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":2,\"integral\":1,\"grow\":1,\"receiveLimit\":0}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"2\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":3,\\\"integral\\\":1,\\\"grow\\\":\\\"\\\",\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":3,\"integral\":1,\"grow\":null,\"receiveLimit\":0}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"3\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":4,\\\"integral\\\":\\\"\\\",\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":4,\"integral\":null,\"grow\":1,\"receiveLimit\":0}}],\"createStartTime\":null,\"createEndTime\":null,\"stayPageTime\":null,\"activityRule\":{\"continuousSignStatus\":1,\"jumpLink\":null,\"stayPageTime\":null},\"activityGift\":{\"integral\":2,\"grow\":2}}";
+        String s = "{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"14\",\"tenantCode\":\"10000001\",\"activityCode\":null,\"activityName\":\"签到\",\"describeInfo\":\"1.每日签到可以获得日签奖励，连续签到可以获得连签奖励； 2.每日最多可签到1次，断签不需要重新从头签到，但会重新计算连签天数； 3.活动以及奖励最终解释权归商家所有。\",\"activityType\":7,\"subType\":2,\"limitValue\":25,\"startTime\":null,\"endTime\":null,\"useShop\":null,\"isNotice\":0,\"activityStatus\":2,\"userScope\":null,\"activityRuleJson\":\"{\\\"continuousSignStatus\\\":1}\",\"activityGiftJson\":\"{\\\"integral\\\":2,\\\"grow\\\":2}\",\"isDelete\":0,\"memberActivityRuleInfoList\":[{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"1\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":2,\\\"integral\\\":1,\\\"grow\\\":1,\\\"receiveLimit\\\":1}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":2,\"integral\":1,\"grow\":1,\"receiveLimit\":1}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"2\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":3,\\\"integral\\\":1,\\\"grow\\\":\\\"\\\",\\\"receiveLimit\\\":1}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":3,\"integral\":1,\"grow\":null,\"receiveLimit\":1}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"3\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":4,\\\"integral\\\":\\\"\\\",\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":4,\"integral\":null,\"grow\":1,\"receiveLimit\":1}}],\"createStartTime\":null,\"createEndTime\":null,\"stayPageTime\":null,\"activityRule\":{\"continuousSignStatus\":1,\"jumpLink\":null,\"stayPageTime\":null},\"activityGift\":{\"integral\":2,\"grow\":2}}";
         MemberActivityInfo memberActivityInfo = JSONObject.parseObject(s, MemberActivityInfo.class);
         if (memberActivityInfo == null) {
             System.out.println("签到活动未开启");
