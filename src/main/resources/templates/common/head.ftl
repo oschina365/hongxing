@@ -11,6 +11,7 @@
 <script src="https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865"></script>
 <script src="https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d"></script>
 <script type="text/javascript" key="nsw_index" src="JS/NSW_Index.js"></script>
+<script type="text/javascript" key="NSW_Details" src="/JS/NSW_Details.js"></script>
 <meta name="format-detection" content="telephone=no">
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 
@@ -24,8 +25,6 @@
     .cs_info {font-size:12px; margin:0px 10px; overflow:hidden; text-align:center;}
     .cs_btn {width:120px; height:25px; background:#333; margin:0px 10px; border-radius:5px; font-size:12px; line-height:25px; color:#FFF; text-align:center; cursor:pointer;}
 </style>
-
-
 
 <script src="//sgoutong.baidu.com/embed/1660810068/asset/embed/pc_nb.js" charset="UTF-8"></script>
 <link rel="stylesheet" type="text/css" href="//sgoutong.baidu.com/embed/1660810068/asset/embed/css/pc/main.css">

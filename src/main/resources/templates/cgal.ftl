@@ -1,99 +1,21 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-        <title>工程案例,武汉办公家具,办公家具定制,办公家具设计,武汉办公家具厂家,办公桌椅,红鑫办公家具</title>
-        <meta name="keywords" content="武汉办公家具,学校家具案例,酒店家具案例,医院家具案例,银行家具案例,办公家具案例" />
-        <meta name="description" content="武汉红鑫家具是一家集开发、设计、生产、销售和服务于一体的专业化办公家具品牌厂家,18年合作客户上万家,可提供学校家具、酒店家具、医院家具、银行家具等案例供客户参考,各种款式新颖的办公家具,实体展现,期待您的光临！联系电话：400-678-5198" />
-        <link key="resetcommon" href="/Skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
-        <link key="style" href="/Skins/default/Style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" key="nsw_jcia" src="/JS/NSW_JCIA.js"></script>
-        <meta name="format-detection" content="telephone=no" />
-        <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
-
-
-        <style>
-            #cs_box {
-                width: 120px;
-                height: 0px;
-                color: #FFF;
-                background: #54a7ff;
-                position: fixed;
-                right: 5px;
-                top: 100px;
-                border-radius: 10px;
-                z-index: 1000
-            }
-
-            #cs_box span {
-                height: 20px;
-                line-height: 20px;
-                display: block;
-            }
-
-            .cs_title {
-                font-size: 14px;
-                margin: 0px;
-                font-weight: bold;
-            }
-
-            .cs_img {
-                width: 120px;
-                height: 0px;
-                background: #FFF;
-                margin: 2px;
-                background-image: url()
-            }
-
-            .cs_info {
-                font-size: 12px;
-                margin: 0px 10px;
-                overflow: hidden;
-                text-align: center;
-            }
-
-            .cs_btn {
-                width: 120px;
-                height: 25px;
-                background: #333;
-                margin: 0px 10px;
-                border-radius: 5px;
-                font-size: 12px;
-                line-height: 25px;
-                color: #FFF;
-                text-align: center;
-                cursor: pointer;
-            }
-        </style>
-
-
-    </head>
+﻿<#include "common/layout.ftl"/>
+<@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/Skins/Default/Style.css"] js_=["/JS/NSW_JCIA.js"]>
     <body>
         <!-- 代码部分begin -->
         <div id='cs_box'>
 
-
             <div class='cs_img'>
             </div>
-
             <div class='cs_btn'>红鑫家具旗舰店
-
                 <li>
                     <a href="https://hongxin.tmall.com/" target="_black">
                         <img src="./js/158995871.jpg" width="120" alt="">
                     </a>
                 </li>
-
             </div>
-
         </div>
-
         <!-- 代码部分end -->
-
     </body>
-
     <script>
         var _hmt = _hmt || [];
         (function () {
@@ -174,9 +96,7 @@
                         &raquo; <a href="/gcal" title="成功案例">成功案例</a>
                     </div>
                     <div class="news_con News_4 News_4_12">
-
-
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/hbfhszyljg.html" title="湖北凡华市政园林景观办公家具工程案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220706151410_7337.jpg" alt="湖北凡华市政园林景观办公家具工程案例" title="湖北凡华市政园林景观办公家具工程案例" />
@@ -193,7 +113,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/whshcgdqcb.html" title="武汉市惠驰广迪汽车办公家具工程案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220610144310_7776.jpg" alt="武汉市惠驰广迪汽车办公家具工程案例" title="武汉市惠驰广迪汽车办公家具工程案例" />
@@ -210,7 +130,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/hbdyxclkjy.html" title="湖北大禹新材料科技有限公司办公家具案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220610105419_4252.jpg" alt="湖北大禹新材料科技有限公司办公家具案例" title="湖北大禹新材料科技有限公司办公家具案例" />
@@ -227,7 +147,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/whqstsgjja.html" title="武汉青山图书馆家具案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220609175446_1463.jpg" alt="武汉青山图书馆家具案例" title="武汉青山图书馆家具案例" />
@@ -244,7 +164,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/whzlxfjryx.html" title="武汉招联消费金融有限公司家具案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220706152735_7938.jpg" alt="武汉招联消费金融有限公司家具案例" title="武汉招联消费金融有限公司家具案例" />
@@ -261,7 +181,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/zqctbgjjgc.html" title="中青城投办公家具工程案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220323114823_1188.jpg" alt="中青城投办公家具工程案例" title="中青城投办公家具工程案例" />
@@ -278,7 +198,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/hbfrekjyxg.html" title="湖北富瑞尔科技有限公司办公家具工程案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20220319100449_7652.jpg" alt="湖北富瑞尔科技有限公司办公家具工程案例" title="湖北富瑞尔科技有限公司办公家具工程案例" />
@@ -294,7 +214,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/whgckjxybg.html" title="武汉工程科技学院办公家具工程案例" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20211226162959_3908.jpg" alt="武汉工程科技学院办公家具工程案例" title="武汉工程科技学院办公家具工程案例" />
@@ -311,7 +231,7 @@
 								</span>
                             </dd>
                         </dl>
-                        <dl class="dl_2s">
+                        <dl class="HZAL4 news_hover4">
                             <dt>
                                 <a href="/Article/whwsdwlhxw.html" title="武汉微思敦网络，红鑫完美打造固装家具" target="_blank">
                                     <img src="/uploadfiles/pictures/news/20210923174040_0374.jpg" alt="武汉微思敦网络，红鑫完美打造固装家具" title="武汉微思敦网络，红鑫完美打造固装家具" />
@@ -431,25 +351,5 @@
             }
             SetFenLei("12", {"||12||15||16||17||18||19||21||": "HZAL"}, "4");
         </script>
-        <#include "common/footer.ftl" />
-        <script type="text/javascript">
-            $(".bot-t a:last").addClass("none");
-        </script>
-
-        <div id="roll" style="display: block;">
-            <div title="回到顶部" id="roll_top"></div>
-        </div>
-        <!--[if IE 6]>
-        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            DD_belatedPNG.fix('*');
-        </script>
-        <![endif]-->
-        <script src="/JS/rollup.min.js" type="text/javascript"></script>
-
-        <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" defer="defer"></script>
-        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer" style="display:none;"></script>
-        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
-        <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js"></script>
     </body>
-</html>
+</@html>

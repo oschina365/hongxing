@@ -6,14 +6,15 @@
         <title>${title_!''}</title>
         <#include "head.ftl"/>
         <#list css_ as css>
-            ${css}
+            <link key="index" href="${css}" rel="stylesheet" type="text/css">
         </#list>
     </head>
 <body>
     <#nested />
-
-
     <#include "footer.ftl"/>
+    <#list js_ as li>
+        <script src="${li}"></script>
+    </#list>
 </body>
 
 </html>

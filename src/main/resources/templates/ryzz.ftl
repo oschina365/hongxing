@@ -1,41 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-        <title>营业执照|荣誉资质 - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂</title>
-        <meta name="keywords" content="红鑫办公家具定制,办公家具批发,红鑫办公家具批发" />
-        <meta name="description" content="【官网】红鑫办公家具定制获ISO质量管理认证、健康安全认证等,专注高档办公家具批发.红鑫办公家具批发包括木制类、胶板屏风类、软体类、钢制类办公家具.服务热线：400-678-5198" />
-        <script src="/JS/MobileRewrite.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            uaredirect("/Mobile/Mhelps/yyzz.html");
-        </script>
-        <link key="resetcommon" href="/Skins/Default/resetcommon.css" rel="stylesheet" type="text/css" />
-        <link key="style" href="/Skins/Default/Style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" key="NSW_Details" src="/JS/NSW_Details.js"></script>
-        <meta name="format-detection" content="telephone=no" />
-        <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
-        <script>
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-        <script>
-            var _hmt = _hmt || [];
-            (function () {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-            })();
-        </script>
-    </head>
-    <body>
+﻿<#include "common/layout.ftl"/>
+<@html title_="营业执照|荣誉资质 - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂" css_=["/Skins/Default/Style.css"] js_=["/JS/NSW_JCIA.js"]>
         <#include "common/pfb.ftl" />
         <#include "common/g_top.ftl" />
 
@@ -101,112 +65,80 @@
                 <a href="/" title="首页">首页</a>
                 &raquo; <a href="/ryzz.html" title="荣誉资质">荣誉资质</a> &raquo; <a href="/Helps/yyzz.html" title="营业执照">营业执照</a>
             </div>
-            <div class="allcontent">
-                <p>
-                    <img src="/uploadfiles/pictures/help/20181207150322_7475.png" title="451D0DCC-C01B-44aa-8F70-5D9ED2A33034" alt="451D0DCC-C01B-44aa-8F70-5D9ED2A33034" />
-                </p>
+            <div class="a_fz RYZZ3_warp" id="a2">
+                <div class="content clearfix">
+
+                    <div class="a_fz_con_3_10">
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200110150448_4715.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206020)"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20181204164844_3357.jpg" alt="中国环境标志产品认证证书(CEC2018ELP04206020)" title="中国环境标志产品认证证书(CEC2018ELP04206020)"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200110150448_4715.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206020)">中国环境标志产品认证证书(CEC2018ELP04206020)</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200110150153_0285.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206023)"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20181221150520_4157.jpg" alt="中国环境标志产品认证证书(CEC2018ELP04206023)" title="中国环境标志产品认证证书(CEC2018ELP04206023)"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200110150153_0285.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206023)">中国环境标志产品认证证书(CEC2018ELP04206023)</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200110143039_8703.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206022)"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20200110144009_4329.jpg" alt="中国环境标志产品认证证书(CEC2018ELP04206022)" title="中国环境标志产品认证证书(CEC2018ELP04206022)"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200110143039_8703.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206022)">中国环境标志产品认证证书(CEC2018ELP04206022)</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200110150330_2560.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206021)"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20181221145410_9144.jpg" alt="中国环境标志产品认证证书(CEC2018ELP04206021)" title="中国环境标志产品认证证书(CEC2018ELP04206021)"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200110150330_2560.jpg" title="中国环境标志产品认证证书(CEC2018ELP04206021)">中国环境标志产品认证证书(CEC2018ELP04206021)</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804173111_1950.jpg" title="中国环保产品认证证书CQC-（金属办公家具）"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/hbrz/20181221120043_2081.jpg" alt="中国环保产品认证证书CQC-（金属办公家具）" title="中国环保产品认证证书CQC-（金属办公家具）"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804173111_1950.jpg" title="中国环保产品认证证书CQC-（金属办公家具）">中国环保产品认证证书CQC-（金属办公家具）</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804173349_0140.jpg" title="中国环保产品认证证书CQC-（木制办公家具）"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20181221115338_8719.jpg" alt="中国环保产品认证证书CQC-（木制办公家具）" title="中国环保产品认证证书CQC-（木制办公家具）"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804173349_0140.jpg" title="中国环保产品认证证书CQC-（木制办公家具）">中国环保产品认证证书CQC-（木制办公家具）</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804173444_4652.jpg" title="中国环保产品认证证书CQC-（软体家具-沙发）"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/hbrz/20181221111858_0369.jpg" alt="中国环保产品认证证书CQC-（软体家具-沙发）" title="中国环保产品认证证书CQC-（软体家具-沙发）"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804173444_4652.jpg" title="中国环保产品认证证书CQC-（软体家具-沙发）">中国环保产品认证证书CQC-（软体家具-沙发）</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200110151742_9958.jpg" title="营业执照"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20181207150158_5407.jpg" alt="营业执照" title="营业执照"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200110151742_9958.jpg" title="营业执照">营业执照</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20161024142748_1441.jpg" title="商标注册证"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20161024142742_6558.jpg" alt="商标注册证" title="商标注册证"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20161024142748_1441.jpg" title="商标注册证">商标注册证</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804174357_9089.png" title="质量管理体系证书"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20210804150649_6376.jpg" alt="质量管理体系证书" title="质量管理体系证书"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804174357_9089.png" title="质量管理体系证书">质量管理体系证书</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804172846_4867.jpg" title="职业健康体系证书"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20210804172808_3676.jpg" alt="职业健康体系证书" title="职业健康体系证书"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804172846_4867.jpg" title="职业健康体系证书">职业健康体系证书</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20210804172954_4106.jpg" title="环境管理体系证书"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20210804172932_6494.jpg" alt="环境管理体系证书" title="环境管理体系证书"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20210804172954_4106.jpg" title="环境管理体系证书">环境管理体系证书</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20161024142448_9839.jpg" title="消费者信赖品牌"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20161024142444_0766.jpg" alt="消费者信赖品牌" title="消费者信赖品牌"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20161024142448_9839.jpg" title="消费者信赖品牌">消费者信赖品牌</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20161024142413_4808.jpg" title="湖北省名优产品"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20161024142404_8284.jpg" alt="湖北省名优产品" title="湖北省名优产品"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20161024142413_4808.jpg" title="湖北省名优产品">湖北省名优产品</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20161024142239_6435.jpg" title="质量服务信誉AAAA级单位"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20161024142220_5081.jpg" alt="质量服务信誉AAAA级单位" title="质量服务信誉AAAA级单位"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20161024142239_6435.jpg" title="质量服务信誉AAAA级单位">质量服务信誉AAAA级单位</a></dd>
+                        </dl>
+                        <dl class="RYZZ3 news_hover3">
+                            <dt><a target="_blank" rel="group" class="group" href="/uploadfiles/pictures/help/20200116135628_4241.jpg" title="2018-2019年度优秀企业"><img src="http://www.hongxin.com.cn/uploadfiles/pictures/help/20200116135540_2353.jpg" alt="2018-2019年度优秀企业" title="2018-2019年度优秀企业"></a></dt>
+                            <dd class="p"><a rel="group2" class="group2" href="/uploadfiles/pictures/help/20200116135628_4241.jpg" title="2018-2019年度优秀企业">2018-2019年度优秀企业</a></dd>
+                        </dl>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
             </div>
             <div class="clear"></div>
         </div>
-        <script type="text/javascript">
-            help
-            Load();
-        </script>
         <!--content:end-->
-        <div class="g-bot">
-            <div class="bot content">
-                <div class="bot-t">
-                    <a href="/" title="红鑫首页">红鑫首页</a>
-                    <a href="/cgal.html" title="工程案例">工程案例</a>
-                    <a href="/helps/dzfw.html" title="办公家具定制">办公家具定制</a>
-                    <a href="/xxtyg.html" title="自营体验馆">自营体验馆</a>
-                    <a href="/ryzz.html" title="资质荣誉">资质荣誉</a>
-                    <a href="/helps/aboutus.html" title="关于红鑫">关于红鑫</a>
-                    <a href="/helps/contactus.html" title="联系我们">联系我们</a>
-                    <a href="/sitemap.html" title="网站地图" target="_blank">网站地图</a>
-                </div>
-                <div class="bot-c">
-                    <ul>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" />
-                            </i>武汉红鑫家俱有限公司<b>版权所有</b>
-                            <b>备案号：<a href="http://www.miitbeian.gov.cn/" title="鄂ICP备12004884号" target="_blank" rel="nofollow">鄂ICP备12004884号</a>
-                            </b>
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" />
-                            </i>座机：027-61520188</i>
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" />
-                            </i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" />
-                            </i>电话：18207180188</i>
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" />
-                            </i>全国服务热线：400-678-5198
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" />
-                            </i>邮箱：hongxin@hongxin.com.cn
-                        </li>
-                        <li>
-                            <i>
-                                <img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站制作" />
-                            </i>
-                            <script type="text/javascript">
-                                var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-                                document.write(unescape("%3Cspan id='cnzz_stat_icon_1260852450'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260852450%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
-                            </script>
-                            <meta name="baidu-site-verification" content="rsU7PwgDP3" />
-                        </li>
-                    </ul>
-                    <em>
-                        <a href="/" title="红鑫家俱">
-                            <img src="/uploadfiles/pictures/setting/20161024153608_7175.jpg" alt="武汉红鑫家俱有限公司" title="武汉红鑫家俱有限公司" />
-                        </a>
-                    </em>
-                    <span class="spanewm">
-						<img src="/uploadfiles/pictures/setting/20161201103707_8253.png" alt="武汉办公家具" />
-					</span>
-                </div>
-                <div class="link">
-                    <p>
-                        <a class="a1" href="/friendlink/" title="友情链接" target="_blank">友情链接</a>
-                        <a class="a2" href="/friendlink/apply.aspx" title="申请友情链接入口" target="_blank">申请友情链接>></a>
-                    </p>
-                    <span>
-						<a href="http://www.zt88.cn" title="武汉办公家具" target="_blank">武汉办公家具</a>
-						<a href="http://hongxin.com.cn" title="武汉办公家具定制" target="_blank">武汉办公家具定制</a>
-						<a href="http://www.51yyjj.com" title="上海办公家具" target="_blank">上海办公家具</a>
-					</span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(".bot-t a:last").addClass("none");
-        </script>
-
-        <div id="roll" style="display: block;">
-            <div title="回到顶部" id="roll_top"></div>
-        </div>
-        <!--[if IE 6]>
-        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            DD_belatedPNG.fix('*');
-        </script>
-        <![endif]-->
-        <script src="/JS/rollup.min.js" type="text/javascript"></script>
-
-        <script type="text/javascript" src="http://lead.soperson.com/10032796/10067314.js"></script>
-    </body>
-</html>
+</@html>
