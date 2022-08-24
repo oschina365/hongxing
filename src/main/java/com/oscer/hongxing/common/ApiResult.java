@@ -44,6 +44,10 @@ public class ApiResult<T> {
         return new ApiResult(success, "success", object);
     }
 
+    public static ApiResult fail() {
+        return new ApiResult(fail, null, null);
+    }
+
     public static ApiResult failWithMessage(String message) {
         return new ApiResult(fail, message, null);
     }

@@ -5,6 +5,7 @@ import com.oscer.hongxing.common.Inflector;
 import com.oscer.hongxing.db.CacheMgr;
 import com.oscer.hongxing.db.DBException;
 import com.oscer.hongxing.db.DbQuery;
+import lombok.Data;
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -29,88 +30,8 @@ import java.util.stream.Collectors;
  *
  * @author winterlau
  */
+@Data
 public abstract class Entity implements Serializable {
-
-    public static final Map<Integer, String> VIP_MAP = new HashMap<>();
-
-    static {
-        for (VIP_SCORE V : VIP_SCORE.values()) {
-            VIP_MAP.put(V.score, V.text);
-        }
-    }
-
-    public static final String CACHE_VIEW = "View";
-
-    /**
-     * 青铜
-     */
-    public static final int VIP1_SCORE = 500;
-
-    /**
-     * 白银
-     */
-    public static final int VIP2_SCORE = 1000;
-
-    /**
-     * 黄金
-     */
-    public static final int VIP3_SCORE = 2000;
-
-    /**
-     * 白金
-     */
-    public static final int VIP4_SCORE = 3000;
-
-    /**
-     * 钻石
-     */
-    public static final int VIP5_SCORE = 6000;
-
-    /**
-     * 超钻
-     */
-    public static final int VIP6_SCORE = 10000;
-
-    /**
-     * 王者
-     */
-    public static final int VIP7_SCORE = 15000;
-
-
-    public enum VIP_SCORE {
-        VIP1(VIP1_SCORE, "青铜"),
-        VIP2(VIP2_SCORE, "白银"),
-        VIP3(VIP3_SCORE, "黄金"),
-        VIP4(VIP4_SCORE, "白金"),
-        VIP5(VIP5_SCORE, "钻石"),
-        VIP6(VIP6_SCORE, "超钻"),
-        VIP7(VIP7_SCORE, "王者");
-
-        private int score;
-        private String text;
-
-        public int getScore() {
-            return score;
-        }
-
-        public void setScore(int score) {
-            this.score = score;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-
-        VIP_SCORE(int score, String text) {
-            this.score = score;
-            this.text = text;
-        }
-    }
-
 
     public static final long ONE_HOUR = 1000 * 60 * 60L;
 
@@ -129,14 +50,10 @@ public abstract class Entity implements Serializable {
     public static final String CACHE_ALL = "all";
 
     /**
-     * 冻结：-1 正常:0 封号：1  手动注销：2  系统销毁：3
+     * 正常=0  冻结=1
      */
-    public final static transient int STATUS_FROZEN = -1;
     public final static transient int STATUS_NORMAL = 0;
-    public final static transient int STATUS_CLOSE = 1;
-    public final static transient int STATUS_CANCEL_ME = 2;
-    public final static transient int STATUS_CANCEL_SYSTEM = 3;
-
+    public final static transient int STATUS_FROZEN = 1;
     /**
      * 用户在线
      */
@@ -146,61 +63,23 @@ public abstract class Entity implements Serializable {
      */
     public final static transient int OFFLINE = 0;
 
-    public enum enum_count {
-        view_count("view_count", "阅读数"),
-        comment_count("comment_count", "评论数"),
-        praise_count("praise_count", "点赞数"),
-        collect_count("view_count", "收藏数");
-
-        private String key;
-        private String desc;
-
-        enum_count(String key, String desc) {
-            this.key = key;
-            this.desc = desc;
-        }
-
-        public String getKey() {
-            return key;
-        }
-
-        public void setKey(String key) {
-            this.key = key;
-        }
-
-        public String getDesc() {
-            return desc;
-        }
-
-        public void setDesc(String desc) {
-            this.desc = desc;
-        }
-    }
-
     /**
      * 添加时间
      */
-    public Date insert_date;
+    public Date create_time;
     /**
      * 更新时间
      */
-    public Date last_date;
+    public Date update_time;
 
-    public Date getInsert_date() {
-        return insert_date;
-    }
-
-    public void setInsert_date(Date insert_date) {
-        this.insert_date = insert_date;
-    }
-
-    public Date getLast_date() {
-        return last_date;
-    }
-
-    public void setLast_date(Date last_date) {
-        this.last_date = last_date;
-    }
+    /**
+     * 创建者ID
+     */
+    private int creator;
+    /**
+     * 更新者ID
+     */
+    private int updater;
 
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.RUNTIME)

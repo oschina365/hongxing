@@ -82,17 +82,4 @@ public class CaptchaService {
         out.flush();
         out.close();
     }
-
-    public static ApiResult check(String key, String value, HttpServletRequest request) throws IOException {
-
-        SendEmailRecord record = SendEmailRecordDAO.ME.selectByEmail(key, SendEmailRecord.TYPE_WEB, EmailTemplateTypeEnum.TYPE.REGISTER.getKey());
-        if (record == null) {
-            return ApiResult.failWithMessage("请重新获取验证码");
-        }
-        if ((System.currentTimeMillis() - record.getInsert_date().getTime()) < SEND_REGISTER_INTERVAL_TIME) {
-            return ApiResult.success();
-        } else {
-            return ApiResult.failWithMessage("验证码已过期，请重新获取");
-        }
-    }
 }

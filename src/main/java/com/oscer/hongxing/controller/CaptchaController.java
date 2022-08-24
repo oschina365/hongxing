@@ -1,4 +1,4 @@
-package com.oscer.hongxing;
+package com.oscer.hongxing.controller;
 
 import com.oscer.hongxing.common.IpUtil;
 import com.oscer.hongxing.service.CaptchaService;

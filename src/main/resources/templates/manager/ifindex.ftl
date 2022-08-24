@@ -2,28 +2,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head runat="server">
-<title></title>
-<link href="skins/base/common.css" rel="stylesheet" type="text/css"/>
-<link href="skins/default/default.css" rel="stylesheet" type="text/css"/>
-<link href="skins/base/index.css" rel="stylesheet" type="text/css"/>
-    <script src="js/easyui/jquery.min.js" type="text/javascript"></script>
-<script src="js/common/Common.js" type="text/javascript"></script>
-<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-var hm = document.createElement("script");
-hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
-var s = document.getElementsByTagName("script")[0];
-s.parentNode.insertBefore(hm, s);
-})();
-</script>
+	<title></title>
+	<link href="skins/base/common.css" rel="stylesheet" type="text/css"/>
+	<link href="skins/default/default.css" rel="stylesheet" type="text/css"/>
+	<link href="skins/base/index.css" rel="stylesheet" type="text/css"/>
+	<script src="js/easyui/jquery.min.js" type="text/javascript"></script>
+	<script src="js/common/Common.js" type="text/javascript"></script>
+	<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 </head>
 <body>
 <!-- bread_title -->
 <CurrentPosition:CurrentPosition ID="cur" runat="server"/>
 <div class="col_main">
-    <form id="form1" runat="server" onsubmit="top.refreshList=true">
+	<form id="form1" runat="server" onsubmit="top.refreshList=true">
 
 		<div class="bord_gray">
 			<div class="graybar_one f_cb">
@@ -62,7 +62,7 @@ s.parentNode.insertBefore(hm, s);
 
 				</table>
 				<em class="wel_line"></em>
-				<div class="admin_btn"><div class="save_btn"><em class="mini_ico"></em><asp:Button ID="btnSave" CommandName="return" runat="server" Text="保 存" onclick="btnSubmit_Click" /></div></div>	
+				<div class="admin_btn"><div class="save_btn"><em class="mini_ico"></em><asp:Button ID="btnSave" CommandName="return" runat="server" Text="保 存" onclick="btnSubmit_Click" /></div></div>
 			</div>
 
 		</div>
@@ -77,42 +77,42 @@ s.parentNode.insertBefore(hm, s);
 					<tr>
 						<td class="td12">产品管理：</td>
 						<td>
-                            <a href="products_edit.aspx" target="frmEditor">添加产品</a><em class="cutline">|</em>
-                            <a href="product_column_edit.aspx" target="frmEditor">添加分类</a>
-                        </td>
+							<a href="products_edit.aspx" target="frmEditor">添加产品</a><em class="cutline">|</em>
+							<a href="product_column_edit.aspx" target="frmEditor">添加分类</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="td12">内容管理：</td>
 						<td>
-                            <a href="news_edit.aspx" target="frmEditor">添加资讯文章</a><em class="cutline">|</em>
-                            <a href="news_column_edit.aspx" target="frmEditor">添加资讯分类</a><em class="cutline">|</em>
-                            <a href="helps_edit.aspx" target="frmEditor">添加帮助文档</a><em class="cutline">|</em>
-                            <a href="help_column_edit.aspx" target="frmEditor">添加帮助分类</a>
-                        </td>
+							<a href="news_edit.aspx" target="frmEditor">添加资讯文章</a><em class="cutline">|</em>
+							<a href="news_column_edit.aspx" target="frmEditor">添加资讯分类</a><em class="cutline">|</em>
+							<a href="helps_edit.aspx" target="frmEditor">添加帮助文档</a><em class="cutline">|</em>
+							<a href="help_column_edit.aspx" target="frmEditor">添加帮助分类</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="td12">搜索引擎优化：</td>
 						<td>
-                            <a href="sitepage.aspx" target="frmEditor">独立页面设置</a><em class="cutline">|</em>
-                            <a href="keywords.aspx" target="frmEditor">关键词管理</a><em class="cutline">|</em>
-                            <a href="sitemap.aspx" target="frmEditor">网站地图管理</a>
-                        </td>
+							<a href="sitepage.aspx" target="frmEditor">独立页面设置</a><em class="cutline">|</em>
+							<a href="keywords.aspx" target="frmEditor">关键词管理</a><em class="cutline">|</em>
+							<a href="sitemap.aspx" target="frmEditor">网站地图管理</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="td12">订单管理：</td>
 						<td>
-                            <a href="orders.aspx?type=1" target="frmEditor">最新订单</a><em class="cutline">|</em>
-                            <a href="orders.aspx" target="frmEditor">订单列表</a>
-                        </td>
+							<a href="orders.aspx?type=1" target="frmEditor">最新订单</a><em class="cutline">|</em>
+							<a href="orders.aspx" target="frmEditor">订单列表</a>
+						</td>
 					</tr>
 					<tr>
 						<td class="td12">工具管理：</td>
 						<td>
-                            <a href="ads_edit.aspx" target="frmEditor">添加广告</a><em class="cutline">|</em>
-                            <a href="applys_edit.aspx" target="frmEditor">添加友情链接</a><em class="cutline">|</em>
-                            <a href="pictures.aspx" target="frmEditor">上传图片</a><em class="cutline">|</em>
-                            <a href="subsite_info.aspx" target="frmEditor">分站管理</a>
-                        </td>
+							<a href="ads_edit.aspx" target="frmEditor">添加广告</a><em class="cutline">|</em>
+							<a href="applys_edit.aspx" target="frmEditor">添加友情链接</a><em class="cutline">|</em>
+							<a href="pictures.aspx" target="frmEditor">上传图片</a><em class="cutline">|</em>
+							<a href="subsite_info.aspx" target="frmEditor">分站管理</a>
+						</td>
 					</tr>
 				</table>
 
@@ -126,7 +126,7 @@ s.parentNode.insertBefore(hm, s);
 				<span class="wel_revise" id="pass_revise">[ 修改 ]</span>
 			</div>
 			<div class="wel_info">
-						
+
 				<table cellspacing="" cellpadding="0" class="admin_table table_class1 table_class2">
 					<tr>
 						<td class="td30"><label>新密码</label><em class="clear_bd"><asp:TextBox CssClass="com_input admin_name" runat="server" ID="txtUserPassword"></asp:TextBox><i class="clear_x"></i></em></td>
@@ -136,16 +136,16 @@ s.parentNode.insertBefore(hm, s);
 					<tr>
 						<td class="td30"><label>密码保护问题</label><em class="clear_bd"><asp:TextBox CssClass="com_input admin_name" runat="server" ID="txtSecQus"></asp:TextBox><i class="clear_x"></i></em></td>
 						<td class="td30 wel_faq">
-                            <%--
-                            <em class="clear_bd">
-                                <select class="pass_faq" name="select_faq">
-                                    <option>1</option>
-                                    <option>2</option>
-                                </select>
-                                <i class="revise_sub"></i>
-                            </em>
-                            --%>
-                        </td>
+							<%--
+							<em class="clear_bd">
+								<select class="pass_faq" name="select_faq">
+									<option>1</option>
+									<option>2</option>
+								</select>
+								<i class="revise_sub"></i>
+							</em>
+							--%>
+						</td>
 						<td class="td30"></td>
 					</tr>
 					<tr>
@@ -158,21 +158,21 @@ s.parentNode.insertBefore(hm, s);
 			</div>
 		</div>
 
-    </form>
+	</form>
 </div>
 <style type="text/css">
-.admin_btn{ display:none;}
+	.admin_btn{ display:none;}
 </style>
 <script type="text/javascript">
-    $(function () {
-        $(".table_class1 a").click(function (event) {
-            SaveURL();
-        })
-        $(".wel_revise").bind("click", function () {
-            var admin_btn = $(this).parents("div.bord_gray").find("div.admin_btn");
-            admin_btn.toggle();
-        })
-    })
+	$(function () {
+		$(".table_class1 a").click(function (event) {
+			SaveURL();
+		})
+		$(".wel_revise").bind("click", function () {
+			var admin_btn = $(this).parents("div.bord_gray").find("div.admin_btn");
+			admin_btn.toggle();
+		})
+	})
 </script>
 </body>
 </html>
