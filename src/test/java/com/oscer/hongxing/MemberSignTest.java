@@ -69,6 +69,16 @@ public class MemberSignTest {
         return result;
     }
 
+    /**
+     * 日期格式化 日期格式为：yyyy-MM-dd
+     *
+     * @param date 日期
+     * @return 返回yyyy-MM-dd格式日期
+     */
+    public static String format(Date date) {
+        return format(date, DATE_PATTERN);
+    }
+
 
     /**
      * 当前日期是否符合连签
@@ -80,28 +90,46 @@ public class MemberSignTest {
      * @return {@link ActivityRelationRuleVO}
      */
     private static List<String> getRewardDays(MemberActivityInfo memberActivityInfo, int continueSignCount, String startDate, String endDate) {
-        ActivityRuleVO activityRule = memberActivityInfo.getActivityRule();
-        if (activityRule == null
-                || !Objects.equals(1, memberActivityInfo.getActivityRule().getContinuousSignStatus())) {
-            return Collections.emptyList();
-        }
-        List<String> rewardDays = new ArrayList<>();
+        // 连续签到奖励规则
+        List<MemberActivityRuleInfo> activityRuleInfoList = memberActivityInfo.getMemberActivityRuleInfoList();
+        SimpleDateFormat format = new SimpleDateFormat(DATE_PATTERN);
+        Map<Integer, List<String>> ruleMap = new HashMap<>();
+        List<String> allRewardDays = new ArrayList<>();
         try {
-            List<String> betweenDays = getBetweenDays(startDate, endDate);
-            for (int i = 0; i < betweenDays.size(); i++) {
-                if (i <= (continueSignCount - 1)) {
-                    continue;
+            Calendar startPeriod = Calendar.getInstance();
+            startPeriod.setTime(format.parse(startDate));
+            Calendar editEndPeriod = Calendar.getInstance();
+            editEndPeriod.setTime(format.parse(endDate));
+            if (CollectionUtil.isNotEmpty(activityRuleInfoList)) {
+                String nowDate = format(new Date());
+                while (startPeriod.before(editEndPeriod)) {
+                    startPeriod.add(Calendar.DATE, 1);
+                    if (startPeriod.getTime().before(new Date())) {
+                        continue;
+                    }
+                    String currentDay = format.format(startPeriod.getTime());
+                    List<String> betweenDays = getBetweenDays(currentDay, nowDate);
+                    int daySize = CollectionUtil.isEmpty(betweenDays) ? 0 : betweenDays.size();
+                    ActivityRelationRuleVO ruleVO = getActivityRelationRuleVO(memberActivityInfo,
+                            (daySize + continueSignCount));
+                    if (ruleVO == null) {
+                        continue;
+                    }
+                    List<String> rewardDays = ruleMap.get(ruleVO.getContinuousSignDays());
+                    if (CollectionUtil.isEmpty(rewardDays)) {
+                        rewardDays = new ArrayList<>();
+                    }
+                    if (ruleVO.getContinuousSignDays() >= rewardDays.size()) {
+                        rewardDays.add(currentDay);
+                        allRewardDays.add(currentDay);
+                    }
+                    ruleMap.put(ruleVO.getContinuousSignDays(), rewardDays);
                 }
-                ActivityRelationRuleVO ruleVO = getActivityRelationRuleVO(memberActivityInfo, (i - continueSignCount));
-                if (ruleVO == null) {
-                    continue;
-                }
-                rewardDays.add(betweenDays.get(i));
             }
-        } catch (ParseException e) {
-            e.printStackTrace();
+        }catch (Exception e){
+
         }
-        return rewardDays;
+        return allRewardDays;
     }
 
     /**
@@ -169,10 +197,11 @@ public class MemberSignTest {
         return relationRuleVO;
     }
 
-    public static void main(String[] args) {
-        String s = "{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"14\",\"tenantCode\":\"10000001\",\"activityCode\":null,\"activityName\":\"签到\",\"describeInfo\":\"1.每日签到可以获得日签奖励，连续签到可以获得连签奖励； 2.每日最多可签到1次，断签不需要重新从头签到，但会重新计算连签天数； 3.活动以及奖励最终解释权归商家所有。\",\"activityType\":7,\"subType\":2,\"limitValue\":25,\"startTime\":null,\"endTime\":null,\"useShop\":null,\"isNotice\":0,\"activityStatus\":2,\"userScope\":null,\"activityRuleJson\":\"{\\\"continuousSignStatus\\\":1}\",\"activityGiftJson\":\"{\\\"integral\\\":2,\\\"grow\\\":2}\",\"isDelete\":0,\"memberActivityRuleInfoList\":[{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"1\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":2,\\\"integral\\\":1,\\\"grow\\\":1,\\\"receiveLimit\\\":1}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":2,\"integral\":1,\"grow\":1,\"receiveLimit\":1}},{\"createTime\":\"2022-08-22 17:34:32\",\"updateTime\":\"2022-08-22 17:34:32\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"3\",\"tenantCode\":\"10000001\",\"activityId\":\"14\",\"ruleJson\":\"{\\\"continuousSignDays\\\":4,\\\"integral\\\":\\\"\\\",\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":4,\"integral\":null,\"grow\":1,\"receiveLimit\":1}}],\"createStartTime\":null,\"createEndTime\":null,\"stayPageTime\":null,\"activityRule\":{\"continuousSignStatus\":1,\"jumpLink\":null,\"stayPageTime\":null},\"activityGift\":{\"integral\":2,\"grow\":2}}";
+    public static void main(String[] args) throws ParseException {
+
+        String s = "{\"createTime\":\"2022-08-23 22:03:55\",\"updateTime\":\"2022-08-23 23:05:18\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"1\",\"tenantCode\":\"10000141\",\"activityCode\":null,\"activityName\":\"签到\",\"describeInfo\":\"1.每日签到可以获得日签奖励，连续签到可以获得连签奖励； 2.每日最多可签到1次，断签不需要重新从头签到，但会重新计算连签天数； 3.活动以及奖励最终解释权归商家所有。\",\"activityType\":7,\"subType\":2,\"limitValue\":20,\"startTime\":null,\"endTime\":null,\"useShop\":null,\"isNotice\":0,\"activityStatus\":2,\"userScope\":null,\"activityRuleJson\":\"{\\\"continuousSignStatus\\\":1}\",\"activityGiftJson\":\"{\\\"integral\\\":1,\\\"grow\\\":1}\",\"isDelete\":0,\"memberActivityRuleInfoList\":[{\"createTime\":\"2022-08-23 23:05:18\",\"updateTime\":\"2022-08-23 23:05:18\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"16\",\"tenantCode\":\"10000141\",\"activityId\":\"1\",\"ruleJson\":\"{\\\"continuousSignDays\\\":2,\\\"integral\\\":1,\\\"grow\\\":1,\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":2,\"integral\":1,\"grow\":1,\"receiveLimit\":0}},{\"createTime\":\"2022-08-23 23:05:18\",\"updateTime\":\"2022-08-23 23:05:18\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"17\",\"tenantCode\":\"10000141\",\"activityId\":\"1\",\"ruleJson\":\"{\\\"continuousSignDays\\\":3,\\\"integral\\\":2,\\\"grow\\\":\\\"\\\",\\\"receiveLimit\\\":0}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":3,\"integral\":2,\"grow\":null,\"receiveLimit\":0}},{\"createTime\":\"2022-08-23 23:05:18\",\"updateTime\":\"2022-08-23 23:05:18\",\"creator\":\"18086497823\",\"modifier\":\"18086497823\",\"id\":\"18\",\"tenantCode\":\"10000141\",\"activityId\":\"1\",\"ruleJson\":\"{\\\"continuousSignDays\\\":4,\\\"integral\\\":\\\"\\\",\\\"grow\\\":1,\\\"receiveLimit\\\":1}\",\"giftJson\":null,\"activityRelationRule\":{\"continuousSignDays\":4,\"integral\":null,\"grow\":1,\"receiveLimit\":1}}],\"createStartTime\":null,\"createEndTime\":null,\"stayPageTime\":null,\"activityRule\":{\"continuousSignStatus\":1,\"jumpLink\":null,\"stayPageTime\":null},\"activityGift\":{\"integral\":1,\"grow\":1}}";
         MemberActivityInfo info = JSONObject.parseObject(s,MemberActivityInfo.class);
-        List<String> rewardDays = getRewardDays(info, 1, "2022-08-24", "2022-09-10");
+        List<String> rewardDays = getRewardDays(info, 1, "2022-08-24", "2022-09-20");
         System.out.println(rewardDays);
     }
 

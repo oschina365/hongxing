@@ -1,7 +1,6 @@
 if (typeof (window.loadjs_obj) == "undefined") {
     window.loadjs_obj = {};
 }
-window.loadjs_obj["/common.js"] = true;
 var Version = "1.1";
 window.loadjs_obj = {};
 if (typeof (console) == "undefined" || window.top.debug) {
