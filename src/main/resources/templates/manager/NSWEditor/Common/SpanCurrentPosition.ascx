@@ -1,2 +1,0 @@
-﻿<%@ control language="C#" autoeventwireup="true" inherits="ManagerUserControl.SpanCurrentPosition, qwt" enableviewstate="false" %>
-<span class="nsw_add">当前位置：<a href="/<%=NSW.OConfig2.PrivateSet.OverrideManagerPath %>/home.aspx" target="_parent">首页</a><%=sb.ToString().TrimEnd(';').Replace(";", "&gt;")%></span>
