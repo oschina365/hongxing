@@ -34,7 +34,6 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
-    </head>
     <body>
         <#include "common/pfb.ftl" />
         <#include "common/g_top.ftl" />

@@ -1,4 +1,4 @@
-package com.oscer.hongxing.controller;
+package com.oscer.hongxing.controller.manager;
 
 import cn.dev33.satoken.SaManager;
 import cn.dev33.satoken.config.SaTokenConfig;
@@ -10,6 +10,7 @@ import com.oscer.hongxing.common.AESUtils;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CacheEnum;
 import com.oscer.hongxing.common.CommonConstants;
+import com.oscer.hongxing.controller.BaseController;
 import com.oscer.hongxing.dao.UserDAO;
 import com.oscer.hongxing.db.CacheMgr;
 import lombok.extern.slf4j.Slf4j;
@@ -20,14 +21,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * 后台管理
+ * 后台管理登录
  *
  * @author MRCHENIKE
  * @create 2022-08-21 14:46
  **/
 @Controller
 @Slf4j
-public class ManageController extends BaseController {
+public class ManageLoginController extends BaseController {
 
     @GetMapping("/manager")
     public String login() {

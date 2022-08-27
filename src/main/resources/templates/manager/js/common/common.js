@@ -589,7 +589,7 @@ var _$ = function (ex, doc) {
 //2015-08-19
 var isIndex = -1;
 var loadJs = function (src, fn, doc) {
-    if (src == "js/other/ajax.js") {
+    if (src == "/manager/js/other/ajax.js") {
         if (isIndex == 0) {
             isIndex = 1;
         } else {
@@ -760,7 +760,7 @@ $(function () {
     if (ups.length) {
         ups.bind("click", LoadPlugMsg);
         //Timeout(function () {
-            loadJs("js/common/popup.js", function () {
+            loadJs("/manager/js/common/popup.js", function () {
                 ups.unbind("click", LoadPlugMsg).click(function () {
                     var me = $(this);
                     var popUp = me.data("popup");
@@ -791,7 +791,7 @@ $(function () {
     editor_warps.bind("click", LoadPlugMsg);
     if (editor_warps.length > 0) {
         //Timeout(function () {
-            loadJs("js/common/editor.js", function () {
+            loadJs("/manager/js/common/editor.js", function () {
                 editor_warps.each(function () {
                     if (!loadeditor) {
                         editor_warps.unbind("click", LoadPlugMsg);
@@ -1079,7 +1079,7 @@ if (window.self == window.top.frames["frmEditor"]) {
     $(function () {
         $(window.self).bind("load", function () {
             if (window.top.SetHeight) {
-				if(window.loadjs_obj["/edit.js"]){
+				if(window.loadjs_obj["/manager/js/common/edit.js"]){
 					setTimeout(function(){
 						window.top.SetHeight();
 					},500);
