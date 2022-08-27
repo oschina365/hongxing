@@ -237,7 +237,7 @@ $(function () {
     }
     var ajaxSave = $("span.ajaxSave");
     if (ajaxSave.length) {
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             ajaxSave.bind("click", function () {
                 var me = $(this);
                 var data = me.attr("data-src");
@@ -262,7 +262,7 @@ $(function () {
     //精华置顶
     var radios = $("#nsw_list_table div.set_radios[typename] > span.radio,#nsw_list_table div.hd_input[typename] > span.p_show");
     if (radios.length > 0) {
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             radios.unbind("click").bind("click", function () {
                 var me = $(this);
                 var div = me.parent();

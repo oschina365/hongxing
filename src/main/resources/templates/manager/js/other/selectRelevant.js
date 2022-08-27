@@ -1,7 +1,7 @@
 ﻿if (typeof (window.loadjs_obj) == "undefined") {
     window.loadjs_obj = {};
 }
-window.loadjs_obj["/selectrelevant.js"] = true;
+window.loadjs_obj["/manager/js/common/selectrelevant.js"] = true;
 var SaveData = {};
 //相关分类操作
 function RelevantColumn(src) {

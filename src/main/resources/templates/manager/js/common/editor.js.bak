@@ -39,7 +39,7 @@ _extend(_editor_, {
     },
     post: function (data) {
         var me = this;
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             _PostAjax(me.options.action, data, function (msg) {
                 me.postCallback(msg);
             });

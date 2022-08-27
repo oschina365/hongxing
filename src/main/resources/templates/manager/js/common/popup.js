@@ -317,7 +317,7 @@ var BatchAddColumnPopUp = function (options) {
             me.text = me.pop.find("textarea.text_area");
 
             if (op.action) {
-                loadJs("js/other/ajax.js", function () {
+                loadJs("/manager/js/other/ajax.js", function () {
                     me.pop.find("span.e_btn1").bind("click", function () {
                         if (me.pop.select.val() == "") {
                             _alert("请选择栏目！");
@@ -537,7 +537,7 @@ var ExtensionClassification = function (options) {
         },
         btn1_Click: function () {
             var me = this;
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 var checkeds = $("#nsw_list_table tr input[name='chkItem']:checked");
                 if (checkeds.length) {
                     var ids = '';
@@ -608,7 +608,7 @@ var MassTransfer = function (options) {
         },
         btn1_Click: function () {
             var me = this;
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 var checkeds = $("#nsw_list_table tr input[name='chkItem']:checked");
                 if (checkeds.length) {
                     var ids = '';
@@ -843,7 +843,7 @@ var QuicklyAddColumn = function (options) {
         },
         btn1_Click: function () {
             var me = this;
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 var input = me.pop.find("input.com_input");
                 if (input.val() == "") {
                     _alert("请输入分类名称！");
@@ -1015,7 +1015,7 @@ var ListImportedColumnAttribute = function (options) {
                     })
                     attrids = attrids.join(',');
                     columnids = columnids.join(',');
-                    loadJs("js/other/ajax.js", function () {
+                    loadJs("/manager/js/other/ajax.js", function () {
                         _PostAjax("ImportedColumnAttribute", {
                             type: op.type,
                             attrids: attrids,

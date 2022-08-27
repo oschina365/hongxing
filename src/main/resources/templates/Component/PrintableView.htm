@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+<head><title>网站资料打印</title>
+<link type="text/css" rel="Stylesheet" href="/css/Reset.css" />
+<link type="text/css" rel="Stylesheet" href="/Skins/default/Style.css" />
+<link type="text/css" rel="Stylesheet" href="/Skins/default/temp.css" />
+<link type="text/css" rel="Stylesheet" href="/Skins/default/download.css" />
+<script src="/JS/JQuery.js" type="text/javascript"></script>
+<script src="/JS/Common.js" type="text/javascript"></script>
+<script src="/JS/Ajax.js" type="text/javascript"></script>
+<script src="/JS/Inc.js" type="text/javascript"></script>
+
+<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body onload="fillPrintView()" style="padding:10px;width:860px;">
+<div style="border-bottom:solid 1px #000;padding-bottom:2px;margin-bottom:2px;font-style:italic"><span id="siteName" style="margin-right:10px;"></span> <span id="siteDomian"></span></div>
+<div style="font-style:italic">标题：<span  id="title"></span>
+<br />打印时间：<span id="time"></span></div>
+<div id="printView" style="margin-top:10px"></div>
+</body></html>
+
+<script type="text/javascript">
+    function fillPrintView() {
+        var cntrId = $qs("container");
+        document.getElementById("printView").innerHTML = opener.document.getElementById(cntrId).innerHTML;
+        document.getElementById("title").innerHTML = opener.document.title;
+        document.getElementById("time").innerHTML = new Date().toLocaleString();
+        $j("siteName").html($qs("sitename"));
+        $j("siteDomian").html($qs("domain"));
+    }
+    window.print();
+</script>

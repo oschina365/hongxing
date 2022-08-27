@@ -87,7 +87,7 @@ s.parentNode.insertBefore(hm, s);
         </div>
     </form>
     <script type="text/javascript">
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             $("div.hd_input01[typename] > span.p_show").unbind("click").bind("click", function () {
                 var me = $(this);
                 var div = me.parent();

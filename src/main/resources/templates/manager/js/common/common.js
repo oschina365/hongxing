@@ -555,7 +555,7 @@ var loadJs = function (src, fn, doc) {
         return;
     }
     var jss = $(doc).data("jss") || {};
-    //if (src == "js/other/ajax.js" && isIndex == 1) setTimeout(function () { console.log($(doc).data("jss")) }, 5000);
+    //if (src == "/manager/js/other/ajax.js" && isIndex == 1) setTimeout(function () { console.log($(doc).data("jss")) }, 5000);
     if (jss[src]) {
         if (fn) {
             if (jss[src] == "complete" || win.loadjs_obj[file]) {
@@ -1189,7 +1189,7 @@ var SetDraggableLi = function (li, axis, cssName, options) {
     var Exclude = "|EM|I|INPUT|TEXTAREA|";
     options = options || {};
     if (lis.length) {
-        loadJs("js/easyui/jquery.easyui.min.js", function () {
+        loadJs("/manager/js/easyui/jquery.easyui.min.js", function () {
             lis.addClass(draggableClass).draggable({
                 proxy: options.proxy || function (source) {
                     var li = $(source).clone().addClass("no_li");

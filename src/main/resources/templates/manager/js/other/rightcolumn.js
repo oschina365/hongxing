@@ -7,7 +7,7 @@ if (typeof (IsShrink) === 'undefined') {
 if (typeof (EditSort) === 'undefined') {
     EditSort = "";
 }
-loadJs("js/other/ajax.js", function () {
+loadJs("/manager/js/other/ajax.js", function () {
     var ManagerSideBar = function () { }
     ManagerSideBar.prototype = {
         constructor: ManagerSideBar,

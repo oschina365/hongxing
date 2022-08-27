@@ -83,7 +83,7 @@ div.padlr20{ padding:0 10px 29px 12px;padding-bottom:0;}
     var AddTemp = function (src) {
         _alert("验证通过，正在努力下载解压中，请耐心等候....", true, null, 100000, false);
         $(src).attr("disabled", "disabled");
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             _PostAjax("templateDownload", { type: '<%=Type %>',page:"<%=Pages %>", tempid: $tv("hdSelectTemp")}, function (data) {
                 _alert("请求完成。", true, null, 50);
                 data = _Json(data);
@@ -107,7 +107,7 @@ div.padlr20{ padding:0 10px 29px 12px;padding-bottom:0;}
             return false;
         }
         $(src).attr("disabled","disabled");
-        loadJs("js/other/ajax.js", function () {
+        loadJs("/manager/js/other/ajax.js", function () {
             _alert("正在验证中，请稍后....", true, null, 100000, false);
             $("#hdSelectTemp").val($(".album_select li.zon").attr("tempid"));
             _PostAjax("checkTemp", { type: '<%=Type %>',"page":"<%=Pages %>",tempid: $tv("hdSelectTemp") }, function (data) {

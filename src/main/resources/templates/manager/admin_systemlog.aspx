@@ -164,7 +164,7 @@ s.parentNode.insertBefore(hm, s);
 					<!-- 列表分页 结束 -->
 				    
 				</div>
-<script src="js/other/ajax.js" type="text/javascript"></script>
+<script src="/manager/js/other/ajax.js" type="text/javascript"></script>
 <script type="text/javascript">
     var LogInfo = {
         refresh: function (src) {

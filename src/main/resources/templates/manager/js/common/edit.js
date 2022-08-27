@@ -220,7 +220,7 @@ function bindChangeHandler(input, fun) {
 function GetPingYing(src, data) {
     //var isXX = '|news|help|agent|product|project|'.indexOf(data.type) == -1;
     var me = $(src);
-    loadJs("js/other/ajax.js", function () {
+    loadJs("/manager/js/other/ajax.js", function () {
         var columnid = $("#ddlColumnsSource").val();
         _PostAjax("getPingYing", {
             title: encodeURIComponent(me.val().trim()),
@@ -378,7 +378,7 @@ $(function () {
         var input = $("input.CreatePY").attr("checkfile", "true").change();
         var data = input.data("data");
         if (data) {
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 var py = encodeURIComponent($j(data.pyid).val().trim());
                 _PostAjax("checkFile", {
                     py: py,
@@ -408,7 +408,7 @@ $(function () {
         var input = $("input.CreatePY").attr("checkfile", "true").change();
         var data = input.data("data");
         if (data) {
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 var py = encodeURIComponent(me.val().trim());
                 if (py == "") {
                     input.attr("checkfile", "false").change();
@@ -805,7 +805,7 @@ $(function () {
             if (div && div.length) {
                 var words = div.find(".select_key_words");
                 words.bind("click", LoadPlugMsg);
-                loadJs("js/common/popup.js", function () {
+                loadJs("/manager/js/common/popup.js", function () {
                     words.unbind("click", LoadPlugMsg).click(function () {
                         var me = $(this);
                         var popUp = me.data("popup");
@@ -924,7 +924,7 @@ $(function () {
         var title = me.val();
         var msg01 = me.attr("msg") || "标题";
         if (title) {
-            loadJs("js/other/ajax.js", function () {
+            loadJs("/manager/js/other/ajax.js", function () {
                 _PostAjax("checkTitle", {
                     title: encodeURIComponent(title),
                     field: me.attr("field") || ""
