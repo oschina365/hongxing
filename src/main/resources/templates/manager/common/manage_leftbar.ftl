@@ -19,12 +19,12 @@
                     </li>
 
                     <li class="menu_item">
-                        <a href="products.aspx" target="frmEditor" class="zon_line">产品列表<em class="yel_line"></em>
+                        <a href="/manage/products" target="frmEditor" class="zon_line">产品列表<em class="yel_line"></em>
                         </a>
                     </li>
 
                     <li class="menu_item">
-                        <a href="product_column_edit.aspx" target="frmEditor" class="zon_line">添加分类<em class="yel_line"></em>
+                        <a href="/manage/product_column_edit" target="frmEditor" class="zon_line">添加分类<em class="yel_line"></em>
                         </a>
                     </li>
 

@@ -621,7 +621,7 @@ $(function () {
     }
     var uploads = $(".Upload_Clik");
     if (uploads.length) {
-        loadJs("js/common/editor.js");
+        loadJs("/manager/js/common/editor.js");
     }
     uploads.each(function () {
         var me = $(this);
@@ -683,7 +683,7 @@ $(function () {
             me.bind("click", function () {
                 _alert("正在加载插件，请稍后重试...");
             })
-            loadJs("js/common/editor.js", function () {
+            loadJs("/manager/js/common/editor.js", function () {
                 if (popup in window) {
                     new window[popup](me, data, "upload_clik");
                 }
@@ -700,7 +700,7 @@ $(function () {
                 })
                 data.max = data.max || 1;
                 Timeout(function () {
-                    loadJs("js/common/editor.js", function () {
+                    loadJs("/manager/js/common/editor.js", function () {
                         new img_gallerywindow(me, data, "upload_clik");
                     })
                 });

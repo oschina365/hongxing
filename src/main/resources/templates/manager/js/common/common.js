@@ -234,83 +234,9 @@ String.prototype.rtrim = function () {
     return this.replace(/(\s*$)/g, "");
 }
 
-//设置验证
-var SetValidatebox = function (inputs) {
-    loadCss("/manager/skins/easyui/easyui.css");
-    loadJs("/manager/js/easyui/jquery.easyui.min.js", function () {
-        var message = "";
-        window.bodyWidth = $(document.body).width();
-        var _w = (window.bodyWidth * 0.82 - 5) * 0.02;
-        inputs = $(inputs);
-        inputs.each(function () {
-            var me = $(this);
-            var tips = me.attr("tips") || '';
-            var required = me.attr("_required") === "true";
-            var tipPosition = me.attr("tipPosition") || "right";
-            var validType = me.attr("validtype");
-            var invalidMessage = me.attr("invalidMessage");
-
-            var obj = {};
-            if (required) {
-                obj.required = true;
-            }
-            if (tips) {
-                obj.missingMessage = "请输入" + tips;
-            } else {
-                var lab = me.parents("div.add_r").prev(".add_label");
-                if (lab.length) {
-                    tips = lab.text().replace('*', '');
-                    obj.missingMessage = "请输入" + tips;
-                } else {
-                    obj.missingMessage = "该输入项为必输项";
-                }
-            }
-
-            if (validType) {
-                obj.validType = validType;
-                if (invalidMessage) {
-                    obj.invalidMessage = invalidMessage;
-                }
-                me.addClass("valid_type");
-            }
-            if (tipPosition) {
-                obj.tipPosition = tipPosition;
-            }
-            if (tipPosition == "right") {
-                var clear_bd = me.parent("span.clear_bd");
-                if (clear_bd.length) {
-                    var left = clear_bd.offset().left + clear_bd.outerWidth();
-                    var mleft = me.offset().left + me.outerWidth();
-                    if (left - mleft > 0) {
-                        obj.deltaX = left - mleft;
-                    } else {
-                        obj.deltaX = _w;
-                    }
-                } else {
-                    obj.deltaX = me.attr("deltaX") ? parseInt(me.attr("deltaX")) : 5;
-                }
-            }
-            me.validatebox(obj);
-        })
-    })
-}
 
 var RequiredSelect = "input[_required],select[_required],input[validtype]";
-$(function () {
-    $("i.red_point").parent().next().find("input[name][type='text']:first").attr("_required", "true");
-    var inputs = $(RequiredSelect);
-    if (inputs.length) {
-        Timeout(function () {
-            SetValidatebox(inputs);
-        });
-    }
-    //判断是不是列表页
-    var div = $("div.nsw_tools_bar");
-    if (div.length == 1) {
-        $("#nsw_list_table").before(div.clone());
-        $("div.nsw_tools_bar:eq(0)").addClass("top_nsw_tools_bar").css("background", "#fff").find(".e_btn1").hide();
-    }
-});
+
 //表单提交前验证
 //提交表单之前，SubmitFormBefore
 var ValidateForm = function (_submit) {

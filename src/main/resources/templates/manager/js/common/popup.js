@@ -324,7 +324,7 @@ var BatchAddColumnPopUp = function (options) {
                             return;
                         }
                         if (me.text.val() == "") {
-                            _alert("请填写" + op.etitle + "！");
+                            _alert("请填写111" + op.etitle + "！");
                             return;
                         }
                         _PostAjax(op.action, me.pop.find("form").serialize(), function (data) {

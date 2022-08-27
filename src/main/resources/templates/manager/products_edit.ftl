@@ -292,7 +292,7 @@
                             <script type="text/javascript">
                                 $(function () {
                                     Timeout(function () {
-                                        loadJs("/manager/js/other/selectRelevant.js", function () {
+                                        loadJs("/manager//manager/js/other/selectRelevant.js", function () {
                                             var id = "RelevantColumn_hdSelectColumnValue";
                                             var me = $("#" + id);
                                             new RelevantColumn(me);
@@ -509,11 +509,7 @@
                                         <span class="add_mark_btn f_csp f_fr popUp" data-src="{&quot;popup&quot;:&quot;addTag&quot;,&quot;input&quot;:&quot;#addTags&quot;}">添加标签</span>
                                     </div>
                                     <textarea id="contents" name="content" style="width: 800px; height: 400px; visibility: hidden; display: none;" id="txtContent"></textarea>
-                                    <script type="text/javascript">
-                                        (function () {
 
-                                        })();
-                                    </script>
                                     <div class="add_short_tit add_typeset_tit f_cb">
                                         <span class="f_fl f_underline f_underline_content">自动排版</span>
                                     </div>
@@ -1240,7 +1236,7 @@
                         <script type="text/javascript">
                             $(function () {
                                 Timeout(function () {
-                                    loadJs("/manager/js/other/selectRelevant.js", function () {
+                                    loadJs("/manager//manager/js/other/selectRelevant.js", function () {
                                         var id = "RelevantProducts_hdSelect";
                                         var me = $("#" + id);
                                         new RelevantDetailed(me);
@@ -1305,7 +1301,7 @@
                         <script type="text/javascript">
                             $(function () {
                                 Timeout(function () {
-                                    loadJs("/manager/js/other/selectRelevant.js", function () {
+                                    loadJs("/manager//manager/js/other/selectRelevant.js", function () {
                                         var id = "RelevantNews_hdSelect";
                                         var me = $("#" + id);
                                         new RelevantDetailed(me);

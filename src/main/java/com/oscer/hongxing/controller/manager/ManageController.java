@@ -13,11 +13,36 @@ import org.springframework.web.bind.annotation.GetMapping;
  **/
 @Controller
 @Slf4j
-public class ManageController extends BaseController {
+public class ManageController extends ManagerBaseController {
 
+    /**
+     * 添加产品
+     *
+     * @return
+     */
     @GetMapping("/manage/products_edit")
     public String login() {
         return "manager/products_edit";
+    }
+
+    /**
+     * 产品列表
+     *
+     * @return
+     */
+    @GetMapping("/manage/products")
+    public String products() {
+        return "manager/products";
+    }
+
+    /**
+     * 产品分类
+     *
+     * @return
+     */
+    @GetMapping("/manage/product_column_edit")
+    public String product_column_edit() {
+        return "manager/product_column_edit";
     }
 
 }

@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  **/
 @Controller
 @Slf4j
-public class ManageLoginController extends BaseController {
+public class ManageLoginController extends ManagerBaseController {
 
     @GetMapping("/manager")
     public String login() {
@@ -38,7 +38,7 @@ public class ManageLoginController extends BaseController {
     @GetMapping("/manager/index")
     public String index() {
         if (!StpUtil.isLogin()) {
-            return "/manager/login";
+            return login();
         }
         return "/manager/index";
     }
