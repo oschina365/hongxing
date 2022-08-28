@@ -112,7 +112,7 @@
                 </ul>
             </div>
 
-            <div class="menu color_tex">
+            <#--<div class="menu color_tex">
                 <h3 class="menu_title">
                     <em class="yel_line"></em>
                     <span class="mu_ico "></span>
@@ -131,7 +131,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div>-->
 
             <div class="menu color_tex">
                 <h3 class="menu_title">

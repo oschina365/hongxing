@@ -2,23 +2,22 @@
 <@html title_="评论列表"
 css_=["/manager/skins/base/common.css",
 "/manager/skins/default/default.css",
-"/manager/skins/base/editInterface.css",
-"/manager/skins/base/news.css"]
+"/manager/skins/base/editInterface.css"
+]
 js_=["/manager/js/common/common.js"]>
-
     <body marginwidth="0" marginheight="0">
     <div class="so_bread">
         <div class="nsw_bread_tit f_cb">
 
 			<span class="nsw_add">当前位置：<a href="/manager/home.aspx" target="_parent">首页</a>&gt;<a href="#">
-					<b>资讯管理</b>
-				</a>&gt;<a href="news_comment.aspx">文章评论</a>
+					<b>公司管理</b>
+				</a>&gt;<a href="help_comment.aspx">帮助评论</a>
 			</span>
             <div class="advanced_so f_fr form_search">
 				<span class="clear_bd s_selt f_fl pt43 f_mr15" style="width:110px;margin:0 5px 0 8px;">
 					<select id="ddlFields" class="pass_faq" style=" width:125px;padding-left:5px;">
-						<option value="Content">评论内容</option>
-						<option value="FeedBack">管理员回复</option>
+						<option value="[Content]">评论内容</option>
+						<option value="[FeedBack]">管理员回复</option>
 					</select>
 					<i class="revise_sub"></i>
 				</span>
@@ -30,11 +29,11 @@ js_=["/manager/js/common/common.js"]>
         </div>
     </div>
     <div class="col_main">
-        <form name="form1" method="post" action="news_comment.aspx" id="form1">
+        <form name="form1" method="post" action="help_comment.aspx" id="form1">
             <div>
                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE5NjcyODUzOWRkRTfWh1j0P1Pu8m9gdnit01Tvl6Q=">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTE5NjcyODUzOWRkJq6xFCbZL8tCUbZw2DNEIaBtzTY=">
             </div>
 
             <script type="text/javascript">
@@ -56,8 +55,8 @@ js_=["/manager/js/common/common.js"]>
 
             <div>
 
-                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2F3C5064">
-                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBAKm0f/IAgLM0/WHCALH26ulDgLAqZunAWeJUusbsQN+r0qSsgaJa/4A44oh">
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="FC6E5009">
+                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBAKT8IXOAgLM0/WHCALH26ulDgLAqZunAS1KlX2VkdOac5erCLSM34dF5Q4D">
             </div>
             <!-- 列表区 开始 -->
             <div class="nsw_tools_bar f_cb top_nsw_tools_bar" style="background: rgb(255, 255, 255);">
@@ -95,7 +94,7 @@ js_=["/manager/js/common/common.js"]>
 
                     <th axis="[Content]" style=" width:200px;">评论内容</th>
                     <th style="width:70px" axis="[LastIP]">IP地址</th>
-                    <th style="width:200px" axis="[SubjectID]">新闻名称</th>
+                    <th style="width:200px" axis="[SubjectID]">帮助名称</th>
                     <th axis="[FeedBack]" style=" width:200px;">管理员回复</th>
                     <th style="width:50px" axis="[Enable]">可用</th>
                     <th style="width:50px" axis="[OrderID]">排序</th>

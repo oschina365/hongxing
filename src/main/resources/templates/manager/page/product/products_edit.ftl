@@ -1,4 +1,4 @@
-﻿<#include "/manager/common/manage_layout.ftl"/>
+﻿<#include "../../common/manage_layout.ftl"/>
 <@html title_="添加产品" js_=["/manager/js/common/edit.js"]>
     <div class="col_main">
         <body marginwidth="0" marginheight="0">

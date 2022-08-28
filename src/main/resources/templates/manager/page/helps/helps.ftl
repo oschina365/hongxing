@@ -1,19 +1,17 @@
 ﻿<#include "../../common/manage_layout.ftl"/>
-<@html title_="新闻列表"
+<@html title_="评论列表"
 css_=["/manager/skins/base/common.css",
 "/manager/skins/default/default.css",
-"/manager/skins/base/editInterface.css",
-"/manager/skins/base/news.css"]
+"/manager/skins/base/editInterface.css"
+]
 js_=["/manager/js/common/common.js"]>
-
     <body marginwidth="0" marginheight="0">
-
     <div class="so_bread">
         <div class="nsw_bread_tit f_cb">
 
 			<span class="nsw_add">当前位置：<a href="/manager/home.aspx" target="_parent">首页</a>&gt;<a href="#">
-					<b>资讯管理</b>
-				</a>&gt;<a href="news.aspx">文章列表</a>
+					<b>公司管理</b>
+				</a>&gt;<a href="helps.aspx">公司信息列表</a>
 			</span>
             <div class="advanced_so f_fr form_search">
                 <input type="hidden" name="ddlFields" value="[Title]|[ShortDesc]">
@@ -31,20 +29,17 @@ js_=["/manager/js/common/common.js"]>
 				<i class="clear_x"></i>
 			</span>
             <label class="com_name f_fl f_mr1 f_ml2">所属分类</label>
-            <span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
+            <span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
 				<select class="pass_faq" name="cid">
-					<option value="0001" oid="1">根栏目</option>
-					<option value="0001,0011" oid="11">├新闻资讯</option>
-					<option value="0001,0011,0013" oid="13">　├新闻动态</option>
-					<option value="0001,0011,0014" oid="14">　├家具常识</option>
-					<option value="0001,0011,0021" oid="21">　└代理品牌</option>
-					<option value="0001,0012" oid="12">└成功案例</option>
-					<option value="0001,0012,0015" oid="15">　├政府机关案例</option>
-					<option value="0001,0012,0015,0023" oid="23">　　└成功案例</option>
-					<option value="0001,0012,0016" oid="16">　├公司企业案例</option>
-					<option value="0001,0012,0017" oid="17">　├医疗教育案例</option>
-					<option value="0001,0012,0018" oid="18">　├金融银行案例</option>
-					<option value="0001,0012,0019" oid="19">　└经典成功案例</option>
+					<option value="0001" oid="1">根目录</option>
+					<option value="0001,0008" oid="8">├关于红鑫</option>
+					<option value="0001,0009" oid="9">├定制服务</option>
+					<option value="0001,0010" oid="10">├荣誉资质</option>
+					<option value="0001,0011" oid="11">├直营展厅</option>
+					<option value="0001,0012" oid="12">├联系我们</option>
+					<option value="0001,0013" oid="13">├在线留言</option>
+					<option value="0001,0014" oid="14">├工厂实力</option>
+					<option value="0001,0015" oid="15">└代理品牌</option>
 				</select>
 				<i class="revise_sub"></i>
 			</span>
@@ -99,11 +94,11 @@ js_=["/manager/js/common/common.js"]>
     </div>
 
     <div class="col_main">
-        <form name="ctl01" method="post" action="news.aspx" id="ctl01">
+        <form name="ctl01" method="post" action="helps.aspx" id="ctl01">
             <div>
                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
-                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTE4MzgzMTY0MGRkScHj/5yBGAw+1rm46crtYS45QOs=">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTE4MzgzMTY0MGRkIdibJCIUrLyboN7onKDpN1q6WZ8=">
             </div>
 
             <script type="text/javascript">
@@ -125,8 +120,8 @@ js_=["/manager/js/common/common.js"]>
 
             <div>
 
-                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CE2194EB">
-                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCwLKjcnhAgLM0/WHCALM9PumDwKxi96RBQKkvupQApaiwPwKAvu4omcC4M+E0gYCxebmvAwCqv3IpwICv6eI5goL5c6owxMXXWnweuGV/miyvskHYw==">
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="61F915E3">
+                <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCwLBpqOxBALM0/WHCAKxi96RBQLM9PumDwKkvupQApaiwPwKAvu4omcC4M+E0gYCxebmvAwCqv3IpwICv6eI5go6r7UFB4urDZaKkJt8EmIm6b7VNQ==">
             </div>
             <!-- 列表区 开始 -->
             <div class="nsw_tools_bar f_cb top_nsw_tools_bar" style="background: rgb(255, 255, 255);">
@@ -145,14 +140,14 @@ js_=["/manager/js/common/common.js"]>
                     </li>
                 </ul>
                 <div class="batch_act f_fl f_ml20">
-					<span class="c_act">批量操作<i class="tri_up f_fr"></i>
+					<span class="c_act ">批量操作<i class="tri_up f_fr"></i>
 					</span>
-                    <ul class="batch_dropup list" style="display: none;">
+                    <ul class="batch_dropup list">
                         <li>
-                            <a onclick="return BatchOperation('确定禁用选中项（共{count}项）？');" id="LinkButton1" href="javascript:__doPostBack('LinkButton1','')">批量隐藏</a>
+                            <a onclick="return BatchOperation('确定禁用选中项（共{count}项）？');" id="LinkButton2" href="javascript:__doPostBack('LinkButton2','')">批量隐藏</a>
                         </li>
                         <li>
-                            <a onclick="return BatchOperation('确定首页显示选中项（共{count}项）？');" id="LinkButton2" href="javascript:__doPostBack('LinkButton2','')">批量显示</a>
+                            <a onclick="return BatchOperation('确定首页显示选中项（共{count}项）？');" id="LinkButton1" href="javascript:__doPostBack('LinkButton1','')">批量显示</a>
                         </li>
                         <li>
                             <a onclick="return BatchOperation('确定禁用选中项（共{count}项）首页显示？');" id="LinkButton9" href="javascript:__doPostBack('LinkButton9','')">批量取消显示</a>
@@ -183,27 +178,15 @@ js_=["/manager/js/common/common.js"]>
                     <!--IndexNavigator Start
     Developed by: Oran(LikeCode####gmail.com)
     Version:v0.5(Apr. 19, 2015)-->
-                    <span class="p_numb f_fl">共261条&nbsp;|&nbsp;第1/14页</span>
-                    <select class="pageList_btn" onchange="var pageFile='news.aspx?rc=261&amp;';var trgIdx=this.value;pageFile+='page='+trgIdx;location=pageFile;">
+                    <span class="p_numb f_fl">共29条&nbsp;|&nbsp;第1/2页</span>
+                    <select class="pageList_btn" onchange="var pageFile='helps.aspx?rc=29&amp;';var trgIdx=this.value;pageFile+='page='+trgIdx;location=pageFile;">
                         <option value="1" selected="selected">1</option>
                         <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
                     </select>
                     <div class="pageDown_btn f_fr">
                         <span class="p_prev  disable " title="上一页"></span>
-                        <a href="news.aspx?rc=261&amp;page=2">
-                            <span class="p_next " datahref="news.aspx?rc=261&amp;page=2" title="下一页"></span>
+                        <a href="helps.aspx?rc=29&amp;page=2">
+                            <span class="p_next " datahref="helps.aspx?rc=29&amp;page=2" title="下一页"></span>
                         </a>
                     </div>
                     <!--IndexNavigator End-->
@@ -226,7 +209,7 @@ js_=["/manager/js/common/common.js"]>
                     <th style="width:50px" axis="[Enable]" class="order">可用</th>
                     <th style="width:50px" axis="[OrderID]" class="order">排序</th>
                     <th style="width:120px" axis="[InputTime]" class="tcenter order">录入时间</th>
-                    <th style="width:60px">
+                    <th style="width:80px">
                         <b>PC</b>操作
                     </th>
 
@@ -241,41 +224,38 @@ js_=["/manager/js/common/common.js"]>
                         <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="319">
+										<input type="checkbox" name="chkItem" value="58">
 									</span>
 								</span>
                         </div>
                     </td>
-                    <td>319</td>
+                    <td>58</td>
                     <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,319)" class="update_Title">湖北凡华市政园林景观办公家具工程案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;319&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}" style="display: none;"></i>
+								<a href="##" onclick="edit(event,58)" class="update_Title">2018-2019年度优秀企业</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;58&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}" style="display: none;"></i>
 							</span>
                     </td>
                     <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;15&quot;,&quot;oid&quot;:&quot;319&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="15">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;58&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
                     </td>
                     <td>
-                        <div class="hd_input" oid="319" typename="news" filecolumn="isindex">
+                        <div class="hd_input" oid="58" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -283,7 +263,7 @@ js_=["/manager/js/common/common.js"]>
                         </div>
                     </td>
                     <td>
-                        <div class="hd_input" oid="319" typename="news" filecolumn="isCommend">
+                        <div class="hd_input" oid="58" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -292,7 +272,7 @@ js_=["/manager/js/common/common.js"]>
 
                     </td>
                     <td>
-                        <div class="hd_input" oid="319" typename="news" filecolumn="isTop">
+                        <div class="hd_input" oid="58" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -300,7 +280,7 @@ js_=["/manager/js/common/common.js"]>
                         </div>
                     </td>
                     <td>
-                        <div class="hd_input" oid="319" typename="news" filecolumn="isBest">
+                        <div class="hd_input" oid="58" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -308,7 +288,7 @@ js_=["/manager/js/common/common.js"]>
                         </div>
                     </td>
                     <td>
-                        <div class="hd_input" oid="319" typename="news" filecolumn="Enable">
+                        <div class="hd_input" oid="58" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -316,27 +296,27 @@ js_=["/manager/js/common/common.js"]>
                         </div>
                     </td>
                     <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;319&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;58&quot;}">
+								<i style="font-style:normal;">51</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="51">
 							</span>
                     </td>
                     <td>
-							<span>2022-07-06
-								<br -="">14:59:20</span>
+							<span>2020-01-16
+								<br -="">13:55:02</span>
                     </td>
                     <td class="nsw_cnt_area action_tx">
-                        <a href="/Article/hbfhszyljg.html" title="湖北凡华市政园林景观办公家具工程案例" target="_blank" class="update_PageURL">
+                        <a href="/Helps/20182019nd.html" title="2018-2019年度优秀企业" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
                         </a>
-                        <a href="##" onclick="edit(event,319)">
+                        <a href="##" onclick="edit(event,58)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
                         </a>
-                        <a href="##" onclick="edit(event,319,'action=copy')">
+                        <a href="##" onclick="edit(event,58,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -345,18 +325,18 @@ js_=["/manager/js/common/common.js"]>
                     </td>
 
                     <td class="nsw_cnt_area action_tx">
-                        <a href="/Mobile/MArticles/hbfhszyljg.html" title="湖北凡华市政园林景观办公家具工程案例" target="_blank">
+                        <a href="/Mobile/Mhelps/20182019nd.html" title="2018-2019年度优秀企业" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
                         </a>
-                        <a href="##" onclick="EditMobile(event,319)">
+                        <a href="##" onclick="EditMobile(event,58)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
                         </a>
                         <p class="scl_d">
-                            <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbfhszyljg.html')">
+                            <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/20182019nd.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -384,41 +364,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="318">
+										<input type="checkbox" name="chkItem" value="57">
 									</span>
 								</span>
             </div>
         </td>
-        <td>318</td>
+        <td>57</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,318)" class="update_Title">武汉市惠驰广迪汽车办公家具工程案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;318&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}" style="display: none;"></i>
+								<a href="##" onclick="edit(event,57)" class="update_Title">中国环境标志产品认证证书(CEC2018ELP04206023)</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;57&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;318&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;57&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="318" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="57" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -426,7 +403,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="318" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="57" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -435,7 +412,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="318" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="57" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -443,7 +420,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="318" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="57" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -451,7 +428,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="318" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="57" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -459,27 +436,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;318&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;57&quot;}">
+								<i style="font-style:normal;">35</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="35">
 							</span>
         </td>
         <td>
-							<span>2022-06-10
-								<br -="">14:42:10</span>
+							<span>2018-12-21
+								<br -="">15:04:33</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whshcgdqcb.html" title="武汉市惠驰广迪汽车办公家具工程案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghjbzcprzzsc.html" title="中国环境标志产品认证证书(CEC2018ELP04206023)" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,318)">
+            <a href="##" onclick="edit(event,57)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,318,'action=copy')">
+            <a href="##" onclick="edit(event,57,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -488,18 +465,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whshcgdqcb.html" title="武汉市惠驰广迪汽车办公家具工程案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghjbzcprzzsc.html" title="中国环境标志产品认证证书(CEC2018ELP04206023)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,318)">
+            <a href="##" onclick="EditMobile(event,57)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whshcgdqcb.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzzsc.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -527,41 +504,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="317">
+										<input type="checkbox" name="chkItem" value="56">
 									</span>
 								</span>
             </div>
         </td>
-        <td>317</td>
+        <td>56</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,317)" class="update_Title">湖北大禹新材料科技有限公司办公家具案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;317&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}" style="display: none;"></i>
+								<a href="##" onclick="edit(event,56)" class="update_Title">中国环境标志产品认证证书(CEC2018ELP04206022)</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;56&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;317&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;56&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="317" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="56" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -569,7 +543,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="317" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="56" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -578,7 +552,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="317" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="56" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -586,7 +560,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="317" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="56" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -594,7 +568,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="317" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="56" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -602,27 +576,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;317&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;56&quot;}">
+								<i style="font-style:normal;">36</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="36">
 							</span>
         </td>
         <td>
-							<span>2022-06-10
-								<br -="">10:49:58</span>
+							<span>2018-12-21
+								<br -="">14:59:36</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/hbdyxclkjy.html" title="湖北大禹新材料科技有限公司办公家具案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghjbzcprzzs.html" title="中国环境标志产品认证证书(CEC2018ELP04206022)" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,317)">
+            <a href="##" onclick="edit(event,56)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,317,'action=copy')">
+            <a href="##" onclick="edit(event,56,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -631,18 +605,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/hbdyxclkjy.html" title="湖北大禹新材料科技有限公司办公家具案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghjbzcprzzs.html" title="中国环境标志产品认证证书(CEC2018ELP04206022)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,317)">
+            <a href="##" onclick="EditMobile(event,56)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbdyxclkjy.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -670,41 +644,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="316">
+										<input type="checkbox" name="chkItem" value="55">
 									</span>
 								</span>
             </div>
         </td>
-        <td>316</td>
+        <td>55</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,316)" class="update_Title">武汉青山图书馆家具案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;316&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,55)" class="update_Title">中国环境标志产品认证证书(CEC2018ELP04206021)</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;55&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;15&quot;,&quot;oid&quot;:&quot;316&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="15">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;55&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="316" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="55" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -712,7 +683,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="316" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="55" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -721,7 +692,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="316" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="55" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -729,7 +700,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="316" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="55" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -737,7 +708,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="316" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="55" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -745,27 +716,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;316&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;55&quot;}">
+								<i style="font-style:normal;">37</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="37">
 							</span>
         </td>
         <td>
-							<span>2022-06-09
-								<br -="">17:39:41</span>
+							<span>2018-12-21
+								<br -="">14:53:49</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whqstsgjja.html" title="武汉青山图书馆家具案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghjbzcprzz.html" title="中国环境标志产品认证证书(CEC2018ELP04206021)" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,316)">
+            <a href="##" onclick="edit(event,55)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,316,'action=copy')">
+            <a href="##" onclick="edit(event,55,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -774,18 +745,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whqstsgjja.html" title="武汉青山图书馆家具案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghjbzcprzz.html" title="中国环境标志产品认证证书(CEC2018ELP04206021)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,316)">
+            <a href="##" onclick="EditMobile(event,55)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whqstsgjja.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -813,41 +784,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="315">
+										<input type="checkbox" name="chkItem" value="54">
 									</span>
 								</span>
             </div>
         </td>
-        <td>315</td>
+        <td>54</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,315)" class="update_Title">武汉招联消费金融有限公司家具案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;315&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,54)" class="update_Title">中国环保产品认证证书CQC-（金属办公家具）</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;54&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;18&quot;,&quot;oid&quot;:&quot;315&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="18">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;54&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="315" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="54" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -855,7 +823,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="315" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="54" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -864,7 +832,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="315" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="54" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -872,7 +840,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="315" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="54" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -880,7 +848,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="315" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="54" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -888,27 +856,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;315&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;54&quot;}">
+								<i style="font-style:normal;">38</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="38">
 							</span>
         </td>
         <td>
-							<span>2022-05-31
-								<br -="">10:35:32</span>
+							<span>2018-12-21
+								<br -="">11:59:00</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whzlxfjryx.html" title="武汉招联消费金融有限公司家具案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghbcprzzscq.html" title="中国环保产品认证证书CQC-（金属办公家具）" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,315)">
+            <a href="##" onclick="edit(event,54)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,315,'action=copy')">
+            <a href="##" onclick="edit(event,54,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -917,18 +885,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whzlxfjryx.html" title="武汉招联消费金融有限公司家具案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghbcprzzscq.html" title="中国环保产品认证证书CQC-（金属办公家具）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,315)">
+            <a href="##" onclick="EditMobile(event,54)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whzlxfjryx.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzscq.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -956,41 +924,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="314">
+										<input type="checkbox" name="chkItem" value="53">
 									</span>
 								</span>
             </div>
         </td>
-        <td>314</td>
+        <td>53</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,314)" class="update_Title">中青城投办公家具工程案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;314&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,53)" class="update_Title">中国环保产品认证证书CQC-（木制办公家具）</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;53&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;314&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;53&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="314" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="53" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -998,7 +963,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="314" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="53" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1007,7 +972,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="314" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="53" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1015,7 +980,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="314" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="53" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1023,7 +988,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="314" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="53" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1031,27 +996,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;314&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;53&quot;}">
+								<i style="font-style:normal;">39</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="39">
 							</span>
         </td>
         <td>
-							<span>2022-03-23
-								<br -="">11:47:30</span>
+							<span>2018-12-21
+								<br -="">11:48:23</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/zqctbgjjgc.html" title="中青城投办公家具工程案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghbcprzzsc.html" title="中国环保产品认证证书CQC-（木制办公家具）" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,314)">
+            <a href="##" onclick="edit(event,53)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,314,'action=copy')">
+            <a href="##" onclick="edit(event,53,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1060,18 +1025,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/zqctbgjjgc.html" title="中青城投办公家具工程案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghbcprzzsc.html" title="中国环保产品认证证书CQC-（木制办公家具）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,314)">
+            <a href="##" onclick="EditMobile(event,53)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/zqctbgjjgc.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzsc.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1099,41 +1064,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="313">
+										<input type="checkbox" name="chkItem" value="52">
 									</span>
 								</span>
             </div>
         </td>
-        <td>313</td>
+        <td>52</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,313)" class="update_Title">湖北富瑞尔科技有限公司办公家具工程案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;313&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,52)" class="update_Title">中国环保产品认证证书CQC-（软体家具-沙发）</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;52&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;313&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;52&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="313" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="52" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1141,7 +1103,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="313" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="52" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1150,7 +1112,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="313" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="52" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1158,7 +1120,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="313" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="52" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1166,7 +1128,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="313" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="52" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1174,27 +1136,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;313&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;52&quot;}">
+								<i style="font-style:normal;">40</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="40">
 							</span>
         </td>
         <td>
-							<span>2022-03-19
-								<br -="">09:41:59</span>
+							<span>2018-12-21
+								<br -="">10:56:46</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/hbfrekjyxg.html" title="湖北富瑞尔科技有限公司办公家具工程案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghbcprzzs.html" title="中国环保产品认证证书CQC-（软体家具-沙发）" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,313)">
+            <a href="##" onclick="edit(event,52)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,313,'action=copy')">
+            <a href="##" onclick="edit(event,52,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1203,18 +1165,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/hbfrekjyxg.html" title="湖北富瑞尔科技有限公司办公家具工程案例" target="_blank">
+            <a href="/Mobile/Mhelps/zghbcprzzs.html" title="中国环保产品认证证书CQC-（软体家具-沙发）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,313)">
+            <a href="##" onclick="EditMobile(event,52)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbfrekjyxg.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1242,41 +1204,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="312">
+										<input type="checkbox" name="chkItem" value="51">
 									</span>
 								</span>
             </div>
         </td>
-        <td>312</td>
+        <td>51</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,312)" class="update_Title">武汉工程科技学院办公家具工程案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;312&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,51)" class="update_Title">营业执照</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;51&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;17&quot;,&quot;oid&quot;:&quot;312&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="17">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;51&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="312" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="51" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1284,7 +1243,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="312" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="51" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1293,7 +1252,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="312" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="51" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1301,7 +1260,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="312" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="51" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1309,7 +1268,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="312" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="51" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1317,27 +1276,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;312&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;51&quot;}">
+								<i style="font-style:normal;">41</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="41">
 							</span>
         </td>
         <td>
-							<span>2021-12-26
-								<br -="">16:29:26</span>
+							<span>2018-12-07
+								<br -="">14:30:22</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whgckjxybg.html" title="武汉工程科技学院办公家具工程案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/yyzz.html" title="营业执照" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,312)">
+            <a href="##" onclick="edit(event,51)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,312,'action=copy')">
+            <a href="##" onclick="edit(event,51,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1346,18 +1305,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whgckjxybg.html" title="武汉工程科技学院办公家具工程案例" target="_blank">
+            <a href="/Mobile/Mhelps/yyzz.html" title="营业执照" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,312)">
+            <a href="##" onclick="EditMobile(event,51)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whgckjxybg.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/yyzz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1385,41 +1344,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="311">
+										<input type="checkbox" name="chkItem" value="50">
 									</span>
 								</span>
             </div>
         </td>
-        <td>311</td>
+        <td>50</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,311)" class="update_Title">武汉微思敦网络，红鑫完美打造固装家具</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;311&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,50)" class="update_Title">中国环境标志产品认证证书(CEC2018ELP04206020)</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;50&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;311&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;50&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="311" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="50" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1427,7 +1383,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="311" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="50" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1436,7 +1392,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="311" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="50" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1444,7 +1400,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="311" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="50" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1452,7 +1408,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="311" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="50" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1460,27 +1416,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;311&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;50&quot;}">
+								<i style="font-style:normal;">34</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="34">
 							</span>
         </td>
         <td>
-							<span>2021-09-23
-								<br -="">17:39:00</span>
+							<span>2018-12-04
+								<br -="">16:47:16</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whwsdwlhxw.html" title="武汉微思敦网络，红鑫完美打造固装家具" target="_blank" class="update_PageURL">
+            <a href="/Helps/zghjbzcprz.html" title="中国环境标志产品认证证书(CEC2018ELP04206020)" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,311)">
+            <a href="##" onclick="edit(event,50)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,311,'action=copy')">
+            <a href="##" onclick="edit(event,50,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1489,18 +1445,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whwsdwlhxw.html" title="武汉微思敦网络，红鑫完美打造固装家具" target="_blank">
+            <a href="/Mobile/Mhelps/zghjbzcprz.html" title="中国环境标志产品认证证书(CEC2018ELP04206020)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,311)">
+            <a href="##" onclick="EditMobile(event,50)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whwsdwlhxw.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1528,41 +1484,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="310">
+										<input type="checkbox" name="chkItem" value="48">
 									</span>
 								</span>
             </div>
         </td>
-        <td>310</td>
+        <td>48</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,310)" class="update_Title">当代中心楼兰蜜语，对红鑫产品相当满意！</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;310&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,48)" class="update_Title">商标注册证</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;48&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;310&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;48&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="310" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="48" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1570,7 +1523,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="310" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="48" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1579,7 +1532,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="310" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="48" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1587,7 +1540,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="310" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="48" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1595,7 +1548,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="310" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="48" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1603,27 +1556,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;310&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;48&quot;}">
+								<i style="font-style:normal;">43</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="43">
 							</span>
         </td>
         <td>
-							<span>2021-09-19
-								<br -="">16:57:29</span>
+							<span>2016-10-24
+								<br -="">14:27:29</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/ddzxllmydh.html" title="当代中心楼兰蜜语，对红鑫产品相当满意！" target="_blank" class="update_PageURL">
+            <a href="/Helps/sbzcz.html" title="商标注册证" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,310)">
+            <a href="##" onclick="edit(event,48)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,310,'action=copy')">
+            <a href="##" onclick="edit(event,48,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1632,18 +1585,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/ddzxllmydh.html" title="当代中心楼兰蜜语，对红鑫产品相当满意！" target="_blank">
+            <a href="/Mobile/Mhelps/sbzcz.html" title="商标注册证" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,310)">
+            <a href="##" onclick="EditMobile(event,48)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/ddzxllmydh.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/sbzcz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1671,41 +1624,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="309">
+										<input type="checkbox" name="chkItem" value="47">
 									</span>
 								</span>
             </div>
         </td>
-        <td>309</td>
+        <td>47</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,309)" class="update_Title">白沙洲街道长江紫都社区 定制家具选红鑫，省钱省力更省心</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;309&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,47)" class="update_Title">质量管理体系证书</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;47&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;15&quot;,&quot;oid&quot;:&quot;309&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="15">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;47&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="309" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="47" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1713,7 +1663,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="309" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="47" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1722,7 +1672,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="309" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="47" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1730,7 +1680,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="309" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="47" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1738,7 +1688,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="309" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="47" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1746,27 +1696,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;309&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;47&quot;}">
+								<i style="font-style:normal;">44</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="44">
 							</span>
         </td>
         <td>
-							<span>2021-08-04
-								<br -="">16:05:41</span>
+							<span>2016-10-24
+								<br -="">14:26:33</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/wcbszjdzjz.html" title="白沙洲街道长江紫都社区  定制家具选红鑫，省钱省力更省心" target="_blank" class="update_PageURL">
+            <a href="/Helps/zlgltxzs.html" title="质量管理体系证书" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,309)">
+            <a href="##" onclick="edit(event,47)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,309,'action=copy')">
+            <a href="##" onclick="edit(event,47,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1775,18 +1725,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/wcbszjdzjz.html" title="白沙洲街道长江紫都社区  定制家具选红鑫，省钱省力更省心" target="_blank">
+            <a href="/Mobile/Mhelps/zlgltxzs.html" title="质量管理体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,309)">
+            <a href="##" onclick="EditMobile(event,47)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/wcbszjdzjz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zlgltxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1814,41 +1764,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="308">
+										<input type="checkbox" name="chkItem" value="46">
 									</span>
 								</span>
             </div>
         </td>
-        <td>308</td>
+        <td>46</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,308)" class="update_Title">湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;308&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,46)" class="update_Title">职业健康体系证书</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;46&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;15&quot;,&quot;oid&quot;:&quot;308&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="15">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;46&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="308" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="46" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1856,7 +1803,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="308" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="46" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1865,7 +1812,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="308" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="46" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1873,7 +1820,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="308" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="46" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1881,7 +1828,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="308" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="46" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -1889,27 +1836,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;308&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;46&quot;}">
+								<i style="font-style:normal;">45</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="45">
 							</span>
         </td>
         <td>
-							<span>2021-05-26
-								<br -="">15:53:33</span>
+							<span>2016-10-24
+								<br -="">14:26:06</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/hbsjtystgsg.html" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" target="_blank" class="update_PageURL">
+            <a href="/Helps/zyjktxzs.html" title="职业健康体系证书" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,308)">
+            <a href="##" onclick="edit(event,46)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,308,'action=copy')">
+            <a href="##" onclick="edit(event,46,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -1918,18 +1865,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/hbsjtystgsg.html" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" target="_blank">
+            <a href="/Mobile/Mhelps/zyjktxzs.html" title="职业健康体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,308)">
+            <a href="##" onclick="EditMobile(event,46)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbsjtystgsg.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zyjktxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -1957,41 +1904,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="307">
+										<input type="checkbox" name="chkItem" value="45">
 									</span>
 								</span>
             </div>
         </td>
-        <td>307</td>
+        <td>45</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,307)" class="update_Title">和平大道湖北伟度律师事务所采购办公家具，红鑫提供一站式解决</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;307&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,45)" class="update_Title">环境管理体系证书</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;45&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;19&quot;,&quot;oid&quot;:&quot;307&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="19">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;45&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="307" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="45" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -1999,7 +1943,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="307" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="45" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2008,7 +1952,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="307" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="45" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2016,7 +1960,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="307" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="45" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2024,7 +1968,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="307" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="45" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2032,27 +1976,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;307&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;45&quot;}">
+								<i style="font-style:normal;">46</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="46">
 							</span>
         </td>
         <td>
-							<span>2021-05-26
-								<br -="">11:15:24</span>
+							<span>2016-10-24
+								<br -="">14:25:38</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/hbwdlsswsc.html" title="和平大道湖北伟度律师事务所采购办公家具，红鑫提供一站式解决" target="_blank" class="update_PageURL">
+            <a href="/Helps/hjzltxzs.html" title="环境管理体系证书" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,307)">
+            <a href="##" onclick="edit(event,45)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,307,'action=copy')">
+            <a href="##" onclick="edit(event,45,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2061,18 +2005,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/hbwdlsswsc.html" title="和平大道湖北伟度律师事务所采购办公家具，红鑫提供一站式解决" target="_blank">
+            <a href="/Mobile/Mhelps/hjzltxzs.html" title="环境管理体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,307)">
+            <a href="##" onclick="EditMobile(event,45)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbwdlsswsc.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hjzltxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2100,41 +2044,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="306">
+										<input type="checkbox" name="chkItem" value="43">
 									</span>
 								</span>
             </div>
         </td>
-        <td>306</td>
+        <td>43</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,306)" class="update_Title">花山中船重工采购办公家具，红鑫提供一站式解决</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;306&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,43)" class="update_Title">消费者信赖品牌</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;43&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;15&quot;,&quot;oid&quot;:&quot;306&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="15">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;43&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="306" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="43" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2142,7 +2083,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="306" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="43" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2151,7 +2092,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="306" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="43" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2159,7 +2100,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="306" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="43" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2167,7 +2108,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="306" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="43" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2175,27 +2116,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;306&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;43&quot;}">
+								<i style="font-style:normal;">48</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="48">
 							</span>
         </td>
         <td>
-							<span>2021-04-27
-								<br -="">16:12:42</span>
+							<span>2016-10-24
+								<br -="">14:24:33</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/zgcbjtyjs.html" title="花山中船重工采购办公家具，红鑫提供一站式解决" target="_blank" class="update_PageURL">
+            <a href="/Helps/xfzxlpp.html" title="消费者信赖品牌" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,306)">
+            <a href="##" onclick="edit(event,43)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,306,'action=copy')">
+            <a href="##" onclick="edit(event,43,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2204,18 +2145,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/zgcbjtyjs.html" title="花山中船重工采购办公家具，红鑫提供一站式解决" target="_blank">
+            <a href="/Mobile/Mhelps/xfzxlpp.html" title="消费者信赖品牌" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,306)">
+            <a href="##" onclick="EditMobile(event,43)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/zgcbjtyjs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/xfzxlpp.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2243,41 +2184,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="305">
+										<input type="checkbox" name="chkItem" value="42">
 									</span>
 								</span>
             </div>
         </td>
-        <td>305</td>
+        <td>42</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,305)" class="update_Title">中国通信建设第三工程局家具配置案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;305&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,42)" class="update_Title">湖北省名优产品</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;42&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;12&quot;,&quot;oid&quot;:&quot;305&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="12">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;42&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="305" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="42" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2285,7 +2223,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="305" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="42" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2294,7 +2232,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="305" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="42" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2302,7 +2240,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="305" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="42" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2310,7 +2248,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="305" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="42" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2318,27 +2256,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;305&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;42&quot;}">
+								<i style="font-style:normal;">49</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="49">
 							</span>
         </td>
         <td>
-							<span>2021-02-27
-								<br -="">16:44:26</span>
+							<span>2016-10-24
+								<br -="">14:23:23</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/zgtxjsdsgc.html" title="中国通信建设第三工程局家具配置案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/hbsmycp.html" title="湖北省名优产品" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,305)">
+            <a href="##" onclick="edit(event,42)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,305,'action=copy')">
+            <a href="##" onclick="edit(event,42,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2347,18 +2285,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/zgtxjsdsgc.html" title="中国通信建设第三工程局家具配置案例" target="_blank">
+            <a href="/Mobile/Mhelps/hbsmycp.html" title="湖北省名优产品" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,305)">
+            <a href="##" onclick="EditMobile(event,42)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/zgtxjsdsgc.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hbsmycp.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2386,41 +2324,38 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="304">
+										<input type="checkbox" name="chkItem" value="41">
 									</span>
 								</span>
             </div>
         </td>
-        <td>304</td>
+        <td>41</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,304)" class="update_Title">湖北省交通规划设计院股份有限公司家具配置案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;304&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,41)" class="update_Title">质量服务信誉AAAA级单位</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;41&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;12&quot;,&quot;oid&quot;:&quot;304&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="12">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;10&quot;,&quot;oid&quot;:&quot;41&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="10">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="304" typename="news" filecolumn="isindex">
+            <div class="hd_input" oid="41" typename="help" filecolumn="isindex">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2428,7 +2363,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="304" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="41" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2437,7 +2372,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="304" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="41" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2445,7 +2380,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="304" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="41" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2453,7 +2388,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="304" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="41" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2461,27 +2396,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;304&quot;}">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;41&quot;}">
 								<i style="font-style:normal;">50</i>
 								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
 							</span>
         </td>
         <td>
-							<span>2021-02-27
-								<br -="">15:07:15</span>
+							<span>2016-10-24
+								<br -="">14:21:27</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/hbsjtghsjyg.html" title="湖北省交通规划设计院股份有限公司家具配置案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/zlfwxyaaaa.html" title="质量服务信誉AAAA级单位" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,304)">
+            <a href="##" onclick="edit(event,41)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,304,'action=copy')">
+            <a href="##" onclick="edit(event,41,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2490,18 +2425,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/hbsjtghsjyg.html" title="湖北省交通规划设计院股份有限公司家具配置案例" target="_blank">
+            <a href="/Mobile/Mhelps/zlfwxyaaaa.html" title="质量服务信誉AAAA级单位" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,304)">
+            <a href="##" onclick="EditMobile(event,41)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/hbsjtghsjyg.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zlfwxyaaaa.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2529,49 +2464,46 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="303">
+										<input type="checkbox" name="chkItem" value="40">
 									</span>
 								</span>
             </div>
         </td>
-        <td>303</td>
+        <td>40</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,303)" class="update_Title">融创服务集团家具配置案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;303&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,40)" class="update_Title">工厂展厅</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;40&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;12&quot;,&quot;oid&quot;:&quot;303&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="12">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;11&quot;,&quot;oid&quot;:&quot;40&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="11">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="303" typename="news" filecolumn="isindex">
-								<span class="p_show e_lowpoint  " cur="z_lowpoint">
-									<input class="hd" type="radio">
+            <div class="hd_input" oid="40" typename="help" filecolumn="isindex">
+								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
+									<input class="hd" type="radio" checked="checked">
 									<label></label>
 								</span>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="303" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="40" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2580,7 +2512,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="303" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="40" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2588,7 +2520,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="303" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="40" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2596,7 +2528,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="303" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="40" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2604,27 +2536,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;303&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;40&quot;}">
+								<i style="font-style:normal;">3</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="3">
 							</span>
         </td>
         <td>
-							<span>2021-01-31
-								<br -="">17:12:40</span>
+							<span>2016-10-24
+								<br -="">13:54:54</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/rcfwjtjjpz.html" title="融创服务集团家具配置案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/hnzt_05.html" title="工厂展厅" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,303)">
+            <a href="##" onclick="edit(event,40)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,303,'action=copy')">
+            <a href="##" onclick="edit(event,40,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2633,18 +2565,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/rcfwjtjjpz.html" title="融创服务集团家具配置案例" target="_blank">
+            <a href="/Mobile/Mhelps/hnzt_05.html" title="工厂展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,303)">
+            <a href="##" onclick="EditMobile(event,40)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/rcfwjtjjpz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_05.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2672,49 +2604,46 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="302">
+										<input type="checkbox" name="chkItem" value="39">
 									</span>
 								</span>
             </div>
         </td>
-        <td>302</td>
+        <td>39</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,302)" class="update_Title">林发钢铁贸易公司家具配置方案</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;302&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,39)" class="update_Title">旗舰展厅</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;39&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;12&quot;,&quot;oid&quot;:&quot;302&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="12">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;11&quot;,&quot;oid&quot;:&quot;39&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="11">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="302" typename="news" filecolumn="isindex">
-								<span class="p_show e_lowpoint  " cur="z_lowpoint">
-									<input class="hd" type="radio">
+            <div class="hd_input" oid="39" typename="help" filecolumn="isindex">
+								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
+									<input class="hd" type="radio" checked="checked">
 									<label></label>
 								</span>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="302" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="39" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2723,7 +2652,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="302" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="39" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2731,7 +2660,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="302" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="39" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2739,7 +2668,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="302" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="39" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2747,27 +2676,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;302&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;39&quot;}">
+								<i style="font-style:normal;">1</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="1">
 							</span>
         </td>
         <td>
-							<span>2021-01-31
-								<br -="">14:02:38</span>
+							<span>2016-10-24
+								<br -="">13:53:36</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whlfgtmyyx.html" title="林发钢铁贸易公司家具配置方案" target="_blank" class="update_PageURL">
+            <a href="/Helps/hnzt_04.html" title="旗舰展厅" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,302)">
+            <a href="##" onclick="edit(event,39)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,302,'action=copy')">
+            <a href="##" onclick="edit(event,39,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2776,18 +2705,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whlfgtmyyx.html" title="林发钢铁贸易公司家具配置方案" target="_blank">
+            <a href="/Mobile/Mhelps/hnzt_04.html" title="旗舰展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,302)">
+            <a href="##" onclick="EditMobile(event,39)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whlfgtmyyx.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_04.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2815,49 +2744,46 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="301">
+										<input type="checkbox" name="chkItem" value="38">
 									</span>
 								</span>
             </div>
         </td>
-        <td>301</td>
+        <td>38</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,301)" class="update_Title">武汉利世德建筑公司办公家具配置案例</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;301&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,38)" class="update_Title">光谷展厅</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;38&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;16&quot;,&quot;oid&quot;:&quot;301&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="16">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;11&quot;,&quot;oid&quot;:&quot;38&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="11">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="301" typename="news" filecolumn="isindex">
-								<span class="p_show e_lowpoint  " cur="z_lowpoint">
-									<input class="hd" type="radio">
+            <div class="hd_input" oid="38" typename="help" filecolumn="isindex">
+								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
+									<input class="hd" type="radio" checked="checked">
 									<label></label>
 								</span>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="301" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="38" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2866,7 +2792,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="301" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="38" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2874,7 +2800,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="301" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="38" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -2882,7 +2808,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="301" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="38" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -2890,27 +2816,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;301&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;38&quot;}">
+								<i style="font-style:normal;">2</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="2">
 							</span>
         </td>
         <td>
-							<span>2020-12-16
-								<br -="">10:46:48</span>
+							<span>2016-10-24
+								<br -="">13:51:19</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/whlsdjzgsb.html" title="武汉利世德建筑公司办公家具配置案例" target="_blank" class="update_PageURL">
+            <a href="/Helps/hnzt_03.html" title="光谷展厅" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,301)">
+            <a href="##" onclick="edit(event,38)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,301,'action=copy')">
+            <a href="##" onclick="edit(event,38,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -2919,18 +2845,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/whlsdjzgsb.html" title="武汉利世德建筑公司办公家具配置案例" target="_blank">
+            <a href="/Mobile/Mhelps/hnzt_03.html" title="光谷展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,301)">
+            <a href="##" onclick="EditMobile(event,38)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/whlsdjzgsb.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_03.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -2958,49 +2884,46 @@ js_=["/manager/js/common/common.js"]>
             <div class="nsw_check_box">
 								<span class="ck_box">
 									<span class="dn">
-										<input type="checkbox" name="chkItem" value="300">
+										<input type="checkbox" name="chkItem" value="37">
 									</span>
 								</span>
             </div>
         </td>
-        <td>300</td>
+        <td>37</td>
         <td>
 							<span class="short_tit f_fl">
-								<a href="##" onclick="edit(event,300)" class="update_Title">站着办公有哪些好处，关键点都在这！</a>
-								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;300&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
+								<a href="##" onclick="edit(event,37)" class="update_Title">汉口展厅</a>
+								<i class="e_edi1 e_more_edit popUp" data-src="{&quot;oid&quot;:&quot;37&quot;,&quot;popup&quot;:&quot;ModificationPopUp&quot;}"></i>
 							</span>
         </td>
         <td>
-							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#newsColumn&quot;,&quot;type&quot;:&quot;news&quot;,&quot;value&quot;:&quot;14&quot;,&quot;oid&quot;:&quot;300&quot;}">
-								<span class="clear_bd fast_in s_selt1 f_fl" id="newsColumn">
-									<select class="pass_faq" name="cid" defvalue="14">
-										<option value="1" oid="1">根栏目</option>
-										<option value="11" oid="11">├新闻资讯</option>
-										<option value="13" oid="13">　├新闻动态</option>
-										<option value="14" oid="14">　├家具常识</option>
-										<option value="21" oid="21">　└代理品牌</option>
-										<option value="12" oid="12">└成功案例</option>
-										<option value="15" oid="15">　├政府机关案例</option>
-										<option value="23" oid="23">　　└成功案例</option>
-										<option value="16" oid="16">　├公司企业案例</option>
-										<option value="17" oid="17">　├医疗教育案例</option>
-										<option value="18" oid="18">　├金融银行案例</option>
-										<option value="19" oid="19">　└经典成功案例</option>
+							<span class="editor_warp alertColumn update_ColumnID" data-src="{&quot;action&quot;:&quot;alertColumn&quot;,&quot;editor&quot;:&quot;select_editor&quot;,&quot;source&quot;:&quot;#helpColumn&quot;,&quot;type&quot;:&quot;help&quot;,&quot;value&quot;:&quot;11&quot;,&quot;oid&quot;:&quot;37&quot;}">
+								<span class="clear_bd fast_in s_selt1 f_fl" id="helpColumn">
+									<select class="pass_faq" name="cid" defvalue="11">
+										<option value="1" oid="1">根目录</option>
+										<option value="8" oid="8">├关于红鑫</option>
+										<option value="9" oid="9">├定制服务</option>
+										<option value="10" oid="10">├荣誉资质</option>
+										<option value="11" oid="11">├直营展厅</option>
+										<option value="12" oid="12">├联系我们</option>
+										<option value="13" oid="13">├在线留言</option>
+										<option value="14" oid="14">├工厂实力</option>
+										<option value="15" oid="15">└代理品牌</option>
 									</select>
 									<i class="revise_sub"></i>
 								</span>
 							</span>
         </td>
         <td>
-            <div class="hd_input" oid="300" typename="news" filecolumn="isindex">
-								<span class="p_show e_lowpoint  " cur="z_lowpoint">
-									<input class="hd" type="radio">
+            <div class="hd_input" oid="37" typename="help" filecolumn="isindex">
+								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
+									<input class="hd" type="radio" checked="checked">
 									<label></label>
 								</span>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="300" typename="news" filecolumn="isCommend">
+            <div class="hd_input" oid="37" typename="help" filecolumn="isCommend">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -3009,7 +2932,7 @@ js_=["/manager/js/common/common.js"]>
 
         </td>
         <td>
-            <div class="hd_input" oid="300" typename="news" filecolumn="isTop">
+            <div class="hd_input" oid="37" typename="help" filecolumn="isTop">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -3017,7 +2940,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="300" typename="news" filecolumn="isBest">
+            <div class="hd_input" oid="37" typename="help" filecolumn="isBest">
 								<span class="p_show e_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio">
 									<label></label>
@@ -3025,7 +2948,7 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-            <div class="hd_input" oid="300" typename="news" filecolumn="Enable">
+            <div class="hd_input" oid="37" typename="help" filecolumn="Enable">
 								<span class="p_show e_lowpoint  z_lowpoint  " cur="z_lowpoint">
 									<input class="hd" type="radio" checked="checked">
 									<label></label>
@@ -3033,27 +2956,27 @@ js_=["/manager/js/common/common.js"]>
             </div>
         </td>
         <td>
-							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;news&quot;,&quot;oid&quot;:&quot;300&quot;}">
-								<i style="font-style:normal;">50</i>
-								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="50">
+							<span class="editor_warp" data-src="{&quot;action&quot;:&quot;alertOrder&quot;,&quot;dataType&quot;:&quot;number&quot;,&quot;editor&quot;:&quot;input_editor&quot;,&quot;type&quot;:&quot;help&quot;,&quot;oid&quot;:&quot;37&quot;}">
+								<i style="font-style:normal;">4</i>
+								<input type="text" style="border:0;width:90%;height:16px;line-height:16px;display:none;border:1px solid #ccc;" defvalue="4">
 							</span>
         </td>
         <td>
-							<span>2020-12-10
-								<br -="">11:04:29</span>
+							<span>2016-10-24
+								<br -="">13:50:54</span>
         </td>
         <td class="nsw_cnt_area action_tx">
-            <a href="/Article/zzbgynxhcg.html" title="站着办公有哪些好处，关键点都在这！" target="_blank" class="update_PageURL">
+            <a href="/Helps/hnzt_02.html" title="汉口展厅" target="_blank" class="update_PageURL">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="edit(event,300)">
+            <a href="##" onclick="edit(event,37)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
-            <a href="##" onclick="edit(event,300,'action=copy')">
+            <a href="##" onclick="edit(event,37,'action=copy')">
 								<span class="pro_copy">
 									<i></i>复制
 								</span>
@@ -3062,18 +2985,18 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/MArticles/zzbgynxhcg.html" title="站着办公有哪些好处，关键点都在这！" target="_blank">
+            <a href="/Mobile/Mhelps/hnzt_02.html" title="汉口展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
             </a>
-            <a href="##" onclick="EditMobile(event,300)">
+            <a href="##" onclick="EditMobile(event,37)">
 								<span class="pro_view pro_edit">
 									<i></i>编辑
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/MArticles/zzbgynxhcg.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_02.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
@@ -3120,10 +3043,10 @@ js_=["/manager/js/common/common.js"]>
 					</span>
             <ul class="batch_dropup list">
                 <li>
-                    <a onclick="return BatchOperation('确定禁用选中项（共{count}项）？');" id="LinkButton1" href="javascript:__doPostBack('LinkButton1','')">批量隐藏</a>
+                    <a onclick="return BatchOperation('确定禁用选中项（共{count}项）？');" id="LinkButton2" href="javascript:__doPostBack('LinkButton2','')">批量隐藏</a>
                 </li>
                 <li>
-                    <a onclick="return BatchOperation('确定首页显示选中项（共{count}项）？');" id="LinkButton2" href="javascript:__doPostBack('LinkButton2','')">批量显示</a>
+                    <a onclick="return BatchOperation('确定首页显示选中项（共{count}项）？');" id="LinkButton1" href="javascript:__doPostBack('LinkButton1','')">批量显示</a>
                 </li>
                 <li>
                     <a onclick="return BatchOperation('确定禁用选中项（共{count}项）首页显示？');" id="LinkButton9" href="javascript:__doPostBack('LinkButton9','')">批量取消显示</a>
@@ -3154,27 +3077,15 @@ js_=["/manager/js/common/common.js"]>
             <!--IndexNavigator Start
 Developed by: Oran(LikeCode####gmail.com)
 Version:v0.5(Apr. 19, 2015)-->
-            <span class="p_numb f_fl">共261条&nbsp;|&nbsp;第1/14页</span>
-            <select class="pageList_btn" onchange="var pageFile='news.aspx?rc=261&amp;';var trgIdx=this.value;pageFile+='page='+trgIdx;location=pageFile;">
+            <span class="p_numb f_fl">共29条&nbsp;|&nbsp;第1/2页</span>
+            <select class="pageList_btn" onchange="var pageFile='helps.aspx?rc=29&amp;';var trgIdx=this.value;pageFile+='page='+trgIdx;location=pageFile;">
                 <option value="1" selected="selected">1</option>
                 <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
             </select>
             <div class="pageDown_btn f_fr">
                 <span class="p_prev  disable " title="上一页"></span>
-                <a href="news.aspx?rc=261&amp;page=2">
-                    <span class="p_next " datahref="news.aspx?rc=261&amp;page=2" title="下一页"></span>
+                <a href="helps.aspx?rc=29&amp;page=2">
+                    <span class="p_next " datahref="helps.aspx?rc=29&amp;page=2" title="下一页"></span>
                 </a>
             </div>
             <!--IndexNavigator End-->

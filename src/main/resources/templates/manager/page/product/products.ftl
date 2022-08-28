@@ -1,4 +1,4 @@
-﻿<#include "/manager/common/manage_layout.ftl"/>
+﻿<#include "../../common/manage_layout.ftl"/>
 <@html title_="产品列表" css_=["/manager/skins/base/products.css","/manager/skins/base/dialog.css","/manager/skins/default/list.css"]
 js_=["/manager/js/common/common.js"]>
     <body marginwidth="0" marginheight="0">

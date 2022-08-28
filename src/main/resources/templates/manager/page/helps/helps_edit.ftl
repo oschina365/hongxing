@@ -1,16 +1,16 @@
 ﻿<#include "../../common/manage_layout.ftl"/>
-<@html title_="添加新闻"
+<@html title_="评论列表"
 css_=["/manager/skins/base/common.css",
 "/manager/skins/default/default.css",
-"/manager/skins/base/editInterface.css",
-"/manager/skins/base/news.css"]
+"/manager/skins/base/editInterface.css"
+]
 js_=["/manager/js/common/common.js"]>
     <body marginwidth="0" marginheight="0">
 
     <div class="nsw_bread_tit">
 		<span class="nsw_add">当前位置：<a href="/manager/home.aspx" target="_parent">后台首页</a>&gt;<a href="#">
-				<b>资讯管理</b>
-			</a>&gt;<a href="news_edit.aspx">文章录入</a>
+				<b>公司管理</b>
+			</a>&gt;<a href="helps_edit.aspx">公司文档录入</a>
 		</span>
 
     </div>
@@ -21,7 +21,7 @@ js_=["/manager/js/common/common.js"]>
 					<span class="sp">
 						<em class="zline1"></em>
 						<em class="zline2"></em>
-						<i class="red_point">*</i>资讯基本信息
+						<i class="red_point">*</i>帮助基本信息
 					</span>
                 </li>
                 <li>
@@ -44,42 +44,30 @@ js_=["/manager/js/common/common.js"]>
                 </li>
             </ul>
         </div>
-        <form name="form1" method="post" action="news_edit.aspx" id="form1" onsubmit="top.refreshList=true;">
+        <form name="form1" method="post" action="helps_edit.aspx" id="form1" onsubmit="top.refreshList=true;">
             <div>
-                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIwMTE3NzA3ODkPZBYCAgUPZBYMAgIPEGQPFgxmAgECAgIDAgQCBQIGAgcCCAIJAgoCCxYMEAUP6LWE6K6v5qC555uu5b2VBQExZxAFEOKUnC3mlrDpl7votYTorq8FAjExZxAFE+OAgOKUnC3mlrDpl7vliqjmgIEFAjEzZxAFE+OAgOKUnC3lrrblhbfluLjor4YFAjE0ZxAFE+OAgOKUlC3ku6PnkIblk4HniYwFAjIxZxAFEOKUlC3miJDlip/moYjkvosFAjEyZxAFGeOAgOKUnC3mlL/lupzmnLrlhbPmoYjkvosFAjE1ZxAFFuOAgOOAgOKUlC3miJDlip/moYjkvosFAjIzZxAFGeOAgOKUnC3lhazlj7jkvIHkuJrmoYjkvosFAjE2ZxAFGeOAgOKUnC3ljLvnlpfmlZnogrLmoYjkvosFAjE3ZxAFGeOAgOKUnC3ph5Hono3pk7booYzmoYjkvosFAjE4ZxAFGeOAgOKUlC3nu4/lhbjmiJDlip/moYjkvosFAjE5Z2RkAiMPEA8WBh4NRGF0YVRleHRGaWVsZAUFVGl0bGUeDkRhdGFWYWx1ZUZpZWxkBQJJRB4LXyFEYXRhQm91bmRnZBAVAwlWSVDnlKjmiLcM5pmu6YCa55So5oi3CeS4muWKoee7hBUDATQBMwE2FCsDA2dnZ2RkAiQPEA8WAh8CZ2QQFcgBATABMQEyATMBNAE1ATYBNwE4ATkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzECMzICMzMCMzQCMzUCMzYCMzcCMzgCMzkCNDACNDECNDICNDMCNDQCNDUCNDYCNDcCNDgCNDkCNTACNTECNTICNTMCNTQCNTUCNTYCNTcCNTgCNTkCNjACNjECNjICNjMCNjQCNjUCNjYCNjcCNjgCNjkCNzACNzECNzICNzMCNzQCNzUCNzYCNzcCNzgCNzkCODACODECODICODMCODQCODUCODYCODcCODgCODkCOTACOTECOTICOTMCOTQCOTUCOTYCOTcCOTgCOTkDMTAwAzEwMQMxMDIDMTAzAzEwNAMxMDUDMTA2AzEwNwMxMDgDMTA5AzExMAMxMTEDMTEyAzExMwMxMTQDMTE1AzExNgMxMTcDMTE4AzExOQMxMjADMTIxAzEyMgMxMjMDMTI0AzEyNQMxMjYDMTI3AzEyOAMxMjkDMTMwAzEzMQMxMzIDMTMzAzEzNAMxMzUDMTM2AzEzNwMxMzgDMTM5AzE0MAMxNDEDMTQyAzE0MwMxNDQDMTQ1AzE0NgMxNDcDMTQ4AzE0OQMxNTADMTUxAzE1MgMxNTMDMTU0AzE1NQMxNTYDMTU3AzE1OAMxNTkDMTYwAzE2MQMxNjIDMTYzAzE2NAMxNjUDMTY2AzE2NwMxNjgDMTY5AzE3MAMxNzEDMTcyAzE3MwMxNzQDMTc1AzE3NgMxNzcDMTc4AzE3OQMxODADMTgxAzE4MgMxODMDMTg0AzE4NQMxODYDMTg3AzE4OAMxODkDMTkwAzE5MQMxOTIDMTkzAzE5NAMxOTUDMTk2AzE5NwMxOTgDMTk5FcgBATABMQEyATMBNAE1ATYBNwE4ATkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzECMzICMzMCMzQCMzUCMzYCMzcCMzgCMzkCNDACNDECNDICNDMCNDQCNDUCNDYCNDcCNDgCNDkCNTACNTECNTICNTMCNTQCNTUCNTYCNTcCNTgCNTkCNjACNjECNjICNjMCNjQCNjUCNjYCNjcCNjgCNjkCNzACNzECNzICNzMCNzQCNzUCNzYCNzcCNzgCNzkCODACODECODICODMCODQCODUCODYCODcCODgCODkCOTACOTECOTICOTMCOTQCOTUCOTYCOTcCOTgCOTkDMTAwAzEwMQMxMDIDMTAzAzEwNAMxMDUDMTA2AzEwNwMxMDgDMTA5AzExMAMxMTEDMTEyAzExMwMxMTQDMTE1AzExNgMxMTcDMTE4AzExOQMxMjADMTIxAzEyMgMxMjMDMTI0AzEyNQMxMjYDMTI3AzEyOAMxMjkDMTMwAzEzMQMxMzIDMTMzAzEzNAMxMzUDMTM2AzEzNwMxMzgDMTM5AzE0MAMxNDEDMTQyAzE0MwMxNDQDMTQ1AzE0NgMxNDcDMTQ4AzE0OQMxNTADMTUxAzE1MgMxNTMDMTU0AzE1NQMxNTYDMTU3AzE1OAMxNTkDMTYwAzE2MQMxNjIDMTYzAzE2NAMxNjUDMTY2AzE2NwMxNjgDMTY5AzE3MAMxNzEDMTcyAzE3MwMxNzQDMTc1AzE3NgMxNzcDMTc4AzE3OQMxODADMTgxAzE4MgMxODMDMTg0AzE4NQMxODYDMTg3AzE4OAMxODkDMTkwAzE5MQMxOTIDMTkzAzE5NAMxOTUDMTk2AzE5NwMxOTgDMTk5FCsDyAFnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAiwPD2QWAh4IcmVhZG9ubHkFCHJlYWRvbmx5ZAItDw9kFgIfAwUIcmVhZG9ubHlkAjEPFgIeB1Zpc2libGVoZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WEQUYcmFkaW9VcmxObyRoZFJhZGlvQnV0dG9uBRlyYWRpb1VybFllcyRoZFJhZGlvQnV0dG9uBRlyYWRpb1VybFllcyRoZFJhZGlvQnV0dG9uBQhpc1RvbmdidQURY2J4S2V5d29yZENvbnRhaW4FD2Noa0lzRnVsbFNjcmVlbgUOY2JsQXV0aG9yaXR5JDAFDmNibEF1dGhvcml0eSQxBQ5jYmxBdXRob3JpdHkkMgUOY2JsQXV0aG9yaXR5JDIFCmNoa0lzRGVsYXkFDGNoa0lzQ29tbWVuZAUJY2hrSXNCZXN0BQhjaGtJc1RvcAUacmRvRW5hYmxlWWVzJGhkUmFkaW9CdXR0b24FGXJkb0VuYWJsZU5vJGhkUmFkaW9CdXR0b24FGXJkb0VuYWJsZU5vJGhkUmFkaW9CdXR0b24ctKxoQ7ib5ietp28+KIAc5q+8jQ==">
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY2NDc0Njg1Mw9kFgICBQ9kFgwCAg8QZA8WCWYCAQICAgMCBAIFAgYCBwIIFgkQBQ/luK7liqnmoLnnm67lvZUFATFnEAUQ4pScLeWFs+S6jue6oumRqwUBOGcQBRDilJwt5a6a5Yi25pyN5YqhBQE5ZxAFEOKUnC3ojaPoqonotYTotKgFAjEwZxAFEOKUnC3nm7TokKXlsZXljoUFAjExZxAFEOKUnC3ogZTns7vmiJHku6wFAjEyZxAFEOKUnC3lnKjnur/nlZnoqIAFAjEzZxAFEOKUnC3lt6XljoLlrp7lipsFAjE0ZxAFEOKUlC3ku6PnkIblk4HniYwFAjE1Z2RkAiQPEA8WBh4NRGF0YVRleHRGaWVsZAUFVGl0bGUeDkRhdGFWYWx1ZUZpZWxkBQJJRB4LXyFEYXRhQm91bmRnZBAVAwlWSVDnlKjmiLcM5pmu6YCa55So5oi3CeS4muWKoee7hBUDATQBMwE2FCsDA2dnZ2RkAiUPEA8WAh8CZ2QQFcgBATABMQEyATMBNAE1ATYBNwE4ATkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzECMzICMzMCMzQCMzUCMzYCMzcCMzgCMzkCNDACNDECNDICNDMCNDQCNDUCNDYCNDcCNDgCNDkCNTACNTECNTICNTMCNTQCNTUCNTYCNTcCNTgCNTkCNjACNjECNjICNjMCNjQCNjUCNjYCNjcCNjgCNjkCNzACNzECNzICNzMCNzQCNzUCNzYCNzcCNzgCNzkCODACODECODICODMCODQCODUCODYCODcCODgCODkCOTACOTECOTICOTMCOTQCOTUCOTYCOTcCOTgCOTkDMTAwAzEwMQMxMDIDMTAzAzEwNAMxMDUDMTA2AzEwNwMxMDgDMTA5AzExMAMxMTEDMTEyAzExMwMxMTQDMTE1AzExNgMxMTcDMTE4AzExOQMxMjADMTIxAzEyMgMxMjMDMTI0AzEyNQMxMjYDMTI3AzEyOAMxMjkDMTMwAzEzMQMxMzIDMTMzAzEzNAMxMzUDMTM2AzEzNwMxMzgDMTM5AzE0MAMxNDEDMTQyAzE0MwMxNDQDMTQ1AzE0NgMxNDcDMTQ4AzE0OQMxNTADMTUxAzE1MgMxNTMDMTU0AzE1NQMxNTYDMTU3AzE1OAMxNTkDMTYwAzE2MQMxNjIDMTYzAzE2NAMxNjUDMTY2AzE2NwMxNjgDMTY5AzE3MAMxNzEDMTcyAzE3MwMxNzQDMTc1AzE3NgMxNzcDMTc4AzE3OQMxODADMTgxAzE4MgMxODMDMTg0AzE4NQMxODYDMTg3AzE4OAMxODkDMTkwAzE5MQMxOTIDMTkzAzE5NAMxOTUDMTk2AzE5NwMxOTgDMTk5FcgBATABMQEyATMBNAE1ATYBNwE4ATkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzECMzICMzMCMzQCMzUCMzYCMzcCMzgCMzkCNDACNDECNDICNDMCNDQCNDUCNDYCNDcCNDgCNDkCNTACNTECNTICNTMCNTQCNTUCNTYCNTcCNTgCNTkCNjACNjECNjICNjMCNjQCNjUCNjYCNjcCNjgCNjkCNzACNzECNzICNzMCNzQCNzUCNzYCNzcCNzgCNzkCODACODECODICODMCODQCODUCODYCODcCODgCODkCOTACOTECOTICOTMCOTQCOTUCOTYCOTcCOTgCOTkDMTAwAzEwMQMxMDIDMTAzAzEwNAMxMDUDMTA2AzEwNwMxMDgDMTA5AzExMAMxMTEDMTEyAzExMwMxMTQDMTE1AzExNgMxMTcDMTE4AzExOQMxMjADMTIxAzEyMgMxMjMDMTI0AzEyNQMxMjYDMTI3AzEyOAMxMjkDMTMwAzEzMQMxMzIDMTMzAzEzNAMxMzUDMTM2AzEzNwMxMzgDMTM5AzE0MAMxNDEDMTQyAzE0MwMxNDQDMTQ1AzE0NgMxNDcDMTQ4AzE0OQMxNTADMTUxAzE1MgMxNTMDMTU0AzE1NQMxNTYDMTU3AzE1OAMxNTkDMTYwAzE2MQMxNjIDMTYzAzE2NAMxNjUDMTY2AzE2NwMxNjgDMTY5AzE3MAMxNzEDMTcyAzE3MwMxNzQDMTc1AzE3NgMxNzcDMTc4AzE3OQMxODADMTgxAzE4MgMxODMDMTg0AzE4NQMxODYDMTg3AzE4OAMxODkDMTkwAzE5MQMxOTIDMTkzAzE5NAMxOTUDMTk2AzE5NwMxOTgDMTk5FCsDyAFnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAi0PD2QWAh4IcmVhZG9ubHkFCHJlYWRvbmx5ZAIuDw9kFgIfAwUIcmVhZG9ubHlkAjIPFgIeB1Zpc2libGVoZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WEQUYcmFkaW9VcmxObyRoZFJhZGlvQnV0dG9uBRlyYWRpb1VybFllcyRoZFJhZGlvQnV0dG9uBRlyYWRpb1VybFllcyRoZFJhZGlvQnV0dG9uBQhpc1RvbmdidQURY2J4S2V5d29yZENvbnRhaW4FD2Noa0lzRnVsbFNjcmVlbgUOY2JsQXV0aG9yaXR5JDAFDmNibEF1dGhvcml0eSQxBQ5jYmxBdXRob3JpdHkkMgUOY2JsQXV0aG9yaXR5JDIFCmNoa0lzRGVsYXkFDGNoa0lzQ29tbWVuZAUJY2hrSXNCZXN0BQhjaGtJc1RvcAUacmRvRW5hYmxlWWVzJGhkUmFkaW9CdXR0b24FGXJkb0VuYWJsZU5vJGhkUmFkaW9CdXR0b24FGXJkb0VuYWJsZU5vJGhkUmFkaW9CdXR0b26NNCdKmtBm6HzfSx6zRX3kLEuf2A==">
             </div>
 
-            <script type="text/javascript">
-                //<![CDATA[
-                var theForm = document.forms['form1'];
-                if (!theForm) {
-                    theForm = document.form1;
-                }
-                function __doPostBack(eventTarget, eventArgument) {
-                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                        theForm.__EVENTTARGET.value = eventTarget;
-                        theForm.__EVENTARGUMENT.value = eventArgument;
-                        theForm.submit();
-                    }
-                }
-                //]]>
-            </script>
+            <div>
 
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="24BE0444">
+            </div>
             <div class="add_cont pad300 j_recordCon_c f_cb">
 
-                <!-- 资讯基本信息 -->
+                <!-- 帮助基本信息 -->
                 <div class="cont1 tab_cat_cont" tab_index="0" style="display: block;">
                     <div class="f_cb">
                         <label class="add_label f_fl">
-                            <i class="red_point">*</i>资讯标题名称
+                            <i class="red_point">*</i>帮助标题名称
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb add_sv">
 								<span class="clear_bd f_fl p_inp1">
-									<input name="txtTitle" type="text" maxlength="150" id="txtTitle" class="com_input clear_word EnterWords CreatePY validatebox-text validatebox-invalid" data-src="{&quot;pyid&quot;:&quot;txtFileName&quot;,&quot;type&quot;:&quot;news&quot;}" _required="true" triggerkeyup="triggerkeyup" _defvalue="">
+									<input name="txtTitle" type="text" maxlength="64" id="txtTitle" class="com_input clear_word EnterWords CreatePY validatebox-text validatebox-invalid" data-src="{&quot;pyid&quot;:&quot;txtFileName&quot;,&quot;type&quot;:&quot;help&quot;}" _required="true" triggerkeyup="triggerkeyup" _defvalue="">
 									<i class="clear_x"></i>
 								</span>
-                                <em class="inp_tips_gray pd010 f_lht27 f_fl f_ib_">0/150字符</em>
+                                <em class="inp_tips_gray pd010 f_lht27 f_fl f_ib_">0/64字符</em>
                                 <div class="msg_btn f_fl f_csp">添加短标题</div>
                                 <div class="msg_content f_dn pt44 f_fl">
                                     <span class="pd010 f_lht27 f_fl">短标题名称</span>
@@ -97,18 +85,15 @@ js_=["/manager/js/common/common.js"]>
                             <div class="f_cb add_sv">
 								<span class="clear_bd s_selt f_fl pt43 click_op f_mr15">
 									<select name="ddlColumnsSource" id="ddlColumnsSource" class="pass_faq">
-										<option value="1" sid="0001">资讯根目录</option>
-										<option value="11" sid="0001,0011">├-新闻资讯</option>
-										<option value="13" sid="0001,0011,0013">　├-新闻动态</option>
-										<option value="14" sid="0001,0011,0014">　├-家具常识</option>
-										<option value="21" sid="0001,0011,0021">　└-代理品牌</option>
-										<option value="12" sid="0001,0012">└-成功案例</option>
-										<option value="15" sid="0001,0012,0015">　├-政府机关案例</option>
-										<option value="23" sid="0001,0012,0015,0023">　　└-成功案例</option>
-										<option value="16" sid="0001,0012,0016">　├-公司企业案例</option>
-										<option value="17" sid="0001,0012,0017">　├-医疗教育案例</option>
-										<option value="18" sid="0001,0012,0018">　├-金融银行案例</option>
-										<option value="19" sid="0001,0012,0019">　└-经典成功案例</option>
+										<option value="1" sid="0001">帮助根目录</option>
+										<option value="8" sid="0001,0008">├-关于红鑫</option>
+										<option value="9" sid="0001,0009">├-定制服务</option>
+										<option value="10" sid="0001,0010">├-荣誉资质</option>
+										<option value="11" sid="0001,0011">├-直营展厅</option>
+										<option value="12" sid="0001,0012">├-联系我们</option>
+										<option value="13" sid="0001,0013">├-在线留言</option>
+										<option value="14" sid="0001,0014">├-工厂实力</option>
+										<option value="15" sid="0001,0015">└-代理品牌</option>
 
 									</select>
 									<i class="revise_sub"></i>
@@ -119,69 +104,13 @@ js_=["/manager/js/common/common.js"]>
                         </div>
                     </div>
 
-                    <div class="RelevantColumn">
-
-                        <div class="f_cb f_mt25 mt40">
-                            <label class="add_label f_fl">
-                                <span class="f_pdl15">相关分类</span>
-                            </label>
-                            <div class="add_r f_fl">
-                                <dl class="sv_checkbox f_fl">
-                                    <dt>请选择分类</dt>
-                                    <dd>
-                                        <select name="RelevantColumn$ddlSelectColumn" id="RelevantColumn_ddlSelectColumn" class="pass_faq fr_select" multiple="multiple" size="5">
-                                            <option value="1" parentid="0">根栏目</option>
-                                            <option value="11" parentid="1">├-新闻资讯</option>
-                                            <option value="13" parentid="11">　├-新闻动态</option>
-                                            <option value="14" parentid="11">　├-家具常识</option>
-                                            <option value="21" parentid="11">　└-代理品牌</option>
-                                            <option value="12" parentid="1">└-成功案例</option>
-                                            <option value="15" parentid="12">　├-政府机关案例</option>
-                                            <option value="23" parentid="15">　　└-成功案例</option>
-                                            <option value="16" parentid="12">　├-公司企业案例</option>
-                                            <option value="17" parentid="12">　├-医疗教育案例</option>
-                                            <option value="18" parentid="12">　├-金融银行案例</option>
-                                            <option value="19" parentid="12">　└-经典成功案例</option>
-
-                                        </select>
-                                    </dd>
-                                </dl>
-                                <div class="sv_check_btn f_fl">
-                                    <span class="sv_add">添 加</span>
-                                    <span class="sv_dele">删 除</span>
-                                </div>
-                                <dl class="sv_checkbox f_fl">
-                                    <dt class="pr">
-                                        <a href="###" class="pro_up"></a>
-                                        <a href="###" class="pro_down"></a>已选分类
-                                    </dt>
-                                    <dd>
-                                        <select multiple="multiple" size="5" class="pass_faq fl_select"></select>
-                                        <input type="hidden" name="RelevantColumn$hdSelectColumnValue" id="RelevantColumn_hdSelectColumnValue">
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                Timeout(function () {
-                                    loadJs("js/other/selectRelevant.js", function () {
-                                        var id = "RelevantColumn_hdSelectColumnValue";
-                                        var me = $("#" + id);
-                                        new RelevantColumn(me);
-                                    });
-                                });
-                            })
-                        </script>
-                    </div>
-
                     <div class="f_cb f_mt25">
                         <label class="add_label f_fl">
                             <span class="f_pdl15">缩略图</span>
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb add_sv">
-                                <div class="colum_onload f_csp f_fl Upload_Clik" input="hdThumbnail" id="ThumbnailUpload" directory="News">
+                                <div class="colum_onload f_csp f_fl Upload_Clik" input="hdThumbnail" id="ThumbnailUpload" directory="Help">
                                     <i class="colum_icon"></i>
                                     <p class="f_tac f_lht27">点击上传</p>
                                 </div>
@@ -206,7 +135,18 @@ js_=["/manager/js/common/common.js"]>
                             </div>
                         </div>
                     </div>
-
+                    <div class="f_cb f_mt25">
+                        <label class="add_label f_fl">
+                            <span class="f_pdl15">线下体验店联系电话</span>
+                        </label>
+                        <div class="add_r f_fl">
+							<span class="clear_bd f_fl p_inp1">
+								<input name="txtCustomFields01" type="text" id="txtCustomFields01" class="com_input clear_word onlyNumber" reginput="telinfo">
+								<i class="clear_x"></i>
+							</span>
+                        </div>
+                        <input type="hidden" name="hdOtherField" id="hdOtherField" value="txtCustomFields01">
+                    </div>
                     <div class="f_cb f_mt25">
                         <label class="add_label f_fl">
                             <span class="f_pdl15">简介录入</span>
@@ -224,14 +164,18 @@ js_=["/manager/js/common/common.js"]>
                     <div class="f_cb f_mt25">
                         <label class="add_label f_fl">
                             <span class="f_pdl15">详情内容录入</span>
+
                             <br>
+
                         </label>
                         <div class="add_r f_fl">
-                            <textarea id="contents" name="content" style="width: 800px; height: 400px; visibility: hidden; display: none;" id="txtContent"></textarea>
+                            <div style=" width:95%;">
+                                <textarea id="contents" name="content" style="width: 800px; height: 400px; visibility: hidden; display: none;" id="txtContent"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- 资讯基本信息 end-->
+                <!-- 帮助基本信息 end-->
 
                 <!--SEO-->
                 <div class="cont1 seo_settab f_dn tab_cat_cont" tab_index="1" style="display: none;">
@@ -330,16 +274,16 @@ js_=["/manager/js/common/common.js"]>
                         </label>
                         <div class="add_r f_fl">
                             <div class="nsw_check_box">
-								<span class="ck_box mt5 z_select">
+								<span class="ck_box mt5">
 									<span class="dn">
-										<input id="cbxKeywordContain" type="checkbox" name="cbxKeywordContain" checked="checked" onclick="if(this.checked){$('#KeywordSet').show();}else{$('#KeywordSet').hide();};">
+										<input id="cbxKeywordContain" type="checkbox" name="cbxKeywordContain" onclick="if(this.checked){$('#KeywordSet').show();}else{$('#KeywordSet').hide();};">
 									</span>
 								</span>
                                 <label class="ck_text">启用</label>
                             </div>
                         </div>
                     </div>
-                    <div class="f_cb f_mt25 dn" id="KeywordSet" style="display: block;">
+                    <div class="f_cb f_mt25 dn" id="KeywordSet">
                         <label class="add_label f_fl">
                             <span class="f_pdl15">站内互链设置</span>
                         </label>
@@ -381,7 +325,6 @@ js_=["/manager/js/common/common.js"]>
 
                 <!--其他信息-->
                 <div class="cont1 else_info f_dn tab_cat_cont" tab_index="2" style="display: none;">
-
 
 
                     <div class="f_cb">
@@ -537,7 +480,7 @@ js_=["/manager/js/common/common.js"]>
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb f_lht27">
-								<span class="clear_bd s_selt f_fl pt43 f_mr15 span_max_w50">
+								<span class="clear_bd s_selt f_fl pt43 f_mr15">
 									<select name="ddlRanking" id="ddlRanking" class="pass_faq">
 										<option value="0">0</option>
 										<option value="1">1</option>
@@ -748,7 +691,7 @@ js_=["/manager/js/common/common.js"]>
                     </div>
                     <div class="f_cb f_mt25">
                         <label class="add_label f_fl">
-                            <span class="f_pdl15">资讯推荐星级</span>
+                            <span class="f_pdl15">帮助推荐星级</span>
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb f_lht27">
@@ -811,16 +754,18 @@ js_=["/manager/js/common/common.js"]>
                             <span class="f_pdl15">显示当前栏目</span>
                         </label>
                         <div class="add_r f_fl">
+                            <div>
 
-							<span class="f_fl f_db e_radio z_select radio" name="Enable" cur="z_select">显示<span class="dn">
-									<input id="rdoEnableYes_hdRadioButton" type="radio" name="rdoEnableYes$hdRadioButton" value="hdRadioButton" checked="checked">
+								<span class="f_fl f_db e_radio z_select radio" name="Enable" cur="z_select">显示<span class="dn">
+										<input id="rdoEnableYes_hdRadioButton" type="radio" name="rdoEnableYes$hdRadioButton" value="hdRadioButton" checked="checked">
+									</span>
 								</span>
-							</span>
 
-                            <span class="f_fl f_db e_radio radio" name="Enable" cur="z_select">隐藏<span class="dn">
-									<input id="rdoEnableNo_hdRadioButton" type="radio" name="rdoEnableNo$hdRadioButton" value="hdRadioButton">
+                                <span class="f_fl f_db e_radio radio" name="Enable" cur="z_select">隐藏<span class="dn">
+										<input id="rdoEnableNo_hdRadioButton" type="radio" name="rdoEnableNo$hdRadioButton" value="hdRadioButton">
+									</span>
 								</span>
-							</span>
+                            </div>
                         </div>
                     </div>
 
@@ -830,7 +775,7 @@ js_=["/manager/js/common/common.js"]>
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb controls_calendar">
-                                <input name="txtShowTime" type="text" value="2022-08-27 23:31:20" maxlength="16" id="txtShowTime" class="com_input clear_word calendar_tx f_fl" readonly="readonly" style="color: rgb(79, 81, 89); border-color: rgb(170, 170, 170);">
+                                <input name="txtShowTime" type="text" value="2022-08-28 09:48:21" maxlength="16" id="txtShowTime" class="com_input clear_word calendar_tx f_fl" readonly="readonly" style="color: rgb(79, 81, 89); border-color: rgb(170, 170, 170);">
                                 <i class="calendar_icon f_fr f_csp"></i>
                             </div>
                         </div>
@@ -842,7 +787,7 @@ js_=["/manager/js/common/common.js"]>
                         </label>
                         <div class="add_r f_fl">
                             <div class="f_cb controls_calendar">
-                                <input name="txtInputTime" type="text" value="2022-08-27 23:31:20" maxlength="16" id="txtInputTime" class="com_input clear_word calendar_tx f_fl" readonly="readonly" style="color: rgb(79, 81, 89); border-color: rgb(170, 170, 170);">
+                                <input name="txtInputTime" type="text" value="2022-08-28 09:48:21" maxlength="16" id="txtInputTime" class="com_input clear_word calendar_tx f_fl" readonly="readonly" style="color: rgb(79, 81, 89); border-color: rgb(170, 170, 170);">
                                 <i class="calendar_icon f_fr f_csp"></i>
                             </div>
                         </div>
@@ -851,7 +796,7 @@ js_=["/manager/js/common/common.js"]>
                 </div>
                 <!--其他信息 end-->
 
-                <!-- 相关资讯及资讯 -->
+                <!-- 相关帮助及帮助 -->
                 <div class="cont1 f_dn tab_cat_cont" tab_index="3" style="display: none;">
 
                     <div class="f_cb">
@@ -993,7 +938,7 @@ js_=["/manager/js/common/common.js"]>
                         <div class="add_r f_fl">
                             <div class="f_cb add_sv">
 								<span class="clear_bd f_fl cho_album f_mr20">
-									<select name="RelevantNews$ddlSelectColumn" id="RelevantNews_ddlSelectColumn" class="pass_faq selectColumn" columntype="News">
+									<select name="RelevantHelp$ddlSelectColumn" id="RelevantHelp_ddlSelectColumn" class="pass_faq selectColumn" columntype="News">
 										<option selected="selected" value="">请选择分类....</option>
 										<option value="0001">根栏目</option>
 										<option value="0001,0011">├-新闻资讯</option>
@@ -1030,10 +975,10 @@ js_=["/manager/js/common/common.js"]>
                                 <dl class="sv_checkbox f_fl">
                                     <dt class="pr">已选择资讯</dt>
                                     <dd>
-                                        <select name="RelevantNews$dllSelect" id="RelevantNews_dllSelect" multiple="multiple" class="left_select" columntype="News">
+                                        <select name="RelevantHelp$dllSelect" id="RelevantHelp_dllSelect" multiple="multiple" class="left_select" columntype="News">
 
                                         </select>
-                                        <input type="hidden" name="RelevantNews$hdSelect" id="RelevantNews_hdSelect">
+                                        <input type="hidden" name="RelevantHelp$hdSelect" id="RelevantHelp_hdSelect">
                                     </dd>
                                 </dl>
                             </div>
@@ -1043,7 +988,7 @@ js_=["/manager/js/common/common.js"]>
                         $(function () {
                             Timeout(function () {
                                 loadJs("js/other/selectRelevant.js", function () {
-                                    var id = "RelevantNews_hdSelect";
+                                    var id = "RelevantHelp_hdSelect";
                                     var me = $("#" + id);
                                     new RelevantDetailed(me);
                                 });
@@ -1051,7 +996,7 @@ js_=["/manager/js/common/common.js"]>
                         });
                     </script>
                 </div>
-                <!-- 关联资讯或服务  end-->
+                <!-- 关联帮助或服务  end-->
 
                 <!--按钮-->
                 <div class="f_cb f_mt25">
@@ -1075,7 +1020,9 @@ js_=["/manager/js/common/common.js"]>
 
             </div>
 
-
+            <script type="text/javascript">
+                IsPostBack = false;
+            </script>
             <script type="text/javascript">
                 layui.use(['form','layer','layedit','laydate','upload'],function(){
                     var form = layui.form,
@@ -1147,6 +1094,7 @@ js_=["/manager/js/common/common.js"]>
             </script>
         </form>
     </div>
+
 
     </body>
 </@html>
