@@ -46,8 +46,8 @@
                                    type="text" tips="验证码" placeholder="请输入验证码"/>
                             <span class="ver_img">
                             <img id="Codes" src="/captcha/?key=managerCode"
-                             onerror="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"
-                             onclick="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"/>
+                                 onerror="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"
+                                 onclick="this.src='/captcha/?key=managerCode&codeTime='+new Date().getTime();"/>
                             </span>
                         </div>
                         <button onclick="login_check();" class="login_btn">登&nbsp;录</button>
@@ -105,20 +105,34 @@
                     layer.msg("请输入密码", {icon: 5});
                 } else if (!txtValidCode) {
                     layer.msg("请输入验证码", {icon: 5});
-                }else {
-
+                } else {
                     $.ajax({
-                        url: '/login',
+                        url: '/captcha/check',
                         type: 'post',
-                        data: {'username': name, 'password': pwd},
+                        data: {'key': 'managerCode', 'value': txtValidCode},
                         dataType: 'json',
                         success: function (d) {
                             if (d.code == 1) {
-                                layer.msg(d.message ? d.message : "登录成功", {icon: 6, time: 3000}, function () {
-                                    location.href = "/manager/index";
+                                $.ajax({
+                                    url: '/login',
+                                    type: 'post',
+                                    data: {'username': name, 'password': pwd},
+                                    dataType: 'json',
+                                    success: function (d) {
+                                        if (d.code == 1) {
+                                            layer.msg(d.message ? d.message : "登录成功", {
+                                                icon: 6,
+                                                time: 3000
+                                            }, function () {
+                                                location.href = "/manager/index";
+                                            });
+                                        } else {
+                                            layer.msg(d.message ? d.message : "登录失败", {icon: 5});
+                                        }
+                                    }
                                 });
                             } else {
-                                layer.msg(d.message ? d.message : "登录失败", {icon: 5});
+                                layer.msg(d.message ? d.message : "请填写正确的验证码", {icon: 5});
                             }
                         }
                     });

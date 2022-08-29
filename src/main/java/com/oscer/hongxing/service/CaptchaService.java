@@ -1,5 +1,6 @@
 package com.oscer.hongxing.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.oscer.hongxing.bean.SendEmailRecord;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.IpUtil;
@@ -75,9 +76,9 @@ public class CaptchaService {
 
         PrintWriter out = response.getWriter();
         if (!sessionYzm.equalsIgnoreCase(value)) {
-            out.print("0");
+            out.print(JSONObject.toJSONString(ApiResult.fail()));
         } else {
-            out.print("1");
+            out.print(JSONObject.toJSONString(ApiResult.success()));
         }
         out.flush();
         out.close();

@@ -84,7 +84,7 @@ public class ManageLoginController extends ManagerBaseController {
         user.setExpires_in(config.getTimeout());
         CacheMgr.set(CacheEnum.REGION_TOKEN.getRegion(), String.valueOf(user.getId()), tokenValue);
         CacheMgr.set(CacheEnum.REGION_TOKEN.getRegion(), tokenValue, user);
-        return ApiResult.successWithObject(user);
+        return ApiResult.successWithObject(user, "登录成功");
     }
 
     /**

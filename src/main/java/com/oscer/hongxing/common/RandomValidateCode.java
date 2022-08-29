@@ -92,6 +92,8 @@ import java.util.Random;
             randomString = drawString(g, randomString, i);
         }
         session.removeAttribute(key);
+        String ip = IpUtil.getIpAddress(request);
+        key = ip.concat("_").concat(key);
         session.setAttribute(key, randomString);
         g.dispose();
         try {
