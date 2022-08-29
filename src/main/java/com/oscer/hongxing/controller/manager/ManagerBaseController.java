@@ -2,6 +2,7 @@ package com.oscer.hongxing.controller.manager;
 
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.oscer.hongxing.dao.CategoryDAO;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,8 +46,14 @@ public class ManagerBaseController {
 
     public final static byte[] E_KEY = new byte[]{'.', 'O', 'S', 'C', 'E', 'R', 'S', 'S'};
 
-    public final static int COOKIE_LENGTH_START = 5;//一开始cookie中存的字段信息长度
-    public final static int COOKIE_LENGTH_END = 8;  //现在扩展的cookie中存的字段信息长度
+    /**
+     * 一开始cookie中存的字段信息长度
+     */
+    public final static int COOKIE_LENGTH_START = 5;
+    /**
+     * 现在扩展的cookie中存的字段信息长度
+     */
+    public final static int COOKIE_LENGTH_END = 8;
 
     /**
      * 换算单位为毫秒的除数
