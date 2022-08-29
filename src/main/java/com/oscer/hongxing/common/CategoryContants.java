@@ -28,7 +28,11 @@ public class CategoryContants {
         /**
          * 公司管理
          */
-        COMPANY(3, "公司管理");
+        COMPANY(3, "公司管理"),
+        /**
+         * 相册
+         */
+        PHOTO(4, "相册");
 
         private int code;
         private String desc;

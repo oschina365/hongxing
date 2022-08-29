@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * 分类列表
@@ -73,5 +74,10 @@ public class Category extends Entity implements Serializable {
      * 分类类型（1=产品分类 2=案例分类 3=公司管理）
      */
     private int type;
+
+    /**
+     * 子类集合
+     */
+    private List<Category> childs;
 
 }

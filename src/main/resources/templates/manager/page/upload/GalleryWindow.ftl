@@ -50,15 +50,7 @@
         <div class="acc_cont padlr20 bord_gray f_cb" style="display: none;">
             <div style=" overflow-y:auto; overflow-x:hidden; height:380px;">
                 <!-- 选择相册 -->
-                <form name="Form1" method="post" action="Html5Gallery.aspx?a=a&amp;max=1&amp;directory=Product&amp;mark=product&amp;popid=pop_PB1TOSQH1FS3PN4MFRUJJ3Q94_11243100" id="Form1">
-                    <div>
-                        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE2MjU3Njk2MDhkZL+1EKGLzDtyV5HE4nK68V4vl5XG">
-                    </div>
-
-                    <div>
-
-                        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EB2D7E6C">
-                    </div>
+                <form name="Form1" method="post" action="/manage/saveImageCategory">
                     <div class="loadbar f_cb f_mt30">
                         <label class="f_fl f_mr25">请选择相册</label>
                         <span class="clear_bd f_fl cho_album">
@@ -82,37 +74,36 @@
 						</span>
                         <span class="create_album f_ml10 f_fl" onclick="$('div.make_album_box').toggle();">创建相册</span>
                     </div>
-                    <div class="make_album_box f_cb f_mt20">
+                    <div class="make_album_box f_cb f_mt20" id="saveImageCategory">
                         <i class="tri2"></i>
                         <div class="f_cb"></div>
                         <label class="f_fl f_mr25 f_ml10">相册名称</label>
                         <span class="clear_bd f_fl">
-							<input name="txtTitle" type="text" maxlength="32" id="txtTitle" class="com_input clear_word">
+							<input name="photoCategoryName" type="text" maxlength="32" id="txtTitle" class="com_input clear_word">
 							<i class="clear_x"></i>
 						</span>
                         <label class="f_fl f_mr20 f_ml15">上下级分类</label>
                         <span class="clear_bd fast_in f_fl f_ml2">
-							<select name="ddlColumns01" id="ddlColumns01" class="pass_faq">
-								<option value="1" directory="pictures">图库根目录</option>
-								<option value="2" directory="product">├-产品图片</option>
-								<option value="23" directory="gccp">　├-冠臣产品</option>
-								<option value="24" directory="jc">　├-佳诚</option>
-								<option value="25" directory="bs">　└-板式</option>
-								<option value="3" directory="project">├-方案图片</option>
-								<option value="4" directory="news">├-资讯图片</option>
-								<option value="5" directory="agent">├-招商加盟图片</option>
-								<option value="6" directory="help">├-帮助中心图片</option>
-								<option value="19" directory="setting">├-网站配置</option>
-								<option value="20" directory="others">├-广告</option>
-								<option value="22" directory="qt">├-其他</option>
-								<option value="26" directory="hbrz">└-环保认证</option>
-
+							<select name="parent_id" id="parentPhoneCategoryId" class="pass_faq">
+								<option value="0" directory="hbrz">顶级父类</option>
+                                <#if categorys??>
+                                    <#list categorys as category>
+                                        <#if category?? && category.id gt 0>
+                                            <option value="${category.id}" directory="hbrz">${category.name}</option>
+                                            <#if category.childs?? && (category.childs?size > 0) >
+                                                <#list category.childs as child>
+                                                    <option value="${child.id}" directory="hbrz">└-${child.name}</option>
+                                                </#list>
+                                            </#if>
+                                        </#if>
+                                    </#list>
+                                </#if>
 							</select>
 							<i class="revise_sub"></i>
 						</span>
                         <span class="e_btn2 f_ml35 f_csp ">
 							<i class="save2_icon"></i>
-							<input type="submit" name="Button1" value="保 存" onclick="return _ValidateForm();" id="Button1" style=" height:28px; line-height:28px;">
+							<input type="button" value="保 存" onclick="ajaxForm();" style=" height:28px; line-height:28px;">
 						</span>
                     </div>
 
@@ -292,18 +283,41 @@
 
     </body>
     <script type="text/javascript">
-        window._MAX_ = <%=Max %>;
-        window.smallsize = "<%=NVEngine.Tools.NewTools.GetAppWebConfig("smallsize")%>";
-        window.bigsize = "<%=NVEngine.Tools.NewTools.GetAppWebConfig("bigsize")%>";
-        window.directory_ = "<%=QS("directory_") %>";
-        var popid = '<%=QS("popid") %>';
-        var host = window.location.host + "";
-        var host_ = "http://"+window.location.host + "";
-        var CheckSizeBool = <%=(!NSW.OConfig2.SMTP.GetConfig("CheckSize").Equals("false")).ToString().ToLower()%>;
-        var Ratio = "";
-        var Width = "";
-        var Height = "";
-        window.PermissionID = "<%=SessionID %>";
+        let photoCategoryName = $("#photoCategoryName").val(), parentPhoneCategoryId = $("#parentPhoneCategoryId").val();
+        function ajaxForm(){
+            $.ajax({
+                url: "/manage/saveImageCategory",
+                type: "post",
+                dataType: "json",
+                data:  {
+                    "name":photoCategoryName,
+                    "parent_id":parentPhoneCategoryId
+                },
+                success: function (d) {
+                    console.log(d);
+                },
+                error: function (d) {
+                    console.log("网络错误");
+                }
+            })
+        }
+        $(document).ready(function() {
+            $(function () {
+                var options = {
+                    url: "/TelecomCup/UserServlet", //提交地址：默认是form的action,如果申明,则会覆盖
+                    type: "get",   //默认是form的method（get or post），如果申明，则会覆盖
+                    success: function (data) {
+                        alert("当前提交成功人数：人");
+                    },
+                    error: function (data) {
+                        alert("提交失败！");
+                    },
+                    timeout: 3000     //限制请求的时间，当请求大于3秒后，跳出请求
+                };
+                $("form").ajaxForm(options);
+            });
+        });
+
     </script>
     <script src="/manager/js/SWFUpload.js" type="text/javascript"></script>
     <script src="/manager/js/multiimage.js" type="text/javascript"></script>

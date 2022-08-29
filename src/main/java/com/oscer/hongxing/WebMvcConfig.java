@@ -6,6 +6,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.ArrayList;
+
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
@@ -29,10 +31,13 @@ public class WebMvcConfig implements WebMvcConfigurer {
     // 注册拦截器
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+
         // 注册 Sa-Token 的路由拦截器
         registry.addInterceptor(new SaRouteInterceptor())
-                .addPathPatterns("/manager/**")
-                .excludePathPatterns("/**");
+                .addPathPatterns("/manage/**")
+                .excludePathPatterns(new ArrayList<String>() {{
+                    add("/manage");
+                }});
     }
 
 }
