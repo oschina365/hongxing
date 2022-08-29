@@ -90,14 +90,14 @@ public abstract class Entity implements Serializable {
     }
 
     protected final static transient String OBJ_COUNT_CACHE_KEY = "#";
-    private long ___key_id;
+    private long id;
 
     public long getId() {
-        return ___key_id;
+        return id;
     }
 
     public void setId(long id) {
-        this.___key_id = id;
+        this.id = id;
     }
 
     /**

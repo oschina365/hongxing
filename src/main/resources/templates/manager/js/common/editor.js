@@ -231,7 +231,7 @@ _extend(img_gallerywindow, _editor_, {
         if (!E.pop) {
             var C = E.src.attr("data-src") ? _Json(E.src.attr("data-src")) : {};
             var B = {updateCallback: E.UpdateCallback};
-            B.src = !isWebUploader ? "GalleryWindow.aspx?a=a" : "Html5Gallery.aspx?a=a";
+            B.src = !isWebUploader ? "/manage/GalleryWindow?a=a" : "/manage/Html5Gallery?a=a";
             if (A.max) {
                 B.src += "&max=" + A.max
             }
@@ -760,7 +760,7 @@ _extend(kindeditor_selecttemps, _editor_, {
                 var F = A.options;
                 var E = A.iframes || {};
                 E.updateCallback = A.UpdateCallback;
-                E.src = E.src || "SearchTemplates.aspx";
+                E.src = E.src || "/manage/SearchTemplates";
                 if (F.max) {
                     E.src += "?max=" + F.max
                 }

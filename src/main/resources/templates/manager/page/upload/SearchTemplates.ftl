@@ -1,7 +1,4 @@
-﻿<%@ page language="C#" autoeventwireup="True" inherits="NSW.Web.Manager.SearchTemplates, qwt" enableviewstate="true" enableviewstatemac="false" %>
-<%@ Register Assembly="Oran.WebControl.IndexNavigator" Namespace="Oran.WebControl" TagPrefix="IndexNavi" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head runat="server">
     <title><%= ItemName %></title>
     <link href="skins/base/template.css" rel="stylesheet" type="text/css"/>

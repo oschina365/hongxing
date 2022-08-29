@@ -1,11 +1,9 @@
-﻿<%@ page language="C#" autoeventwireup="True" enableeventvalidation="false" enableviewstate="false" inherits="NSW.Web.Manager.Html5Gallery, qwt" enableviewstatemac="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
+﻿<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head runat="server">
     <title><%=ItemName %></title>
-    <link href="skins/base/gallery.css" rel="stylesheet" type="text/css"/>
-    <link href="js/other/webuploader/cur_webuploader.css" rel="stylesheet" type="text/css" />
-    <link href="js/other/webuploader/cur_style.css" rel="stylesheet" type="text/css" />
+    <link href="/manager/skins/base/gallery.css" rel="stylesheet" type="text/css"/>
+    <link href="/manager/js/other/webuploader/cur_webuploader.css" rel="stylesheet" type="text/css" />
+    <link href="/manager/js/other/webuploader/cur_style.css" rel="stylesheet" type="text/css" />
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
 var _hmt = _hmt || [];

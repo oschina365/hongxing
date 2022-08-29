@@ -43,7 +43,7 @@ var _PopUp = function (options, iframes) {
         height: 550,
         el: TOP.document.body,
         html: null,
-        css: "skins/base/dialog.css",
+        css: "/manager/skins/base/dialog.css",
         show: function () {
             var me = this;
             me.pop.show();

@@ -17,7 +17,7 @@ public class Category extends Entity implements Serializable {
     public final static Category ME = new Category();
 
     @Override
-    public String tableName(){
+    public String tableName() {
         return "category";
     }
 
@@ -42,9 +42,21 @@ public class Category extends Entity implements Serializable {
      */
     private String desc;
     /**
+     * 分类小图标
+     */
+    private String small_icon;
+    /**
+     * 分类缩略图
+     */
+    private String thumb;
+    /**
      * 分类背景图
      */
     private String banner;
+    /**
+     * 背景图链接
+     */
+    private String banner_href;
     /**
      * 是否置顶（0=否 1=是）
      */

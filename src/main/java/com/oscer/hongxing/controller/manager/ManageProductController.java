@@ -65,6 +65,10 @@ public class ManageProductController extends ManagerBaseController {
     @PostMapping("/manage/product_column_edit_post")
     @ResponseBody
     public ApiResult product_column_edit_post(Category category) {
+        if (category == null) {
+            return ApiResult.failWithMessage("分类名称为空");
+        }
+        category.save();
         return ApiResult.success();
     }
 
