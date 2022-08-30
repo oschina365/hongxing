@@ -331,18 +331,31 @@ js_=["/manager/js/common/common.js","/manager/js/common/edit.js"]>
 				})
 
 				function ajaxForm(){
-					$.ajax({
-						url: "/manage/product_column_edit_post",
-						type: "post",
-						dataType: "json",
-						data:  JSON.stringify($('#form2').serialize()),
-						success: function (d) {
-							console.log(d);
-						},
-						error: function (d) {
-							console.log("网络错误");
-						}
-					})
+					layui.use(['layer'],function() {
+						var layer = parent.layer === undefined ? layui.layer : top.layer;
+						$.ajax({
+							url: "/manage/product_column_edit_post",
+							type: "post",
+							dataType: "json",
+							data: JSON.stringify($('#form2').serialize()),
+							success: function (d) {
+								if (d.code == 1) {
+									layer.msg(d.message ? d.message : "添加成功", {
+										icon: 6,
+										time: 1500
+									}, function () {
+										window.location.reload;
+									});
+								} else {
+									layer.msg(d.message ? d.message : "添加失败", {icon: 5});
+								}
+
+							},
+							error: function (d) {
+								layer.msg(d.message ? d.message : "网络错误", {icon: 5});
+							}
+						})
+					});
 				}
 				$(function () {
 

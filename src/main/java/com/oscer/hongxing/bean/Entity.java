@@ -451,6 +451,8 @@ public abstract class Entity implements Serializable {
      * @return 返回插入对象的主键
      */
     private long _InsertObject(Entity obj) {
+        obj.setCreate_time(new Date());
+        obj.setUpdate_time(new Date());
         Map<String, Object> pojo_bean = obj.listInsertableFields();
         if (this.getId() > 0) {
             pojo_bean.put("id", this.getId());
