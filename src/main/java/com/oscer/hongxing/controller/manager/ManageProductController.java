@@ -3,6 +3,7 @@ package com.oscer.hongxing.controller.manager;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.common.IpUtil;
 import com.oscer.hongxing.dao.CategoryDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -54,6 +55,7 @@ public class ManageProductController extends ManagerBaseController {
      */
     @GetMapping("/manage/product_column_edit")
     public String product_column_edit() {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
         return BASE_PAGE_URL + "product_column_edit";
     }
 
@@ -68,7 +70,11 @@ public class ManageProductController extends ManagerBaseController {
         if (category == null) {
             return ApiResult.failWithMessage("分类名称为空");
         }
+        category.setType(CategoryContants.Type.PRODUCT.getCode());
+        category.setCreate_ip(IpUtil.getIpAddress(request));
+        category.setSort(CategoryDAO.ME.getSort(category.getType(), category.getParent_id()));
         category.save();
+        CategoryDAO.ME.setSort(category.getType(), category.getParent_id(), category.getSort());
         return ApiResult.success();
     }
 
@@ -79,6 +85,7 @@ public class ManageProductController extends ManagerBaseController {
      */
     @GetMapping("/manage/product_column")
     public String product_column() {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
         return BASE_PAGE_URL + "product_column";
     }
 

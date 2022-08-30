@@ -23,6 +23,15 @@ public class Category extends Entity implements Serializable {
     }
 
     /**
+     * 第一级分类最大的sort值
+     */
+    public static final String MAX_SORT_FIRST = "firstSort";
+    /**
+     * 第二级分类最大的sort值
+     */
+    public static final String MAX_SORT_SECOND = "secondSort";
+
+    /**
      * 分类名称
      */
     private String name;

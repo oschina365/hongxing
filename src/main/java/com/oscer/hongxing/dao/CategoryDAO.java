@@ -2,7 +2,9 @@ package com.oscer.hongxing.dao;
 
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.util.StrUtil;
 import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.db.CacheMgr;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,10 +53,31 @@ public class CategoryDAO extends CommonDao<Category> {
             if (CollectionUtil.isNotEmpty(childs)) {
                 //根据sort字段，对集合进行升序排列
                 childs.sort((x, y) -> Integer.compare(x.getSort(), y.getSort()));
+                CacheMgr.set(Category.ME.CacheRegion(), Category.MAX_SORT_SECOND + StrUtil.UNDERLINE + category.getId(), childs.get(childs.size() - 1).getSort());
                 category.setChilds(childs);
             }
         }
+        Category maxFirst = first.get(first.size() - 1);
+        CacheMgr.set(Category.ME.CacheRegion(), Category.MAX_SORT_FIRST + StrUtil.UNDERLINE + maxFirst.getType(), first.get(first.size() - 1).getSort());
         return first;
+    }
+
+    public int getSort(int type, long parentId) {
+        Object sort = null;
+        if (parentId == 0) {
+            sort = CacheMgr.get(Category.ME.CacheRegion(), Category.MAX_SORT_FIRST + StrUtil.UNDERLINE + type);
+        } else {
+            sort = CacheMgr.get(Category.ME.CacheRegion(), Category.MAX_SORT_SECOND + StrUtil.UNDERLINE + parentId);
+        }
+        return sort == null ? 1 : Integer.parseInt(sort.toString()) + 1;
+    }
+
+    public void setSort(int type, long parentId, int sort) {
+        if (parentId == 0) {
+            CacheMgr.set(Category.ME.CacheRegion(), Category.MAX_SORT_FIRST + StrUtil.UNDERLINE + type, sort);
+        } else {
+            CacheMgr.set(Category.ME.CacheRegion(), Category.MAX_SORT_SECOND + StrUtil.UNDERLINE + parentId, sort);
+        }
     }
 
 

@@ -21,88 +21,22 @@ js_=["/manager/js/common/common.js","/manager/js/common/edit.js"]>
 						<div class="add_r f_fl">
 							<div class="f_cb add_sv">
 							<span class="clear_bd s_selt f_fl pt43 f_mr15">
-								<select name="ddlMenus" id="ddlMenus" class="pass_faq">
-									<option value="1" sid="0001">产品根目录</option>
-									<option value="9" sid="0001,0009">├-按用途分类</option>
-									<option value="21" sid="0001,0009,0021">　├-总裁-总经理</option>
-									<option value="22" sid="0001,0009,0022">　├-总监-经理</option>
-									<option value="23" sid="0001,0009,0023">　├-主管-职员</option>
-									<option value="24" sid="0001,0009,0024">　├-前台、公共休闲区</option>
-									<option value="25" sid="0001,0009,0025">　├-会议室区域</option>
-									<option value="26" sid="0001,0009,0026">　└-接待洽谈区</option>
-									<option value="10" sid="0001,0010">├-按行业分类</option>
-									<option value="27" sid="0001,0010,0027">　├-政府机关</option>
-									<option value="28" sid="0001,0010,0028">　├-事业单位</option>
-									<option value="29" sid="0001,0010,0029">　├-公司企业</option>
-									<option value="30" sid="0001,0010,0030">　├-学校家具</option>
-									<option value="31" sid="0001,0010,0031">　├-酒店家具</option>
-									<option value="32" sid="0001,0010,0032">　├-银行家具</option>
-									<option value="33" sid="0001,0010,0033">　└-医院家具</option>
-									<option value="11" sid="0001,0011">├-大班台系列</option>
-									<option value="34" sid="0001,0011,0034">　├-板式大班台</option>
-									<option value="35" sid="0001,0011,0035">　├-实木大班台</option>
-									<option value="36" sid="0001,0011,0036">　├-板式中班台</option>
-									<option value="37" sid="0001,0011,0037">　├-实木中班台</option>
-									<option value="75" sid="0001,0011,0075">　└-全实木办公家具</option>
-									<option value="12" sid="0001,0012">├-办公屏风系列</option>
-									<option value="38" sid="0001,0012,0038">　├-办公隔断卡座</option>
-									<option value="39" sid="0001,0012,0039">　├-开放办公屏风</option>
-									<option value="40" sid="0001,0012,0040">　└-钢架组合桌</option>
-									<option value="13" sid="0001,0013">├-办公桌系列</option>
-									<option value="42" sid="0001,0013,0042">　├-板式办公桌</option>
-									<option value="43" sid="0001,0013,0043">　├-钢架办公桌</option>
-									<option value="89" sid="0001,0013,0089">　├-升降桌</option>
-									<option value="90" sid="0001,0013,0090">　└-实木贴皮办公桌</option>
-									<option value="14" sid="0001,0014">├-会议桌系列</option>
-									<option value="44" sid="0001,0014,0044">　├-实木会议桌</option>
-									<option value="45" sid="0001,0014,0045">　├-板式会议桌</option>
-									<option value="46" sid="0001,0014,0046">　├-培训桌</option>
-									<option value="47" sid="0001,0014,0047">　├-演讲台</option>
-									<option value="48" sid="0001,0014,0048">　├-洽谈桌</option>
-									<option value="49" sid="0001,0014,0049">　└-主席台</option>
-									<option value="15" sid="0001,0015">├-办公椅系列</option>
-									<option value="50" sid="0001,0015,0050">　├-皮面大班椅</option>
-									<option value="51" sid="0001,0015,0051">　├-网面大班椅</option>
-									<option value="52" sid="0001,0015,0052">　├-网面转椅</option>
-									<option value="53" sid="0001,0015,0053">　├-固定椅</option>
-									<option value="54" sid="0001,0015,0054">　├-休闲椅</option>
-									<option value="55" sid="0001,0015,0055">　├-吧椅</option>
-									<option value="84" sid="0001,0015,0084">　├-礼堂椅</option>
-									<option value="91" sid="0001,0015,0091">　└-会议培训椅</option>
-									<option value="16" sid="0001,0016">├-文件柜系列</option>
-									<option value="56" sid="0001,0016,0056">　├-实木书柜</option>
-									<option value="57" sid="0001,0016,0057">　├-板式书柜</option>
-									<option value="58" sid="0001,0016,0058">　├-钢制文件柜</option>
-									<option value="59" sid="0001,0016,0059">　├-钢制更衣柜</option>
-									<option value="60" sid="0001,0016,0060">　├-地柜</option>
-									<option value="61" sid="0001,0016,0061">　└-保险柜</option>
-									<option value="17" sid="0001,0017">├-办公前台系列</option>
-									<option value="62" sid="0001,0017,0062">　├-板式前台</option>
-									<option value="63" sid="0001,0017,0063">　├-烤漆前台</option>
-									<option value="64" sid="0001,0017,0064">　└-实木前台</option>
-									<option value="18" sid="0001,0018">├-沙发茶几系列</option>
-									<option value="65" sid="0001,0018,0065">　├-气派舒适沙发</option>
-									<option value="66" sid="0001,0018,0066">　├-时尚休闲沙发</option>
-									<option value="67" sid="0001,0018,0067">　├-布艺沙发</option>
-									<option value="68" sid="0001,0018,0068">　├-木茶几</option>
-									<option value="69" sid="0001,0018,0069">　├-玻璃茶几</option>
-									<option value="92" sid="0001,0018,0092">　└-茶台</option>
-									<option value="19" sid="0001,0019">├-高隔断系列</option>
-									<option value="70" sid="0001,0019,0070">　├-高档加厚型</option>
-									<option value="71" sid="0001,0019,0071">　└-经济普通型</option>
-									<option value="20" sid="0001,0020">├-办公装饰系列</option>
-									<option value="72" sid="0001,0020,0072">　├-办公地毯</option>
-									<option value="74" sid="0001,0020,0074">　├-装饰灯</option>
-									<option value="82" sid="0001,0020,0082">　├-饰品和装饰画</option>
-									<option value="85" sid="0001,0020,0085">　└-装饰窗帘</option>
-									<option value="76" sid="0001,0076">└-其它</option>
-									<option value="77" sid="0001,0076,0077">　├-高管办公家具</option>
-									<option value="78" sid="0001,0076,0078">　├-职员办公家具</option>
-									<option value="79" sid="0001,0076,0079">　├-公共办公家具</option>
-									<option value="80" sid="0001,0076,0080">　├-会议培训家具</option>
-									<option value="86" sid="0001,0076,0086">　└-学校教育家具</option>
-
-								</select>
+								<label for="parent_id"></label>
+								<select name="parent_id" id="parent_id" class="pass_faq">
+									<option value="0" >顶级父类</option>
+									<#if categorys??>
+										<#list categorys as category>
+											<#if category?? && category.id gt 0>
+												<option value="${category.id}">${category.name}</option>
+												<#if category.childs?? && (category.childs?size > 0) >
+												<#list category.childs as child>
+													<option value="${child.id}"> └-${child.name}</option>
+												</#list>
+											</#if>
+											</#if>
+										</#list>
+									</#if>
+							   </select>
 								<i class="revise_sub"></i>
 							</span>
 							</div>
@@ -337,7 +271,7 @@ js_=["/manager/js/common/common.js","/manager/js/common/edit.js"]>
 							url: "/manage/product_column_edit_post",
 							type: "post",
 							dataType: "json",
-							data: JSON.stringify($('#form2').serialize()),
+							data: $('#form2').serialize(),
 							success: function (d) {
 								if (d.code == 1) {
 									layer.msg(d.message ? d.message : "添加成功", {

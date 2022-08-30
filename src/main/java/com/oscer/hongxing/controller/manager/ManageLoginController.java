@@ -40,6 +40,10 @@ public class ManageLoginController extends ManagerBaseController {
         if (!StpUtil.isLogin()) {
             return login();
         }
+        Object loginId = StpUtil.getLoginId();
+        if (loginId != null) {
+            request.setAttribute("user", User.ME.get(Long.parseLong(loginId.toString())));
+        }
         return "/manager/index";
     }
 

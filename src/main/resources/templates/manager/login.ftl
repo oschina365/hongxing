@@ -108,7 +108,7 @@
                 } else {
                     $.ajax({
                         url: '/captcha/check',
-                        type: 'post',
+                        type: 'get',
                         data: {'key': 'managerCode', 'value': txtValidCode},
                         dataType: 'json',
                         success: function (d) {
