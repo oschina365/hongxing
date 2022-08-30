@@ -53,9 +53,6 @@ public class SysFile extends Entity {
      * 文件上传成功状态（成功：0 失败 ：-1）
      */
     private Integer file_status;
-    /**
-     * 文件插入时间
-     */
-    private Date insert_date;
+
 
 }

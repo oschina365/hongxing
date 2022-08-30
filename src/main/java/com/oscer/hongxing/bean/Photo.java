@@ -22,7 +22,6 @@ public class Photo extends Entity {
     private int year;
     private int month;
     private int day;
-    private Date upload_time;
     private String type;
 
 }

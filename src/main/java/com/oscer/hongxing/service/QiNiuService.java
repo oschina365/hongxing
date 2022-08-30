@@ -104,7 +104,7 @@ public class QiNiuService {
             String key = jo.getString("key");
             sysFile.setFile_status(QiNiuEnum.STATUS.SUCCESS.getKey());
             sysFile.setFile_suffix(FileUtil.getFileSuffix(key));
-            sysFile.setInsert_date(new Date());
+            sysFile.setCreate_time(new Date());
             logger.info("[upload]上传结果返回-->key:" + key);
         } else {
             logger.info("[upload]上传失败");
@@ -217,7 +217,7 @@ public class QiNiuService {
         Photo p = new Photo();
         Date now = new Date();
         p.setUser(userId);
-        p.setUpload_time(now);
+        p.setCreate_time(now);
         Map<String, Object> map = FormatTool.getTime(now);
         p.setYear((Integer) map.get("year"));
         p.setMonth((Integer) map.get("month"));
