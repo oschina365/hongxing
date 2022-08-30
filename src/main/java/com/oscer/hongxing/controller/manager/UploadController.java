@@ -40,6 +40,7 @@ public class UploadController extends BaseController {
 
     @GetMapping("/manage/SearchImages")
     public String SearchImages() {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PHOTO.getCode()));
         return BASE_PAGE_URL + "SearchImages";
     }
 

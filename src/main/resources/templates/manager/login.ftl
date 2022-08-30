@@ -122,7 +122,7 @@
                                         if (d.code == 1) {
                                             layer.msg(d.message ? d.message : "登录成功", {
                                                 icon: 6,
-                                                time: 3000
+                                                time: 1500
                                             }, function () {
                                                 location.href = "/manager/index";
                                             });

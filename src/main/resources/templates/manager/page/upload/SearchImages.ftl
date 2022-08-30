@@ -66,22 +66,21 @@
 				<div class="loadbar f_cb f_ml20 form_search">
 					<label class="f_fl f_mr25">请选择相册</label>
 					<span class="clear_bd f_fl cho_album">
-						<select name="ddlColumnID" id="ddlColumnID" class="pass_faq">
-							<option value="0001" sid="0001">图库根目录</option>
-							<option value="0001,0002" sid="0001,0002">├-产品图片</option>
-							<option value="0001,0002,0023" sid="0001,0002,0023">　├-冠臣产品</option>
-							<option value="0001,0002,0024" sid="0001,0002,0024">　├-佳诚</option>
-							<option value="0001,0002,0025" sid="0001,0002,0025">　└-板式</option>
-							<option value="0001,0003" sid="0001,0003">├-方案图片</option>
-							<option value="0001,0004" sid="0001,0004">├-资讯图片</option>
-							<option value="0001,0005" sid="0001,0005">├-招商加盟图片</option>
-							<option value="0001,0006" sid="0001,0006">├-帮助中心图片</option>
-							<option value="0001,0019" sid="0001,0019">├-网站配置</option>
-							<option value="0001,0020" sid="0001,0020">├-广告</option>
-							<option value="0001,0022" sid="0001,0022">├-其他</option>
-							<option value="0001,0026" sid="0001,0026">└-环保认证</option>
-
-						</select>
+						<select name="parent_id" id="parentPhoneCategoryId" class="pass_faq">
+								<option value="0" directory="hbrz">顶级父类</option>
+                                <#if categorys??>
+									<#list categorys as category>
+										<#if category?? && category.id gt 0>
+											<option value="${category.id}" directory="hbrz">${category.name}</option>
+                                            <#if category.childs?? && (category.childs?size > 0) >
+											<#list category.childs as child>
+												<option value="${child.id}" directory="hbrz">└-${child.name}</option>
+											</#list>
+										</#if>
+										</#if>
+									</#list>
+								</#if>
+							</select>
 						<i class="revise_sub"></i>
 					</span>
 					<label class="f_fl f_ml25 f_mr20">图片名称</label>

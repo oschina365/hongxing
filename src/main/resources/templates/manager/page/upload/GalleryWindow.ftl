@@ -21,12 +21,14 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
         <script type="text/javascript" src="/manager/js/easyui/jquery.min.js"></script>
+        <script type="text/javascript" src="/manager/js/common/jquery.form.js"></script>
         <script type="text/javascript" src="/manager/js/common/common.js"></script>
         <script type="text/javascript" src="/manager/js/common/popup.js?v=1.1" charset="utf-8" state="complete"></script>
         <script type="text/javascript" src="/manager/js/other/ajax.js?v=1.1" charset="utf-8" state="complete"></script>
     </head>
-    <body id="uploader" action="Handler/upload.ashx?action=SavePictureHttpPostedFile" marginwidth="0" marginheight="0">
+    <body id="uploader" marginwidth="0" marginheight="0">
 
         <div class="acce_tile_tab f_cb">
             <ul class="f_cb tab_ul f_fl">
@@ -54,32 +56,32 @@
                     <div class="loadbar f_cb f_mt30">
                         <label class="f_fl f_mr25">请选择相册</label>
                         <span class="clear_bd f_fl cho_album">
-							<select name="ddlColumns" id="ddlColumns" class="pass_faq">
-								<option value="1" directory="pictures">图库根目录</option>
-								<option value="2" directory="product" selected="selected">├-产品图片</option>
-								<option value="23" directory="gccp">　├-冠臣产品</option>
-								<option value="24" directory="jc">　├-佳诚</option>
-								<option value="25" directory="bs">　└-板式</option>
-								<option value="3" directory="project">├-方案图片</option>
-								<option value="4" directory="news">├-资讯图片</option>
-								<option value="5" directory="agent">├-招商加盟图片</option>
-								<option value="6" directory="help">├-帮助中心图片</option>
-								<option value="19" directory="setting">├-网站配置</option>
-								<option value="20" directory="others">├-广告</option>
-								<option value="22" directory="qt">├-其他</option>
-								<option value="26" directory="hbrz">└-环保认证</option>
-
+                           <select name="parent_id" id="ddlColumns" class="pass_faq">
+								<option value="0" directory="hbrz">顶级父类</option>
+                                <#if categorys??>
+                                    <#list categorys as category>
+                                        <#if category?? && category.id gt 0>
+                                            <option value="${category.id}" directory="hbrz">${category.name}</option>
+                                            <#if category.childs?? && (category.childs?size > 0) >
+                                            <#list category.childs as child>
+                                                <option value="${child.id}" directory="hbrz">└-${child.name}</option>
+                                            </#list>
+                                        </#if>
+                                        </#if>
+                                    </#list>
+                                </#if>
 							</select>
 							<i class="revise_sub"></i>
 						</span>
                         <span class="create_album f_ml10 f_fl" onclick="$('div.make_album_box').toggle();">创建相册</span>
                     </div>
-                    <div class="make_album_box f_cb f_mt20" id="saveImageCategory">
+                    <div class="make_album_box f_cb f_mt20">
+                        <form name="saveImageCategory" method="post" id="saveImageCategory" action="/manage/saveImageCategory">
                         <i class="tri2"></i>
                         <div class="f_cb"></div>
                         <label class="f_fl f_mr25 f_ml10">相册名称</label>
                         <span class="clear_bd f_fl">
-							<input name="photoCategoryName" type="text" maxlength="32" id="txtTitle" class="com_input clear_word">
+							<input name="name" type="text" maxlength="32" id="txtTitle" class="com_input clear_word">
 							<i class="clear_x"></i>
 						</span>
                         <label class="f_fl f_mr20 f_ml15">上下级分类</label>
@@ -103,13 +105,11 @@
 						</span>
                         <span class="e_btn2 f_ml35 f_csp ">
 							<i class="save2_icon"></i>
-							<input type="button" value="保 存" onclick="ajaxForm();" style=" height:28px; line-height:28px;">
+							<input type="submit" value="保 存"  style=" height:28px; line-height:28px;">
 						</span>
+                        </form>
                     </div>
 
-                    <script type="text/javascript">
-                        IsPostBack = false;
-                    </script>
                 </form>
                 <!-- 选择相册 end-->
 
@@ -199,21 +199,21 @@
                 <div class="loadbar f_cb f_mt30">
                     <label class="f_fl f_mr25">请选择相册</label>
                     <span class="clear_bd f_fl cho_album">
-						<select class="pass_faq" id="xzxc">
-							<option value="1" directory="pictures">图库根目录</option>
-							<option value="2" directory="product" selected="selected">├-产品图片</option>
-							<option value="23" directory="gccp">　├-冠臣产品</option>
-							<option value="24" directory="jc">　├-佳诚</option>
-							<option value="25" directory="bs">　└-板式</option>
-							<option value="3" directory="project">├-方案图片</option>
-							<option value="4" directory="news">├-资讯图片</option>
-							<option value="5" directory="agent">├-招商加盟图片</option>
-							<option value="6" directory="help">├-帮助中心图片</option>
-							<option value="19" directory="setting">├-网站配置</option>
-							<option value="20" directory="others">├-广告</option>
-							<option value="22" directory="qt">├-其他</option>
-							<option value="26" directory="hbrz">└-环保认证</option>
-						</select>
+						<select name="parent_id" id="parentPhoneCategoryId" class="pass_faq">
+								<option value="0" directory="hbrz">顶级父类</option>
+                                <#if categorys??>
+                                    <#list categorys as category>
+                                        <#if category?? && category.id gt 0>
+                                            <option value="${category.id}" directory="hbrz">${category.name}</option>
+                                            <#if category.childs?? && (category.childs?size > 0) >
+                                            <#list category.childs as child>
+                                                <option value="${child.id}" directory="hbrz">└-${child.name}</option>
+                                            </#list>
+                                        </#if>
+                                        </#if>
+                                    </#list>
+                                </#if>
+							</select>
 						<i class="revise_sub"></i>
 					</span>
                 </div>
@@ -304,8 +304,8 @@
         $(document).ready(function() {
             $(function () {
                 var options = {
-                    url: "/TelecomCup/UserServlet", //提交地址：默认是form的action,如果申明,则会覆盖
-                    type: "get",   //默认是form的method（get or post），如果申明，则会覆盖
+                    url: "/manage/saveImageCategory", //提交地址：默认是form的action,如果申明,则会覆盖
+                    type: "post",   //默认是form的method（get or post），如果申明，则会覆盖
                     success: function (data) {
                         alert("当前提交成功人数：人");
                     },
@@ -314,7 +314,7 @@
                     },
                     timeout: 3000     //限制请求的时间，当请求大于3秒后，跳出请求
                 };
-                $("form").ajaxForm(options);
+                $("saveImageCategory").ajaxForm(options);
             });
         });
 
