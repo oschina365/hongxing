@@ -4,7 +4,7 @@ import cn.dev33.satoken.stp.StpUtil;
 import com.oscer.hongxing.bean.UploadResultVO;
 import com.oscer.hongxing.bean.User;
 import com.oscer.hongxing.common.ApiResult;
-import com.oscer.hongxing.common.SystemConstant;
+import com.oscer.hongxing.common.QiNiuConstant;
 import com.oscer.hongxing.dao.PhotoDAO;
 import com.oscer.hongxing.service.QiNiuService;
 import com.qiniu.common.QiniuException;
@@ -45,7 +45,7 @@ public class QiniuUploadController extends BaseController {
      * @throws QiniuException
      */
     public void moveQiNiuFile(String fileName, String newBucket, String newFileName) throws QiniuException {
-        QiNiuService.moveFile(SystemConstant.QINIU_BUCKET, fileName, newBucket, newFileName, false);
+        QiNiuService.moveFile(QiNiuConstant.QINIU_BUCKET, fileName, newBucket, newFileName, false);
     }
 
     /**
@@ -54,7 +54,7 @@ public class QiniuUploadController extends BaseController {
      * @param fileName
      */
     public void delQiNiuFile(String fileName) throws QiniuException {
-        QiNiuService.delete(SystemConstant.QINIU_BUCKET, fileName);
+        QiNiuService.delete(QiNiuConstant.QINIU_BUCKET, fileName);
     }
 
 
@@ -67,10 +67,10 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/pic", method = RequestMethod.POST)
     @ResponseBody
-    public UploadResultVO pic(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public UploadResultVO pic(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        return QiNiuService.pic(multipartFile, loginUser == null ? 0L : loginUser.getId());
+        return QiNiuService.pic(multipartFile, type);
     }
 
     /**
@@ -83,10 +83,10 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/lay", method = RequestMethod.POST)
     @ResponseBody
-    public String lay(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public String lay(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        UploadResultVO vo = QiNiuService.pic(multipartFile, loginUser == null ? 0L : loginUser.getId());
+        UploadResultVO vo = QiNiuService.pic(multipartFile, type);
         return vo.toString();
     }
 
@@ -101,7 +101,7 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/photo", method = RequestMethod.POST)
     @ResponseBody
-    public String photo(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public String photo(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
         UploadResultVO vo = QiNiuService.photo(multipartFile, loginUser == null ? 0L : loginUser.getId());
@@ -120,10 +120,10 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/lay2", method = RequestMethod.POST)
     @ResponseBody
-    public String lay2(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public String lay2(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        UploadResultVO vo = QiNiuService.pic(multipartFile, loginUser == null ? 0L : loginUser.getId());
+        UploadResultVO vo = QiNiuService.pic(multipartFile, type);
         vo.setKey(vo.getKey() + "?imageslim&imageView2/0/w/1000/h/500");
         vo.getData().setSrc(vo.getKey());
         return vo.toString();
@@ -139,10 +139,10 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/lay3", method = RequestMethod.POST)
     @ResponseBody
-    public ApiResult lay3(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public ApiResult lay3(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        UploadResultVO vo = QiNiuService.pic(multipartFile, loginUser == null ? 0L : loginUser.getId());
+        UploadResultVO vo = QiNiuService.pic(multipartFile, type);
         return ApiResult.successWithObject(vo);
     }
 
@@ -156,10 +156,10 @@ public class QiniuUploadController extends BaseController {
      */
     @RequestMapping(value = "/lay4", method = RequestMethod.POST)
     @ResponseBody
-    public String lay4(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "user", required = false) Long user) throws IOException {
+    public String lay4(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
         Object loginId = StpUtil.getLoginId();
         User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        UploadResultVO vo = QiNiuService.pic(multipartFile, loginUser == null ? 0L : loginUser.getId());
+        UploadResultVO vo = QiNiuService.pic(multipartFile, type);
         if (vo.getCode() == 0 && vo.getKey() != null) {
             return vo.getKey();
         }

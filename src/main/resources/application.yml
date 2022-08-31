@@ -26,6 +26,7 @@ spring:
     timeout: 0
     password: ztf@123
 
+
   druid:
     #druid登录名
     username: druid
@@ -37,6 +38,11 @@ spring:
     allow: 127.0.0.1,47.75.15.176
     #黑名单
     deny: 192.168.25.123,192.168.25.124
+    
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 200MB
 
 #server
 server:

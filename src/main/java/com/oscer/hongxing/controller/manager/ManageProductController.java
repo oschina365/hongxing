@@ -1,6 +1,7 @@
 package com.oscer.hongxing.controller.manager;
 
 import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.IpUtil;
@@ -45,7 +46,9 @@ public class ManageProductController extends ManagerBaseController {
      */
     @PostMapping("/manage/products_edit_post")
     @ResponseBody
-    public ApiResult products_edit_post() {
+    public ApiResult products_edit_post(Product product) {
+        product.setCreate_ip(IpUtil.getIpAddress(request));
+        product.save();
         return ApiResult.success();
     }
 
@@ -56,6 +59,7 @@ public class ManageProductController extends ManagerBaseController {
      */
     @GetMapping("/manage/products")
     public String products() {
+        request.setAttribute("products", Product.ME.list());
         return BASE_PAGE_URL + "products";
     }
 

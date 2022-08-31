@@ -6,14 +6,14 @@ package com.oscer.hongxing.common;
  * @date 2017年12月1日14:32:07
  * @desc 七牛参数
  */
-public class SystemConstant {
+public class QiNiuConstant {
 
     public final static String SEPARATOR_UNDERLINE = "_";
 
     /**
      * 点
      */
-    public final static String SEPARATOR_DOT= ".";
+    public final static String SEPARATOR_DOT = ".";
 
 
     public static final String QINIU_ACCESS = ConfigTool.getProp("qiniu.access");
@@ -32,4 +32,9 @@ public class SystemConstant {
      * 斜线
      */
     public static final String QINIU_SLASH = ConfigTool.getProp("qiniu.fileslash");
+
+    /**
+     * 红鑫
+     */
+    public static final String BUCKET_HONGING = "hongxin";
 }

@@ -38,9 +38,9 @@ public class SysFile extends Entity {
      */
     private String file_suffix;
     /**
-     * 1:图片 2:视频
+     * 图片类型
      */
-    private Integer file_type;
+    private String file_type;
     /**
      * 路径
      */

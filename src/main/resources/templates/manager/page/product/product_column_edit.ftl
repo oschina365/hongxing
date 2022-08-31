@@ -211,7 +211,7 @@ js_=["/manager/js/common/common.js","/manager/js/common/edit.js"]>
 					//创建一个编辑器
 					layedit.set({
 						uploadImage: {
-							url: '/up/lay' //接口url
+							url: '/up/lay?type=product_category' //接口url
 							, type: 'post' //默认post
 						}
 					});
@@ -221,47 +221,6 @@ js_=["/manager/js/common/common.js","/manager/js/common/edit.js"]>
 
 					});
 
-					form.on('switch(reward)', function(data){
-						if(data.elem.checked){
-							$("#reward_input").removeClass("layui-hide");
-							$("#is_reward").val(1);
-						}else{
-							$("#reward_input").addClass("layui-hide");
-							$("#is_reward").val(0);
-						}
-					});
-
-					form.on('switch(is_show)', function(data){
-						if(data.elem.checked){
-							$("#is_show").val(1);
-						}else{
-							$("#is_show").val(0);
-						}
-					});
-
-					form.on("submit(questionAdd)",function(data){
-						var content = layedit.getContent(editIndex);
-						$("#contents").val(content);
-						var options = {
-							dataType: "json",
-							success: function (d) {
-								if(d && d.code==1){
-									parent.layer.msg("发帖成功~", {icon: 6});
-									setTimeout(function () {
-										window.location.href=d.result;
-									},800)
-								}else{
-									layer.msg(d.message?d.message:"发布失败~",{icon:5});
-								}
-
-							},
-							error: function (d) {
-								layer.msg(d.message?d.message:"发布失败~",{icon:5});
-							}
-						};
-						$("#listForm").ajaxSubmit(options);
-						return false;
-					})
 				})
 
 				function ajaxForm(){

@@ -166,23 +166,20 @@ public class QiNiuService {
         QiNiuApi.delete(bucket, key);
     }
 
-    public static UploadResultVO pic(MultipartFile multipartFile, long userId) throws IOException {
-        if (userId <= 0L) {
-            return UploadResultVO.failWith("请先登录");
-        }
+    public static UploadResultVO pic(MultipartFile multipartFile, String type) throws IOException {
         long begin = System.currentTimeMillis();
         if (multipartFile.isEmpty()) {
             return UploadResultVO.failWith("图片为空");
         }
         String originFileName = multipartFile.getOriginalFilename();
-        if (!StringUtils.contains(SystemConstant.QINIU_SUFFIXIMAGE, FileUtil.getFileSuffix(originFileName).toUpperCase())) {
+        if (!StringUtils.contains(QiNiuConstant.QINIU_SUFFIXIMAGE, FileUtil.getFileSuffix(originFileName).toUpperCase())) {
             return UploadResultVO.failWith("图片类型不对");
         }
         long fileSize = multipartFile.getSize();
-        String newFileName = System.nanoTime() + SystemConstant.QINIU_SLASH + userId + SystemConstant.QINIU_SLASH + originFileName;
+        String newFileName = QiNiuConstant.BUCKET_HONGING + QiNiuConstant.QINIU_SLASH + type + QiNiuConstant.QINIU_SLASH + originFileName;
         SysFile sysFile = new SysFile();
-        sysFile.setUser_id(userId);
-        sysFile.setFile_type(0);
+        sysFile.setUser_id(0);
+        sysFile.setFile_type(type);
         sysFile.setFile_name(originFileName);
         sysFile.setFile_size(fileSize);
         if (fileSize > NEED_IMAGE_SLIM) {
@@ -209,11 +206,11 @@ public class QiNiuService {
             return UploadResultVO.failWith("图片为空");
         }
         String originFileName = multipartFile.getOriginalFilename();
-        if (!StringUtils.contains(SystemConstant.QINIU_SUFFIXIMAGE, FileUtil.getFileSuffix(originFileName).toUpperCase())) {
+        if (!StringUtils.contains(QiNiuConstant.QINIU_SUFFIXIMAGE, FileUtil.getFileSuffix(originFileName).toUpperCase())) {
             return UploadResultVO.failWith("图片类型不对");
         }
         long fileSize = multipartFile.getSize();
-        String newFileName = userId + SystemConstant.QINIU_SLASH + "photo" + SystemConstant.QINIU_SLASH + originFileName;
+        String newFileName = userId + QiNiuConstant.QINIU_SLASH + "photo" + QiNiuConstant.QINIU_SLASH + originFileName;
         Photo p = new Photo();
         Date now = new Date();
         p.setUser(userId);
@@ -292,7 +289,7 @@ public class QiNiuService {
         if (images != null) {
             for (int i = 0; i < images.size(); i++) {
                 String imageUrl = images.get(i).attr("src");
-                String key = userId + SystemConstant.SEPARATOR_UNDERLINE + DateUtil.format(new Date(), DateUtil.YYYYMMDDHHMMSS) + SystemConstant.SEPARATOR_UNDERLINE + i + SystemConstant.SEPARATOR_DOT + getImageType(imageUrl);
+                String key = userId + QiNiuConstant.SEPARATOR_UNDERLINE + DateUtil.format(new Date(), DateUtil.YYYYMMDDHHMMSS) + QiNiuConstant.SEPARATOR_UNDERLINE + i + QiNiuConstant.SEPARATOR_DOT + getImageType(imageUrl);
                 JSONObject result = uploadFileByte(FormatUtil.getImageFromNetByUrl(imageUrl), key);
                 content = content.replaceAll("\\" + imageUrl, "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key"));
             }
