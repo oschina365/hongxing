@@ -39,6 +39,17 @@ public class ManageProductController extends ManagerBaseController {
     }
 
     /**
+     * 添加产品
+     *
+     * @return
+     */
+    @PostMapping("/manage/products_edit_post")
+    @ResponseBody
+    public ApiResult products_edit_post() {
+        return ApiResult.success();
+    }
+
+    /**
      * 产品列表
      *
      * @return
