@@ -25,7 +25,8 @@
     .cs_info {font-size:12px; margin:0px 10px; overflow:hidden; text-align:center;}
     .cs_btn {width:120px; height:25px; background:#333; margin:0px 10px; border-radius:5px; font-size:12px; line-height:25px; color:#FFF; text-align:center; cursor:pointer;}
 </style>
-
+<script src="/JS/jquery.lazyload.min.js" type="text/javascript"></script>
+<script src="/JS/select2css.js" type="text/javascript"></script>
 <script src="//sgoutong.baidu.com/embed/1660810068/asset/embed/pc_nb.js" charset="UTF-8"></script>
 <link rel="stylesheet" type="text/css" href="//sgoutong.baidu.com/embed/1660810068/asset/embed/css/pc/main.css">
 <script type="text/javascript" data-bdms-faccdee21b68="eyJhcHBfa2V5IjoiNTQ4MCIsImFwcF92aWV3IjoicHJvbW90ZSIsImJyb3dzZXJfdXJsIjoiaHR0cHM6Ly9zb2ZpcmUuYmFpZHUuY29tL2RhdGEvdWEvYWIuanNvbiIsImZvcm1fZGVzYyI6IiIsInNlbmRfaW50ZXJ2YWwiOjUwLCJzZW5kX21ldGhvZCI6M30=" src="https://sofire.bdstatic.com/js/xaf3.js"></script>

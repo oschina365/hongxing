@@ -1,6 +1,8 @@
 package com.oscer.hongxing.controller.manager;
 
+import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Entity;
 import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * 后台管理页面-产品
@@ -59,7 +63,17 @@ public class ManageProductController extends ManagerBaseController {
      */
     @GetMapping("/manage/products")
     public String products() {
-        request.setAttribute("products", Product.ME.list());
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
+        List<Product> list = (List<Product>) Product.ME.list();
+        if (CollectionUtil.isNotEmpty(list)) {
+            for (Product product : list) {
+                Category category = Category.ME.get(product.getCategory_id());
+                if (category != null) {
+                    product.setCategory_name(category.getName());
+                }
+            }
+        }
+        request.setAttribute("products", list);
         return BASE_PAGE_URL + "products";
     }
 

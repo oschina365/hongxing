@@ -102,23 +102,6 @@ js_=["/manager/js/common/common.js","/manager/js/common/editor.js","/manager/js/
                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTUwODAwMjM3OWRkbcorRjWDwgz9QXnCDEu8jmAY5lw=">
             </div>
 
-            <script type="text/javascript">
-                //<![CDATA[
-                var theForm = document.forms['ctl01'];
-                if (!theForm) {
-                    theForm = document.ctl01;
-                }
-
-                function __doPostBack(eventTarget, eventArgument) {
-                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-                        theForm.__EVENTTARGET.value = eventTarget;
-                        theForm.__EVENTARGUMENT.value = eventArgument;
-                        theForm.submit();
-                    }
-                }
-                //]]>
-            </script>
-
             <!-- 列表区 开始 -->
             <div class="nsw_tools_bar f_cb top_nsw_tools_bar" style="background: rgb(255, 255, 255);">
                 <ul class="nsw_check_btns f_fl">

@@ -15,7 +15,7 @@ public class Product extends Entity {
     public static final Product ME = new Product();
 
     private String name;
-    private String category_id;
+    private Long category_id;
     private String thumbnail;
     private String link;
     private String tags;
@@ -27,4 +27,6 @@ public class Product extends Entity {
     private String top;
     private String create_ip;
     private String update_ip;
+
+    private String category_name;
 }

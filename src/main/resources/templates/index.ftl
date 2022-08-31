@@ -1,5 +1,6 @@
 ﻿<#include "common/layout.ftl"/>
 <@html title_="武汉办公家具-办公桌椅-红鑫办公室家具定制厂家-办公家具-办公家具厂">
+    <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css">
     <#include "common/pfb.ftl" />
     <#include "common/g_top.ftl"/>
     <div class="banan">

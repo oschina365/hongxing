@@ -1,5 +1,8 @@
 package com.oscer.hongxing.controller;
 
+import com.oscer.hongxing.common.CheckMobile;
+import com.oscer.hongxing.common.IpUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @since 2022-08-18 16:57:08
  */
 @Controller
+@Slf4j
 public class GlobalController extends BaseController {
 
     /**
@@ -17,6 +21,14 @@ public class GlobalController extends BaseController {
      */
     @GetMapping
     public String index() {
+        String ipAddress = IpUtil.getIpAddress(request);
+        String ua = request.getHeader("User-Agent");
+        boolean check = CheckMobile.check(ua);
+        if (check) {
+            log.info("{},来自移动端访问,ua={}", ipAddress, ua);
+            return "index_mobile";
+        }
+        log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
     }
 

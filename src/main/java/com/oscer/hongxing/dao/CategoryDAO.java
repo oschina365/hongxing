@@ -27,11 +27,12 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> listByType(int type) {
-        String sql = "select * from " + Category.ME.rawTableName() + " where type=?";
-        List<Category> all = getDbQuery().query(Category.class, sql, type);
-        if (CollectionUtil.isEmpty(all)) {
+        String sql = "select id from " + Category.ME.rawTableName() + " where type=?";
+        List<Long> ids = getDbQuery().query(Long.class, sql, type);
+        if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
+        List<Category> all = Category.ME.loadList(ids);
         List<Category> first = new ArrayList<>();
         Map<Long, List<Category>> secondMap = new HashMap<>();
         for (Category category : all) {

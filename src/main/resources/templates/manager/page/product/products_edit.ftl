@@ -1,5 +1,5 @@
 ﻿<#include "../../common/manage_layout.ftl"/>
-<@html title_="添加产品" js_=["/manager/js/common/edit.js"]>
+<@html title_="添加产品">
     <div class="col_main">
         <body marginwidth="0" marginheight="0">
 
@@ -22,7 +22,7 @@
                     </li>
                 </ul>
             </div>
-            <form name="form1" method="post" action="/manage/products_edit_post" id="form1" >
+            <form name="form1" method="post" action="/manage/products_edit_post" id="listForm" >
                 <div class="add_cont pad300 j_recordCon_c f_cb">
                     <!-- 产品基本信息 -->
                     <div class="cont1 tab_cat_cont" tab_index="0" style="display: block;">
@@ -84,30 +84,6 @@
                             </div>
                         </div>
 
-                        <div class="f_cb f_mt25">
-                            <label class="add_label f_fl">
-                                <span class="f_pdl15">外部链接</span>
-                            </label>
-                            <div class="add_r f_fl">
-                                <div class="f_cb add_sv f_lht27">
-
-									<span class="f_fl f_db e_radio e_radio2 z_select radio" cur="z_select">不存在<span class="dn">
-											<input id="radioUrlNo_hdRadioButton" type="radio" name="radioUrlNo$hdRadioButton" value="hdRadioButton" checked="checked" onclick="initTabCut(0);$('#url_warp').hide().find('input').val('');">
-										</span>
-									</span>
-
-                                    <span class="f_fl f_db e_radio e_radio2 radio" cur="z_select">存在<span class="dn">
-											<input id="radioUrlYes_hdRadioButton" type="radio" name="radioUrlYes$hdRadioButton" value="hdRadioButton" onclick="initTabCut(1);$('#url_warp').show();">
-										</span>
-									</span>
-                                    <span class="clear_bd f_fl p_inp1" id="url_warp" style="display: none;">
-										<input name="link" type="text" maxlength="64" id="txtUrl" class="com_input clear_word valid_type validatebox-text" validtype="url_" tipposition="top">
-										<i class="clear_x"></i>
-									</span>
-                                </div>
-                            </div>
-                        </div>
-
                         <#--<div class="f_cb f_mt25">
                             <label class="add_label f_fl">
                                 <span class="f_pdl15">关联标签</span>
@@ -152,39 +128,23 @@
                                         <span class="add_upload_btn f_fr" id="add_upload_btn"></span>
                                     </div>
                                     <div class="add_short_cont f_cb">
-                                        <ul class="targetCell"></ul>
-                                        <div class="md_prev f_fl f_csp" id="prev_ThumbnailImage_01">
-                                            <img src="/manager/skins/Img/leftjt.gif">
-                                        </div>
-                                        <div class="md_short_cont f_fl f_csp">
-                                            <dl class="alt_mark f_fl">
-                                                <dt id="load_ThumbnailImage_small_dt" class="editor_warp" data-src="{&quot;editor&quot;:&quot;ThumbnailImage&quot;,&quot;warp&quot;:&quot;#ThumbnailImage_warp&quot;,&quot;directory&quot;:&quot;product&quot;,&quot;InputID&quot;:&quot;ThumbnailImage_TImages&quot;}">
-                                                    <em class="load_small"></em>点击上传
-                                                </dt>
-                                            </dl>
-                                            <div class="md_short_hide f_fl">
-                                                <div style="width:458px;height:auto;overflow:hidden;position: relative;">
-                                                    <ul class="f_cb ThumbnailImage" id="ThumbnailImage_warp" data-src="{&quot;width&quot;:&quot;152&quot;,&quot;show&quot;:&quot;3&quot;,&quot;next&quot;:&quot;#next_ThumbnailImage_01&quot;,&quot;prev&quot;:&quot;#prev_ThumbnailImage_01&quot;}" style="width:10000px;position:relative;left:0;top:0;">
-
-                                                    </ul>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">上传照片</label>
+                                            <div class="layui-input-inline uploadHeadImage">
+                                                <div class="layui-upload-drag" id="headImg">
+                                                    <i class="layui-icon"></i>
+                                                    <p>点击上传图片，或将图片拖拽到此处</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="md_next f_fl f_csp" id="next_ThumbnailImage_01">
-                                            <img src="/manager/skins/Img/rightjt.gif">
+                                            预览图：
+                                            <div class="layui-upload-list" id="demo2"></div>
+
+                                            <input type="text" id="imgUrls" name="imgUrls" style="display: none;" class="layui-input">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <textarea name="content" rows="2" cols="20" id="ThumbnailImage_TImages" class="dn" style="width:700px;"></textarea>
                         </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                Timeout(function () {
-                                    loadJs("/manager/js/other/thumbnailImage.js");
-                                });
-                            })
-                        </script>
 
                         <div class="f_cb f_mt25">
                             <label class="add_label f_fl">
@@ -240,23 +200,7 @@
                             </label>
                             <div class="add_r f_fl">
                                 <div class="f_cb add_typeset bord_gray extend_warp" style="width:98%;">
-                                    <div class="add_short_tit f_cb">
-                                        <ul class="type_marklist f_fl f_cb" id="addTags">
-                                            <li onclick="SetContentToInput(this)" class="cur">详细信息<i></i>
-                                                <input type="hidden" name="hdContent" id="hdContent">
-                                            </li>
-
-                                        </ul>
-                                        <input type="hidden" name="hdAllContent" id="hdAllContent">
-                                        <input type="hidden" name="hdSeparate" id="hdSeparate" value="#$$#">
-                                        <input type="hidden" name="hdAllTitle" id="hdAllTitle">
-                                        <span class="add_mark_btn f_csp f_fr popUp" data-src="{&quot;popup&quot;:&quot;addTag&quot;,&quot;input&quot;:&quot;#addTags&quot;}">添加标签</span>
-                                    </div>
-                                    <textarea id="contents" name="content" style="width: 800px; height: 400px; visibility: hidden; display: none;" id="txtContent"></textarea>
-
-                                    <div class="add_short_tit add_typeset_tit f_cb">
-                                        <span class="f_fl f_underline f_underline_content">自动排版</span>
-                                    </div>
+                                    <textarea id="content" name="content" ></textarea>
                                 </div>
                             </div>
                         </div>
@@ -272,14 +216,7 @@
                         <div class="add_r f_fl">
                             <!-- 保存并返回 -->
                             <div class="view_btn f_mt30">
-								<span class="e_btn1 f_csp fl">
-									<i class="insert_icon"></i>
-									<input type="button" name="btnSave" value="保 存" id="btnSave" onclick="ajaxForm();">
-								</span>
-
-                                <span class="e_btn2 f_ml35 f_csp fl" onclick="listView();">
-									<i class="back_icon"></i>返 回
-								</span>
+                                <button class="layui-btn" lay-filter="productAdd" lay-submit>保存</button>
                             </div>
                         </div>
                     </div>
@@ -305,9 +242,16 @@
                                 , type: 'post' //默认post
                             }
                         });
-                        var editIndex = layedit.build('contents',{
+                        var editIndex = layedit.build('content',{
                             tool: ["strong", "italic", "underline", "del", "|", "left", "center", "right", "|", "link", "unlink", "face", "image","code"],
                             height : 400,
+                        });
+
+                        let index = layedit.build('content');
+                        form.verify({
+                            index: function(value) {
+                                return layedit.sync(index);
+                            }
                         });
 
                         //执行实例
@@ -326,23 +270,56 @@
                                 //请求异常回调
                             }
                         });
-                    })
 
-                    function ajaxForm(){
-                        layui.use(['layer'],function() {
-                            var layer = parent.layer === undefined ? layui.layer : top.layer;
-                            $.ajax({
-                                url: "/manage/products_edit_post",
-                                type: "post",
+                        var s = "";
+
+                        //拖拽上传
+                        var uploadInst = upload.render({
+                            elem: '#headImg'
+                            , url: '/up/lay?type=product'
+                            , size: 1000
+                            , multiple: true
+                            , number: 7
+                            , before: function (obj) {
+                                //预读本地文件示例，不支持ie8
+                                obj.preview(function (index, file, result) {
+                                    // $('#demo1').attr('src', result); //图片链接（base64）
+                                    $('#demo2').append('<img src="' + result
+                                        + '" alt="' + file.name
+                                        + '"height="100px" width="100px" class="layui-upload-img uploadImgPreView">')
+
+
+                                });
+                            }
+                            , done: function (res) {
+                                if (s == "") {
+                                    s = JSON.stringify(res);
+                                } else {
+                                    s = s + "," + JSON.stringify(res);
+                                };
+                                localStorage.setItem("address1", s);
+                            }
+                            , error: function () {
+                                demoText.find('.demo-reload').on('click', function () {
+                                    uploadInst.upload();
+                                });
+                            }
+
+                        });
+
+                        form.on("submit(productAdd)",function(data){
+                            var content = layedit.getContent(editIndex);
+                            $("#content").val(content);
+                            var options = {
                                 dataType: "json",
-                                data: $('#form1').serialize(),
                                 success: function (d) {
                                     if (d.code == 1) {
-                                        layer.msg(d.message ? d.message : "添加成功", {
-                                            icon: 6,
-                                            time: 1500
-                                        }, function () {
-                                            window.location.reload;
+                                        layer.confirm('添加成功', {
+                                            btn: ['好的','查看产品列表'] //按钮
+                                        }, function(){
+                                            location.href = "/manage/products_edit";
+                                        }, function(){
+                                            location.href = "/manage/products";
                                         });
                                     } else {
                                         layer.msg(d.message ? d.message : "添加失败", {icon: 5});
@@ -352,9 +329,12 @@
                                 error: function (d) {
                                     layer.msg(d.message ? d.message : "网络错误", {icon: 5});
                                 }
-                            })
-                        });
-                    }
+                            };
+                            $("#listForm").ajaxSubmit(options);
+                            return false;
+                        })
+                    })
+
                 </script>
             </form>
         </div>
