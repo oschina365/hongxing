@@ -87,6 +87,13 @@ public class Category extends Entity implements Serializable {
     /**
      * 子类集合
      */
+    @TableField(exist = false)
     private List<Category> childs;
+
+    /**
+     * 产品集合
+     */
+    @TableField(exist = false)
+    private List<Product> products;
 
 }

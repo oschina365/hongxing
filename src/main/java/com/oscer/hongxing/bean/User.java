@@ -124,19 +124,6 @@ public class User extends Entity implements Serializable {
     private Long expires_in;
 
     /**
-     * 用户是否正常
-     *
-     * @return
-     */
-    public boolean status_is_normal() {
-        if (this != null && this.getState() == Entity.STATUS_NORMAL) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
      * 校验密码
      *
      * @param input_pwd

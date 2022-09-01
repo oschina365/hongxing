@@ -1,6 +1,7 @@
 package com.oscer.hongxing.bean;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.util.StrUtil;
 import com.oscer.hongxing.common.Inflector;
 import com.oscer.hongxing.db.CacheMgr;
 import com.oscer.hongxing.db.DBException;
@@ -18,6 +19,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,22 +34,6 @@ import java.util.stream.Collectors;
  */
 @Data
 public abstract class Entity implements Serializable {
-
-    public static final long ONE_HOUR = 1000 * 60 * 60L;
-
-    public static final String CACHE_ONE_HOUR = "one_hour";
-    public static final String CACHE_ONE_MIN = "one_min";
-    public static final String CACHE_FIVE_MIN = "five_min";
-
-    /**
-     * 缓存页面
-     */
-    public static final String CACHE_HTML = "html";//
-
-    /**
-     * 缓存域：all
-     */
-    public static final String CACHE_ALL = "all";
 
     /**
      * 正常=0  冻结=1
@@ -90,13 +76,13 @@ public abstract class Entity implements Serializable {
     }
 
     protected final static transient String OBJ_COUNT_CACHE_KEY = "#";
-    private long id;
+    public Long id;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -135,13 +121,58 @@ public abstract class Entity implements Serializable {
     }
 
     /**
+     * 分页列出所有对象
+     *
+     * @return
+     */
+    public List<Long> listIds() {
+        String sql = "SELECT id FROM " + rawTableName() + " ORDER BY id DESC";
+        return DbQuery.get(databaseName()).query(Long.class, sql);
+    }
+
+    /**
+     * 分页列出所有对象
+     *
+     * @param page
+     * @param size
+     * @return
+     */
+    public List<Long> listIds(int page, int size) {
+        String sql = "SELECT id FROM " + rawTableName() + " ORDER BY id DESC";
+        return DbQuery.get(databaseName()).query_slice(Long.class, sql, page, size);
+    }
+
+    /**
      * 查询所有对象
      *
      * @return
      */
-    public List<? extends Entity> list() {
+    public List<? extends Entity> list(boolean fromCache) {
         String sql = "SELECT * FROM " + rawTableName();
-        return DbQuery.get(databaseName()).query_cache(getClass(), cacheNullObject(), cacheRegion(), "all", sql);
+        if (!fromCache) {
+            return DbQuery.get(databaseName()).query(getClass(), sql);
+        }
+        sql = "SELECT id FROM " + rawTableName();
+        List<Long> ids = DbQuery.get(databaseName()).query(long.class, sql);
+        return loadList(ids);
+    }
+
+    public List<? extends Entity> filter(String filter) {
+        String sql = "SELECT id FROM " + rawTableName() + " WHERE " + filter + " ORDER BY id DESC";
+        List<Long> longs = DbQuery.get(databaseName()).query(long.class, sql);
+        return loadList(longs);
+    }
+
+    public List<? extends Entity> filter(String filter, Object param, String order) {
+        String sql = "SELECT id FROM " + rawTableName() + " WHERE " + filter + "=?  ORDER BY ?";
+        List<Long> longs = DbQuery.get(databaseName()).query(long.class, sql, param, order);
+        return loadList(longs);
+    }
+
+    public List<? extends Entity> filter(String filter, Object param) {
+        String sql = "SELECT id FROM " + rawTableName() + " WHERE " + filter + "=? ";
+        List<Long> longs = DbQuery.get(databaseName()).query(long.class, sql, param);
+        return loadList(longs);
     }
 
     public List<? extends Entity> filter(String filter, int page, int size) {
@@ -154,8 +185,8 @@ public abstract class Entity implements Serializable {
      *
      * @return
      */
-    public int totalCount(String filter) {
-        return DbQuery.get(databaseName()).stat("SELECT COUNT(*) FROM " + rawTableName() + " WHERE " + filter);
+    public int totalCount(String field, Object param) {
+        return DbQuery.get(databaseName()).stat("SELECT COUNT(*) FROM " + rawTableName() + " WHERE " + field + " = ?", param);
     }
 
     public static void evictCache(String cache, String key) {
@@ -170,7 +201,7 @@ public abstract class Entity implements Serializable {
      */
     public final String rawTableName() {
         String schemaName = schemaName();
-        return (schemaName != null) ? "\"" + schemaName + "\"." + tableName() : tableName();
+        return (schemaName != null) ? "`" + schemaName + "`." + tableName() : tableName();
     }
 
     protected String tableName() {
@@ -182,7 +213,7 @@ public abstract class Entity implements Serializable {
     }
 
     protected String databaseName() {
-        return null;
+        return "mysql";
     }
 
     /**
@@ -191,13 +222,23 @@ public abstract class Entity implements Serializable {
      * @return
      */
     public long save() {
-        if (getId() > 0) {
+        return save(true);
+    }
+
+    /**
+     * 插入对象到数据库表中
+     *
+     * @return
+     */
+    public long save(boolean evict) {
+        Long id = getId();
+        if (id != null && getId() > 0) {
             _InsertObject(this);
         } else {
             setId(_InsertObject(this));
         }
 
-        if (this.cachedByID()) {
+        if (evict && this.cachedByID()) {
             CacheMgr.evict(cacheRegion(), OBJ_COUNT_CACHE_KEY);
             if (cacheNullObject()) {
                 CacheMgr.evict(cacheRegion(), String.valueOf(getId()));
@@ -217,6 +258,145 @@ public abstract class Entity implements Serializable {
             CacheMgr.evict(cacheRegion(), OBJ_COUNT_CACHE_KEY);
         }
         return dr;
+    }
+
+    /**
+     * 根据id主键删除对象
+     *
+     * @return
+     */
+    public boolean deleteField(String field, Object value) {
+        String sql = "DELETE  FROM " + rawTableName() + " WHERE " + field + "=? ";
+        return DbQuery.get(databaseName()).update(sql, value) > 0;
+    }
+
+
+    /**
+     * 根据id主键删除对象
+     *
+     * @return
+     */
+    public boolean delete(long id) {
+        boolean dr = evict(DbQuery.get(databaseName()).update("DELETE FROM " + rawTableName() + " WHERE id=?", id) == 1);
+        if (dr && cachedByID()) {
+            CacheMgr.evict(cacheRegion(), OBJ_COUNT_CACHE_KEY);
+            CacheMgr.evict(cacheRegion(), String.valueOf(id));
+        }
+        return dr;
+    }
+
+    public boolean deleteBatch(List<Long> ids) {
+        for (Long id : ids) {
+            delete(id);
+        }
+        return true;
+    }
+
+    public boolean saveBatch(List<? extends Entity> entities) {
+        for (Entity it : entities) {
+            it.save(false);
+        }
+        return true;
+    }
+
+    /**
+     * 批量删除
+     *
+     * @param ids 删除的id
+     * @return 删除的个数
+     */
+    public boolean batchDelete(List<Long> ids) {
+        if (CollectionUtil.isEmpty(ids)) {
+            return false;
+        }
+        StringBuilder sql = new StringBuilder("DELETE FROM " + tableName()
+                + " WHERE id IN (");
+        for (int i = 1; i <= ids.size(); i++) {
+            sql.append('?');
+            if (i < ids.size()) {
+                sql.append(',');
+            }
+        }
+        sql.append(')');
+        int result = DbQuery.get(databaseName()).update(sql.toString(), ids.toArray(new Object[ids.size()]));
+        if (cachedByID()) {
+            for (Long id : ids) {
+                CacheMgr.evict(cacheRegion(), String.valueOf(id));
+            }
+        }
+        return result > 0;
+    }
+
+
+    /**
+     * 批量插入数据(sql最大限制长度为8M,请根据sql长度节约使用)
+     *
+     * @param pojoList 列表
+     * @param <T>      实体
+     * @return 插入的数量
+     */
+    public <T extends Entity> int batchSave(List<T> pojoList) {
+        if (pojoList == null || pojoList.isEmpty()) {
+            return 0;
+        }
+        //列出每个实体的字段:值的map
+        List<Map<String, Object>> pojo_bean_list = pojoList
+                .stream()
+                .filter(pojo -> pojo != null)
+                .map(T::listInsertableFields)
+                .collect(Collectors.toList());
+        Map<String, Object> objectMap = pojo_bean_list.get(0);
+        String[] fields = objectMap.keySet().toArray(
+                new String[objectMap.size()]);
+
+        PreparedStatement ps = null;
+        try {
+            ps = DbQuery.get(databaseName()).conn().prepareStatement(BuildBatchSaveSql(fields, pojo_bean_list.size()),
+                    PreparedStatement.RETURN_GENERATED_KEYS);
+            int i = 0;
+            for (Map<String, Object> pojo_bean : pojo_bean_list) {
+                for (String field : fields) {
+                    ps.setObject(++i, pojo_bean.get(field));
+                }
+            }
+            return ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new DBException(e);
+        } finally {
+            DbUtils.closeQuietly(ps);
+        }
+    }
+
+    private String BuildBatchSaveSql(String[] fields, int listSize) {
+        StringBuilder sql = new StringBuilder("INSERT INTO ");
+        sql.append(tableName());
+        sql.append("(`");
+        for (int i = 0; i < fields.length; i++) {
+            if (i > 0) {
+                sql.append("`,`");
+            }
+            sql.append(StrUtil.toUnderlineCase(fields[i]));
+        }
+        sql.append("`) VALUES");
+        for (int j = 0; j < listSize; j++) {
+            sql.append("(");
+            for (int i = 0; i < fields.length; i++) {
+                if (i > 0) {
+                    sql.append(',');
+                }
+                sql.append('?');
+            }
+            sql.append(')');
+            sql.append(',');
+        }
+        return sql.substring(0, sql.lastIndexOf(","));
+    }
+
+    public boolean updateBatchById(List<? extends Entity> entities) {
+        for (Entity it : entities) {
+            it.doUpdate(true);
+        }
+        return true;
     }
 
     /**
@@ -248,8 +428,30 @@ public abstract class Entity implements Serializable {
      * @return
      */
     @SuppressWarnings("unchecked")
-    public <T extends Entity> T get(long id) {
-        if (id <= 0) {
+    public <T extends Entity> T get(Long id, Boolean fromCache) {
+        if (id == null || id <= 0) {
+            return null;
+        }
+
+        String sql = "SELECT * FROM " + rawTableName() + " WHERE id = ?";
+        if (!fromCache) {
+            return (T) DbQuery.get(databaseName()).read(getClass(), sql, id);
+        }
+        Cache cache = getClass().getAnnotation(Cache.class);
+        return (cache != null) ?
+                (T) DbQuery.get(databaseName()).read_cache(getClass(), cache.cacheNull(), cache.region(), String.valueOf(id), sql, id) :
+                (T) DbQuery.get(databaseName()).read(getClass(), sql, id);
+    }
+
+    /**
+     * 根据主键读取对象详细资料，根据预设方法自动判别是否需要缓存
+     *
+     * @param id
+     * @return
+     */
+    @SuppressWarnings("unchecked")
+    public <T extends Entity> T get(Long id) {
+        if (id == null || id <= 0) {
             return null;
         }
 
@@ -294,7 +496,7 @@ public abstract class Entity implements Serializable {
     }
 
     public List<? extends Entity> get(List<Long> ids) {
-        if (CollectionUtil.isEmpty(ids)) {
+        if (ids.isEmpty()) {
             return null;
         }
         StringBuilder sql = new StringBuilder("SELECT * FROM " + rawTableName() + " WHERE id IN (");
@@ -337,7 +539,7 @@ public abstract class Entity implements Serializable {
     @SuppressWarnings({"rawtypes"})
     public List loadList(List<? extends Number> p_pids) {
         if (CollectionUtil.isEmpty(p_pids)) {
-            return null;
+            return new ArrayList();
         }
         List<Long> pids_l = p_pids.stream().map(Number::longValue).collect(Collectors.toList());
         List<Long> pids = new LinkedList<>();
@@ -368,12 +570,12 @@ public abstract class Entity implements Serializable {
             }
         }
 
-        if (CollectionUtil.isEmpty(no_cache_ids)) {
+        if (no_cache_ids.isEmpty()) {
             return prjs;
         }
 
         List<? extends Entity> no_cache_prjs = get(no_cache_ids);
-        if (CollectionUtil.isNotEmpty(no_cache_ids)) {
+        if (!no_cache_ids.isEmpty()) {
             no_cache_prjs.stream().forEach(s -> {
                 prjs.set(pids.indexOf(s.getId()), s);
             });
@@ -451,10 +653,8 @@ public abstract class Entity implements Serializable {
      * @return 返回插入对象的主键
      */
     private long _InsertObject(Entity obj) {
-        obj.setCreate_time(new Date());
-        obj.setUpdate_time(new Date());
         Map<String, Object> pojo_bean = obj.listInsertableFields();
-        if (this.getId() > 0) {
+        if (this.getId() != null && this.getId() > 0) {
             pojo_bean.put("id", this.getId());
         }
         String[] fields = pojo_bean.keySet().stream().toArray(String[]::new);
@@ -468,7 +668,7 @@ public abstract class Entity implements Serializable {
             if (i > 0) {
                 sql.append("`,`");
             }
-            sql.append(fields[i]);
+            sql.append(StrUtil.toUnderlineCase(fields[i]));
         }
         //sql.append("\") VALUES(");
         sql.append("`) VALUES(");
@@ -486,7 +686,7 @@ public abstract class Entity implements Serializable {
             }
 
             ps.executeUpdate();
-            if (getId() > 0) {
+            if (getId() != null && getId() > 0) {
                 return getId();
             }
 
@@ -507,20 +707,27 @@ public abstract class Entity implements Serializable {
         Map<String, Object> props = new HashMap<>();
         try {
             PropertyDescriptor[] fields = Introspector.getBeanInfo(getClass()).getPropertyDescriptors();
+            Field[] declaredFields = this.getClass().getDeclaredFields();
+            Map<String, Boolean> fieldMap = new HashMap<>();
+            for (Field field : declaredFields) {
+                TableField annotation = field.getAnnotation(TableField.class);
+                if (annotation == null) {
+                    continue;
+                }
+                boolean exist = annotation.exist();
+                if (!exist) {
+                    fieldMap.put(field.getName().toLowerCase(), !exist);
+                }
+            }
             for (PropertyDescriptor field : fields) {
                 if ("class".equals(field.getName())) {
                     continue;
                 }
-                if (getId() == 0 && "id".equals(field.getName())) {
+                if (getId() != null && getId() == 0 && "id".equals(field.getName())) {
                     continue;
                 }
-                if ("vip_text".equalsIgnoreCase(field.getName())) {
-                    continue;
-                }
-                if ("sdf_insert_date".equalsIgnoreCase(field.getName())) {
-                    continue;
-                }
-                if ("sdf_last_date".equalsIgnoreCase(field.getName())) {
+                Boolean aBoolean = fieldMap.get(field.getName().toLowerCase());
+                if (aBoolean != null && aBoolean) {
                     continue;
                 }
                 Object fv = field.getReadMethod().invoke(this);
@@ -598,6 +805,15 @@ public abstract class Entity implements Serializable {
      * @return
      */
     public boolean doUpdate() {
+        return doUpdate(true);
+    }
+
+    /**
+     * 更新对象
+     *
+     * @return
+     */
+    public boolean doUpdate(boolean evict) {
         Map<String, Object> map = listInsertableFields();
         Object id = map.remove("id");
         Set<Map.Entry<String, Object>> entrys = map.entrySet();
@@ -605,18 +821,20 @@ public abstract class Entity implements Serializable {
         StringBuilder sql = new StringBuilder("update ").append(tableName()).append(" set ");
         int index = 0;
         for (Map.Entry<String, Object> entry : entrys) {
-            sql.append("`" + entry.getKey() + "`").append("=?,");
+            sql.append("`" + StrUtil.toUnderlineCase(entry.getKey()) + "`").append("=?,");
             params[index] = entry.getValue();
             index++;
         }
         sql.replace(sql.length() - 1, sql.length(), " where id=");
         sql.append(id);
-        CacheMgr.evict(this.CacheRegion(), String.valueOf(this.getId()));
+        if (evict) {
+            CacheMgr.evict(this.CacheRegion(), String.valueOf(this.getId()));
+        }
         return DbQuery.get(databaseName()).update(sql.toString(), params) > 0;
     }
 
 
-    public List<? extends Entity> Filter(String filter, int page, int size, Object... params) {
+    public List<? extends Entity> filter(String filter, int page, int size, Object... params) {
         String sql = "SELECT * FROM " + tableName();
         if (StringUtils.isNotBlank(filter)) {
             if (filter.toLowerCase().contains("where")) {
@@ -630,6 +848,21 @@ public abstract class Entity implements Serializable {
         }
         return DbQuery.get(databaseName()).query_slice(getClass(), sql, page, size, params);
     }
+
+    public Entity filterOne(String filter, Object params) {
+        String sql = "SELECT id FROM " + tableName();
+        if (StringUtils.isNotBlank(filter)) {
+            if (filter.toLowerCase().contains("where")) {
+                sql += filter;
+            } else {
+                sql += " WHERE " + filter;
+            }
+        }
+        sql += " LIMIT 1 ";
+        Long id = DbQuery.get(databaseName()).read(long.class, sql, params);
+        return get(id);
+    }
+
 
     /**
      * 根据条件获取id，再根据id获取该对象
@@ -665,7 +898,7 @@ public abstract class Entity implements Serializable {
             return null;
         }
         List<Number> numbers = DbQuery.get(databaseName()).query_slice(Number.class, sql, page, size, params);
-        if (CollectionUtil.isEmpty(numbers)) {
+        if (numbers.isEmpty()) {
             return null;
         }
         List<Long> ids = numbers.stream().map(Number::longValue).collect(Collectors.toList());

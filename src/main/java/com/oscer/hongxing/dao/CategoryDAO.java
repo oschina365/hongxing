@@ -32,7 +32,43 @@ public class CategoryDAO extends CommonDao<Category> {
         if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
-        List<Category> all = Category.ME.loadList(ids);
+        List<Category> categoryList = Category.ME.loadList(ids);
+        if (CollectionUtil.isEmpty(categoryList)) {
+            return null;
+        }
+        return buildCategoryList(categoryList);
+    }
+
+    /**
+     * 根据父类ident 查询分类列表
+     *
+     * @param type 分类类型（1=产品分类 2=案例分类 3=公司管理）
+     * @return {@link List}
+     */
+    public List<Category> childsByType(int type, String ident) {
+        String sql = "select id from " + Category.ME.rawTableName() + " where type=? and ident=? ";
+        Long id = getDbQuery().read(Long.class, sql, type, ident);
+        if (id == null || id <= 0L) {
+            return null;
+        }
+        sql = "select id from " + Category.ME.rawTableName() + " where parent_id=? ";
+        List<Long> ids = getDbQuery().query(Long.class, sql, id);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        List<Category> categoryList = Category.ME.loadList(ids);
+        return categoryList;
+    }
+
+    /**
+     * 构建分类
+     *
+     * @return {@link List}
+     */
+    public List<Category> buildCategoryList(List<Category> all) {
+        if (CollectionUtil.isEmpty(all)) {
+            return null;
+        }
         List<Category> first = new ArrayList<>();
         Map<Long, List<Category>> secondMap = new HashMap<>();
         for (Category category : all) {

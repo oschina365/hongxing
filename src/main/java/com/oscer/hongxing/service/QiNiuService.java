@@ -284,14 +284,14 @@ public class QiNiuService {
         return imgName.substring(pointIndex + 1);
     }
 
-    public String uploadFromThird(String content, String userId) {
+    public static String uploadFromThird(String content, String type) {
         Elements images = FormatUtil.getImages(content);
         if (images != null) {
             for (int i = 0; i < images.size(); i++) {
                 String imageUrl = images.get(i).attr("src");
-                String key = userId + QiNiuConstant.SEPARATOR_UNDERLINE + DateUtil.format(new Date(), DateUtil.YYYYMMDDHHMMSS) + QiNiuConstant.SEPARATOR_UNDERLINE + i + QiNiuConstant.SEPARATOR_DOT + getImageType(imageUrl);
-                JSONObject result = uploadFileByte(FormatUtil.getImageFromNetByUrl(imageUrl), key);
-                content = content.replaceAll("\\" + imageUrl, "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key"));
+                String newFileName = QiNiuConstant.BUCKET_HONGING + QiNiuConstant.QINIU_SLASH + type + QiNiuConstant.QINIU_SLASH + FileUtil.getFileName(imageUrl);
+                JSONObject result = uploadFileByte(FormatUtil.getImageFromNetByUrl(imageUrl), newFileName);
+                content = content.replaceAll( imageUrl, "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key"));
             }
         }
         return content;

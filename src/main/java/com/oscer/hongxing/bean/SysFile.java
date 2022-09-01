@@ -16,7 +16,6 @@ import java.util.Date;
 public class SysFile extends Entity {
 
     private static final long serialVersionUID = 1L;
-
     /**
      * 用户ID
      */

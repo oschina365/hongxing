@@ -76,158 +76,62 @@
             <div class="cp-l">
                 <h3>红鑫产品中心</h3>
                 <div class="lcc">
-                    <h4><a href="">按用途分类</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">总裁-总经理</a></li>
-                        <li class="lf"><a href="">总监-经理</a></li>
-                        <li><a href="">主管-职员</a></li>
-                        <li class="ts lf"><a href="">前台、公共休闲区</a></li>
-                        <li><a href="">会议室区域</a></li>
-                        <li class="lf"><a href="">接待洽谈区</a></li>
-                    </ul>
-                    <h4><a href="">按行业分类</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">政府机关</a></li>
-                        <li><a href="">事业单位</a></li>
-                        <li><a href="">公司企业</a></li>
-                        <li><a href="">学校家具</a></li>
-                        <li><a href="">酒店家具</a></li>
-                        <li><a href="">银行家具</a></li>
-                        <li><a href="">医院家具</a></li>
-                    </ul>
-                    <h4><a href="">大班台系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">板式大班台</a></li>
-                        <li><a href="">实木大班台</a></li>
-                        <li><a href="">板式中班台</a></li>
-                        <li><a href="">实木中班台</a></li>
-                    </ul>
-                    <h4><a href="">办公屏风系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">办公隔断卡座</a></li>
-                        <li><a href="">开放办公屏风</a></li>
-                        <li><a href="">钢架组合桌</a></li>
-                    </ul>
-                    <h4><a href="">办公桌系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">实木办公桌</a></li>
-                        <li><a href="">板式办公桌</a></li>
-                        <li><a href="">钢架办公桌</a></li>
-                    </ul>
-                    <h4><a href="">会议桌系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">实木会议桌</a></li>
-                        <li><a href="">板式会议桌</a></li>
-                        <li><a href="">培训桌</a></li>
-                        <li><a href="">演讲台</a></li>
-                        <li><a href="">洽谈桌</a></li>
-                        <li><a href="">主席台</a></li>
-                    </ul>
-                    <h4><a href="">办公椅系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">皮面大班椅</a></li>
-                        <li><a href="">网面大班椅</a></li>
-                        <li><a href="">转移</a></li>
-                        <li><a href="">固定椅</a></li>
-                        <li><a href="">休闲椅</a></li>
-                        <li><a href="">吧椅</a></li>
-                    </ul>
-                    <h4><a href="">文件柜系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">实木书柜</a></li>
-                        <li><a href="">板式书柜</a></li>
-                        <li><a href="">钢制文件柜</a></li>
-                        <li><a href="">钢制更衣柜</a></li>
-                        <li><a href="">地柜</a></li>
-                        <li><a href="">保险柜</a></li>
-                    </ul>
-                    <h4><a href="">办公前台系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">板式前台</a></li>
-                        <li><a href="">烤漆前台</a></li>
-                        <li><a href="">实木前台</a></li>
-                    </ul>
-                    <h4><a href="">沙发茶几系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">传统大气沙发</a></li>
-                        <li><a href="">时尚休闲沙发</a></li>
-                        <li><a href="">布艺沙发</a></li>
-                        <li><a href="">木茶几</a></li>
-                        <li><a href="">玻璃茶几</a></li>
-                    </ul>
-                    <h4><a href="">高隔断系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">高档加厚型</a></li>
-                        <li><a href="">经济普通型</a></li>
-                    </ul>
-                    <h4><a href="">办公装饰系列</a></h4>
-                    <ul class="clearfix">
-                        <li><a href="">办公地毯</a></li>
-                        <li><a href="">装饰灯</a></li>
-                        <li><a href="">装饰画</a></li>
-                    </ul>
+                    <#if categorys??>
+                        <#list categorys as category>
+                            <#if category?? && category.id gt 0>
+                                <#if !(category.name=='其它' || !(category.childs?? && (category.childs?size > 0)))>
+                                    <h4><a href="/categrory/${category.id}">${category.name}</a></h4>
+                                    <#if category.childs?? && (category.childs?size > 0) >
+                                        <ul class="clearfix">
+                                        <#list category.childs as child>
+                                            <li><a href="/categrory/${category.id}">${child.name}</a></li>
+                                        </#list>
+                                        </ul>
+                                    </#if>
+                                </#if>
+                            </#if>
+                        </#list>
+                    </#if>
                 </div>
             </div>
             <div class="cp-r">
                 <div class="r-t">
                     <ul>
-                        <li class="cur"><a href="">高管办公家具</a></li>
-                        <li><a href="">职员办公家具</a></li>
-                        <li><a href="">公共办公家具</a></li>
-                        <li><a href="">会议培训家具</a></li>
-                        <li class="none"><a href="">办公配套饰品</a></li>
+                        <#if categorys??>
+                            <#list categorys as category>
+                                <#if category?? && category.id gt 0>
+                                    <#if category.ident?? && category.ident=='other'>
+                                        <#if category.childs?? && (category.childs?size > 0) >
+                                            <ul class="clearfix">
+                                                <#list category.childs as child>
+                                                    <li><a href="/categrory/${category.id}">${child.name}</a></li>
+                                                </#list>
+                                            </ul>
+                                        </#if>
+                                    </#if>
+                                </#if>
+                            </#list>
+                        </#if>
                     </ul>
                     <em><a href="">更多>></a></em>
                 </div>
-                <div class="r-c">
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_10.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_12.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl class="none">
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_14.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
 
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_19.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_20.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl class="none">
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_21.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
+                <#if otherChilds??>
+                    <#list otherChilds as otherChild>
+                        <#if (otherChild?? && otherChild.id gt 0) && (otherChild.products?? && (otherChild.products?size > 0))>
+                            <div class="r-c pro_tab tabCat" <#if otherChild_index==0>style="display: block;"<#else >style="display: none;"</#if>>
+                                <#list otherChild.products as otherChildProduct>
+                                    <dl>
+                                        <dt><a href=""><img src="${otherChildProduct.thumbnail}" alt=""/></a></dt>
+                                        <dd><a href=""><b>${otherChildProduct.name}</b></a>
+                                            <p><span>产品尺寸：${otherChildProduct.size}</span></p></dd>
+                                    </dl>
+                                </#list>
+                            </div>
+                        </#if>
+                    </#list>
+                </#if>
 
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_25.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_26.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                    <dl class="none">
-                        <dt><a href=""><img src="Skins/Default/Img/index/cpp_27.jpg" alt=""/></a></dt>
-                        <dd><a href=""><b>冠臣新发现板式大班台</b></a>
-                            <p><span>边部铝合金材质封边，增加产品的现代感</span><span>产品尺寸：2600*2250*750</span></p></dd>
-                    </dl>
-                </div>
                 <div class="r-b">
                     <ul>
                         <li class="fl"><a href=""><img src="Skins/Default/Img/index/cpp_31.jpg" alt=""/></a></li>

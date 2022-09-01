@@ -11,7 +11,7 @@
     <groupId>com.oscer</groupId>
     <artifactId>hongxing</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>hongxing</name>
     <description>hongxing</description>
     <properties>

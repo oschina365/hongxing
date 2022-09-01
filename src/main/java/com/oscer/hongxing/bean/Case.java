@@ -5,33 +5,29 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 产品
+ * 案例
  *
  * @author kz
  * @create 2020-8-4 18:25:29
  **/
 @Data
-@Entity.Cache(region = "Product")
-public class Product extends Entity {
+@Entity.Cache(region = "Case")
+public class Case extends Entity {
 
-    public static final Product ME = new Product();
+    public static final Case ME = new Case();
 
     private String name;
     private Long category_id;
-    private String thumbnail;
-    private String link;
+    private String banner;
     private String tags;
-    private String size;
-    private String desc;
     private String page_template;
     private String content;
     private long sort;
     private String top;
     private String create_ip;
     private String update_ip;
+    private String desc;
 
     @TableField(exist = false)
     private String category_name;
-    @TableField(exist = false)
-    private List<String> imgUrls;
 }

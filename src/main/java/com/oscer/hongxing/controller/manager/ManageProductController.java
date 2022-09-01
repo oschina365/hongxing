@@ -4,11 +4,15 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Entity;
 import com.oscer.hongxing.bean.Product;
+import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.common.FormatUtil;
 import com.oscer.hongxing.common.IpUtil;
 import com.oscer.hongxing.dao.CategoryDAO;
+import com.oscer.hongxing.service.QiNiuService;
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,7 +56,26 @@ public class ManageProductController extends ManagerBaseController {
     @ResponseBody
     public ApiResult products_edit_post(Product product) {
         product.setCreate_ip(IpUtil.getIpAddress(request));
-        product.save();
+        product.setSort(System.currentTimeMillis());
+        product.setContent(QiNiuService.uploadFromThird(product.getContent(), "product"));
+
+        long productId = product.save();
+        Elements images = FormatUtil.getImages(product.getContent());
+        if (images != null) {
+            for (int i = 0; i < images.size(); i++) {
+                String imageUrl = images.get(i).attr("src");
+                if(i==0){
+                    product.setThumbnail(imageUrl);
+                    product.doUpdate(true);
+                }
+                ProductImage productImage = new ProductImage();
+                productImage.setProduct_id(productId);
+                productImage.setImage(imageUrl);
+                productImage.setSort(System.currentTimeMillis());
+                productImage.setCreate_ip(product.getCreate_ip());
+                productImage.save();
+            }
+        }
         return ApiResult.success();
     }
 
@@ -64,7 +87,7 @@ public class ManageProductController extends ManagerBaseController {
     @GetMapping("/manage/products")
     public String products() {
         request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
-        List<Product> list = (List<Product>) Product.ME.list();
+        List<Product> list = (List<Product>) Product.ME.list(true);
         if (CollectionUtil.isNotEmpty(list)) {
             for (Product product : list) {
                 Category category = Category.ME.get(product.getCategory_id());

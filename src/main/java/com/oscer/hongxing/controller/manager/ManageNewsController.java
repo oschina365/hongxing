@@ -1,8 +1,19 @@
 package com.oscer.hongxing.controller.manager;
 
+import com.oscer.hongxing.bean.Case;
+import com.oscer.hongxing.bean.ProductImage;
+import com.oscer.hongxing.common.ApiResult;
+import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.common.FormatUtil;
+import com.oscer.hongxing.common.IpUtil;
+import com.oscer.hongxing.dao.CategoryDAO;
+import com.oscer.hongxing.service.QiNiuService;
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 后台管理页面-资讯
@@ -26,7 +37,28 @@ public class ManageNewsController extends ManagerBaseController {
      */
     @GetMapping("/manage/news_edit")
     public String news_edit() {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
         return BASE_PAGE_URL + "news_edit";
+    }
+
+    /**
+     * 添加新闻
+     *
+     * @return
+     */
+    @PostMapping("/manage/news_edit_post")
+    @ResponseBody
+    public ApiResult news_edit_post(Case item) {
+        item.setCreate_ip(IpUtil.getIpAddress(request));
+        item.setSort(System.currentTimeMillis());
+        item.setContent(QiNiuService.uploadFromThird(item.getContent(), "product"));
+        Elements images = FormatUtil.getImages(item.getContent());
+        if (images != null) {
+            String imageUrl = images.get(0).attr("src");
+            item.setBanner(imageUrl);
+        }
+        item.save(true);
+        return ApiResult.success();
     }
 
     /**

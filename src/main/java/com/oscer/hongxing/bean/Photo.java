@@ -15,7 +15,6 @@ import java.util.Date;
 public class Photo extends Entity {
 
     public static final Photo ME = new Photo();
-
     private long user;
     private String url;
     private String remark;

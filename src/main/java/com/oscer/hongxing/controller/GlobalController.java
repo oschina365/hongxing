@@ -1,10 +1,19 @@
 package com.oscer.hongxing.controller;
 
+import cn.hutool.core.collection.CollectionUtil;
+import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Product;
+import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.CheckMobile;
 import com.oscer.hongxing.common.IpUtil;
+import com.oscer.hongxing.dao.CategoryDAO;
+import com.oscer.hongxing.dao.ProductDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author kz
@@ -28,6 +37,21 @@ public class GlobalController extends BaseController {
             log.info("{},来自移动端访问,ua={}", ipAddress, ua);
             return "index_mobile";
         }
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
+        List<Category> otherChilds = CategoryDAO.ME.childsByType(CategoryContants.Type.PRODUCT.getCode(), "other");
+        if (CollectionUtil.isNotEmpty(otherChilds)) {
+            List<Category> otherChildList = new ArrayList<>();
+            for (Category child : otherChilds) {
+                List<Product> products = ProductDAO.ME.listByCategory(child.getId());
+                if(CollectionUtil.isEmpty(products)){
+                    continue;
+                }
+                child.setProducts(products);
+                otherChildList.add(child);
+            }
+            request.setAttribute("otherChilds", otherChildList);
+        }
+        request.setAttribute("cases", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
         log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
     }

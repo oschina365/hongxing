@@ -21,4 +21,13 @@ public class ProductDAO extends CommonDao<Product> {
         return "mysql";
     }
 
+    public List<Product> listByCategory(Long categoryId) {
+        String sql = "select id from " + Product.ME.rawTableName() + " where category_id=?";
+        List<Long> ids = getDbQuery().query(Long.class, sql, categoryId);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        return Product.ME.loadList(ids);
+    }
+
 }
