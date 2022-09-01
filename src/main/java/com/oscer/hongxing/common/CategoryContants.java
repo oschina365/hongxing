@@ -24,7 +24,7 @@ public class CategoryContants {
         /**
          * 案例分类
          */
-        EXAMPLE(2, "案例分类"),
+        ARTICLE(2, "案例分类"),
         /**
          * 公司管理
          */

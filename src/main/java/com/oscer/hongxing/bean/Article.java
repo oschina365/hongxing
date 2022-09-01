@@ -2,8 +2,6 @@ package com.oscer.hongxing.bean;
 
 import lombok.Data;
 
-import java.util.List;
-
 /**
  * 案例
  *
@@ -11,10 +9,10 @@ import java.util.List;
  * @create 2020-8-4 18:25:29
  **/
 @Data
-@Entity.Cache(region = "Case")
-public class Case extends Entity {
+@Entity.Cache(region = "Article")
+public class Article extends Entity {
 
-    public static final Case ME = new Case();
+    public static final Article ME = new Article();
 
     private String name;
     private Long category_id;

@@ -191,7 +191,6 @@
 	ARR_IMG_PATH.push("${image}");
 	</#list>
 	</#if>
-
     window.jqzooms_ = false;
     var jqzooms = function (src) {
         if (!window.jqzooms_) {
@@ -359,36 +358,15 @@
             <h4 class='t06 f14 mt8'>相关资讯</h4>
             <div class='info_b2'>
                 <ul class='p_list_ul2'>
-                    <li>
-                        <a href='/Article/hbsjtystgsg.html' title='湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决'>湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决</a>
-                    </li>
-                    <li>
-                        <a href='/Article/hbwdlsswsc.html' title='和平大道湖北伟度律师事务所采购办公家具，红鑫提供一站式解决'>和平大道湖北伟度律师事务所采购办公家具，红鑫提供一站式解决</a>
-                    </li>
-                    <li>
-                        <a href='/Article/zgcbjtyjs.html' title='花山中船重工采购办公家具，红鑫提供一站式解决'>花山中船重工采购办公家具，红鑫提供一站式解决</a>
-                    </li>
-                    <li>
-                        <a href='/Article/zgtxjsdsgc.html' title='中国通信建设第三工程局家具配置案例'>中国通信建设第三工程局家具配置案例</a>
-                    </li>
-                    <li>
-                        <a href='/Article/hbsjtghsjyg.html' title='湖北省交通规划设计院股份有限公司家具配置案例'>湖北省交通规划设计院股份有限公司家具配置案例</a>
-                    </li>
-                    <li>
-                        <a href='/Article/rcfwjtjjpz.html' title='融创服务集团家具配置案例'>融创服务集团家具配置案例</a>
-                    </li>
-                    <li>
-                        <a href='/Article/whlfgtmyyx.html' title='林发钢铁贸易公司家具配置方案'>林发钢铁贸易公司家具配置方案</a>
-                    </li>
-                    <li>
-                        <a href='/Article/zzbgynxhcg.html' title='站着办公有哪些好处，关键点都在这！'>站着办公有哪些好处，关键点都在这！</a>
-                    </li>
-                    <li>
-                        <a href='/Article/zkyeyjjpzf.html' title='中科幼儿园家具配置方案'>中科幼儿园家具配置方案</a>
-                    </li>
-                    <li>
-                        <a href='/Article/whhfyhbgjj.html' title='武汉恒丰银行办公家具配置方案'>武汉恒丰银行办公家具配置方案</a>
-                    </li>
+                    <#if articleRandoms??>
+                        <#list articleRandoms as article>
+                            <#if article?? && article.id gt 0>
+                                <li>
+                                    <a href='/p/${article.id}' title='${article.name}'>${article.name}</a>
+                                </li>
+                            </#if>
+                        </#list>
+                    </#if>
                 </ul>
                 <div class='clear'></div>
             </div>

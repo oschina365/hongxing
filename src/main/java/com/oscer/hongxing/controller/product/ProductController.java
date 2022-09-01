@@ -7,6 +7,7 @@ import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.controller.BaseController;
+import com.oscer.hongxing.dao.ArticleDAO;
 import com.oscer.hongxing.dao.CategoryDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,6 +46,7 @@ public class ProductController extends BaseController {
             request.setAttribute("images", images);
             request.setAttribute("productImages", productImages);
         }
+        request.setAttribute("articleRandoms", ArticleDAO.ME.randomList(10));
         return "/product/index";
     }
 

@@ -51,7 +51,7 @@ public class GlobalController extends BaseController {
             }
             request.setAttribute("otherChilds", otherChildList);
         }
-        request.setAttribute("cases", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
+        request.setAttribute("cases", CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode()));
         log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
     }

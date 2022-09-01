@@ -1,10 +1,8 @@
 package com.oscer.hongxing.controller.manager;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.oscer.hongxing.bean.Case;
+import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Category;
-import com.oscer.hongxing.bean.Product;
-import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.FormatUtil;
@@ -42,7 +40,7 @@ public class ManageNewsController extends ManagerBaseController {
      */
     @GetMapping("/manage/news_edit")
     public String news_edit() {
-        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode()));
         return BASE_PAGE_URL + "news_edit";
     }
 
@@ -53,7 +51,7 @@ public class ManageNewsController extends ManagerBaseController {
      */
     @PostMapping("/manage/news_edit_post")
     @ResponseBody
-    public ApiResult news_edit_post(Case item) {
+    public ApiResult news_edit_post(Article item) {
         item.setCreate_ip(IpUtil.getIpAddress(request));
         item.setSort(System.currentTimeMillis());
         item.setContent(QiNiuService.uploadFromThird(item.getContent(), "product"));
@@ -73,10 +71,10 @@ public class ManageNewsController extends ManagerBaseController {
      */
     @GetMapping("/manage/news")
     public String news() {
-        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
-        List<Case> list = (List<Case>) Case.ME.list(true);
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode()));
+        List<Article> list = (List<Article>) Article.ME.list(true);
         if (CollectionUtil.isNotEmpty(list)) {
-            for (Case item : list) {
+            for (Article item : list) {
                 Category category = Category.ME.get(item.getCategory_id());
                 if (category != null) {
                     item.setCategory_name(category.getName());
