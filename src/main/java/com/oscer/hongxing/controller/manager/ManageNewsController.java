@@ -1,6 +1,9 @@
 package com.oscer.hongxing.controller.manager;
 
+import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Case;
+import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
@@ -14,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * 后台管理页面-资讯
@@ -68,6 +73,17 @@ public class ManageNewsController extends ManagerBaseController {
      */
     @GetMapping("/manage/news")
     public String news() {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.EXAMPLE.getCode()));
+        List<Case> list = (List<Case>) Case.ME.list(true);
+        if (CollectionUtil.isNotEmpty(list)) {
+            for (Case item : list) {
+                Category category = Category.ME.get(item.getCategory_id());
+                if (category != null) {
+                    item.setCategory_name(category.getName());
+                }
+            }
+        }
+        request.setAttribute("cases", list);
         return BASE_PAGE_URL + "news";
     }
 

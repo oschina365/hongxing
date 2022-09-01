@@ -104,7 +104,7 @@
                                         <#if category.childs?? && (category.childs?size > 0) >
                                             <ul class="clearfix">
                                                 <#list category.childs as child>
-                                                    <li><a href="/categrory/${category.id}">${child.name}</a></li>
+                                                    <li <#if child_index==0>class="cur" </#if>><a href="/categrory/${category.id}">${child.name}</a></li>
                                                 </#list>
                                             </ul>
                                         </#if>
@@ -121,9 +121,9 @@
                         <#if (otherChild?? && otherChild.id gt 0) && (otherChild.products?? && (otherChild.products?size > 0))>
                             <div class="r-c pro_tab tabCat" <#if otherChild_index==0>style="display: block;"<#else >style="display: none;"</#if>>
                                 <#list otherChild.products as otherChildProduct>
-                                    <dl>
-                                        <dt><a href=""><img src="${otherChildProduct.thumbnail}" alt=""/></a></dt>
-                                        <dd><a href=""><b>${otherChildProduct.name}</b></a>
+                                    <dl style="${otherChildProduct_index}" <#if (otherChildProduct_index+1)%3 ==0>class="none" </#if>>
+                                        <dt><a href="/product/${otherChildProduct.id}"><img src="${otherChildProduct.thumbnail}" alt=""/></a></dt>
+                                        <dd><a href="/product/${otherChildProduct.id}"><b>${otherChildProduct.name}</b></a>
                                             <p><span>产品尺寸：${otherChildProduct.size}</span></p></dd>
                                     </dl>
                                 </#list>
