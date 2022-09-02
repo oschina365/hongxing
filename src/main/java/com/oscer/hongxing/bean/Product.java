@@ -16,17 +16,34 @@ public class Product extends Entity {
 
     public static final Product ME = new Product();
 
+    /**
+     * 产品名称
+     */
     private String name;
+    /**
+     * 产品名称
+     */
     private Long category_id;
+    /**
+     * 产品名称
+     */
     private String thumbnail;
+    /**
+     * 产品名称
+     */
     private String link;
+    /**
+     * 产品名称
+     */
     private String tags;
     private String size;
     private String desc;
     private String page_template;
     private String content;
     private long sort;
-    private String top;
+    private int top;
+    private int cream;
+    private int recomm;
     private String create_ip;
     private String update_ip;
 

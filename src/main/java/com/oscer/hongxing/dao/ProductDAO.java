@@ -21,6 +21,32 @@ public class ProductDAO extends CommonDao<Product> {
         return "mysql";
     }
 
+    public List<Product> page(Long categoryId, String name, int page, int size) {
+        StringBuilder sb = new StringBuilder("select id from " + Product.ME.rawTableName() + " where 1=1 ");
+        if (categoryId != null && categoryId > 0L) {
+            sb.append(" and category_id = " + categoryId);
+        }
+        if (StrUtil.isNotBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
+        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        return Product.ME.loadList(ids);
+    }
+
+    public Long count(Long categoryId, String name) {
+        StringBuilder sb = new StringBuilder("select count(*) from " + Product.ME.rawTableName() + " where 1=1 ");
+        if (categoryId != null && categoryId > 0L) {
+            sb.append(" and category_id = " + categoryId);
+        }
+        if (StrUtil.isNotBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
+        return getDbQuery().read(Long.class, sb.toString());
+    }
+
     public List<Product> listByCategory(Long categoryId) {
         String sql = "select id from " + Product.ME.rawTableName() + " where category_id=?";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId);

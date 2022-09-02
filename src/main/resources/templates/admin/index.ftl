@@ -35,12 +35,6 @@
 					</li>
 				</ul>
 				<ul class="layui-nav topLevelMenus" pc>
-					<li class="layui-nav-item layui-this" data-menu="contentManagement">
-						<a href="javascript:;"><i class="layui-icon" data-icon="&#xe63c;">&#xe63c;</i><cite>内容管理</cite></a>
-					</li>
-					<li class="layui-nav-item" data-menu="memberCenter" pc>
-						<a href="javascript:;"><i class="seraph icon-icon10" data-icon="icon-icon10"></i><cite>用户中心</cite></a>
-					</li>
 					<li class="layui-nav-item" data-menu="systemeSttings" pc>
 						<a href="javascript:;"><i class="layui-icon" data-icon="&#xe620;">&#xe620;</i><cite>系统设置</cite></a>
 					</li>
@@ -88,7 +82,7 @@
 			<div class="navBar layui-side-scroll" id="navBar">
 				<ul class="layui-nav layui-nav-tree">
 					<li class="layui-nav-item layui-this">
-						<a href="javascript:;" data-url="page/main.html"><i class="layui-icon" data-icon=""></i><cite>后台首页</cite></a>
+						<a href="javascript:;" data-url="/menu/"><i class="layui-icon" data-icon=""></i><cite>后台菜单</cite></a>
 					</li>
 				</ul>
 			</div>
