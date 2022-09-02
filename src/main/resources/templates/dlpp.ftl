@@ -311,7 +311,6 @@
             } else {
                 $("#lefttuijian").hide();
             }
-            SetFenLei("21", {"||12||15||16||17||18||19||21||": "HZAL"}, "4");
         </script>
         <div class="g-bot">
             <div class="bot content">

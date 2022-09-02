@@ -102,9 +102,9 @@
                                 <#if category?? && category.id gt 0>
                                     <#if category.ident?? && category.ident=='other'>
                                         <#if category.childs?? && (category.childs?size > 0) >
-                                            <ul class="clearfix">
+                                            <ul class="clearfix otherProduct">
                                                 <#list category.childs as child>
-                                                    <li <#if child_index==0>class="cur" </#if>><a href="/categrory/${category.id}">${child.name}</a></li>
+                                                    <li data-index="${child_index}" <#if child_index==0>class="cur" </#if>><a href="/categrory/${category.id}">${child.name}</a></li>
                                                 </#list>
                                             </ul>
                                         </#if>
@@ -119,7 +119,7 @@
                 <#if otherChilds??>
                     <#list otherChilds as otherChild>
                         <#if (otherChild?? && otherChild.id gt 0) && (otherChild.products?? && (otherChild.products?size > 0))>
-                            <div class="r-c pro_tab tabCat" <#if otherChild_index==0>style="display: block;"<#else >style="display: none;"</#if>>
+                            <div class="r-c pro_tab tabCat otherProductChildTabCat otherProductChild_${otherChild_index}" <#if otherChild_index==0>style="display: block;"<#else >style="display: none;"</#if>>
                                 <#list otherChild.products as otherChildProduct>
                                     <dl style="${otherChildProduct_index}" <#if (otherChildProduct_index+1)%3 ==0>class="none" </#if>>
                                         <dt><a href="/product/${otherChildProduct.id}"><img src="${otherChildProduct.thumbnail}" alt=""/></a></dt>
@@ -144,12 +144,16 @@
     <div class="g-anal content">
         <div class="an-t">
             <span><a href="">大家都喜欢的案例</a></span>
-            <ul>
-                <li class="cur"><a href="">成功案例</a></li>
-                <li><a href="">政府机关案例</a></li>
-                <li><a href="">公司企业案例 </a></li>
-                <li><a href="">医疗教育案例</a></li>
-                <li class="none"><a href="">金融银行案例</a></li>
+            <ul class="successArticle">
+                <#if successArticles??>
+                    <#list successArticles as successArticle>
+                        <#if successArticle?? && successArticle.categoryId gt 0>
+                            <#if successArticle.articles?? && (successArticle.articles?size > 0) >
+                                <li data-index="${successArticle_index}" <#if successArticle_index==0>class="cur" </#if>><a href="">${successArticle.categoryName}</a></li>
+                            </#if>
+                        </#if>
+                    </#list>
+                </#if>
             </ul>
             <em><a href="">更多>></a></em>
         </div>
@@ -158,41 +162,41 @@
                 <a href=""><img src="Skins/Default/Img/index/two_13.jpg" alt=""/></a>
                 <b><a class="le" href="">案例精选</a><a class="ri" href="">更多>></a></b>
                 <ul>
-                    <li><a href="">【9.27】武汉宝马4S店设计</a></li>
-                    <li><a href="">【9.15】长沙天健地产</a></li>
-                    <li><a href="">【9.03】人和律师事务所</a></li>
-                    <li><a href="">【8.16】湖南广播电视台</a></li>
+                    <#if randomArticles??>
+                        <#list randomArticles as randomArticle>
+                            <#if randomArticle?? && randomArticle.id gt 0>
+                                <li style="table-layout:fixed;word-break:keep-all;white-space:nowrap;overflow:hidden; text-overflow:ellipsis; "><a href="/p/${randomArticle.id}">${randomArticle.name}</a></li>
+                            </#if>
+                        </#list>
+                    </#if>
                 </ul>
             </div>
             <div class="c-r">
-                <ul>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_07.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_09.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_11.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_18.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_19.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
-                    <li><a href=""><img src="Skins/Default/Img/index/two_20.jpg" alt=""/><span>武汉宝马4S店</span></a>
-                    </li>
+                    <#if successArticles??>
+                        <#list successArticles as successArticle>
+                            <#if successArticle?? && successArticle.categoryId gt 0>
+                                <#if successArticle.articles?? && (successArticle.articles?size > 0) >
+                                    <div class="c-r pro_tab tabCat successArticleTabCat successArticleChild_${successArticle_index}" <#if successArticle_index==0>style="display: block;"<#else >style="display: none;"</#if>>
+                                        <ul>
+                                            <#list successArticle.articles as successArticleItem>
+                                                <li><a target="_blank" href="/p/${successArticleItem.articleId}"><img src="${successArticleItem.image}" alt=""/><span>${successArticleItem.name}</span></a>
+                                            </#list>
+                                        </ul>
+                                    </div>
+                                </#if>
+                            </#if>
+                        </#list>
+                    </#if>
                 </ul>
             </div>
         </div>
         <div class="an-b">
             <ul>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_06.png" alt=""/><span><b>免费</b>上门量尺</span></a>
-                </li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_09.png" alt=""/><span><b>免费</b>量身定制</span></a>
-                </li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_11.png"
-                                    alt=""/><span><b>免费</b>出3D效果图</span></a></li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_13.png" alt=""/><span><b>免费</b>上门安装</span></a>
-                </li>
-                <li class="none"><a href=""><img src="Skins/Default/Img/index/gmg_15.png"
-                                                 alt=""/><span><b>免费</b>保修，终身维护</span></a></li>
+                <li><a href=""><img src="Skins/Default/Img/index/gmg_06.png" alt=""/><span><b>免费</b>上门量尺</span></a></li>
+                <li><a href=""><img src="Skins/Default/Img/index/gmg_09.png" alt=""/><span><b>免费</b>量身定制</span></a></li>
+                <li><a href=""><img src="Skins/Default/Img/index/gmg_11.png" alt=""/><span><b>免费</b>出3D效果图</span></a></li>
+                <li><a href=""><img src="Skins/Default/Img/index/gmg_13.png" alt=""/><span><b>免费</b>上门安装</span></a></li>
+                <li class="none"><a href=""><img src="Skins/Default/Img/index/gmg_15.png" alt=""/><span><b>免费</b>保修，终身维护</span></a></li>
             </ul>
         </div>
     </div>
@@ -211,8 +215,8 @@
                                         alt=""/><span><b>汉口体验馆</b>  027-83939586</span></a></li>
                 </ul>
                 <dl>
-                    <dt><a href=""><img src="Skins/Default/Img/index/th_12.jpg" alt=""/></a></dt>
-                    <dd><a href="">点击获取体验馆详细地址</a></dd>
+                    <dt><a href="/zyzt"><img src="Skins/Default/Img/index/th_12.jpg" alt=""/></a></dt>
+                    <dd><a href="/zyzt">点击获取体验馆详细地址</a></dd>
                 </dl>
             </div>
         </div>
@@ -243,6 +247,7 @@
                 <dd><p>O2O<span>一站式体验</span>，免费上门量尺，<span>免费</span>出3D效果图，免费制作配套方案</p>
                     <p><span>一对一</span>对接服务</p>
                     <p><span>免费</span>上门安装，免费维修，终身维护</p>
+                    <#--https://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107-->
                     <p>24小时无忧售后</p><a href=""><em>立即咨询</em></a></dd>
             </dl>
         </div>
@@ -320,4 +325,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $('.otherProduct li').mouseover(function() {
+            $('.otherProduct li').removeClass("cur");
+            $(this).attr("class","cur")
+            $(".otherProductChildTabCat").hide();
+            $(".otherProductChild_"+$(this).data("index")).show();
+        });
+
+        $('.successArticle li').mouseover(function() {
+            $('.successArticle li').removeClass("cur");
+            $(this).attr("class","cur")
+            $(".successArticleTabCat").hide();
+            $(".successArticleChild_"+$(this).data("index")).show();
+        });
+    </script>
 </@html>

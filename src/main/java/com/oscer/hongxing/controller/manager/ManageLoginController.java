@@ -64,7 +64,7 @@ public class ManageLoginController extends ManagerBaseController {
             return ApiResult.failWithMessage("用户不存在");
         }
 
-        if (!StrUtil.equals(user.getSalt(), AESUtils.encryptShop(password, user.getPhone()))) {
+        if (!StrUtil.equals(user.getSalt(), AESUtils.Encrypt(password, AESUtils.KEY))) {
             return ApiResult.failWithMessage("密码不对");
         }
         //登录

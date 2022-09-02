@@ -1,5 +1,8 @@
 package com.oscer.hongxing.common;
 
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
@@ -11,93 +14,74 @@ import java.util.Base64;
  */
 public class AESUtils {
 
-    /**
-     * 密钥
-     */
-    public static String key1 = "shoppassword_key";
-    /**
-     * 密钥
-     */
-    public static String key2 = "shop";
+    public static final String KEY = "hongxin_20220902";
 
-    private static String charset = "utf-8";
-
-    /**
-     * 偏移量
-     */
-    private static int offset = 16;
-
-    private static String transformation = "AES/CBC/PKCS5Padding";
-
-    private static String algorithm = "AES";
-
-    /**
-     * 加密
-     *
-     * @param content 需要加密的内容
-     * @param key     加密密码
-     * @return
-     */
-    public static String encrypt(String content, String key) {
-        try {
-            SecretKeySpec skey = new SecretKeySpec(key.getBytes(), algorithm);
-            IvParameterSpec iv = new IvParameterSpec(key.getBytes(), 0, offset);
-            Cipher cipher = Cipher.getInstance(transformation);
-            byte[] byteContent = content.getBytes(charset);
-            // 初始化
-            cipher.init(Cipher.ENCRYPT_MODE, skey, iv);
-            byte[] result = cipher.doFinal(byteContent);
-            // 加密
-            return Base64.getEncoder().encodeToString(result);
-        } catch (Exception e) {
-            e.printStackTrace();
+    // 加密
+    public static String Encrypt(String sSrc, String sKey) throws Exception {
+        if (sKey == null) {
+            System.out.print("Key为空null");
+            return null;
         }
-        return null;
+        // 判断Key是否为16位
+        if (sKey.length() != 16) {
+            System.out.print("Key长度不是16位");
+            return null;
+        }
+        byte[] raw = sKey.getBytes("utf-8");
+        SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");//"算法/模式/补码方式"
+        cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
+        byte[] encrypted = cipher.doFinal(sSrc.getBytes("utf-8"));
+        return new BASE64Encoder().encode(encrypted);//此处使用BASE64做转码功能，同时能起到2次加密的作用。
     }
 
-    /**
-     * AES（256）解密
-     *
-     * @param content 待解密内容
-     * @param key     解密密钥
-     * @return 解密之后
-     * @throws Exception
-     */
-    public static String decrypt(String content, String key) {
+    // 解密
+    public static String Decrypt(String sSrc, String sKey) throws Exception {
         try {
-
-            SecretKeySpec skey = new SecretKeySpec(key.getBytes(), algorithm);
-            IvParameterSpec iv = new IvParameterSpec(key.getBytes(), 0, offset);
-            Cipher cipher = Cipher.getInstance(transformation);
-            // 初始化
-            cipher.init(Cipher.DECRYPT_MODE, skey, iv);
-            byte[] result = cipher.doFinal(Base64.getDecoder().decode(content));
-            // 解密
-            return new String(result);
-        } catch (Exception e) {
-            e.printStackTrace();
+            // 判断Key是否正确
+            if (sKey == null) {
+                System.out.print("Key为空null");
+                return null;
+            }
+            // 判断Key是否为16位
+            if (sKey.length() != 16) {
+                System.out.print("Key长度不是16位");
+                return null;
+            }
+            byte[] raw = sKey.getBytes("utf-8");
+            SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+            Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec);
+            byte[] encrypted1 = new BASE64Decoder().decodeBuffer(sSrc);//先用base64解密
+            try {
+                byte[] original = cipher.doFinal(encrypted1);
+                String originalString = new String(original, "utf-8");
+                return originalString;
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                return null;
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+            return null;
         }
-        return null;
     }
 
     public static void main(String[] args) throws Exception {
-        String phone = "18671310745";
-        String encrypt1 = encrypt("Kz123456", key1);
-        System.out.println(encrypt1);
-        String encrypt2 = encrypt(encrypt1, phone + "#" + key2);
-        System.out.println(encrypt2);
-        String decrypt3 = decrypt(encrypt2, phone + "#" + key2);
-        System.out.println(decrypt3);
-        String decrypt4 = decrypt("/Ffn1mlEwqQ3LYlBHLEkhA==", key1);
-        System.out.println(decrypt4);
+        /*
+         * 此处使用AES-128-ECB加密模式，key需要为16位。
+         */
+        // 需要加密的字串
+        String cSrc = "hx6188";
+        System.out.println(cSrc);
+        // 加密
+        String enString = Encrypt(cSrc, KEY);
+        System.out.println("加密后的字串是：" + enString);
+
+        // 解密
+        String DeString = Decrypt(enString, KEY);
+        System.out.println("解密后的字串是：" + DeString);
     }
 
 
-    public static String encryptShop(String decrypt1, String phone) {
-        return encrypt(decrypt1, phone + "#" + key2);
-    }
-
-    public static String decryptShop(String decrypt) {
-        return decrypt(decrypt, key1);
-    }
 }

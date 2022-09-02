@@ -16,6 +16,15 @@ public class ArticleDAO extends CommonDao<Article> {
         return "mysql";
     }
 
+    public List<Article> listLimitByCategory(Long categoryId, int limit) {
+        String sql = "select id from " + Article.ME.rawTableName() + " where category_id=? limit ?";
+        List<Long> ids = getDbQuery().query(Long.class, sql, categoryId, limit);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        return Article.ME.loadList(ids);
+    }
+
     public List<Article> randomList(int limit) {
         String sql = "select id from " + Article.ME.rawTableName() + " ORDER BY RAND() LIMIT ? ";
         List<Long> ids = getDbQuery().query(Long.class, sql, limit);

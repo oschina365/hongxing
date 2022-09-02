@@ -30,4 +30,13 @@ public class ProductDAO extends CommonDao<Product> {
         return Product.ME.loadList(ids);
     }
 
+    public List<Product> listLimitByCategory(Long categoryId, int limit) {
+        String sql = "select id from " + Product.ME.rawTableName() + " where category_id=? limit ?";
+        List<Long> ids = getDbQuery().query(Long.class, sql, categoryId, limit);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        return Product.ME.loadList(ids);
+    }
+
 }

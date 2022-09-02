@@ -1,17 +1,22 @@
 package com.oscer.hongxing.controller;
 
 import cn.hutool.core.collection.CollectionUtil;
+import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.CheckMobile;
 import com.oscer.hongxing.common.IpUtil;
+import com.oscer.hongxing.dao.ArticleDAO;
 import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ProductDAO;
+import com.oscer.hongxing.vo.ArticleSuccessVO;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +48,7 @@ public class GlobalController extends BaseController {
             List<Category> otherChildList = new ArrayList<>();
             for (Category child : otherChilds) {
                 List<Product> products = ProductDAO.ME.listByCategory(child.getId());
-                if(CollectionUtil.isEmpty(products)){
+                if (CollectionUtil.isEmpty(products)) {
                     continue;
                 }
                 child.setProducts(products);
@@ -51,7 +56,32 @@ public class GlobalController extends BaseController {
             }
             request.setAttribute("otherChilds", otherChildList);
         }
-        request.setAttribute("cases", CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode()));
+        List<Category> successArticles = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), "success_article");
+        if (CollectionUtil.isNotEmpty(successArticles)) {
+            List<ArticleSuccessVO> articleSuccessVOS = new ArrayList<>();
+            for (Category successArticle : successArticles) {
+                Long categoryId = successArticle.getId();
+                String categoryName = successArticle.getName();
+                ArticleSuccessVO vo = new ArticleSuccessVO();
+                vo.setCategoryId(categoryId);
+                vo.setCategoryName(categoryName);
+                List<Article> articles = ArticleDAO.ME.listLimitByCategory(categoryId, 6);
+                if (CollectionUtil.isNotEmpty(articles)) {
+                    List<ArticleSuccessVO.Articles> articlesList = new ArrayList<>();
+                    for (Article article : articles) {
+                        ArticleSuccessVO.Articles item = new ArticleSuccessVO.Articles();
+                        item.setImage(article.getBanner());
+                        item.setArticleId(article.getId());
+                        item.setName(article.getName());
+                        articlesList.add(item);
+                    }
+                    vo.setArticles(articlesList);
+                }
+                articleSuccessVOS.add(vo);
+            }
+            request.setAttribute("successArticles", articleSuccessVOS);
+        }
+        request.setAttribute("randomArticles", ArticleDAO.ME.randomList(4));
         log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
     }
@@ -63,6 +93,9 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/gcal")
     public String gcal() {
+        List<Category> categorys = CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode());
+
+        request.setAttribute("categorys", categorys);
         return "cgal";
     }
 
