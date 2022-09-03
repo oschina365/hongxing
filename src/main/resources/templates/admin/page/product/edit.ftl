@@ -92,6 +92,6 @@
 	</div>
 </form>
 <script type="text/javascript" src="../../../static/admin/layui/layui.js"></script>
-<script type="text/javascript" src="../../../static/admin/js/productAdd.js"></script>
+<script type="text/javascript" src="../../../static/admin/js/productEdit.js"></script>
 </body>
 </html>

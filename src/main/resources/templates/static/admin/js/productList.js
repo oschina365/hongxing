@@ -1,9 +1,10 @@
-layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
+layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function () {
     var form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         $ = layui.jquery,
         laydate = layui.laydate,
         laytpl = layui.laytpl,
+        layedit = layui.layedit,
         table = layui.table;
 
     //产品列表
@@ -112,7 +113,8 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl'], function () {
                 if (edit) {
                     body.find(".productName").val(edit.name);  //登录名
                     body.find(".productDesc").val(edit.desc);  //邮箱
-                    body.find(".product_content").val(edit.content);  //邮箱
+                    body.find(".product_content").val(111111111);  //邮箱
+                    layedit.build('product_content');  //渲染 build
                     body.find(".userSex input[value=" + edit.userSex + "]").prop("checked", "checked");  //性别
                     body.find(".userGrade").val(edit.userGrade);  //会员等级
                     body.find(".userStatus").val(edit.userStatus);    //用户状态

@@ -6,10 +6,7 @@ import com.oscer.hongxing.common.R;
 import com.oscer.hongxing.dao.ProductDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,6 +37,19 @@ public class AdminProductController extends AdminBaseController {
         List<Product> products = ProductDAO.ME.page(categoryId, name, page, limit);
         Long count = ProductDAO.ME.count(categoryId, name);
         return R.ok(products, count);
+    }
+
+    /**
+     * 产品列表分页查询
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/{id}")
+    @ResponseBody
+    public String edit(@PathVariable Long id) {
+        request.setAttribute("product",Product.ME.get(id));
+        return ADMIN_BASE_PAGE + "product/edit";
     }
 
 }
