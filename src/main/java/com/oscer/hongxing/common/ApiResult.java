@@ -2,6 +2,8 @@ package com.oscer.hongxing.common;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -28,6 +30,21 @@ public class ApiResult<T> {
         this.time = new Date();
     }
 
+    public ApiResult(int code, String message, Object list, Long count) {
+
+        this.code = code;
+        this.message = message;
+        this.result = (T) new MapData(list, count);
+        this.time = new Date();
+    }
+
+    @Data
+    @AllArgsConstructor
+    public static class MapData {
+        private Object list;
+        private Long count;
+    }
+
     public static ApiResult success() {
         return new ApiResult(success, "success", null);
     }
@@ -38,6 +55,10 @@ public class ApiResult<T> {
 
     public static ApiResult successWithObject(Object object, String message) {
         return new ApiResult(success, message, object);
+    }
+
+    public static ApiResult successWithMapData(Object list, Long count, String message) {
+        return new ApiResult(success, message, list, count);
     }
 
     public static ApiResult successWithObject(Object object) {

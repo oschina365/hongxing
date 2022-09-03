@@ -4,6 +4,7 @@ package com.oscer.hongxing.dao;
 import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Product;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -50,6 +51,19 @@ public class ArticleDAO extends CommonDao<Article> {
             return null;
         }
         return Article.ME.get(id);
+    }
+
+    public List<Article> page(List<Long> categoryIds, int page, int size) {
+        StringBuilder sb = new StringBuilder("select id from " + Article.ME.rawTableName());
+        sb.append(" where category_id in(?) order by sort asc ");
+        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size, StringUtils.join(categoryIds, ","));
+        return Article.ME.loadList(ids);
+    }
+
+    public long count(List<Long> categoryIds) {
+        StringBuilder sb = new StringBuilder("select count(*) from " + Article.ME.rawTableName());
+        sb.append(" where category_id in(?) order by sort asc ");
+        return getDbQuery().read(Long.class, sb.toString(), StringUtils.join(categoryIds, ","));
     }
 
 }

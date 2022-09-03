@@ -23,13 +23,22 @@ public class Category extends Entity implements Serializable {
     }
 
     /**
+     * 新闻资讯
+     */
+    public static final transient String NEWS_ARTICLE = "news_article";
+    /**
+     * 成功案例标识
+     */
+    public static final transient String SUCCESS_ARTICLE = "success_article";
+
+    /**
      * 第一级分类最大的sort值
      */
-    public static final String MAX_SORT_FIRST = "firstSort";
+    public static final transient String MAX_SORT_FIRST = "firstSort";
     /**
      * 第二级分类最大的sort值
      */
-    public static final String MAX_SORT_SECOND = "secondSort";
+    public static final transient String MAX_SORT_SECOND = "secondSort";
 
     /**
      * 分类名称

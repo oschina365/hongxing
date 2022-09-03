@@ -21,6 +21,32 @@ public class CategoryDAO extends CommonDao<Category> {
     }
 
     /**
+     * 通过分类的ident查询一条数据
+     *
+     * @param ident 分类ident
+     * @return {@link Category}
+     */
+    public Category getByIdent(String ident) {
+        String sql = "select id from " + Category.ME.rawTableName() + " where ident=? limit 1";
+        return Category.ME.get(getDbQuery().read(Long.class, sql, ident));
+    }
+
+    /**
+     * 根据父类id 查询分类列表
+     *
+     * @return {@link List}
+     */
+    public List<Category> childsByParentId(Long parentId) {
+        String sql = "select id from " + Category.ME.rawTableName() + " where parent_id=? ";
+        List<Long> ids = getDbQuery().query(Long.class, sql, parentId);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        List<Category> categoryList = Category.ME.loadList(ids);
+        return categoryList;
+    }
+
+    /**
      * 根据type查询分类列表
      *
      * @param type 分类类型（1=产品分类 2=案例分类 3=公司管理）

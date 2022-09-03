@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class GlobalController extends BaseController {
             }
             request.setAttribute("otherChilds", otherChildList);
         }
-        List<Category> successArticles = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), "success_article");
+        List<Category> successArticles = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.SUCCESS_ARTICLE);
         if (CollectionUtil.isNotEmpty(successArticles)) {
             List<ArticleSuccessVO> articleSuccessVOS = new ArrayList<>();
             for (Category successArticle : successArticles) {
@@ -92,10 +93,12 @@ public class GlobalController extends BaseController {
      * @return
      */
     @GetMapping("/gcal")
-    public String gcal() {
-        List<Category> categorys = CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode());
-
-        request.setAttribute("categorys", categorys);
+    public String gcal(@RequestParam(value = "id", required = false) Long id) {
+        List<Category> successArticleCategorys = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.SUCCESS_ARTICLE);
+        List<Category> newsArticleCategorys = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.NEWS_ARTICLE);
+        request.setAttribute("successArticleCategorys", successArticleCategorys);
+        request.setAttribute("newsArticleCategorys", newsArticleCategorys);
+        request.setAttribute("currentCategoryId", id);
         return "cgal";
     }
 

@@ -271,7 +271,7 @@
                     <div class="propar" style="text-align: center; padding-top: 20px;">
                         <div class="proparp">
                             <a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" title="立即咨询">
-                                <img style="border: 0" src="/Skins/default/img/buynowsmalls.gif" alt="立即咨询" />
+                                <img style="border: 0" src="/skins/default/img/buynowsmalls.gif" alt="立即咨询" />
                             </a>
                         </div>
                     </div>

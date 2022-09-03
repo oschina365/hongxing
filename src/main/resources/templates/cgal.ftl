@@ -88,214 +88,37 @@
             <div class="right">
                 <div class="righttop"></div>
                 <div class="right_main">
-
                     <div class="plc">
                         <span class="red_x">当前位置：</span>
                         <a href="/" title="首页">首页</a>
                         &raquo; <a href="/gcal" title="成功案例">成功案例</a>
                     </div>
                     <div class="news_con News_4 News_4_12">
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/hbfhszyljg.html" title="湖北凡华市政园林景观办公家具工程案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220706151410_7337.jpg" alt="湖北凡华市政园林景观办公家具工程案例" title="湖北凡华市政园林景观办公家具工程案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/hbfhszyljg.html" title=" 湖北凡华市政园林景观办公家具工程案例  " target="_blank"> 湖北凡华市政园林景观办公家具工程案例 </a>
-                                </h4>
-                                <p>
-                                    湖北凡华市政园林景观工程有限公司成立于2004年06月14日，注册地位于武汉市东西湖区吴家山。经营范围包括许可项目：建设工程施工；建设工程设计；施工专业作业；建筑智能化系统设计；建筑劳务分包；住宅室内装饰装修...</p>
-                                <span>
-									<a href="/Article/hbfhszyljg.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/whshcgdqcb.html" title="武汉市惠驰广迪汽车办公家具工程案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220610144310_7776.jpg" alt="武汉市惠驰广迪汽车办公家具工程案例" title="武汉市惠驰广迪汽车办公家具工程案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/whshcgdqcb.html" title=" 武汉市惠驰广迪汽车办公家具工程案例  " target="_blank"> 武汉市惠驰广迪汽车办公家具工程案例 </a>
-                                </h4>
-                                <p>
-                                    武汉市惠驰广迪汽车销售服务有限公司成立于2021年11月25日，注册地位于湖北省武汉市江夏区。经营范围包括一般项目：新能源汽车整车销售；汽车新车销售；小微型客车租赁经营服务；充电桩销售；机动车充电销售；电动汽...</p>
-                                <span>
-									<a href="/Article/whshcgdqcb.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/hbdyxclkjy.html" title="湖北大禹新材料科技有限公司办公家具案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220610105419_4252.jpg" alt="湖北大禹新材料科技有限公司办公家具案例" title="湖北大禹新材料科技有限公司办公家具案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/hbdyxclkjy.html" title=" 湖北大禹新材料科技有限公司办公家具案例  " target="_blank"> 湖北大禹新材料科技有限公司办公家具案例 </a>
-                                </h4>
-                                <p>湖北大禹新材料科技有限公司创立于1992年，是是一家集研发、生产、销售、施工为一体的产销型企业
-                                    湖北大禹新材料科技有限公司旗下防水材料品牌 “大禹神工” 位列中国建筑防水行业二十强，且在全国连锁店已经发展到...</p>
-                                <span>
-									<a href="/Article/hbdyxclkjy.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/whqstsgjja.html" title="武汉青山图书馆家具案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220609175446_1463.jpg" alt="武汉青山图书馆家具案例" title="武汉青山图书馆家具案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/whqstsgjja.html" title=" 武汉青山图书馆家具案例  " target="_blank"> 武汉青山图书馆家具案例 </a>
-                                </h4>
-                                <p>
-                                    青山区图书馆始建于1978年8月。現地址：青山区建设九路11附24号，馆舍面积3200平方米（属过渡阶段，将于2018年4月迁至位于青山区建设五路的新馆，7500平方米）。馆内设成人报利阅览室、成人外借室、少儿外借阅覺室、...</p>
-                                <span>
-									<a href="/Article/whqstsgjja.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/whzlxfjryx.html" title="武汉招联消费金融有限公司家具案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220706152735_7938.jpg" alt="武汉招联消费金融有限公司家具案例" title="武汉招联消费金融有限公司家具案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/whzlxfjryx.html" title=" 武汉招联消费金融有限公司家具案例  " target="_blank"> 武汉招联消费金融有限公司家具案例 </a>
-                                </h4>
-                                <p>
-                                    招联消费金融有限公司（简称“招联金融”）成立于2015年3月，是经中国银保监会批准、由招商银行和中国联通共同组建的持牌消费金融公司，注册地址位于深圳前海，注册资本100亿元，主要业务指标保持行业领先。公司旗下...</p>
-                                <span>
-									<a href="/Article/whzlxfjryx.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/zqctbgjjgc.html" title="中青城投办公家具工程案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220323114823_1188.jpg" alt="中青城投办公家具工程案例" title="中青城投办公家具工程案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/zqctbgjjgc.html" title=" 中青城投办公家具工程案例  " target="_blank"> 中青城投办公家具工程案例 </a>
-                                </h4>
-                                <p>
-                                    中青城投旅游集团有限公司于2016年06月02日成立。公司经营范围包括：境内旅游业务、入境旅游业务；组织文化艺术交流活动（不含演出）；企业管理；技术开发、技术推广、技术服务；旅游信息咨询；会议服务；承办展览展...</p>
-                                <span>
-									<a href="/Article/zqctbgjjgc.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/hbfrekjyxg.html" title="湖北富瑞尔科技有限公司办公家具工程案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20220319100449_7652.jpg" alt="湖北富瑞尔科技有限公司办公家具工程案例" title="湖北富瑞尔科技有限公司办公家具工程案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/hbfrekjyxg.html" title=" 湖北富瑞尔科技有限公司办公家具工程案例  " target="_blank"> 湖北富瑞尔科技有限公司办公家具工程案例 </a>
-                                </h4>
-                                <p>湖北富瑞尔科技有限公司于2008年03月10日在武汉东湖新技术开发区登记成立。法定代表人张晓东，公司经营范围包括软件产品开发与销售；信息工程建设；空间数据加工等。</p>
-                                <span>
-									<a href="/Article/hbfrekjyxg.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/whgckjxybg.html" title="武汉工程科技学院办公家具工程案例" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20211226162959_3908.jpg" alt="武汉工程科技学院办公家具工程案例" title="武汉工程科技学院办公家具工程案例" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/whgckjxybg.html" title=" 武汉工程科技学院办公家具工程案例  " target="_blank"> 武汉工程科技学院办公家具工程案例 </a>
-                                </h4>
-                                <p>武汉工程科技学院（英文：Wuhan University of Engineering
-                                    Science）位于湖北省武汉市，创建于2004年2月，是一所经教育部批准的普通本科高校，学校位于湖北武汉。2014年5月，经教育部批准转设为武汉工程科技学院。2...</p>
-                                <span>
-									<a href="/Article/whgckjxybg.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
-                        <dl class="HZAL4 news_hover4">
-                            <dt>
-                                <a href="/Article/whwsdwlhxw.html" title="武汉微思敦网络，红鑫完美打造固装家具" target="_blank">
-                                    <img src="/uploadfiles/pictures/news/20210923174040_0374.jpg" alt="武汉微思敦网络，红鑫完美打造固装家具" title="武汉微思敦网络，红鑫完美打造固装家具" />
-                                </a>
-                            </dt>
-                            <dd>
-                                <h4>
-                                    <a href="/Article/whwsdwlhxw.html" title=" 武汉微思敦网络，红鑫完美打造固装家具  " target="_blank"> 武汉微思敦网络，红鑫完美打造固装家具 </a>
-                                </h4>
-                                <p>项目名称：武汉微思敦网络技术有限公司 项目实施：武汉红鑫家俱有限公司
-                                    项目简介：武汉微思敦网络技术有限公司于2013年12月12日在武汉市江岸区工商行政管理局登记成立。法定代表人张先锋，公司经营范围包括计算机网...</p>
-                                <span>
-									<a href="/Article/whwsdwlhxw.html" target="_blank" title="查看详情">查看详情 >></a>
-								</span>
-                            </dd>
-                        </dl>
+                        <input type="hidden" id="currentCategoryId" value="${currentCategoryId!''}"/>
+                        <div id="successArticleListDiv"></div>
                         <div class="clear"></div>
-
-                        <div id="pagerMain" class="apage">
-                            <span class="cust_txt">记录总数：137 | 页数：16</span>
-                            <a class="oran_pg_fp" href="/cgal-1.html" title="首页">首页</a>
-                            <a class="oran_pg_pp" href="javascript:void(0);" title="上一页">上一页</a>
-                            <a href="javascript:;" class="cur">1</a>
-                            <a href="/cgal-2.html" title="第2页">2</a>
-                            <a href="/cgal-3.html" title="第3页">3</a>
-                            <a href="/cgal-4.html" title="第4页">4</a>
-                            <a href="/cgal-5.html" title="第5页">5</a>
-                            <a href="/cgal-6.html" title="第6页">6</a>
-                            <a href="/cgal-7.html" title="第7页">7</a>
-                            <a href="/cgal-8.html" title="第8页">8</a>
-                            <a href="/cgal-9.html" title="第9页">9</a>
-                            <a href="/cgal-10.html" title="第10页">10</a>
-                            <a href="/cgal-11.html" title="更多">...&gt;</a>
-                            <a class="oran_pg_np" href="/cgal-2.html" title="下一页">下一页</a>
-                            <a class="oran_pg_lp" href="/cgal-16.html" title="尾页">尾页</a>
+                        <div id="successArticlePage">
                         </div>
                     </div>
                 </div>
                 <div class="rightbot"></div>
             </div>
-
             <div class="left">
-
-
                 <div class="leib2 leib2s">
                     <div class="tit">
                         成功案例
                     </div>
                     <div class="nr">
                         <ul>
-                            <li sid='0001,0012,0019'>
-                                <a href="/jdcgal.html" title="经典成功案例">经典成功案例</a>
-                            </li>
-                            <li sid='0001,0012,0015'>
-                                <a href="/zfjgal.html" title="政府机关案例">政府机关案例</a>
-                            </li>
-                            <li sid='0001,0012,0016'>
-                                <a href="/gsqyal.html" title="公司企业案例">公司企业案例</a>
-                            </li>
-                            <li sid='0001,0012,0018'>
-                                <a href="/jryxal.html" title="金融银行案例">金融银行案例</a>
-                            </li>
-                            <li sid='0001,0012,0017'>
-                                <a href="/yljyal.html" title="医疗教育案例">医疗教育案例</a>
-                            </li>
+                            <#if successArticleCategorys??>
+                                <#list successArticleCategorys as successArticleCategory>
+                                    <#if successArticleCategory?? && successArticleCategory.id gt 0>
+                                        <li>
+                                            <a href="/gcal?id=${successArticleCategory.id}" title="${successArticleCategory.name}">${successArticleCategory.name}</a>
+                                        </li>
+                                    </#if>
+                                </#list>
+                            </#if>
                         </ul>
                     </div>
                 </div>
@@ -306,19 +129,18 @@
                     </div>
                     <div class="nr">
                         <ul>
-                            <li sid='0001,0011,0013'>
-                                <a href="/xwdt.html" title="新闻动态">新闻动态</a>
-                            </li>
-                            <li sid='0001,0011,0014'>
-                                <a href="/jjcs.html" title="家具常识">家具常识</a>
-                            </li>
-                            <li sid='0001,0011,0021'>
-                                <a href="/dlpp.html" title="代理品牌">代理品牌</a>
-                            </li>
+                            <#if newsArticleCategorys??>
+                                <#list newsArticleCategorys as newsArticleCategory>
+                                    <#if newsArticleCategory?? && newsArticleCategory.id gt 0>
+                                        <li>
+                                            <a href="/gcal?id=${newsArticleCategory.id}" title="${newsArticleCategory.name}">${newsArticleCategory.name}</a>
+                                        </li>
+                                    </#if>
+                                </#list>
+                            </#if>
                         </ul>
                     </div>
                 </div>
-
 
                 <div class="leiblx">
                     <div class="tit">
@@ -342,13 +164,110 @@
             </div>
         </div>
         <div class="clear"></div>
+
+        <script id="successArticleListTpl" type="text/html">
+            {{#  if(d.list!=null&&d.list.length> 0){ }}
+            {{#  layui.each(d.list, function(index, item){ }}
+            {{# if(item){ }}
+            <dl class="HZAL4 news_hover4">
+                <dt>
+                    <a href="/p/{{item.id}}" title="{{item.name}}" target="_blank">
+                        <img src="{{item.banner}}" alt="{{item.name}}" title="{{item.name}}" />
+                    </a>
+                </dt>
+                <dd>
+                    <h4>
+                        <a href="/p/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
+                    </h4>
+                    <p>{{item.desc}}</p>
+                    <span>
+                        <a href="/p/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
+                    </span>
+                </dd>
+            </dl>
+            {{#} else { }}
+            {{# }}}
+            {{#  }); }}
+            {{#} else { }}
+
+            {{# }}}
+
+        </script>
         <script type="text/javascript">
+            layui.use(['form', 'layer', 'jquery', 'laypage', 'laytpl', 'util'], function () {
+                var form = layui.form
+                    , layer = parent.layer === undefined ? layui.layer : parent.layer
+                    , laypage = layui.laypage, laytpl = layui.laytpl, $ = layui.jquery;
+
+                dataList(1);
+
+                /**
+                 * 查询数据列表
+                 * @param number
+                 */
+                function dataList(number) {
+                    var currentCategoryId =$("#currentCategoryId").val();
+                    $.ajax({
+                        url: '/p/list',
+                        method: 'get',
+                        dataType: 'json',
+                        data: {"categoryId":currentCategoryId,"limit": number},
+                        success: function (data) {
+                            console.log(data);
+                            if (data && data.code == 1) {
+                                var listData = {"list": data.result.list};
+                                var getTpl = successArticleListTpl.innerHTML, view = document.getElementById('successArticleListDiv');
+
+                                laytpl(getTpl).render(listData, function (html) {
+                                    view.innerHTML = html;
+                                });
+                                form.render();
+
+                                if(data.result.count >0){
+                                    if (number === 1) {
+                                        //分页标签
+                                        pageBar(data.result.count, 10);
+                                    }
+                                }
+
+                            }
+                        }
+                    });
+                }
+
+                /**
+                 * 数据分页
+                 * @param count
+                 * @param limit
+                 */
+                function pageBar(count, limit) {
+                    var themes = ['#ff0000', '#eb4310', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#800080', '#a1488e', '#c71585', '#bd2158'];
+
+                    laypage.render({
+                        elem: "page",
+                        limit: limit,
+                        count: count,
+                        first: '首页',
+                        last: '尾页',
+                        theme: themes[parseInt(Math.random() * themes.length)],
+                        layout: ['prev', 'page', 'next'],
+                        jump: function (obj, first) {
+                            if (!first) {
+                                $("#number").val(obj.curr);
+                                dataList(obj.curr);
+                            }
+                        }
+                    });
+                }
+            }).extend({
+                fly: 'index'
+            }).use('fly');
+
             if ($("div.right").height() > $('div.left')) {
                 $("#righttuijian").hide().next("div.rightbot").hide();
             } else {
                 $("#lefttuijian").hide();
             }
-            SetFenLei("12", {"||12||15||16||17||18||19||21||": "HZAL"}, "4");
         </script>
     </body>
 </@html>

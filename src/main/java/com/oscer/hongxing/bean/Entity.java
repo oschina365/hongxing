@@ -849,21 +849,6 @@ public abstract class Entity implements Serializable {
         return DbQuery.get(databaseName()).query_slice(getClass(), sql, page, size, params);
     }
 
-    public Entity filterOne(String filter, Object params) {
-        String sql = "SELECT id FROM " + tableName();
-        if (StringUtils.isNotBlank(filter)) {
-            if (filter.toLowerCase().contains("where")) {
-                sql += filter;
-            } else {
-                sql += " WHERE " + filter;
-            }
-        }
-        sql += " LIMIT 1 ";
-        Long id = DbQuery.get(databaseName()).read(long.class, sql, params);
-        return get(id);
-    }
-
-
     /**
      * 根据条件获取id，再根据id获取该对象
      *
