@@ -26,7 +26,9 @@ public class Product extends Entity {
     private String page_template;
     private String content;
     private long sort;
-    private String top;
+    private long top;
+    private long cream;
+    private long recomm;
     private String create_ip;
     private String update_ip;
 

@@ -1,0 +1,14 @@
+﻿<div class="g-bd">
+    <div class="m-con-2">
+        #foreach($row in $rows)    
+        <a class="s-babg" href="$row.MPageURL" title="$row.Title">
+            <dl class="prolistbgfa">
+                <h3 class="s-wc">$row.Title</h3>
+                <p>$row.shortdesc</p>
+                <span></span>
+            </dl>
+        </a>
+        #end
+        <div class="clear"></div>
+    </div>
+</div>

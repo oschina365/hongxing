@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Mobile.MArticles.Comment, qwt" enableviewstate="false" enableviewstatemac="false" %>

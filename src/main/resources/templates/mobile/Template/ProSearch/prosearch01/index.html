@@ -1,0 +1,32 @@
+﻿#parses("$mtemppath/Common/Header.html")
+#parses("$mtemppath/Common/BackPreviousControl.html?curtype=product")
+#includes("$mtemppath/Common/SearchControl.html")
+<div class="g-bd">
+    <h3 class="m-btit">搜索"<b class="s-wc">$!page.SqlSearchKeyword</b>"，找到约<b class="s-wc">$!page.SearchCount</b>条结果：</h3>
+    <div class="m-con z-spe">
+        #foreach($row in $rows)
+            #if($row.Type=="Product")
+            <dl class="s-babg s-babg-$row.Type">
+                <dt>
+                    <a href="$row.MPageURL" title="$row.Title">
+                        <img alt='$row.Title' src="$mbt.GetMobilePath($row)" width="95">
+                    </a>
+                </dt>
+                <h3><a href="$row.MPageURL" title="$row.Title" class="s-wc">$!page.Setkeys_char($row.Title,$!page.SqlSearchKeyword)</a></h3>
+                <p>$row.ShortDesc</p>
+                <p><a href="/Mobile/User/FAQ.aspx?posttype=1" class="consult s-wc-2"><i class="u-seek"></i>立刻咨询</a><a href="$row.MPageURL" title="$row.Title" class="details s-wc-3"><i class="u-detail"></i>查看详情</a></p>
+                <span></span>
+            </dl>
+            #else
+            <dl class="s-babg s-babg-$row.Type">
+                <h3><a href="$row.MPageURL" title="$row.Title" class="s-wc">$!page.Setkeys_char($row.Title,$!page.SqlSearchKeyword)</a></h3>
+                <p>$row.ShortDesc</p>
+                <p><a href="/Mobile/User/FAQ.aspx?posttype=1" class="consult s-wc-2"><i class="u-seek"></i>立刻咨询</a><a href="$row.MPageURL" title="$row.Title" class="details s-wc-3"><i class="u-detail"></i>查看详情</a></p>
+                <span></span>
+            </dl>
+            #end
+        #end
+        <div class="clear"></div>
+    </div>
+</div>
+#parses("$mtemppath/Common/Footer.html")

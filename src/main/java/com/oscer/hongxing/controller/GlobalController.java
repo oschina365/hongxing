@@ -98,7 +98,18 @@ public class GlobalController extends BaseController {
         List<Category> newsArticleCategorys = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.NEWS_ARTICLE);
         request.setAttribute("successArticleCategorys", successArticleCategorys);
         request.setAttribute("newsArticleCategorys", newsArticleCategorys);
-        request.setAttribute("currentCategoryId", id);
+        Category currentCategory = Category.ME.get(id);
+        if (currentCategory != null) {
+            request.setAttribute("currentCategoryName", currentCategory.getName());
+            request.setAttribute("currentCategoryId", id);
+            if (currentCategory.getParent_id() > 0L) {
+                Category parentCategory = Category.ME.get(currentCategory.getParent_id());
+                if (parentCategory != null) {
+                    request.setAttribute("parentCategoryName", parentCategory.getName());
+                    request.setAttribute("parentCategoryId", parentCategory.getId());
+                }
+            }
+        }
         return "cgal";
     }
 

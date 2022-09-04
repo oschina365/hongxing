@@ -26,7 +26,7 @@
 
             <div class="hd_login">
                 <div class="header">
-                    <h2 class="login_logo"><img src="/uploadfiles/pictures/setting/20161024153605_3011.jpg"/></h2>
+                    <h2 class="login_logo"><img src="/res/images/logo/logo.jpg"/></h2>
                 </div>
             </div>
             <div class="login_bg" id="middle">

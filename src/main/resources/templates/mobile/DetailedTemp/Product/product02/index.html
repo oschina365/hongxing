@@ -1,0 +1,46 @@
+﻿{$HeaderHtml$}
+<link href="/Mobile/Css/product.css" rel="stylesheet" type="text/css" />
+<!--产品详细页-->
+<div class="g-bd">
+    <!--产品导航-->
+    {$loc$}
+    <div class="m-con">
+        <!--产品内容-->
+        <div class="m-pp j-slide-np">
+            <div class="no_wrap">
+                <div class="prev"></div>
+                <div class="next"></div>
+                <div class="m-box">{$ImgList$}</div>
+            </div>
+        </div>
+        <!--产品数据-->
+        <div class="contactus">
+            <h2>{$title$}</h2>
+            {$ProductAttr$}
+        </div>
+        <!--联系我们-->
+        <!--产品简介-->
+        <div class="m-abpro1">
+            <h2 class="m-tit ">产品简介</h2>
+            <div class="m-con">
+                <p style="text-indent: 0;">{$ShortDesc$}</p>
+            </div>
+        </div>
+        <!--产品详情,用户评论,我要下单-->
+        <div class="m-muli">
+            <ul>
+                <a href="/Mobile/mproduct/ProDetail.aspx?Id={$ID$}&ShowID=1"><li class="botop"><span class="u-ico"></span>产品详情</li></a>
+                <a href="/Mobile/mproduct/ProDetail.aspx?Id={$ID$}&ShowID=2"><li><span class="u-ico"></span>用户评论<i class="red">(<span  id="appendCount"></span>)</i></li></a>
+                <a href="/Mobile/mproduct/ProDetail.aspx?Id={$ID$}&ShowID=3"><li><span class="u-ico"></span>我要下单</li></a>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--底部开始-->
+{$FooterHtml$}
+<script type="text/javascript">
+$(function () {
+    //获得产品评论的总数
+    GetCommentCountByProId({$ID$}, "appendCount");
+});
+</script>

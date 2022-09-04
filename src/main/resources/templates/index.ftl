@@ -1,6 +1,6 @@
 ﻿<#include "common/layout.ftl"/>
 <@html title_="武汉办公家具-办公桌椅-红鑫办公室家具定制厂家-办公家具-办公家具厂">
-    <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css">
+    <link href="/skins/default/animate.css" rel="stylesheet" type="text/css">
     <#include "common/pfb.ftl" />
     <#include "common/g_top.ftl"/>
     <div class="banan">
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="g-one content">
-        <h4><a href=""><img src="Skins/Default/Img/index/one_03.jpg" alt=""/>
+        <h4><a href=""><img src="skins/default/img/index/one_03.jpg" alt=""/>
                 <p>发展，源于对服务客户的忠诚，我们感恩每位客户</p></a></h4>
         <div class="one">
             <dl class="dl1">
@@ -134,8 +134,8 @@
 
                 <div class="r-b">
                     <ul>
-                        <li class="fl"><a href=""><img src="Skins/Default/Img/index/cpp_31.jpg" alt=""/></a></li>
-                        <li class="fr"><a href=""><img src="Skins/Default/Img/index/cpp_33.jpg" alt=""/></a></li>
+                        <li class="fl"><a href=""><img src="skins/default/img/index/cpp_31.jpg" alt=""/></a></li>
+                        <li class="fr"><a href=""><img src="skins/default/img/index/cpp_33.jpg" alt=""/></a></li>
                     </ul>
                 </div>
             </div>
@@ -159,7 +159,7 @@
         </div>
         <div class="an-c">
             <div class="c-l">
-                <a href=""><img src="Skins/Default/Img/index/two_13.jpg" alt=""/></a>
+                <a href=""><img src="skins/default/img/index/two_13.jpg" alt=""/></a>
                 <b><a class="le" href="">案例精选</a><a class="ri" href="">更多>></a></b>
                 <ul>
                     <#if randomArticles??>
@@ -192,11 +192,11 @@
         </div>
         <div class="an-b">
             <ul>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_06.png" alt=""/><span><b>免费</b>上门量尺</span></a></li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_09.png" alt=""/><span><b>免费</b>量身定制</span></a></li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_11.png" alt=""/><span><b>免费</b>出3D效果图</span></a></li>
-                <li><a href=""><img src="Skins/Default/Img/index/gmg_13.png" alt=""/><span><b>免费</b>上门安装</span></a></li>
-                <li class="none"><a href=""><img src="Skins/Default/Img/index/gmg_15.png" alt=""/><span><b>免费</b>保修，终身维护</span></a></li>
+                <li><a href=""><img src="skins/default/img/index/gmg_06.png" alt=""/><span><b>免费</b>上门量尺</span></a></li>
+                <li><a href=""><img src="skins/default/img/index/gmg_09.png" alt=""/><span><b>免费</b>量身定制</span></a></li>
+                <li><a href=""><img src="skins/default/img/index/gmg_11.png" alt=""/><span><b>免费</b>出3D效果图</span></a></li>
+                <li><a href=""><img src="skins/default/img/index/gmg_13.png" alt=""/><span><b>免费</b>上门安装</span></a></li>
+                <li class="none"><a href=""><img src="skins/default/img/index/gmg_15.png" alt=""/><span><b>免费</b>保修，终身维护</span></a></li>
             </ul>
         </div>
     </div>
@@ -205,24 +205,24 @@
             <h4><a href="">汉口、光谷等四大精品体验馆 诚邀您的到来<span>真正的实物体验 让购买更加放心</span></a></h4>
             <div class="zc">
                 <ul>
-                    <li><a href=""><img src="Skins/Default/Img/index/th_07.jpg"
+                    <li><a href=""><img src="skins/default/img/index/th_07.jpg"
                                         alt=""/><span><b>汉口体验馆</b>  027-83939586</span></a></li>
-                    <li><a href=""><img src="Skins/Default/Img/index/th_09.jpg"
+                    <li><a href=""><img src="skins/default/img/index/th_09.jpg"
                                         alt=""/><span><b>汉口体验馆</b>  027-83939586</span></a></li>
-                    <li><a href=""><img src="Skins/Default/Img/index/th_16.jpg"
+                    <li><a href=""><img src="skins/default/img/index/th_16.jpg"
                                         alt=""/><span><b>汉口体验馆</b>  027-83939586</span></a></li>
-                    <li><a href=""><img src="Skins/Default/Img/index/th_17.jpg"
+                    <li><a href=""><img src="skins/default/img/index/th_17.jpg"
                                         alt=""/><span><b>汉口体验馆</b>  027-83939586</span></a></li>
                 </ul>
                 <dl>
-                    <dt><a href="/zyzt"><img src="Skins/Default/Img/index/th_12.jpg" alt=""/></a></dt>
+                    <dt><a href="/zyzt"><img src="skins/default/img/index/th_12.jpg" alt=""/></a></dt>
                     <dd><a href="/zyzt">点击获取体验馆详细地址</a></dd>
                 </dl>
             </div>
         </div>
     </div>
     <div class="g-ys">
-        <h4><a href=""><img src="Skins/Default/Img/index/one_03.jpg" alt=""/>
+        <h4><a href=""><img src="skins/default/img/index/one_03.jpg" alt=""/>
                 <p>选择红鑫的优势</p></a></h4>
         <div class="ys1">
             <dl class="content">
@@ -259,13 +259,13 @@
                 <a class="le" href=""></a>
                 <div class="ssf">
                     <ul>
-                        <li><a href=""><img src="Skins/Default/Img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
+                        <li><a href=""><img src="skins/default/img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
                         </li>
-                        <li><a href=""><img src="Skins/Default/Img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
+                        <li><a href=""><img src="skins/default/img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
                         </li>
-                        <li><a href=""><img src="Skins/Default/Img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
+                        <li><a href=""><img src="skins/default/img/index/ry_07.jpg" alt=""/><span>湖北省名优产品</span></a>
                         </li>
-                        <li class="none"><a href=""><img src="Skins/Default/Img/index/ry_07.jpg"
+                        <li class="none"><a href=""><img src="skins/default/img/index/ry_07.jpg"
                                                          alt=""/><span>湖北省名优产品</span></a></li>
                     </ul>
                 </div>
@@ -279,7 +279,7 @@
             <div class="zhhx">
                 <div class="hx-l">
                     <dl>
-                        <dt><a href=""><img src="Skins/Default/Img/index/zh_07.jpg" alt=""/></a></dt>
+                        <dt><a href=""><img src="skins/default/img/index/zh_07.jpg" alt=""/></a></dt>
                         <dd><a href=""><b>武汉红鑫家俱有限公司</b></a>
                             <p>
                                 武汉红鑫家俱有限公司成立于2003年，注册资金1050万，公司前身为武汉红鑫办公家具厂，红鑫是一家集开发、设计、生产、销售和服务于一体的专业化办公家具公司；定位于办公家具整体策划解决专家。系中国家具协会理事、湖北省家具协会理事、武汉市家具协会副会长单位</p>
@@ -289,12 +289,12 @@
                         <a class="le" href=""></a>
                         <div class="zhs">
                             <ul>
-                                <li><a href=""><img src="Skins/Default/Img/index/zh_11.jpg"
+                                <li><a href=""><img src="skins/default/img/index/zh_11.jpg"
                                                     alt="武汉办公家具"/><span>工厂一</span></a></li>
-                                <li><a href=""><img src="Skins/Default/Img/index/zh_13.jpg"
+                                <li><a href=""><img src="skins/default/img/index/zh_13.jpg"
                                                     alt="武汉办公家具厂"/><span>工厂二</span></a>
                                 </li>
-                                <li><a href=""><img src="Skins/Default/Img/index/zh_15.jpg"
+                                <li><a href=""><img src="skins/default/img/index/zh_15.jpg"
                                                     alt="武汉办公家具定制"/><span>工厂三</span></a>
                                 </li>
                             </ul>

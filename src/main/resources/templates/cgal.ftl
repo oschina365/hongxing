@@ -1,5 +1,5 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/Skins/Default/Style.css"] js_=["/JS/NSW_JCIA.js"]>
+<@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
     <body>
         <!-- 代码部分begin -->
         <div id='cs_box'>
@@ -49,17 +49,15 @@
                 <#include "common/category_list.ftl" />
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
-            var MARK = "news";
-            var SID = "0001,0012";
 
             $(function () {
                 $(".menu ul.ul_col li").hover(function () {
@@ -82,7 +80,7 @@
             });
         </script>
         <div class="topadcs">
-            <a class="fullad" href="/gcal" title="精彩设计,用心呈现" style="background:url(/uploadfiles/pictures/others/20161108200407_3443.jpg) no-repeat center top;"></a>
+            <a class="fullad" href="/gcal" title="精彩设计,用心呈现" style="background:url('/res/images/banner1.jpg') no-repeat center top;"></a>
         </div>
         <div class="content">
             <div class="right">
@@ -91,7 +89,12 @@
                     <div class="plc">
                         <span class="red_x">当前位置：</span>
                         <a href="/" title="首页">首页</a>
-                        &raquo; <a href="/gcal" title="成功案例">成功案例</a>
+                        <#if parentCategoryId?? && parentCategoryName??>
+                            &raquo; <a href="/gcal?id=${parentCategoryId}" title="${parentCategoryName}">${parentCategoryName}</a>
+                            &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
+                            <#elseif  currentCategoryId?? && currentCategoryName??>
+                            &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
+                        </#if>
                     </div>
                     <div class="news_con News_4 News_4_12">
                         <input type="hidden" id="currentCategoryId" value="${currentCategoryId!''}"/>
@@ -113,7 +116,7 @@
                             <#if successArticleCategorys??>
                                 <#list successArticleCategorys as successArticleCategory>
                                     <#if successArticleCategory?? && successArticleCategory.id gt 0>
-                                        <li>
+                                        <li <#if currentCategoryId?? && currentCategoryId==successArticleCategory.id>class="cur"</#if>>
                                             <a href="/gcal?id=${successArticleCategory.id}" title="${successArticleCategory.name}">${successArticleCategory.name}</a>
                                         </li>
                                     </#if>
@@ -132,7 +135,7 @@
                             <#if newsArticleCategorys??>
                                 <#list newsArticleCategorys as newsArticleCategory>
                                     <#if newsArticleCategory?? && newsArticleCategory.id gt 0>
-                                        <li>
+                                        <li <#if currentCategoryId?? && currentCategoryId==newsArticleCategory.id>class="cur"</#if>>
                                             <a href="/gcal?id=${newsArticleCategory.id}" title="${newsArticleCategory.name}">${newsArticleCategory.name}</a>
                                         </li>
                                     </#if>
@@ -211,7 +214,7 @@
                         url: '/p/list',
                         method: 'get',
                         dataType: 'json',
-                        data: {"categoryId":currentCategoryId,"limit": number},
+                        data: {"categoryId":currentCategoryId,"page": number,"limit":6},
                         success: function (data) {
                             console.log(data);
                             if (data && data.code == 1) {
@@ -226,7 +229,7 @@
                                 if(data.result.count >0){
                                     if (number === 1) {
                                         //分页标签
-                                        pageBar(data.result.count, 10);
+                                        pageBar(data.result.count, 6);
                                     }
                                 }
 
@@ -241,10 +244,10 @@
                  * @param limit
                  */
                 function pageBar(count, limit) {
-                    var themes = ['#ff0000', '#eb4310', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#800080', '#a1488e', '#c71585', '#bd2158'];
-
+                    //var themes = ['#ff0000', '#eb4310', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#800080', '#a1488e', '#c71585', '#bd2158'];
+                    var themes = ['#E70012'];
                     laypage.render({
-                        elem: "page",
+                        elem: "successArticlePage",
                         limit: limit,
                         count: count,
                         first: '首页',

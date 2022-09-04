@@ -55,15 +55,15 @@ public class ArticleDAO extends CommonDao<Article> {
 
     public List<Article> page(List<Long> categoryIds, int page, int size) {
         StringBuilder sb = new StringBuilder("select id from " + Article.ME.rawTableName());
-        sb.append(" where category_id in(?) order by sort asc ");
-        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size, StringUtils.join(categoryIds, ","));
+        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") order by sort asc ");
+        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         return Article.ME.loadList(ids);
     }
 
     public long count(List<Long> categoryIds) {
         StringBuilder sb = new StringBuilder("select count(*) from " + Article.ME.rawTableName());
-        sb.append(" where category_id in(?) order by sort asc ");
-        return getDbQuery().read(Long.class, sb.toString(), StringUtils.join(categoryIds, ","));
+        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") ");
+        return getDbQuery().read(Long.class, sb.toString());
     }
 
 }

@@ -1,12 +1,12 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/Skins/Default/Style.css"]>
+<@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/skins/default/style.css"]>
         <!-- 代码部分begin -->
         <div id='cs_box'>
             <div class='cs_img'> </div>
             <div class='cs_btn'>红鑫家具旗舰店
                 <li>
                     <a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="JS/158995871.jpg" width="120" alt="">
+                        <img src="/res/images/tianmao.jpg" width="120" alt="">
                     </a>
                 </li>
             </div>
@@ -46,13 +46,13 @@
                 <#include "common/category_list.ftl" />
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "help";
@@ -85,7 +85,7 @@
         </script>
 
         <div class="topadcs">
-            <a class="fullad" href="/helps/aboutus.html" title="关于红鑫" style="background:url(/uploadfiles/pictures/others/20171215113626_5036.jpg) no-repeat center top;"></a>
+            <a class="fullad" href="/about" title="关于红鑫" style="background:url('res/images/banner5.jpg') no-repeat center top;"></a>
         </div>
         <!--content:start-->
         <div class="content">
@@ -94,7 +94,7 @@
             <div class="plc rows" style=" display:none">
                 <span class="red_x">当前位置：</span>
                 <a href="/" title="首页">首页</a>
-                &raquo; <a href="/Helps/aboutus.html" title="关于红鑫">关于红鑫</a>
+                &raquo; <a href="/about" title="关于红鑫">关于红鑫</a>
             </div>
             <div class="allcontent">
                 <div style="text-align:justify;">
@@ -110,7 +110,7 @@
                                 <span style="font-family: " microsoft="" yahei";="" line-height:="" 1.5;"="">红鑫家具主要产品有办公家具系列、院校家具系列、酒店家具系列、实木家具系列、软体家具系列、椅系列等各类家具系列。红鑫家具已全面通过ISO9001国际质量体系认证、ISO14001中国环境体系认证和ISO18001职业健康安全管理体系等认证。红鑫凭借快速高效优质的生产能力、贴心可靠的服务以及安全高效的物流配套体系，为客户提供物超所值的家具配置和良好的办公体验。</span>
                             </p>
                         </dd>
-                        <img src="/uploadfiles/pictures/help/20180622163620_0737.jpg" title="红鑫办公家具" alt="红鑫办公家具" />
+                        <img src="/res/images/zt_guanggu1.jpg" title="红鑫办公家具" alt="红鑫办公家具" />
                         <br />
                     </dl>
                     <div class="clear">
@@ -127,7 +127,7 @@
                         &nbsp; &nbsp;武汉红鑫家俱有限公司生产的办公家具、班台、职员桌、会议桌、办公屏风、沙发、座椅、文件柜等、专业为企业、酒店、学校、医院企事业单位配置办公家具。产品选料上乘，款式新颖，库存充足,出货快，全面有效地保证各地办公家具需求。红鑫营销网络遍及湖北及其他大中型城市，成功合作单位三千余家。</span>
                     </p>
                     <p>
-                        <img src="/uploadfiles/pictures/help/20161024104948_8029.jpg" title="公司实力" alt="公司实力" />
+                        <img src="/res/images/about_jcsj.jpg" title="公司实力" alt="公司实力" />
                     </p>
                     <h3 style="color:#333;font-weight:normal;border-left:5px solid #e60012;padding-left: 20px;padding-bottom: 1px;background:#f5f5f5;font-size: 18px;padding: 5px 0 5px 20px;margin-top:40px;">
                         公司荣誉<span style="font-size:14px;color:#999;text-transform:uppercase;font-family:arial;margin-left:6px;">/ Honor</span>
@@ -136,7 +136,7 @@
                         <span style="font-family: " microsoft="" yahei";="" line-height:="" 1.5;"="">红鑫家具凭借国内快速高效优质的生产能力、贴心可靠的服务以及安全高效的物流配套体系，为市场提供物超所值的家具和服务，尤其能帮助大中型企业实现最经济高效的产品方案和配置规划。</span>
                     </p>
                     <p>
-                        <img src="/uploadfiles/pictures/help/20161024110521_2852.jpg" title="公司荣誉" alt="公司荣誉" />
+                        <img src="/res/images/honor1.jpg" title="公司荣誉" alt="公司荣誉" />
                     </p>
                 </div>
             </div>

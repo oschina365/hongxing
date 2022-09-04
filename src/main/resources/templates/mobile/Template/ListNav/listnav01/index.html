@@ -1,0 +1,93 @@
+﻿#parses("$mtemppath/Common/Header.html")
+#parses("$mtemppath/Common/BackPreviousControl.html?curtype=$!columntype")
+#includes("$mtemppath/Common/SearchControl.html")
+<div class="g-bd">
+    #parses("$mtemppath/Common/locl.html")
+
+    #set($keyvalues = "%{otherwhere='ParentID=1'}")
+    #set($rows =$mt.GetColumnDataView($columntype,1))
+    #if($columntype!=$columntypes.product)
+        #set($navcount = $nt.ParseInt($mc.NewsNavCount))
+        <div class="m-pronav">
+            <ul class="prolist">
+                #foreach($row in $rows)
+                <li>
+                    #set($rows_ = $mt.GetColumnDataView($columntype,$row.id))
+                    #if($rows_.count > 0)
+                    <p class="down">$row.Title<a href="$nt.GetColumnURL($columntype,$row)" title="$row.Title"></a></p>
+                    <ul class="list$navcount">
+                        #foreach($row in $rows_)
+                            <a href="$nt.GetColumnURL($columntype,$row)" title="$row.Title"><li>$row.Title</li></a>
+                        #end
+                        #if($navcount > 1 && $rows_.count > 0)
+                            #set($round = $nt.ParseIntRound($rows_.count,$navcount) * $navcount - $rows_.count - 1)
+                            #if($round > -1)
+                                #foreach($i in [0..$round])
+                                    <a href="#" title=""><li></li></a>
+                                #end
+                            #end
+                        #end
+                        <div class="clear"></div>
+                    </ul>
+                    #else
+                    <a href="$nt.GetColumnURL($columntype,$row)" title="$row.Title" class="down"><p>$row.Title</p></a>
+                    #end
+                </li>
+                #end
+            </ul>
+        </div>
+    #else
+        ###产品导航
+        #if($mc.ProNavType == "1")
+        <div class="m-pronav">
+            <ul class="prolist">
+                #set($navcount = $nt.ParseInt($mc.ProNavCount))
+                #foreach($row in $rows)
+                <li>
+                    #set($rows_ = $mt.GetColumnDataView($columntype,$row.id))
+                    #set($round = -1)
+                    #if($navcount > 1)
+                        #set($round = $nt.ParseIntRound($rows_.count,$navcount) * $navcount - $rows_.count - 1)
+                    #end
+                    #if($rows_.count > 0)
+                        <p class="down">$row.title<a href="$nt.GetColumnURL($columntype,$row)" title="$row.title"></a></p>
+                        <ul class="list$navcount">
+                            #foreach($row_ in $rows_)
+                                #if($mc.ProNavSanji=="1" && $mc.ProNavCount=="1")
+                                    #set($keyvalues.otherwhere = "ParentID=$row_.id")
+                                    #set($rows03 = $mt.GetColumnDataView($columntype,$row_.id))
+                                    #if($rows03.count > 0)
+                                        <span><p class="a_tit">$row_.Title<a href="$nt.GetColumnURL($columntype,$row_)" title="$row_.Title"></a></p></span>
+                                        <ul class="list2">
+                                            #foreach($row03 in $rows03)
+                                                <a href="$nt.GetColumnURL($columntype,$row03)" title="$row03.Title"><li>$row03.Title</li></a>
+                                            #end
+                                            <div class="clear"></div>
+                                        </ul>
+                                    #else
+                                        <span><a href="$nt.GetColumnURL($columntype,$row_)" title="$row_.Title"><p class="a_tit">$row_.Title</p></a></span>
+                                    #end
+                                #else
+                                    <a href="$nt.GetColumnURL($columntype,$row_)" title="$row_.Title"><li>$row_.Title</li></a>
+                                    #if($round > -1)
+                                        #foreach($i in [0..$round])
+                                            <a href="#" title=""><li></li></a>
+                                        #end
+                                    #end
+                                #end
+                            #end
+                            <div class="clear"></div>
+                        </ul>
+                    #else
+                        <a href="$nt.GetColumnURL($columntype,$row)" title="$row.Title" class="down"><p>$row.Title</p></a>
+                    #end
+                </li>
+                #end
+            </ul>
+        </div>
+        #else
+        
+        #end
+    #end
+</div>
+#parses("$mtemppath/Common/Footer.html")

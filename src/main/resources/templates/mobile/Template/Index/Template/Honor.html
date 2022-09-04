@@ -1,0 +1,28 @@
+﻿#set($curtype = $columntypes.help)
+#set($currow=$nt.getcolumn($curtype,$cursid))
+#if($currow)
+    #set($columnurl=$nt.getcolumnurl($curtype,$currow))
+#end
+#if(!$selectcount)
+    #set($selectcount = 20)
+#end
+#set($keyvalues = "%{selectcount=$selectcount,otherwhere=$!cursqlwhere,sid=$cursid}")
+<div class="change-box j-slide-np">
+    <a class="prev"><img src="/Mobile/Images/Index/btn1.png" alt="<" /></a>
+    <a class="next"><img src="/Mobile/Images/Index/btn2.png" alt=">" /></a>
+    <div class="no_ov">
+        <ul class="m-box">
+            #foreach($row in $mbt.GetDetailed($curtype,$keyvalues).rows)
+            <li>
+                <p>
+                    <a href="$row.mpageurl" title="$row.title">
+                        <img src="/Mobile/Images/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" />
+                        <span>$row.title</span>
+                    </a>
+                </p>
+            </li>
+            #end
+        </ul>
+    </div>
+    <i><a href="$!columnurl" title="点击查看更多">点击查看更多 >></a></i>
+</div>

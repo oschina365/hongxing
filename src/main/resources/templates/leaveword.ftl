@@ -19,7 +19,7 @@
             })();
         </script>
         <script type="text/javascript">
-            SKIN_PATH = "/Skins/default/";
+            SKIN_PATH = "/skins/default/";
         </script>
         <link href="http://www.hongxin.com.cn/Skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
         <link href="http://www.hongxin.com.cn/Skins/default/Style.css" rel="stylesheet" type="text/css" />
@@ -43,13 +43,13 @@
                 <#include "common/category_list.ftl"/>
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "help";
@@ -166,12 +166,12 @@
             <div title="回到顶部" id="roll_top"></div>
         </div>
         <!--[if IE 6]>
-        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+        <script src="/js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
         <script type="text/javascript">
             DD_belatedPNG.fix('*');
         </script>
         <![endif]-->
-        <script src="/JS/rollup.min.js" type="text/javascript"></script>
+        <script src="/js/rollup.min.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
                 defer="defer"></script>

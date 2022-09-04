@@ -701,7 +701,7 @@ js_=["/manager/js/common/common.js"]>
 								<br -="">15:11:00</span>
                     </td>
                     <td class="nsw_cnt_area action_tx ">
-                        <a href="http://www.hongxin.com.cn/xxtyg.html" title="直营展厅" target="_blank">
+                        <a href="http://www.hongxin.com.cn/zyzt" title="直营展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>

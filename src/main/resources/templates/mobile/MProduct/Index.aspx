@@ -1,0 +1,1 @@
+﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Mobile.MProduct.Index, qwt" enableviewstate="false" enableviewstatemac="false" %>

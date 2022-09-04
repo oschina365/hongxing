@@ -74,7 +74,7 @@ p{ word-spacing:-1.5px;}
 i,em{ font-style:normal;}
 
 /*头部开始*/
-.g-top{height: 202px;background: url(Img/Common/th_03.jpg) repeat-x;position:relative;z-index:9999999}
+.g-top{height: 202px;background: url(img/common/th_03.jpg) repeat-x;position:relative;z-index:9999999}
 .header{width: 1000px;position: relative;}
 .nav { height:30px; font:12px "Microsoft YaHei"; color:#9b9b9b; line-height:30px;}
 .nav p a{ color:#999999;padding: 0 7px;}
@@ -87,19 +87,19 @@ i,em{ font-style:normal;}
 .zi1 p{font:16px  "Microsoft YaHei"; color:#333333;font-weight: bold;margin-top: 4px;}
 .zi1 span{color: #e70012}
 
-.tel{ padding-left:40px; margin-top:45px; background:url(Img/Common/yu_03.jpg) no-repeat 0;float:right;}
+.tel{ padding-left:40px; margin-top:45px; background:url(img/common/yu_03.jpg) no-repeat 0;float:right;}
 .tel span {display:block; font:24px "Arial"; color:#e60012;font-weight: bold;}
 .tel p{margin-left: 10px;  font:14px "Microsoft YaHei"; color:#333333; float:right;float: left;display: inline;}
-.lb a{display: block; background:url(Img/Common/top_20.jpg) no-repeat left center;padding-left: 30px; font:14px "Microsoft YaHei"; color:#ff0000;font-weight: bold; position: absolute;left:490px;top:5px;}
+.lb a{display: block; background:url(img/common/top_20.jpg) no-repeat left center;padding-left: 30px; font:14px "Microsoft YaHei"; color:#ff0000;font-weight: bold; position: absolute;left:490px;top:5px;}
 
 .menu{width: 1000px; }
-.menu li{ float: left;background:url(Img/Common/top_30.jpg) no-repeat right center; position: relative;}
+.menu li{ float: left;background:url(img/common/top_30.jpg) no-repeat right center; position: relative;}
 .menu .none{background: none}
 .menu li a{font:16px "Microsoft YaHei";color: #333333; line-height: 47px;text-align: center;display: inline-block;height: 47px;padding: 0 23px;}
 .menu li a:hover,.menu .cur a{text-decoration: none;color: #e60012}
-.menu li.ts a{background:url(Img/Common/top_28.jpg) no-repeat 84px 5px;}
+.menu li.ts a{background:url(img/common/top_28.jpg) no-repeat 84px 5px;}
 .menu .tfs{ width:134px;}
-.menu .tfs:hover,.menu .cur .tfs {background: #e60012 url(Img/Common/top_34.jpg) no-repeat 5px 18px;color: #fff;}
+.menu .tfs:hover,.menu .cur .tfs {background: #e60012 url(img/common/top_34.jpg) no-repeat 5px 18px;color: #fff;}
 .menu .tfs:hover a,.menu .cur .tfs a{ color:#fff}
 
 
@@ -116,18 +116,18 @@ i,em{ font-style:normal;}
 .menu .sanji b{width: 331px;float: left;height: 238px;}
 .menu .sanji b img{display: block;width: 311px;height: 218px;}
 .menu .sanji i{font-style: normal;padding-right: 20px;}
-.menu .sanji a:hover i,.menu .sanji a.cur i{font-style: normal;background: url(Img/Common/ic_06.jpg) no-repeat right center;display: inline-block;}
+.menu .sanji a:hover i,.menu .sanji a.cur i{font-style: normal;background: url(img/common/ic_06.jpg) no-repeat right center;display: inline-block;}
 .menu .sanji b a:hover{background: none;border: 0px;}
 .menu .sanji b a{border: 0px;text-align: left; display:none; padding:0}
 .menu .sanji b a img{padding: 10px;}
 /*头部结束*
 
 /*底部开始*/
-.g-bot{height: 340px;background: url(Img/Common/cif.jpg) repeat-x;}
+.g-bot{height: 340px;background: url(img/common/cif.jpg) repeat-x;}
 .bot-t{height: 50px;}
-.bot-t a{background:url(Img/Common/bot_07.jpg) no-repeat right center; font:16px "Microsoft YaHei";color: #fff; line-height: 50px;text-align: center;display: inline-block;height: 50px;padding: 0; width:122px}
+.bot-t a{background:url(img/common/bot_07.jpg) no-repeat right center; font:16px "Microsoft YaHei";color: #fff; line-height: 50px;text-align: center;display: inline-block;height: 50px;padding: 0; width:122px}
 .bot-t a.none{background: none}
-.bot-t a:hover{text-decoration: none;background: url(Img/Common/bot_05.jpg) no-repeat center;}
+.bot-t a:hover{text-decoration: none;background: url(img/common/bot_05.jpg) no-repeat center;}
 
 .bot-c{height: 200px;border-bottom: 1px solid #d2d2d2;position: relative;width: 1000px;}
 .bot-c ul{padding-top: 75px;float: left;}
@@ -149,17 +149,17 @@ i,em{ font-style:normal;}
 .link p .a2:hover{ font-weight:bold;}
 /*底部结束*/
 
-.pfb{ display:none;height: 48px;background: url(Img/Common/pfbj_01.png) no-repeat center 0;position:fixed;top:0;_bottom:auto;z-index:10000;_position:absolute;overflow:visible;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight); width:100%;
+.pfb{ display:none;height: 48px;background: url(img/common/pfbj_01.png) no-repeat center 0;position:fixed;top:0;_bottom:auto;z-index:10000;_position:absolute;overflow:visible;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight); width:100%;
 position:fixed;right:0;top:0;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight*0.8));}
 .fb ul{float: left;display: inline-block;font:16px "Microsoft YaHei"; color:#fff;padding-left: 112px;}
 .fb ul li{ float:left; position:relative}
 .fb ul li a{font:16px "Microsoft YaHei"; color:#fff;padding: 0 15px;display: inline-block;height: 39px;line-height: 39px;}
 .fb ul li a.fb_a_f{ padding:0 30px}
 .fb ul li:hover a.fb_a,.fb ul li.cur a.fb_a{background: #4b4a4a}
-.fb ul li a.ts{background: url(Img/Common/top_07.jpg) no-repeat right 0;}
+.fb ul li a.ts{background: url(img/common/top_07.jpg) no-repeat right 0;}
 .fsr{float: left;margin-top: 6px;padding-left: 15px;}
 .fsr .inp01s{border: 0px;color: #666666;font-size: 12px; font-family:'Microsoft YaHei';float: left;height:25px;width:123px;padding-left: 30px; line-height:25px;}
-.fsr .inp02s{width:56px;cursor: pointer; height:25px;float: left;border: 0px;background: url(Img/Common/top_13.jpg) no-repeat;}
+.fsr .inp02s{width:56px;cursor: pointer; height:25px;float: left;border: 0px;background: url(img/common/top_13.jpg) no-repeat;}
 .pfb em{font:20px "Arial"; color:#fff;font-weight: bold;float: right;font-style: normal;padding-right: 23px;padding-top: 5px;}
 
 .pfb .erji{ position: absolute;left: 0px;top:40px;width:100%;background: #fff;box-shadow:0 2px 6px #ccc; z-index:1000; border-top:3px solid #E60012; display:none;}
@@ -175,7 +175,7 @@ position:fixed;right:0;top:0;_position:absolute;_top:expression(eval(document.do
 .pfb .sanji b{width: 331px;float: left;height: 238px;}
 .pfb .sanji b img{display: block;width: 311px;height: 218px;}
 .pfb .sanji i{font-style: normal;padding-right: 20px;}
-.pfb .sanji a:hover i,.pfb .sanji a.cur i{font-style: normal;background: url(Img/Common/ic_06.jpg) no-repeat right center;display: inline-block;}
+.pfb .sanji a:hover i,.pfb .sanji a.cur i{font-style: normal;background: url(img/common/ic_06.jpg) no-repeat right center;display: inline-block;}
 .pfb .sanji b a:hover{background: none;border: 0px;}
 .pfb .sanji b a{border: 0px;text-align: left; color:#333; display:none; padding:0}
 .pfb .sanji b a img{padding: 10px;}
@@ -221,9 +221,9 @@ a.gf {padding-left: 0; position: relative;}
 #mesbook1_c #mesbook1_cBtns input, #mesbook1 #mesbook1Btns input {margin-right:20px;}
 /*rollup.css*/
 #roll_top,#fall,#ct{position:relative;cursor:pointer;height:72px;width:26px}
-#roll_top{background:url(/Skins/Default/Img/top.gif) no-repeat}
-#fall{background:url(/Skins/Default/Img/top.gif) no-repeat 0 -80px}
-#ct{background:url(/Skins/Default/Img/top.gif) no-repeat 0 -40px}
+#roll_top{background:url(/skins/default/img/top.gif) no-repeat}
+#fall{background:url(/skins/default/img/top.gif) no-repeat 0 -80px}
+#ct{background:url(/skins/default/img/top.gif) no-repeat 0 -40px}
 #roll{display:block;width:15px;margin-right:-520px;position:fixed;right:50%;top:80%;_margin-right:-520px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight*0.8)); z-index:100;}
 
 .ImTable *{padding:0px;margin:0px}

@@ -39,7 +39,7 @@
 
 .info_b{border-top:none; padding:10px;}
 .left2bot{ display:none;}
-ul.p_list_ul li, ul.p_list_ul2 li { background:url(Img/common/kh_jt2.png) no-repeat left center; line-height:40px; height:40px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-indent:20px; margin-left:10px; display:block; border-bottom:1px dashed #ccc; color:#666; font-size:14px; padding-left:6px;}
+ul.p_list_ul li, ul.p_list_ul2 li { background:url(img/common/kh_jt2.png) no-repeat left center; line-height:40px; height:40px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-indent:20px; margin-left:10px; display:block; border-bottom:1px dashed #ccc; color:#666; font-size:14px; padding-left:6px;}
 ul.p_list_ul2 li { width:342px; padding-right:5px;}
 
 /*下一篇、下一篇*/

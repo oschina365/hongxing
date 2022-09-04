@@ -1,5 +1,5 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="武汉红鑫家具联系方式：400-678-5198" css_=["/Skins/Default/Style.css"] js_=["/JS/NSW_JCIA.js"]>
+<@html title_="武汉红鑫家具联系方式：400-678-5198" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
     <body>
         <!-- 代码部分begin -->
         <div id='cs_box'>
@@ -7,7 +7,7 @@
             <div class='cs_btn'>红鑫家具旗舰店
                 <li>
                     <a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="./js/158995871.jpg" width="120" alt="">
+                        <img src="/res/images/tianmao.jpg" width="120" alt="">
                     </a>
                 </li>
             </div>
@@ -42,20 +42,20 @@
             <div class="banan-t content">
                 <p>
                     <b>热门搜索词：</b>
-                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a>
+                    <a href="/about" title="武汉红鑫家俱">武汉红鑫家俱</a>
                     <a href="/product/" title="武汉红鑫办公家具">武汉红鑫办公家具</a>
-                    <a href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
+                    <a href="/about" title="武汉办公家具厂家">武汉办公家具厂家</a>
                 </p>
                 <#include "common/category_list.ftl" />
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "help";
@@ -88,7 +88,7 @@
         </script>
 
         <div class="topadcs">
-            <a class="fullad" href="/product/" title="联系红鑫家俱" style="background:url(/uploadfiles/pictures/others/20161108200247_9868.jpg) no-repeat center top;"></a>
+            <a class="fullad" href="/product/" title="联系红鑫家俱" style="background:url('/res/images/banner6.jpg') no-repeat center top;"></a>
         </div>
         <!--content:start-->
         <div class="content">
@@ -101,7 +101,7 @@
             </div>
             <div class="allcontent">
                 <p style="color: rgb(51, 51, 51);">
-                    <img src="/uploadfiles/pictures/help/20161107165419_7432.jpg" title="尊敬的访客" alt="尊敬的访客" />&nbsp;
+                    <img src="/res/images/fangke.jpg" title="尊敬的访客" alt="尊敬的访客" />&nbsp;
                 </p>
                 <p style="color: rgb(51, 51, 51); padding-left: 92px;">
                     当您进入&ldquo;联系我们&rdquo;的页面时，您已成为我们最尊贵的客户，欢迎您从网上来到线下：来到美丽的江城&mdash;武汉。
@@ -115,7 +115,7 @@
                     </b>，我们将专车接送。
                 </p>
                 <p style="color: rgb(51, 51, 51);">
-                    <img src="/uploadfiles/pictures/help/20161107165435_3721.jpg" title="联系我们" alt="联系我们" />
+                    <img src="/res/images/contact.jpg" title="联系我们" alt="联系我们" />
                 </p>
                 <p style="color: rgb(51, 51, 51); padding-left: 92px;">
                     <b>销售中心24小时热线：</b>
@@ -150,17 +150,17 @@
                     <br />
                 </p>
                 <p style="color: rgb(51, 51, 51); padding-left: 92px;">
-                    <img src="/uploadfiles/pictures/help/20210701150913_7857.jpg" title="红鑫家具" alt="红鑫家具" />
+                    <img src="/res/images/weixin2.jpg" title="红鑫家具" alt="红鑫家具" />
                 </p>
                 <p style="color: rgb(51, 51, 51); padding-left: 92px;">
                     <br />
                 </p>
                 <p style="color: rgb(51, 51, 51);">
-                    <img src="/uploadfiles/pictures/help/20161107165448_4048.jpg" title="地图路线" alt="地图路线" />
+                    <img src="/res/images/map.jpg" title="地图路线" alt="地图路线" />
                 </p>
                 <style>
                     .BMap_Marker {
-                        background: url(/uploadfiles/pictures/help/20161201092546_4972.png) no-repeat !important;
+                        background: url('/res/images/map_point.png') no-repeat !important;
                         position: absolute;
                         padding: 0px;
                         margin: 0px;
@@ -273,7 +273,7 @@
                     </b>
                 </p>
                 <p style="text-align: center;">
-                    <img src="/uploadfiles/pictures/help/20180319153714_0776.jpg" title="20170508142411_4872" align="center" alt="20170508142411_4872" />
+                    <img src="/res/images/zt_guanggu_way.jpg" title="20170508142411_4872" align="center" alt="20170508142411_4872" />
                 </p>
                 <p style="color: rgb(51, 51, 51); text-align: start;">
                     <b style="color: rgb(255, 0, 0); text-align: center; word-spacing: -1.5px;"></b>
@@ -291,10 +291,10 @@
                     </b>
                 </p>
                 <p style="text-align: center;">
-                    <img src="/uploadfiles/pictures/help/20190308101624_4430.jpg" title="门头已批" alt="门头已批" width="750" height="500" />
+                    <img src="/res/images/zt_guanggu.jpg" title="门头已批" alt="门头已批" width="750" height="500" />
                 </p>
                 <p style="color: rgb(51, 51, 51); text-align: center;">
-                    <img src="/uploadfiles/pictures/help/20190407151027_5249.jpg" title="lADPDgQ9qmOhBTjNAkTNA7s_955_580" alt="lADPDgQ9qmOhBTjNAkTNA7s_955_580" width="750" height="456" />
+                    <img src="/res/images/zt_guanggu_map.jpg" title="lADPDgQ9qmOhBTjNAkTNA7s_955_580" alt="lADPDgQ9qmOhBTjNAkTNA7s_955_580" width="750" height="456" />
                 </p>
                 <div>
                     <p style="text-align: center;">
@@ -310,7 +310,7 @@
                     <span style="text-align: center;"></span>
                 </p>
                 <p style="text-align: center;">
-                    <img src="/uploadfiles/pictures/help/20180319153816_1812.jpg" title="20161107165529_4822" align="center" alt="20161107165529_4822" />
+                    <img src="/res/images/bus_way.jpg" title="20161107165529_4822" align="center" alt="20161107165529_4822" />
                 </p>
                 <p style="text-align: center;">
                     <br />
@@ -345,7 +345,7 @@
                     <br />
                 </p>
                 <p style="color: rgb(67, 67, 67); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
-                    <img src="/uploadfiles/pictures/help/20170508142223_8622.jpg" title="汉口展厅" alt="汉口展厅" />
+                    <img src="/res/images/zt_hankou_way.jpg" title="汉口展厅" alt="汉口展厅" />
                 </p>
                 <p style="text-align: center; color: rgb(67, 67, 67); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);">
 					<span style="color:#FF0000;">
@@ -360,7 +360,7 @@
                     <br />
                 </p>
                 <p style="color: rgb(51, 51, 51); text-align: center;">
-                    <img src="/uploadfiles/pictures/help/20180309095740_4330.jpg" title="武汉红鑫家具厂" align="center" alt="武汉红鑫家具厂" />
+                    <img src="/res/images/红鑫家具厂家外景_large.jpg" title="武汉红鑫家具厂" align="center" alt="武汉红鑫家具厂" />
                 </p>
                 <span style="color:#FF0000;">
 					<p style="color: rgb(51, 51, 51); text-align: left; padding-left: 92px;">

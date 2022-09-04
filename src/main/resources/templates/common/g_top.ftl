@@ -23,7 +23,7 @@
         <div class="top">
             <div class="logo">
                 <a href="/" title="武汉红鑫家俱有限公司">
-                    <img src="/uploadfiles/pictures/setting/20161024153605_3011.jpg" alt="武汉办公家具"
+                    <img src="/res/images/logo/logo.jpg" alt="武汉办公家具"
                          title="武汉办公家具" />
                 </a>
             </div>

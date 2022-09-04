@@ -800,7 +800,7 @@ js_=["/manager/js/common/common.js"]>
 								<br -="">14:47:00</span>
                     </td>
                     <td class="nsw_cnt_area action_tx ">
-                        <a href="http://www.hongxin.com.cn/cgal.html" title="成功案例" target="_blank">
+                        <a href="http://www.hongxin.com.cn/gcal" title="成功案例" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>

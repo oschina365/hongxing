@@ -30,7 +30,7 @@
             <ul>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" />
+                        <img src="/skins/default/img/common/bot_19.jpg" alt="武汉办公家具" />
                     </i>
                     武汉红鑫家俱有限公司
                     <b>
@@ -45,39 +45,39 @@
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" />
+                        <img src="/skins/default/img/common/bot_22.jpg" alt="座机" />
                     </i>
                     座机：027-61520188
                     </i>
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" />
+                        <img src="/skins/default/img/common/bot_26.jpg" alt="地址" />
                     </i>
                     地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" />
+                        <img src="/skins/default/img/common/bot_27.jpg" alt="传真" />
                     </i>
                     电话：18207180190/18207180195
                     </i>
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" />
+                        <img src="/skins/default/img/common/bot_30.jpg" alt="全国服务热线" />
                     </i>
                     全国服务热线：400-678-5198
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" />
+                        <img src="/skins/default/img/common/bot_31.jpg" alt="邮箱" />
                     </i>
                     邮箱：hongxin@hongxin.com.cn
                 </li>
                 <li>
                     <i>
-                        <img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案" />
+                        <img src="/skins/default/img/common/zhizuo.png" alt="网站公安备案" />
                     </i>
                     <script type="text/javascript">
                         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://": " http://");
@@ -93,12 +93,12 @@
             </ul>
             <em>
                 <a href="/" title="红鑫家俱">
-                    <img src="/uploadfiles/pictures/setting/20161024153608_7175.jpg" alt="武汉红鑫家俱有限公司"
+                    <img src="/res/images/logo/logo1.jpg" alt="武汉红鑫家俱有限公司"
                          title="武汉红鑫家俱有限公司" />
                 </a>
             </em>
             <span class="spanewm">
-				<img src="/uploadfiles/pictures/setting/20161201103707_8253.png" alt="武汉办公家具"
+				<img src="/res/images/weixin1.png" alt="武汉办公家具"
                 />
 			</span>
         </div>
@@ -134,13 +134,13 @@
     </div>
 </div>
 <!--[if IE 6]>
-<script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript">
+<script src="/js/DD_belatedPNG_0.0.8a.js" type="text/javascript">
 </script>
 <script type="text/javascript">
     DD_belatedPNG.fix('*');
 </script>
 <![endif]-->
-<script src="/JS/rollup.min.js" type="text/javascript">
+<script src="/js/rollup.min.js" type="text/javascript">
 </script>
 <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107"
         defer="defer">

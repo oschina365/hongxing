@@ -6,13 +6,13 @@
         <title>网站地图_武汉红鑫家俱有限公司</title>
         <meta name="keywords" content="武汉办公家具,武汉办公桌椅,办公家具定制厂家,办公前台,办公室办公沙发,武汉办公家具公司,办公家具定制厂家," />
         <meta name="description" content="武汉办公家具，武汉红鑫办公家具20年品质沉淀，主营办公家具、保密文件柜定做、办公桌椅、武汉大小型会议桌椅厂家、档案密集柜报价、钢制铁皮文件柜厂家、储物柜、洽谈桌、武汉办公桌椅、办公前台、大班台等、武汉办公家具定制：400-678-5198" />
-        <script src="/JS/MobileRewrite.js" type="text/javascript"></script>
+        <script src="/js/MobileRewrite.js" type="text/javascript"></script>
         <script type="text/javascript">
             uaredirect("/mobile/sitemap.html");
         </script>
-        <link key="resetcommon" href="/Skins/Default/resetcommon.css" rel="stylesheet" type="text/css" />
-        <link key="style" href="/Skins/Default/Style.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" key="NSW_DetailsPro" src="/JS/NSW_DetailsPro.js"></script>
+        <link key="resetcommon" href="/skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
+        <link key="style" href="/skins/default/style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" key="NSW_DetailsPro" src="/js/NSW_DetailsPro.js"></script>
         <meta name="format-detection" content="telephone=no" />
         <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 
@@ -662,10 +662,10 @@
                         <a class="fb_a" href="/">首页</a>|
                     </li>
                     <li>
-                        <a class="fb_a" href="/cgal.html">工程案例图</a>|
+                        <a class="fb_a" href="/gcal">工程案例图</a>|
                     </li>
                     <li>
-                        <a class="ts fb_a" href="/xxtyg.html">直营展厅</a>
+                        <a class="ts fb_a" href="/zyzt">直营展厅</a>
                     </li>
                 </ul>
                 <div class="fsr form">
@@ -1249,13 +1249,13 @@
                             <a href="/" title="红鑫首页">红鑫首页</a>
                         </li>
                         <li>
-                            <a href="/cgal.html" title="工程案例">工程案例</a>
+                            <a href="/gcal" title="工程案例">工程案例</a>
                         </li>
                         <li>
                             <a href="/helps/dzfw.html" title="办公家具定制">办公家具定制</a>
                         </li>
                         <li class="ts">
-                            <a href="/xxtyg.html" title="直营展厅">直营展厅</a>
+                            <a href="/zyzt" title="直营展厅">直营展厅</a>
                         </li>
                         <li>
                             <a href="/ryzz.html" title="资质荣誉">资质荣誉</a>
@@ -1307,13 +1307,13 @@
                 </div>
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "index";
@@ -1362,13 +1362,13 @@
                                 <a href="/" title="红鑫首页" target="_blank">红鑫首页</a>
                             </li>
                             <li>
-                                <a href="/cgal.html" title="工程案例" target="_blank">工程案例</a>
+                                <a href="/gcal" title="工程案例" target="_blank">工程案例</a>
                             </li>
                             <li>
                                 <a href="/helps/dzfw.html" title="办公家具定制" target="_blank">办公家具定制</a>
                             </li>
                             <li>
-                                <a href="/xxtyg.html" title="自营体验馆" target="_blank">自营体验馆</a>
+                                <a href="/zyzt" title="自营体验馆" target="_blank">自营体验馆</a>
                             </li>
                             <li>
                                 <a href="/ryzz.html" title="资质荣誉" target="_blank">资质荣誉</a>
@@ -1694,39 +1694,39 @@
                     <ul>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" />
+                                <img src="/skins/default/img/common/bot_19.jpg" alt="武汉办公家具" />
                             </i>武汉红鑫家俱有限公司<b>版权所有</b>
                             <b>备案号：<a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">鄂ICP备12004884号</a>
                             </b>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" />
+                                <img src="/skins/default/img/common/bot_22.jpg" alt="座机" />
                             </i>座机：027-61520188</i>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" />
+                                <img src="/skins/default/img/common/bot_26.jpg" alt="地址" />
                             </i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" />
+                                <img src="/skins/default/img/common/bot_27.jpg" alt="传真" />
                             </i>电话：18207180190/18207180195</i>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" />
+                                <img src="/skins/default/img/common/bot_30.jpg" alt="全国服务热线" />
                             </i>全国服务热线：400-678-5198
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" />
+                                <img src="/skins/default/img/common/bot_31.jpg" alt="邮箱" />
                             </i>邮箱：hongxin@hongxin.com.cn
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案" />
+                                <img src="/skins/default/img/common/zhizuo.png" alt="网站公安备案" />
                             </i>
                             <script type="text/javascript">
                                 var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -1768,12 +1768,12 @@
             <div title="回到顶部" id="roll_top"></div>
         </div>
         <!--[if IE 6]>
-        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+        <script src="/js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
         <script type="text/javascript">
             DD_belatedPNG.fix('*');
         </script>
         <![endif]-->
-        <script src="/JS/rollup.min.js" type="text/javascript"></script>
+        <script src="/js/rollup.min.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" defer="defer"></script>
         <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer" style="display:none;"></script>

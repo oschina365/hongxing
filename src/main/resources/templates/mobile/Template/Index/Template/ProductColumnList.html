@@ -1,0 +1,23 @@
+﻿#set($curtype = $columntypes.product)
+
+#set($rows = $mt.GetColumnDataView($curtype,$curid))
+    <div class="g-show j-slide-not"> 
+      <ul class="m-cnt">
+         #foreach($row in $rows)
+        <li>$row.title</li>
+        #end
+        <a href="/mobile/mproduct" class="mor">更多</a>
+      </ul>
+      <div class="m-box">
+         #foreach($row in $rows)
+        <div class="con">
+          	<ul>
+              #set($rows2=$nt.gettop($nt.GetRelated($curtype,$row.MsgProductIDs).rows,4))
+              #foreach($row in $rows2)          
+                <li><a  href="$row.mpageurl" title="$row.title"><img src="/Mobile/Images/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" /></a><span><a  href="$row.mpageurl" title="$row.title"><i>$row.title</i>$nt.GetSubString($row.ShortDesc,20)</a></span></li>  
+               #end  
+            </ul>
+        </div>
+        #end
+      </div>
+    </div>

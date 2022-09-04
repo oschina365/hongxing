@@ -130,13 +130,13 @@
                 <#include "common/category_list.ftl" />
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "news";
@@ -316,9 +316,9 @@
             <div class="bot content">
                 <div class="bot-t">
                     <a href="http://www.hongxin.com.cn/" title="红鑫首页">红鑫首页</a>
-                    <a href="http://www.hongxin.com.cn/cgal.html" title="工程案例">工程案例</a>
+                    <a href="http://www.hongxin.com.cn/gcal" title="工程案例">工程案例</a>
                     <a href="http://www.hongxin.com.cn/helps/dzfw.html" title="办公家具定制">办公家具定制</a>
-                    <a href="http://www.hongxin.com.cn/xxtyg.html" title="自营体验馆">自营体验馆</a>
+                    <a href="http://www.hongxin.com.cn/zyzt" title="自营体验馆">自营体验馆</a>
                     <a href="http://www.hongxin.com.cn/ryzz.html" title="资质荣誉">资质荣誉</a>
                     <a href="http://www.hongxin.com.cn/helps/aboutus.html" title="关于红鑫">关于红鑫</a>
                     <a href="http://www.hongxin.com.cn/helps/contactus.html" title="联系我们">联系我们</a>
@@ -328,39 +328,39 @@
                     <ul>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" />
+                                <img src="/skins/default/img/common/bot_19.jpg" alt="武汉办公家具" />
                             </i>武汉红鑫家俱有限公司<b>版权所有</b>
                             <b>备案号：<a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow">鄂ICP备12004884号-1</a>
                             </b>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" />
+                                <img src="/skins/default/img/common/bot_22.jpg" alt="座机" />
                             </i>座机：027-61520188</i>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" />
+                                <img src="/skins/default/img/common/bot_26.jpg" alt="地址" />
                             </i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" />
+                                <img src="/skins/default/img/common/bot_27.jpg" alt="传真" />
                             </i>电话：18207180190/18207180195</i>
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" />
+                                <img src="/skins/default/img/common/bot_30.jpg" alt="全国服务热线" />
                             </i>全国服务热线：400-678-5198
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" />
+                                <img src="/skins/default/img/common/bot_31.jpg" alt="邮箱" />
                             </i>邮箱：hongxin@hongxin.com.cn
                         </li>
                         <li>
                             <i>
-                                <img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站公安备案" />
+                                <img src="/skins/default/img/common/zhizuo.png" alt="网站公安备案" />
                             </i>
                             <script type="text/javascript">
                                 var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
@@ -402,12 +402,12 @@
             <div title="回到顶部" id="roll_top"></div>
         </div>
         <!--[if IE 6]>
-        <script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+        <script src="/js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
         <script type="text/javascript">
             DD_belatedPNG.fix('*');
         </script>
         <![endif]-->
-        <script src="/JS/rollup.min.js" type="text/javascript"></script>
+        <script src="/js/rollup.min.js" type="text/javascript"></script>
 
         <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" defer="defer"></script>
         <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer" style="display:none;"></script>

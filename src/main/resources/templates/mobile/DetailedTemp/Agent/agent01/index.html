@@ -1,0 +1,44 @@
+﻿{$HeaderHtml$}
+<link href="/Mobile/Css/agentdetail.css" rel="stylesheet" type="text/css" />
+<!--详细页-->
+<div class="g-bd">
+    <!--导航-->
+    {$loc$}
+    <div class="m-con2">
+        <!--标题-->
+        <div class="u-mtit">
+            <h1 class="s-tit">
+                {$title$}</h1>
+            <p>
+            <i class="pl">{$InputTime$}</i></p>
+            <div id="content" class="contactus">
+                {$content$}
+            </div>
+            {$Prev$}
+            {$Next$}
+        </div>
+    </div>
+     <!--网友热评-->
+     <div class="m-com">
+        <h2 class="m-tit z-spe s-wc">网友热评</h2>
+        <div class="u-idet">
+            <textarea name="" id="txtConent" value="还可以输入500个字" class="clear_word">还可以输入500个字</textarea>
+            <input type="hidden" id="txtPhone" />
+            <div id="Msg"></div>
+        </div>
+        <div class="u-btn">
+            <input class="z-mg u-co-bt" type="button" value="我要评论" name="" onclick="SaveFaq(2,{$ID$})">
+        </div>
+        <div class="u-relay" id="reply"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--配套产品-->
+{$MatchProduct$}
+<!--底部开始-->
+{$FooterHtml$}
+<script type="text/javascript">
+    $(function (){       
+        GetFaqById("reply",3,{$ID$});    
+    });
+</script>

@@ -1,5 +1,5 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="武汉办公家具定制,办公室家具品牌,办公桌椅定制-红鑫家俱" css_=["/Skins/Default/Style.css"] js_=["/JS/NSW_JCIA.js"]>
+<@html title_="武汉办公家具定制,办公室家具品牌,办公桌椅定制-红鑫家俱" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
 <body>
         <!-- 代码部分begin -->
         <div id='cs_box'>
@@ -8,7 +8,7 @@
             <div class='cs_btn'>红鑫家具旗舰店
                 <li>
                     <a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="./js/158995871.jpg" width="120" alt="">
+                        <img src="/res/images/tianmao.jpg" width="120" alt="">
                     </a>
                 </li>
             </div>
@@ -49,13 +49,13 @@
                 <#include "common/category_list.ftl" />
             </div>
         </div>
-        <script src="/JS/select2css.js" type="text/javascript"></script>
+        <script src="/js/select2css.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(function () {
                 $('.ban-ss').before($('.topadcs'));
             });
         </script>
-        <link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript">
             initCommonHeader();
             var MARK = "help";
@@ -88,7 +88,7 @@
         </script>
 
         <div class="topadcs">
-            <a class="fullad" href="/product/" title="五大免费,全行业独此一家" style="background:url(/uploadfiles/pictures/others/20161108200130_9664.jpg) no-repeat center top;"></a>
+            <a class="fullad" href="/product/" title="五大免费,全行业独此一家" style="background:url('/res/images/banner2.jpg') no-repeat center top;"></a>
         </div>
         <!--content:start-->
         <div class="content">
@@ -156,7 +156,7 @@
                     /**/
                     .fs {
                         height: 753px;
-                        background: url("/uploadfiles/pictures/help/20161124100607_2232.jpg") no-repeat;
+                        background: url("/res/images/dzxq.jpg") no-repeat;
                         overflow: hidden;
                     }
 
@@ -185,7 +185,7 @@
 
                     .fs h3 {
                         height: 87px;
-                        background: url("/uploadfiles/pictures/help/fsx.jpg") no-repeat;
+                        background: url("/res/images/fsx.jpg") no-repeat;
                         font-weight: normal;
                     }
 
@@ -207,7 +207,7 @@
                         float: left;
                         width: 139px;
                         height: 31px;
-                        background: url("/uploadfiles/pictures/help/fsk.jpg") no-repeat;
+                        background: url("/res/images/fsk.jpg") no-repeat;
                         font-size: 16px;
                         color: #ffffff;
                         text-align: center;
@@ -281,7 +281,7 @@
                     }
 
                     .qs-l input {
-                        background: url("/uploadfiles/pictures/help/qs.png") no-repeat;
+                        background: url("/res/images/qs.png") no-repeat;
                         width: 215px;
                         height: 66px;
                         color: #fff;
@@ -418,7 +418,7 @@
                     }
 
                     .qs-r h5 input {
-                        background: url("/uploadfiles/pictures/help/qs.png") no-repeat;
+                        background: url("/res/images/qs.png") no-repeat;
                         width: 215px;
                         height: 66px;
                         color: #fff;
@@ -519,7 +519,7 @@
                         position: absolute;
                         top: -17px;
                         left: 410px;
-                        background: url("/uploadfiles/pictures/help/pk_03.jpg") no-repeat;
+                        background: url("/res/images/pk_03.jpg") no-repeat;
                         width: 184px;
                         height: 630px;
                         padding-top: 184px
@@ -589,13 +589,13 @@
                 <script type="text/javascript" src="/js/Time.js"></script>
                 <div class="zs content">
                     <h3>
-                        <img src="/uploadfiles/pictures/help/zsz.jpg" alt="武汉办公家具定制" />
+                        <img src="/res/images/zsz.jpg" alt="武汉办公家具定制" />
                     </h3>
                     <ul>
                         <li>
                             <a class="cur">
                                 <em>
-                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="办公家具定制" />
+                                    <img src="/res/images/zs_03.png" alt="办公家具定制" />
                                 </em>
                                 <p>
                                     网上预约<span>免费量尺</span>
@@ -605,7 +605,7 @@
                         <li>
                             <a>
                                 <em>
-                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="武汉办公家具定做" />
+                                    <img src="/res/images/zs_03.png" alt="武汉办公家具定做" />
                                 </em>
                                 <p>
                                     上门量尺<span>设计方案</span>
@@ -615,7 +615,7 @@
                         <li>
                             <a>
                                 <em>
-                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="定做武汉办公家具" />
+                                    <img src="/res/images/zs_03.png" alt="定做武汉办公家具" />
                                 </em>
                                 <p>
                                     到店看方案<span>签订合同</span>
@@ -625,7 +625,7 @@
                         <li>
                             <a>
                                 <em>
-                                    <img src="/uploadfiles/pictures/help/zs_03.png" alt="定制武汉办公家具" />
+                                    <img src="/res/images/zs_03.png" alt="定制武汉办公家具" />
                                 </em>
                                 <p>
                                     产品配送<span>安装售后</span>
@@ -638,31 +638,31 @@
                     <ul>
                         <li>
                             <a>
-                                <img src="/uploadfiles/pictures/help/fst_03.png" alt="办公家具定制厂家" />企业接待台
+                                <img src="/res/images/fst_03.png" alt="办公家具定制厂家" />企业接待台
                                 <br />
                                 定制</a>
                         </li>
                         <li>
                             <a>
-                                <img src="/uploadfiles/pictures/help/fst_05.png" alt="武汉办公室家具定制" />自定义办公区
+                                <img src="/res/images/fst_05.png" alt="武汉办公室家具定制" />自定义办公区
                                 <br />
                                 定制</a>
                         </li>
                         <li>
                             <a>
-                                <img src="/uploadfiles/pictures/help/fst_07.png" alt="武汉办公桌椅定制" />个性洽谈区
+                                <img src="/res/images/fst_07.png" alt="武汉办公桌椅定制" />个性洽谈区
                                 <br />
                                 定制</a>
                         </li>
                         <li>
                             <a>
-                                <img src="/uploadfiles/pictures/help/fst_09.png" alt="武汉办公桌定制" />多功能会议区
+                                <img src="/res/images/fst_09.png" alt="武汉办公桌定制" />多功能会议区
                                 <br />
                                 定制</a>
                         </li>
                         <li>
                             <a>
-                                <img src="/uploadfiles/pictures/help/fst_11.png" alt="武汉文件柜定制" />异形展示柜
+                                <img src="/res/images/fst_11.png" alt="武汉文件柜定制" />异形展示柜
                                 <br />
                                 定制</a>
                         </li>
@@ -680,7 +680,7 @@
                 <div class="qs content">
                     <div class="qs-l fl">
                         <h4>
-                            <img src="/uploadfiles/pictures/help/qsz.png" alt="武汉办公家具定制" />
+                            <img src="/res/images/qsz.png" alt="武汉办公家具定制" />
                         </h4>
                         <p class="ps_time">
                             剩余时间：<i id="day_show">23</i> 天<i id="hour_show">12</i> 时<i id="minute_show">45</i> 分<i id="second_show">32</i> 秒
@@ -724,22 +724,22 @@
                         <div class="pk-l fl">
                             <h1>
                                 <a>
-                                    <img src="/uploadfiles/pictures/help/pk_06.jpg" alt="武汉办公家具定制" />
+                                    <img src="/res/images/pk_06.jpg" alt="武汉办公家具定制" />
                                 </a>
                             </h1>
                             <ul>
                                 <li class="l1">
-                                    <img src="/uploadfiles/pictures/help/pk_11.jpg" alt="武汉办公家具定做" />
+                                    <img src="/res/images/pk_11.jpg" alt="武汉办公家具定做" />
                                     <em>优势一</em>
                                     <span>正规大型家具企业，通过ISO9001质量体系认证、14001环境管理体系认证、18001健康体系认证</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_21.jpg" alt="武汉办公室家具定制" />
+                                    <img src="/res/images/pk_21.jpg" alt="武汉办公室家具定制" />
                                     <em>优势二</em>
                                     <span>可开具正规机打普票和增值税发票</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_26.jpg" alt="办公家具定做" />
+                                    <img src="/res/images/pk_26.jpg" alt="办公家具定做" />
                                     <em>优势三</em>
                                     <span>自有大型办公家具展厅，先看实物在购买，售后有保障</span>
                                 </li>
@@ -748,22 +748,22 @@
                         <div class="pk-l fr">
                             <h1>
                                 <a>
-                                    <img src="/uploadfiles/pictures/help/pk.jpg" alt="定制办公家具厂" />
+                                    <img src="/res/images/pk.jpg" alt="定制办公家具厂" />
                                 </a>
                             </h1>
                             <ul>
                                 <li class="l1">
-                                    <img src="/uploadfiles/pictures/help/pk_14.jpg" alt="办公家具定制厂家" />
+                                    <img src="/res/images/pk_14.jpg" alt="办公家具定制厂家" />
                                     <em>缺点一</em>
                                     <span>规模小，产品质量和售后无保障</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_22.jpg" alt="办公家具定制公司" />
+                                    <img src="/res/images/pk_22.jpg" alt="办公家具定制公司" />
                                     <em>缺点二</em>
                                     <span>普通小型企业只能开具手写发票</span>
                                 </li>
                                 <li>
-                                    <img src="/uploadfiles/pictures/help/pk_25.jpg" alt="武汉办公家具厂家" />
+                                    <img src="/res/images/pk_25.jpg" alt="武汉办公家具厂家" />
                                     <em>缺点三</em>
                                     <span>小型卖场，随时可能转让，无售后</span>
                                 </li>
@@ -785,7 +785,7 @@
                     </div>
                 </div>
                 <div class="mf content">
-                    <img src="/uploadfiles/pictures/help/mf.jpg" alt="办公家具定制厂家" />
+                    <img src="/res/images/mf.jpg" alt="办公家具定制厂家" />
                 </div>
                 <div class="xz content">
                     <h2>
@@ -793,8 +793,8 @@
                         <span>说不定您身边的朋友，也是红鑫家具的合作伙伴哦~</span>
                     </h2>
                     <p>
-                        <img src="/uploadfiles/pictures/help/xz_02.jpg" alt="武汉办公家具定制" />
-                        <a class="gd2" href="/cgal.html" target="_blank">查看更多</a>
+                        <img src="/res/images/xz_02.jpg" alt="武汉办公家具定制" />
+                        <a class="gd2" href="/gcal" target="_blank">查看更多</a>
                     </p>
                 </div>
             </div>

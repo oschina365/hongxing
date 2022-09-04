@@ -461,7 +461,7 @@ s.parentNode.insertBefore(hm, s);
         <a href="#" class="button">确认选择</a>
         <input id="ModelList" type="hidden" />
     </form>
-    <script src="/JS/Jquery.js"></script>
+    <script src="/js/Jquery.js"></script>
     <script type="text/javascript">
         $(function () {
             //初始化显示客服控件列表

@@ -27,10 +27,10 @@
 <div class="wrap">
     <header class="g-hd" id="top" name="top"> <a href="/Mobile/" name="logo" class="m-logo"> <img src="/mobile/uploadfiles/common/20161114114757_3727.gif" data-src="/mobile/uploadfiles/common/20161114114757_3727.gif" class="loaded"> </a>
         <p class="m-tel">办公家具整体配套大型生产厂家</p>
-        <p class="m-menu"><a href="/mobile/">首页</a><a href="/cgal.html">案例</a><a href="/Mobile/Mhelps/dzfw.html">定制</a><a href="/gcsl.html">实力</a><a href="/Mobile/Mhelps/contactus.html">联系</a></p>
+        <p class="m-menu"><a href="/mobile/">首页</a><a href="/gcal">案例</a><a href="/Mobile/Mhelps/dzfw.html">定制</a><a href="/gcsl.html">实力</a><a href="/Mobile/Mhelps/contactus.html">联系</a></p>
     </header>
     <div class="g-hd-f">
-        <p class="fixed"><a href="/mobile/">首页</a><a href="/cgal.html">案例</a><a href="/Mobile/Mhelps/dzfw.html">定制</a><a href="/gcsl.html">实力</a><a href="/Mobile/Mhelps/contactus.html">联系</a></p>
+        <p class="fixed"><a href="/mobile/">首页</a><a href="/gcal">案例</a><a href="/Mobile/Mhelps/dzfw.html">定制</a><a href="/gcsl.html">实力</a><a href="/Mobile/Mhelps/contactus.html">联系</a></p>
     </div>
 
     <section class="g-bd">
@@ -38,8 +38,8 @@
         <div class="g-adv j-slide-auto">
             <div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;"><ul class="m-box" id="slides_control_id0" style="position: relative; overflow: hidden; transition: left 400ms ease 0s; width: 1236px; left: 0px;">
                     <li style="float: left; display: block; width: 412px;"><a href="/mobile/mproduct/" title="免费提供专属办公空间设计解决方案"><img src="/uploadfiles/pictures/others/20190415093609_0090.jpg" data-src="/uploadfiles/pictures/others/20190415093609_0090.jpg" alt="免费提供专属办公空间设计解决方案" class="loaded"></a></li>
-                    <li style="float: left; display: block; width: 412px;"><a href="/xxtyg.html" title="汉口、光谷两大线下实体展厅"><img src="/uploadfiles/pictures/others/20180131144438_1915.jpg" data-src="/uploadfiles/pictures/others/20180131144438_1915.jpg" alt="汉口、光谷两大线下实体展厅" class="loaded"></a></li>
-                    <li style="float: left; display: block; width: 412px;"><a href="/cgal.html" title="感谢以下客户多年以来的不离不弃"><img src="/uploadfiles/pictures/others/20161114101158_7003.jpg" data-src="/uploadfiles/pictures/others/20161114101158_7003.jpg" alt="感谢以下客户多年以来的不离不弃" class="loaded"></a></li>
+                    <li style="float: left; display: block; width: 412px;"><a href="/zyzt" title="汉口、光谷两大线下实体展厅"><img src="/uploadfiles/pictures/others/20180131144438_1915.jpg" data-src="/uploadfiles/pictures/others/20180131144438_1915.jpg" alt="汉口、光谷两大线下实体展厅" class="loaded"></a></li>
+                    <li style="float: left; display: block; width: 412px;"><a href="/gcal" title="感谢以下客户多年以来的不离不弃"><img src="/uploadfiles/pictures/others/20161114101158_7003.jpg" data-src="/uploadfiles/pictures/others/20161114101158_7003.jpg" alt="感谢以下客户多年以来的不离不弃" class="loaded"></a></li>
                 </ul></div>
             <ul class="m-cnt" id="pager_id0">
                 <li class="z-on"></li>
@@ -109,8 +109,8 @@
         </div>
         <!---->
         <div class="g-case">
-            <a href="http://www.hongxin.com.cn/cgal.html" title="工程案例"><h3><img src="/Mobile/Images/Index/c_h3.jpg" data-src="/Mobile/Images/Index/c_h3.jpg" class="loaded"></h3></a>
-            <h2><span><a href="http://www.hongxin.com.cn/cgal.html" title="查看更多">查看更多+</a></span><a href="http://www.hongxin.com.cn/cgal.html" title="工程案例"><i>工程案例</i></a></h2>
+            <a href="http://www.hongxin.com.cn/gcal" title="工程案例"><h3><img src="/Mobile/Images/Index/c_h3.jpg" data-src="/Mobile/Images/Index/c_h3.jpg" class="loaded"></h3></a>
+            <h2><span><a href="http://www.hongxin.com.cn/gcal" title="查看更多">查看更多+</a></span><a href="http://www.hongxin.com.cn/gcal" title="工程案例"><i>工程案例</i></a></h2>
             <dl><a href="/Mobile/MArticles/dzdx.html" title="中国地质大学宿舍楼工程案列">
                     <dt><img src="/Mobile/uploadfiles/pictures/news/20220828140157_7092.jpg_130X105.jpg" data-src="/Mobile/uploadfiles/pictures/news/20220828140157_7092.jpg_130X105.jpg" alt="中国地质大学宿舍楼工程案列" class="loaded"></dt>
                     <dd>
@@ -205,7 +205,7 @@
                         <a href="/ggdxl.html"><span><img src="/Mobile/Images/Common/f_ico8.png"></span>高隔断</a>
                         <a href="/bgzsxl.html"><span><img src="/Mobile/Images/Common/f_ico10.png"></span>办公装饰</a>
                     </i></li>
-                <li><a href="/xxtyg.html"><em></em>线下体验馆</a></li>
+                <li><a href="/zyzt"><em></em>线下体验馆</a></li>
                 <li><a href="http://p.qiao.baidu.com/cps/chat?siteId=3552126&amp;userId=2186107"><em></em>在线咨询</a> </li>
                 <li><a href="tel:4006785198"><em></em>立即拨号</a> </li>
             </ul>

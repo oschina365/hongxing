@@ -1,7 +1,7 @@
 @charset "utf-8";
 body { color:#000; font:12px/1.231 Verdana, Arial, Helvetica, sans-serif "";}
 /*网站字体颜色*/
-.bodybg{ background:url(Img/Common/bg.jpg) repeat-x;}
+.bodybg{ background:url(img/common/bg.jpg) repeat-x;}
 a { color:#484747; text-decoration:none;  blr:expression(this.onFocus=this.blur())}  /*for ie f6n.net*/
 a:focus{outline:0;} /*for ff f6n.net*/
 a:hover { color:#A10000; text-decoration:underline;}
@@ -55,22 +55,22 @@ p {text-align:justify; text-justify:inter-ideograph; white-space: normal; letter
 
 /*头部开始*/
 .login{ width:960px; text-align:right;height:21px;*height:22px;color:#988A59; padding-top:4px;*padding-top:3px;overflow:hidden;}
-.k1{ width:85px; height:17px; border:0; background:url(Img/Common/k1.gif) no-repeat;}
+.k1{ width:85px; height:17px; border:0; background:url(img/common/k1.gif) no-repeat;}
 .login input{ margin-right:8px;}
 .login a{ padding:0 4px; color:#988A59;}
 .login span{ float:right; line-height:18px;}
-.top{ width:960px;height:124px; overflow:hidden; background:url(Img/Common/top_bg.gif) no-repeat;}
+.top{ width:960px;height:124px; overflow:hidden; background:url(img/common/top_bg.gif) no-repeat;}
 .logo{ float:left; padding-top:32px;}
 .logo2{ float:left;color:#858585;padding:24px 0 0 15px;}
 .youb{ float:right; width:300px;}
-.ding{ float:right; background:url(Img/Common/img1.gif) no-repeat 0 46px; height:40px; padding:50px 0 0 68px; }
-.k2{ border:0; padding:2px 0 0 3px; color:#D2B976; background:url(Img/Common/k2.gif) no-repeat;width:120px; height:15px;} 
+.ding{ float:right; background:url(img/common/img1.gif) no-repeat 0 46px; height:40px; padding:50px 0 0 68px; }
+.k2{ border:0; padding:2px 0 0 3px; color:#D2B976; background:url(img/common/k2.gif) no-repeat;width:120px; height:15px;}
 .ding li{color:#988A59;} 
 .tel{ float:right; color:#99896D;font-size:14px; padding-right:15px;}
 .tel span{ font-family:Arial, Helvetica, sans-serif; font-size:24px;}
 .menu{width:960px;height:44px;}
 .menu ul{ float:left;height:36px;}
-.menu li{ float:left; height:36px;background:url(Img/Common/menu_fgx.gif) no-repeat right 8px; padding:0 23px 0 8px;}
+.menu li{ float:left; height:36px;background:url(img/common/menu_fgx.gif) no-repeat right 8px; padding:0 23px 0 8px;}
 .menu li a{ font-size:14px; font-weight:bold; font-family:"微软雅黑","宋体"; color:#EFE2AA; display:block; padding-top:14px;}
 .menu li a:hover, .menu .cur a{ color:#fff;}
 .menu .nones{ background:none;}
@@ -86,7 +86,7 @@ p {text-align:justify; text-justify:inter-ideograph; white-space: normal; letter
 .k4{ border:1px solid #E5E5E5;color:#5E5E5E; width:124px; height:21px; margin-right:3px;}
 
 /*底部开始*/
-.foot_menu{background:url(Img/Common/nav.gif) no-repeat; height:24px; line-height:24px; width:960px; text-align:center;color:#7B1410; margin-top:5px;}
+.foot_menu{background:url(img/common/nav.gif) no-repeat; height:24px; line-height:24px; width:960px; text-align:center;color:#7B1410; margin-top:5px;}
 .foot_menu a{ color:#7B1410; padding:0 8px;}
 .font{ width:960px; text-align:center; line-height:20px; color:#7B1410; padding-top:10px;}
 .wenzi{ line-height:20px;width:960px; padding-top:10px;color:#7B1410;}

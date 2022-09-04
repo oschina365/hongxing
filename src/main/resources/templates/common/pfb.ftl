@@ -354,8 +354,8 @@
 
             </li>
             <li><a class="fb_a" href="/">首页</a>|</li>
-            <li><a class="fb_a" href="/cgal.html">工程案例图</a>|</li>
-            <li><a class="ts fb_a" href="/xxtyg.html">直营展厅</a></li>
+            <li><a class="fb_a" href="/gcal">工程案例图</a>|</li>
+            <li><a class="ts fb_a" href="/zyzt">直营展厅</a></li>
         </ul>
         <div class="fsr form">
             <input class="inp01s keypress" button="#sousuotow" type="text" defvalue="请输入热门关键词"
