@@ -21,9 +21,10 @@ import java.io.IOException;
 
 
 /**
+ * 七牛上传
+ *
  * @author kz
  * @date 2017年12月1日14:32:07
- * @desc 七牛上传
  */
 @Controller
 @RequestMapping(value = "/up")

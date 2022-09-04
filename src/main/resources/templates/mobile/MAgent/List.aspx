@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Mobile.MAgent.list, qwt" enableviewstate="false" enableviewstatemac="false" %>

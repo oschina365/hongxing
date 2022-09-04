@@ -20,10 +20,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
+ * 文章
  * @author kz
  * @since 2022-08-18 16:57:08
  */
-@RequestMapping("/p")
+@RequestMapping("/article")
 @Controller
 public class ArticleController extends BaseController {
 
@@ -66,7 +67,7 @@ public class ArticleController extends BaseController {
     }
 
     /**
-     * 案例
+     * 文章详情（即案例或者新闻资讯详情）
      *
      * @return
      */
@@ -99,7 +100,7 @@ public class ArticleController extends BaseController {
             }
         }
         if (check) {
-            request.setAttribute("randomProducts", ProductDAO.ME.randomList(6));
+            request.setAttribute("randomProducts", ProductDAO.ME.randomList(4));
             return "/p/index_mobile";
         }
         return "/p/index";

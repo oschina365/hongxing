@@ -192,7 +192,7 @@
         <#elseif  currentCategoryId?? && currentCategoryName??>
             &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
         </#if>
-        &raquo; <a href="/p/${article.id}" title="${article.name}">${article.name}</a>
+        &raquo; <a href="/article/${article.id}" title="${article.name}">${article.name}</a>
     </div>
     <div class="left2">
         <div class="left2_main">
@@ -229,9 +229,9 @@
                 </div>
                 <div class="clear"></div>
                 <div class="gduo" id="gduo">
-							<span>下一篇：<a title="${articlePrev.name}" href="/p/${articlePrev.id}">${articlePrev.name}</a>
+							<span>下一篇：<a title="${articlePrev.name}" href="/article/${articlePrev.id}">${articlePrev.name}</a>
 							</span>
-                    上一篇：<a title="${articleLast.name}" href="/p/${articleLast.id}">${articleLast.name}</a>
+                    上一篇：<a title="${articleLast.name}" href="/article/${articleLast.id}">${articleLast.name}</a>
                 </div>
             </div>
 
@@ -245,7 +245,7 @@
                             <#list articleRandoms as article>
                                 <#if article?? && article.id gt 0>
                                     <li>
-                                        <a href='/p/${article.id}' title='${article.name}'>${article.name}</a>
+                                        <a href='/article/${article.id}' title='${article.name}'>${article.name}</a>
                                     </li>
                                 </#if>
                             </#list>
@@ -281,7 +281,7 @@
                     <#list articleLists as articleList>
                         <#if articleList?? && articleList.id gt 0>
                             <li>
-                                <a href='/p/${articleList.id}' title='${articleList.name}'>${articleList.name}</a>
+                                <a href='/article/${articleList.id}' title='${articleList.name}'>${articleList.name}</a>
                             </li>
                         </#if>
                     </#list>

@@ -165,7 +165,7 @@
                     <#if randomArticles??>
                         <#list randomArticles as randomArticle>
                             <#if randomArticle?? && randomArticle.id gt 0>
-                                <li style="table-layout:fixed;word-break:keep-all;white-space:nowrap;overflow:hidden; text-overflow:ellipsis; "><a href="/p/${randomArticle.id}">${randomArticle.name}</a></li>
+                                <li style="table-layout:fixed;word-break:keep-all;white-space:nowrap;overflow:hidden; text-overflow:ellipsis; "><a href="/article/${randomArticle.id}">${randomArticle.name}</a></li>
                             </#if>
                         </#list>
                     </#if>
@@ -179,7 +179,7 @@
                                     <div class="c-r pro_tab tabCat successArticleTabCat successArticleChild_${successArticle_index}" <#if successArticle_index==0>style="display: block;"<#else >style="display: none;"</#if>>
                                         <ul>
                                             <#list successArticle.articles as successArticleItem>
-                                                <li><a target="_blank" href="/p/${successArticleItem.articleId}"><img src="${successArticleItem.image}" alt=""/><span>${successArticleItem.name}</span></a>
+                                                <li><a target="_blank" href="/article/${successArticleItem.articleId}"><img src="${successArticleItem.image}" alt=""/><span>${successArticleItem.name}</span></a>
                                             </#list>
                                         </ul>
                                     </div>

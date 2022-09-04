@@ -39,10 +39,7 @@ public class GlobalController extends BaseController {
         String ipAddress = IpUtil.getIpAddress(request);
         String ua = request.getHeader("User-Agent");
         boolean check = CheckMobile.check(ua);
-        if (check) {
-            log.info("{},来自移动端访问,ua={}", ipAddress, ua);
-            return "index_mobile";
-        }
+
         request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
         List<Category> otherChilds = CategoryDAO.ME.childsByType(CategoryContants.Type.PRODUCT.getCode(), "other");
         if (CollectionUtil.isNotEmpty(otherChilds)) {
@@ -83,6 +80,10 @@ public class GlobalController extends BaseController {
             request.setAttribute("successArticles", articleSuccessVOS);
         }
         request.setAttribute("randomArticles", ArticleDAO.ME.randomList(4));
+        if (check) {
+            log.info("{},来自移动端访问,ua={}", ipAddress, ua);
+            return "index_mobile";
+        }
         log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
     }

@@ -94,6 +94,8 @@
                             &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
                             <#elseif  currentCategoryId?? && currentCategoryName??>
                             &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
+                            <#else>
+                            &raquo; <a href="/gcal?id=88" title="成功案例">成功案例</a>
                         </#if>
                     </div>
                     <div class="news_con News_4 News_4_12">
@@ -174,17 +176,17 @@
             {{# if(item){ }}
             <dl class="HZAL4 news_hover4">
                 <dt>
-                    <a href="/p/{{item.id}}" title="{{item.name}}" target="_blank">
+                    <a href="/article/{{item.id}}" title="{{item.name}}" target="_blank">
                         <img src="{{item.banner}}" alt="{{item.name}}" title="{{item.name}}" />
                     </a>
                 </dt>
                 <dd>
                     <h4>
-                        <a href="/p/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
+                        <a href="/article/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
                     </h4>
                     <p>{{item.desc}}</p>
                     <span>
-                        <a href="/p/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
+                        <a href="/article/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
                     </span>
                 </dd>
             </dl>
@@ -211,7 +213,7 @@
                 function dataList(number) {
                     var currentCategoryId =$("#currentCategoryId").val();
                     $.ajax({
-                        url: '/p/list',
+                        url: '/article/list',
                         method: 'get',
                         dataType: 'json',
                         data: {"categoryId":currentCategoryId,"page": number,"limit":6},
