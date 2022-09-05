@@ -1,39 +1,6 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="线下体验馆,办公家具定制,办公家具设计,武汉办公家具厂家,办公桌椅,武汉办公家具,红鑫办公家具" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
-    <body>
-        <!-- 代码部分begin -->
-        <div id='cs_box'>
-            <div class='cs_img'></div>
-            <div class='cs_btn'>红鑫家具旗舰店
-                <li>
-                    <a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="/res/images/tianmao.jpg" width="120" alt="">
-                    </a>
-                </li>
-            </div>
-
-        </div>
-        <!-- 代码部分end -->
-    </body>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    </head>
+<@html title_="线下体验馆,办公家具定制,办公家具设计,武汉办公家具厂家,办公桌椅,武汉办公家具,红鑫办公家具" css_=["/skins/default/style.css"] >
+    <#include "common/tianmao.ftl"/>
     <body>
         <#include "common/pfb.ftl" />
         <#include "common/g_top.ftl" />
@@ -42,45 +9,15 @@
             <div class="banan-t content">
                 <p>
                     <b>热门搜索词：</b>
-                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a>
+                    <a href="/about" title="武汉红鑫家俱">武汉红鑫家俱</a>
                     <a href="/product/" title="武汉红鑫办公家具">武汉红鑫办公家具</a>
-                    <a href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
+                    <a href="/about" title="武汉办公家具厂家">武汉办公家具厂家</a>
                 </p>
                 <#include "common/category_list.ftl" />
             </div>
         </div>
         <script src="/js/select2css.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(function () {
-                $('.ban-ss').before($('.topadcs'));
-            });
-        </script>
-        <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript">
-            initCommonHeader();
-            var MARK = "help";
-            var SID = "0001,0011";
 
-            $(function () {
-                $(".menu ul.ul_col li").hover(function () {
-                    $(this).css("zIndex", "10000").children(".erji").show();
-                    $(this).addClass("cur").siblings("li").removeClass("cur");
-                }, function () {
-                    $(this).children(".erji").hide();
-                    $(this).removeClass("cur")
-                });
-            });
-
-            $(function () {
-                $(".pfb ul.fb_ul li").hover(function () {
-                    $(this).css("zIndex", "10000").children(".erji").show();
-                    $(this).addClass("cur").siblings("li").removeClass("cur");
-                }, function () {
-                    $(this).children(".erji").hide();
-                    $(this).removeClass("cur")
-                });
-            });
-        </script>
         <div class="topadcs">
             <a class="fullad" href="/zyzt" title="精品体验馆,诚邀您的到来" style="background:url('res/images/banner3.jpg') no-repeat center top;"></a>
         </div>

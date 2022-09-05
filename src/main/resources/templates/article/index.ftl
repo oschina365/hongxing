@@ -1,75 +1,6 @@
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="zh-CN" xml:lang="zh-CN">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>${article.name} - 武汉办公家具|办公桌椅生产厂家厂商报价直销|办公家具定制厂家|武汉红鑫办公家具厂</title>
-    <meta name="keywords" content="武汉办公家具,武汉办公桌椅,办公家具定制厂家,办公前台,办公室办公沙发,武汉办公家具公司,办公家具定制厂家," />
-    <meta name="description" content="武汉办公家具，武汉红鑫办公家具20年品质沉淀，主营办公家具、保密文件柜定做、办公桌椅、武汉大小型会议桌椅厂家、档案密集柜报价、钢制铁皮文件柜厂家、储物柜、洽谈桌、武汉办公桌椅、办公前台、大班台等、武汉办公家具定制：400-678-5198" />
-    <script src="/js/MobileRewrite.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        uaredirect("/Mobile/MArticles/hbsjtystgsg.html");
-    </script>
-    <link key="resetcommon" href="http://www.hongxin.com.cn/Skins/Default/resetcommon.css" rel="stylesheet" type="text/css" />
-    <link key="style" href="http://www.hongxin.com.cn/skins/default/template/news/news01/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" key="NSW_Details" src="http://www.hongxin.com.cn/JS/NSW_Details.js"></script>
-    <script type="text/javascript" key="jscript" src="http://www.hongxin.com.cn/skins/default/template/news/news01/jscript.js"></script>
-    <meta name="format-detection" content="telephone=no" />
-    <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
-    <style>
-        #cs_box {
-            width: 120px;
-            height: 0px;
-            color: #FFF;
-            background: #54a7ff;
-            position: fixed;
-            right: 5px;
-            top: 100px;
-            border-radius: 10px;
-            z-index: 1000
-        }
-
-        #cs_box span {
-            height: 20px;
-            line-height: 20px;
-            display: block;
-        }
-
-        .cs_title {
-            font-size: 14px;
-            margin: 0px;
-            font-weight: bold;
-        }
-
-        .cs_img {
-            width: 120px;
-            height: 0px;
-            background: #FFF;
-            margin: 2px;
-            background-image: url()
-        }
-
-        .cs_info {
-            font-size: 12px;
-            margin: 0px 10px;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .cs_btn {
-            width: 120px;
-            height: 25px;
-            background: #333;
-            margin: 0px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            line-height: 25px;
-            color: #FFF;
-            text-align: center;
-            cursor: pointer;
-        }
-    </style>
-
-</head>
+<#include "../common/layout.ftl"/>
+<@html title_="${article.name} - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂"
+css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"]>
 <body>
 <!-- 代码部分begin -->
 <div id='cs_box'>
@@ -153,31 +84,7 @@
     });
 </script>
 <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript">
-    initCommonHeader();
-    var MARK = "news";
-    var SID = "0001,0012,0015";
 
-    $(function () {
-        $(".menu ul.ul_col li").hover(function () {
-            $(this).css("zIndex", "10000").children(".erji").show();
-            $(this).addClass("cur").siblings("li").removeClass("cur");
-        }, function () {
-            $(this).children(".erji").hide();
-            $(this).removeClass("cur")
-        });
-    });
-
-    $(function () {
-        $(".pfb ul.fb_ul li").hover(function () {
-            $(this).css("zIndex", "10000").children(".erji").show();
-            $(this).addClass("cur").siblings("li").removeClass("cur");
-        }, function () {
-            $(this).children(".erji").hide();
-            $(this).removeClass("cur")
-        });
-    });
-</script>
 
 <div class="topadcs">
     <a class="fullad" href="/gcal" title="精彩设计,用心呈现" style="background:url('/res/images/banner1.jpg') no-repeat center top;"></a>
@@ -208,10 +115,10 @@
                             </span>
                             <span>来源：红鑫</span>
                             <span class='m_qrinfo'>
-										<a href="http://www.hongxin.com.cn/Mobile/MArticles/hbsjtystgsg.html" title="查看手机网址">查看手机网址</a>
+										<a href="/Mobile/MArticles/hbsjtystgsg.html" title="查看手机网址">查看手机网址</a>
 										<div class='m_qrcode'>
 											<em>扫一扫!</em>
-											<img src="http://nswcode.nsw88.com/?qc=8dd84307afe274a5&url=http://www.hongxin.com.cn/Mobile/MArticles/hbsjtystgsg.html" alt="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" />
+											<img src="http://nswcode.nsw88.com/?qc=8dd84307afe274a5&url=/Mobile/MArticles/hbsjtystgsg.html" alt="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" />
 											<em>扫一扫!</em>
 										</div>
 									</span>
@@ -265,7 +172,7 @@
                     <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
                     <a target='_blank' href="/Search/Index.aspx?kwd="></a>
                     <br />
-                    <span>【责任编辑】：</span>红鑫<em></em>版权所有：<a href="http://www.hongxin.com.cn/" target="_blank" title="http://www.hongxin.com.cn/">http://www.hongxin.com.cn</a>转载请注明出处
+                    <span>【责任编辑】：</span>红鑫<em></em>版权所有：<a href="/" target="_blank" title="/">http://www.hongxin.com.cn</a>转载请注明出处
                 </div>
             </div>
         </div>
@@ -335,6 +242,5 @@
     });
 </script>
 <!--content:end-->
-<#include "../common/footer.ftl"/>
 </body>
-</html>
+</@html>

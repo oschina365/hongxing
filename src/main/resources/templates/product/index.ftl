@@ -1,6 +1,6 @@
 ﻿<#include "../common/layout.ftl"/>
 <@html title_="${product.name} - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂"
-css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
+css_=["/skins/default/style.css"] >
 <body>
 <!-- 代码部分begin -->
 <div id='cs_box'>
@@ -315,7 +315,7 @@ css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
 								<#if category.childs?? && (category.childs?size > 0) >
 									<ul class="clearfix">
 										<#list category.childs as child>
-											<li><a href="/product/category/${category.id}">${child.name}</a></li>
+											<li><a href="/product/category/${child.id}">${child.name}</a></li>
 										</#list>
 									</ul>
 								</#if>

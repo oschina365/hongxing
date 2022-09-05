@@ -29,5 +29,46 @@
 <script src="//sgoutong.baidu.com/embed/1660810068/asset/embed/pc_nb.js" charset="UTF-8"></script>
 <link rel="stylesheet" type="text/css" href="//sgoutong.baidu.com/embed/1660810068/asset/embed/css/pc/main.css">
 <script type="text/javascript" data-bdms-faccdee21b68="eyJhcHBfa2V5IjoiNTQ4MCIsImFwcF92aWV3IjoicHJvbW90ZSIsImJyb3dzZXJfdXJsIjoiaHR0cHM6Ly9zb2ZpcmUuYmFpZHUuY29tL2RhdGEvdWEvYWIuanNvbiIsImZvcm1fZGVzYyI6IiIsInNlbmRfaW50ZXJ2YWwiOjUwLCJzZW5kX21ldGhvZCI6M30=" src="https://sofire.bdstatic.com/js/xaf3.js"></script>
+<script type="text/javascript">
+    initCommonHeader();
+
+    $(function () {
+        $(".menu ul.ul_col li").hover(function () {
+            $(this).css("zIndex", "10000").children(".erji").show();
+            $(this).addClass("cur").siblings("li").removeClass("cur");
+        }, function () {
+            $(this).children(".erji").hide();
+            $(this).removeClass("cur")
+        });
+    });
+
+    $(function () {
+        $(".pfb ul.fb_ul li").hover(function () {
+            $(this).css("zIndex", "10000").children(".erji").show();
+            $(this).addClass("cur").siblings("li").removeClass("cur");
+        }, function () {
+            $(this).children(".erji").hide();
+            $(this).removeClass("cur")
+        });
+    });
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
 <#--
 <script type="text/javascript" src="https://p.qiao.baidu.com/cps5/site/poll?cb=jsonp_bridge_1661250328622_3599764194752739&amp;l=0&amp;sign=&amp;v=3679614480035521260&amp;s=3552126&amp;e=2186107&amp;isAFF=1&amp;filterAdvertisement=1&amp;dev=0&amp;auth=%7B%22anonym%22%3A0%2C%22key%22%3A%221b68274f-2d07-46cc-838b-5ec0ddfc0a7c%22%2C%22sn%22%3A%22%22%2C%22id%22%3A%223679614480035521260%22%2C%22from%22%3A4%2C%22token%22%3A%22bridge%22%7D&amp;_time=1661250328622" id="id_jsonp_bridge_1661250328622_3599764194752739" charset="utf-8"></script>-->

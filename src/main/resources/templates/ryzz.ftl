@@ -1,5 +1,5 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="营业执照|荣誉资质 - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
+<@html title_="营业执照|荣誉资质 - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂" css_=["/skins/default/style.css"] >
         <#include "common/pfb.ftl" />
         <#include "common/g_top.ftl" />
 
@@ -7,9 +7,9 @@
             <div class="banan-t content">
                 <p>
                     <b>热门搜索词：</b>
-                    <a href="/helps/aboutus.html" title="武汉红鑫家俱">武汉红鑫家俱</a>
+                    <a href="/about" title="武汉红鑫家俱">武汉红鑫家俱</a>
                     <a href="/product/" title="红鑫办公家具">红鑫办公家具</a>
-                    <a href="/helps/aboutus.html" title="武汉办公家具厂家">武汉办公家具厂家</a>
+                    <a href="/about" title="武汉办公家具厂家">武汉办公家具厂家</a>
                 </p>
                 <#include "common/category_list.ftl" />
             </div>
@@ -21,36 +21,6 @@
             });
         </script>
         <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript">
-            initCommonHeader();
-            var MARK = "help";
-            var SID = "0001,0010";
-
-            $(function () {
-                $(".menu ul.ul_col li").hover(function () {
-                    $(this).css("zIndex", "10000").children(".erji").show();
-                    $(this).addClass("cur").siblings("li").removeClass("cur");
-                }, function () {
-                    $(this).children(".erji").hide();
-                    $(this).removeClass("cur")
-                });
-            });
-
-            $(function () {
-                $(".pfb ul.fb_ul li").hover(function () {
-                    $(this).css("zIndex", "10000").children(".erji").show();
-                    $(this).addClass("cur").siblings("li").removeClass("cur");
-                }, function () {
-                    $(this).children(".erji").hide();
-                    $(this).removeClass("cur")
-                });
-            });
-        </script>
-        <script type="text/javascript">
-            var OBJ_TITLE = "营业执照";
-            var OBJ_ID = "51";
-            var SID = "0001,0010";
-        </script>
 
         <div class="topadcs">
             <a class="fullad" href="/ryzz" title="湖北名优产品,选择更放心" style="background:url('/res/images/banner4.jpg') no-repeat center top;"></a>
@@ -63,7 +33,7 @@
             <div class="plc rows" style=" display:none">
                 <span class="red_x">当前位置：</span>
                 <a href="/" title="首页">首页</a>
-                &raquo; <a href="/ryzz.html" title="荣誉资质">荣誉资质</a> &raquo; <a href="/Helps/yyzz.html" title="营业执照">营业执照</a>
+                &raquo; <a href="/ryzz" title="荣誉资质">荣誉资质</a> &raquo; <a href="/Helps/yyzz.html" title="营业执照">营业执照</a>
             </div>
             <div class="a_fz RYZZ3_warp" id="a2">
                 <div class="content clearfix">

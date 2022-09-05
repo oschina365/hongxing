@@ -1,39 +1,6 @@
 ﻿<#include "common/layout.ftl"/>
-<@html title_="武汉红鑫家具联系方式：400-678-5198" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
-    <body>
-        <!-- 代码部分begin -->
-        <div id='cs_box'>
-            <div class='cs_img'></div>
-            <div class='cs_btn'>红鑫家具旗舰店
-                <li>
-                    <a href="https://hongxin.tmall.com/" target="_black">
-                        <img src="/res/images/tianmao.jpg" width="120" alt="">
-                    </a>
-                </li>
-            </div>
-        </div>
-        <!-- 代码部分end -->
-    </body>
-
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    </head>
+<@html title_="武汉红鑫家具联系方式：400-678-5198" css_=["/skins/default/style.css"] >
+    <#include "common/tianmao.ftl"/>
     <body>
         <#include "common/pfb.ftl" />
         <#include "common/g_top.ftl" />

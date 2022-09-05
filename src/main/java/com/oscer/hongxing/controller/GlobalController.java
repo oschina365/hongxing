@@ -171,6 +171,10 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/dlpp")
     public String dlpp() {
+        List<Category> successArticleCategorys = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.SUCCESS_ARTICLE);
+        List<Category> newsArticleCategorys = CategoryDAO.ME.childsByType(CategoryContants.Type.ARTICLE.getCode(), Category.NEWS_ARTICLE);
+        request.setAttribute("successArticleCategorys", successArticleCategorys);
+        request.setAttribute("newsArticleCategorys", newsArticleCategorys);
         return "dlpp";
     }
 

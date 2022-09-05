@@ -80,11 +80,11 @@
                         <#list categorys as category>
                             <#if category?? && category.id gt 0>
                                 <#if !(category.name=='其它' || !(category.childs?? && (category.childs?size > 0)))>
-                                    <h4><a href="/categrory/${category.id}">${category.name}</a></h4>
+                                    <h4><a href="/product/category/${category.id}">${category.name}</a></h4>
                                     <#if category.childs?? && (category.childs?size > 0) >
                                         <ul class="clearfix">
                                         <#list category.childs as child>
-                                            <li><a href="/categrory/${category.id}">${child.name}</a></li>
+                                            <li><a href="/product/category/${child.id}">${child.name}</a></li>
                                         </#list>
                                         </ul>
                                     </#if>
@@ -104,7 +104,7 @@
                                         <#if category.childs?? && (category.childs?size > 0) >
                                             <ul class="clearfix otherProduct">
                                                 <#list category.childs as child>
-                                                    <li data-index="${child_index}" <#if child_index==0>class="cur" </#if>><a href="/categrory/${category.id}">${child.name}</a></li>
+                                                    <li data-index="${child_index}" <#if child_index==0>class="cur" </#if>><a href="/product/category/${category.id}">${child.name}</a></li>
                                                 </#list>
                                             </ul>
                                         </#if>

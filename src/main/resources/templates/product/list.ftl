@@ -1,9 +1,41 @@
-﻿<#include "common/layout.ftl"/>
+<#include "../common/layout.ftl"/>
 <@html title_="武汉红鑫办公家具|武汉办公家具厂家|办公家具一站式采购定制" css_=["/skins/default/style.css"] >
-    <#include "common/tianmao.ftl"/>
     <body>
-        <#include "common/pfb.ftl" />
-        <#include "common/g_top.ftl" />
+        <!-- 代码部分begin -->
+        <div id='cs_box'>
+            <div class='cs_img'>
+            </div>
+            <div class='cs_btn'>红鑫家具旗舰店
+                <li>
+                    <a href="https://hongxin.tmall.com/" target="_black">
+                        <img src="/res/images/tianmao.jpg" width="120" alt="">
+                    </a>
+                </li>
+            </div>
+        </div>
+        <!-- 代码部分end -->
+    </body>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <body>
+        <#include "../common/pfb.ftl" />
+        <#include "../common/g_top.ftl" />
 
         <div class="ban-ss">
             <div class="banan-t content">
@@ -13,7 +45,7 @@
                     <a href="/product/" title="保密文件柜钢制铁皮更衣档案储物密集柜厂家定做报价">保密文件柜钢制铁皮更衣档案储物密集柜厂家定做报价</a>
                     <a href="/product/" title="老板办公室桌椅沙发">老板办公室桌椅沙发</a>
                 </p>
-                <#include "common/category_list.ftl" />
+                <#include "../common/category_list.ftl" />
             </div>
         </div>
         <script src="/js/select2css.js" type="text/javascript"></script>
@@ -56,64 +88,41 @@
                     <div class="plc">
                         <span class="red_x">当前位置：</span>
                         <a href="/" title="首页">首页</a>
-                        <#if parentCategoryId?? && parentCategoryName??>
-                            &raquo; <a href="/gcal?id=${parentCategoryId}" title="${parentCategoryName}">${parentCategoryName}</a>
-                            &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
-                            <#elseif  currentCategoryId?? && currentCategoryName??>
-                            &raquo; <a href="/gcal?id=${currentCategoryId}" title="${currentCategoryName}">${currentCategoryName}</a>
-                            <#else>
-                            &raquo; <a href="/gcal?id=88" title="成功案例">成功案例</a>
-                        </#if>
+                        &raquo; <a href="/product" title="产品中心">产品中心</a>
                     </div>
                     <div class="news_con News_4 News_4_12">
-                        <input type="hidden" id="currentCategoryId" value="${currentCategoryId!''}"/>
-                        <div id="successArticleListDiv"></div>
+                        <div id="successProductListDiv"></div>
                         <div class="clear"></div>
-                        <div id="successArticlePage">
+                        <div id="successProductPage">
                         </div>
                     </div>
                 </div>
                 <div class="rightbot"></div>
             </div>
-            <div class="left">
-                <div class="leib2 leib2s">
-                    <div class="tit">
-                        成功案例
-                    </div>
-                    <div class="nr">
-                        <ul>
-                            <#if successArticleCategorys??>
-                                <#list successArticleCategorys as successArticleCategory>
-                                    <#if successArticleCategory?? && successArticleCategory.id gt 0>
-                                        <li <#if currentCategoryId?? && currentCategoryId==successArticleCategory.id>class="cur"</#if>>
-                                            <a href="/gcal?id=${successArticleCategory.id}" title="${successArticleCategory.name}">${successArticleCategory.name}</a>
-                                        </li>
+            <div class="leftr">
+                <div class="cp-l">
+                    <h3>红鑫产品中心</h3>
+                    <div class="lcc">
+                        <#if categorys??>
+                            <#list categorys as category>
+                                <#if category?? && category.id gt 0>
+                                    <#if !(category.name=='其它' || !(category.childs?? && (category.childs?size > 0)))>
+                                        <h4 ><a href="/product/category/${category.id}">${category.name}</a></h4>
+                                        <#if category.childs?? && (category.childs?size > 0) >
+                                            <ul class="clearfix">
+                                                <#list category.childs as child>
+                                                    <li ><a href="/product/category/${child.id}">${child.name}</a></li>
+                                                </#list>
+                                            </ul>
+                                        </#if>
                                     </#if>
-                                </#list>
-                            </#if>
-                        </ul>
+                                </#if>
+                            </#list>
+                        </#if>
                     </div>
                 </div>
-
-                <div class="leib2 leib2_news">
-                    <div class="tit">
-                        新闻资讯
-                    </div>
-                    <div class="nr">
-                        <ul>
-                            <#if newsArticleCategorys??>
-                                <#list newsArticleCategorys as newsArticleCategory>
-                                    <#if newsArticleCategory?? && newsArticleCategory.id gt 0>
-                                        <li <#if currentCategoryId?? && currentCategoryId==newsArticleCategory.id>class="cur"</#if>>
-                                            <a href="/gcal?id=${newsArticleCategory.id}" title="${newsArticleCategory.name}">${newsArticleCategory.name}</a>
-                                        </li>
-                                    </#if>
-                                </#list>
-                            </#if>
-                        </ul>
-                    </div>
-                </div>
-
+                <div id="divHistoryRecommentCntr"></div>
+                <div id="divHistoryCntr" class="leib2" style="display: none;"></div>
                 <div class="leiblx">
                     <div class="tit">
                         联系红鑫家具
@@ -123,8 +132,8 @@
                             <div class="dianhua">
                                 咨询热线：<span>400-678-5198</span>
                             </div>
-                            <p>座机：027-8393-9586 </p>
-                            <p>手机：182-0718-0190</p>
+                            <p>座机：027-61520188</p>
+                            <p>手机：182-0718-0187</p>
                             <p>邮箱：hongxin@hongxin.com.cn</p>
                             <p>光谷展厅：武汉市洪山区光谷大道未来之光6号楼1-3楼
                             </p>
@@ -143,17 +152,17 @@
             {{# if(item){ }}
             <dl class="HZAL4 news_hover4">
                 <dt>
-                    <a href="/article/{{item.id}}" title="{{item.name}}" target="_blank">
-                        <img src="{{item.banner}}" alt="{{item.name}}" title="{{item.name}}" />
+                    <a href="/product/{{item.id}}" title="{{item.name}}" target="_blank">
+                        <img src="{{item.thumbnail}}" alt="{{item.name}}" title="{{item.name}}" />
                     </a>
                 </dt>
                 <dd>
                     <h4>
-                        <a href="/article/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
+                        <a href="/product/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
                     </h4>
                     <p>{{item.desc}}</p>
                     <span>
-                        <a href="/article/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
+                        <a href="/product/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
                     </span>
                 </dd>
             </dl>
@@ -178,17 +187,16 @@
                  * @param number
                  */
                 function dataList(number) {
-                    var currentCategoryId =$("#currentCategoryId").val();
                     $.ajax({
-                        url: '/article/list',
+                        url: '/product/list',
                         method: 'get',
                         dataType: 'json',
-                        data: {"categoryId":currentCategoryId,"page": number,"limit":6},
+                        data: {"page": number,"limit":12},
                         success: function (data) {
                             console.log(data);
                             if (data && data.code == 1) {
                                 var listData = {"list": data.result.list};
-                                var getTpl = successArticleListTpl.innerHTML, view = document.getElementById('successArticleListDiv');
+                                var getTpl = successArticleListTpl.innerHTML, view = document.getElementById('successProductListDiv');
 
                                 laytpl(getTpl).render(listData, function (html) {
                                     view.innerHTML = html;
@@ -216,7 +224,7 @@
                     //var themes = ['#ff0000', '#eb4310', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#800080', '#a1488e', '#c71585', '#bd2158'];
                     var themes = ['#E70012'];
                     laypage.render({
-                        elem: "successArticlePage",
+                        elem: "successProductPage",
                         limit: limit,
                         count: count,
                         first: '首页',

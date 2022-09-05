@@ -103,7 +103,7 @@ public class ArticleController extends BaseController {
             request.setAttribute("randomProducts", ProductDAO.ME.randomList(4));
             return "/p/index_mobile";
         }
-        return "/p/index";
+        return "/article/index";
     }
 
 }
