@@ -37,7 +37,7 @@
         <p class="m-menu">
             <a href="/">首页</a>
             <a href="/gcal">案例</a>
-            <a href="/Mobile/Mhelps/dzfw.html">定制</a>
+            <a href="/dzfw">定制</a>
             <a href="/gcsl.html">实力</a>
             <a href="/Mobile/Mhelps/contactus.html">联系</a>
         </p>
