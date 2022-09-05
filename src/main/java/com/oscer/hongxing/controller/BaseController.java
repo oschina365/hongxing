@@ -2,6 +2,8 @@ package com.oscer.hongxing.controller;
 
 
 import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.common.CheckMobile;
+import com.oscer.hongxing.common.IpUtil;
 import com.oscer.hongxing.dao.CategoryDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +27,6 @@ import java.net.URLEncoder;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
-
 
 
 /**
@@ -76,7 +77,16 @@ public class BaseController {
         request.setAttribute("topCategorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
     }
 
-
+    /**
+     * 是否是手机访问
+     *
+     * @return
+     */
+    public boolean isMobile() {
+        String ipAddress = IpUtil.getIpAddress(request);
+        String ua = request.getHeader("User-Agent");
+        return CheckMobile.check(ua);
+    }
 
 
 }

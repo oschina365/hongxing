@@ -121,6 +121,9 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/dzfw")
     public String dzfw() {
+        if (isMobile()) {
+            return "/mobile/dzfw";
+        }
         return "dzfw";
     }
 
@@ -151,6 +154,9 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/about")
     public String about() {
+        if (isMobile()) {
+            return "/mobile/about";
+        }
         return "about";
     }
 
@@ -161,6 +167,9 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/contact")
     public String contact() {
+        if (isMobile()) {
+            return "/mobile/contact";
+        }
         return "contact";
     }
 
@@ -197,6 +206,9 @@ public class GlobalController extends BaseController {
     public String sitemap() {
         request.setAttribute("siteMapProductCategorys", CategoryDAO.ME.allByType(CategoryContants.Type.PRODUCT.getCode()));
         request.setAttribute("siteMapArticleCategorys", CategoryDAO.ME.allByType(CategoryContants.Type.ARTICLE.getCode()));
+        if (isMobile()) {
+            return "/mobile/sitemap";
+        }
         return "sitemap";
     }
 

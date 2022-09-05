@@ -101,7 +101,7 @@ public class ArticleController extends BaseController {
         }
         if (check) {
             request.setAttribute("randomProducts", ProductDAO.ME.randomList(4));
-            return "/p/index_mobile";
+            return "/article/index_mobile";
         }
         return "/article/index";
     }

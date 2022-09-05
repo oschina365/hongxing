@@ -8,7 +8,7 @@
     <meta name="description" content="武汉红鑫家具联系电话：400-678-5198,武汉红鑫家具联系地址：武汉市洪山区关谷大道未来之光6栋红鑫办公家具。" />
     <script src="/JS/MobileRewrite.js" type="text/javascript"></script>
     <script type="text/javascript">
-        uaredirect("/Mobile/Mhelps/contactus.html");
+        uaredirect("/mobile/Mhelps/contactus.html");
     </script>
     <link key="resetcommon" href="/skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
     <link key="style" href="/skins/default/Style.css" rel="stylesheet" type="text/css" />

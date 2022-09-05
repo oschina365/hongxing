@@ -115,10 +115,10 @@ css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"
                             </span>
                             <span>来源：红鑫</span>
                             <span class='m_qrinfo'>
-										<a href="/Mobile/MArticles/hbsjtystgsg.html" title="查看手机网址">查看手机网址</a>
+										<a href="/mobile/MArticles/hbsjtystgsg.html" title="查看手机网址">查看手机网址</a>
 										<div class='m_qrcode'>
 											<em>扫一扫!</em>
-											<img src="http://nswcode.nsw88.com/?qc=8dd84307afe274a5&url=/Mobile/MArticles/hbsjtystgsg.html" alt="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" />
+											<img src="http://nswcode.nsw88.com/?qc=8dd84307afe274a5&url=/mobile/MArticles/hbsjtystgsg.html" alt="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" />
 											<em>扫一扫!</em>
 										</div>
 									</span>

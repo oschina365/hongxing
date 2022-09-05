@@ -29,26 +29,26 @@
 <body>
 <div class="wrap">
     <header class="g-hd" id="top" name="top">
-        <a href="/Mobile/" name="logo" class="m-logo">
-            <img src="/mobile/uploadfiles/common/20161114114757_3727.gif"
-                 data-src="/mobile/uploadfiles/common/20161114114757_3727.gif" class="loaded">
+        <a href="/mobile/" name="logo" class="m-logo">
+            <img src="/res/images/logo"
+                 data-src="/res/images/logo/logo.gif" class="loaded">
         </a>
         <p class="m-tel">办公家具整体配套大型生产厂家</p>
         <p class="m-menu">
             <a href="/">首页</a>
             <a href="/gcal">案例</a>
             <a href="/dzfw">定制</a>
-            <a href="/gcsl.html">实力</a>
-            <a href="/Mobile/Mhelps/contactus.html">联系</a>
+            <a href="/gcsl">实力</a>
+            <a href="/mobile/Mhelps/contactus.html">联系</a>
         </p>
     </header>
     <div class="g-hd-f">
         <p class="fixed">
             <a href="/mobile/">首页</a>
             <a href="/gcal">案例</a>
-            <a href="/Mobile/Mhelps/dzfw.html">定制</a>
+            <a href="/mobile/Mhelps/dzfw.html">定制</a>
             <a href="/gcsl.html">实力</a>
-            <a href="/Mobile/Mhelps/contactus.html">联系</a>
+            <a href="/mobile/Mhelps/contactus.html">联系</a>
         </p>
     </div>
 
@@ -239,9 +239,9 @@
                 </a>
             </h2>
             <dl>
-                <a href="/Mobile/MArticles/hxjjhkztbq.html" title="红鑫家具汉口展厅搬迁通知">
+                <a href="/mobile/MArticles/hxjjhkztbq.html" title="红鑫家具汉口展厅搬迁通知">
                     <dt>
-                        <img src="/Mobile/uploadfiles/pictures/news/20180410163025_6420.jpg_130X130.jpg" data-src="/Mobile/uploadfiles/pictures/news/20180410163025_6420.jpg_130X130.jpg" alt="红鑫家具汉口展厅搬迁通知" class="loaded">
+                        <img src="/mobile/uploadfiles/pictures/news/20180410163025_6420.jpg_130X130.jpg" data-src="/mobile/uploadfiles/pictures/news/20180410163025_6420.jpg_130X130.jpg" alt="红鑫家具汉口展厅搬迁通知" class="loaded">
                     </dt>
                     <dd>
                         <p>红鑫家具汉口展厅已整体搬迁至汉口北工厂展厅，我们将在工厂展厅为您提供更高品质、种...</p>
@@ -345,9 +345,9 @@
         </div>
     </footer>
 </div>
-<script type="text/javascript" key="jquery" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" key="nsw_mobile" src="/Mobile/js/nsw_mobile.js"></script>
-<script type="text/javascript" key="tools" src="/Mobile/js/Tools.js"></script>
+<script type="text/javascript" key="jquery" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" key="nsw_mobile" src="/mobile/js/nsw_mobile.js"></script>
+<script type="text/javascript" key="tools" src="/mobile/js/Tools.js"></script>
 <script>
     var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?be518259b9bd320fa77e6e8ed06e09c7"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })();
 </script>

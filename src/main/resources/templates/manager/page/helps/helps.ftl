@@ -325,7 +325,7 @@ js_=["/manager/js/common/common.js"]>
                     </td>
 
                     <td class="nsw_cnt_area action_tx">
-                        <a href="/Mobile/Mhelps/20182019nd.html" title="2018-2019年度优秀企业" target="_blank">
+                        <a href="/mobile/Mhelps/20182019nd.html" title="2018-2019年度优秀企业" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -336,14 +336,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
                         </a>
                         <p class="scl_d">
-                            <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/20182019nd.html')">
+                            <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/20182019nd.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                             </a>
-                            <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                            <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                                 <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                                    <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                                    <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
                         <p>分享到微信朋友圈</p>
     </div>
     <div class="con_img" style="height: 201px; text-align: center;">
@@ -465,7 +465,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghjbzcprzzsc.html" title="中国环境标志产品认证证书(CEC2018ELP04206023)" target="_blank">
+            <a href="/mobile/Mhelps/zghjbzcprzzsc.html" title="中国环境标志产品认证证书(CEC2018ELP04206023)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -476,14 +476,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzzsc.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghjbzcprzzsc.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -605,7 +605,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghjbzcprzzs.html" title="中国环境标志产品认证证书(CEC2018ELP04206022)" target="_blank">
+            <a href="/mobile/Mhelps/zghjbzcprzzs.html" title="中国环境标志产品认证证书(CEC2018ELP04206022)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -616,14 +616,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzzs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghjbzcprzzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -745,7 +745,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghjbzcprzz.html" title="中国环境标志产品认证证书(CEC2018ELP04206021)" target="_blank">
+            <a href="/mobile/Mhelps/zghjbzcprzz.html" title="中国环境标志产品认证证书(CEC2018ELP04206021)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -756,14 +756,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprzz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghjbzcprzz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -885,7 +885,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghbcprzzscq.html" title="中国环保产品认证证书CQC-（金属办公家具）" target="_blank">
+            <a href="/mobile/Mhelps/zghbcprzzscq.html" title="中国环保产品认证证书CQC-（金属办公家具）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -896,14 +896,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzscq.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghbcprzzscq.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1025,7 +1025,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghbcprzzsc.html" title="中国环保产品认证证书CQC-（木制办公家具）" target="_blank">
+            <a href="/mobile/Mhelps/zghbcprzzsc.html" title="中国环保产品认证证书CQC-（木制办公家具）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1036,14 +1036,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzsc.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghbcprzzsc.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1165,7 +1165,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghbcprzzs.html" title="中国环保产品认证证书CQC-（软体家具-沙发）" target="_blank">
+            <a href="/mobile/Mhelps/zghbcprzzs.html" title="中国环保产品认证证书CQC-（软体家具-沙发）" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1176,14 +1176,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghbcprzzs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghbcprzzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1305,7 +1305,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/yyzz.html" title="营业执照" target="_blank">
+            <a href="/mobile/Mhelps/yyzz.html" title="营业执照" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1316,14 +1316,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/yyzz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/yyzz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1445,7 +1445,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zghjbzcprz.html" title="中国环境标志产品认证证书(CEC2018ELP04206020)" target="_blank">
+            <a href="/mobile/Mhelps/zghjbzcprz.html" title="中国环境标志产品认证证书(CEC2018ELP04206020)" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1456,14 +1456,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zghjbzcprz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zghjbzcprz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1585,7 +1585,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/sbzcz.html" title="商标注册证" target="_blank">
+            <a href="/mobile/Mhelps/sbzcz.html" title="商标注册证" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1596,14 +1596,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/sbzcz.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/sbzcz.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1725,7 +1725,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zlgltxzs.html" title="质量管理体系证书" target="_blank">
+            <a href="/mobile/Mhelps/zlgltxzs.html" title="质量管理体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1736,14 +1736,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zlgltxzs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zlgltxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1865,7 +1865,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zyjktxzs.html" title="职业健康体系证书" target="_blank">
+            <a href="/mobile/Mhelps/zyjktxzs.html" title="职业健康体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -1876,14 +1876,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zyjktxzs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zyjktxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2005,7 +2005,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hjzltxzs.html" title="环境管理体系证书" target="_blank">
+            <a href="/mobile/Mhelps/hjzltxzs.html" title="环境管理体系证书" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2016,14 +2016,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hjzltxzs.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hjzltxzs.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2145,7 +2145,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/xfzxlpp.html" title="消费者信赖品牌" target="_blank">
+            <a href="/mobile/Mhelps/xfzxlpp.html" title="消费者信赖品牌" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2156,14 +2156,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/xfzxlpp.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/xfzxlpp.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2285,7 +2285,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hbsmycp.html" title="湖北省名优产品" target="_blank">
+            <a href="/mobile/Mhelps/hbsmycp.html" title="湖北省名优产品" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2296,14 +2296,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hbsmycp.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hbsmycp.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2425,7 +2425,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/zlfwxyaaaa.html" title="质量服务信誉AAAA级单位" target="_blank">
+            <a href="/mobile/Mhelps/zlfwxyaaaa.html" title="质量服务信誉AAAA级单位" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2436,14 +2436,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/zlfwxyaaaa.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/zlfwxyaaaa.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2565,7 +2565,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hnzt_05.html" title="工厂展厅" target="_blank">
+            <a href="/mobile/Mhelps/hnzt_05.html" title="工厂展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2576,14 +2576,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_05.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hnzt_05.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2705,7 +2705,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hnzt_04.html" title="旗舰展厅" target="_blank">
+            <a href="/mobile/Mhelps/hnzt_04.html" title="旗舰展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2716,14 +2716,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_04.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hnzt_04.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2845,7 +2845,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hnzt_03.html" title="光谷展厅" target="_blank">
+            <a href="/mobile/Mhelps/hnzt_03.html" title="光谷展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2856,14 +2856,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_03.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hnzt_03.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2985,7 +2985,7 @@ js_=["/manager/js/common/common.js"]>
         </td>
 
         <td class="nsw_cnt_area action_tx">
-            <a href="/Mobile/Mhelps/hnzt_02.html" title="汉口展厅" target="_blank">
+            <a href="/mobile/Mhelps/hnzt_02.html" title="汉口展厅" target="_blank">
 								<span class="pro_view">
 									<i></i>预览
 								</span>
@@ -2996,14 +2996,14 @@ js_=["/manager/js/common/common.js"]>
 								</span>
             </a>
             <p class="scl_d">
-                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/Mobile/Mhelps/hnzt_02.html')">
+                <a href="##" onclick="Qrcode(this,'http://www.hongxin.com.cn/mobile/Mhelps/hnzt_02.html')">
 									<span class="pro_view pro_qrcode">
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/Mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/Mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">

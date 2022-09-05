@@ -560,12 +560,16 @@ public abstract class Entity implements Serializable {
             String cache = this.cacheRegion();
             for (int i = 0; i < pids.size(); i++) {
                 long pid = pids.get(i);
-                Entity obj = (Entity) CacheMgr.get(cache, String.valueOf(pid));
+                try {
+                    Entity obj = (Entity) CacheMgr.get(cache, String.valueOf(pid));
 
-                if (obj != null) {
-                    prjs.set(i, obj);
-                } else {
-                    no_cache_ids.add(pid);
+                    if (obj != null) {
+                        prjs.set(i, obj);
+                    } else {
+                        no_cache_ids.add(pid);
+                    }
+                } catch (Exception e) {
+                    CacheMgr.clear(cache);
                 }
             }
         }
