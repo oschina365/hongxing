@@ -185,7 +185,7 @@ position:fixed;right:0;top:0;_position:absolute;_top:expression(eval(document.do
 .banan-t p b{font-family:'Microsoft YaHei';font-weight: normal; float: left;line-height: 55px; display: inline-block;color: #666666;font-size: 12px;}
 .banan-t a{color: #666666;font-size: 12px;font-family:'Microsoft YaHei';line-height: 55px;padding-right: 8px;}
 
-.banan-tr{float: right;height: 30px;margin-top: 12px;}
+.banan-tr{float: right;height: 30px;margin-top: 12px;margin-bottom: 8px;}
 .banan-tr .inp01s{border: 0px;color: #666666;font-size: 12px; font-family:'Microsoft YaHei';float: left;height:28px;width:124px;padding-left: 20px; line-height:28px;border: 1px solid #c9c9c9}
 .banan-tr .inp02s{width:92px;cursor: pointer; height:30px;float: left;border: 0px;background: url(img/index/ban_07.jpg) no-repeat;}
 .banan-tr span{display: inline-block;width: 99px;height: 30px;float: left;line-height: 30px;padding-left: 0;margin: 0 5px;}
