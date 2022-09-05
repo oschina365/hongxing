@@ -53,16 +53,23 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> listByType(int type) {
+        return buildCategoryList(allByType(type));
+    }
+
+
+    /**
+     * 根据type查询分类列表
+     *
+     * @param type 分类类型（1=产品分类 2=案例分类 3=公司管理）
+     * @return {@link List}
+     */
+    public List<Category> allByType(int type) {
         String sql = "select id from " + Category.ME.rawTableName() + " where type=?";
         List<Long> ids = getDbQuery().query_cache(Long.class, false, getCache_region(), "listByType_" + type, sql, type);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
-        List<Category> categoryList = Category.ME.loadList(ids);
-        if (CollectionUtil.isEmpty(categoryList)) {
-            return null;
-        }
-        return buildCategoryList(categoryList);
+        return Category.ME.loadList(ids);
     }
 
     /**

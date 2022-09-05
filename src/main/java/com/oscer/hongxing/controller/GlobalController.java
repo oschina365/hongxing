@@ -195,6 +195,8 @@ public class GlobalController extends BaseController {
      */
     @GetMapping("/sitemap")
     public String sitemap() {
+        request.setAttribute("siteMapProductCategorys", CategoryDAO.ME.allByType(CategoryContants.Type.PRODUCT.getCode()));
+        request.setAttribute("siteMapArticleCategorys", CategoryDAO.ME.allByType(CategoryContants.Type.ARTICLE.getCode()));
         return "sitemap";
     }
 
