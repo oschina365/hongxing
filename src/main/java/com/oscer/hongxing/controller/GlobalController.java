@@ -82,7 +82,7 @@ public class GlobalController extends BaseController {
         request.setAttribute("randomArticles", ArticleDAO.ME.randomList(4));
         if (check) {
             log.info("{},来自移动端访问,ua={}", ipAddress, ua);
-            return "index_mobile";
+            return "/mobile/index";
         }
         log.info("{},来自PC端访问,ua={}", ipAddress, ua);
         return "index";
@@ -111,7 +111,10 @@ public class GlobalController extends BaseController {
                 }
             }
         }
-        return "cgal";
+        if (isMobile()) {
+            return "/mobile/gcal";
+        }
+        return "gcal";
     }
 
     /**
