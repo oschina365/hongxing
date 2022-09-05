@@ -7,13 +7,16 @@ import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.CheckMobile;
+import com.oscer.hongxing.common.layui_result.LayuiPhotoResult;
 import com.oscer.hongxing.controller.BaseController;
 import com.oscer.hongxing.dao.ArticleDAO;
 import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ProductDAO;
+import com.oscer.hongxing.dao.ProductImageDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +66,38 @@ public class ProductController extends BaseController {
             return "/product/index_mobile";
         }
         return "/product/index";
+    }
+
+    /**
+     * 产品图片列表
+     *
+     * @return
+     */
+    @GetMapping("/product/images/{id}")
+    @ResponseBody
+    public LayuiPhotoResult productImages(@PathVariable Long id) {
+        Product product = Product.ME.get(id);
+        if (product == null) {
+            return null;
+        }
+        List<ProductImage> images = ProductImageDAO.ME.listByProductId(id);
+        if (CollectionUtil.isEmpty(images)) {
+            return null;
+        }
+        LayuiPhotoResult result = new LayuiPhotoResult();
+        List<LayuiPhotoResult.DataBean> dataBeans = new ArrayList<>();
+        for (ProductImage image : images) {
+            LayuiPhotoResult.DataBean dataBean = new LayuiPhotoResult.DataBean();
+            dataBean.setPid(image.getId());
+            dataBean.setSrc(image.getImage());
+            dataBeans.add(dataBean);
+        }
+        result.setStatus(1);
+        result.setData(dataBeans);
+        result.setId(id);
+        result.setStart(1);
+        result.setTitle(product.getName());
+        return result;
     }
 
 }

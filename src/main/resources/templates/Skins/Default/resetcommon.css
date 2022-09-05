@@ -187,12 +187,12 @@ position:fixed;right:0;top:0;_position:absolute;_top:expression(eval(document.do
 
 .banan-tr{float: right;height: 30px;margin-top: 12px;}
 .banan-tr .inp01s{border: 0px;color: #666666;font-size: 12px; font-family:'Microsoft YaHei';float: left;height:28px;width:124px;padding-left: 20px; line-height:28px;border: 1px solid #c9c9c9}
-.banan-tr .inp02s{width:92px;cursor: pointer; height:30px;float: left;border: 0px;background: url(Img/Index/ban_07.jpg) no-repeat;}
+.banan-tr .inp02s{width:92px;cursor: pointer; height:30px;float: left;border: 0px;background: url(img/index/ban_07.jpg) no-repeat;}
 .banan-tr span{display: inline-block;width: 99px;height: 30px;float: left;line-height: 30px;padding-left: 0;margin: 0 5px;}
 .banan-tr span .tag_select{ white-space:nowrap; text-overflow:ellipsis; }
 .banan-tr span .tag_select_hover{ white-space:nowrap;}
 .banan-tr span .select_box{ width:99px;}
-.banan-tr span .select_box{height:26px; text-indent:10px; font: 12px "Microsoft YaHei";color: #221815;height: 32px;background: url(Img/Index/ban_05.jpg) no-repeat;line-height: 30px;z-index: 999;}
+.banan-tr span .select_box{height:26px; text-indent:10px; font: 12px "Microsoft YaHei";color: #221815;height: 32px;background: url(img/index/ban_05.jpg) no-repeat;line-height: 30px;z-index: 999;}
 .banan-tr span .select_box .tag_options{ background:#EFF4F7; width:97px;border: 1px solid #ccc;border-top: 0;}
 .banan-tr span .select_box .tag_options .open{ border-bottom:1px solid #f1f1f1;}
 .banan-tr span .select_box .tag_options .open_hover{ background:#fff;}
@@ -245,7 +245,7 @@ a.im,a:hover.im{text-decoration:none;height:35px;color:#333; font-size:14px;}
 .topadcs a{display:block;margin:0 auto;}
 .topadcs a.fullad{ height:300px;}
 
-.plc,.plc2{ background:url(Img/logo_03.png) no-repeat 2px 6px;height:32px;line-height:32px;padding:7px 8px 8px 42px; position:relative; color:#666; overflow:hidden; font-size:16px; border-bottom:1px solid #ececec; padding-bottom:8px; font-family:"Microsoft Yahei","微软雅黑";}
+.plc,.plc2{ background:url(img/logo_03.png) no-repeat 2px 6px;height:32px;line-height:32px;padding:7px 8px 8px 42px; position:relative; color:#666; overflow:hidden; font-size:16px; border-bottom:1px solid #ececec; padding-bottom:8px; font-family:"Microsoft Yahei","微软雅黑";}
 .plc span {}
 .plc i,.plc2 i,.plc a{ font-style:normal; font-size:16px; color:#666;}
 .red_x { color:#E70012; display:inline; font-family:"Microsoft YaHei"; font-size:16px;}

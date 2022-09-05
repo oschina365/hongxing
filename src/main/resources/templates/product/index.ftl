@@ -1,5 +1,6 @@
 ﻿<#include "../common/layout.ftl"/>
-<@html title_="营业执照|荣誉资质 - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂" css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
+<@html title_="${product.name} - 武汉办公家具|武汉办公桌椅|办公家具定制|武汉红鑫办公家具厂"
+css_=["/skins/default/style.css"] js_=["/js/NSW_JCIA.js"]>
 <body>
 <!-- 代码部分begin -->
 <div id='cs_box'>
@@ -84,10 +85,6 @@
 </script>
 <link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
-    initCommonHeader();
-    var MARK = "product";
-    var SID = "0001,0009,0023";
-
     $(function () {
         $(".menu ul.ul_col li").hover(function () {
             $(this).css("zIndex", "10000").children(".erji").show();
@@ -166,7 +163,7 @@
 													<#list productImages as productImage>
 														<#if productImage?? && productImage.id gt 0>
 															<li class="now">
-																<a href="" target="_blank" title="${product.name}">
+																<a  title="${product.name}">
 																	<img title="${product.name}" alt="${product.name}"
                                                                          longdesc="${productImage.image}" src="${productImage.image}" width="60">
 																</a>
@@ -180,7 +177,7 @@
                                         <span class="span_next span_nextb">next</span>
                                     </div>
                                     <div class="div_prolinks">
-                                        <a id="a_enlarge" onclick="viewBigImage(287)" href="#">查看全部大图</a>
+                                        <button id="a_enlarge" onclick="viewProductImages();">查看全部大图</button>
                                     </div>
                                 </div>
                                 <div class="clear"></div>
@@ -358,6 +355,20 @@
         $("#divHistoryRecommentCntr").hide();
     } else {
         $("#divHistoryRecommentCntr").show();
+    }
+
+    $(".proviewbox a").click(function(){
+        viewProductImages();
+    });
+
+    function viewProductImages(){
+        //图片层
+        $.get('/product/images/${product.id}', function(json){
+            layer.photos({
+                photos: json //格式见API文档手册页
+                ,anim: 1 //0-6的选择，指定弹出图片动画类型，默认随机
+            });
+        });
     }
 </script>
 </body>
