@@ -52,11 +52,11 @@
                                                 <#list categorys as category>
                                                     <#if category?? && category.id gt 0>
                                                         <option value="${category.id}">${category.name}</option>
-												<#if category.childs?? && (category.childs?size > 0) >
-                                                        <#list category.childs as child>
-                                                            <option value="${child.id}"> └-${child.name}</option>
-                                                        </#list>
-                                                    </#if>
+												        <#if category.childs?? && (category.childs?size > 0) >
+                                                            <#list category.childs as child>
+                                                                <option value="${child.id}"> └-${child.name}</option>
+                                                            </#list>
+                                                        </#if>
                                                     </#if>
                                                 </#list>
                                             </#if>

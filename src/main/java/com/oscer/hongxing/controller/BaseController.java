@@ -1,6 +1,8 @@
 package com.oscer.hongxing.controller;
 
 
+import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.dao.CategoryDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +73,7 @@ public class BaseController {
         String size = request.getParameter("size");
         this.request = request;
         request.setAttribute("currentUrl", request.getRequestURI());
+        request.setAttribute("topCategorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
     }
 
 

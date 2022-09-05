@@ -144,7 +144,7 @@
                             //创建一个编辑器
                             layedit.set({
                                 uploadImage: {
-                                    url: '/up/lay?type=case' //接口url
+                                    url: '/up/lay?type=article' //接口url
                                     , type: 'post' //默认post
                                 }
                             });

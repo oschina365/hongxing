@@ -54,7 +54,7 @@ public class CategoryDAO extends CommonDao<Category> {
      */
     public List<Category> listByType(int type) {
         String sql = "select id from " + Category.ME.rawTableName() + " where type=?";
-        List<Long> ids = getDbQuery().query(Long.class, sql, type);
+        List<Long> ids = getDbQuery().query_cache(Long.class, false, getCache_region(), "listByType_" + type, sql, type);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
