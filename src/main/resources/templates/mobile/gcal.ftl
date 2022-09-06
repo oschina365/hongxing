@@ -95,15 +95,14 @@
         <!---->
 
         <div class="g-show j-slide-not">
-            <ul class="m-cnt">
+            <ul class="successArticleCategoryUl m-cnt">
                 <#if successArticleCategorys??>
                     <#list successArticleCategorys as successArticleCategory>
                         <#if successArticleCategory?? && successArticleCategory.id gt 0>
-                            <li class="">${successArticleCategory.name}</li>
+                            <li class="successArticleCategory " data-id="${successArticleCategory.id}">${successArticleCategory.name}</li>
                         </#if>
                     </#list>
                 </#if>
-                <a href="/mobile/mproduct" class="mor">更多</a>
             </ul>
             <div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;">
                 <div class="m-box" id="slides_control_id_0" style="position: relative;
@@ -127,12 +126,11 @@
     {{# if(item){ }}
     <li>
         <a href="/article/{{item.id}}" title="{{item.name}}">
-            <img style="max-height: 94px;" src="{{item.banner}}" data-src="{{item.banner}}" alt="{{item.name}}" class="loaded">
+            <img style="height: 80px;" height="80px;" src="{{item.banner}}" data-src="{{item.banner}}" alt="{{item.name}}" class="loaded">
         </a>
         <span>
             <a href="/article/{{item.id}}" title="{{item.name}}">
-                <i>{{item.name}}</i>
-                {{# if(item.desc.length>50){ }}{{item.desc.substring(0,50)}} {{#} else { }} {{item.desc}} {{# }}}
+                <i style="border-bottom:none!important;">{{item.name}}</i>
             </a>
         </span>
     </li>
@@ -148,6 +146,14 @@
             , layer = parent.layer === undefined ? layui.layer : parent.layer
             , laypage = layui.laypage, laytpl = layui.laytpl, $ = layui.jquery;
 
+        $(".successArticleCategory").click(function (){
+            let id = $(this).data("id");
+            $("#currentCategoryId").val(id);
+            $('.successArticleCategoryUl li').removeClass("z-on");
+            $(this).attr("class","z-on");
+            dataList(1);
+        })
+
         dataList(1);
 
         /**
@@ -160,7 +166,7 @@
                 url: '/article/list',
                 method: 'get',
                 dataType: 'json',
-                data: {"categoryId":currentCategoryId,"page": number,"limit":6},
+                data: {"categoryId":currentCategoryId,"page": number,"limit":8},
                 success: function (data) {
                     console.log(data);
                     if (data && data.code == 1) {
@@ -175,7 +181,7 @@
                         if(data.result.count >0){
                             if (number === 1) {
                                 //分页标签
-                                pageBar(data.result.count, 6);
+                                pageBar(data.result.count, 8);
                             }
                         }
 
@@ -196,10 +202,7 @@
                 elem: "successArticlePage",
                 limit: limit,
                 count: count,
-                first: '首页',
-                last: '尾页',
                 theme: themes[parseInt(Math.random() * themes.length)],
-                layout: ['prev', 'page', 'next'],
                 jump: function (obj, first) {
                     if (!first) {
                         $("#number").val(obj.curr);

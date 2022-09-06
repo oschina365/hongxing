@@ -134,9 +134,9 @@ js_=["/manager/js/common/common.js"]>
                         </td>
                         <td>${product.id}</td>
                         <td class="pimgsv">
-                            <#if product.thumbnail??>
+                            <#if product.banner??>
                                 <span class="shot_img f_fl">
-								<img src="${product.thumbnail}">
+								<img src="${product.banner}">
 							</span>
                             </#if>
                             <span class="poducts short_tit f_fl">

@@ -153,7 +153,7 @@
             <dl class="HZAL4 news_hover4">
                 <dt>
                     <a href="/product/{{item.id}}" title="{{item.name}}" target="_blank">
-                        <img src="{{item.thumbnail}}" alt="{{item.name}}" title="{{item.name}}" />
+                        <img src="{{item.banner}}" alt="{{item.name}}" title="{{item.name}}" />
                     </a>
                 </dt>
                 <dd>

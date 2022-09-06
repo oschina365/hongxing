@@ -56,7 +56,7 @@
                                             <p>
                                         </#if>
                                         <a href='/product/${randomProduct.id}' title='${randomProduct.name}'>
-                                            <img src='${randomProduct.thumbnail}' width='130' height='94' alt='${randomProduct.name}'
+                                            <img src='${randomProduct.banner}' width='130' height='94' alt='${randomProduct.name}'
                                                  title='${randomProduct.name}'>${randomProduct.name}</a>
                                         <#if (randomProduct_index+1)/2==0>
                                             </p>

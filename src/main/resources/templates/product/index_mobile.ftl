@@ -20,7 +20,7 @@
 						<div class="prev"></div>
 						<div class="no_ov">
 							<div class="m-box">
-								<img src='${product.thumbnail}' width="250" height="167" alt="${product.name}" title="${product.name}" />
+								<img src='${product.banner}' width="250" height="167" alt="${product.name}" title="${product.name}" />
 							</div>
 						</div>
 						<div class="next"></div>
@@ -106,7 +106,7 @@
 											<p>
 										</#if>
 										<a href='/product/${randomProduct.id}' title='${randomProduct.name}'>
-											<img src='${randomProduct.thumbnail}' width='130' height='94' alt='${randomProduct.name}'
+											<img src='${randomProduct.banner}' width='130' height='94' alt='${randomProduct.name}'
 												 title='${randomProduct.name}'>${randomProduct.name}</a>
 										<#if (randomProduct_index+1)/2==0>
 											</p>

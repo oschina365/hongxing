@@ -92,9 +92,9 @@
         </ul>
     </div>
 </footer>
-<script type="text/javascript" key="jquery" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" key="jquery" src="/mobile/js/jquery.js"></script>
 <script type="text/javascript" key="nsw_mobile" src="/mobile/js/Nsw_mobile.js"></script>
-<script type="text/javascript" key="tools" src="/mobile/JS/Tools.js"></script>
+<script type="text/javascript" key="tools" src="/mobile/js/tools.js"></script>
 
 <script>
     var _hmt = _hmt || [];

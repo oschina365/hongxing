@@ -1,6 +1,4 @@
-﻿
-
-$(function () {
+﻿$(function () {
     //搜索框   开始
     $(".u-in").unbind().bind("click", searchKeyWord);
     //搜索框   
@@ -8,11 +6,11 @@ $(function () {
 
 function searchKeyWord() {
     var url = "";
-    var type = "product";
+    var type = 1;
     //var kwd = $(this).children(".m-ipt").children("#se_key").val();//$("#se_key").val();
     var kwd = $(this).parent().find(".u-key").val() || $(this).parent().find("#se_key").val();
     if (kwd != "请输入关键词" && kwd != "请输入关键字搜索" && kwd != "请输入您要搜索的关键词") {
-        url = "/Mobile/MProduct/ProSearch.aspx?objtype=" + type + "&kwd=" + kwd;
+        url = "/search?type=" + type + "&key=" + kwd;
         window.location.href = url;
     }
 }
@@ -50,10 +48,12 @@ function postComment(src, _oid, _mark) {
     });
 
 }
+
 /* 新闻详细页评论  */
 
 
 /* 提交意向订单  */
+
 //提交订单信息，UserName，为用户名文本框的ID，Phone为手机文本框的ID，OrderInfo为订单描述文本框的ID，_oid为当前产品的ID
 function submitOrder(UserName, Phone, OrderInfo, _oid) {
     var zz = /^1[3|4|5|8][0-9]\d{4,8}$/;
@@ -97,13 +97,15 @@ function submitOrder(UserName, Phone, OrderInfo, _oid) {
                 $("#UserName").val("请输入姓名");
                 $("#Phone").val("请输入手机号");
                 $("#OrderInfo").val("请输入留言");
-                $("#ErrorInfo").show(1000, function () { });
+                $("#ErrorInfo").show(1000, function () {
+                });
             } else {
 
             }
         });
     }
 }
+
 /* 提交意向订单  */
 
 
@@ -194,8 +196,8 @@ function GetCommentById2(AppendTo, Top, subId, type) {
 }
 
 /********************
-* 修改个人资料
-********************/
+ * 修改个人资料
+ ********************/
 function UpdateUserData() {
     var _userName = $("#txtUserName").val();   //用户名
     var _phone = $("#txtPhone").val();         //手机号码
@@ -252,12 +254,12 @@ function UpdateUserData() {
 }
 
 /********************
-* 修改个人资料
-********************/
+ * 修改个人资料
+ ********************/
 
 /********************
-* 修改密码
-********************/
+ * 修改密码
+ ********************/
 function UpdateUserPwd() {
     var _pwd = $("#txtPwd").val();               //原始密码
     var _newPwd = $("#txtNewPwd").val();         //新密码
@@ -306,12 +308,12 @@ function UpdateUserPwd() {
 }
 
 /********************
-* 修改密码
-********************/
+ * 修改密码
+ ********************/
 
 /********************
-* 首页 在线申请加盟
-********************/
+ * 首页 在线申请加盟
+ ********************/
 
 function SaveAgentApply() {
     var _content = $("#txtContent").val() == "请输入留言" ? "" : $("#txtContent").val();
@@ -342,8 +344,7 @@ function SaveAgentApply() {
                 $("#txtContent").val("");
                 $("#txtPhone").val("");
                 $("#txtName").val("");
-            }
-            else {
+            } else {
                 $("#MsgInfo").text(sMsg);
             }
         });
@@ -351,13 +352,13 @@ function SaveAgentApply() {
 }
 
 /********************
-* 首页 在线申请加盟
-********************/
+ * 首页 在线申请加盟
+ ********************/
 
 
 /********************
-* 显示验证码
-********************/
+ * 显示验证码
+ ********************/
 function showVerifyCode(elmId, msgElmId, imgId, chgLnkId) {
     if (elmId == null) {
         elmId = "spVerCode";
@@ -390,21 +391,19 @@ function showVerifyCode(elmId, msgElmId, imgId, chgLnkId) {
 }
 
 /********************
-* 在线咨询/反馈/加盟申请
-********************/
-function SaveFaq(postType,columnId) {
+ * 在线咨询/反馈/加盟申请
+ ********************/
+function SaveFaq(postType, columnId) {
     var _content = $("#txtConent").val() == "还可以输入500个字" ? "" : $("#txtConent").val();
     var _phone = $("#txtPhone").val() == "请输入手机号" ? "" : $("#txtPhone").val();
     var _reg = /^1[3|4|5|8][0-9]\d{4,8}$/;
     if (_content == "") {
         $("#Msg").html("<p class='red'>提交的内容不能为空</p>");
         document.getElementById("txtConent").focus();
-    }
-    else if (_content.length >= 500) {
+    } else if (_content.length >= 500) {
         $("#Msg").html("<p class='red'>输入内容过多，不能超过500字！</p>");
         document.getElementById("txtConent").focus();
-    }
-    else if (_phone != "" && !_reg.test(_phone)) {
+    } else if (_phone != "" && !_reg.test(_phone)) {
         $("#Msg").html("<p class='red'>手机号码格式不对</p>");
         document.getElementById("txtConent").focus();
     } else {
@@ -415,7 +414,7 @@ function SaveFaq(postType,columnId) {
             PostType: postType,
             Phone: _phone,
             Content: _content,
-            ColumnId:columnId
+            ColumnId: columnId
         }, function (msg) {
             $("#txtConent").val("");
             $("#txtPhone").val("");
@@ -437,13 +436,14 @@ function SaveFaq(postType,columnId) {
         });
     }
 }
-/********************
-* 在线咨询/反馈/加盟申请
-********************/
 
 /********************
-* 得到在线咨询/反馈/加盟申请
-********************/
+ * 在线咨询/反馈/加盟申请
+ ********************/
+
+/********************
+ * 得到在线咨询/反馈/加盟申请
+ ********************/
 //AppendTo  此参数表示要拼接的的元素的ID，比如将读取的评论列表拼接到ID为CommentList的Div里面
 //Top 显示加盟申请的条数
 //subId 根据ID读取相应的评论，此ID可以为招商加盟ID
@@ -484,28 +484,29 @@ function GetFaqById(AppendTo, Top, subId) {
 }
 
 /********************
-* 得到在线咨询/反馈/加盟申请
-********************/
+ * 得到在线咨询/反馈/加盟申请
+ ********************/
 
 /********************
-* 得到方案的评论数
-********************/
+ * 得到方案的评论数
+ ********************/
 function getProjectNum(subId) {
     $.post("/Mobile/MAjax.ashx?action=GetProjectNum&t=" + Math.random(), {
         ID: subId
     }, function (msg) {
-        var returnValue = parseInt(gav(msg, "count"),0);
+        var returnValue = parseInt(gav(msg, "count"), 0);
         $("#projectNum").text(returnValue);
     });
 }
+
 /********************
-* 得到方案的评论数
-********************/
+ * 得到方案的评论数
+ ********************/
 
 
 /********************
-* 更换验证码
-********************/
+ * 更换验证码
+ ********************/
 function changeVerCode(elmId, msgElmId) {
     if (elmId == null) {
         elmId = "imgVerCode";
@@ -516,7 +517,7 @@ function changeVerCode(elmId, msgElmId) {
     var jImg = $("#" + elmId + "");
     var jMsg = $("#" + msgElmId + "");
     jMsg.html("正在刷新验证码...").show();
-    jImg.attr({ src: "/Tools/ValidCode.aspx?x=" + Math.random(), alt: "验证码" });
+    jImg.attr({src: "/Tools/ValidCode.aspx?x=" + Math.random(), alt: "验证码"});
     jImg.hide();
     jImg.bind("load", function () {
         jMsg.hide();
@@ -526,9 +527,9 @@ function changeVerCode(elmId, msgElmId) {
 
 
 /********************
-* 加入收藏代码  
-*研发部张新华
-********************/
+ * 加入收藏代码
+ *研发部张新华
+ ********************/
 function addfavor(url, title) {
     if (confirm("网站名称：" + title + "\n网址：" + url + "\n确定添加收藏?")) {
         if (document.all) {
@@ -542,10 +543,10 @@ function addfavor(url, title) {
 }
 
 /********************
-* 根据key获取 ajax对象节点值getAjaxVal
-* xMsg : xml对象
-* key : 节点的属性key
-********************/
+ * 根据key获取 ajax对象节点值getAjaxVal
+ * xMsg : xml对象
+ * key : 节点的属性key
+ ********************/
 function gav(xMsg, key) {
     var jMsg = $(xMsg);
     var s = $(jMsg.find("node[key=" + key + "]")).text();
@@ -553,22 +554,20 @@ function gav(xMsg, key) {
 }
 
 
-
-
 /**************************************************************************************
-*详细页分页功能公用函数
-*参数说明：
-*fit-----点击的方向，up,down,qw三个值，up表示上一页，down表示下一页，qw表示余下全文
-*pCount-----表示总页数
-*currUrl----表示当前页的链接  如果：xxxxx_page2.html  程序会自动截取_page后面的2来分页
-*OId:当前文章或者产品的ID
-*思路：
-*当pCount小于1的时候，内容不分页 ，分页按钮不显示
-*当pCount大于1，用户可以点击上一页，当当前页等于1的时候 上一页按钮禁用
-*当当前页小于pCount的时候，用户可以点击下一页，否则禁用下一页按钮
-*当pCount大于3的时候显示余下全文按钮，否则都不显示
-*余下全文按钮的的效果：点击余下全文，将从当前页开始到最后一页的内容全部加载出来
-***************************************************************************************/
+ *详细页分页功能公用函数
+ *参数说明：
+ *fit-----点击的方向，up,down,qw三个值，up表示上一页，down表示下一页，qw表示余下全文
+ *pCount-----表示总页数
+ *currUrl----表示当前页的链接  如果：xxxxx_page2.html  程序会自动截取_page后面的2来分页
+ *OId:当前文章或者产品的ID
+ *思路：
+ *当pCount小于1的时候，内容不分页 ，分页按钮不显示
+ *当pCount大于1，用户可以点击上一页，当当前页等于1的时候 上一页按钮禁用
+ *当当前页小于pCount的时候，用户可以点击下一页，否则禁用下一页按钮
+ *当pCount大于3的时候显示余下全文按钮，否则都不显示
+ *余下全文按钮的的效果：点击余下全文，将从当前页开始到最后一页的内容全部加载出来
+ ***************************************************************************************/
 function SetPageCount(getType, OId, pCount, currUrl) {
     //1-设置分页按钮是否显示隐藏，根据pCount判断
     if (parseInt(pCount) > 1) {
@@ -605,13 +604,13 @@ function SetPageCount(getType, OId, pCount, currUrl) {
 }
 
 /*********************************************
-*根据用户的动作决定是显示上一页还是下一页还是余下全文
-*参数说明：
-*fit:用户动作，up上一页，down下一页，qw余下全文
-*pCount：总页数
-*curr:当前页
-*currUrl：当前页面的路径
-*********************************************/
+ *根据用户的动作决定是显示上一页还是下一页还是余下全文
+ *参数说明：
+ *fit:用户动作，up上一页，down下一页，qw余下全文
+ *pCount：总页数
+ *curr:当前页
+ *currUrl：当前页面的路径
+ *********************************************/
 function SetImgSize(img, width) {
 //    var me = $(img);
 //    var img_ = me[0];
@@ -625,6 +624,7 @@ function SetImgSize(img, width) {
 }
 
 setTimeout('check()', 5000)
+
 function initPIndent() {
     if ($("body").attr("id") == "Details_Page") {
         $("#content p").each(function () {
@@ -652,9 +652,11 @@ function initPIndent() {
         })
     }
 }
+
 $(function () {
     initPIndent();
 })
+
 function ToUp(getType, OId, fit, pCount, curr, currUrl) {
     var strUrl = window.location.href.toString();
     strUrl = strUrl.substring(0, strUrl.indexOf("_page"));
@@ -728,10 +730,10 @@ function emptyText(formName) {
 }
 
 /*  设置列表页分页  */
-function SetListPage(action,index) {
+function SetListPage(action, index) {
     var path = decodeURI(window.location.href.toLowerCase());
     var weixinUrl = false;
-    var strWeixin="#mp.weixin.qq.com";
+    var strWeixin = "#mp.weixin.qq.com";
     if (path.indexOf(strWeixin) != -1) {
         path = path.substring(0, path.lastIndexOf('#'));
         weixinUrl = true;
@@ -751,15 +753,14 @@ function SetListPage(action,index) {
     }
     if (pageIndex <= 1) {
         pageIndex = 1;
-    }
-    else if (pageIndex >= totalCount) {
+    } else if (pageIndex >= totalCount) {
         pageIndex = totalCount;
     }
     if (index != "") {
         pageIndex = index;
     }
     path = path.toLowerCase();
-    if (path.indexOf("search") >= 0 || path.lastIndexOf("index.aspx") >= 0 || path.lastIndexOf("index" + ext) >= 0 || path.lastIndexOf("list.aspx") >= 0 || path.lastIndexOf("list" + ext) >= 0 || path.indexOf("ajax.ashx") >= 0 || p.indexOf("commend.aspx")>=0 || p == "" || p.indexOf("1=1&page=") >= 0)//首页、正常列表页
+    if (path.indexOf("search") >= 0 || path.lastIndexOf("index.aspx") >= 0 || path.lastIndexOf("index" + ext) >= 0 || path.lastIndexOf("list.aspx") >= 0 || path.lastIndexOf("list" + ext) >= 0 || path.indexOf("ajax.ashx") >= 0 || p.indexOf("commend.aspx") >= 0 || p == "" || p.indexOf("1=1&page=") >= 0)//首页、正常列表页
     {
         path = getUrl(path) + "&page=" + pageIndex;
         if (weixinUrl) {
@@ -779,8 +780,7 @@ function SetListPage(action,index) {
             path = path + strWeixin;
         }
         window.location.href = path;
-    }
-    else {          //扩展URL的伪静态
+    } else {          //扩展URL的伪静态
         var regexPage = /^(\w+)-(\d+).html$/;  //有分页
         var regex2 = /^(\w+).html$/;           //无分页 
         if (regexPage.test(p)) {
@@ -813,7 +813,6 @@ $(function () {
 });
 
 
-
 function getUrl(path) {
     var para;
     var i = path.indexOf("?");
@@ -824,14 +823,14 @@ function getUrl(path) {
             para = para.substring(0, index);
             path = path.substring(0, i + 1) + para;
         }
-    }
-    else {
+    } else {
         para = "?1=1";
         path = path + para;
     }
 
     return path;
 }
+
 /*  列表页分页  */
 
 /*产品列表外宽宽度  */
@@ -842,7 +841,6 @@ $(function () {
         $(".wrap_width").css("width", _width + "px");
     }
 });
-
 
 
 //ProductDetail.aspx页面使用的方法----------------------------------------------------------------------------------------------------------------------------
@@ -857,7 +855,10 @@ function GetContentByProductId(proId) {
 
 function getContent(proId, currPage) {
     //ID正确，则开始请求数据
-    $.post("/Mobile/MAjax.ashx?action=GetContentByProductId&t=" + Math.random(), { ProId: proId, CurrPage: currPage }, function (rsp) {
+    $.post("/Mobile/MAjax.ashx?action=GetContentByProductId&t=" + Math.random(), {
+        ProId: proId,
+        CurrPage: currPage
+    }, function (rsp) {
         if ($(rsp).find("Error").length > 0) {
             alert($(rsp).find("Error").text());
         } else {
@@ -909,6 +910,7 @@ function ToUpDown(proId, action) {
 //参数说明：
 //proId:产品ID
 var commentCount = 1;
+
 function GetCommentCountByProId(proId, appendDiv) {
     if (proId == 0) {
         alert("抱歉，参数错误");
@@ -916,7 +918,7 @@ function GetCommentCountByProId(proId, appendDiv) {
         return;
     }
     //ID正确，则开始请求数据
-    $.post("/Mobile/MAjax.ashx?action=GetCommentCountByProId&t=" + Math.random(), { ProId: proId }, function (rsp) {
+    $.post("/Mobile/MAjax.ashx?action=GetCommentCountByProId&t=" + Math.random(), {ProId: proId}, function (rsp) {
         if ($(rsp).find("Error").length > 0) {
             alert($(rsp).find("Error").text());
         } else {
@@ -937,7 +939,10 @@ function UpdatePwd(code) {
     } else if ($("#txtNewPin").val() != $("#txtConfirmPin").val()) {
         $(validate).text("新密码和确认新密码不一致，请重新输入");
     } else {
-        $.post("/Mobile/MAjax.ashx?action=UpdatePwd&t=" + Math.random(), { Code: code, Pwd: $("#txtNewPin").val() }, function (msg) {
+        $.post("/Mobile/MAjax.ashx?action=UpdatePwd&t=" + Math.random(), {
+            Code: code,
+            Pwd: $("#txtNewPin").val()
+        }, function (msg) {
             var sta = gav(msg, "state");
             var sMsg = gav(msg, "msg");
             if (sta == "0") {
@@ -945,7 +950,9 @@ function UpdatePwd(code) {
             } else {
                 $("#contapic_bg").show();
                 $("#right").show();
-                window.setTimeout(function () { location.href = "/Mobile/User/login.aspx"; }, 3000);
+                window.setTimeout(function () {
+                    location.href = "/Mobile/User/login.aspx";
+                }, 3000);
             }
         });
     }
@@ -954,7 +961,7 @@ function UpdatePwd(code) {
 //微网页的浏览次数
 function UpdateWeiPageHits(oid) {
     if (!isNaN(oid)) {
-        $.post("/Mobile/MAjax.ashx?action=UpdateWeiPageHits&t=" + Math.random(), { Oid: oid }, function (msg) {
+        $.post("/Mobile/MAjax.ashx?action=UpdateWeiPageHits&t=" + Math.random(), {Oid: oid}, function (msg) {
             var sta = gav(msg, "state");
         });
     }

@@ -152,7 +152,7 @@ css_=["/skins/default/style.css"] >
                                 <div class="proviewbox">
                                     <div class="probigshow">
                                         <a class="jqzoom" title="${product.name}">
-                                            <img src="${product.thumbnail}" alt="${product.name}" title="${product.name}"
+                                            <img src="${product.banner}" alt="${product.name}" title="${product.name}"
                                                  onload="jqzooms(this)" onerror="jqzooms(this)" class="js_goods_image_url">
                                         </a>
                                     </div>

@@ -16,9 +16,14 @@ public class Product extends Entity {
 
     public static final Product ME = new Product();
 
+    @Override
+    public String tableName() {
+        return "products";
+    }
+
     private String name;
     private Long category_id;
-    private String thumbnail;
+    private String banner;
     private String link;
     private String tags;
     private String size;

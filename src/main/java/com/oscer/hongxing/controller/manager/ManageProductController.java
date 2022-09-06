@@ -65,7 +65,7 @@ public class ManageProductController extends ManagerBaseController {
             for (int i = 0; i < images.size(); i++) {
                 String imageUrl = images.get(i).attr("src");
                 if(i==0){
-                    product.setThumbnail(imageUrl);
+                    product.setBanner(imageUrl);
                     product.doUpdate(true);
                 }
                 ProductImage productImage = new ProductImage();

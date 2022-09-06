@@ -101,7 +101,6 @@
                                 </#if>
                             </#list>
                         </#if>
-                        <a href="/mobile/mproduct" class="mor">更多</a>
                     </ul>
                     <div class="sclwrap_box" style="position: relative; overflow: hidden; visibility: visible; list-style: none;">
                         <div class="m-box" id="slides_control_id_0" style="position: relative; overflow: hidden; transition: left 0ms ease 0s; width: 2060px; left: 0px;">
@@ -115,7 +114,7 @@
                                                         <#if otherChildProduct_index<6>
                                                             <li>
                                                                 <a href="/product/${otherChildProduct.id}" title="${otherChildProduct.name}">
-                                                                    <img style="max-height: 94px;" src="${otherChildProduct.thumbnail}" data-src="${otherChildProduct.thumbnail}" alt="${otherChild.name}" class="loaded">
+                                                                    <img style="max-height: 94px;" src="${otherChildProduct.banner}" data-src="${otherChildProduct.banner}" alt="${otherChild.name}" class="loaded">
                                                                 </a>
                                                                 <span>
                                                                 <a href="/product/${otherChildProduct.id}" title="${otherChildProduct.name}">
@@ -160,7 +159,7 @@
                                         </dt>
                                         <dd>
                                             <h4></h4>
-                                            <#if randomArticle.desc?length gt 60><p>${randomArticle.desc?substring(0,59)}...</p><#else><p>${randomArticle.desc}</p></#if>
+                                            <#if randomArticle.desc?length gt 30><p>${randomArticle.desc?substring(0,20)}...</p><#else><p>${randomArticle.desc}</p></#if>
                                         </dd>
                                     </a>
                                 </dl>
