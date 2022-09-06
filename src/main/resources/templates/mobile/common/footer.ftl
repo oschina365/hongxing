@@ -23,54 +23,54 @@
                 </a>
                 <i>
                     <a href="/dbtxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico1.png">
-									</span>大班台
+                        <span>
+                            <img src="/mobile/images/common/f_ico1.png">
+                        </span>大班台
                     </a>
                     <a href="/bgpfxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico2.png">
-									</span>办公屏风
+                        <span>
+                            <img src="/mobile/images/common/f_ico2.png">
+                        </span>办公屏风
                     </a>
                     <a href="/hyzxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico3.png">
-									</span>会议桌
+                        <span>
+                            <img src="/mobile/images/common/f_ico3.png">
+                        </span>会议桌
                     </a>
                     <a href="/bgzxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico9.png">
-									</span>办公桌
+                        <span>
+                            <img src="/mobile/images/common/f_ico9.png">
+                        </span>办公桌
                     </a>
                     <a href="/bgyxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico4.png">
-									</span>办公椅
+                        <span>
+                            <img src="/mobile/images/common/f_ico4.png">
+                        </span>办公椅
                     </a>
                     <a href="/wjgxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico5.png">
-									</span>文件柜
+                        <span>
+                            <img src="/mobile/images/common/f_ico5.png">
+                        </span>文件柜
                     </a>
                     <a href="/sfcjxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico6.png">
-									</span>沙发茶几
+                        <span>
+                            <img src="/mobile/images/common/f_ico6.png">
+                        </span>沙发茶几
                     </a>
                     <a href="/bgqtxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico7.png">
-									</span>办公前台
+                        <span>
+                            <img src="/mobile/images/common/f_ico7.png">
+                        </span>办公前台
                     </a>
                     <a href="/ggdxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico8.png">
-									</span>高隔断
+                        <span>
+                            <img src="/mobile/images/common/f_ico8.png">
+                        </span>高隔断
                     </a>
                     <a href="/bgzsxl.html">
-									<span>
-										<img src="/mobile/images/common/f_ico10.png">
-									</span>办公装饰
+                        <span>
+                            <img src="/mobile/images/common/f_ico10.png">
+                        </span>办公装饰
                     </a>
                 </i>
             </li>

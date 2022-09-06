@@ -6,11 +6,9 @@
 
 function searchKeyWord() {
     var url = "";
-    var type = 1;
-    //var kwd = $(this).children(".m-ipt").children("#se_key").val();//$("#se_key").val();
     var kwd = $(this).parent().find(".u-key").val() || $(this).parent().find("#se_key").val();
     if (kwd != "请输入关键词" && kwd != "请输入关键字搜索" && kwd != "请输入您要搜索的关键词") {
-        url = "/search?type=" + type + "&key=" + kwd;
+        url = "/search?key=" + kwd;
         window.location.href = url;
     }
 }

@@ -27,24 +27,6 @@ public class ProductDAO extends CommonDao<Product> {
         return Product.ME.rawTableName();
     }
 
-    public List<Product> search(String key, int page, int size) {
-        StringBuilder sb = new StringBuilder("select id from " + table());
-        if (StrUtil.isNotBlank(key)) {
-            sb.append(" where name like '%").append(key).append("%' ");
-            sb.append(" or `desc` like '%").append(key).append("%' ");
-        }
-        return Product.ME.loadList(getDbQuery().query_slice(Long.class, sb.toString(), page, size));
-    }
-
-    public long searchCount(String key) {
-        StringBuilder sb = new StringBuilder("select count(*) from " + table());
-        if (StrUtil.isNotBlank(key)) {
-            sb.append(" where name like '%").append(key).append("%' ");
-            sb.append(" or `desc` like '%").append(key).append("%' ");
-        }
-        return getDbQuery().read(Long.class, sb.toString());
-    }
-
     public List<Product> randomList(int limit) {
         String sql = "select id from " + table() + " order by recomm desc,RAND() limit ?";
         List<Long> ids = getDbQuery().query(Long.class, sql, limit);

@@ -84,13 +84,13 @@
                 </div>
                 <!---->
                 <div class="g-ss clearfix">
-                    <input class="inp01" type="text" defvalue="请输入您要搜索的关键词 " id="se_key">
+                    <input class="inp01" type="text" defvalue="请输入您要搜索的关键词 " id="se_key" value="${searchKey!''}">
                     <span class="scl_fri">
                 <a>
                     <img src="/mobile/images/index/s_s.gif" data-src="/mobile/images/index/s_s.gif" class="loaded">
                 </a>
             </span>
-                    <input class="u-in" type="button">
+                    <input class="u-in" type="button"/>
                 </div>
                 <!---->
 
@@ -116,11 +116,11 @@
             {{#  layui.each(d.list, function(index, item){ }}
             {{# if(item){ }}
             <li>
-                <a href="/product/{{item.id}}" title="{{item.name}}">
+                <a href="{{item.url}}" title="{{item.name}}">
                     <img style="height: 80px;" height="80px;" src="{{item.banner}}" data-src="{{item.banner}}" alt="{{item.name}}" class="loaded">
                 </a>
                 <span>
-            <a href="/product/{{item.id}}" title="{{item.name}}">
+            <a href="{{item.url}}" title="{{item.name}}">
                 <i style="border-bottom:none!important;">{{item.name}}</i>
             </a>
         </span>
