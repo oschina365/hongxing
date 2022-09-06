@@ -1104,7 +1104,7 @@
     var z = /^(?:textarea|input|select)$/i, A = /^([^\.]*)?(?:\.(.+))?$/, B = /(?:^|\s)hover(\.\S+)?\b/, C = /^key/,
         D = /^(?:mouse|contextmenu)|click/, E = /^(?:focusinfocus|focusoutblur)$/,
         F = /^(\w*)(?:#([\w\-]+))?(?:\.([\w\-]+))?$/, G = function (
-            a) {
+        a) {
             var b = F.exec(a);
             b && (b[1] = (b[1] || "").toLowerCase(), b[3] = b[3] && new RegExp("(?:^|\\s)" + b[3] + "(?:\\s|$)"));
             return b
@@ -4095,7 +4095,7 @@ function downLoad() {
 }
 
 function agentLoad() {
-   
+
     getHits(OBJ_ID, MARK);
     getAgentHelpStatic(OBJ_ID);
 }

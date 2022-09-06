@@ -1218,11 +1218,11 @@ namespace NSW.Web
             }
             if (n > 2)
             {
-                sbRtnVal.Append("<div class=\"mesbook40\"><div class=\"con\"><img src=\"/Skins/Default/Img/PLeft.gif\" class=\"jian\" />");
+                sbRtnVal.Append("<div class=\"mesbook40\"><div class=\"con\"><img src=\"/skins/default/Img/PLeft.gif\" class=\"jian\" />");
             }
             else
             {
-                sbRtnVal.Append("<div class=\"mesbook4\"><div class=\"con\"><img src=\"/Skins/Default/Img/PRight.gif\" class=\"jian\" />");  
+                sbRtnVal.Append("<div class=\"mesbook4\"><div class=\"con\"><img src=\"/skins/default/Img/PRight.gif\" class=\"jian\" />");
             }
             
             sbRtnVal.Append("<h4><a href='"+Obj.PageURL+"' >" + Obj.Title+ "</a></h4>");
@@ -1333,7 +1333,7 @@ namespace NSW.Web
                 return;
             }
 
-            sbRtnVal.Append("<div class=\"mesbook44\"><div class=\"con\"><img src=\"/Skins/Default/Img/PRight.gif\" class=\"jian\" />");
+            sbRtnVal.Append("<div class=\"mesbook44\"><div class=\"con\"><img src=\"/skins/default/Img/PRight.gif\" class=\"jian\" />");
 
             sbRtnVal.Append("<h4><a href='" + Obj.PageURL + "' >" + Obj.Title + "</a></h4>");
             sbRtnVal.Append("<div class=\"cont\">" + Obj.ShortDesc + "</div>");

@@ -509,7 +509,7 @@ namespace NSW.Web
                     return;
                 }
 
-                sbRtnVal.Append("<div class=\"quickmesbook44\"><div class=\"con\"><img src=\"/Skins/Default/Img/PRight.gif\" class=\"jian\" />");
+                sbRtnVal.Append("<div class=\"quickmesbook44\"><div class=\"con\"><img src=\"/skins/default/Img/PRight.gif\" class=\"jian\" />");
 
                 sbRtnVal.Append("<h4><a href='" + Obj.PageURL + "' target=\"_blank\"  >" + Obj.Title + "</a></h4>");
                 sbRtnVal.Append("<div class=\"cont\">" + Obj.ShortDesc + "</div>");

@@ -9,9 +9,9 @@
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>收藏为书签</title>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/css/help.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/help.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
 
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
@@ -76,6 +76,6 @@ s.parentNode.insertBefore(hm, s);
         <%=NVEngine.NVTempHelp.LoadNVTemp(Context,"M_Common/Footer.html")%>
     </div>
 </body>
-<script src="/Mobile/JS/Jquery.js"></script>
-<script src="/Mobile/JS/nsw_mobile.js"></script>
+<script src="/mobile/js/Jquery.js"></script>
+<script src="/mobile/js/nsw_mobile.js"></script>
 </html>

@@ -146,7 +146,7 @@ background-image: -o-linear-gradient(top, #e4e4e4, #e2e2e2, #e0e0e0, #e7e7e7, #e
  background-image: linear-gradient(top,  #e4e4e4, #e2e2e2, #e0e0e0, #e7e7e7, #ececec); }
 
 /*内页图片样式*/
-.g-back .u-bp,.g-back .u-bl,.g-back .u-bh,.u-seek,.u-detail{background:url(/Mobile/images/Skins/Nyskinsbar.png) no-repeat; background-size:35px 600px;}
+.g-back .u-bp,.g-back .u-bl,.g-back .u-bh,.u-seek,.u-detail{background:url(/mobile/images/css/Nyskinsbar.png) no-repeat; background-size:35px 600px;}
 
 
 

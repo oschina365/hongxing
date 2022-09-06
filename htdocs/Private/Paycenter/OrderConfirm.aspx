@@ -113,7 +113,7 @@ s.parentNode.insertBefore(hm, s);
 		</div>
 		<p class="cart_tis">目前<%=NSW.OConfig.GlobalConfig.SiteName %>已经获得支付宝特约商家荣誉,请放心支付</p>
 		<dl class="oder">
-			<dt><img src="/Skins/Default/Img/alipay01.gif" alt="" title="" /></dt>
+			<dt><img src="/skins/default/Img/alipay01.gif" alt="" title="" /></dt>
 			<dd><a href="">支付宝使用说明</a></dd>
 			<dd><a href="" title="">开通支付宝</a></dd>
 		</dl>

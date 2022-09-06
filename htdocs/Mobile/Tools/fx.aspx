@@ -10,8 +10,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>分享</title>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css">
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         .shareWrap
         {
@@ -227,9 +227,9 @@ s.parentNode.insertBefore(hm, s);
         </div>
         <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     </div>
-    <script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-    <script type="text/javascript" src="/Mobile/js/nsw_mobile.js"></script>
-    <script type="text/javascript" src="/Mobile/js/Tools.js"></script>
+    <script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+    <script type="text/javascript" src="/mobile/js/nsw_mobile.js"></script>
+    <script type="text/javascript" src="/mobile/js/Tools.js"></script>
     <script type="text/javascript">
         var jiathis_config = {
             url: '<%=string.IsNullOrEmpty(NSW.Mobile.MobileConfig.MSiteDomain) ? (string.IsNullOrEmpty(NSW.OConfig.Common.SiteDomain) ? Request.Url.Scheme + "://" + Request.Url.Authority : NSW.OConfig.Common.SiteDomain) : NSW.Mobile.MobileConfig.MSiteDomain%>/Mobile',

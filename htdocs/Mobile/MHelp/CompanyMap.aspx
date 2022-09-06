@@ -240,10 +240,10 @@
         }
         /*]]>*/
     </style>
-    <script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-    <script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+    <script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
 var _hmt = _hmt || [];
@@ -263,8 +263,8 @@ s.parentNode.insertBefore(hm, s);
     <div class="g-mapbox">
         <div id="drivingPanel" class="drivingPanel"></div>
         <div id="map_container"></div>
-        <div class="left_btn"><img src="/Mobile/Images/Web/left_btn.png" width="30" height="60" /></div>
-        <div class="right_btn"><img src="/Mobile/Images/Web/right_btn.png" width="30" height="60" /></div>
+        <div class="left_btn"><img src="/mobile/Images/Web/left_btn.png" width="30" height="60" /></div>
+        <div class="right_btn"><img src="/mobile/Images/Web/right_btn.png" width="30" height="60" /></div>
         <div class="black_bg"></div>
     </div>
     <%=NVEngine.NVTempHelp.LoadNVTemp(Context,"M_Common/Footer.html")%>

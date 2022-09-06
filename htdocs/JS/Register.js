@@ -4,7 +4,7 @@
 * (C) MasterLi(masterljf#hotmail.com),Oran Day(likecode#qq.com)
 * (C) NSW(http://www.nsw88.com)
 *******************************************************************************/
-SKIN_PATH = "/Skins/default/";
+SKIN_PATH = "/skins/default/";
 function checkEmail(src, fmtOnly) {
     if (fmtOnly == null)
         fmtOnly = false;

@@ -8,15 +8,15 @@
 #end
 #set($keyvalues = "%{selectcount=$selectcount,otherwhere=$!cursqlwhere,sid=$cursid}")
 <div class="change-box j-slide-np">
-    <a class="prev"><img src="/Mobile/Images/Index/btn1.png" alt="<" /></a>
-    <a class="next"><img src="/Mobile/Images/Index/btn2.png" alt=">" /></a>
+    <a class="prev"><img src="/mobile/css/Index/btn1.png" alt="<" /></a>
+    <a class="next"><img src="/mobile/css/Index/btn2.png" alt=">" /></a>
     <div class="no_ov">
         <ul class="m-box">
             #foreach($row in $mbt.GetDetailed($curtype,$keyvalues).rows)
             <li>
                 <p>
                     <a href="$row.mpageurl" title="$row.title">
-                        <img src="/Mobile/Images/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" />
+                        <img src="/mobile/css/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" />
                         <span>$row.title</span>
                     </a>
                 </p>

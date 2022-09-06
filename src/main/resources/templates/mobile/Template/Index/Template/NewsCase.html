@@ -8,11 +8,11 @@
 #end
 #set($keyvalues = "%{selectcount=$selectcount,otherwhere=$!cursqlwhere,sid=$cursid,otherfields='ShortTitle'}")
  <div class="g-case">
-    <a href="$!columnurl" title="工程案例"><h3><img src="/mobile/images/web/grey.gif" data-src="/Mobile/Images/Index/c_h3.jpg" ></h3></a>
+    <a href="$!columnurl" title="工程案例"><h3><img src="/mobile/images/web/grey.gif" data-src="/mobile/css/Index/c_h3.jpg" ></h3></a>
     <h2><span><a href="$!columnurl" title="查看更多">查看更多+</a></span><a href="$!columnurl"  title="工程案例"><i>工程案例</i></a></h2>
     #foreach($row in $mbt.GetDetailed($curtype,$keyvalues).rows)
     <dl><a href="$row.mpageurl" title="$row.title">
-        <dt><img src="/Mobile/Images/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" /></dt>
+        <dt><img src="/mobile/css/web/grey.gif" data-src="$mbt.GetMobilePath($row)" alt="$row.title" /></dt>
         <dd>
             <h4>$row.ShortTitle</h4>
             <p>$nt.GetSubString($row.ShortDesc,80)</p>

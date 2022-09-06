@@ -42,12 +42,12 @@
         /*]]>*/
     </style>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
-    <script src="/Mobile/JS/SearchControl_min.js"></script>
+    <script src="/mobile/js/SearchControl_min.js"></script>
     <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchControl/1.4/src/SearchControl_min.css" />
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-    <script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+    <script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
 var _hmt = _hmt || [];

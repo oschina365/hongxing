@@ -78,11 +78,11 @@ s.parentNode.insertBefore(hm, s);
 						<p class="f_tac color_orange" style="padding-top:95px;">暂时无图片，请选择上传！</p>
 					</div>
                     <div class="insertList f_cb" id="insertList" style=" display:block;">
-						<div class="md_prev f_fl f_csp" id="prev_01"><img src="skins/Img/leftjt.gif" /></div>
+						<div class="md_prev f_fl f_csp" id="prev_01"><img src="skins/css/leftjt.gif" /></div>
 						<div class="md_hide f_fl" id="dndArea">
                             <ul class="f_cb ThumbnailImage filelist" data-src='{"width":"112","show":"5","prev":"#prev_01","next":"#next_01"}'></ul>
 						</div>
-						<div class="md_next f_fl f_csp" id="next_01"><img src="skins/Img/rightjt.gif" /></div>
+						<div class="md_next f_fl f_csp" id="next_01"><img src="skins/css/rightjt.gif" /></div>
 					</div>
 				</div>	
 			</div>
@@ -140,11 +140,11 @@ s.parentNode.insertBefore(hm, s);
 			    <div class="view_tips">网络的图片（缩略图限<%=Max %>张）</div>
 			    <div class="view_area">
                     <div class="insertList f_cb" id="insertList02" style=" display:block;">
-					    <div class="md_prev f_fl f_csp" id="prev_02"><img src="skins/Img/leftjt.gif" /></div>
+					    <div class="md_prev f_fl f_csp" id="prev_02"><img src="skins/css/leftjt.gif" /></div>
 					    <div class="md_hide f_fl">
                             <ul class="insertimg_list f_cb ThumbnailImage" data-src='{"width":"112","show":"5","prev":"#prev_02","next":"#next_02"}'></ul>
 					    </div>
-					    <div class="md_next f_fl f_csp" id="next_02"><img src="skins/Img/rightjt.gif" /></div>
+					    <div class="md_next f_fl f_csp" id="next_02"><img src="skins/css/rightjt.gif" /></div>
 				    </div>
 			    </div>	
 		    </div>

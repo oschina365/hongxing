@@ -13,9 +13,9 @@
     <title>评论详细页</title>
     <meta name="keywords" content="营销型网站,营销型网站建设,深圳网站建设,牛商网,网站托管,网站建设公司" />
     <meta name="description" content="牛商网是深圳营销型网站建设公司,中国营销型网站创始者,营销型网站标准制定者,服务范围营销型网站建设,网站运营托管,网站外包,深圳网站建设等,咨询热线:4000-333-087" />
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/news.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/news.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
 var _hmt = _hmt || [];
@@ -67,8 +67,8 @@ s.parentNode.insertBefore(hm, s);
         <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     </form>
 </body>
-<script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
+<script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
 
-<script type="text/javascript" src="/Mobile/js/Tools.js"></script>
+<script type="text/javascript" src="/mobile/js/Tools.js"></script>
 </html>

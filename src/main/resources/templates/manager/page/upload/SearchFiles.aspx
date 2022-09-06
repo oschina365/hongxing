@@ -56,13 +56,13 @@ s.parentNode.insertBefore(hm, s);
 		    <div class="view_tips">预览插入的附件</div>
 		    <div class="view_area">
 			    <div class="insertList f_cb" id="insertList" style=" display:block;">
-					<div class="md_prev f_fl f_csp" id="prev_01"><img src="skins/Img/leftjt.gif" /></div>
+					<div class="md_prev f_fl f_csp" id="prev_01"><img src="skins/css/leftjt.gif" /></div>
 					<div class="md_hide ann_hide f_fl">
                         <div style="position:relative; width:2000px; overflow:hidden;" id="annex_list">
                             <div class='fl ul_warp'><ul class="annex_list clearfix"></ul></div>
                         </div>
 					</div>
-					<div class="md_next f_fl f_csp" id="next_01"><img src="skins/Img/rightjt.gif" /></div>
+					<div class="md_next f_fl f_csp" id="next_01"><img src="skins/css/rightjt.gif" /></div>
 				</div>
 		    </div>	
 	    </div>

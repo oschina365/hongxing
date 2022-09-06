@@ -99,13 +99,13 @@ s.parentNode.insertBefore(hm, s);
 <div class="loc"><div class="groupmenu" id="groupmenu"></div><a href="admin_welcome.aspx">后台首页</a> &raquo; <%= ItemName %></div>
 <div class="tools">
     <ul>
-        <li><a href="javascript:gotoListHome()"><img src="Skins/Blue/Img/i.p.recur.gif" alt="IMG" />刷新</a></li>
-        <li><a href="###" onclick="newObject(event)"><img src="Skins/Blue/Img/i.p.writenew.gif" alt="IMG" />新建</a></li>
-        <li><asp:LinkButton ID="lnkBtnDisable" CommandName="enable" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定启用选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/Img/enable.gif" alt="IMG" />启用</asp:LinkButton></li>
-        <li><asp:LinkButton ID="lnkBtnEnable" CommandName="disable" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定禁用选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/Img/disable.gif" alt="IMG" />禁用</asp:LinkButton></li>
-        <li><asp:LinkButton ID="lnkBtnDel" CommandName="del" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定删除选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/Img/i.p.trash.gif" alt="IMG" />删除</asp:LinkButton></li>
-        <li><a href="javascript:void(0)" onclick="javascript:window.open('Inc/PrintingView.htm?container=PrintContent')"><img src="Skins/Blue/Img/i_print.gif" alt="IMG" />打印</a></li>
-        <li><a href="javascript:Cancle()"><img src="Skins/Blue/Img/i.p.block.gif" alt="IMG" />取消</a></li>
+        <li><a href="javascript:gotoListHome()"><img src="Skins/Blue/css/i.p.recur.gif" alt="IMG" />刷新</a></li>
+        <li><a href="###" onclick="newObject(event)"><img src="Skins/Blue/css/i.p.writenew.gif" alt="IMG" />新建</a></li>
+        <li><asp:LinkButton ID="lnkBtnDisable" CommandName="enable" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定启用选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/css/enable.gif" alt="IMG" />启用</asp:LinkButton></li>
+        <li><asp:LinkButton ID="lnkBtnEnable" CommandName="disable" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定禁用选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/css/disable.gif" alt="IMG" />禁用</asp:LinkButton></li>
+        <li><asp:LinkButton ID="lnkBtnDel" CommandName="del" runat="server" OnClientClick="if(sltedItemCnt<1){alert('未有选中项');return false;}if(confirm('确定删除选中项（共'+sltedItemCnt+'项）？')){loading();return true;}else return false;" onclick="LinkButton_Click"><img src="Skins/Blue/css/i.p.trash.gif" alt="IMG" />删除</asp:LinkButton></li>
+        <li><a href="javascript:void(0)" onclick="javascript:window.open('Inc/PrintingView.htm?container=PrintContent')"><img src="Skins/Blue/css/i_print.gif" alt="IMG" />打印</a></li>
+        <li><a href="javascript:Cancle()"><img src="Skins/Blue/css/i.p.block.gif" alt="IMG" />取消</a></li>
     </ul>
     <div style="float:right" class="search"><asp:TextBox ID="txtKwd" runat="server" CssClass="txt"></asp:TextBox> <select id="ddlFields">
         
@@ -133,7 +133,7 @@ s.parentNode.insertBefore(hm, s);
         <td class="tac"><img src='<%# Eval("PhotoPath") %>' alt="<%# Eval("PhotoName") %>" /></td>
         <td><%# Eval("ShortDesc") %></td>
         <td class="tac"><%#Eval( "OrderID")%></td>
-        <td class="tac"><img src='Skins/Blue/Img/<%# (bool)Eval("Enable") ? "enable.gif' alt='可用'":"disable.gif' alt='禁用'" %> /></td>
+        <td class="tac"><img src='Skins/Blue/css/<%# (bool)Eval("Enable") ? "enable.gif' alt='可用'":"disable.gif' alt='禁用'" %> /></td>
         <td><%# ((DateTime)Eval("InputTime")).ToString("yyyy-MM-dd HH:mm") %></td>
     </tr></ItemTemplate></asp:Repeater>
     <tr id="noItemYet" runat="server" visible="false"><td class="noItemYet" colspan="99">没有任何项目</td></tr>

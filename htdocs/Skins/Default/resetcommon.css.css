@@ -266,9 +266,9 @@ a.gf {padding-left: 0; position: relative;}
 #mesbook1_c #mesbook1_cBtns input, #mesbook1 #mesbook1Btns input {margin-right:20px;}
 /*rollup.css*/
 #roll_top,#fall,#ct{position:relative;cursor:pointer;height:72px;width:26px}
-#roll_top{background:url(/Skins/Default/Img/top.gif) no-repeat}
-#fall{background:url(/Skins/Default/Img/top.gif) no-repeat 0 -80px}
-#ct{background:url(/Skins/Default/Img/top.gif) no-repeat 0 -40px}
+#roll_top{background:url(/skins/default/Img/top.gif) no-repeat}
+#fall{background:url(/skins/default/Img/top.gif) no-repeat 0 -80px}
+#ct{background:url(/skins/default/Img/top.gif) no-repeat 0 -40px}
 #roll{display:block;width:15px;margin-right:-520px;position:fixed;right:50%;top:80%;_margin-right:-520px;_position:absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight*0.8)); z-index:100;}
 
 .ImTable *{padding:0px;margin:0px}

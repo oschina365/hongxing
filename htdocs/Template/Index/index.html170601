@@ -22,7 +22,7 @@
 #parses("../Common/keywords.html")
 
 <div class="g-one content">
-  <h4><a title="办公空间整体方案一站式解决服务商"><img src="/Skins/Default/Img/index/one_03.jpg" alt="办公空间整体方案一站式解决服务商" /><p>办公空间整体方案一站式解决服务商</p></a></h4>
+  <h4><a title="办公空间整体方案一站式解决服务商"><img src="/skins/default/Img/index/one_03.jpg" alt="办公空间整体方案一站式解决服务商" /><p>办公空间整体方案一站式解决服务商</p></a></h4>
   <div class="one">
     <dl class="dl1">
       <dt><a $c2.siteserviceurl title="实体+网络一体化" target="_blank"><span>实体+网络一体化</span></a></dt>
@@ -66,7 +66,7 @@
 #parses("Template/HelpList.html" "%{selectcount=4,cursid='0001,0011',cursqlwhere='Delay=1'}")
 
 <div class="g-ys">
-  <h4><a title="选择红鑫的优势"><img src="/Skins/Default/Img/index/one_03.jpg" alt="选择红鑫的优势" /><p>选择红鑫的优势</p></a></h4>
+  <h4><a title="选择红鑫的优势"><img src="/skins/default/Img/index/one_03.jpg" alt="选择红鑫的优势" /><p>选择红鑫的优势</p></a></h4>
   <div class="ys1">
     <dl class="content">
       <dt><span>01</span><em>公司优势</em></dt>

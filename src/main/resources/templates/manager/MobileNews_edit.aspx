@@ -112,6 +112,6 @@ s.parentNode.insertBefore(hm, s);
     </div>
 </div>
 </form>
-<script src="Inc/JS/Mobile.js" type="text/javascript"></script>
+<script src="Inc/js/Mobile.js" type="text/javascript"></script>
 </body>
 </html>

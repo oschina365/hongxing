@@ -19,7 +19,7 @@
 .m-con, .procontent { border-top:none;}
 .m-con{ padding:0 20px 20px 10px;}
 .m-con p{padding:12px 0 0 0;}
-.u-mtit .pic{ background: url(/mobile/Images/Web/pic2.gif) no-repeat; background-size:100%; width:16px; height:16px; display:block; position:absolute; top:2px; right:8px;}
+.u-mtit .pic{ background: url(/mobile/css/Web/pic2.gif) no-repeat; background-size:100%; width:16px; height:16px; display:block; position:absolute; top:2px; right:8px;}
 .m-con .num{ position:relative; color:#ae1911; padding-right:28px;}
 .s-tit{ color:#1a1a1a;}
 

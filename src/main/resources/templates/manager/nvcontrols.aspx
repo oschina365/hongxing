@@ -63,7 +63,7 @@ s.parentNode.insertBefore(hm, s);
                 <%--<td class="tac"><%#Eval( "ID")%></td>--%>
                 <td><a href="###" onclick="edit(event,<%#Eval("ID") %>)"><%#Eval("Title")%></a></td>
                 <td class="tac"><%#Eval( "MARK")%></td>
-                <td class="pimgsv"><span><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/Img/nopic.jpg")%>" class="imgshowtime"  onerror="onImgErrors(this);" /></span></td>
+                <td class="pimgsv"><span><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/css/nopic.jpg")%>" class="imgshowtime"  onerror="onImgErrors(this);" /></span></td>
                 <td><%# Eval("ShortDesc") %></td>
                 <td><div class="hd_input" oid="<%#Eval("ID") %>" typename="nvcontrols" fileColumn="Enable">
                         <span class="p_show e_lowpoint <%#(bool)Eval("Enable")?" z_lowpoint ":""%> " cur="z_lowpoint"><input  class="hd" type="radio" <%#(bool)Eval("Enable")?"checked=\"checked\"":""%>/><label></label></span>

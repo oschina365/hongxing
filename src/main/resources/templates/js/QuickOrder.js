@@ -55,13 +55,13 @@ function ADDQuickOrder(src, page) {
     });
 
     $j("erbTit").attr("class", "titbk");
-    var QuickOrder2 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写采购数量及要求";
+    var QuickOrder2 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写采购数量及要求";
     $j("QuickOrder2").attr("class", "hong");
     $j("QuickOrder2").html(QuickOrder2);
     var Contact = $j("txtContact").val();
 
     if (Contact != "" || Contact != undefined) {
-        var QuickOrder3 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写您的联系方式";
+        var QuickOrder3 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写您的联系方式";
         $j("QuickOrder3").attr("class", "hong");
         $j("QuickOrder3").html(QuickOrder3);
     }
@@ -187,7 +187,7 @@ function DelQuickOrder(src, page) {
         HQuickOrderDIV(msgp);
         $j("GetQuickCheckboxAL").val("");
         $j("erbTit").attr("class", "titbk");
-        var QuickOrder2 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写采购数量及要求";
+        var QuickOrder2 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写采购数量及要求";
         $j("QuickOrder2").attr("class", "hong");
         $j("QuickOrder2").html(QuickOrder2);
         $j("qQuickOrdersChecked").attr("checked", false);
@@ -367,11 +367,11 @@ function GetAddQuickOrders(page) {
         var count = gav(rsp, "count");
         if (count == 0) {
             $j("erbTit").attr("class", "tit");
-            var QuickOrder2 = "<img src='/Skins/Default/Img/QuickOrder/ico2.gif' />填写采购数量及要求";
+            var QuickOrder2 = "<img src='/css/css/css/QuickOrder/ico2.gif' />填写采购数量及要求";
             $j("QuickOrder2").attr("class", "");
             $j("QuickOrder2").html(QuickOrder2);
             $j("sanbtit").attr("class", "tit");
-            var QuickOrder3 = "<img src='/Skins/Default/Img/QuickOrder/ico2.gif' />填写您的联系方式";
+            var QuickOrder3 = "<img src='/css/css/css/QuickOrder/ico2.gif' />填写您的联系方式";
             $j("QuickOrder3").attr("class", "");
             $j("QuickOrder3").html(QuickOrder3);
         }
@@ -380,12 +380,12 @@ function GetAddQuickOrders(page) {
             $j("QuickCount").val(count);
 
             $j("erbTit").attr("class", "titbk");
-            var QuickOrder2 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写采购数量及要求";
+            var QuickOrder2 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写采购数量及要求";
             $j("QuickOrder2").attr("class", "hong");
             $j("QuickOrder2").html(QuickOrder2);
             var Contact = $j("txtContact").val();
             if (Contact == "" || Contact == undefined) {
-                var QuickOrder3 = "<img src='/Skins/Default/Img/QuickOrder/ico2.gif' />填写您的联系方式";
+                var QuickOrder3 = "<img src='/css/css/css/QuickOrder/ico2.gif' />填写您的联系方式";
                 $j("QuickOrder3").attr("class", "");
                 $j("QuickOrder3").html(QuickOrder3);
             }
@@ -492,7 +492,7 @@ function RfertAddQuickOrders(page) {
         var msgp = "<p>采购清单已清空!!</p>";
         HQuickOrderDIV(msgp);
         $j("erbTit").attr("class", "titbk");
-        var QuickOrder2 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写采购数量及要求";
+        var QuickOrder2 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写采购数量及要求";
         $j("QuickOrder2").attr("class", "hong");
         $j("QuickOrder2").html(QuickOrder2);
         $j("ADDQuickCheckboxALL").val("");
@@ -606,7 +606,7 @@ function BinGetQuickOrdersPager(count) {
 
 function OnContact() {
     $j("sanbtit").attr("class", "titbk");
-    var QuickOrder3 = "<img src='/Skins/Default/Img/QuickOrder/ico1.gif' />填写您的联系方式";
+    var QuickOrder3 = "<img src='/css/css/css/QuickOrder/ico1.gif' />填写您的联系方式";
     $j("QuickOrder3").attr("class", "hong");
     $j("QuickOrder3").html(QuickOrder3);
 }

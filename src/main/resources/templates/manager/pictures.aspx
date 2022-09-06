@@ -72,7 +72,7 @@ s.parentNode.insertBefore(hm, s);
                         <td><span class="editor_warp" data-src='{"action":"alertTitle","editor":"input_editor","type":"picture","oid":"<%#Eval("ID") %>"}'><%#Eval("Title") %></span></td>
                         <td class="pimgsv">
                             <span class="shot_img f_fl insertimg_list_li">
-                                <img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("path").ToString(), "Skins/Img/nopic.jpg")%>" oid="<%#Eval("ID") %>" onerror="onImgErrors(this);" />
+                                <img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("path").ToString(), "Skins/css/nopic.jpg")%>" oid="<%#Eval("ID") %>" onerror="onImgErrors(this);" />
                                 <i class="v_edit"></i>
                                 <i class="v_cat"></i>
                             </span>

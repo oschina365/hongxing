@@ -119,7 +119,7 @@ jQuery.extend(Boxy, {
         show:                   true,           // show dialog immediately?
         modal:                  true,          // make dialog modal?
         fixed:                  true,           // use fixed positioning, if supported? absolute positioning used otherwise
-        closeText:              '<img src="Skins/Blue/Img/boxy/close.gif">',      // text to use for default close link
+        closeText:              '<img src="Skins/Blue/css/boxy/close.gif">',      // text to use for default close link
         unloadOnHide:           false,          // should this dialog be removed from the DOM after being hidden?
         clickToFront:           false,          // bring dialog to foreground on any click (not just titlebar)?
         behaviours:             Boxy.EF,        // function used to apply behaviours to all content embedded in dialog.

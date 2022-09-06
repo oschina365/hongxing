@@ -1254,11 +1254,11 @@ namespace NSW.Web
             //    {
             //        File.Delete(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Mobile\\index.html");
             //    }
-            //    string path = "/Mobile/Template/" + WType + "/Model/Index/" + WModel + ".aspx";
+            //    string path = "/mobile/Template/" + WType + "/Model/Index/" + WModel + ".aspx";
             //    if (NSW.Web.Mobile.CreateMobile.CreateMobileIndex(path, "/Mobile"))
             //    {
             //        sbRsp.AppendFormat("<Success>{0}</Success>", "您的手机网站已经生成成功！");
-            //        sbRsp.AppendFormat("<ToIndex>{0}</ToIndex>", "/Mobile/Index.aspx");
+            //        sbRsp.AppendFormat("<ToIndex>{0}</ToIndex>", "/mobile/Index.aspx");
             //    }
             //    else
             //    {
@@ -1282,7 +1282,7 @@ namespace NSW.Web
                 WriteXml("<Error>暂无数据！</Error>");
             }
             //获得首页模板列表
-            string GetDir = "/Mobile/Template/" + wType.ToString() + "/Skins/";
+            string GetDir = "/mobile/Template/" + wType.ToString() + "/skins/";
             //获取文件夹名称列表
             List<string> SkinsList = NSW.Web.Mobile.CreateMobile.GetDirByName(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Mobile\\Template\\" + wType.ToString() + "\\Skins\\", "", false);
             StringBuilder sbRsp = new StringBuilder();
@@ -1321,7 +1321,7 @@ namespace NSW.Web
             }
 
             //获得首页模板列表
-            string GetDir = "/Mobile/Template/" + wType.ToString() + "/Model/Index/";
+            string GetDir = "/mobile/Template/" + wType.ToString() + "/Model/Index/";
             List<string> IndexModellist = NSW.Web.Mobile.CreateMobile.GetDirByName(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Mobile\\Template\\" + wType.ToString() + "\\Model\\Index\\", "*.aspx", false);
             //获得首页模板略缩图列表
             List<string> IndexImglist = NSW.Web.Mobile.CreateMobile.GetDirByName(System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Mobile\\Template\\" + wType.ToString() + "\\Model\\Index\\", "*.jpg", false);
@@ -1497,19 +1497,19 @@ namespace NSW.Web
                 //先保存客户选择的在线客服控件到配置文件
                 NSW.Mobile.MobileConfig.MSelectIM = SelectIM;
                 //读取底部控件,将替换符替换成客服控件
-                String str = ReadPageStr("/Mobile/UserControls/IM/Kefu.aspx");
+                String str = ReadPageStr("/mobile/UserControls/IM/Kefu.aspx");
                 if (!string.IsNullOrEmpty(str))
                 {
                     //读取Kefu.aspx页面里面的内容     生成控件注册码和控件调用码
                     str = str.Replace("{$RegisterStr$}",
-                        string.Format("{0} Register Src=\"~/Mobile/UserControls/IM/{1}.ascx\" TagPrefix=\"BottomHelp\" TagName=\"{1}\" {2}", "<%@", SelectIM, "%>"))
+                        string.Format("{0} Register Src=\"~/mobile/UserControls/IM/{1}.ascx\" TagPrefix=\"BottomHelp\" TagName=\"{1}\" {2}", "<%@", SelectIM, "%>"))
                         .Replace("{$KefuStr$}",
                         string.Format("<BottomHelp:{0} runat=\"server\" ID=\"{0}\" />", SelectIM))
                         .Replace(string.Format("{0} Page Language=\"C#\" AutoEventWireup=\"true\" CodeFile=\"Kefu.aspx.cs\" Inherits=\"Mobile_UserControls_IM_Kefu\" {1}", "<%@", "%>"), string.Format("{0} Page Language=\"C#\" AutoEventWireup=\"true\" CodeFile=\"IM.aspx.cs\" Inherits=\"Mobile_UserControls_IM_IM\" {1}", "<%@", "%>"));
                     //将控件注册码和调用码写入到IM.aspx里面
                     WritePageStr(str, System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "Mobile\\UserControls\\IM\\IM.aspx");
                     //将控件注册码和调用码加入到Header.ascx里面
-                    string Footer = ReadPageStr("/Mobile/UserControls/Common/Footer.ascx");
+                    string Footer = ReadPageStr("/mobile/UserControls/Common/Footer.ascx");
                     if (Footer.Contains("<!--KefuStart-->"))
                     {
 

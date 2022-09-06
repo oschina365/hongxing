@@ -8,10 +8,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>在线咨询/反馈/加盟申请</title>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/user.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css">
-    <link rel="apple-touch-icon-precomposed" href="/Mobile/images/common/touch-icon.png" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/user.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon-precomposed" href="/mobile/images/common/touch-icon.png" />
 
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
@@ -62,12 +62,12 @@ s.parentNode.insertBefore(hm, s);
             <div class="contapic_bg"></div>
             <div class="right" id="right">
                 <p>提交成功，我们会认真阅读您的信息！</p>
-                <p><a href="javascript:void(0);" onclick="javascript:$('.right,.contapic_bg').hide();" class="blue retry">返回</a><a href="/Mobile/" class="blue">回到首页</a></p>
+                <p><a href="javascript:void(0);" onclick="javascript:$('.right,.contapic_bg').hide();" class="blue retry">返回</a><a href="/mobile/" class="blue">回到首页</a></p>
             </div>
             <div class="wrong" id="wrong">
                 <span></span>
                 <p>提交失败，请检查网络是否有问题！</p>
-                <p><a href="javascript:void(0);" onclick="javascript:$('.wrong,.contapic_bg').hide();" class="blue retry">返回</a><a href="/Mobile/" class="blue">回到首页</a></p>
+                <p><a href="javascript:void(0);" onclick="javascript:$('.wrong,.contapic_bg').hide();" class="blue retry">返回</a><a href="/mobile/" class="blue">回到首页</a></p>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@ s.parentNode.insertBefore(hm, s);
     <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     <!--底部结束-->
 </body>
-<script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
-<script src="/Mobile/js/Tools.js"></script>
+<script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
+<script src="/mobile/js/Tools.js"></script>
 </html>

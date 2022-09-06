@@ -5,13 +5,13 @@
     </div>
     <div class="bot-c">
       <ul>
-          <li><i><img src="/Skins/Default/Img/Common/bot_19.jpg" alt="武汉办公家具" /></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：$c2.BeiAn</b></li>
-          <li><i><img src="/Skins/Default/Img/Common/bot_22.jpg" alt="座机" /></i>座机：027-61520188</i></li>
-          <li><i><img src="/Skins/Default/Img/Common/bot_26.jpg" alt="地址" /></i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼</li>
-          <li><i><img src="/Skins/Default/Img/Common/bot_27.jpg" alt="传真" /></i>电话：18207180188</i></li>
-          <li><i><img src="/Skins/Default/Img/Common/bot_30.jpg" alt="全国服务热线" /></i>全国服务热线：$g.FindPinServiceTel</li>
-          <li><i><img src="/Skins/Default/Img/Common/bot_31.jpg" alt="邮箱" /></i>邮箱：hongxin@hongxin.com.cn</li>
-          <li><i><img src="/Skins/Default/Img/Common/zhizuo.png" alt="网站制作" /></i>$c2.Tongji</li>
+          <li><i><img src="/skins/default/Img/Common/bot_19.jpg" alt="武汉办公家具" /></i>武汉红鑫家俱有限公司<b>版权所有</b><b>备案号：$c2.BeiAn</b></li>
+          <li><i><img src="/skins/default/Img/Common/bot_22.jpg" alt="座机" /></i>座机：027-61520188</i></li>
+          <li><i><img src="/skins/default/Img/Common/bot_26.jpg" alt="地址" /></i>地址：武汉市洪山区光谷大道未来之光6号楼1-3楼</li>
+          <li><i><img src="/skins/default/Img/Common/bot_27.jpg" alt="传真" /></i>电话：18207180188</i></li>
+          <li><i><img src="/skins/default/Img/Common/bot_30.jpg" alt="全国服务热线" /></i>全国服务热线：$g.FindPinServiceTel</li>
+          <li><i><img src="/skins/default/Img/Common/bot_31.jpg" alt="邮箱" /></i>邮箱：hongxin@hongxin.com.cn</li>
+          <li><i><img src="/skins/default/Img/Common/zhizuo.png" alt="网站制作" /></i>$c2.Tongji</li>
       </ul>
       <em><a href="/" title="红鑫家俱"><img src="$sitedomain$c2.BottomLogo" alt="$sitename" title="$sitename" /></a></em>
       <span class="spanewm"><img src="$c2.BottomCode" alt="二维码" /></span>

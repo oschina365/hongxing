@@ -19,7 +19,7 @@ s.parentNode.insertBefore(hm, s);
 </script>
 </head>
 <body>
-    <link href="../Skins/Default/QuickOrder.css" rel="stylesheet" type="text/css" />
+    <link href="../skins/default/QuickOrder.css" rel="stylesheet" type="text/css" />
     <form runat="server" id="aspnetForm">
     <%=NVEngine.NVTempHelp.LoadNVTemp("Common/Header.html")%>
     <div class="content">
@@ -28,14 +28,14 @@ s.parentNode.insertBefore(hm, s);
             <div class="jind">
                 <ul>
                     <li class="hong">
-                        <img src="/Skins/Default/Img/QuickOrder/ico1.gif" />搜索合适产品</li>
+                        <img src="/skins/default/Img/QuickOrder/ico1.gif" />搜索合适产品</li>
                     <li id="QuickOrder2"></li>
                     <li id="QuickOrder3">
-                        <img src="/Skins/Default/Img/QuickOrder/ico2.gif" />填写您的联系方式</li>
+                        <img src="/skins/default/Img/QuickOrder/ico2.gif" />填写您的联系方式</li>
                     <li>
-                        <img src="/Skins/Default/Img/QuickOrder/ico2.gif" />订单确认</li>
+                        <img src="/skins/default/Img/QuickOrder/ico2.gif" />订单确认</li>
                     <li class="nones">
-                        <img src="/Skins/Default/Img/QuickOrder/ico2.gif" />提交成功</li>
+                        <img src="/skins/default/Img/QuickOrder/ico2.gif" />提交成功</li>
                 </ul>
             </div>
             <div class="miaos">
@@ -92,9 +92,9 @@ s.parentNode.insertBefore(hm, s);
                     <li class="shangc"><a href="javascript:void(0);" onclick="DelQuickOrderConfirm(this,0);">
                         删除</a></li>
                     <span id="spanjiantou2" style="display: none;">
-                        <img src="../Skins/Default/Img/QuickOrder/jiantou2.gif" /></span> <span id="spanjiantou1"
+                        <img src="../skins/default/Img/QuickOrder/jiantou2.gif" /></span> <span id="spanjiantou1"
                             class="upspan" style="display: none;">
-                            <img src="../Skins/Default/Img/QuickOrder/jiantou.gif" /></span>
+                            <img src="../skins/default/Img/QuickOrder/jiantou.gif" /></span>
                 </ul>
             </div>
             <div class="erb">
@@ -196,9 +196,9 @@ s.parentNode.insertBefore(hm, s);
                     <div class="clear">
                     </div>
                     <a href="javascript:void(0);">
-                        <img src="/Skins/Default/Img/QuickOrder/btn5.gif" class="an3" name="btnSubmit" onclick="QBtnSubmit();" /></a>
+                        <img src="/skins/default/Img/QuickOrder/btn5.gif" class="an3" name="btnSubmit" onclick="QBtnSubmit();" /></a>
                     <a href="javascript:void(0);">
-                        <img src="/Skins/Default/Img/QuickOrder/btn6.gif" class="an3" name="btnSubmit" onclick="emptyText('aspnetForm');RfertAddQuickOrders();" /></a>
+                        <img src="/skins/default/Img/QuickOrder/btn6.gif" class="an3" name="btnSubmit" onclick="emptyText('aspnetForm');RfertAddQuickOrders();" /></a>
                 </div>
             </div>
         </div>

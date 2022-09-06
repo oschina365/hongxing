@@ -77,8 +77,8 @@
 .nsw_mailsub_list .e_edi{*position: relative; *top:8px;}
 .nsw_mailsub_list #nsw_list_content .nsw_impdate,.nsw_mailto_list #nsw_list_content .nsw_impdate{ margin:4px 0; height: 24px; line-height: 24px; width:131px; border:1px solid transparent; color: #808080; padding:0 4px; background: none; position: relative; top: 2px;}
 .nsw_mailsub_list #nsw_list_content .t_tr .nsw_impdate.in_focus,.nsw_mailto_list #nsw_list_content .t_tr .nsw_impdate.in_focus{ border:1px solid #ddd; background: #f45100; color: #fff;}
-.nsw_mailsub_list .nsw_cnt_area .e_dele2 {background: url(../Img/seoimg.png) no-repeat -87px -335px; height: 20px;position: absolute;right:0;top: 8px;  width: 40px;}
-.f_back_1{ background: url(../Img/i_back.gif) no-repeat; width:16px; height:10px; display:inline-block;}
+.nsw_mailsub_list .nsw_cnt_area .e_dele2 {background: url(../css/seoimg.png) no-repeat -87px -335px; height: 20px;position: absolute;right:0;top: 8px;  width: 40px;}
+.f_back_1{ background: url(../css/i_back.gif) no-repeat; width:16px; height:10px; display:inline-block;}
 .nsw_addclsify_bt2 { width: 33%; height:26px; line-height:26px; top:0; }
 .nsw_mailsub_list .nsw_key_1 .pro_name_link:hover{ background: #f45100!important; color: #fff!important;}
 

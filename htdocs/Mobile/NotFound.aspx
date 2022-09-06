@@ -12,8 +12,8 @@
     <title>404错误</title>
     <meta name="keywords" content="营销型网站,营销型网站建设,深圳网站建设,牛商网,网站托管,网站建设公司" />
     <meta name="description" content="牛商网是深圳营销型网站建设公司,中国营销型网站创始者,营销型网站标准制定者,服务范围营销型网站建设,网站运营托管,网站外包,深圳网站建设等,咨询热线:4000-333-087" />
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
 var _hmt = _hmt || [];
@@ -33,7 +33,7 @@ s.parentNode.insertBefore(hm, s);
     <!--404-->
     <div class="erro">
         <div class="icon_404 f-tc">
-            <img src="/Mobile/Images/Common/404erro.jpg" />
+            <img src="/mobile/Images/Common/404erro.jpg" />
         </div>
         <p class="f-tc en">
             ERROR... PAGE NOT FOUND
@@ -44,12 +44,12 @@ s.parentNode.insertBefore(hm, s);
         </p>
         <p class="cn">
             <a href="javascript:history.go(-1)" class="back_to">>>返回上一级页面</a><br />
-            <a href="/Mobile/" class="back_home">>>返回网站首页</a>
+            <a href="/mobile/" class="back_home">>>返回网站首页</a>
         </p>
     </div>
     <!--底部开始-->
     <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
 </body>
-<script src="/Mobile/JS/Jquery.js"></script>
-<script src="/Mobile/JS/nsw_mobile.js"></script>
+<script src="/mobile/JS/Jquery.js"></script>
+<script src="/mobile/JS/nsw_mobile.js"></script>
 </html>

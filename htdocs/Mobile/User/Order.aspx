@@ -8,10 +8,10 @@
     <meta name="format-detection" content="telephone=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>我的意向订单</title>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/user.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
-    <link rel="apple-touch-icon-precomposed" href="/Mobile/images/common/touch-icon.png" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/user.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon-precomposed" href="/mobile/images/common/touch-icon.png" />
 
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
@@ -29,7 +29,7 @@ s.parentNode.insertBefore(hm, s);
         <%
             NVelocity.VelocityContext Context = NVEngine.NVTempHelp.GetVelocityContext();
             System.Collections.Generic.Dictionary<object, object> dic = NVTools.Tools.GetEmptyDictionary();
-            dic.Add("会员中心", "/Mobile/User/Index.aspx");
+            dic.Add("会员中心", "/mobile/User/Index.aspx");
             dic.Add("我的意向订单", "");
 
             HybridDictionary keyvalues = new HybridDictionary();
@@ -57,7 +57,7 @@ s.parentNode.insertBefore(hm, s);
 <%--            <uc1:OranPager runat="server" ID="OranPager1" />--%>
 
             <p class="show_more z-pad">
-                <input type="button" name="" value="返 回" class="u-co-bt" onclick="javascript: window.location = '/Mobile/User/Index.aspx'" />
+                <input type="button" name="" value="返 回" class="u-co-bt" onclick="javascript: window.location = '/mobile/User/Index.aspx'" />
             </p>
             <div class="clear"></div>
         </div>
@@ -66,7 +66,7 @@ s.parentNode.insertBefore(hm, s);
         <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     </form>
 </body>
-<script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
-<script type="text/javascript" src="/Mobile/js/Tools.js"></script>
+<script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
+<script type="text/javascript" src="/mobile/js/Tools.js"></script>
 </html>

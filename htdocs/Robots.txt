@@ -4,11 +4,11 @@ Disallow: /Manager/
 Disallow: /User/
 Disallow: /UserControls/
 Disallow: /Config/
-Disallow: /Css/
+Disallow: /css/
 Disallow: /JS/
 Disallow: /API/
 Disallow: /Component/
 Disallow: /NSWEditor/
 Disallow: /Template/
-Disallow: /Skins/
+Disallow: /skins/
 Disallow: /Plug/

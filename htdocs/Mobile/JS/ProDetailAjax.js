@@ -70,7 +70,7 @@ $(function () {
     function loadContent() {
         $.ajax({
             type: "post",
-            url: "/Mobile/MAjax.ashx?action=GetCommentByProIdToDeatil&t=" + Math.random(),
+            url: "/mobile/MAjax.ashx?action=GetCommentByProIdToDeatil&t=" + Math.random(),
             data: { "ProId": ProDetailId, "Curr": ProDetailPageIndex, "Top": ProDetailPageSize },
             beforeSend: function (XMLHttpRequest) {
 

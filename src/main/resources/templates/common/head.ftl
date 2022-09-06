@@ -10,7 +10,8 @@
 <script charset="utf-8" src="https://goutong.baidu.com/site/180/75bb93deea44a009bc2d215db2ef9865/b.js?siteId=3552126"></script>
 <script src="https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865"></script>
 <script src="https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d"></script>
-<script type="text/javascript" key="NSW_Details" src="/js/NSW_Details.js"></script>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" key="NSW_Details" src="/js/nsw_details.js"></script>
 <script src="/layui/layui.all.js"></script>
 <link rel="stylesheet" href="/layui/css/layui.css">
 <meta name="format-detection" content="telephone=no">

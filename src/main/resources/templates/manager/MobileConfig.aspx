@@ -16,7 +16,7 @@ s.parentNode.insertBefore(hm, s);
 </script>
 </head>
 <body>
-<script type="text/javascript" src="Inc/JS/Mobile.js"></script>
+<script type="text/javascript" src="Inc/js/Mobile.js"></script>
 <CurrentPosition:CurrentPosition runat="server" ID="cur"/>
 <form id="form2" runat="server" onsubmit="top.refreshList=true;">
  <div class="add_cont pad300 j_recordCon_c f_cb">
@@ -35,7 +35,7 @@ s.parentNode.insertBefore(hm, s);
                 <div class="f_cb f_mt25">
 					<label class="add_label f_fl">手机网站Logo</label>
                     <div class="add_r f_fl">
-                        <div class="colum_onload f_csp f_fl Upload_Clik" input="ImgUploadMLogo" id="ThumbnailUpload" directory_="/Mobile/UploadFiles/Common/" directory="Setting">
+                        <div class="colum_onload f_csp f_fl Upload_Clik" input="ImgUploadMLogo" id="ThumbnailUpload" directory_="/mobile/UploadFiles/Common/" directory="Setting">
                             <i class="colum_icon"></i>
                             <p class="f_tac f_lht27">点击上传</p>
                         </div>
@@ -45,7 +45,7 @@ s.parentNode.insertBefore(hm, s);
                 <div class="f_cb f_mt25">
 					<label class="add_label f_fl">手机网站底部二维码</label>
                     <div class="add_r f_fl">
-                        <div class="colum_onload f_csp f_fl Upload_Clik" input="ImgUploadMCode" id="ThumbnailUpload1" directory_="/Mobile/UploadFiles/Common/" directory="Setting">
+                        <div class="colum_onload f_csp f_fl Upload_Clik" input="ImgUploadMCode" id="ThumbnailUpload1" directory_="/mobile/UploadFiles/Common/" directory="Setting">
                             <i class="colum_icon"></i>
                             <p class="f_tac f_lht27">点击上传</p>
                         </div>

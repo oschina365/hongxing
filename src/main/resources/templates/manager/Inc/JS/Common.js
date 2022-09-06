@@ -271,9 +271,9 @@ function setOrderSign(curOrder) {
         var axis = ths[i].axis.toLowerCase();
         if (axis == field) {
             if (dirc == 0)
-                ths[i].innerHTML += "<img src='Skins/Blue/Img/asc.gif' alt='升序' />";
+                ths[i].innerHTML += "<img src='Skins/Blue/css/asc.gif' alt='升序' />";
             else
-                ths[i].innerHTML += "<img src='Skins/Blue/Img/desc.gif' alt='降序' />";
+                ths[i].innerHTML += "<img src='Skins/Blue/css/desc.gif' alt='降序' />";
         }
         if (axis != "") {
             var newDirc = 0;
@@ -1674,16 +1674,16 @@ function editMobile(e, oid, url) {
 }
 
 function onImgErrors(src) {
-    $(src).attr("src", "Skins/Img/nopic.jpg");
+    $(src).attr("src", "Skins/css/nopic.jpg");
 }
 
     //设置手机二维码
 $(function () {
     $("<div class='code_img'></div>").appendTo(".scl_d");
     $("<div class='con_header'><span class='close_btn' onclick='hideQR(this);'></span><p>分享到微信朋友圈</p></div><div class='con_img'><img src=''></div><div class='con_foot'><p>打开微信，点击底部的'发现',使用'扫一扫' <br/>即可将网页分享到我的朋友圈。 </p></div>").appendTo(".code_img");
-    $(".code_img").css({ "position": "absolute", "top": "15px", "right": "0", "z-index": "99", "width": "303px", "height": "303px", "display": "none", "background-image": "url(/Manager/Mobile/Img/ailog_bg_03.gif)", "overflow": "hidden" });
+    $(".code_img").css({ "position": "absolute", "top": "15px", "right": "0", "z-index": "99", "width": "303px", "height": "303px", "display": "none", "background-image": "url(/Manager/mobile/css/ailog_bg_03.gif)", "overflow": "hidden" });
     $(".con_header").css({ "text-align": "left", "height": "47px", "line-height": "45px", "text-indent": "1em" });
-    $(".con_header span").css({ "display": "block", "float": "right", "width": "30px", "height": "30px", "margin": "8px 5px 0 0", "cursor": "pointer", "background-image": "url(/Manager/Mobile/Img/ailog_close.gif)", "background-position": "center", "background-repeat": "no-repeat" });
+    $(".con_header span").css({ "display": "block", "float": "right", "width": "30px", "height": "30px", "margin": "8px 5px 0 0", "cursor": "pointer", "background-image": "url(/Manager/mobile/css/ailog_close.gif)", "background-position": "center", "background-repeat": "no-repeat" });
     $(".con_img").css({ "height": "201px", "text-align": "center" });
     $(".con_foot").css({ "text-align": "left", "height": "40px", "line-height": "22px", "padding": "6px 0 0 10px" });
     $(".QrCode").click(function () {

@@ -311,6 +311,6 @@ s.parentNode.insertBefore(hm, s);
 		</div>
     </form>
 </div>
-<script src="Inc/JS/wechat.js" type="text/javascript"></script>
+<script src="Inc/js/wechat.js" type="text/javascript"></script>
 </body>
 </html>

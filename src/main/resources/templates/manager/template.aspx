@@ -84,7 +84,7 @@ s.parentNode.insertBefore(hm, s);
                                 </span>
                             </div>
                         </td>
-                        <td class="pimgsv"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/Img/nopic.jpg")%>" oid="<%#Eval("ID") %>" onerror="onImgErrors(this);" width="100" /></td>
+                        <td class="pimgsv"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/css/nopic.jpg")%>" oid="<%#Eval("ID") %>" onerror="onImgErrors(this);" width="100" /></td>
                         <td><a href="###" onclick="edit(event,<%#Eval("ID") %>)"><%#Eval("Title")%></a></td>
                         <td class="tac"><%#Eval("ColumnName")%></td>
                         <td><a href="<%# Eval("PageURL")%>" target="_blank" style="white-space:pre;"><%# Eval("PageURL")%></a></td>

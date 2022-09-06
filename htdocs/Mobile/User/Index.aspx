@@ -11,10 +11,10 @@
     <title>会员区首页</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-     <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/user.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css" />
-    <link rel="apple-touch-icon-precomposed" href="/Mobile/images/common/touch-icon.png" />
+     <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/user.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon-precomposed" href="/mobile/images/common/touch-icon.png" />
    
     
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
@@ -33,7 +33,7 @@ s.parentNode.insertBefore(hm, s);
         <%
             NVelocity.VelocityContext Context = NVEngine.NVTempHelp.GetVelocityContext();
             System.Collections.Generic.Dictionary<object, object> dic = NVTools.Tools.GetEmptyDictionary();
-            dic.Add("会员中心", "/Mobile/User/Index.aspx");
+            dic.Add("会员中心", "/mobile/User/Index.aspx");
             //dic.Add("修改个人资料", "");
 
             HybridDictionary keyvalues = new HybridDictionary();
@@ -47,10 +47,10 @@ s.parentNode.insertBefore(hm, s);
             <h4 class="f-tc  welcome">欢迎您登录会员中心</h4>
             <div class="m-con">
                 <ul class="helplist">
-                    <li class="first"><a href="/Mobile/User/order.aspx" class="helplia">我的意向订单</a></li>
-                    <li><a href="/Mobile/User/MyFaq.aspx" class="helplia">我的加盟申请</a></li>
-                    <li><a href="/Mobile/User/UserInfo.aspx" class="helplia">更改个人资料</a></li>
-                    <li><a href="/Mobile/User/ChangePws.aspx" class="helplia">更改密码</a></li>
+                    <li class="first"><a href="/mobile/User/order.aspx" class="helplia">我的意向订单</a></li>
+                    <li><a href="/mobile/User/MyFaq.aspx" class="helplia">我的加盟申请</a></li>
+                    <li><a href="/mobile/User/UserInfo.aspx" class="helplia">更改个人资料</a></li>
+                    <li><a href="/mobile/User/ChangePws.aspx" class="helplia">更改密码</a></li>
                     <li><%--<a href="" class="helplia">退出</a>--%>
                         <asp:LinkButton CssClass="helplia" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">退出</asp:LinkButton>
                     </li>
@@ -64,7 +64,7 @@ s.parentNode.insertBefore(hm, s);
         <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     </form>
 </body>
-    <script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-    <script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
-    <script type="text/javascript" src="/Mobile/js/Tools.js"></script>
+    <script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+    <script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
+    <script type="text/javascript" src="/mobile/js/Tools.js"></script>
 </html>

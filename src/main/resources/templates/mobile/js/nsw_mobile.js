@@ -54,7 +54,7 @@ $(function(){
         }
         $.ajax({
             type:"post",
-            url:"/Mobile/MAjax.ashx?action=CheckSalesmanPhone&t=" + Math.random(),
+            url:"/mobile/MAjax.ashx?action=CheckSalesmanPhone&t=" + Math.random(),
             data:"Phone=" + phone,
             beforeSend:function() {},
             success:function(msg) {

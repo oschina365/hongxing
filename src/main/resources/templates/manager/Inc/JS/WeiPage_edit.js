@@ -39,7 +39,7 @@ function CheckFileName() {
 
 function checkFile(FileName, flag) {
     if (!flag) flag = false;
-    var columntype = "/Mobile/WeiPage/";
+    var columntype = "/mobile/WeiPage/";
     var txtDirectory = $("#txtDirectory");
     if (txtDirectory.length) {
         txtDirectory = $.trim(txtDirectory.val());

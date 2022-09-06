@@ -141,7 +141,7 @@
                         </div>
                         <div class="insertList f_cb" id="insertList" style=" display:block;">
                             <div class="md_prev f_fl f_csp" id="prev_01">
-                                <img src="/manager/skins/Img/leftjt.gif">
+                                <img src="/manager/skins/css/leftjt.gif">
                             </div>
                             <div class="md_hide f_fl" id="dndArea">
                                 <div style="width:562px;height:auto;overflow:hidden;position: relative;">
@@ -149,7 +149,7 @@
                                 </div>
                             </div>
                             <div class="md_next f_fl f_csp" id="next_01">
-                                <img src="/manager/skins/Img/rightjt.gif">
+                                <img src="/manager/skins/css/rightjt.gif">
                             </div>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                     <div class="view_area">
                         <div class="insertList f_cb" id="insertList02" style=" display:block;">
                             <div class="md_prev f_fl f_csp" id="prev_02">
-                                <img src="/manager/skins/Img/leftjt.gif">
+                                <img src="/manager/skins/css/leftjt.gif">
                             </div>
                             <div class="md_hide f_fl">
                                 <div style="width:562px;height:auto;overflow:hidden;position: relative;">
@@ -245,7 +245,7 @@
                                 </div>
                             </div>
                             <div class="md_next f_fl f_csp" id="next_02">
-                                <img src="/manager/skins/Img/rightjt.gif">
+                                <img src="/manager/skins/css/rightjt.gif">
                             </div>
                         </div>
                     </div>

@@ -6,13 +6,13 @@
     <title>武汉红鑫家具联系方式：400-678-5198</title>
     <meta name="keywords" content="武汉红鑫家具联系电话,武汉红鑫家具联系地址" />
     <meta name="description" content="武汉红鑫家具联系电话：400-678-5198,武汉红鑫家具联系地址：武汉市洪山区关谷大道未来之光6栋红鑫办公家具。" />
-    <script src="/JS/MobileRewrite.js" type="text/javascript"></script>
+    <script src="/js/MobileRewrite.js" type="text/javascript"></script>
     <script type="text/javascript">
         uaredirect("/mobile/Mhelps/contactus.html");
     </script>
     <link key="resetcommon" href="/skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
     <link key="style" href="/skins/default/Style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" key="NSW_Details" src="/JS/NSW_Details.js"></script>
+    <script type="text/javascript" key="NSW_Details" src="/js/nsw_details.js"></script>
     <meta name="format-detection" content="telephone=no" />
     <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 
@@ -134,7 +134,7 @@
         <#include "common/category_list.ftl" />
     </div>
 </div>
-<script src="/JS/select2css.js" type="text/javascript"></script>
+<script src="/js/select2css.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function () {
         $('.ban-ss').before($('.topadcs'));
@@ -550,12 +550,12 @@
     <div title="回到顶部" id="roll_top"></div>
 </div>
 <!--[if IE 6]>
-<script src="/JS/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+<script src="/js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
 <script type="text/javascript">
     DD_belatedPNG.fix('*');
 </script>
 <![endif]-->
-<script src="/JS/rollup.min.js" type="text/javascript"></script>
+<script src="/js/rollup.min.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="http://p.qiao.baidu.com/cps/chat?siteId=3552126&userId=2186107" defer="defer"></script>
 <script type="text/javascript" src="http://lead.soperson.com/3552126/2186107.js" defer="defer" style="display:none;"></script>

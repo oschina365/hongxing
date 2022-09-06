@@ -8,15 +8,15 @@
 }
 #roll_top
 {
-	background: url(/Skins/Default/Img/top.gif) no-repeat;
+	background: url(/skins/default/Img/top.gif) no-repeat;
 }
 #fall
 {
-	background: url(/Skins/Default/Img/top.gif) no-repeat 0 -80px;
+	background: url(/skins/default/Img/top.gif) no-repeat 0 -80px;
 }
 #ct
 {
-	background: url(/Skins/Default/Img/top.gif) no-repeat 0 -40px;
+	background: url(/skins/default/Img/top.gif) no-repeat 0 -40px;
 }
 #roll
 {

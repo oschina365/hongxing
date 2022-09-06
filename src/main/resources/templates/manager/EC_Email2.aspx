@@ -67,7 +67,7 @@ s.parentNode.insertBefore(hm, s);
                                 <td style="display:none"><%# Eval("UserEmail")%></td>
                                 <td style="display:none"><%# Eval("UserEmail")%></td>
                                 <td class="UserEmail"><%# Eval("UserEmail")%></td>
-                                <td><img alt="IMG" src="/skins/default/Img/ico110.gif"/></td>
+                                <td><img alt="IMG" src="/skins/default/css/ico110.gif"/></td>
                             </tr>
                             </ItemTemplate></asp:Repeater>
                         </tbody>

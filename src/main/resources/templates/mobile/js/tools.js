@@ -29,7 +29,7 @@ function postComment(src, _oid, _mark) {
         return;
     }
 
-    $.post("/Mobile/MAjax.ashx?action=PostComment&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=PostComment&t=" + Math.random(), {
         content: _content,
         oid: _oid,
         mark: _mark
@@ -81,7 +81,7 @@ function submitOrder(UserName, Phone, OrderInfo, _oid) {
         $("#ErrorInfo").append("提交数据有误，请重试");
     } else {
         $("#ErrorInfo").empty();
-        $.post("/Mobile/MAjax.ashx?action=submitorder&t=" + Math.random(), {
+        $.post("/mobile/MAjax.ashx?action=submitorder&t=" + Math.random(), {
             oid: _oid,
             UserName: $("#" + UserName + "").val(),
             Phone: $("#" + Phone + "").val(),
@@ -113,7 +113,7 @@ function submitOrder(UserName, Phone, OrderInfo, _oid) {
 //_mark 评论类型，product为产品，news为资讯
 function GetCommentById(AppendTo, Top, subId, type) {
 
-    $.post("/Mobile/MAjax.ashx?action=GetCommentById&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=GetCommentById&t=" + Math.random(), {
         oid: subId,
         type: type,
         top: Top
@@ -147,7 +147,7 @@ function GetCommentById(AppendTo, Top, subId, type) {
             sHtml += list;
         }
         var _type = type == "product" ? 1 : 2;    //product为产品，news为资讯    
-        sHtml += "<p class=\"show_more\"><a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/Mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\" id=\"spCommentCount\" class=\"blue fs12\">" + cou + "</a><input class='u-co-bt f-fr' type='button' name='' value='全部评论' onclick=\"javascript:window.location='/Mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\"></p>";
+        sHtml += "<p class=\"show_more\"><a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\" id=\"spCommentCount\" class=\"blue fs12\">" + cou + "</a><input class='u-co-bt f-fr' type='button' name='' value='全部评论' onclick=\"javascript:window.location='/mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\"></p>";
         if (iCount > 0) {
             $("#" + AppendTo + "").html(sHtml);
         } else {
@@ -163,7 +163,7 @@ function GetCommentById(AppendTo, Top, subId, type) {
 //_mark 评论类型，product为产品，news为资讯
 function GetCommentById2(AppendTo, Top, subId, type) {
 
-    $.post("/Mobile/MAjax.ashx?action=GetCommentById&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=GetCommentById&t=" + Math.random(), {
         oid: subId,
         type: type,
         top: Top
@@ -187,8 +187,8 @@ function GetCommentById2(AppendTo, Top, subId, type) {
             sHtml = sHtml + "<span class='u-noComment'>暂无评论</span>";
         }
         var _type = type == "product" ? 1 : 2;    //product为产品，news为资讯    
-        sHtml = sHead + sHtml + "<a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/Mobile/Tools/Comment1.aspx?oid=" + subId + "&type=" + _type + "'\"><p class=\"u-btn1\">我要评论</p></a>";
-        sHtml = sHtml + "<a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/Mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "'\"><p class=\"u-btn1\">查看更多</p></a><p class=\"clear\"></p></div>";
+        sHtml = sHead + sHtml + "<a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/mobile/Tools/Comment1.aspx?oid=" + subId + "&type=" + _type + "'\"><p class=\"u-btn1\">我要评论</p></a>";
+        sHtml = sHtml + "<a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "'\"><p class=\"u-btn1\">查看更多</p></a><p class=\"clear\"></p></div>";
         $("#" + AppendTo + "").html(sHtml);
     });
 }
@@ -228,7 +228,7 @@ function UpdateUserData() {
         return;
     }
 
-    $.post("/Mobile/MAjax.ashx?action=UpdateUserData&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=UpdateUserData&t=" + Math.random(), {
         UserName: _userName,
         Phone: _phone,
         Email: _email,
@@ -284,7 +284,7 @@ function UpdateUserPwd() {
         $("#validate3").text("两次输入密码不一致，请检查");
         $("#txtNewPwd").focus();
     } else {
-        $.post("/Mobile/MAjax.ashx?action=UpdateUserPwd&t=" + Math.random(), {
+        $.post("/mobile/MAjax.ashx?action=UpdateUserPwd&t=" + Math.random(), {
             Pwd: _pwd,
             NewPwd: _newPwd
         }, function (msg) {
@@ -329,7 +329,7 @@ function SaveAgentApply() {
         $("#MsgInfo").text("提交的内容不能为空");
         $("#txtContent").focus();
     } else {
-        $.post("/Mobile/MAjax.ashx?action=CheckAgentApply&t=" + Math.random(), {
+        $.post("/mobile/MAjax.ashx?action=CheckAgentApply&t=" + Math.random(), {
             Name: _name,
             Phone: _phone,
             Content: _content
@@ -408,7 +408,7 @@ function SaveFaq(postType, columnId) {
         if (columnId == false) {
             columnId = 0;
         }
-        $.post("/Mobile/MAjax.ashx?action=CheckFaq&t=" + Math.random(), {
+        $.post("/mobile/MAjax.ashx?action=CheckFaq&t=" + Math.random(), {
             PostType: postType,
             Phone: _phone,
             Content: _content,
@@ -446,7 +446,7 @@ function SaveFaq(postType, columnId) {
 //Top 显示加盟申请的条数
 //subId 根据ID读取相应的评论，此ID可以为招商加盟ID
 function GetFaqById(AppendTo, Top, subId) {
-    $.post("/Mobile/MAjax.ashx?action=GetFaqById&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=GetFaqById&t=" + Math.random(), {
         oid: subId,
         top: Top
     }, function (msg) {
@@ -471,7 +471,7 @@ function GetFaqById(AppendTo, Top, subId) {
             sHtml += list;
         }
         var _type = "agent";
-        sHtml += "<p class=\"show_more\"><a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/Mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\" id=\"spCommentCount\" class=\"blue fs12\">" + cou + "</a><input class='u-co-bt f-fr' type='button' name='' value='全部评论' onclick=\"javascript:window.location='/Mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\"></p>";
+        sHtml += "<p class=\"show_more\"><a href=\"javascript:void(0)\" onclick=\"javascript:window.location='/mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\" id=\"spCommentCount\" class=\"blue fs12\">" + cou + "</a><input class='u-co-bt f-fr' type='button' name='' value='全部评论' onclick=\"javascript:window.location='/mobile/Tools/Comment.aspx?oid=" + subId + "&type=" + _type + "';\"></p>";
         if (iCount > 0) {
             $("#" + AppendTo + "").html(sHtml);
         } else {
@@ -489,7 +489,7 @@ function GetFaqById(AppendTo, Top, subId) {
  * 得到方案的评论数
  ********************/
 function getProjectNum(subId) {
-    $.post("/Mobile/MAjax.ashx?action=GetProjectNum&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=GetProjectNum&t=" + Math.random(), {
         ID: subId
     }, function (msg) {
         var returnValue = parseInt(gav(msg, "count"), 0);
@@ -685,7 +685,7 @@ function ToUp(getType, OId, fit, pCount, curr, currUrl) {
             break;
         case "qw":
             if (pCount - curr <= 8) {
-                $.post("/Mobile/MAjax.ashx?action=GetContentQW&t=" + Math.random(),
+                $.post("/mobile/MAjax.ashx?action=GetContentQW&t=" + Math.random(),
                     {
                         curr: curr,
                         OId: OId,
@@ -853,7 +853,7 @@ function GetContentByProductId(proId) {
 
 function getContent(proId, currPage) {
     //ID正确，则开始请求数据
-    $.post("/Mobile/MAjax.ashx?action=GetContentByProductId&t=" + Math.random(), {
+    $.post("/mobile/MAjax.ashx?action=GetContentByProductId&t=" + Math.random(), {
         ProId: proId,
         CurrPage: currPage
     }, function (rsp) {
@@ -916,7 +916,7 @@ function GetCommentCountByProId(proId, appendDiv) {
         return;
     }
     //ID正确，则开始请求数据
-    $.post("/Mobile/MAjax.ashx?action=GetCommentCountByProId&t=" + Math.random(), {ProId: proId}, function (rsp) {
+    $.post("/mobile/MAjax.ashx?action=GetCommentCountByProId&t=" + Math.random(), {ProId: proId}, function (rsp) {
         if ($(rsp).find("Error").length > 0) {
             alert($(rsp).find("Error").text());
         } else {
@@ -937,7 +937,7 @@ function UpdatePwd(code) {
     } else if ($("#txtNewPin").val() != $("#txtConfirmPin").val()) {
         $(validate).text("新密码和确认新密码不一致，请重新输入");
     } else {
-        $.post("/Mobile/MAjax.ashx?action=UpdatePwd&t=" + Math.random(), {
+        $.post("/mobile/MAjax.ashx?action=UpdatePwd&t=" + Math.random(), {
             Code: code,
             Pwd: $("#txtNewPin").val()
         }, function (msg) {
@@ -949,7 +949,7 @@ function UpdatePwd(code) {
                 $("#contapic_bg").show();
                 $("#right").show();
                 window.setTimeout(function () {
-                    location.href = "/Mobile/User/login.aspx";
+                    location.href = "/mobile/User/login.aspx";
                 }, 3000);
             }
         });
@@ -959,7 +959,7 @@ function UpdatePwd(code) {
 //微网页的浏览次数
 function UpdateWeiPageHits(oid) {
     if (!isNaN(oid)) {
-        $.post("/Mobile/MAjax.ashx?action=UpdateWeiPageHits&t=" + Math.random(), {Oid: oid}, function (msg) {
+        $.post("/mobile/MAjax.ashx?action=UpdateWeiPageHits&t=" + Math.random(), {Oid: oid}, function (msg) {
             var sta = gav(msg, "state");
         });
     }

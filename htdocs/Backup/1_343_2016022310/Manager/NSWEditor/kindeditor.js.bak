@@ -257,7 +257,7 @@
         fullscreenShortcut: false,
         bodyClass: 'ke-content',
         indentChar: '\t',
-        cssPath: 'NSWEditor/Css/reset.css',
+        cssPath: 'NSWEditor/css/reset.css',
         cssData: '',
         minWidth: 650,
         minHeight: 100,

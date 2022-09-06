@@ -9,10 +9,10 @@
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>忘记密码</title>
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/user.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css">
-    <link rel="apple-touch-icon-precomposed" href="/Mobile/images/common/touch-icon.png" />
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/user.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon-precomposed" href="/mobile/images/common/touch-icon.png" />
 
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 <script>
@@ -30,7 +30,7 @@ s.parentNode.insertBefore(hm, s);
     <%
         NVelocity.VelocityContext Context = NVEngine.NVTempHelp.GetVelocityContext();
         System.Collections.Generic.Dictionary<object, object> dic = NVTools.Tools.GetEmptyDictionary();
-        dic.Add("会员中心", "/Mobile/User/Index.aspx");
+        dic.Add("会员中心", "/mobile/User/Index.aspx");
         dic.Add("忘记密码", "");
 
         HybridDictionary keyvalues = new HybridDictionary();
@@ -58,7 +58,7 @@ s.parentNode.insertBefore(hm, s);
                     <asp:Button ID="btnPost" runat="server" Text="提交" class="u-co-bt z-spe" OnClick="btnPost_Click" />
                 </p>
                 <p class="clear"></p>
-                <p class="Halog"><a href="/Mobile/User/Register.aspx" class="havlog">立刻注册</a><a href="/Mobile/User/Login.aspx" class="havlog">会员登录</a></p>
+                <p class="Halog"><a href="/mobile/User/Register.aspx" class="havlog">立刻注册</a><a href="/mobile/User/Login.aspx" class="havlog">会员登录</a></p>
             </div>
         </form>
     </div>
@@ -67,7 +67,7 @@ s.parentNode.insertBefore(hm, s);
     <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
     <!--底部结束-->
 </body>
-<script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" src="/Mobile/js/Nsw_mobile.js"></script>
-<script src="/Mobile/js/Tools.js"></script>
+<script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" src="/mobile/js/Nsw_mobile.js"></script>
+<script src="/mobile/js/Tools.js"></script>
 </html>

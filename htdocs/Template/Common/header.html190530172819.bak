@@ -56,7 +56,7 @@
          $(function () { $('.ban-ss').before($('.topadcs')); });
     </script>
 #end
-<link href="/Skins/Default/animate.css" rel="stylesheet" type="text/css" />
+<link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">   
     initCommonHeader();
     var MARK = "$mark";

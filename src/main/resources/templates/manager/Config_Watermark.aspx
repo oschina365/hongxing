@@ -26,7 +26,7 @@ s.parentNode.insertBefore(hm, s);
 	</div>
 	<div class="acc_cont pad3025 bord_gray f_cb">
         <div class="cont001">
-			<div class="water_markimg f_fl"><img src="skins/Img/mark_img.jpg" /></div>
+			<div class="water_markimg f_fl"><img src="skins/css/mark_img.jpg" /></div>
 			<div class="water_mark_set f_fr">
 				<div class="f_cb f_lht27">
 					<label class="com_name f_fl wth85">显示如下文字</label>
@@ -111,7 +111,7 @@ s.parentNode.insertBefore(hm, s);
 			</div>
 		</div>
         <div class="cont002">
-		    <div class="water_markimg f_fl"><img src="skins/Img/mark_img.jpg"></div>
+		    <div class="water_markimg f_fl"><img src="skins/css/mark_img.jpg"></div>
 			<div class="water_mark_set f_fr">
 				<div class="f_cb f_lht27" id="img_warp">
 					<label class="com_name f_fl wth85">图   片</label>

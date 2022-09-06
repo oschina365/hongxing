@@ -46,7 +46,7 @@
 .m-share span{vertical-align:middle; line-height:25px; float:left; margin:0 10px 0 30px;}
 .m-share .m-ico{position:relative;width:320px; margin:0 auto;}
 .m-share a{ margin-right:10px;}
-.m-share .u-ico-1,.m-share .u-ico-2,.m-share .u-ico-3,.m-share .u-ico-4,.m-share .u-ico-5{background:url(/mobile/Images/Web/fxico.png) no-repeat;  background-size:25px 232px; display: block;float: left;height: 25px; position: relative; width:25px;}
+.m-share .u-ico-1,.m-share .u-ico-2,.m-share .u-ico-3,.m-share .u-ico-4,.m-share .u-ico-5{background:url(/mobile/css/Web/fxico.png) no-repeat;  background-size:25px 232px; display: block;float: left;height: 25px; position: relative; width:25px;}
 .m-share .u-ico-1{ background-position: 0 0; }
 .m-share .u-ico-2{ background-position: 0 -51px; }
 .m-share .u-ico-3{ background-position: 0 -105px; }
@@ -104,7 +104,7 @@
 .m-mcon1, .procontent { border-top:none;}
 .m-mcon1{ padding:0 20px 40px 10px;word-spacing:10px; letter-spacing:normal; white-space:normal;  line-height:22px; font-size:14px;}
 .m-mcon1 p{padding:12px 0 0 0; line-height:24px;}
-.m-con1 .u-mtit .pic{ background: url(/mobile/Images/Web/pic2.gif) no-repeat; background-size:100%; width:16px; height:16px; display:block; position:absolute; top:0; right:8px;}
+.m-con1 .u-mtit .pic{ background: url(/mobile/css/Web/pic2.gif) no-repeat; background-size:100%; width:16px; height:16px; display:block; position:absolute; top:0; right:8px;}
 .m-con1 .num{ position:relative; color:#ae1911; padding-right:28px;}
 .s-tit{ color:#1a1a1a;}
 

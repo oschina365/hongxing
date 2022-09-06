@@ -84,7 +84,7 @@ s.parentNode.insertBefore(hm, s);
                 </td>
                 <td><%#Eval("ID") %></td>
                 <td class="pimgsv">
-                    <span class="shot_img f_fl"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/Img/nopic.jpg")%>" onerror="onImgErrors(this);" /></span>
+                    <span class="shot_img f_fl"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/css/nopic.jpg")%>" onerror="onImgErrors(this);" /></span>
                     <span class="poducts short_tit f_fl">
                         <a href="###" onclick="edit(event,<%#Eval("ID") %>)" class="update_Title"><%#Eval("Title")%></a>
                         <i class="e_edi1 e_more_edit popUp" data-src='{"oid":"<%#Eval("ID") %>","popup":"ModificationPopUp"}'></i>

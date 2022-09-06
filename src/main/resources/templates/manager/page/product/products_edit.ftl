@@ -187,7 +187,7 @@
 
                                                 </ul></div>
                                         </div>
-                                        <div id="next_01" class="md_next f_fl f_csp"><img src="/manager/skins/Img/rightjt.gif"></div>
+                                        <div id="next_01" class="md_next f_fl f_csp"><img src="/manager/skins/css/rightjt.gif"></div>
                                     </div>
                                 </div>
                             </div>

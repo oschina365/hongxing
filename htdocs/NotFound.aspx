@@ -17,12 +17,12 @@
         .bg { background:#FFF;}
         em,i{ font-style:normal;}
         /*404页面*/
-        .page{ background:url(/Skins/Default/Img/pagebg.jpg) no-repeat center -130px; overflow:hidden;}
+        .page{ background:url(/skins/default/Img/pagebg.jpg) no-repeat center -130px; overflow:hidden;}
         .page p{ float:right; padding-top:70px;}
         .content{ width:960px;margin:0 auto;}
         .search{ width:820px; float:right; padding-top:300px;}
-        .page01{ width:567px; height:62px; background:url(/Skins/Default/Img/sr.jpg) no-repeat 0 0; border:none; float:left; margin-right:10px; font-size:38px; font-family:"Microsoft Yahei";padding:0px 10px}
-        .page02{ width:210px; height:62px; background:url(/Skins/Default/Img/ss.jpg) no-repeat 0 0; border:none; float:left; cursor:pointer;}
+        .page01{ width:567px; height:62px; background:url(/skins/default/Img/sr.jpg) no-repeat 0 0; border:none; float:left; margin-right:10px; font-size:38px; font-family:"Microsoft Yahei";padding:0px 10px}
+        .page02{ width:210px; height:62px; background:url(/skins/default/Img/ss.jpg) no-repeat 0 0; border:none; float:left; cursor:pointer;}
         /*aspx*/
         .clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
         .clearfix {display: inline-block;}
@@ -44,7 +44,7 @@ s.parentNode.insertBefore(hm, s);
 <body>
 <div class="page" id="page">
    <div class="content" >
-      <p><a href="/" title="返回首页"><img src="/Skins/Default/Img/back.jpg" alt="返回首页" title="返回首页" /></a></p>
+      <p><a href="/" title="返回首页"><img src="/skins/default/Img/back.jpg" alt="返回首页" title="返回首页" /></a></p>
       <div class="search">
          <input type="text" value="" id="iptkeyword" class="page01" placeholder="请输入关键词进行搜索" />
          <input type="button" value="" id="btnsubmit" class="page02" />

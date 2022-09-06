@@ -317,9 +317,9 @@ function Enable_toggle(src, _OID, _typename, _fileColumn) {
             alert(msg);
         } else {
             if (_enable == 0) {
-                src.src = "Skins/Blue/Img/disable.gif?t=" + Math.random();
+                src.src = "Skins/Blue/css/disable.gif?t=" + Math.random();
             } else {
-                src.src = "Skins/Blue/Img/enable.gif?t=" + Math.random();
+                src.src = "Skins/Blue/css/enable.gif?t=" + Math.random();
             }
         }
     });

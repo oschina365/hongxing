@@ -186,10 +186,10 @@ function copyKeyWords() {
 function HightStep(n)
 {
     $(window.parent.frames["frmMain"].document).find(".ddliuc").find("div").attr("class","liuc");
-     $(window.parent.frames["frmMain"].document).find(".ddliuc").find("img").attr("src","/Manager/Skins/KeyWordsGenius/ddliz.gif");
+     $(window.parent.frames["frmMain"].document).find(".ddliuc").find("img").attr("src","/Manager/css/KeyWordsGenius/ddliz.gif");
     $(window.parent.frames["frmMain"].document).find(".ddliuc").find("div:eq("+n+")").attr("class","liucur");
     n=n-1;
-    $(window.parent.frames["frmMain"].document).find(".ddliuc").find("img:eq("+n+")").attr("src","/Manager/Skins/KeyWordsGenius/ddliza.gif");
+    $(window.parent.frames["frmMain"].document).find(".ddliuc").find("img:eq("+n+")").attr("src","/Manager/css/KeyWordsGenius/ddliza.gif");
 }
 
 

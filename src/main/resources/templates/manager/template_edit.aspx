@@ -63,7 +63,7 @@ s.parentNode.insertBefore(hm, s);
 						<div class="f_cb add_sv">
 							<span class="clear_bd f_fl p_inp1"><asp:TextBox ID="txtURL" validtype="relativeurl" tipPosition="top" runat="server" CssClass="com_input clear_word"></asp:TextBox><i class="clear_x"></i></span><input id="btnLoadFile" type="button" value="<-加载文件内容" onclick="sendGetHtmlFileNotify(this);" style=" border:1px solid #dcdcdc; background:#fff; display:inline-block; width:100px; height:29px; line-height:29px; margin-left:10px;">
 						</div>
-                        <i class="i_shortdesc">如/Skins/Default/Template/ProductInfo.html</i>
+                        <i class="i_shortdesc">如/css/css/Template/ProductInfo.html</i>
 					</div>
 				</div>
 

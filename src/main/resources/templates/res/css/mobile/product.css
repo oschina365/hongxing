@@ -43,7 +43,7 @@
 .m-share span{vertical-align:middle; line-height:25px; float:left; margin:0 10px 0 30px;}
 .m-share .m-ico{position:relative;width:320px; margin:0 auto;}
 .m-share a{ margin-right:10px;}
-.m-share .u-ico-1,.m-share .u-ico-2,.m-share .u-ico-3,.m-share .u-ico-4,.m-share .u-ico-5{background:url(/mobile/Images/Web/fxico.png) no-repeat;  background-size:25px 232px; display: block;float: left;height: 25px; position: relative; width:25px;}
+.m-share .u-ico-1,.m-share .u-ico-2,.m-share .u-ico-3,.m-share .u-ico-4,.m-share .u-ico-5{background:url(/mobile/css/Web/fxico.png) no-repeat;  background-size:25px 232px; display: block;float: left;height: 25px; position: relative; width:25px;}
 .m-share .u-ico-1{ background-position: 0 0; }
 .m-share .u-ico-2{ background-position: 0 -51px; }
 .m-share .u-ico-3{ background-position: 0 -105px; }
@@ -373,7 +373,7 @@ border-left: 6px solid #7c7c7c;
 .table_bg{ width:100%; height: 100%; background:#000; opacity: 0.5; display: none; z-index: 777; position: fixed;top: 0; left: 0;}
 .g-pop{ width:285px; background:#fff; margin:100px auto; position: fixed; top: 35%; margin-top: -200px; left: 50%; margin-left: -142.5px; z-index: 888;}
 .g-pop h2{ position:relative; font-size:15px; color:#727272; background:#ededed; border-bottom:1px solid #d8dde1; height:40px; line-height:40px; text-align:center; border-radius:5px 5px 0 0; -webkit-border-radius:5px 5px 0 0;}
-.g-pop h2 i{ width:18px; height:17px; background:url(/mobile/Images/Web/back.jpg) no-repeat; background-size:100%; display:block; position:absolute; top:12px; left:10px;}
+.g-pop h2 i{ width:18px; height:17px; background:url(/mobile/css/Web/back.jpg) no-repeat; background-size:100%; display:block; position:absolute; top:12px; left:10px;}
 .g-pop .m-con,.m-abpro1 .m-con{ padding:7px 15px 15px 15px;}
 .g-pop .m-con h5,.m-abpro1 .m-con h5{ margin-bottom:10px;}
 .m-abpro1 .m-con h5{ padding-left:6px;}

@@ -341,9 +341,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                             </a>
-                            <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                            <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                                 <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                                    <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                                    <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
                         <p>分享到微信朋友圈</p>
     </div>
     <div class="con_img" style="height: 201px; text-align: center;">
@@ -481,9 +481,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -621,9 +621,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -761,9 +761,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -901,9 +901,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1041,9 +1041,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1181,9 +1181,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1321,9 +1321,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1461,9 +1461,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1601,9 +1601,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1741,9 +1741,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -1881,9 +1881,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2021,9 +2021,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2161,9 +2161,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2301,9 +2301,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2441,9 +2441,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2581,9 +2581,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2721,9 +2721,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -2861,9 +2861,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">
@@ -3001,9 +3001,9 @@ js_=["/manager/js/common/common.js"]>
 										<i></i>二维码
 									</span>
                 </a>
-                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/Img/ailog_bg_03.gif&quot;); overflow: hidden;">
+                <div class="code_img" style="position: absolute; top: 15px; right: 0px; z-index: 99; width: 303px; height: 303px; display: none; background-image: url(&quot;/Manager/mobile/css/ailog_bg_03.gif&quot;); overflow: hidden;">
                     <div class="con_header" style="text-align: left; height: 47px; line-height: 45px; text-indent: 1em;">
-                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/Img/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
+                        <span class="close_btn" onclick="hideQR(this);" style="display: block; float: right; width: 30px; height: 30px; margin: 8px 5px 0px 0px; cursor: pointer; background-image: url(&quot;/Manager/mobile/css/ailog_close.gif&quot;); background-position: center center; background-repeat: no-repeat;"></span>
             <p>分享到微信朋友圈</p>
             </div>
             <div class="con_img" style="height: 201px; text-align: center;">

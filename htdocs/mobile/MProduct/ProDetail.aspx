@@ -12,9 +12,9 @@
     <title>产品详细页</title>
     <meta name="keywords" content="营销型网站,营销型网站建设,深圳网站建设,牛商网,网站托管,网站建设公司" />
     <meta name="description" content="牛商网是深圳营销型网站建设公司,中国营销型网站创始者,营销型网站标准制定者,服务范围营销型网站建设,网站运营托管,网站外包,深圳网站建设等,咨询热线:4000-333-087" />
-    <link href="/Mobile/css/skins.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/product.css" rel="stylesheet" type="text/css" />
-    <link href="/Mobile/Css/common.css" rel="stylesheet" type="text/css">
+    <link href="/mobile/css/skins.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/product.css" rel="stylesheet" type="text/css" />
+    <link href="/mobile/css/common.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         /* 首页加载图片样式  */
 .loading{position:fixed;z-index:1000;width:100%;height:40px;display:none; top:50%; margin-top:-20px; text-align:center;}#circularG{position:absolute;left:50%;margin-left:-16px;width:32px;height:32px}.circularG{position:absolute;background-color:#DB1CDB;width:7px;height:7px;-moz-border-radius:5px;-moz-animation-name:bounce_circularG;-moz-animation-duration:0.64s;-moz-animation-iteration-count:infinite;-moz-animation-direction:linear;-webkit-border-radius:5px;-webkit-animation-name:bounce_circularG;-webkit-animation-duration:0.64s;-webkit-animation-iteration-count:infinite;-webkit-animation-direction:linear;-ms-border-radius:5px;-ms-animation-name:bounce_circularG;-ms-animation-duration:0.64s;-ms-animation-iteration-count:infinite;-ms-animation-direction:linear;border-radius:5px;animation-name:bounce_circularG;animation-duration:0.64s;animation-iteration-count:infinite;animation-direction:linear}#circularG_1{left:0;top:13px;-moz-animation-delay:0.8s;-webkit-animation-delay:0.8s;-ms-animation-delay:0.8s;animation-delay:0.8s}#circularG_2{left:3px;top:3px;-moz-animation-delay:0.72s;-webkit-animation-delay:0.72s;-ms-animation-delay:0.72s;animation-delay:0.72s}#circularG_3{top:0;left:13px;-moz-animation-delay:0.64s;-webkit-animation-delay:0.64s;-ms-animation-delay:0.64s;animation-delay:0.64s}#circularG_4{right:3px;top:3px;-moz-animation-delay:0.56s;-webkit-animation-delay:0.56s;-ms-animation-delay:0.56s;animation-delay:0.56s}#circularG_5{right:0;top:13px;-moz-animation-delay:0.48s;-webkit-animation-delay:0.48s;-ms-animation-delay:0.48s;animation-delay:0.48s}#circularG_6{right:3px;bottom:3px;-moz-animation-delay:0.4s;-webkit-animation-delay:0.4s;-ms-animation-delay:0.4s;animation-delay:0.4s}#circularG_7{left:13px;bottom:0;-moz-animation-delay:0.32s;-webkit-animation-delay:0.32s;-ms-animation-delay:0.32s;animation-delay:0.32s}#circularG_8{left:3px;bottom:3px;-moz-animation-delay:0.24s;-webkit-animation-delay:0.24s;-ms-animation-delay:0.24s;animation-delay:0.24s}@-moz-keyframes bounce_circularG{0%{-moz-transform:scale(1)}100%{-moz-transform:scale(.3)}}@-webkit-keyframes bounce_circularG{0%{-webkit-transform:scale(1)}100%{-webkit-transform:scale(.3)}}@-ms-keyframes bounce_circularG{0%{-ms-transform:scale(1)}100%{-ms-transform:scale(.3)}}@keyframes bounce_circularG{0%{transform:scale(1)}100%{transform:scale(.3)}}
@@ -100,10 +100,10 @@ s.parentNode.insertBefore(hm, s);
     <%=NVEngine.NVTempHelp.LoadNVTemp(Context, "M_Common/Footer.html")%>
 
 </body>
-<script type="text/javascript" src="/Mobile/js/Jquery.js"></script>
-<script type="text/javascript" src="/Mobile/js/nsw_mobile.js"></script>
-<script type="text/javascript" src="/Mobile/js/Tools.js"></script>
-<script src="/Mobile/JS/ProDetailAjax.js" type="text/javascript"></script>
+<script type="text/javascript" src="/mobile/js/Jquery.js"></script>
+<script type="text/javascript" src="/mobile/js/nsw_mobile.js"></script>
+<script type="text/javascript" src="/mobile/js/Tools.js"></script>
+<script src="/mobile/JS/ProDetailAjax.js" type="text/javascript"></script>
 <script type="text/javascript">
 
     $(function () {

@@ -58,7 +58,7 @@ s.parentNode.insertBefore(hm, s);
                 </div>
             </td>
             <td class="pimgsv">
-                <span class="shot_img f_fl"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/Img/nopic.jpg")%>" /></span>
+                <span class="shot_img f_fl"><img src="<%#NSW.Web.API.SysCommon.IsNullOrEmpty(Eval("photopath").ToString(), "Skins/css/nopic.jpg")%>" /></span>
                 <span class="poducts short_tit f_fl">
                     <a href="##" onclick="edit(event,<%#Eval("ID") %>)" class="update_Title"><%#Eval("Title")%></a>
                 </span>

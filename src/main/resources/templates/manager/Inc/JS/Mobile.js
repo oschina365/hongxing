@@ -49,7 +49,7 @@ function GetPCContentToMobile(val, oId, type, id) {
             }
             break;
         case "TOPCImg":
-            $.post("/Mobile/MAjax.ashx?action=PCToMobileImg&t=" + Math.random(), { Action: "ToImg", OID: oId, TableName: type }, function (rsp) {
+            $.post("/mobile/MAjax.ashx?action=PCToMobileImg&t=" + Math.random(), { Action: "ToImg", OID: oId, TableName: type }, function (rsp) {
                 if ($(rsp).find("Error").length > 0) {
                     alert($(rsp).find("Error").text());
                 } else {
@@ -60,7 +60,7 @@ function GetPCContentToMobile(val, oId, type, id) {
             });
             break;
         case "TOPCFont":
-            $.post("/Mobile/MAjax.ashx?action=PCToMobileImg&t=" + Math.random(), { Action: "ToFont", OID: oId, TableName: type }, function (rsp) {
+            $.post("/mobile/MAjax.ashx?action=PCToMobileImg&t=" + Math.random(), { Action: "ToFont", OID: oId, TableName: type }, function (rsp) {
                 if ($(rsp).find("Error").length > 0) {
                     alert($(rsp).find("Error").text());
                 } else {

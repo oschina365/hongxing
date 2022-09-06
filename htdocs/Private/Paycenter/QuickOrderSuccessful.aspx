@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn" xml:lang="zh-cn">
 <head id="Head1" runat="server">
 <title>快速下单处理</title>
-<link href="../Skins/Default/QuickOrder.css" rel="stylesheet" type="text/css" />
+<link href="../skins/default/QuickOrder.css" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript" src="../JS/QuickOrder.js" ></script>
 <script language="javascript" type="text/javascript" src="../JS/PagerView.js" ></script>
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
@@ -31,11 +31,11 @@ s.parentNode.insertBefore(hm, s);
     	<div class="menu1">当前位置：<a href="#">首页</a>-><a href="#">产品中心</a>-><span><a href="#">快速下单</a></span></div>
         <div class="jind">
         	<ul>
-        		<li class="hong"><img src="/Skins/Default/Img/QuickOrder/ico1.gif" />搜索合适产品</li>
-            	<li class="hong"><img src="/Skins/Default/Img/QuickOrder/ico1.gif" />填写采购数量及要求</li>
-           		<li class="hong"><img src="/Skins/Default/Img/QuickOrder/ico1.gif" />填写您的联系方式</li>
-            	<li class="hong"><img src="/Skins/Default/Img/QuickOrder/ico1.gif" />订单确认</li>
-           		<li class="nones hong"><img src="/Skins/Default/Img/QuickOrder/ico1.gif" />提交成功</li>
+        		<li class="hong"><img src="/skins/default/Img/QuickOrder/ico1.gif" />搜索合适产品</li>
+            	<li class="hong"><img src="/skins/default/Img/QuickOrder/ico1.gif" />填写采购数量及要求</li>
+           		<li class="hong"><img src="/skins/default/Img/QuickOrder/ico1.gif" />填写您的联系方式</li>
+            	<li class="hong"><img src="/skins/default/Img/QuickOrder/ico1.gif" />订单确认</li>
+           		<li class="nones hong"><img src="/skins/default/Img/QuickOrder/ico1.gif" />提交成功</li>
         	</ul>
         </div>
         
@@ -47,8 +47,8 @@ s.parentNode.insertBefore(hm, s);
             <span>电子邮件(<%= Eamil %>),请注意查收！</span>
         </div>
         <div class="anniu">
-        <a href="/user/orderlist.aspx"><img name="" type="image" src="/Skins/Default/Img/QuickOrder/btn8.gif"  class="an5"/></a>
-        <a href="/"><img name="" type="image" src="/Skins/Default/Img/QuickOrder/btn9.gif"  class="an6"/></a>
+        <a href="/user/orderlist.aspx"><img name="" type="image" src="/skins/default/Img/QuickOrder/btn8.gif"  class="an5"/></a>
+        <a href="/"><img name="" type="image" src="/skins/default/Img/QuickOrder/btn9.gif"  class="an6"/></a>
         </div>
   </div>
   
