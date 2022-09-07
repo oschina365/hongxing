@@ -34,7 +34,7 @@
 /**/
 .g-case{ overflow:hidden; padding-bottom:1rem;}
 .g-case h3{ font-size:0; margin-bottom:1.1rem;}
-.g-case h2{height:2.2rem; line-height:2.2rem;background:url(/mobile/css/Index/c_h3.gif) no-repeat; background-size:100% 2.2rem; padding:0 3.1%; box-sizing:border-box;}
+.g-case h2{height:2.2rem; line-height:2.2rem;background:url(/mobile/images/index/c_h3.gif) no-repeat; background-size:100% 2.2rem; padding:0 3.1%; box-sizing:border-box;}
 .g-case h2 a{ font-size:1rem; font-weight:bold; color:#fff;}
 .g-case h2 i{ font-weight:bold; padding-left:6%;}
 .g-case h2 span{ display:inline-block; float:right;}
@@ -47,7 +47,7 @@
 .g-case dl:last-child{ border-bottom:none;}
 .g-case2 dl dd p{ color:#333;}
 /**/
-.g-ys{ overflow:hidden; height:49.7rem;background:url(/mobile/css/Index/y_bg.gif) no-repeat center bottom; background-size:100% 44.375rem; margin-bottom:1.6rem;}
+.g-ys{ overflow:hidden; height:49.7rem;background:url(/mobile/images/index/y_bg.gif) no-repeat center bottom; background-size:100% 44.375rem; margin-bottom:1.6rem;}
 .g-ys h3{ margin-bottom:1.2rem;}
 .g-ys dl{ overflow:hidden; margin:0 4.5%; height:10.65rem;}
 .g-ys dl dt{ float: right; width:38%;}

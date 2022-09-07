@@ -154,7 +154,7 @@
                 function dataList(number) {
                     $.ajax({
                         url: '/search/data',
-                        method: 'post',
+                        method: 'get',
                         dataType: 'json',
                         data: {"key":"${searchKey}","page": number,"limit":8},
                         success: function (data) {
