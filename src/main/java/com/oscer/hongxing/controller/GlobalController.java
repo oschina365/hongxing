@@ -49,7 +49,7 @@ public class GlobalController extends BaseController {
                 if (CollectionUtil.isEmpty(products)) {
                     continue;
                 }
-                child.setProducts(products);
+                child.setProducts(products.size() > 9 ? products.subList(0, 9) : products);
                 otherChildList.add(child);
             }
             request.setAttribute("otherChilds", otherChildList);

@@ -48,11 +48,6 @@
                 });
             });
         </script>
-        <script type="text/javascript">
-            var OBJ_TITLE = "定制服务";
-            var OBJ_ID = "24";
-            var SID = "0001,0009";
-        </script>
 
         <div class="topadcs">
             <a class="fullad" href="/product/" title="五大免费,全行业独此一家" style="background:url('/res/images/banner2.jpg') no-repeat center top;"></a>

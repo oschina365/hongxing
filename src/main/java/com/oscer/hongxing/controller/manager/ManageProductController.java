@@ -12,6 +12,7 @@ import com.oscer.hongxing.common.IpUtil;
 import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.service.QiNiuService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,13 +59,13 @@ public class ManageProductController extends ManagerBaseController {
         product.setCreate_ip(IpUtil.getIpAddress(request));
         product.setSort(System.currentTimeMillis());
         product.setContent(QiNiuService.uploadFromThird(product.getContent(), "product"));
-
+        product.setDesc(StringUtils.abbreviate(FormatUtil.getPlainText(product.getContent()), 100));
         long productId = product.save();
         Elements images = FormatUtil.getImages(product.getContent());
         if (images != null) {
             for (int i = 0; i < images.size(); i++) {
                 String imageUrl = images.get(i).attr("src");
-                if(i==0){
+                if (i == 0) {
                     product.setBanner(imageUrl);
                     product.doUpdate(true);
                 }

@@ -123,8 +123,10 @@
                                 <#list otherChild.products as otherChildProduct>
                                     <dl style="${otherChildProduct_index}" <#if (otherChildProduct_index+1)%3 ==0>class="none" </#if>>
                                         <dt><a href="/product/${otherChildProduct.id}"><img src="${otherChildProduct.banner}" alt=""/></a></dt>
-                                        <dd><a href="/product/${otherChildProduct.id}"><b>${otherChildProduct.name}</b></a>
-                                            <p><span>产品尺寸：${otherChildProduct.size}</span></p></dd>
+                                        <dd>
+                                            <a href="/product/${otherChildProduct.id}"><b>${otherChildProduct.name}</b></a>
+                                            <#if otherChildProduct.size??><p><span>产品尺寸：${otherChildProduct.size}</span></p></#if>
+                                        </dd>
                                     </dl>
                                 </#list>
                             </div>

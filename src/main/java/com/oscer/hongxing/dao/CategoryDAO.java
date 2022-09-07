@@ -4,6 +4,7 @@ package com.oscer.hongxing.dao;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.db.CacheMgr;
 
 import java.util.ArrayList;
@@ -20,6 +21,10 @@ public class CategoryDAO extends CommonDao<Category> {
         return "mysql";
     }
 
+    public String table() {
+        return Category.ME.rawTableName();
+    }
+
     /**
      * 通过分类的ident查询一条数据
      *
@@ -27,7 +32,7 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link Category}
      */
     public Category getByIdent(String ident) {
-        String sql = "select id from " + Category.ME.rawTableName() + " where ident=? limit 1";
+        String sql = "select id from " + table() + " where ident=? limit 1";
         return Category.ME.get(getDbQuery().read(Long.class, sql, ident));
     }
 
@@ -37,7 +42,7 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> childsByParentId(Long parentId) {
-        String sql = "select id from " + Category.ME.rawTableName() + " where parent_id=? ";
+        String sql = "select id from " + table() + " where parent_id=? ";
         List<Long> ids = getDbQuery().query(Long.class, sql, parentId);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -64,7 +69,7 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> allByType(int type) {
-        String sql = "select id from " + Category.ME.rawTableName() + " where type=?";
+        String sql = "select id from " + table() + " where type=?";
         List<Long> ids = getDbQuery().query_cache(Long.class, false, getCache_region(), "listByType_" + type, sql, type);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -79,12 +84,12 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> childsByType(int type, String ident) {
-        String sql = "select id from " + Category.ME.rawTableName() + " where type=? and ident=? ";
+        String sql = "select id from " + table() + " where type=? and ident=? ";
         Long id = getDbQuery().read(Long.class, sql, type, ident);
         if (id == null || id <= 0L) {
             return null;
         }
-        sql = "select id from " + Category.ME.rawTableName() + " where parent_id=? ";
+        sql = "select id from " + table() + " where parent_id=? ";
         List<Long> ids = getDbQuery().query(Long.class, sql, id);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -150,5 +155,9 @@ public class CategoryDAO extends CommonDao<Category> {
         }
     }
 
+    public Category getByName(String name) {
+        String sql = "select * from " + table() + " where name =?";
+        return getDbQuery().read(Category.class, sql, name);
+    }
 
 }

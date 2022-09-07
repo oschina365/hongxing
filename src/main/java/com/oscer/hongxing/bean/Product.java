@@ -18,7 +18,7 @@ public class Product extends Entity {
 
     @Override
     public String tableName() {
-        return "products";
+        return "product";
     }
 
     private String name;

@@ -3,6 +3,7 @@ package com.oscer.hongxing.dao;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
+import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Opt;
 import com.oscer.hongxing.bean.Product;
 
@@ -17,28 +18,36 @@ public class OptDAO extends CommonDao<Opt> {
         return "mysql";
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         List<Product> products = (List<Product>) Product.ME.list(false);
         for (Product product : products) {
-            Opt opt = new Opt();
-            opt.setName(product.getName());
-            opt.setBanner(product.getBanner());
-            opt.setDesc(product.getDesc());
-            opt.setItem_id(product.getId());
-            opt.setType(1);
-            opt.save();
+            try {
+                Opt opt = new Opt();
+                opt.setName(product.getName());
+                opt.setBanner(product.getBanner());
+                opt.setDesc(product.getDesc());
+                opt.setItem_id(product.getId());
+                opt.setType(1);
+                opt.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         List<Article> articles = (List<Article>) Article.ME.list(false);
         for (Article article : articles) {
-            Opt opt = new Opt();
-            opt.setName(article.getName());
-            opt.setBanner(article.getBanner());
-            opt.setDesc(article.getDesc());
-            opt.setItem_id(article.getId());
-            opt.setType(2);
-            opt.save();
+            try {
+                Opt opt = new Opt();
+                opt.setName(article.getName());
+                opt.setBanner(article.getBanner());
+                opt.setDesc(article.getDesc());
+                opt.setItem_id(article.getId());
+                opt.setType(2);
+                opt.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-    }*/
+    }
 
 
     public String table() {

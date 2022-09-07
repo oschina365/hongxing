@@ -105,25 +105,6 @@ css_=["/skins/default/style.css"] >
         });
     });
 </script>
-<script type="text/javascript">
-	//图片路径数组
-	var ARR_IMG_PATH = [];
-	//初始化将测试集包含的用例存在数组里面
-	<#if images??>
-	<#list images as image>
-	ARR_IMG_PATH.push("${image}");
-	</#list>
-	</#if>
-    window.jqzooms_ = false;
-    var jqzooms = function (src) {
-        if (!window.jqzooms_) {
-            $(function () {
-                $(".jqzoom").jqzoom({title: false, zoomWidth: 340, zoomHeight: 340, xOffset: 4});
-            })
-            window.jqzooms_ = true;
-        }
-    }
-</script>
 
 <div class="topadcs">
     <a class="fullad" href="/product/" title="免费提供专属办公空间设计解决方案"
@@ -152,7 +133,7 @@ css_=["/skins/default/style.css"] >
                                 <div class="proviewbox">
                                     <div class="probigshow">
                                         <a class="jqzoom" title="${product.name}">
-                                            <img src="${product.banner}" alt="${product.name}" title="${product.name}"
+                                            <img src="${product.banner!}" alt="${product.name}" title="${product.name}"
                                                  onload="jqzooms(this)" onerror="jqzooms(this)" class="js_goods_image_url">
                                         </a>
                                     </div>
@@ -217,7 +198,7 @@ css_=["/skins/default/style.css"] >
                         </div>
         -->
                 <div class="clear"></div>
-                <div class="proinfo " id="detailvalue0">${product.content}</div>
+                ${product.content}
 
                 <div class="pro_key">
                     <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7">武汉办公家具</a>
