@@ -6,7 +6,9 @@ import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Product;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArticleDAO extends CommonDao<Article> {
 
@@ -15,6 +17,10 @@ public class ArticleDAO extends CommonDao<Article> {
     @Override
     protected String databaseName() {
         return "mysql";
+    }
+
+    public String table() {
+        return Article.ME.rawTableName();
     }
 
     public List<Article> listLimitByCategory(Long categoryId, int limit) {
@@ -66,4 +72,32 @@ public class ArticleDAO extends CommonDao<Article> {
         return getDbQuery().read(Long.class, sb.toString());
     }
 
+    public Article getByName(String name) {
+        String sql = "select * from " + table() + " where name =?";
+        return getDbQuery().read(Article.class, sql, name);
+    }
+
+    public List<Article> news() {
+        String sql = "select * from article";
+        return getDbQuery().query(Article.class, sql);
+    }
+
+    public List<Article> old() {
+        String sql = "select * from articlees";
+        return getDbQuery().query(Article.class, sql);
+    }
+
+    public static void main(String[] args) {
+        List<Article> news = ME.news();
+        List<Article> old = ME.old();
+        System.out.println(old.size());
+        //对年龄升序排序
+        List<Article> orderAgeAscList = news.stream().sorted(Comparator.comparing(Article::getSort)).collect(Collectors.toList());
+        for (Article article : orderAgeAscList) {
+            article.setId(null);
+            article.save();
+        }
+        old = ME.old();
+        System.out.println(old.size());
+    }
 }

@@ -131,9 +131,7 @@ css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"
                         </div>
                     </div>
                 </div>
-                <div id="cntrBody">
-                    ${article.content}
-                </div>
+                ${article.content}
                 <div class="clear"></div>
                 <div class="gduo" id="gduo">
 							<span>下一篇：<a title="${articlePrev.name}" href="/article/${articlePrev.id}">${articlePrev.name}</a>

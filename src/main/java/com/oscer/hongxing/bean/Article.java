@@ -14,6 +14,11 @@ public class Article extends Entity {
 
     public static final Article ME = new Article();
 
+    @Override
+    public String tableName() {
+        return "articlees";
+    }
+
     private String name;
     private Long category_id;
     private String banner;

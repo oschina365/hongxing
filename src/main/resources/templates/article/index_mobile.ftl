@@ -13,7 +13,7 @@
             <!--新闻标题-->
             <div class="u-mtit f-tc">
                 <h1 class="s-wc">${article.name}</h1>
-                <p>2018-08-21 16:34:19&nbsp;</p>
+                <p>${article.create_time}</p>
             </div>
             <!--新闻内容-->
             <div id="content" class="m-mcon">

@@ -109,7 +109,7 @@
 							<i class="v_select"></i>
 							<i class="pro_view"></i>
 							<a href="javascript:;">
-								<img src="http://www.hongxin.com.cn/uploadfiles/pictures/news/20220828140224_9497.jpg" title="20191009103243_4044">
+								<img src="http://www.hongxin.com.cnhttp://hongxin.com.cn/uploadfiles/pictures/news/20220828140224_9497.jpg" title="20191009103243_4044">
 							</a>
 							<p>20191009103243_4044</p>
 						</li>
@@ -118,7 +118,7 @@
 							<i class="v_select"></i>
 							<i class="pro_view"></i>
 							<a href="javascript:;">
-								<img src="http://www.hongxin.com.cn/uploadfiles/pictures/news/20220828140157_7092.jpg" title="20191009103256_7082">
+								<img src="http://www.hongxin.com.cnhttp://hongxin.com.cn/uploadfiles/pictures/news/20220828140157_7092.jpg" title="20191009103256_7082">
 							</a>
 							<p>20191009103256_7082</p>
 						</li>
@@ -127,7 +127,7 @@
 							<i class="v_select"></i>
 							<i class="pro_view"></i>
 							<a href="javascript:;">
-								<img src="http://www.hongxin.com.cn/uploadfiles/pictures/news/20220828135950_2109.jpg" title="IMG_8160">
+								<img src="http://www.hongxin.com.cnhttp://hongxin.com.cn/uploadfiles/pictures/news/20220828135950_2109.jpg" title="IMG_8160">
 							</a>
 							<p>IMG_8160</p>
 						</li>
@@ -136,7 +136,7 @@
 							<i class="v_select"></i>
 							<i class="pro_view"></i>
 							<a href="javascript:;">
-								<img src="http://www.hongxin.com.cn/uploadfiles/pictures/news/20220828135948_6858.jpg" title="IMG_1572.HEIC">
+								<img src="http://www.hongxin.com.cnhttp://hongxin.com.cn/uploadfiles/pictures/news/20220828135948_6858.jpg" title="IMG_1572.HEIC">
 							</a>
 							<p>IMG_1572.HEIC</p>
 						</li>
@@ -145,7 +145,7 @@
 							<i class="v_select"></i>
 							<i class="pro_view"></i>
 							<a href="javascript:;">
-								<img src="http://www.hongxin.com.cn/uploadfiles/pictures/news/20220828135946_0406.jpg" title="IMG_1571.HEIC">
+								<img src="http://www.hongxin.com.cnhttp://hongxin.com.cn/uploadfiles/pictures/news/20220828135946_0406.jpg" title="IMG_1571.HEIC">
 							</a>
 							<p>IMG_1571.HEIC</p>
 						</li>
