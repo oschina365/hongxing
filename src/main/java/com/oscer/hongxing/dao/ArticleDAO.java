@@ -2,12 +2,14 @@ package com.oscer.hongxing.dao;
 
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.util.RandomUtil;
 import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Product;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class ArticleDAO extends CommonDao<Article> {
@@ -24,7 +26,7 @@ public class ArticleDAO extends CommonDao<Article> {
     }
 
     public List<Article> listLimitByCategory(Long categoryId, int limit) {
-        String sql = "select id from " + Article.ME.rawTableName() + " where category_id=? limit ?";
+        String sql = "select id from " + Article.ME.rawTableName() + " where category_id=? order by sort desc limit ?";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId, limit);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -61,7 +63,7 @@ public class ArticleDAO extends CommonDao<Article> {
 
     public List<Article> page(List<Long> categoryIds, int page, int size) {
         StringBuilder sb = new StringBuilder("select id from " + Article.ME.rawTableName());
-        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") order by sort asc ");
+        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") order by sort desc ");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         return Article.ME.loadList(ids);
     }
@@ -82,22 +84,4 @@ public class ArticleDAO extends CommonDao<Article> {
         return getDbQuery().query(Article.class, sql);
     }
 
-    public List<Article> old() {
-        String sql = "select * from articlees";
-        return getDbQuery().query(Article.class, sql);
-    }
-
-    public static void main(String[] args) {
-        List<Article> news = ME.news();
-        List<Article> old = ME.old();
-        System.out.println(old.size());
-        //对年龄升序排序
-        List<Article> orderAgeAscList = news.stream().sorted(Comparator.comparing(Article::getSort)).collect(Collectors.toList());
-        for (Article article : orderAgeAscList) {
-            article.setId(null);
-            article.save();
-        }
-        old = ME.old();
-        System.out.println(old.size());
-    }
 }

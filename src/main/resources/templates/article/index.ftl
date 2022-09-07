@@ -110,19 +110,20 @@ css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"
                         <div class="n_tit">
                             <span class="fr" style="margin:0px;">
                                 <a href="/gcal?id=${article.category_id}" title="返回列表" target="_blank">
-                                    <img src="/skins/default/template/news/news01/img/common/article_btn.gif" alt="返回列表" />
+                                    <img src="/res/images/article_btn.gif" alt="返回列表" />
                                 </a>
                             </span>
                             <span>来源：红鑫</span>
                             <span class='m_qrinfo'>
-										<a href="/mobile/MArticles/hbsjtystgsg.html" title="查看手机网址">查看手机网址</a>
+										<a title="查看手机网址" onclick="viewArticleImages()">查看手机网址</a>
 										<div class='m_qrcode'>
 											<em>扫一扫!</em>
-											<img src="http://nswcode.nsw88.com/?qc=8dd84307afe274a5&url=/mobile/MArticles/hbsjtystgsg.html" alt="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" title="湖北省交通运输厅高速公路管理局采购办公家具，红鑫提供一站式解决" />
+											<img src="https://api.qrserver.com/v1/create-qr-code?data=http://www.hongxin.com.cn/article/${article.id}"
+                                                 alt="${article.name}" title="${article.name}" />
 											<em>扫一扫!</em>
 										</div>
 									</span>
-                            <span>浏览：<span id="cntrHits">-</span>
+                            <span>浏览：<span id="cntrHits">${article.view_count!'1279'}</span>
 									</span>
                             <span>发布日期：${article.create_time}【<a href="javascript:;" onclick="ChangeFontSize(this,'16px')">大</a>
 										<a class="cur" href="javascript:;" onclick="ChangeFontSize(this,'14px')">中</a>
@@ -161,14 +162,14 @@ css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"
                 <div class="clear"></div>
                 <div class="info_key">
                     <span>【本文标签】：</span>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7">武汉办公家具</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e6%a1%8c%e6%a4%85">武汉办公桌椅</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%89%8d%e5%8f%b0">办公前台</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%a4%e5%8a%9e%e5%85%ac%e6%b2%99%e5%8f%91">办公室办公沙发</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%85%ac%e5%8f%b8">武汉办公家具公司</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd="></a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7">武汉办公家具</a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e6%a1%8c%e6%a4%85">武汉办公桌椅</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%89%8d%e5%8f%b0">办公前台</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%a4%e5%8a%9e%e5%85%ac%e6%b2%99%e5%8f%91">办公室办公沙发</a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%85%ac%e5%8f%b8">武汉办公家具公司</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
+                    <a target='_blank' href="/search?key="></a>
                     <br />
                     <span>【责任编辑】：</span>红鑫<em></em>版权所有：<a href="/" target="_blank" title="/">http://www.hongxin.com.cn</a>转载请注明出处
                 </div>
@@ -222,10 +223,23 @@ css_=["/skins/default/style.css","/skins/default/template/news/news01/style.css"
 </div>
 
 <script type="text/javascript">
-    newsLoad();
     $(document).ready(function () {
         $(".n_rt_ul").find("li:lt(3)").addClass("cur");
     });
+
+    function viewArticleImages(){
+        //页面层-图片
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: ['auto'],
+            skin: 'layui-layer-nobg', //没有背景色
+            shadeClose: true,
+            content: "<img src=\"https://api.qrserver.com/v1/create-qr-code?data=http://www.hongxin.com.cn/article/${article.id}\"\n" +
+                "  alt=\"${article.name}\" title=\"${article.name}\" />"
+        });
+    }
 
     $(document).ready(function () {
         $(window).scroll(function (a) {

@@ -24,16 +24,16 @@ public class SearchController extends BaseController {
         if (isMobile()) {
             return "/mobile/search";
         }
-        return "";
+        return "search";
     }
 
 
-    @PostMapping("/data")
+    @GetMapping("/data")
     @ResponseBody
     public ApiResult data(
             @RequestParam("key") String key,
             @RequestParam(value = "page", defaultValue = "1") int page,
-            @RequestParam(value = "limit", defaultValue = "6") int limit) {
+            @RequestParam(value = "limit", defaultValue = "8") int limit) {
         List<Opt> opts = OptDAO.ME.search(key, page, limit);
         long count = OptDAO.ME.searchCount(key);
         return ApiResult.successWithMapData(opts, count, null);

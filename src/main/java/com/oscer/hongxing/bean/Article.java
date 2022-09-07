@@ -16,7 +16,7 @@ public class Article extends Entity {
 
     @Override
     public String tableName() {
-        return "articlees";
+        return "article";
     }
 
     private String name;
@@ -30,6 +30,7 @@ public class Article extends Entity {
     private String create_ip;
     private String update_ip;
     private String desc;
+    private int view_count;
 
     @TableField(exist = false)
     private String category_name;

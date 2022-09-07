@@ -28,6 +28,8 @@ public class OptDAO extends CommonDao<Opt> {
                 opt.setDesc(product.getDesc());
                 opt.setItem_id(product.getId());
                 opt.setType(1);
+                opt.setCreate_time(product.getCreate_time());
+                opt.setUpdate_time(product.getUpdate_time());
                 opt.save();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -41,6 +43,8 @@ public class OptDAO extends CommonDao<Opt> {
                 opt.setBanner(article.getBanner());
                 opt.setDesc(article.getDesc());
                 opt.setItem_id(article.getId());
+                opt.setCreate_time(article.getCreate_time());
+                opt.setUpdate_time(article.getUpdate_time());
                 opt.setType(2);
                 opt.save();
             } catch (Exception e) {

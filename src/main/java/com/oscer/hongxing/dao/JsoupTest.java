@@ -60,18 +60,6 @@ public class JsoupTest {
         jsoupArticle();
     }
 
-    public static void articleCompare() {
-        List<Article> old = ArticleDAO.ME.old();
-        for (Article article : old) {
-            Article article1 = ArticleDAO.ME.getByName(article.getName());
-            if (article1 == null) {
-                article.setId(null);
-                System.out.println("保存文章：" + article.getName());
-                article.save();
-            }
-        }
-    }
-
     /**
      * 恢复案例
      *

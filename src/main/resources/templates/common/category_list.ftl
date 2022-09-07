@@ -1,5 +1,5 @@
 <div class="banan-tr form">
-    <input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……" id="seachkeywords">
+    <input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……" id="seachkeywords" value="${searchKey!''}">
     <a>
 		<span>
 			<select class="" id="select">

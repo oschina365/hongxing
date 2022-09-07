@@ -181,7 +181,7 @@
                                     <div class="c-r pro_tab tabCat successArticleTabCat successArticleChild_${successArticle_index}" <#if successArticle_index==0>style="display: block;"<#else >style="display: none;"</#if>>
                                         <ul>
                                             <#list successArticle.articles as successArticleItem>
-                                                <li><a target="_blank" href="/article/${successArticleItem.articleId}"><img src="${successArticleItem.image}" alt=""/><span>${successArticleItem.name}</span></a>
+                                                <li><a target="_blank" href="/article/${successArticleItem.articleId}"><img src="${successArticleItem.image!}" alt=""/><span>${successArticleItem.name}</span></a>
                                             </#list>
                                         </ul>
                                     </div>

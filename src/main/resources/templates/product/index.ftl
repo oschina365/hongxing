@@ -201,14 +201,14 @@ css_=["/skins/default/style.css"] >
                 ${product.content}
 
                 <div class="pro_key">
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7">武汉办公家具</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e6%a1%8c%e6%a4%85">武汉办公桌椅</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%89%8d%e5%8f%b0">办公前台</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%a4%e5%8a%9e%e5%85%ac%e6%b2%99%e5%8f%91">办公室办公沙发</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%85%ac%e5%8f%b8">武汉办公家具公司</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
-                    <a target='_blank' href="/Search/Index.aspx?kwd="></a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7">武汉办公家具</a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e6%a1%8c%e6%a4%85">武汉办公桌椅</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%89%8d%e5%8f%b0">办公前台</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%a4%e5%8a%9e%e5%85%ac%e6%b2%99%e5%8f%91">办公室办公沙发</a>
+                    <a target='_blank' href="/search?key=%e6%ad%a6%e6%b1%89%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%85%ac%e5%8f%b8">武汉办公家具公司</a>
+                    <a target='_blank' href="/search?key=%e5%8a%9e%e5%85%ac%e5%ae%b6%e5%85%b7%e5%ae%9a%e5%88%b6%e5%8e%82%e5%ae%b6">办公家具定制厂家</a>
+                    <a target='_blank' href="/search?key="></a>
                 </div>
                 <div class="online" id="tbForm1">
                     <h2 id="caigou">采购：<span>${product.name}</span>
