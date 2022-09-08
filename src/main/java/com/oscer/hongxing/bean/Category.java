@@ -105,4 +105,10 @@ public class Category extends Entity implements Serializable {
     @TableField(exist = false)
     private List<Product> products;
 
+    @TableField(exist = false)
+    private transient String title;
+    @TableField(exist = false)
+    private transient boolean disabled;
+
+
 }

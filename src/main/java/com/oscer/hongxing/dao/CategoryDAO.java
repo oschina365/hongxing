@@ -69,7 +69,7 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> allByType(int type) {
-        String sql = "select id from " + table() + " where type=?";
+        String sql = "select id from " + table() + " where type=? order by id asc";
         List<Long> ids = getDbQuery().query_cache(Long.class, false, getCache_region(), "listByType_" + type, sql, type);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
