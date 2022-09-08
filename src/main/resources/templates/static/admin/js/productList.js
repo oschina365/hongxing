@@ -43,7 +43,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                 }
             },
             {field: 'create_time', title: '录入时间', align: 'center'},
-            {title: '操作', width: 170, templet: '#productListBar', fixed: "right", align: "center"}
+            {title: '操作', width: 120, templet: '#productListBar', fixed: "right", align: "center"}
         ]]
     });
 

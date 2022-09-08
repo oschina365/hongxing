@@ -27,6 +27,11 @@ public class UserDAO extends CommonDao<User> {
         return "mysql";
     }
 
+    public User read(long id) {
+        setSql("select id from users where id =?");
+        return getDbQuery().read(User.class, getSql(), id);
+    }
+
     public User getUserByUserNameOrPhone(String key) {
         String sql = "select * from users where (username = ? OR phone = ? OR email = ?) limit 1";
         return getDbQuery().read(User.class, sql, key, key, key);

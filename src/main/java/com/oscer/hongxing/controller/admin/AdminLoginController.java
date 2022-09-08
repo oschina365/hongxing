@@ -39,7 +39,7 @@ public class AdminLoginController extends AdminBaseController {
         }
         Object loginId = StpUtil.getLoginId();
         if (loginId != null) {
-            request.setAttribute("user", User.ME.get(Long.parseLong(loginId.toString())));
+            request.setAttribute("user", UserDAO.ME.read(Long.parseLong(loginId.toString())));
         }
         return "/admin/index";
     }
