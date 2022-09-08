@@ -5,16 +5,22 @@ import cn.dev33.satoken.config.SaTokenConfig;
 import cn.dev33.satoken.context.model.SaStorage;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.StrUtil;
+import com.oscer.hongxing.bean.Article;
+import com.oscer.hongxing.bean.Entity;
+import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.bean.User;
-import com.oscer.hongxing.common.AESUtils;
-import com.oscer.hongxing.common.ApiResult;
-import com.oscer.hongxing.common.CacheEnum;
-import com.oscer.hongxing.common.CommonConstants;
+import com.oscer.hongxing.common.*;
+import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.UserDAO;
 import com.oscer.hongxing.db.CacheMgr;
+import com.oscer.hongxing.vo.AdminDataVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
+
+import static com.oscer.hongxing.common.DateUtil.YYYY_MM_DD_HH_MM_SS;
 
 /**
  * 后台管理登录
@@ -30,6 +36,21 @@ public class AdminLoginController extends AdminBaseController {
     @GetMapping
     public String login() {
         return ADMIN_BASE_PAGE + "/login/index";
+    }
+
+    @GetMapping("/data")
+    @ResponseBody
+    public ApiResult data() {
+        AdminDataVO vo = new AdminDataVO();
+        vo.setCountProduct(Product.ME.totalCount());
+        vo.setCountProductCategory(CategoryDAO.ME.countByType(CategoryContants.Type.PRODUCT.getCode()));
+        vo.setCountArticle(Article.ME.totalCount());
+        vo.setCountArticleCategory(CategoryDAO.ME.countByType(CategoryContants.Type.ARTICLE.getCode()));
+        Object loginId = StpUtil.getLoginId();
+        User user = User.ME.get(Long.parseLong(loginId.toString()));
+        vo.setLastLoginTime(DateUtil.format(user.getLogin_time(), YYYY_MM_DD_HH_MM_SS));
+        vo.setLastLoginIp(user.getLogin_ip());
+        return ApiResult.successWithObject(vo);
     }
 
     @GetMapping("/index")
@@ -64,6 +85,9 @@ public class AdminLoginController extends AdminBaseController {
         if (!StrUtil.equals(user.getSalt(), AESUtils.Encrypt(password, AESUtils.KEY))) {
             return ApiResult.failWithMessage("密码不对");
         }
+        user.setLogin_ip(IpUtil.getIpAddress(request));
+        user.setLogin_time(new Date());
+        user.doUpdate(true);
         //登录
         StpUtil.login(user.getId());
         user.setPassword("");

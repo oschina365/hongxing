@@ -63,11 +63,12 @@ public class AdminBaseController {
 
     @ModelAttribute
     protected void setRequest() throws IOException {
+        this.request = request;
+        request.setAttribute("currentUrl", request.getRequestURI());
         //第几页
         String number = request.getParameter("number");
         String size = request.getParameter("size");
-        this.request = request;
-        request.setAttribute("currentUrl", request.getRequestURI());
+
     }
 
     public boolean logined() {

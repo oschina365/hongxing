@@ -15,9 +15,8 @@
 				{
 					"title": "产品分类",
 					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
+					"href": "/admin/page/product_category/index.html",
+					"spread": false
 				}
 			]
 		},

@@ -11,8 +11,10 @@
 <script src="https://hm.baidu.com/hm.js?75bb93deea44a009bc2d215db2ef9865"></script>
 <script src="https://hm.baidu.com/hm.js?25e431cff63a206eb286efd246de5f2d"></script>
 <script type="text/javascript" key="NSW_Details" src="/js/nsw_details.js"></script>
-<script src="/layui/layui.all.js"></script>
-<link rel="stylesheet" href="/layui/css/layui.css">
+<#--<script src="/layui/layui.all.js"></script>
+<link rel="stylesheet" href="/layui/css/layui.css">-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css" integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <meta name="format-detection" content="telephone=no">
 <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
 

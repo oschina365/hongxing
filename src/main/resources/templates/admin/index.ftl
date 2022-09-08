@@ -11,7 +11,9 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" href="/static/favicon.ico">
-	<link rel="stylesheet" href="/static/admin/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css"
+		  integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw=="
+		  crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="/static/admin/css/index.css" media="all" />
 </head>
 <body class="main_body">
@@ -120,7 +122,9 @@
 	<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>
 
-	<script type="text/javascript" src="../static/admin/layui/layui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js"
+			integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g=="
+			crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type="text/javascript" src="../static/admin/js/index.js"></script>
 	<script type="text/javascript" src="../static/admin/js/cache.js"></script>
 </body>

@@ -6,6 +6,7 @@ import cn.hutool.core.util.StrUtil;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.db.CacheMgr;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -158,6 +159,42 @@ public class CategoryDAO extends CommonDao<Category> {
     public Category getByName(String name) {
         String sql = "select * from " + table() + " where name =?";
         return getDbQuery().read(Category.class, sql, name);
+    }
+
+    public long countByType(int type) {
+        setSql("select count(*) from " + table() + " where type=?");
+        return getDbQuery().read(long.class, getSql(), type);
+    }
+
+
+    /**
+     * 根据type查询分类列表
+     *
+     * @param type 分类类型（1=产品分类 2=案例分类 3=公司管理）
+     * @return {@link List}
+     */
+    public List<Category> page(int type, String name, int page, int size) {
+        StringBuilder sb = new StringBuilder("select id from " + table());
+        sb.append(" where type=? ");
+        if (StringUtils.isNoneBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
+        sb.append(" order by id asc");
+        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size, type);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        return Category.ME.loadList(ids);
+    }
+
+
+    public long count(int type, String name) {
+        StringBuilder sb = new StringBuilder("select count(*) from " + table());
+        sb.append(" where type=? ");
+        if (StringUtils.isNoneBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
+        return getDbQuery().read(long.class, sb.toString(), type);
     }
 
 }

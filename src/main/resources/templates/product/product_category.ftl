@@ -214,7 +214,7 @@
                                 if(data.result.count >0){
                                     if (number === 1) {
                                         //分页标签
-                                        pageBar(data.result.count, 6);
+                                        pageBar(data.result.count, 12);
                                     }
                                 }
 

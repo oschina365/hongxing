@@ -13,8 +13,8 @@
     <link href="/manager/skins/base/editInterface.css" rel="stylesheet" type="text/css" />
     <link href="/manager/skins/base/products.css" rel="stylesheet" type="text/css" />
     <link href="/manager/skins/base/dialog.css" rel="stylesheet" type="text/css" />
-    <script src="/layui/layui.all.js"></script>
-    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css" integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
     <script type="text/javascript">
         var _hmt = _hmt || [];

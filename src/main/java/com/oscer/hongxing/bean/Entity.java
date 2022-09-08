@@ -525,7 +525,6 @@ public abstract class Entity implements Serializable {
         if (this.cachedByID()) {
             return DbQuery.get(databaseName()).stat_cache(cacheRegion(), OBJ_COUNT_CACHE_KEY, "SELECT COUNT(*) FROM " + rawTableName());
         }
-
         return DbQuery.get(databaseName()).stat("SELECT COUNT(*) FROM " + rawTableName());
     }
 
