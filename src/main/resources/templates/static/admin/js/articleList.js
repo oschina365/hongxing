@@ -9,14 +9,14 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
 
     //产品列表
     var tableIns = table.render({
-        elem: '#productList',
-        url: "/admin/product",
+        elem: '#articleList',
+        url: "/admin/article",
         cellMinWidth: 95,
         page: true,
         height: "full-125",
         limit: 20,
         limits: [10, 15, 20, 25],
-        id: "productListTable",
+        id: "articleListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
             {field: 'id', title: 'ID', width: 60, align: "center"},
@@ -25,25 +25,15 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                     return '<img src="'+d.banner+'">'
                 }
             },
-            {field: 'name', title: '产品名称', width: 200},
+            {field: 'name', title: '案例名称', width: 250},
             {field: 'category_name', title: '所属分类', align: 'center'},
             {
                 field: 'top', title: '是否置顶', align: 'center', templet: function (d) {
                     return '<input type="checkbox" name="newsTop" lay-filter="productTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
                 }
             },
-            {
-                field: 'cream', title: '是否精华', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productCream" lay-skin="switch" lay-text="是|否" ' + d.cream + '>'
-                }
-            },
-            {
-                field: 'recomm', title: '是否推荐', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productRecomm" lay-skin="switch" lay-text="是|否" ' + d.recomm + '>'
-                }
-            },
             {field: 'create_time', title: '录入时间', align: 'center'},
-            {title: '操作', width: 170, templet: '#productListBar', fixed: "right", align: "center"}
+            {title: '操作', width: 140, templet: '#articleListBar', fixed: "right", align: "center"}
         ]]
     });
 
@@ -88,7 +78,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
-            table.reload("productListTable", {
+            table.reload("articleListTable", {
                 page: {
                     curr: 1 //重新从第 1 页开始
                 },
@@ -154,7 +144,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
 
     //批量删除
     $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('productListTable'),
+        var checkStatus = table.checkStatus('articleListTable'),
             data = checkStatus.data,
             newsId = [];
         if (data.length > 0) {
@@ -175,7 +165,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     })
 
     //列表操作
-    table.on('tool(productList)', function (obj) {
+    table.on('tool(articleList)', function (obj) {
         var layEvent = obj.event,
             data = obj.data;
 

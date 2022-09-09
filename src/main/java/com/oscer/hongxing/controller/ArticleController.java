@@ -21,6 +21,7 @@ import java.util.stream.Collectors;
 
 /**
  * 文章
+ *
  * @author kz
  * @since 2022-08-18 16:57:08
  */
@@ -61,8 +62,8 @@ public class ArticleController extends BaseController {
         } else {
             categoryIds.add(category.getId());
         }
-        List<Article> list = ArticleDAO.ME.page(categoryIds, page, limit);
-        long count = ArticleDAO.ME.count(categoryIds);
+        List<Article> list = ArticleDAO.ME.page(categoryIds, null, page, limit);
+        long count = ArticleDAO.ME.count(categoryIds, null);
         return ApiResult.successWithMapData(list, count, null);
     }
 

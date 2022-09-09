@@ -4,6 +4,7 @@ package com.oscer.hongxing.dao;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.oscer.hongxing.bean.Article;
+import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Product;
 import org.apache.commons.lang3.StringUtils;
 
@@ -69,16 +70,41 @@ public class ArticleDAO extends CommonDao<Article> {
         return Article.ME.get(id);
     }
 
-    public List<Article> page(List<Long> categoryIds, int page, int size) {
-        StringBuilder sb = new StringBuilder(preSql());
-        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") order by sort desc ");
+    public List<Article> page(List<Long> categoryIds, String name, int page, int size) {
+        StringBuilder sb = new StringBuilder(preSql() + " where 1=1 ");
+        if (CollectionUtil.isNotEmpty(categoryIds)) {
+            sb.append(" and a.category_id in(" + StringUtils.join(categoryIds, ",") + ") ");
+        }
+        if (StringUtils.isNoneBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
+        sb.append(" order by sort desc");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
-        return Article.ME.loadList(ids);
+        if (CollectionUtil.isEmpty(ids)) {
+            return null;
+        }
+        List<Article> list = Article.ME.loadList(ids);
+        if (CollectionUtil.isEmpty(list)) {
+            return null;
+        }
+        for (Article article : list) {
+            Category category = Category.ME.get(article.getCategory_id());
+            if (category == null) {
+                continue;
+            }
+            article.setCategory_name(category.getName());
+        }
+        return list;
     }
 
-    public long count(List<Long> categoryIds) {
-        StringBuilder sb = new StringBuilder(preCountSql());
-        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") ");
+    public long count(List<Long> categoryIds, String name) {
+        StringBuilder sb = new StringBuilder(preCountSql() + " where 1=1 ");
+        if (CollectionUtil.isNotEmpty(categoryIds)) {
+            sb.append(" and a.category_id in(" + StringUtils.join(categoryIds, ",") + ") ");
+        }
+        if (StringUtils.isNoneBlank(name)) {
+            sb.append(" and name like '%" + name + "%'");
+        }
         return getDbQuery().read(Long.class, sb.toString());
     }
 

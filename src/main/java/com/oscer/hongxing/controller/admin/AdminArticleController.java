@@ -1,11 +1,13 @@
 package com.oscer.hongxing.controller.admin;
 
 import cn.hutool.core.collection.CollectionUtil;
+import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.R;
+import com.oscer.hongxing.dao.ArticleDAO;
 import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ItemDAO;
 import com.oscer.hongxing.dao.ProductDAO;
@@ -26,36 +28,26 @@ import java.util.Map;
  * @create 2022-08-21 14:46
  **/
 @Controller
-@RequestMapping("/admin/category")
+@RequestMapping("/admin/article")
 @Slf4j
-public class AdminCategoryController extends AdminBaseController {
+public class AdminArticleController extends AdminBaseController {
 
     /**
-     * 产品列表分页查询
+     * 案例列表分页查询
      *
-     * @param type
+     * @param categoryIds
      * @param name
      * @return
      */
     @GetMapping
     @ResponseBody
-    public R page(@RequestParam(value = "type", required = false) Integer type,
+    public R page(@RequestParam(value = "categoryIds", required = false) List<Long> categoryIds,
                   @RequestParam(value = "name", required = false) String name,
                   @RequestParam(value = "page", required = false, defaultValue = "1") int page,
                   @RequestParam(value = "limit", required = false, defaultValue = "1") int limit) {
-        List<Category> list = CategoryDAO.ME.page(type, name, page, limit);
-        long count = CategoryDAO.ME.count(type, name);
-        if (CollectionUtil.isNotEmpty(list)) {
-            for (Category category : list) {
-                Category parent = Category.ME.get(category.getParent_id());
-                if (parent != null) {
-                    category.setParent_category_name(parent.getName());
-                } else {
-                    category.setParent_category_name("顶级分类");
-                }
-            }
-        }
-        return R.ok(list, count);
+        List<Article> articles = ArticleDAO.ME.page(categoryIds, name, page, limit);
+        Long count = ArticleDAO.ME.count(categoryIds, name);
+        return R.ok(articles, count);
     }
 
     /**

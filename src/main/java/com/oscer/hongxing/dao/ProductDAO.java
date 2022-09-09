@@ -3,10 +3,7 @@ package com.oscer.hongxing.dao;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import com.oscer.hongxing.bean.Article;
-import com.oscer.hongxing.bean.Category;
-import com.oscer.hongxing.bean.Item;
-import com.oscer.hongxing.bean.Product;
+import com.oscer.hongxing.bean.*;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.db.CacheMgr;
 import com.oscer.hongxing.db.DbQuery;
@@ -53,7 +50,18 @@ public class ProductDAO extends CommonDao<Product> {
         if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
-        return Product.ME.loadList(ids);
+        List<Product> list = Product.ME.loadList(ids);
+        if (CollectionUtil.isEmpty(list)) {
+            return null;
+        }
+        for (Product product : list) {
+            Category category = Category.ME.get(product.getCategory_id());
+            if (category == null) {
+                continue;
+            }
+            product.setCategory_name(category.getName());
+        }
+        return list;
     }
 
     public Long count(Long categoryId, String name) {

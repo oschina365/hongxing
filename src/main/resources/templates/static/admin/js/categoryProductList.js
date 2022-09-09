@@ -16,7 +16,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         height: "full-125",
         limit: 20,
         limits: [10, 15, 20, 25],
-        id: "productListTable",
+        id: "productCategoryListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
             {field: 'id', title: 'ID', width: 60, align: "center"},
@@ -29,10 +29,10 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                     return '<img src="'+banner+'">'
                 }
             },
-            {field: 'name', title: '分类名称', width: 350},
-            {field: 'name', title: '上级分类', align: 'center'},
+            {field: 'name', title: '分类名称', width: 200},
+            {field: 'parent_category_name', title: '上级分类', align: 'center'},
             {field: 'create_time', title: '录入时间', align: 'center'},
-            {title: '操作', width: 170, templet: '#productListBar', fixed: "right", align: "center"}
+            {title: '操作', width: 140, templet: '#productListBar', fixed: "right", align: "center"}
         ]]
     });
 
@@ -77,7 +77,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
-            table.reload("productListTable", {
+            table.reload("productCategoryListTable", {
                 page: {
                     curr: 1 //重新从第 1 页开始
                 },
@@ -143,7 +143,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
 
     //批量删除
     $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('productListTable'),
+        var checkStatus = table.checkStatus('productCategoryListTable'),
             data = checkStatus.data,
             newsId = [];
         if (data.length > 0) {

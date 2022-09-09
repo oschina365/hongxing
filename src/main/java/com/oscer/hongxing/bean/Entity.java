@@ -2,6 +2,8 @@ package com.oscer.hongxing.bean;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.oscer.hongxing.common.Inflector;
 import com.oscer.hongxing.db.CacheMgr;
 import com.oscer.hongxing.db.DBException;
@@ -52,10 +54,12 @@ public abstract class Entity implements Serializable {
     /**
      * 添加时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date create_time;
     /**
      * 更新时间
      */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date update_time;
 
     /**
