@@ -15,30 +15,28 @@
 				{
 					"title": "产品分类",
 					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
+					"href": "/admin/page/product_category/index.html",
+					"spread": false
 				}
 			]
 		},
 		{
-			"title": "文章管理",
+			"title": "案例管理",
 			"icon": "&#xe630;",
 			"href": "",
 			"spread": false,
 			"children": [
 				{
-					"title": "文章列表",
+					"title": "案例列表",
 					"icon": "&#xe634;",
-					"href": "page/404.html",
+					"href": "/admin/page/article/index.html",
 					"spread": false
 				},
 				{
-					"title": "文章分类",
+					"title": "案例分类",
 					"icon": "&#xe609;",
-					"href": "page/login/login.html",
-					"spread": false,
-					"target": "_blank"
+					"href": "/admin/page/article_category/index.html",
+					"spread": false
 				}
 			]
 		}

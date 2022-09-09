@@ -10,40 +10,29 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     //产品列表
     var tableIns = table.render({
         elem: '#productList',
-        url: "/admin/product",
+        url: "/admin/category?type=1",
         cellMinWidth: 95,
         page: true,
         height: "full-125",
         limit: 20,
         limits: [10, 15, 20, 25],
-        id: "productListTable",
+        id: "productCategoryListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
             {field: 'id', title: 'ID', width: 60, align: "center"},
             {
-                field: 'banner', title: '缩略图', align: 'center', templet: function (d) {
-                    return '<img src="'+d.banner+'">'
+                field: 'banner', title: '分类背景图', align: 'center', templet: function (d) {
+                    let banner = d.banner;
+                    if(!banner){
+                        banner = d.small_icon;
+                    }
+                    return '<img src="'+banner+'">'
                 }
             },
-            {field: 'name', title: '产品名称', width: 200},
-            {field: 'category_name', title: '所属分类', align: 'center'},
-            {
-                field: 'top', title: '是否置顶', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
-                }
-            },
-            {
-                field: 'cream', title: '是否精华', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productCream" lay-skin="switch" lay-text="是|否" ' + d.cream + '>'
-                }
-            },
-            {
-                field: 'recomm', title: '是否推荐', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productRecomm" lay-skin="switch" lay-text="是|否" ' + d.recomm + '>'
-                }
-            },
+            {field: 'name', title: '分类名称', width: 200},
+            {field: 'parent_category_name', title: '上级分类', align: 'center'},
             {field: 'create_time', title: '录入时间', align: 'center'},
-            {title: '操作', width: 120, templet: '#productListBar', fixed: "right", align: "center"}
+            {title: '操作', width: 140, templet: '#productListBar', fixed: "right", align: "center"}
         ]]
     });
 
@@ -88,7 +77,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     //搜索【此功能需要后台配合，所以暂时没有动态效果演示】
     $(".search_btn").on("click", function () {
         if ($(".searchVal").val() != '') {
-            table.reload("productListTable", {
+            table.reload("productCategoryListTable", {
                 page: {
                     curr: 1 //重新从第 1 页开始
                 },
@@ -154,7 +143,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
 
     //批量删除
     $(".delAll_btn").click(function () {
-        var checkStatus = table.checkStatus('productListTable'),
+        var checkStatus = table.checkStatus('productCategoryListTable'),
             data = checkStatus.data,
             newsId = [];
         if (data.length > 0) {

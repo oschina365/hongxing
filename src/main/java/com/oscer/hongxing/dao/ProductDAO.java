@@ -3,10 +3,7 @@ package com.oscer.hongxing.dao;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
-import com.oscer.hongxing.bean.Article;
-import com.oscer.hongxing.bean.Category;
-import com.oscer.hongxing.bean.Item;
-import com.oscer.hongxing.bean.Product;
+import com.oscer.hongxing.bean.*;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.db.CacheMgr;
 import com.oscer.hongxing.db.DbQuery;
@@ -32,35 +29,55 @@ public class ProductDAO extends CommonDao<Product> {
         return Product.ME.rawTableName();
     }
 
+
+    private String preSql() {
+        return "select a.id from " + table() + " a INNER JOIN items s on a.id=s.item_id and s.item_type=1 ";
+    }
+
+    private String preCountSql() {
+        return "select count(a.id) from " + table() + " a INNER JOIN items s on a.id=s.item_id and s.item_type=1 ";
+    }
+
     public List<Product> page(Long categoryId, String name, int page, int size) {
-        StringBuilder sb = new StringBuilder("select id from " + table() + " where 1=1 ");
+        StringBuilder sb = new StringBuilder(preSql() + " where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
-            sb.append(" and category_id = " + categoryId);
+            sb.append(" and a.category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(name)) {
-            sb.append(" and name like '%" + name + "%'");
+            sb.append(" and a.name like '%" + name + "%'");
         }
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
         }
-        return Product.ME.loadList(ids);
+        List<Product> list = Product.ME.loadList(ids);
+        if (CollectionUtil.isEmpty(list)) {
+            return null;
+        }
+        for (Product product : list) {
+            Category category = Category.ME.get(product.getCategory_id());
+            if (category == null) {
+                continue;
+            }
+            product.setCategory_name(category.getName());
+        }
+        return list;
     }
 
     public Long count(Long categoryId, String name) {
-        StringBuilder sb = new StringBuilder("select count(*) from " + table() + " where 1=1 ");
+        StringBuilder sb = new StringBuilder(preCountSql() + " where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
-            sb.append(" and category_id = " + categoryId);
+            sb.append(" and a.category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(name)) {
-            sb.append(" and name like '%" + name + "%'");
+            sb.append(" and a.name like '%" + name + "%'");
         }
         return getDbQuery().read(Long.class, sb.toString());
     }
 
 
     public List<Product> randomList(int limit) {
-        String sql = "select id from " + table() + "  where banner is not null order by recomm desc,RAND() limit ?";
+        String sql = preSql() + "  where a.banner is not null order by a.recomm desc,RAND() limit ?";
         List<Long> ids = getDbQuery().query(Long.class, sql, limit);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -69,7 +86,7 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> listByCategory(Long categoryId) {
-        String sql = "select id from " + table() + " where category_id=? and banner is not null ";
+        String sql = preSql() + " where a.category_id=? and a.banner is not null ";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -78,7 +95,7 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> listLimitByCategory(Long categoryId, int limit) {
-        String sql = "select id from " + table() + " where category_id=? limit ?";
+        String sql = preSql() + " where a.category_id=? limit ?";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId, limit);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -87,27 +104,28 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> page(List<Long> categoryIds, int page, int size) {
-        StringBuilder sb = new StringBuilder("select id from " + table());
-        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") and banner is not null order by sort asc ");
+        StringBuilder sb = new StringBuilder(preSql());
+        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") " +
+                "and a.banner is not null order by sort asc ");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         return Product.ME.loadList(ids);
     }
 
     public long count(List<Long> categoryIds) {
-        StringBuilder sb = new StringBuilder("select count(*) from " + table());
-        sb.append(" where category_id in(" + StringUtils.join(categoryIds, ",") + ") and banner is not null");
+        StringBuilder sb = new StringBuilder(preCountSql());
+        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") and a.banner is not null");
         return getDbQuery().read(Long.class, sb.toString());
     }
 
     public List<Product> page(int page, int size) {
-        StringBuilder sb = new StringBuilder("select id from " + table() + " where banner is not null");
+        StringBuilder sb = new StringBuilder(preSql() + " where a.banner is not null");
         sb.append(" order by sort asc ");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         return Product.ME.loadList(ids);
     }
 
     public long count() {
-        StringBuilder sb = new StringBuilder("select count(*) from " + table() + " where banner is not null");
+        StringBuilder sb = new StringBuilder(preCountSql() + " where a.banner is not null");
         return getDbQuery().read(Long.class, sb.toString());
     }
 

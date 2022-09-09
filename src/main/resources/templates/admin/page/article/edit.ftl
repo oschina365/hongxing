@@ -80,6 +80,6 @@
 	</div>
 </form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="../../../static/admin/js/productEdit.js"></script>
+<script type="text/javascript" src="../../../static/admin/js/articleEdit.js"></script>
 </body>
 </html>
