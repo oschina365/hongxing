@@ -165,3 +165,24 @@ function showImg(){
         });
     });
 }
+
+function logout(){
+	$.ajax({
+		url: '/admin/logout',
+		type: 'post',
+		dataType: 'json',
+		success: function (d) {
+			if (d.code == 1) {
+				layer.msg(d.message ? d.message : "退出登录成功", {
+					icon: 6,
+					time: 1500
+				}, function () {
+					window.location.href = "/admin";
+				});
+			} else {
+				layer.msg(d.message ? d.message : "网络错误", {icon: 5});
+				init(_that);
+			}
+		}
+	});
+}

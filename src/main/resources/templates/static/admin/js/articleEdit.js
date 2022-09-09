@@ -8,14 +8,14 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
         transfer = layui.transfer,
         $ = layui.jquery;
 
-    var productId = $("#productId").val();
+    var articleId = $("#articleId").val();
     init();
     var categoryList;
     var selectCategoryIds = [];
 
     async function init() {
         $.ajax({
-            url: '/admin/product/' + productId,
+            url: '/admin/article/' + articleId,
             method: 'post',
             dataType: 'json',
             success: function (data) {
@@ -29,7 +29,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
                         , value: data.result.categoryIds
                         , id: 'selectCategoryIds'
                         , showSearch: true
-                        , title: ['产品分类', '已选分类']
+                        , title: ['案例分类', '已选分类']
                         , onchange: function (obj, index) {
                             var choose = $(".layui-transfer-box")[1];
                             var lis = $(choose).find("ul>li");
@@ -58,7 +58,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
     //上传缩略图
     upload.render({
         elem: '.thumbBox',
-        url: '/up/lay?type=product',
+        url: '/up/lay?type=article',
         method: "get",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
         done: function (res, index, upload) {
             var num = parseInt(4 * Math.random());  //生成0-4的随机数，随机显示一个头像信息
@@ -99,7 +99,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
         }
     });
 
-    form.on("submit(addProduct)", function (data) {
+    form.on("submit(addarticle)", function (data) {
         console.log(data);
         //截取文章内容中的一部分文字放入文章摘要
         //弹出loading
@@ -113,28 +113,29 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
                 selectCategoryIds.push($(li)[0].firstChild.value)
             }
             if (selectCategoryIds.length == 0) {
-                layer.alert('请选择产品分类');
+                layer.alert('请选择案例分类');
                 return false;
             }
         }
         if (selectCategoryIds.length > 5) {
             layer.alert('最多关联5个分类');
         }
-        $.post("/admin/product/edit", {
-            id: productId,
-            name: $(".productName").val(),  //文章标题
-            desc: $(".productDesc").val(),  //文章摘要
+        $.post("/admin/article/edit", {
+            id: articleId,
+            name: $(".articleName").val(),  //文章标题
+            desc: $(".articleDesc").val(),  //文章摘要
             content: layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容
             banner: $(".thumbImg").attr("src"),  //缩略图
+            sort: $("#sort").val(),
             selectCategoryIds: selectCategoryIds
         }, function (res) {
             if(res && res.code==1){
-                layer.msg("编辑产品成功~",{icon:6});
+                layer.msg("编辑案例成功~",{icon:6});
                 setTimeout(function(){
                     layer.closeAll("iframe");
                     //刷新父页面
                     parent.location.reload();
-                    window.location.href="/admin/page/product/index.html";
+                    window.location.href="/admin/page/article/index.html";
                 },500);
             }else{
                 layer.msg(res.message?res.message:"保存失败~",{icon:5});
@@ -145,7 +146,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
     })
 
     //创建一个编辑器
-    var editIndex = layedit.build('product_content', {
+    var editIndex = layedit.build('article_content', {
         height: 535,
         uploadImage: {
             url: "../../json/newsImg.json"

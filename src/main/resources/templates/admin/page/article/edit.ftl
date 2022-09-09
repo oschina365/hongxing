@@ -14,33 +14,34 @@
 </head>
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
-	<input type="hidden" id = "productId" value="${product.id}"/>
+	<input type="hidden" id = "articleId" value="${article.id}"/>
+	<input type="hidden" id = "sort" value="${article.sort}"/>
 	<div class="layui-col-md8 layui-col-xs12">
 		<div class="layui-row layui-col-space10">
 			<div class="layui-col-md9 layui-col-xs7">
 				<div class="layui-form-item magt3">
 					<label class="layui-form-label">产品名称</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input productName" lay-verify="productName" placeholder="请输入产品名称" value="${product.name!''}">
+						<input type="text" class="layui-input articleName" lay-verify="articleName" placeholder="请输入产品名称" value="${article.name!''}">
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">产品摘要</label>
 					<div class="layui-input-block">
-						<textarea placeholder="请输入产品摘要" class="layui-textarea productDesc">${product.desc!''}</textarea>
+						<textarea placeholder="请输入产品摘要" class="layui-textarea articleDesc">${article.desc!''}</textarea>
 					</div>
 				</div>
 			</div>
 			<div class="layui-col-md3 layui-col-xs5">
 				<div class="layui-upload-list thumbBox mag0 magt3">
-					<img class="layui-upload-img thumbImg" src="${product.banner!''}">
+					<img class="layui-upload-img thumbImg" src="${article.banner!''}">
 				</div>
 			</div>
 		</div>
 		<div class="layui-form-item magb0">
 			<label class="layui-form-label">产品内容</label>
 			<div class="layui-input-block">
-				<textarea class="layui-textarea layui-hide product_content" id="product_content" name="content" lay-verify="content" id="product_content">${product.content!''}</textarea>
+				<textarea class="layui-textarea layui-hide article_content" id="article_content" name="content" lay-verify="content" id="article_content">${article.content!''}</textarea>
 			</div>
 		</div>
 	</div>
@@ -54,27 +55,27 @@
 		</div>
 		<blockquote class="layui-elem-quote title magt10"><i class="layui-icon">&#xe609;</i> 发布</blockquote>
 		<div class="border">
-			<div class="layui-form-item productTop">
+			<div class="layui-form-item articleTop">
 				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 置　顶</label>
 				<div class="layui-input-block">
-					<input type="checkbox" name="productTop" lay-skin="switch" lay-text="是|否">
+					<input type="checkbox" name="articleTop" lay-skin="switch" lay-text="是|否">
 				</div>
 			</div>
-			<div class="layui-form-item productTop">
+			<div class="layui-form-item articleTop">
 				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 推 荐</label>
 				<div class="layui-input-block">
-					<input type="checkbox" name="productCream" lay-skin="switch" lay-text="是|否">
+					<input type="checkbox" name="articleCream" lay-skin="switch" lay-text="是|否">
 				</div>
 			</div>
-			<div class="layui-form-item productTop">
+			<div class="layui-form-item articleTop">
 				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 精　华</label>
 				<div class="layui-input-block">
-					<input type="checkbox" name="productRecomm" lay-skin="switch" lay-text="是|否">
+					<input type="checkbox" name="articleRecomm" lay-skin="switch" lay-text="是|否">
 				</div>
 			</div>
 			<hr class="layui-bg-gray" />
 			<div class="layui-right">
-				<a class="layui-btn layui-btn-sm" lay-filter="addProduct" lay-submit><i class="layui-icon">&#xe609;</i>发布</a>
+				<a class="layui-btn layui-btn-sm" lay-filter="addarticle" lay-submit><i class="layui-icon">&#xe609;</i>发布</a>
 			</div>
 		</div>
 	</div>

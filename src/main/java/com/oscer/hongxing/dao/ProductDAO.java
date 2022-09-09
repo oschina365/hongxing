@@ -31,21 +31,39 @@ public class ProductDAO extends CommonDao<Product> {
 
 
     private String preSql() {
-        return "select a.id from " + table() + " a INNER JOIN items s on a.id=s.item_id and s.item_type=1 ";
+        return "select a.id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=1 ";
     }
 
     private String preCountSql() {
-        return "select count(a.id) from " + table() + " a INNER JOIN items s on a.id=s.item_id and s.item_type=1 ";
+        return "select count(a.id) from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=1 ";
+    }
+
+    private String preSqlA() {
+        return "select a.*,s.category_id as category_id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=2 ";
+    }
+
+    public Product get(long id) {
+        setSql(preSqlA() + " where s.item_id=?");
+        Product product = getDbQuery().read_cache(Product.class, false, getCache_region(), "signal_" + id, getSql(), id);
+        if (product == null) {
+            return null;
+        }
+        Category category = Category.ME.get(product.getCategory_id());
+        if (category != null) {
+            product.setCategory_name(category.getName());
+        }
+        return product;
     }
 
     public List<Product> page(Long categoryId, String name, int page, int size) {
         StringBuilder sb = new StringBuilder(preSql() + " where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
-            sb.append(" and a.category_id = " + categoryId);
+            sb.append(" and s.category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(name)) {
             sb.append(" and a.name like '%" + name + "%'");
         }
+        sb.append(" order by a.sort desc");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -55,7 +73,7 @@ public class ProductDAO extends CommonDao<Product> {
             return null;
         }
         for (Product product : list) {
-            Category category = Category.ME.get(product.getCategory_id());
+            Category category = Category.ME.get(product.getCategoryId());
             if (category == null) {
                 continue;
             }
@@ -67,7 +85,7 @@ public class ProductDAO extends CommonDao<Product> {
     public Long count(Long categoryId, String name) {
         StringBuilder sb = new StringBuilder(preCountSql() + " where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
-            sb.append(" and a.category_id = " + categoryId);
+            sb.append(" and s.category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(name)) {
             sb.append(" and a.name like '%" + name + "%'");
@@ -86,7 +104,7 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> listByCategory(Long categoryId) {
-        String sql = preSql() + " where a.category_id=? and a.banner is not null ";
+        String sql = preSql() + " where s.category_id=? and a.banner is not null ";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -95,7 +113,7 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> listLimitByCategory(Long categoryId, int limit) {
-        String sql = preSql() + " where a.category_id=? limit ?";
+        String sql = preSql() + " where s.category_id=? limit ?";
         List<Long> ids = getDbQuery().query(Long.class, sql, categoryId, limit);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -105,7 +123,7 @@ public class ProductDAO extends CommonDao<Product> {
 
     public List<Product> page(List<Long> categoryIds, int page, int size) {
         StringBuilder sb = new StringBuilder(preSql());
-        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") " +
+        sb.append(" where s.category_id in(" + StringUtils.join(categoryIds, ",") + ") " +
                 "and a.banner is not null order by sort asc ");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         return Product.ME.loadList(ids);
@@ -113,7 +131,7 @@ public class ProductDAO extends CommonDao<Product> {
 
     public long count(List<Long> categoryIds) {
         StringBuilder sb = new StringBuilder(preCountSql());
-        sb.append(" where a.category_id in(" + StringUtils.join(categoryIds, ",") + ") and a.banner is not null");
+        sb.append(" where s.category_id in(" + StringUtils.join(categoryIds, ",") + ") and a.banner is not null");
         return getDbQuery().read(Long.class, sb.toString());
     }
 
@@ -151,6 +169,7 @@ public class ProductDAO extends CommonDao<Product> {
                 @Override
                 public void execute() throws Exception {
                     if (product.getId() == null || product.getId() <= 0L) {
+                        product.setSort(System.currentTimeMillis());
                         long save = product.save();
                         List<Long> selectCategoryIds = product.getSelectCategoryIds();
                         for (Long selectCategoryId : selectCategoryIds) {
@@ -179,6 +198,26 @@ public class ProductDAO extends CommonDao<Product> {
                             item.save();
                         }
                         product.doUpdate(true);
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public boolean delete(Long id) {
+        try {
+            DbQuery.get("mysql").transaction(new TransactionService() {
+                @Override
+                public void execute() throws Exception {
+                    Product product = Product.ME.get(id);
+                    if (product != null) {
+                        product.delete();
+                        ItemDAO.ME.delete(id, CategoryContants.Type.PRODUCT.getCode());
                     }
                 }
             });

@@ -7,7 +7,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         layedit = layui.layedit,
         table = layui.table;
 
-    //产品列表
+    //案例列表
     var tableIns = table.render({
         elem: '#articleList',
         url: "/admin/article",
@@ -29,7 +29,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
             {field: 'category_name', title: '所属分类', align: 'center'},
             {
                 field: 'top', title: '是否置顶', align: 'center', templet: function (d) {
-                    return '<input type="checkbox" name="newsTop" lay-filter="productTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
+                    return '<input type="checkbox" name="newsTop" lay-filter="articleTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
                 }
             },
             {field: 'create_time', title: '录入时间', align: 'center'},
@@ -38,32 +38,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     });
 
     //是否置顶
-    form.on('switch(productTop)', function (data) {
-        var index = layer.msg('修改中，请稍候', {icon: 16, time: false, shade: 0.8});
-        setTimeout(function () {
-            layer.close(index);
-            if (data.elem.checked) {
-                layer.msg("置顶成功！");
-            } else {
-                layer.msg("取消置顶成功！");
-            }
-        }, 500);
-    })
-
-    //是否精华
-    form.on('switch(productCream)', function (data) {
-        var index = layer.msg('修改中，请稍候', {icon: 16, time: false, shade: 0.8});
-        setTimeout(function () {
-            layer.close(index);
-            if (data.elem.checked) {
-                layer.msg("置顶成功！");
-            } else {
-                layer.msg("取消置顶成功！");
-            }
-        }, 500);
-    })
-    //是否推荐
-    form.on('switch(productRecomm)', function (data) {
+    form.on('switch(articleTop)', function (data) {
         var index = layer.msg('修改中，请稍候', {icon: 16, time: false, shade: 0.8});
         setTimeout(function () {
             layer.close(index);
@@ -92,32 +67,31 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     });
 
     function edit(data){
-        console.log(data);
         var index = layer.open({
-            title: "编辑产品",
+            title: "编辑案例",
             type: 2,
             area: ['100%', '100%'],
-            content: "/admin/product/" + data.id,
+            content: "/admin/article/" + data.id,
             success: function (layero, index) {
 
             }
         })
     }
 
-    //添加产品
+    //添加案例
     function addNews(edit) {
         console.log(edit);
         var index = layui.layer.open({
-            title: "添加产品",
+            title: "添加案例",
             type: 2,
             content: "add.html",
             success: function (layero, index) {
                 var body = layui.layer.getChildFrame('body', index);
                 if (edit) {
-                    body.find(".productName").val(edit.name);  //登录名
-                    body.find(".productDesc").val(edit.desc);  //邮箱
-                    body.find(".product_content").val(111111111);  //邮箱
-                    layedit.build('product_content');  //渲染 build
+                    body.find(".articleName").val(edit.name);  //登录名
+                    body.find(".articleDesc").val(edit.desc);  //邮箱
+                    body.find(".article_content").val(111111111);  //邮箱
+                    layedit.build('article_content');  //渲染 build
                     body.find(".userSex input[value=" + edit.userSex + "]").prop("checked", "checked");  //性别
                     body.find(".userGrade").val(edit.userGrade);  //会员等级
                     body.find(".userStatus").val(edit.userStatus);    //用户状态
@@ -172,14 +146,14 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         if (layEvent === 'edit') { //编辑
             edit(data);
         } else if (layEvent === 'del') { //删除
-            layer.confirm('确定删除此文章？', {icon: 3, title: '提示信息'}, function (index) {
-                console.log(data.id);
-                // $.get("删除文章接口",{
-                //     newsId : data.newsId  //将需要删除的newsId作为参数传入
-                // },function(data){
-                tableIns.reload();
-                layer.close(index);
-                // })
+            layer.confirm('确定删除此案例？', {icon: 3, title: '提示信息'}, function (index) {
+                $.post("/admin/article/delete/"+data.id,null,function(data){
+                    if(data && data.code==1){
+                        layer.msg("刪除成功！");
+                        tableIns.reload();
+                        layer.close(index);
+                    }
+                })
             });
         } else if (layEvent === 'look') { //预览
             layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行文章内容页面访问")

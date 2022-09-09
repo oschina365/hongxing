@@ -118,6 +118,7 @@ public class AdminLoginController extends AdminBaseController {
      * @return
      */
     @GetMapping("/isLogin")
+    @ResponseBody
     public ApiResult isLogin() {
         return StpUtil.isLogin() ? ApiResult.success() : ApiResult.fail();
     }
@@ -127,7 +128,8 @@ public class AdminLoginController extends AdminBaseController {
      *
      * @return
      */
-    @DeleteMapping("/logout")
+    @PostMapping("/logout")
+    @ResponseBody
     public ApiResult logout() {
         String tokenValue = StpUtil.getTokenValue();
         if (StrUtil.isBlankIfStr(tokenValue)) {
@@ -156,7 +158,7 @@ public class AdminLoginController extends AdminBaseController {
         }
 
         log.info("退出登录成功，当前会话[user_id={}]是否登录:{}", loginUser.getId(), StpUtil.isLogin());
-        return ApiResult.success();
+        return ApiResult.success("退出登录成功");
     }
 
 

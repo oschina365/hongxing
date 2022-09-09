@@ -121,7 +121,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
             selectCategoryIds: selectCategoryIds
         }, function (res) {
             if(res && res.code==1){
-                layer.msg("编辑产品成功~",{icon:6});
+                layer.msg("添加产品成功~",{icon:6});
                 setTimeout(function(){
                     layer.closeAll("iframe");
                     //刷新父页面

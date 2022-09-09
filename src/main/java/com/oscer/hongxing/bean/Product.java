@@ -43,4 +43,6 @@ public class Product extends Entity {
     private List<String> imgUrls;
     @TableField(exist = false)
     private transient List<Long> selectCategoryIds;
+    @TableField(exist = false)
+    private Long categoryId;
 }

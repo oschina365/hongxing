@@ -71,6 +71,9 @@ public abstract class Entity implements Serializable {
      */
     private int updater;
 
+    @TableField(exist = false)
+    private Long categoryId;
+
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.RUNTIME)
     public @interface Cache {
@@ -503,21 +506,46 @@ public abstract class Entity implements Serializable {
         if (ids.isEmpty()) {
             return null;
         }
-        StringBuilder sql = new StringBuilder("SELECT * FROM " + rawTableName() + " WHERE id IN (");
-        for (int i = 1; i <= ids.size(); i++) {
-            sql.append('?');
-            if (i < ids.size()) {
-                sql.append(',');
+        String region = cacheRegion();
+        if (StringUtils.equalsAnyIgnoreCase(region, Product.ME.cacheRegion()) ||
+                StringUtils.equalsAnyIgnoreCase(region, Article.ME.cacheRegion())) {
+            int type = StringUtils.equalsAnyIgnoreCase(region, Product.ME.cacheRegion()) ? 1 : 2;
+            StringBuilder sql = new StringBuilder("SELECT a.*,s.category_id as categoryId FROM " + rawTableName() + " a INNER JOIN items s on a.id=s.item_id and s.item_type=" + type + " WHERE a.id IN (");
+            for (int i = 1; i <= ids.size(); i++) {
+                sql.append('?');
+                if (i < ids.size()) {
+                    sql.append(',');
+                }
             }
-        }
-        sql.append(')');
-        List<? extends Entity> beans = DbQuery.get(databaseName()).query(getClass(), sql.toString(), ids.toArray(new Object[ids.size()]));
-        if (cachedByID()) {
-            for (Object bean : beans) {
-                CacheMgr.set(cacheRegion(), String.valueOf(((Entity) bean).getId()), bean);
+            sql.append(')');
+            List<? extends Entity> beans = DbQuery.get(databaseName()).query(getClass(), sql.toString(), ids.toArray(new Object[ids.size()]));
+            if (cachedByID()) {
+                for (Entity bean : beans) {
+                    Category category = Category.ME.get(bean.getCategoryId());
+                    if (category != null) {
+                        bean.setCategoryId(category.getId());
+                    }
+                    CacheMgr.set(cacheRegion(), String.valueOf(((Entity) bean).getId()), bean);
+                }
             }
+            return beans;
+        } else {
+            StringBuilder sql = new StringBuilder("SELECT * FROM " + rawTableName() + " WHERE id IN (");
+            for (int i = 1; i <= ids.size(); i++) {
+                sql.append('?');
+                if (i < ids.size()) {
+                    sql.append(',');
+                }
+            }
+            sql.append(')');
+            List<? extends Entity> beans = DbQuery.get(databaseName()).query(getClass(), sql.toString(), ids.toArray(new Object[ids.size()]));
+            if (cachedByID()) {
+                for (Object bean : beans) {
+                    CacheMgr.set(cacheRegion(), String.valueOf(((Entity) bean).getId()), bean);
+                }
+            }
+            return beans;
         }
-        return beans;
     }
 
     /**

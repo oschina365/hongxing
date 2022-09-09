@@ -15,10 +15,7 @@ import com.oscer.hongxing.dao.UserDAO;
 import com.oscer.hongxing.db.CacheMgr;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 后台管理登录
@@ -32,7 +29,7 @@ public class ManageLoginController extends ManagerBaseController {
 
     @GetMapping("/manager")
     public String login() {
-        return "/manager/login";
+        return "/admin/page/login/index";
     }
 
     @GetMapping("/manager/index")

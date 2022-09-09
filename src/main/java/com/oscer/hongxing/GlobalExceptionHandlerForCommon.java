@@ -44,7 +44,7 @@ public class GlobalExceptionHandlerForCommon {
             StpUtil.openSafe(120);
             attrs.addFlashAttribute("msg", "Please login to Confirm");
             attrs.addFlashAttribute("lastUrl", request.getRequestURL());
-            return "redirect:/manager";
+            return "redirect:/admin";
         } else if (e instanceof Exception) {
             msg = e.getMessage();
         } else {    // 普通异常, 输出：500 + 异常信息

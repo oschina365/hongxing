@@ -32,12 +32,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        // 注册 Sa-Token 的路由拦截器
+       /* // 注册 Sa-Token 的路由拦截器
         registry.addInterceptor(new SaRouteInterceptor())
-                .addPathPatterns("/manage/**")
+                .addPathPatterns("/admin/**")
                 .excludePathPatterns(new ArrayList<String>() {{
-                    add("/manage");
-                }});
+                    add("/admin");
+                }});*/
     }
 
 }

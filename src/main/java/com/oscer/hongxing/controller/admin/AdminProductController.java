@@ -130,6 +130,9 @@ public class AdminProductController extends AdminBaseController {
     @PostMapping("/edit")
     @ResponseBody
     public ApiResult edit(Product product) {
+        if (!logined()) {
+            return ApiResult.failWithMessage("未登录");
+        }
         if (product == null) {
             return ApiResult.fail();
         }
@@ -143,6 +146,20 @@ public class AdminProductController extends AdminBaseController {
         return ApiResult.success();
     }
 
-
+    /**
+     * 产品列表分页查询
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/delete/{id}")
+    @ResponseBody
+    public ApiResult delete(@PathVariable Long id) {
+        if (!logined()) {
+            return ApiResult.failWithMessage("未登录");
+        }
+        ProductDAO.ME.delete(id);
+        return ApiResult.success();
+    }
 
 }

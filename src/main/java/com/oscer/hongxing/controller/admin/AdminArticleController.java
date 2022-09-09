@@ -3,7 +3,6 @@ package com.oscer.hongxing.controller.admin;
 import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Article;
 import com.oscer.hongxing.bean.Category;
-import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.R;
@@ -58,9 +57,9 @@ public class AdminArticleController extends AdminBaseController {
      */
     @GetMapping("/{id}")
     public String edit(@PathVariable Long id) {
-        request.setAttribute("product", Product.ME.get(id));
-        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
-        return ADMIN_BASE_PAGE + "product/edit";
+        request.setAttribute("article", Article.ME.get(id));
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.ARTICLE.getCode()));
+        return ADMIN_BASE_PAGE + "article/edit";
     }
 
     /**
@@ -72,12 +71,12 @@ public class AdminArticleController extends AdminBaseController {
     @PostMapping("/{id}")
     @ResponseBody
     public ApiResult category(@PathVariable Long id) {
-        Product exist = Product.ME.get(id);
+        Article exist = Article.ME.get(id);
         if (exist == null) {
             return ApiResult.fail();
         }
-        List<Long> categoryIds = ItemDAO.ME.listByItem(id, CategoryContants.Type.PRODUCT.getCode());
-        List<Category> categoryList = CategoryDAO.ME.allByType(CategoryContants.Type.PRODUCT.getCode());
+        List<Long> categoryIds = ItemDAO.ME.listByItem(id, CategoryContants.Type.ARTICLE.getCode());
+        List<Category> categoryList = CategoryDAO.ME.allByType(CategoryContants.Type.ARTICLE.getCode());
         List<CategoryVO> vos = new ArrayList<>();
         for (Category category : categoryList) {
             CategoryVO vo = new CategoryVO();
@@ -104,7 +103,7 @@ public class AdminArticleController extends AdminBaseController {
     @PostMapping("/category")
     @ResponseBody
     public ApiResult allCategory() {
-        List<Category> categoryList = CategoryDAO.ME.allByType(CategoryContants.Type.PRODUCT.getCode());
+        List<Category> categoryList = CategoryDAO.ME.allByType(CategoryContants.Type.ARTICLE.getCode());
         List<CategoryVO> vos = new ArrayList<>();
         for (Category category : categoryList) {
             CategoryVO vo = new CategoryVO();
@@ -125,22 +124,41 @@ public class AdminArticleController extends AdminBaseController {
     /**
      * 产品列表分页查询
      *
-     * @param product
+     * @param article
      * @return
      */
     @PostMapping("/edit")
     @ResponseBody
-    public ApiResult edit(Product product) {
-        if (product == null) {
+    public ApiResult edit(Article article) {
+        if (!logined()) {
+            return ApiResult.failWithMessage("未登录");
+        }
+        if (article == null) {
             return ApiResult.fail();
         }
-        if (CollectionUtil.isEmpty(product.getSelectCategoryIds())) {
+        if (CollectionUtil.isEmpty(article.getSelectCategoryIds())) {
             return ApiResult.failWithMessage("请选择产品分类");
         }
-        if (product.getSelectCategoryIds().size() > 5) {
+        if (article.getSelectCategoryIds().size() > 5) {
             return ApiResult.failWithMessage("最多关联5个产品分类");
         }
-        ProductDAO.ME.edit(product);
+        ArticleDAO.ME.edit(article);
+        return ApiResult.success();
+    }
+
+    /**
+     * 产品列表分页查询
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/delete/{id}")
+    @ResponseBody
+    public ApiResult delete(@PathVariable Long id) {
+        if (!logined()) {
+            return ApiResult.failWithMessage("未登录");
+        }
+        ArticleDAO.ME.delete(id);
         return ApiResult.success();
     }
 

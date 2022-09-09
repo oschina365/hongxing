@@ -126,6 +126,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
             desc: $(".productDesc").val(),  //文章摘要
             content: layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容
             banner: $(".thumbImg").attr("src"),  //缩略图
+            sort : $("#sort").val(),
             selectCategoryIds: selectCategoryIds
         }, function (res) {
             if(res && res.code==1){

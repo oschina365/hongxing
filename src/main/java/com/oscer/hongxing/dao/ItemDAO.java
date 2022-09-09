@@ -32,7 +32,12 @@ public class ItemDAO extends CommonDao<Item> {
         return getDbQuery().query(long.class, getSql(), item_id, item_type);
     }
 
-    public static void main(String[] args) {
+    public boolean delete(long itemId, int type) {
+        setSql("delete from " + table() + " where item_id =? and item_type=? ");
+        return getDbQuery().update(getSql(), itemId, type) > 0;
+    }
+
+   /* public static void main(String[] args) {
         List<Product> list = (List<Product>) Product.ME.list(false);
         for (Product product : list) {
             Item item = new Item();
@@ -49,6 +54,6 @@ public class ItemDAO extends CommonDao<Item> {
             item.setItem_type(CategoryContants.Type.ARTICLE.getCode());
             item.save(false);
         }
-    }
+    }*/
 
 }

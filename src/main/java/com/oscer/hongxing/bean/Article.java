@@ -2,6 +2,8 @@ package com.oscer.hongxing.bean;
 
 import lombok.Data;
 
+import java.util.List;
+
 /**
  * 案例
  *
@@ -34,4 +36,8 @@ public class Article extends Entity {
 
     @TableField(exist = false)
     private String category_name;
+    @TableField(exist = false)
+    private transient List<Long> selectCategoryIds;
+    @TableField(exist = false)
+    private Long categoryId;
 }

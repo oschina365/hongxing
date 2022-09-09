@@ -64,20 +64,20 @@ layui.use(['form','jquery',"layer"],function() {
             title : false,
             type : 1,
             content : '<div class="admin-header-lock" id="lock-box">'+
-                            '<div class="admin-header-lock-img"><img src="images/face.jpg" class="userAvatar"/></div>'+
-                            '<div class="admin-header-lock-name" id="lockUserName">驊驊龔頾</div>'+
+                            '<div class="admin-header-lock-img"><img src="http://img.oscer.net/avatar/1.jpg" class="userAvatar"/></div>'+
+                            '<div class="admin-header-lock-name" id="lockUserName">hongxin</div>'+
                             '<div class="input_btn">'+
                                 '<input type="password" class="admin-header-lock-input layui-input" autocomplete="off" placeholder="请输入密码解锁.." name="lockPwd" id="lockPwd" />'+
                                 '<button class="layui-btn" id="unlock">解锁</button>'+
                             '</div>'+
-                            '<p>请输入“123456”，否则不会解锁成功哦！！！</p>'+
+                            '<p>请输入密码解锁，否则不会解锁成功哦！！！</p>'+
                         '</div>',
             closeBtn : 0,
             shade : 0.9,
             success : function(){
                 //判断是否设置过头像，如果设置过则修改顶部、左侧和个人资料中的头像，否则使用默认头像
                 if(window.sessionStorage.getItem('userFace') &&  $(".userAvatar").length > 0){
-                    $(".userAvatar").attr("src",$(".userAvatar").attr("src").split("images/")[0] + "images/" + window.sessionStorage.getItem('userFace').split("images/")[1]);
+                    $(".userAvatar").attr("src","http://img.oscer.net/avatar/1.jpg");
                 }
             }
         })
@@ -89,7 +89,12 @@ layui.use(['form','jquery',"layer"],function() {
     })
     // 判断是否显示锁屏
     if(window.sessionStorage.getItem("lockcms") == "true"){
-        lockPage();
+        $.get("/admin/isLogin",function (data){
+            console.log(data);
+            if(data && data.code==1){
+                lockPage();
+            }
+        })
     }
     // 解锁
     $("body").on("click","#unlock",function(){

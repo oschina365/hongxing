@@ -15,6 +15,7 @@
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
 	<input type="hidden" id = "productId" value="${product.id}"/>
+	<input type="hidden" id = "sort" value="${product.sort}"/>
 	<div class="layui-col-md8 layui-col-xs12">
 		<div class="layui-row layui-col-space10">
 			<div class="layui-col-md9 layui-col-xs7">

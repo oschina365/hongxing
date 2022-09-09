@@ -30,6 +30,7 @@ layui.use(['form','layer','jquery'],function(){
                         dataType: 'json',
                         success: function (d) {
                             if (d.code == 1) {
+                                window.sessionStorage.setItem("lockcms",false);
                                 layer.msg(d.message ? d.message : "登录成功", {
                                     icon: 6,
                                     time: 1500
