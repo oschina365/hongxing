@@ -1,11 +1,9 @@
 package com.oscer.hongxing.dao;
 
 import cn.hutool.core.util.StrUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.oscer.hongxing.bean.*;
-import com.oscer.hongxing.common.ConfigTool;
-import com.oscer.hongxing.common.DateUtil;
-import com.oscer.hongxing.common.FileUtil;
-import com.oscer.hongxing.common.FormatUtil;
+import com.oscer.hongxing.common.*;
 import com.oscer.hongxing.service.QiNiuApi;
 import com.oscer.hongxing.service.QiNiuService;
 import org.apache.commons.lang3.StringUtils;
@@ -57,7 +55,7 @@ public class JsoupTest {
      * attr(attributeKey)获取属性里面的值，参数是属性名称
      */
     public static void main(String[] args) throws Exception {
-        jsoupArticle();
+        jsoupMobileProduct();
     }
 
     /**
@@ -151,12 +149,13 @@ public class JsoupTest {
     }
 
     /**
-     * 恢复产品
+     * 恢复产品-pc
      *
      * @throws IOException
      */
     private static void jsoupProduct() throws IOException {
         String basePath = "D:\\works\\mine\\hongxing\\htdocs\\Products";
+        basePath = "D:\\hhhh";
         List<Path> pathList = Files.walk(Paths.get(basePath))
                 .filter(Files::isRegularFile)
                 .collect(Collectors.toList());
@@ -177,8 +176,19 @@ public class JsoupTest {
                 Elements productNameElement = document.select("h4.corange");// 外层部分区域标签内的数据
                 String productName = productNameElement.text();
                 Product exist = ProductDAO.ME.getByName(productName);
-                if (exist != null) {
-                    System.out.println(productName + " 已存在！");
+                if (exist == null) {
+                    System.out.println(productName + " 不存在！");
+                } else {
+                   /* String src = document.select(".jqzoom>img").attr("src");
+                    String newFileName = QiNiuConstant.BUCKET_HONGING + QiNiuConstant.QINIU_SLASH + "product" + QiNiuConstant.QINIU_SLASH + FileUtil.getFileName(src);
+                    JSONObject result = QiNiuService.uploadFileByte(FormatUtil.getImageFromNetByUrl(src), newFileName);
+                    String banner = "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key");
+                    exist.setBanner(banner);
+                    exist.doUpdate(true);
+                    continue;*/
+                    Elements contentElement = document.select("div.proinfo");// 外层部分区域标签内的数据
+                    exist.setContent(QiNiuService.uploadFromThird(contentElement.toString(), "product"));
+                    exist.doUpdate(true);
                 }
                 System.out.println(productName);
                 Elements aa = document.select("div.plc> a");// 外层部分区域标签内的数据
@@ -186,6 +196,7 @@ public class JsoupTest {
                 Category category = CategoryDAO.ME.getByName(categoryName);
                 if (category == null) {
                     System.out.println("该分类不存在：" + categoryName);
+                    continue;
                 }
                 long categoryId = category == null ? 0L : category.getId();
                 Elements descElement = document.select("div.pd_short");// 外层部分区域标签内的数据
@@ -218,6 +229,54 @@ public class JsoupTest {
                     }
                 }
                 System.out.println(productName + "，保存成功！");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 恢复产品-手机端
+     *
+     * @throws IOException
+     */
+    private static void jsoupMobileProduct() throws IOException {
+        String basePath = "D:\\works\\mine\\hongxing\\htdocs\\Mobile\\MProducts";
+        List<Path> pathList = Files.walk(Paths.get(basePath))
+                .filter(Files::isRegularFile)
+                .collect(Collectors.toList());
+        new QiNiuApi(ConfigTool.getProp("qiniu.access"), ConfigTool.getProp("qiniu.secret"), ConfigTool.getProp("qiniu.bucket"));
+        for (Path path : pathList) {
+            File file = path.toFile();
+            String filePath = file.getPath();
+            try {
+                // 本地html存放路径
+                String file_path = filePath;
+                // 读取html获取文档
+                String html = readHtml(file_path);
+                Document document = Jsoup.parse(html);
+                // 通过select获取元素
+                // 一个页面中的class可能会重复，为避免取多余的数据，
+                // 先取部分区域的数据，然后再从这部分区域数据中取出真正需要的数据
+                // 格式： class用"#"、id用"."、标签用h1  例如：   div.title_area>h1
+                Elements productNameElement = document.select(".u-mtit>h1");// 外层部分区域标签内的数据
+                String productName = productNameElement.text();
+                System.out.println(productName);
+                Product exist = ProductDAO.ME.getByName(productName);
+                if (exist != null) {
+                    Elements contentElement = document.select(".no_ov>div.m-box>img");// banner
+                    String src = contentElement.attr("src");
+                    if (!src.contains("hongxin.com.cn")) {
+                        src = "http://hongxin.com.cn" + src;
+                    }
+                    String newFileName = QiNiuConstant.BUCKET_HONGING + QiNiuConstant.QINIU_SLASH + "product" + QiNiuConstant.QINIU_SLASH + FileUtil.getFileName(src);
+                    JSONObject result = QiNiuService.uploadFileByte(FormatUtil.getImageFromNetByUrl(src), newFileName);
+                    String banner = "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key");
+                    exist.setMobile_banner(banner);
+                    exist.doUpdate(true);
+                    System.out.println(productName + "，保存成功！");
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();

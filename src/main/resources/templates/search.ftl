@@ -80,17 +80,17 @@
             {{# if(item){ }}
             <dl class="HZAL4 news_hover4" style="width: 243px!important;">
                 <dt>
-                    <a href="/article/{{item.id}}" title="{{item.name}}" target="_blank">
+                    <a href="{{item.url}}" title="{{item.name}}" target="_blank">
                         <img src="{{item.banner}}" alt="{{item.name}}" title="{{item.name}}" />
                     </a>
                 </dt>
                 <dd>
                     <h4>
-                        <a href="/article/{{item.id}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
+                        <a href="{{item.url}}" title=" {{item.name}}  " target="_blank"> {{item.name}} </a>
                     </h4>
                     <p>{{item.desc}}</p>
                     <span>
-                        <a href="/article/{{item.id}}" target="_blank" title="查看详情">查看详情 >></a>
+                        <a href="{{item.url}}" target="_blank" title="查看详情">查看详情 >></a>
                     </span>
                 </dd>
             </dl>

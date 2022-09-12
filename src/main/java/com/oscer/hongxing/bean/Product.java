@@ -36,6 +36,7 @@ public class Product extends Entity {
     private long recomm;
     private String create_ip;
     private String update_ip;
+    private String mobile_banner;
 
     @TableField(exist = false)
     private String category_name;
