@@ -11,7 +11,9 @@ import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ItemDAO;
 import com.oscer.hongxing.dao.ProductDAO;
 import com.oscer.hongxing.vo.CategoryVO;
+import com.oscer.hongxing.vo.CategoryXmVO;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -96,13 +98,13 @@ public class AdminArticleController extends AdminBaseController {
     }
 
     /**
-     * 添加产品页面
+     * 添加产品页面-layui
      *
      * @return
      */
-    @PostMapping("/category")
+    @PostMapping("/layui/category")
     @ResponseBody
-    public ApiResult allCategory() {
+    public ApiResult layuiAllCategory() {
         List<Category> categoryList = CategoryDAO.ME.allByType(CategoryContants.Type.ARTICLE.getCode());
         List<CategoryVO> vos = new ArrayList<>();
         for (Category category : categoryList) {
@@ -160,6 +162,19 @@ public class AdminArticleController extends AdminBaseController {
         }
         ArticleDAO.ME.delete(id);
         return ApiResult.success();
+    }
+
+    /**
+     * 添加产品页面-xm-select
+     *
+     * @return
+     */
+    @PostMapping("/xm/category")
+    @ResponseBody
+    public ApiResult xmAllCategory() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("categoryList", CategoryDAO.ME.buildXmCategoryVO(CategoryContants.Type.ARTICLE.getCode()));
+        return ApiResult.successWithObject(result, null);
     }
 
 

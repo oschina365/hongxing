@@ -11,6 +11,7 @@ import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ItemDAO;
 import com.oscer.hongxing.dao.ProductDAO;
 import com.oscer.hongxing.vo.CategoryVO;
+import com.oscer.hongxing.vo.CategoryXmVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -70,7 +71,7 @@ public class AdminProductController extends AdminBaseController {
      */
     @PostMapping("/{id}")
     @ResponseBody
-    public ApiResult category(@PathVariable Long id) {
+    public ApiResult detail(@PathVariable Long id) {
         Product exist = Product.ME.get(id);
         if (exist == null) {
             return ApiResult.fail();
@@ -91,6 +92,57 @@ public class AdminProductController extends AdminBaseController {
         }
         Map<String, Object> result = new HashMap<>();
         result.put("categoryIds", categoryIds);
+        result.put("categoryList", vos);
+        return ApiResult.successWithObject(result, null);
+    }
+
+    /**
+     * 查看产品详情
+     *
+     * @param id
+     * @return
+     */
+    @PostMapping("/xm/{id}")
+    @ResponseBody
+    public ApiResult detailXm(@PathVariable Long id) {
+        Product exist = Product.ME.get(id);
+        if (exist == null) {
+            return ApiResult.fail();
+        }
+        int type = CategoryContants.Type.PRODUCT.getCode();
+        List<Long> categoryIds = ItemDAO.ME.listByItem(id, type);
+        List<Category> categoryList = CategoryDAO.ME.listByType(type);
+        List<CategoryXmVO> vos = new ArrayList<>();
+        for (Category category : categoryList) {
+            CategoryXmVO vo = new CategoryXmVO();
+            vo.setName(category.getName());
+            List<Category> childs = category.getChilds();
+            if (CollectionUtil.isEmpty(childs)) {
+                vo.setDisabled(true);
+            } else {
+                vo.setDisabled(false);
+            }
+            vo.setValue(category.getId());
+            if (CollectionUtil.isNotEmpty(childs)) {
+                List<CategoryXmVO.ChildrenBean> childrens = new ArrayList<>();
+                boolean selected = false;
+                for (Category child : childs) {
+                    CategoryXmVO.ChildrenBean bean = new CategoryXmVO.ChildrenBean();
+                    bean.setName(child.getName());
+                    bean.setDisabled(false);
+                    bean.setSelected(false);
+                    if (categoryIds.contains(child.getId())) {
+                        bean.setSelected(true);
+                        selected = true;
+                    }
+                    bean.setValue(child.getId());
+                    childrens.add(bean);
+                }
+                vo.setChildren(childrens);
+            }
+            vos.add(vo);
+        }
+        Map<String, Object> result = new HashMap<>();
         result.put("categoryList", vos);
         return ApiResult.successWithObject(result, null);
     }
@@ -160,6 +212,19 @@ public class AdminProductController extends AdminBaseController {
         }
         ProductDAO.ME.delete(id);
         return ApiResult.success();
+    }
+
+    /**
+     * 添加产品页面-xm-select
+     *
+     * @return
+     */
+    @PostMapping("/xm/category")
+    @ResponseBody
+    public ApiResult xmAllCategory() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("categoryList", CategoryDAO.ME.buildXmCategoryVO(CategoryContants.Type.PRODUCT.getCode()));
+        return ApiResult.successWithObject(result, null);
     }
 
 }

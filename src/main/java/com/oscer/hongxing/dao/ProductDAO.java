@@ -63,7 +63,7 @@ public class ProductDAO extends CommonDao<Product> {
         if (StrUtil.isNotBlank(name)) {
             sb.append(" and a.name like '%" + name + "%'");
         }
-        sb.append(" order by a.sort desc");
+        sb.append(" GROUP BY a.id order by a.sort desc");
         List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
         if (CollectionUtil.isEmpty(ids)) {
             return null;
@@ -72,12 +72,20 @@ public class ProductDAO extends CommonDao<Product> {
         if (CollectionUtil.isEmpty(list)) {
             return null;
         }
+
         for (Product product : list) {
-            Category category = Category.ME.get(product.getCategoryId());
-            if (category == null) {
-                continue;
+            List<Long> categoryIds = ItemDAO.ME.listByItem(product.getId(), CategoryContants.Type.PRODUCT.getCode());
+            List<String> categoryNames = new ArrayList<>();
+            if (CollectionUtil.isNotEmpty(categoryIds)) {
+                for (Long id : categoryIds) {
+                    Category category = Category.ME.get(id);
+                    if (category == null) {
+                        continue;
+                    }
+                    categoryNames.add(category.getName());
+                }
             }
-            product.setCategory_name(category.getName());
+            product.setAll_category_name(StringUtils.join(categoryNames, ","));
         }
         return list;
     }
@@ -90,6 +98,7 @@ public class ProductDAO extends CommonDao<Product> {
         if (StrUtil.isNotBlank(name)) {
             sb.append(" and a.name like '%" + name + "%'");
         }
+        sb.append(" GROUP BY a.id");
         return getDbQuery().read(Long.class, sb.toString());
     }
 

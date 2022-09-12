@@ -26,7 +26,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                 }
             },
             {field: 'name', title: '产品名称', width: 200},
-            {field: 'category_name', title: '所属分类', align: 'center'},
+            {field: 'all_category_name', title: '所属分类', align: 'center'},
             {
                 field: 'top', title: '是否置顶', align: 'center', templet: function (d) {
                     return '<input type="checkbox" name="newsTop" lay-filter="productTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'

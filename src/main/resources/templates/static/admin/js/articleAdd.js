@@ -8,6 +8,109 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
         transfer = layui.transfer,
         $ = layui.jquery;
 
+    layui.form.render();
+
+    ['showFolderIcon', 'showLine', 'strict', 'simple'].forEach(function(key){
+        layui.form.on('checkbox('+key+')', function(data){
+            var treeConfig = {};
+            treeConfig[key] = data.elem.checked;
+            demo1.update({
+                tree: treeConfig
+            })
+        });
+    })
+
+//控制显示父节点的图标
+    layui.form.on('checkbox(hidden)', function(data){
+        demo1.update({
+            iconfont: {
+                parent: data.elem.checked ? 'hidden' : '',
+            }
+        })
+    });
+
+//自定义图标
+    layui.form.on('checkbox(custom)', function(data){
+        let iconfont = data.elem.checked ? {
+            select: 'layui-icon layui-icon-chart',
+            unselect: 'layui-icon-ok-circle',
+            half: 'layui-icon layui-icon-table',
+            parent: 'layui-icon layui-icon-survey',
+        } : {
+            select: '',
+            unselect: '',
+            half: '',
+            parent: '',
+        }
+        demo1.update({
+            iconfont: iconfont
+        })
+        layui.form.render();
+    });
+
+//展开所有节点
+    layui.form.on('checkbox(all)', function(data){
+        if(data.elem.checked){
+            demo1.changeExpandedKeys(true)
+        }
+    });
+
+//闭合所有节点
+    layui.form.on('checkbox(close)', function(data){
+        if(data.elem.checked){
+            demo1.changeExpandedKeys(false)
+        }
+    });
+
+//展开指定节点
+    layui.form.on('checkbox(key3)', function(data){
+        if(data.elem.checked){
+            demo1.changeExpandedKeys([ -3 ])
+        }
+    });
+
+    layui.form.on('checkbox(clickExpand)', function(data){
+        demo1.update({
+            tree: {
+                clickExpand: data.elem.checked
+            }
+        })
+    });
+
+    layui.form.on('checkbox(clickCheck)', function(data){
+        demo1.update({
+            tree: {
+                clickCheck: data.elem.checked
+            }
+        })
+    });
+
+    var demo1 = xmSelect.render({
+        el: '#demo1',
+        autoRow: true,
+        filterable: true,
+        /*tree: {
+            show: true,
+            showFolderIcon: true,
+            showLine: true,
+            indent: 20,
+            expandedKeys: [ -3 ],
+        },*/
+        cascader:{
+            show: true,
+            indent : 150
+        },
+        toolbar: {
+            show: true,
+            list: ['ALL', 'REVERSE', 'CLEAR']
+        },
+        filterable: true,
+        paging: true,
+        pageSize: 1,
+        height: 'auto',
+        data: []
+    })
+
     var articleId = $("#articleId").val();
     init();
     var categoryList;
@@ -15,7 +118,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
 
     async function init() {
         $.ajax({
-            url: '/admin/article/category',
+            url: '/admin/article/xm/category',
             method: 'post',
             dataType: 'json',
             success: function (data) {
@@ -23,7 +126,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
                 if (data && data.code == 1) {
                     categoryList = data.result.categoryList;
                     //初始右侧数据
-                    transfer.render({
+                   /* transfer.render({
                         elem: '#test3'
                         , data: categoryList
                         , value: []
@@ -40,7 +143,11 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
                                 selectCategoryIds.push($(li)[0].firstChild.value)
                             }
                         }
+                    })*/
+                    demo1.update({
+                        data: categoryList
                     })
+
                 }
             }
         });
@@ -96,7 +203,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
         console.log(data);
         //截取文章内容中的一部分文字放入文章摘要
         //弹出loading
-        if (selectCategoryIds.length == 0) {
+        /*if (selectCategoryIds.length == 0) {
             var choose = $(".layui-transfer-box")[1];
             var lis = $(choose).find("ul>li");
             selectCategoryIds = [];
@@ -112,7 +219,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload', 'transfer'], functio
         }
         if (selectCategoryIds.length > 5) {
             layer.alert('最多关联5个分类');
-        }
+        }*/
         $.post("/admin/article/edit", {
             name: $(".articleName").val(),  //文章标题
             desc: $(".articleDesc").val(),  //文章摘要

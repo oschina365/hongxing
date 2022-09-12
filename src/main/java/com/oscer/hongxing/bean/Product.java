@@ -40,6 +40,8 @@ public class Product extends Entity {
     @TableField(exist = false)
     private String category_name;
     @TableField(exist = false)
+    private String all_category_name;
+    @TableField(exist = false)
     private List<String> imgUrls;
     @TableField(exist = false)
     private transient List<Long> selectCategoryIds;

@@ -4,8 +4,8 @@ package com.oscer.hongxing.dao;
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import com.oscer.hongxing.bean.Category;
-import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.db.CacheMgr;
+import com.oscer.hongxing.vo.CategoryXmVO;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -195,6 +195,36 @@ public class CategoryDAO extends CommonDao<Category> {
             sb.append(" and name like '%" + name + "%'");
         }
         return getDbQuery().read(long.class, sb.toString(), type);
+    }
+
+    public List<CategoryXmVO> buildXmCategoryVO(int type){
+        List<Category> categoryList = CategoryDAO.ME.listByType(type);
+        List<CategoryXmVO> vos = new ArrayList<>();
+        for (Category category : categoryList) {
+            CategoryXmVO vo = new CategoryXmVO();
+            vo.setName(category.getName());
+            List<Category> childs = category.getChilds();
+            if (CollectionUtil.isEmpty(childs)) {
+                vo.setDisabled(true);
+            } else {
+                vo.setDisabled(false);
+            }
+            vo.setValue(category.getId());
+            if (CollectionUtil.isNotEmpty(childs)) {
+                List<CategoryXmVO.ChildrenBean> childrens = new ArrayList<>();
+                for (Category child : childs) {
+                    CategoryXmVO.ChildrenBean bean = new CategoryXmVO.ChildrenBean();
+                    bean.setName(child.getName());
+                    bean.setDisabled(false);
+                    bean.setSelected(false);
+                    bean.setValue(child.getId());
+                    childrens.add(bean);
+                }
+                vo.setChildren(childrens);
+            }
+            vos.add(vo);
+        }
+        return vos;
     }
 
 }

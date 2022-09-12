@@ -97,7 +97,9 @@
                         </#if>
                     </div>
                     <div class="news_con News_4 News_4_12">
+                        <#if currentCategory??>
                         <input type="hidden" id="currentCategoryId" value="${currentCategory.id!''}"/>
+                        </#if>
                         <div id="successProductListDiv"></div>
                         <div class="clear"></div>
                         <div id="successProductPage">
