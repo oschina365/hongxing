@@ -15,7 +15,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         page: true,
         height: "full-125",
         limit: 20,
-        limits: [10, 15, 20, 25],
+        limits: [10, 20, 50,100],
         id: "productListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},

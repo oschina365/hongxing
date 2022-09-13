@@ -1,0 +1,206 @@
+<link rel="stylesheet" href="layui/css/layui.css">
+<style>
+	.h4_2rem {
+		font-size:2rem;
+	}
+	.width_10percent {
+		width:10%;
+	}
+	.width_15percent {
+		width:15%;
+	}
+	.width_20percent {
+		width:20%;
+	}
+	.width_30percent {
+		width:30%;
+	}
+	.width_90percent {
+		width:90%;
+	}
+	.width_100percent {
+		width:100%;
+	}
+	.panel .width_35percent {
+		width:35%;
+	}
+	.panel .width_50percent {
+		width:50%;
+	}
+	.panel .width_70percent {
+		width:70%;
+	}
+	.panel .width_90percent {
+		width:90%;
+	}
+	.panel .width_100percent {
+		width:100%;
+	}
+	.panel .width_95px {
+		width:95px;
+	}
+	.star {
+		color: red;
+	}
+
+	/* todo 额外样式 */
+	/* todo 课程封面 */
+	.image-container img {
+		cursor: pointer;
+		height:100px;
+		width:100px;
+		line-height: 100px;
+		text-align: center;
+	}
+	.layui-upload-list {
+		margin-top:0;
+	}
+</style>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<form class="layui-form layui-form-pane" onsubmit="return false">
+			<h4 class="h4_2rem"></h4>
+			<hr />
+			<div class="layui-form-item"><button class="btn btn-default" id="add-firstPart-button"><i class="glyphicon glyphicon-plus"></i>新增</button></div>
+			{{-- 标题、内容 --}}
+			<div class="outer-container">
+				<div class="layui-form-item inner-container">
+					<div class="layui-inline width_10percent">
+						<label class="layui-form-label" title="icon">icon</label>
+						<div class="layui-input-inline width_70percent">
+							<input type="hidden" name="icon_img" lay-verify="" />
+							<div class="layui-upload-list image-container icon-image-container" >
+								<img src="static/images/default_upload_bg_img.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<script src="layui/layui.all.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+	layui.use(['form','upload','layer'], function(){
+		var form = layui.form
+				,layer = layui.layer
+				,upload = layui.upload;
+
+		{{-- todo 增加上传内容 --}}
+		let firstPartNumber = 1;
+		$('#add-firstPart-button').on('click',function () {
+			addDom($(this),firstPartNumber);
+			let newDomName = 'icon-image-container'+'-'+firstPartNumber;
+			{{-- 新增DOM --}}
+			let newDom = $(this).parent('.layui-form-item').next('.outer-container').find('.inner-container').last(0);
+			newDom.find('.image-container').addClass(newDomName)
+			iconImageUploadInit('.'+newDomName)
+			{{-- 清空图片链接 --}}
+			newDom.find('img').attr('src','static/images/default_upload_bg_img.png')
+			firstPartNumber++;
+		});
+
+		{{-- todo 实例化icon上传组件 --}}
+		function iconImageUploadInit(dom = '.icon-image-container')
+		{
+			return uploadInit(upload,dom,{prefix:'offline-icon-img-courses'},
+					{{-- 预读本地文件 --}}
+			function(obj){
+				let imgContainer = this.item;
+				obj.preview(function(index, file, result){
+					imgContainer.find('img').attr('src',result).attr('alt',file.name)
+				});
+			},
+			{{-- 上传完成回调 --}}
+			function(res) {
+				if (res.code == 0) {
+					let imgContainer = this.item.prev('input[name=icon_img]');
+					imgContainer.val(res.data);
+				} else {
+					this.error(index, upload);
+					layer.msg(res.msg);
+				}
+			},
+			{{-- 上传异常回调 --}}
+			function(index, upload) {
+				this.item.find('img').attr('src','static/images/default_upload_bg_img.png')
+				this.item.prev('input[name=icon_img]').val('');
+			},
+			'jpg|png',500);
+		}
+		{{-- todo 初始化icon上传组件 --}}
+		iconImageUploadInit();
+
+
+		{{-- todo 删除内容 --}}
+		$('.outer-container').on('click','.del-container',function () {
+			delDom($(this));
+		});
+
+		{{-- todo 统一增加DOM方法 --}}
+		function addDom(buttonDom,number)
+		{
+			let outContainerDom = buttonDom.parent('.layui-form-item').next('.outer-container');
+			let innerContainerDom = outContainerDom.find('.inner-container');
+			let html = '<div class="layui-form-item inner-container" data-id="'+number+'">';
+			html += innerContainerDom.html();
+			{{-- 删除按钮 --}}
+			html += '<div class="layui-inline width_10percent">';
+			html += '<div class="layui-input-inline width_70percent">';
+			html += '<button class="btn btn-danger del-container">删除</button>';
+			html += '</div>';
+			html += '</div>';
+			html += '</div>';
+			outContainerDom.find('.inner-container').last(0).after(html);
+			form.render();
+			{{-- 清空表单 --}}
+			outContainerDom.find('.inner-container').last(0).find('input').val('');
+			outContainerDom.find('.inner-container').last(0).find('select').val('');
+			outContainerDom.find('.inner-container').last(0).find('textarea').val('');
+		}
+
+		{{-- todo 统一删除DOM方法 --}}
+		function delDom(buttonDom)
+		{
+			layer.confirm('请确定是否继续操作',function () {
+				buttonDom.parents('.inner-container').remove();
+				layer.closeAll('dialog');
+			});
+		}
+
+		/**
+		 * todo 上传图片
+		 * @param upload layui的upload实例
+		 * @param bindDomName 绑定DOM,点击拉起选择图片框
+		 * @param data 上传接口的额外参数
+		 * @param beforeFunction 文件提交上传前的回调
+		 * @param doneFunction 执行上传请求后的回调
+		 * @param errorFunction 执行上传请求出现异常的回调
+		 * @param exts 允许上传的文件后缀
+		 * @param size 允许上传大小(kb)
+		 * @param bindButtonDom auto=false时的触发上传请求DOM
+		 * @param number 上传图片数量
+		 * @returns {*}
+		 */
+		function uploadInit(upload,bindDomName = '',data = {},beforeFunction = function(obj) {},doneFunction = function(res) {},
+							errorFunction = function(){},exts = '',size = 0,bindButtonDom = '',number = 1)
+		{
+			return upload.render({
+				elem: bindDomName
+				,url: '/admin/upload/image'
+				,exts: exts
+				,size: size
+				,headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+				,multiple: true
+				,number: number
+				,auto: !bindButtonDom
+				,bindAction: bindButtonDom
+				,data: data
+				,before: beforeFunction
+				,done: doneFunction
+				,error: errorFunction
+			});
+		}
+	});
+</script>

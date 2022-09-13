@@ -12,6 +12,7 @@ import com.oscer.hongxing.dao.ItemDAO;
 import com.oscer.hongxing.dao.ProductDAO;
 import com.oscer.hongxing.vo.CategoryVO;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -135,22 +136,23 @@ public class AdminCategoryController extends AdminBaseController {
     /**
      * 产品列表分页查询
      *
-     * @param product
+     * @param category
      * @return
      */
     @PostMapping("/edit")
     @ResponseBody
-    public ApiResult edit(Product product) {
-        if (product == null) {
+    public ApiResult edit(Category category) {
+        if (category == null) {
             return ApiResult.fail();
         }
-        if (CollectionUtil.isEmpty(product.getSelectCategoryIds())) {
-            return ApiResult.failWithMessage("请选择产品分类");
+        if (StringUtils.isBlank(category.getName())) {
+            return ApiResult.failWithMessage("请填写产品分类名称");
         }
-        if (product.getSelectCategoryIds().size() > 5) {
-            return ApiResult.failWithMessage("最多关联5个产品分类");
+        Category exist = CategoryDAO.ME.getByName(category.getName());
+        if (exist != null && !exist.getId().equals(category.getId())) {
+            return ApiResult.failWithMessage("改分类名称已经存在");
         }
-        ProductDAO.ME.edit(product);
+        category.doUpdate(true);
         return ApiResult.success();
     }
 
