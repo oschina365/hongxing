@@ -122,7 +122,7 @@
                             <div class="r-c pro_tab tabCat otherProductChildTabCat otherProductChild_${otherChild_index}" <#if otherChild_index==0>style="display: block;"<#else >style="display: none;"</#if>>
                                 <#list otherChild.products as otherChildProduct>
                                     <dl style="${otherChildProduct_index}" <#if (otherChildProduct_index+1)%3 ==0>class="none" </#if>>
-                                        <dt><a href="/product/${otherChildProduct.id}"><img src="${otherChildProduct.banner}" alt=""/></a></dt>
+                                        <dt><a href="/product/${otherChildProduct.id}"><img src="${otherChildProduct.banner!''}" alt=""/></a></dt>
                                         <dd>
                                             <a href="/product/${otherChildProduct.id}"><b>${otherChildProduct.name}</b></a>
                                             <#if otherChildProduct.size??><p><span>产品尺寸：${otherChildProduct.size}</span></p></#if>

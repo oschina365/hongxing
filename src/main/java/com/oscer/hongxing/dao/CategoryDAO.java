@@ -27,6 +27,16 @@ public class CategoryDAO extends CommonDao<Category> {
     }
 
     /**
+     * 根据父类id 查询分类列表
+     *
+     * @return {@link List}
+     */
+    public List<Category> parentList(int type) {
+        setSql("select id from " + table() + " where type=? and parent_id=0");
+        return Category.ME.loadList(getDbQuery().query(long.class, getSql(), type));
+    }
+
+    /**
      * 通过分类的ident查询一条数据
      *
      * @param ident 分类ident
@@ -197,7 +207,7 @@ public class CategoryDAO extends CommonDao<Category> {
         return getDbQuery().read(long.class, sb.toString(), type);
     }
 
-    public List<CategoryXmVO> buildXmCategoryVO(int type){
+    public List<CategoryXmVO> buildXmCategoryVO(int type) {
         List<Category> categoryList = CategoryDAO.ME.listByType(type);
         List<CategoryXmVO> vos = new ArrayList<>();
         for (Category category : categoryList) {

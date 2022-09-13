@@ -116,8 +116,8 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
             for (let i in data) {
                 newsId.push(data[i].newsId);
             }
-            layer.confirm('确定删除选中的文章？', {icon: 3, title: '提示信息'}, function (index) {
-                // $.get("删除文章接口",{
+            layer.confirm('确定删除选中的分类？', {icon: 3, title: '提示信息'}, function (index) {
+                // $.get("删除分类接口",{
                 //     newsId : newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                 tableIns.reload();
@@ -125,7 +125,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                 // })
             })
         } else {
-            layer.msg("请选择需要删除的文章");
+            layer.msg("请选择需要删除的分类");
         }
     })
 
@@ -137,9 +137,9 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         if (layEvent === 'edit') { //编辑
             edit(data);
         } else if (layEvent === 'del') { //删除
-            layer.confirm('确定删除此文章？', {icon: 3, title: '提示信息'}, function (index) {
+            layer.confirm('确定删除此分类？', {icon: 3, title: '提示信息'}, function (index) {
                 console.log(data.id);
-                // $.get("删除文章接口",{
+                // $.get("删除分类接口",{
                 //     newsId : data.newsId  //将需要删除的newsId作为参数传入
                 // },function(data){
                 tableIns.reload();
@@ -147,7 +147,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                 // })
             });
         } else if (layEvent === 'look') { //预览
-            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行文章内容页面访问")
+            layer.alert("此功能需要前台展示，实际开发中传入对应的必要参数进行分类内容页面访问")
         }
     });
 

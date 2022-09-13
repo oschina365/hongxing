@@ -13,73 +13,46 @@
 	<link rel="stylesheet" href="../../../static/admin/css/public.css" media="all" />
 </head>
 <body class="childrenBody">
-<form class="layui-form layui-row layui-col-space10">
-	<input type="hidden" id = "productId" value="${product.id}"/>
-	<div class="layui-col-md8 layui-col-xs12">
-		<div class="layui-row layui-col-space10">
-			<div class="layui-col-md9 layui-col-xs7">
-				<div class="layui-form-item magt3">
-					<label class="layui-form-label">产品名称</label>
-					<div class="layui-input-block">
-						<input type="text" class="layui-input productName" lay-verify="productName" placeholder="请输入产品名称" value="${product.name!''}">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">产品摘要</label>
-					<div class="layui-input-block">
-						<textarea placeholder="请输入产品摘要" class="layui-textarea productDesc">${product.desc!''}</textarea>
-					</div>
-				</div>
-			</div>
-			<div class="layui-col-md3 layui-col-xs5">
-				<div class="layui-upload-list thumbBox mag0 magt3">
-					<img class="layui-upload-img thumbImg" src="${product.banner!''}">
-				</div>
-			</div>
-		</div>
-		<div class="layui-form-item magb0">
-			<label class="layui-form-label">产品内容</label>
-			<div class="layui-input-block">
-				<textarea class="layui-textarea layui-hide product_content" id="product_content" name="content" lay-verify="content" id="product_content">${product.content!''}</textarea>
-			</div>
-		</div>
-	</div>
-	<div class="layui-col-md4 layui-col-xs12">
-		<blockquote class="layui-elem-quote title"><i class="seraph icon-caidan"></i> 选择产品分类</blockquote>
-		<div class="border category">
-			<div class="">
 
-			</div>
-			<div id="test3" class="demo-transfer"></div>
-		</div>
-		<blockquote class="layui-elem-quote title magt10"><i class="layui-icon">&#xe609;</i> 发布</blockquote>
-		<div class="border">
-			<div class="layui-form-item productTop">
-				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 置　顶</label>
-				<div class="layui-input-block">
-					<input type="checkbox" name="productTop" lay-skin="switch" lay-text="是|否">
-				</div>
-			</div>
-			<div class="layui-form-item productTop">
-				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 推 荐</label>
-				<div class="layui-input-block">
-					<input type="checkbox" name="productCream" lay-skin="switch" lay-text="是|否">
-				</div>
-			</div>
-			<div class="layui-form-item productTop">
-				<label class="layui-form-label"><i class="seraph icon-zhiding"></i> 精　华</label>
-				<div class="layui-input-block">
-					<input type="checkbox" name="productRecomm" lay-skin="switch" lay-text="是|否">
-				</div>
-			</div>
-			<hr class="layui-bg-gray" />
-			<div class="layui-right">
-				<a class="layui-btn layui-btn-sm" lay-filter="addProduct" lay-submit><i class="layui-icon">&#xe609;</i>发布</a>
+	<form class="layui-form" action="">
+		<input type="hidden" id="id" value="${category.id}"/>
+		<div class="layui-form-item">
+			<label class="layui-form-label">分类名称</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入分类名称" class="layui-input" value="${category.name}">
 			</div>
 		</div>
-	</div>
-</form>
+		<div class="layui-form-item layui-form-text">
+			<label class="layui-form-label">分类描述</label>
+			<div class="layui-input-block">
+				<textarea placeholder="请输入分类描述，非必填" class="layui-textarea">${category.desc!''}</textarea>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">父级分类</label>
+			<div class="layui-input-block">
+				<select name="interest" lay-filter="aihao">
+					<option value="0">无</option>
+					<#if categorys??>
+						<#list categorys as item>
+							<#if item?? && item.id gt 0>
+								<option value="${item.id}" <#if item.id==category.parent_id> selected</#if>>${item.name}</option>
+							</#if>
+						</#list>
+					</#if>
+				</select>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</div>
+	</form>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="../../../static/admin/js/productEdit.js"></script>
+<script type="text/javascript" src="../../../static/admin/js/productCategoryEdit.js"></script>
 </body>
 </html>

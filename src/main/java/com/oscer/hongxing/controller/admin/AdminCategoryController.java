@@ -2,6 +2,7 @@ package com.oscer.hongxing.controller.admin;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Category;
+import com.oscer.hongxing.bean.Entity;
 import com.oscer.hongxing.bean.Product;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
@@ -66,9 +67,10 @@ public class AdminCategoryController extends AdminBaseController {
      */
     @GetMapping("/{id}")
     public String edit(@PathVariable Long id) {
-        request.setAttribute("product", Product.ME.get(id));
-        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
-        return ADMIN_BASE_PAGE + "product/edit";
+        Category category = Category.ME.get(id);
+        request.setAttribute("category", Category.ME.get(id));
+        request.setAttribute("categorys", CategoryDAO.ME.parentList(category.getType()));
+        return ADMIN_BASE_PAGE + "product_category/edit";
     }
 
     /**

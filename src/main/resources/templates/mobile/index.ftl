@@ -114,7 +114,7 @@
                                                         <#if otherChildProduct_index<6>
                                                             <li>
                                                                 <a href="/product/${otherChildProduct.id}" title="${otherChildProduct.name}">
-                                                                    <img style="max-height: 94px;" src="${otherChildProduct.banner}" data-src="${otherChildProduct.banner}" alt="${otherChild.name}" class="loaded">
+                                                                    <img style="max-height: 94px;" src="${otherChildProduct.banner!''}" data-src="${otherChildProduct.banner!''}" alt="${otherChild.name}" class="loaded">
                                                                 </a>
                                                                 <span>
                                                                 <a href="/product/${otherChildProduct.id}" title="${otherChildProduct.name}">

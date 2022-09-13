@@ -74,6 +74,9 @@ public class ProductDAO extends CommonDao<Product> {
         }
 
         for (Product product : list) {
+            if (product == null) {
+                continue;
+            }
             List<Long> categoryIds = ItemDAO.ME.listByItem(product.getId(), CategoryContants.Type.PRODUCT.getCode());
             List<String> categoryNames = new ArrayList<>();
             if (CollectionUtil.isNotEmpty(categoryIds)) {
@@ -98,7 +101,6 @@ public class ProductDAO extends CommonDao<Product> {
         if (StrUtil.isNotBlank(name)) {
             sb.append(" and a.name like '%" + name + "%'");
         }
-        sb.append(" GROUP BY a.id");
         return getDbQuery().read(Long.class, sb.toString());
     }
 
