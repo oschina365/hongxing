@@ -47,7 +47,7 @@ public class Category extends Entity implements Serializable {
     /**
      * 分类排序（值越大越靠前）
      */
-    private int sort;
+    private Integer sort;
     /**
      * 分类标识
      */
@@ -79,7 +79,7 @@ public class Category extends Entity implements Serializable {
     /**
      * 是否置顶（0=否 1=是）
      */
-    private int top;
+    private Integer top;
     /**
      * 创建ip
      */
@@ -91,7 +91,7 @@ public class Category extends Entity implements Serializable {
     /**
      * 分类类型（1=产品分类 2=案例分类 3=公司管理）
      */
-    private int type;
+    private Integer type;
 
     /**
      * 子类集合
