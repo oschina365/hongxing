@@ -119,7 +119,7 @@ css_=["/skins/default/style.css"] >
             <#if parentCategory?? && parentCategory.id gt 0>
                 &raquo; <a href="/${parentCategory.id}" title="${parentCategory.name}">${parentCategory.name}</a>
             </#if>
-            &raquo; <a href="/product/category/${product.category_id}" title="${product.category_name}">${product.category_name}</a>
+            &raquo; <a href="/product/category/${product.categoryId}" title="${product.category_name}">${product.category_name}</a>
             &raquo; <a href="/product/${product.id}" title="${product.name}">${product.name}</a>
         </div>
         <div class="rightbot"></div>

@@ -1,11 +1,11 @@
 package com.oscer.hongxing.dao;
 
 
-import com.oscer.hongxing.bean.Article;
-import com.oscer.hongxing.bean.Entity;
-import com.oscer.hongxing.bean.Item;
-import com.oscer.hongxing.bean.Product;
+import cn.hutool.core.collection.CollectionUtil;
+import com.oscer.hongxing.bean.*;
 import com.oscer.hongxing.common.CategoryContants;
+import com.oscer.hongxing.common.FormatUtil;
+import org.jsoup.select.Elements;
 
 import java.util.List;
 
@@ -37,15 +37,56 @@ public class ItemDAO extends CommonDao<Item> {
         return getDbQuery().update(getSql(), itemId, type) > 0;
     }
 
-   /* public static void main(String[] args) {
+    public static void main(String[] args) {
         List<Product> list = (List<Product>) Product.ME.list(false);
         for (Product product : list) {
+            Elements images = FormatUtil.getImages(product.getContent());
+            if (images != null) {
+                for (int i = 0; i < images.size(); i++) {
+                    String imageUrl = images.get(i).attr("src");
+                    ProductImage productImage = new ProductImage();
+                    productImage.setProduct_id(product.getId());
+                    productImage.setImage(imageUrl);
+                    productImage.setSort(System.currentTimeMillis());
+                    productImage.setCreate_ip(product.getCreate_ip());
+                    productImage.save();
+                }
+            }
+        }
+        /*List<Product> list = ProductDAO.ME.productList();
+        for (Product product : list) {
+            Product product1 = ProductDAO.ME.getByName(product.getName());
+            if(product1==null){
+                product.save();
+            }
+        }*/
+        /*List<Product> list = (List<Product>) Product.ME.list(false);
+        for (Product product : list) {
+            List<Long> categoryIds = ProductDAO.ME.categoryIds(product.getName());
+            if (CollectionUtil.isEmpty(categoryIds)) {
+                System.out.println("分类ID为空！！！！，" + product.getName());
+                continue;
+            }
+            for (Long categoryId : categoryIds) {
+                try {
+                    Item item = new Item();
+                    item.setItem_id(product.getId());
+                    item.setCategory_id(categoryId);
+                    item.setItem_type(CategoryContants.Type.PRODUCT.getCode());
+                    item.save(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }*/
+        /*for (Product product : list) {
             Item item = new Item();
             item.setItem_id(product.getId());
             item.setCategory_id(product.getCategory_id());
             item.setItem_type(CategoryContants.Type.PRODUCT.getCode());
             item.save(false);
         }
+        */
         List<Article> list1 = (List<Article>) Article.ME.list(false);
         for (Article article : list1) {
             Item item = new Item();
@@ -54,6 +95,6 @@ public class ItemDAO extends CommonDao<Item> {
             item.setItem_type(CategoryContants.Type.ARTICLE.getCode());
             item.save(false);
         }
-    }*/
+    }
 
 }

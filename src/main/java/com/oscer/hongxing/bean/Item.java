@@ -16,7 +16,7 @@ public class Item extends Entity {
 
     @Override
     public String tableName() {
-        return "items";
+        return "item";
     }
 
     private Long category_id;

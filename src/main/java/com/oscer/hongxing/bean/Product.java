@@ -18,11 +18,10 @@ public class Product extends Entity {
 
     @Override
     public String tableName() {
-        return "product";
+        return "productq";
     }
 
     private String name;
-    private Long category_id;
     private String banner;
     private String link;
     private String tags;

@@ -31,24 +31,24 @@ public class ProductDAO extends CommonDao<Product> {
 
 
     private String preSql() {
-        return "select a.id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=1 ";
+        return "select a.id from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=1 ";
     }
 
     private String preCountSql() {
-        return "select count(a.id) from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=1 ";
+        return "select count(a.id) from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=1 ";
     }
 
     private String preSqlA() {
-        return "select a.*,s.category_id as category_id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=2 ";
+        return "select a.*,s.category_id as categoryId from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=1 ";
     }
 
     public Product get(long id) {
         setSql(preSqlA() + " where s.item_id=?");
-        Product product = getDbQuery().read_cache(Product.class, false, getCache_region(), "signal_" + id, getSql(), id);
+        Product product = getDbQuery().read_cache(Product.class, false, getCache_region(), "" + id, getSql(), id);
         if (product == null) {
             return null;
         }
-        Category category = Category.ME.get(product.getCategory_id());
+        Category category = Category.ME.get(product.getCategoryId());
         if (category != null) {
             product.setCategory_name(category.getName());
         }
@@ -235,5 +235,15 @@ public class ProductDAO extends CommonDao<Product> {
             return false;
         }
         return true;
+    }
+
+    public List<Product> productList() {
+        String sql = "select * from product order by  sort asc";
+        return getDbQuery().query(Product.class, sql);
+    }
+
+    public List<Long> categoryIds(String name) {
+        String sql = "select category_id from product where name=?";
+        return getDbQuery().query(Long.class, sql, name);
     }
 }

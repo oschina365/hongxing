@@ -207,7 +207,6 @@ public class JsoupTest {
                 }
                 Product product = new Product();
                 product.setName(productName);
-                product.setCategory_id(categoryId);
                 product.setSort(System.currentTimeMillis());
                 product.setDesc(desc);
                 product.setContent(QiNiuService.uploadFromThird(contentElement.toString(), "product"));

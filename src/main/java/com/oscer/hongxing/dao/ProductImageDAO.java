@@ -1,7 +1,6 @@
 package com.oscer.hongxing.dao;
 
 
-import com.oscer.hongxing.bean.Photo;
 import com.oscer.hongxing.bean.ProductImage;
 
 import java.util.List;
@@ -21,8 +20,12 @@ public class ProductImageDAO extends CommonDao<ProductImage> {
         return "mysql";
     }
 
+    public String table() {
+        return ProductImage.ME.rawTableName();
+    }
+
     public List<ProductImage> listByProductId(Long productId) {
-        setSql("select id from " + ProductImage.ME.rawTableName() + " where product_id=?");
+        setSql("select id from " + table() + " where product_id=?");
         return ProductImage.ME.loadList(getDbQuery().query(Long.class, getSql(), productId));
     }
 

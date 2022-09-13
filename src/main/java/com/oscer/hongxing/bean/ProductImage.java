@@ -15,6 +15,12 @@ import java.util.List;
 public class ProductImage extends Entity {
 
     public static final ProductImage ME = new ProductImage();
+
+    @Override
+    public String tableName() {
+        return "product_image";
+    }
+
     private Long product_id;
     private String image;
     private long sort;

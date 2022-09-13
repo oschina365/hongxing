@@ -29,15 +29,15 @@ public class ArticleDAO extends CommonDao<Article> {
     }
 
     private String preSql() {
-        return "select a.id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=2 ";
+        return "select a.id from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=2 ";
     }
 
     private String preSqlA() {
-        return "select a.*,s.category_id as category_id from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=2 ";
+        return "select a.*,s.category_id as category_id from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=2 ";
     }
 
     private String preCountSql() {
-        return "select count(a.id) from " + table() + " a LEFT JOIN items s on a.id=s.item_id and s.item_type=2 ";
+        return "select count(a.id) from " + table() + " a LEFT JOIN " + Item.ME.rawTableName() + " s on a.id=s.item_id and s.item_type=2 ";
     }
 
     public Article get(long id) {

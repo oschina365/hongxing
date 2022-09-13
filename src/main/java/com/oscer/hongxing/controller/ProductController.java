@@ -50,8 +50,8 @@ public class ProductController extends BaseController {
         String ua = request.getHeader("User-Agent");
         boolean check = CheckMobile.check(ua);
         request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
-        Product product = Product.ME.get(id);
-        Category category = Category.ME.get(product.getCategory_id());
+        Product product = ProductDAO.ME.get(id);
+        Category category = Category.ME.get(product.getCategoryId());
         if (category != null) {
             Category parentCategory = Category.ME.get(category.getParent_id());
             if (parentCategory != null) {

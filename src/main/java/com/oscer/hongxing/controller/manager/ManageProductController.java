@@ -91,7 +91,7 @@ public class ManageProductController extends ManagerBaseController {
         List<Product> list = (List<Product>) Product.ME.list(true);
         if (CollectionUtil.isNotEmpty(list)) {
             for (Product product : list) {
-                Category category = Category.ME.get(product.getCategory_id());
+                Category category = Category.ME.get(product.getCategoryId());
                 if (category != null) {
                     product.setCategory_name(category.getName());
                 }
