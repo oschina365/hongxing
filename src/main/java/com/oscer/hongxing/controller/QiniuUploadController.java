@@ -91,25 +91,6 @@ public class QiniuUploadController extends BaseController {
         return vo.toString();
     }
 
-    /**
-     * 上传照片
-     * 图片上传,不压缩图片
-     * 返回格式适合于layui上传图片
-     * 转化为byte数组上传
-     *
-     * @param multipartFile
-     * @return
-     */
-    @RequestMapping(value = "/photo", method = RequestMethod.POST)
-    @ResponseBody
-    public String photo(@RequestParam("file") MultipartFile multipartFile, @RequestParam(value = "type", required = false) String type) throws IOException {
-        Object loginId = StpUtil.getLoginId();
-        User loginUser = User.ME.get(Long.parseLong(loginId.toString()));
-        UploadResultVO vo = QiNiuService.photo(multipartFile, loginUser == null ? 0L : loginUser.getId());
-        PhotoDAO.ME.evict(loginUser.getId());
-        return vo.toString();
-    }
-
 
     /**
      * 图片上传，压缩图片

@@ -1,31 +1,77 @@
 layui.config({
 	base : "../../js/"
-}).use(['flow','form','layer','upload'],function(){
+}).use(['flow','form','layer','upload','laytpl','laypage'],function(){
     var flow = layui.flow,
         form = layui.form,
         layer = parent.layer === undefined ? layui.layer : top.layer,
         upload = layui.upload,
+        laytpl = layui.laytpl,
+        laypage = layui.laypage,
         $ = layui.jquery;
 
-    //流加载图片
-    var imgNums = 15;  //单页显示图片数量
-    flow.load({
-        elem: '#Images', //流加载容器
-        done: function(page, next){ //加载下一页
-            $.get("../../json/images.json",function(res){
-                //模拟插入
-                var imgList = [],data = res.data;
-                var maxPage = imgNums*page < data.length ? imgNums*page : data.length;
-                setTimeout(function(){
-                    for(var i=imgNums*(page-1); i<maxPage; i++){
-                        imgList.push('<li><img layer-src="../../'+ data[i].src +'" src='+ data[i].thumb +'"../../../admin" alt="'+data[i].alt+'"><div class="operate"><div class="check"><input type="checkbox" name="belle" lay-filter="choose" lay-skin="primary" title="'+data[i].alt+'"></div><i class="layui-icon img_del">&#xe640;</i></div></li>');
+    dataList(1);
+
+    /**
+     * 查询数据列表
+     * @param number
+     */
+    function dataList(number) {
+        var currentCategoryId =$("#currentCategoryId").val();
+        $.ajax({
+            url: '/admin/photo',
+            method: 'get',
+            dataType: 'json',
+            data: {"categoryId":currentCategoryId,"page": number,"limit":10},
+            success: function (data) {
+                console.log(data);
+                if (data && data.code == 1) {
+                    console.log(data);
+                    if (data && data.code == 1) {
+                        var listData = {"list": data.result.list};
+                        var getTpl = imageListTpl.innerHTML, view = document.getElementById('Images');
+
+                        laytpl(getTpl).render(listData, function (html) {
+                            view.innerHTML = html;
+                        });
+                        form.render();
+
+                        if(data.result.count >0){
+                            if (number === 1) {
+                                //分页标签
+                                pageBar(data.result.count, 10);
+                            }
+                        }
+
                     }
-                    next(imgList.join(''), page < (data.length/imgNums));
-                    form.render();
-                }, 500);
-            });
-        }
-    });
+                }
+            }
+        });
+    }
+
+    /**
+     * 数据分页
+     * @param count
+     * @param limit
+     */
+    function pageBar(count, limit) {
+        //var themes = ['#ff0000', '#eb4310', '#3f9337', '#219167', '#239676', '#24998d', '#1f9baa', '#0080ff', '#3366cc', '#800080', '#a1488e', '#c71585', '#bd2158'];
+        var themes = ['#E70012'];
+        laypage.render({
+            elem: "imagePage",
+            limit: limit,
+            count: count,
+            first: '首页',
+            last: '尾页',
+            theme: themes[parseInt(Math.random() * themes.length)],
+            layout: ['prev', 'page', 'next'],
+            jump: function (obj, first) {
+                if (!first) {
+                    $("#number").val(obj.curr);
+                    dataList(obj.curr);
+                }
+            }
+        });
+    }
 
     //设置图片的高度
     $(window).resize(function(){
@@ -35,7 +81,7 @@ layui.config({
     //多图片上传
     upload.render({
         elem: '.uploadNewImg',
-        url: '../../json/userface.json',
+        url: '/up/lay?type=product' ,//接口url
         multiple: true,
         before: function(obj){
             //预读本地文件示例，不支持ie8
@@ -48,6 +94,7 @@ layui.config({
         },
         done: function(res){
             //上传完毕
+            console.log(res);
         }
     });
 
@@ -59,10 +106,22 @@ layui.config({
     //删除单张图片
     $("body").on("click",".img_del",function(){
         var _this = $(this);
-        layer.confirm('确定删除图片"'+_this.siblings().find("input").attr("title")+'"吗？',{icon:3, title:'提示信息'},function(index){
-            _this.parents("li").hide(1000);
-            setTimeout(function(){_this.parents("li").remove();},950);
-            layer.close(index);
+        console.log(_this);
+        layer.confirm('确定删除图片吗？',{icon:3, title:'提示信息'},function(index){
+            let id = _this.parents("li").data("id");
+            $.ajax({
+                url: '/admin/photo/delete/'+id,
+                method: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    if (data && data.code == 1) {
+                        _this.parents("li").hide(1000);
+                        setTimeout(function(){_this.parents("li").remove();},950);
+                        layer.close(index);
+                    }
+                }
+            });
         });
     })
 
@@ -77,15 +136,43 @@ layui.config({
 
     //通过判断是否全部选中来确定全选按钮是否选中
     form.on("checkbox(choose)",function(data){
-        var child = $(data.elem).parents('#Images').find('li input[type="checkbox"]');
-        var childChecked = $(data.elem).parents('#Images').find('li input[type="checkbox"]:checked');
-        if(childChecked.length == child.length){
-            $(data.elem).parents('#Images').siblings("blockquote").find('input#selectAll').get(0).checked = true;
+        console.log(data.elem.checked);
+        console.log(data);
+        let id = $(data.elem).parents("li").data("id");
+        let src = $("#li_"+id).find("img").attr("src");
+        var html = document.getElementById("selectedList").innerHTML;
+
+        if(data.elem.checked){
+            let append = '<li data-id="'+id+'" id="selectedli_'+id+'" >\n' +
+                '<input type="hidden" value="{{item.id}}"/>\n' +
+                '<img layer-src="'+src+'" src="'+src+'" style="max-height: 100px;">\n' +
+                ' <div class="operate">\n' +
+                ' <i class="layui-icon img_del">&#xe640;</i>\n' +
+                ' </div>\n' +
+                '</li>';
+            document.getElementById("selectedList").innerHTML = html+append;
         }else{
-            $(data.elem).parents('#Images').siblings("blockquote").find('input#selectAll').get(0).checked = false;
+
         }
-        form.render('checkbox');
     })
+
+    //获取元素在数组的下标
+    Array.prototype.indexOf = function(val) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == val)	{
+                return i;
+            };
+        }
+        return -1;
+    };
+
+//根据数组的下标，删除该下标的元素
+    Array.prototype.remove = function(val) {
+        var index = this.indexOf(val);
+        if (index > -1) {
+            this.splice(index, 1);
+        }
+    };
 
     //批量删除
     $(".batchDel").click(function(){

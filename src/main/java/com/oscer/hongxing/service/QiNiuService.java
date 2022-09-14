@@ -197,47 +197,6 @@ public class QiNiuService {
         return UploadResultVO.successWith(ConfigTool.getProp("qiniu.domain"), "上传成功", result.getString("key"), fileSize, originFileName, null);
     }
 
-    public static UploadResultVO photo(MultipartFile multipartFile, long userId) throws IOException {
-        if (userId <= 0L) {
-            return UploadResultVO.failWith("请先登录");
-        }
-        long begin = System.currentTimeMillis();
-        if (multipartFile.isEmpty()) {
-            return UploadResultVO.failWith("图片为空");
-        }
-        String originFileName = multipartFile.getOriginalFilename();
-        if (!StringUtils.contains(QiNiuConstant.QINIU_SUFFIXIMAGE, FileUtil.getFileSuffix(originFileName).toUpperCase())) {
-            return UploadResultVO.failWith("图片类型不对");
-        }
-        long fileSize = multipartFile.getSize();
-        String newFileName = userId + QiNiuConstant.QINIU_SLASH + "photo" + QiNiuConstant.QINIU_SLASH + originFileName;
-        Photo p = new Photo();
-        Date now = new Date();
-        p.setUser(userId);
-        p.setCreate_time(now);
-        Map<String, Object> map = FormatTool.getTime(now);
-        p.setYear((Integer) map.get("year"));
-        p.setMonth((Integer) map.get("month"));
-        p.setDay((Integer) map.get("day"));
-        JSONObject result = new JSONObject();
-        try {
-            result = uploadFileByte(multipartFile.getBytes(), newFileName);
-        } catch (QiniuException q) {
-            new QiNiuApi(ConfigTool.getProp("qiniu.access"), ConfigTool.getProp("qiniu.secret"), ConfigTool.getProp("qiniu.bucket"));
-            logger.info("##########七牛重新连接成功##########");
-            result = uploadFileByte(multipartFile.getBytes(), newFileName);
-        }
-        String domain = ConfigTool.getProp("qiniu.domain");
-        String key = result.getString("key");
-        if (key != null) {
-            p.setUrl("http://" + domain + "/" + key);
-            p.save();
-        }
-        logger.info("本次上传耗时：{}ms,文件名：{}，上传完毕时间：{}", (System.currentTimeMillis() - begin), originFileName, DateUtil.format(new Date(), DateUtil.YYYY_MM_DD_HH_MM_SS));
-        return UploadResultVO.successWith(domain, "上传成功", key, fileSize, originFileName, null);
-    }
-
-
     /**
      * 切图
      *

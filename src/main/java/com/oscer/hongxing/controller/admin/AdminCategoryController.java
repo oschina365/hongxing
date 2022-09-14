@@ -152,6 +152,9 @@ public class AdminCategoryController extends AdminBaseController {
         if (exist != null && !exist.getId().equals(category.getId())) {
             return ApiResult.failWithMessage("改分类名称已经存在");
         }
+        if (StringUtils.isBlank(category.getBanner())) {
+            category.updateField("banner", null);
+        }
         category.doUpdate(true);
         return ApiResult.success();
     }

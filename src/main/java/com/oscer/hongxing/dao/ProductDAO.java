@@ -56,7 +56,7 @@ public class ProductDAO extends CommonDao<Product> {
     }
 
     public List<Product> page(Long categoryId, String name, int page, int size) {
-        StringBuilder sb = new StringBuilder(preSql() + " where 1=1 ");
+        StringBuilder sb = new StringBuilder(preSqlA() + " where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
             sb.append(" and s.category_id = " + categoryId);
         }
@@ -64,16 +64,12 @@ public class ProductDAO extends CommonDao<Product> {
             sb.append(" and a.name like '%" + name + "%'");
         }
         sb.append(" GROUP BY a.id order by a.sort desc");
-        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size);
-        if (CollectionUtil.isEmpty(ids)) {
-            return null;
-        }
-        List<Product> list = Product.ME.loadList(ids);
-        if (CollectionUtil.isEmpty(list)) {
+        List<Product> products = getDbQuery().query_slice(Product.class, sb.toString(), page, size);
+        if (CollectionUtil.isEmpty(products)) {
             return null;
         }
 
-        for (Product product : list) {
+        for (Product product : products) {
             if (product == null) {
                 continue;
             }
@@ -90,7 +86,7 @@ public class ProductDAO extends CommonDao<Product> {
             }
             product.setAll_category_name(StringUtils.join(categoryNames, ","));
         }
-        return list;
+        return products;
     }
 
     public Long count(Long categoryId, String name) {

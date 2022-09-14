@@ -184,17 +184,13 @@ public class CategoryDAO extends CommonDao<Category> {
      * @return {@link List}
      */
     public List<Category> page(int type, String name, int page, int size) {
-        StringBuilder sb = new StringBuilder("select id from " + table());
+        StringBuilder sb = new StringBuilder("select * from " + table());
         sb.append(" where type=? ");
         if (StringUtils.isNoneBlank(name)) {
             sb.append(" and name like '%" + name + "%'");
         }
         sb.append(" order by id asc");
-        List<Long> ids = getDbQuery().query_slice(Long.class, sb.toString(), page, size, type);
-        if (CollectionUtil.isEmpty(ids)) {
-            return null;
-        }
-        return Category.ME.loadList(ids);
+        return getDbQuery().query_slice(Category.class, sb.toString(), page, size, type);
     }
 
 

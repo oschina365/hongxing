@@ -9,7 +9,6 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="../../../static/admin/css/public.css" media="all" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css" integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="../../../static/admin/css/public.css" media="all" />
 	<link rel="stylesheet" href="../../../static/admin/css/upload.css" media="all" />
@@ -31,40 +30,28 @@
 				<#--<div class="layui-upload-list thumbBox mag0 magt3">
 					<img class="layui-upload-img thumbImg" src="${category.small_icon!category.banner}">
 				</div>-->
+				<button type="button" class="layui-btn layui-btn-normal" onclick="selectImage();">从图库选择</button>
 				<div id="goodsImages">
 					<div class="goodsImageList filled">
 						<ul class="imagelist">
-							<#if (goods.images)??>
-								<#list goods.images as previewImg>
-									<li id="WU_FILE_${previewImg.file_key!''}"
-										class="preview-image-li <#if (goods.cover_image_key!'')==previewImg.file_key>cover-select<#else >no-cover-select</#if>">
-										<p class="title">${previewImg.file_key!''}</p>
-										<p class="imgWrap"><img src="${imgurl+previewImg.file_key}"></p>
-										<p class="progress"><span></span></p>
-										<div class="file-panel" style="height:30px;">
-											<i class="fa fa-heart" <#if (goods.cover_image_key!'')!=previewImg.file_key>
-												onclick="setCoverKey(this,'${previewImg.file_key!0}')" </#if>
-											   title="设为封面图片"></i>
-											<i class="fa fa-trash-o"
-											   onclick="deletePreviewImage(this,'${previewImg.file_key!0}')"
-											   title="删除图片"></i>
-											<!--
-                                            <span class="rotateRight">向右旋转</span>
-                                            <span class="rotateLeft">向左旋转</span>
-                                            -->
-										</div>
-									</li>
-								</#list>
+							<#if (category.small_icon?? && category.small_icon!='') || (category.banner?? && category.banner!='')>
+								<li id="WU_FILE_${category.id!''}"
+									class="preview-image-li cover-select">
+									<p class="title"> <a type="button" class="layui-btn layui-btn-xs" onclick="deletePreviewImage(this,'${category.small_icon!category.banner}')">删除</a></p>
+									<p class="imgWrap"><img src="${category.small_icon!category.banner}"></p>
+									<p class="progress"><span></span></p>
+
+								</li>
 							</#if>
 						</ul>
 					</div>
 				</div>
 
-				<div id="uploader" class="wu-example">
+				<div id="uploader" class="wu-example" <#if ((category.small_icon?? && category.small_icon!='') || (category.banner?? && category.banner!=''))>style="display: none;" </#if>>
 					<div class="queueList">
-						<div id="dndArea" class="placeholder">
+						<div id="dndArea" class="placeholder" style="min-height: 200px!important;">
 							<div id="filePicker"></div>
-							<p>或将照片拖到这里，单次最多可选300张(720px*480px以下)</p>
+							<p>或将照片拖到这里(分类背景图仅可上传一张)</p>
 						</div>
 					</div>
 					<div class="statusBar" style="display:none;">
@@ -79,6 +66,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<#--<label class="layui-form-label">分类背景图</label>
 			<div class="layui-input-block">

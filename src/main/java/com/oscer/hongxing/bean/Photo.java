@@ -2,8 +2,6 @@ package com.oscer.hongxing.bean;
 
 import lombok.Data;
 
-import java.util.Date;
-
 /**
  * 照片
  *
@@ -15,12 +13,9 @@ import java.util.Date;
 public class Photo extends Entity {
 
     public static final Photo ME = new Photo();
-    private long user;
     private String url;
-    private String remark;
-    private int year;
-    private int month;
-    private int day;
-    private String type;
+    private String key;
+    private Long category_id;
+    private Integer type;
 
 }

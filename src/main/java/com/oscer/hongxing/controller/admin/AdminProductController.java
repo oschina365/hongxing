@@ -4,12 +4,14 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.oscer.hongxing.bean.Category;
 import com.oscer.hongxing.bean.Entity;
 import com.oscer.hongxing.bean.Product;
+import com.oscer.hongxing.bean.ProductImage;
 import com.oscer.hongxing.common.ApiResult;
 import com.oscer.hongxing.common.CategoryContants;
 import com.oscer.hongxing.common.R;
 import com.oscer.hongxing.dao.CategoryDAO;
 import com.oscer.hongxing.dao.ItemDAO;
 import com.oscer.hongxing.dao.ProductDAO;
+import com.oscer.hongxing.dao.ProductImageDAO;
 import com.oscer.hongxing.vo.CategoryVO;
 import com.oscer.hongxing.vo.CategoryXmVO;
 import lombok.extern.slf4j.Slf4j;
@@ -58,7 +60,10 @@ public class AdminProductController extends AdminBaseController {
      */
     @GetMapping("/{id}")
     public String edit(@PathVariable Long id) {
-        request.setAttribute("product", Product.ME.get(id));
+        Product product = Product.ME.get(id);
+        request.setAttribute("product", product);
+        List<ProductImage> productImages = ProductImageDAO.ME.listByProductId(product.getId());
+        request.setAttribute("productImages", productImages);
         request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
         return ADMIN_BASE_PAGE + "product/edit";
     }

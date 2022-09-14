@@ -1,3 +1,4 @@
+var banner;
 layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
     var form = layui.form
     layer = parent.layer === undefined ? layui.layer : top.layer,
@@ -6,6 +7,7 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
         laydate = layui.laydate,
         transfer = layui.transfer,
         $ = layui.jquery;
+
     jQuery(function () {
         var $ = jQuery,    // just in case. Make sure it's not an other libaray.
             $wrap = $('#uploader'),        // 图片容器
@@ -60,10 +62,10 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
 
             disableGlobalDnd: true,
             chunked: true,
-            server: '/up/selfUpload',
-            fileNumLimit: 300,
+            server: '/up/lay?type=category',
+            fileNumLimit: 1,
             fileSizeLimit: 5 * 1024 * 1024,    // 200 M
-            fileSingleSizeLimit: 1 * 1024 * 1024    // 50 M
+            fileSingleSizeLimit: 10 * 1024 * 1024    // 50 M
         });
 
         // 添加“添加文件”的按钮，
@@ -372,10 +374,6 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
             }
         });
 
-        uploader.onError = function (code) {
-            alert('Eroor: ' + code);
-        };
-
         $upload.on('click', function () {
             if ($(this).hasClass('disabled')) {
                 return false;
@@ -405,24 +403,33 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
             console.log("f:" + f)
             console.log("d:" + d)
             console.log("key:" + d.key)
-            var goods_code = $("#goods_code").val();
-            var data = {"goods_code": goods_code, "fileId": d.id, "file_key": d.key, "url": d.url};
-            $.ajaxpost("/mall/goods/saveUploadImageData", data, function (resp) {
-                console.log(resp)
-                parent.layer.msg("上传成功！", {icon: 1});
-            })
+            banner = d.key;
         }
+
+        uploader.on('error', function (code, file) {
+            var str="";
+            switch(code){
+                case "F_DUPLICATE":
+                    str="文件重复";
+                    break;
+                case "Q_TYPE_DENIED":
+                    str="文件类型 不允许";
+                    break;
+                case "F_EXCEED_SIZE":
+                    str="文件大小超出限制10M";
+                    break;
+                case "Q_EXCEED_SIZE_LIMIT":
+                    str="超出空间文件大小";
+                    break;
+                case "Q_EXCEED_NUM_LIMIT":
+                    str="抱歉，超过每次上传数量图片限制";
+                    break;
+                default:
+                    str=name+" Error:"+code;
+            }
+            layer.msg(str);
+        });
     });
-
-
-    function deletePreviewImage(obj, fileKey) {
-        var goods_code = $("#goods_code").val();
-        var data = {"goods_code": goods_code, "file_key": fileKey};
-        $.ajaxpost("/mall/goods/deletePreviewImage", data, function (resp) {
-            $(obj).parent().parent().remove();
-            parent.layer.msg("移除成功！", {icon: 1});
-        })
-    }
 
     var categoryId = $("#categoryId").val();
 
@@ -479,7 +486,7 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
             id: categoryId,
             name: $(".categoryName").val(),  //分类名称
             desc: $(".categoryDesc").val(),  //文章摘要
-            banner: $(".thumbImg").attr("src"),  //缩略图
+            banner: banner,  //缩略图
             parent_id : data.field.parent_id,  //父类id
             sort : $("#sort").val()
         }, function (res) {
@@ -500,3 +507,33 @@ layui.use(['form', 'layer', 'laydate', 'upload', 'transfer'], function () {
     })
 
 })
+
+
+function selectImage() {
+    var index = layui.layer.open({
+        title: "选择图库",
+        type: 2,
+        content: "/admin/page/img/photo.html",
+        success: function (layero, index) {
+            var body = layui.layer.getChildFrame('body', index);
+
+            setTimeout(function () {
+                layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
+                    tips: 3
+                });
+            }, 500)
+        }
+    })
+    layui.layer.full(index);
+    //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
+    $(window).on("resize", function () {
+        layui.layer.full(index);
+    })
+}
+
+function deletePreviewImage(obj, fileKey) {
+    $(obj).parent().parent().remove();
+    parent.layer.msg("移除成功！", {icon: 1});
+    $("#uploader").show();
+    banner='';
+}

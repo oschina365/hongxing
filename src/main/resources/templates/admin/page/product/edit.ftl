@@ -9,8 +9,9 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css" integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="../../../static/admin/layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="../../../static/admin/css/public.css" media="all" />
+	<link rel="stylesheet" href="../../../static/admin/css/upload.css" media="all" />
 </head>
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
@@ -38,6 +39,63 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">产品主图</label>
+			<div class="layui-input-block">
+				<#--<div class="layui-upload-list thumbBox mag0 magt3">
+					<img class="layui-upload-img thumbImg" src="${category.small_icon!category.banner}">
+				</div>-->
+				<button type="button" class="layui-btn layui-btn-normal" onclick="selectImage();">从图库选择</button>
+				<div id="goodsImages">
+					<div class="goodsImageList filled">
+						<ul class="imagelist">
+							<#if productImages??>
+								<#list productImages as productImage>
+									<li id="WU_FILE_${productImage.id!''}"
+										class="preview-image-li cover-select">
+										<p class="title"> <a type="button" class="layui-btn layui-btn-xs" onclick="deletePreviewImage(this,'${productImage.image}')">删除</a></p>
+										<p class="imgWrap"><img src="${productImage.image}"></p>
+										<p class="progress"><span></span></p>
+									</li>
+								</#list>
+							</#if>
+						</ul>
+					</div>
+				</div>
+
+				<div id="uploader" class="wu-example" <#if productImages??>style="display: none;"</#if>>
+					<div class="queueList">
+						<div id="dndArea" class="placeholder" style="min-height: 200px!important;">
+							<div id="filePicker"></div>
+							<p>或将照片拖到这里(分类背景图仅可上传一张)</p>
+						</div>
+					</div>
+					<div class="statusBar" style="display:none;">
+						<div class="progress">
+							<span class="text">0%</span>
+							<span class="percentage"></span>
+						</div>
+						<div class="info"></div>
+						<div class="btns">
+							<div id="filePicker2"></div>
+							<div class="uploadBtn">开始上传</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<#--<label class="layui-form-label">分类背景图</label>
+			<div class="layui-input-block">
+				<ul class="layer-photos-demo" id="Images">
+					<#if category.small_icon?? || category.banner??>
+					</#if>
+				</ul>
+			</div>-->
+
+
+		</div>
+
 		<div class="layui-form-item magb0">
 			<label class="layui-form-label">产品内容</label>
 			<div class="layui-input-block">
@@ -82,7 +140,9 @@
 	</div>
 </form>
 <script type="text/javascript" src="../../../static/admin/js/xm-select.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="../../../static/admin/layui/layui.js"></script>
 <script type="text/javascript" src="../../../static/admin/js/productEdit.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/webuploader/0.1.1/webuploader.min.js"></script>
 </body>
 </html>
