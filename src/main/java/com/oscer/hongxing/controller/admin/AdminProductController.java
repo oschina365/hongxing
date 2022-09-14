@@ -194,10 +194,7 @@ public class AdminProductController extends AdminBaseController {
         if (product == null) {
             return ApiResult.fail();
         }
-        if (CollectionUtil.isEmpty(product.getSelectCategoryIds())) {
-            return ApiResult.failWithMessage("请选择产品分类");
-        }
-        if (product.getSelectCategoryIds().size() > 5) {
+        if (CollectionUtil.isNotEmpty(product.getSelectCategoryIds()) && product.getSelectCategoryIds().size() > 5) {
             return ApiResult.failWithMessage("最多关联5个产品分类");
         }
         boolean save = (product.getId() == null || product.getId() <= 0L) ? true : false;

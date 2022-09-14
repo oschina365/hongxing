@@ -647,10 +647,6 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
                 console.log(li);
                 selectCategoryIds.push($(li)[0].firstChild.value)
             }
-            if (selectCategoryIds.length == 0) {
-                layer.alert('请选择产品分类');
-                return false;
-            }
         }
         if (selectCategoryIds.length > 5) {
             layer.alert('最多关联5个分类');

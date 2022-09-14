@@ -48,6 +48,10 @@ public class ProductDAO extends CommonDao<Product> {
         if (product == null) {
             return null;
         }
+        if (product.getCategoryId() == null || product.getCategoryId() <= 0) {
+            CacheMgr.evict(getCache_region(), "" + id);
+            product = getDbQuery().read(Product.class, getSql(), id);
+        }
         Category category = Category.ME.get(product.getCategoryId());
         if (category != null) {
             product.setCategory_name(category.getName());
@@ -201,17 +205,19 @@ public class ProductDAO extends CommonDao<Product> {
                     } else {
                         ProductImageDAO.ME.deleteByProductId(product.getId());
                         List<Long> selectCategoryIds = product.getSelectCategoryIds();
-                        ItemDAO.ME.deleteByItem(product.getId(), CategoryContants.Type.PRODUCT.getCode());
-                        for (Long selectCategoryId : selectCategoryIds) {
-                            Category category = Category.ME.get(selectCategoryId);
-                            if (category == null) {
-                                continue;
+                        if (CollectionUtil.isNotEmpty(selectCategoryIds)) {
+                            ItemDAO.ME.deleteByItem(product.getId(), CategoryContants.Type.PRODUCT.getCode());
+                            for (Long selectCategoryId : selectCategoryIds) {
+                                Category category = Category.ME.get(selectCategoryId);
+                                if (category == null) {
+                                    continue;
+                                }
+                                Item item = new Item();
+                                item.setItem_type(CategoryContants.Type.PRODUCT.getCode());
+                                item.setItem_id(product.getId());
+                                item.setCategory_id(category.getId());
+                                item.save();
                             }
-                            Item item = new Item();
-                            item.setItem_type(CategoryContants.Type.PRODUCT.getCode());
-                            item.setItem_id(product.getId());
-                            item.setCategory_id(category.getId());
-                            item.save();
                         }
                         if (CollectionUtil.isNotEmpty(product.getImgUrls())) {
                             for (int i = 0; i < product.getImgUrls().size(); i++) {
@@ -242,6 +248,7 @@ public class ProductDAO extends CommonDao<Product> {
                     if (product != null) {
                         product.delete();
                         ItemDAO.ME.delete(id, CategoryContants.Type.PRODUCT.getCode());
+                        ProductImageDAO.ME.deleteByProductId(id);
                     }
                 }
             });
