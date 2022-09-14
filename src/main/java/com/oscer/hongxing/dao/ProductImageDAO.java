@@ -29,4 +29,9 @@ public class ProductImageDAO extends CommonDao<ProductImage> {
         return ProductImage.ME.loadList(getDbQuery().query(Long.class, getSql(), productId));
     }
 
+    public void deleteByProductId(Long productId){
+        setSql("delete from " + table() + " where product_id=?");
+        getDbQuery().update(getSql(),productId);
+    }
+
 }

@@ -185,6 +185,7 @@ public class QiNiuService {
         if (fileSize > NEED_IMAGE_SLIM) {
             sysFile.setFile_key(originFileName + IMAGE_SLIM_NAME);
         }
+
         JSONObject result = new JSONObject();
         try {
             result = uploadFileByte(multipartFile.getBytes(), newFileName, sysFile);
@@ -193,8 +194,17 @@ public class QiNiuService {
             logger.info("##########七牛重新连接成功##########");
             result = uploadFileByte(multipartFile.getBytes(), newFileName, sysFile);
         }
+
         logger.info("本次上传耗时：{}ms,文件名：{}，上传完毕时间：{}", (System.currentTimeMillis() - begin), originFileName, DateUtil.format(new Date(), DateUtil.YYYY_MM_DD_HH_MM_SS));
-        return UploadResultVO.successWith(ConfigTool.getProp("qiniu.domain"), "上传成功", result.getString("key"), fileSize, originFileName, null);
+        UploadResultVO resultVO = UploadResultVO.successWith(ConfigTool.getProp("qiniu.domain"), "上传成功", result.getString("key"), fileSize, originFileName, null);
+        if (StringUtils.equalsIgnoreCase(type, CategoryContants.Type.PHOTO.getIdent())) {
+            Photo photo = new Photo();
+            photo.setKey(originFileName);
+            photo.setUrl(resultVO.getKey());
+            long id = photo.save();
+            resultVO.setPhotoId(id);
+        }
+        return resultVO;
     }
 
     /**
@@ -250,7 +260,7 @@ public class QiNiuService {
                 String imageUrl = images.get(i).attr("src");
                 String newFileName = QiNiuConstant.BUCKET_HONGING + QiNiuConstant.QINIU_SLASH + type + QiNiuConstant.QINIU_SLASH + FileUtil.getFileName(imageUrl);
                 JSONObject result = uploadFileByte(FormatUtil.getImageFromNetByUrl(imageUrl), newFileName);
-                content = content.replaceAll( imageUrl, "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key"));
+                content = content.replaceAll(imageUrl, "http://" + ConfigTool.getProp("qiniu.domain") + "/" + result.getString("key"));
             }
         }
         return content;

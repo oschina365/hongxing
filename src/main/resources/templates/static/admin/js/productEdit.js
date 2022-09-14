@@ -1,3 +1,4 @@
+var banners = [];
 layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
     var form = layui.form
     layer = parent.layer === undefined ? layui.layer : top.layer,
@@ -62,7 +63,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
             disableGlobalDnd: true,
             chunked: true,
             server: '/up/lay?type=category',
-            fileNumLimit: 1,
+            fileNumLimit: 10,
             fileSizeLimit: 5 * 1024 * 1024,    // 200 M
             fileSingleSizeLimit: 10 * 1024 * 1024    // 50 M
         });
@@ -75,7 +76,7 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
 
         // 当有文件添加进来时执行，负责view的创建
         function addFile(file) {
-            var $li = $('<li id="' + file.id + '">' +
+            var $li = $('<input type="hidden" name="bannerImage"/><li id="' + file.id + '">' +
                     '<p class="title">' + file.name + '</p>' +
                     '<p class="imgWrap"></p>' +
                     '<p class="progress"><span></span></p>' +
@@ -399,10 +400,13 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
         updateTotalProgress();
 
         function uploadSuccess(f, d) {
-            console.log("f:" + f)
-            console.log("d:" + d)
+            console.log( f)
+            console.log( d)
             console.log("key:" + d.key)
-            banner = d.key;
+            var id = f.id;
+            console.log(id);
+            $(id).find("img").attr("src",d.key);
+            banners.push(d.key);
         }
 
         uploader.on('error', function (code, file) {
@@ -591,9 +595,8 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
     upload.render({
         elem: '.thumbBox',
         url: '/up/lay?type=product',
-        method: "get",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
+        method: "post",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
         done: function (res, index, upload) {
-            var num = parseInt(4 * Math.random());  //生成0-4的随机数，随机显示一个头像信息
             $('.thumbImg').attr('src', res.key);
             $('.thumbBox').css("background", "#fff");
         }
@@ -657,12 +660,13 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
             name: $(".productName").val(),  //文章标题
             desc: $(".productDesc").val(),  //文章摘要
             content: layedit.getContent(editIndex).split('<audio controls="controls" style="display: none;"></audio>')[0],  //文章内容
+            imgUrls: banners,  //缩略图
             banner: $(".thumbImg").attr("src"),  //缩略图
             sort : $("#sort").val(),
             selectCategoryIds: selectCategoryIds
         }, function (res) {
             if(res && res.code==1){
-                layer.msg("编辑产品成功~",{icon:6});
+                layer.msg(res.message ? res.message : "操作成功",{icon:6});
                 setTimeout(function(){
                     layer.closeAll("iframe");
                     //刷新父页面
@@ -688,13 +692,35 @@ layui.use(['form', 'layer', 'layedit', 'laydate', 'upload'], function () {
 })
 
 function selectImage() {
-    var index = layui.layer.open({
+    var body;
+    var index = layer.open({
         title: "选择图库",
         type: 2,
         area: ['100%', '100%'],
         content: "/admin/page/img/photo.html",
         success: function (layero, index) {
-            var body = layui.layer.getChildFrame('body', index);
+            body = layui.layer.getChildFrame('body', index);
+            console.log(index);
+        },
+        end: function () {
+            //关闭窗体时 触发
+            var images = localStorage.getItem("images");
+            if(images && images.length>0){
+                var list = images.split(",");
+                $("#uploader").show();
+                for(var i=0;i<list.length;i++){
+                    let image = list[i];
+                    $(".imagelist").append('<li id="WU_FILE_'+i+'" class="preview-image-li cover-select">' +
+                        '<p class="title"> <a type="button" class="layui-btn layui-btn-xs" ' +
+                        'onclick="deletePreviewImage(this,\''+image+'\')">删除</a></p>\n' +
+                        '<p class="imgWrap"><img src="'+image+'"></p>\n' +
+                        '<p class="progress"><span></span></p>\n' +
+                        '</li>')
+                    banners.push(image);
+                }
+                localStorage.removeItem("images")
+                console.log("关闭子弹窗了");
+            }
         }
     })
     layui.layer.full(index);
@@ -711,5 +737,4 @@ function deletePreviewImage(obj, fileKey) {
     if(li == 0){
         $("#uploader").show();
     }
-    banner='';
 }

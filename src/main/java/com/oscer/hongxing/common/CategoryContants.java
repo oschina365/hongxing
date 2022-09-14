@@ -20,21 +20,22 @@ public class CategoryContants {
         /**
          * 产品分类
          */
-        PRODUCT(1, "产品分类"),
+        PRODUCT(1, "product","产品分类"),
         /**
          * 案例分类
          */
-        ARTICLE(2, "案例分类"),
+        ARTICLE(2,  "article","案例分类"),
         /**
          * 公司管理
          */
-        COMPANY(3, "公司管理"),
+        COMPANY(3,  "company","公司管理"),
         /**
          * 相册
          */
-        PHOTO(4, "相册");
+        PHOTO(4,  "photo","相册");
 
         private int code;
+        private String ident;
         private String desc;
     }
 }

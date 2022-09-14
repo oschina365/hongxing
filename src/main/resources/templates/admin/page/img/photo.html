@@ -37,6 +37,7 @@
 			<a class="layui-btn layui-btn-danger layui-btn-normal uploadNewImg" >上传新图片</a>
 			<a class="layui-btn layui-btn-danger layui-btn-normal " href="/admin/page/product/index.html">添加图库分组</a>
 			<a class="layui-btn layui-btn-danger layui-btn-normal " href="/admin/page/product/index.html">搜索</a>
+			<a class="layui-btn layui-btn-danger layui-btn-normal doneSelect" >选好了</a>
 		</div>
 	</blockquote>
 	<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
@@ -57,7 +58,7 @@
 		{{# if(item){ }}
 		<li data-id="{{item.id}}" id="li_{{item.id}}">
 			<input type="hidden" value="{{item.id}}"/>
-			<img layer-src="{{item.url}}" src="{{item.url}}" alt="{{item.key}}">
+			<img layer-src="{{item.url}}" src="{{item.url}}" alt="{{item.key}}" style="max-height: 200px!important;">
 			 <div class="operate">
 				 <div class="check"><input type="checkbox" name="belle" lay-filter="choose" lay-skin="primary" title="{{item.key}}"></div>
 				 <i class="layui-icon img_del">&#xe640;</i>

@@ -15,8 +15,8 @@
 </head>
 <body class="childrenBody">
 <form class="layui-form layui-row layui-col-space10">
-	<input type="hidden" id = "productId" value="${product.id}"/>
-	<input type="hidden" id = "sort" value="${product.sort}"/>
+	<input type="hidden" id = "productId" value="${product.id!'0'}"/>
+	<input type="hidden" id = "sort" value="${product.sort!'0'}"/>
 	<div class="layui-col-md8 layui-col-xs12">
 		<div class="layui-row layui-col-space10">
 			<div class="layui-col-md9 layui-col-xs7">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 
-				<div id="uploader" class="wu-example" <#if productImages??>style="display: none;"</#if>>
+				<div id="uploader" class="wu-example" <#if productImages?? && (productImages?size > 0) >style="display: none;"</#if>>
 					<div class="queueList">
 						<div id="dndArea" class="placeholder" style="min-height: 200px!important;">
 							<div id="filePicker"></div>

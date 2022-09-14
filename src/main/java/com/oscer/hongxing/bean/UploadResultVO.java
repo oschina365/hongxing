@@ -80,6 +80,7 @@ public class UploadResultVO implements Serializable {
     private long size;
     private String name;
     private data data;
+    private long photoId;
 
     public int getCode() {
         return code;
@@ -129,6 +130,14 @@ public class UploadResultVO implements Serializable {
         this.data = data;
     }
 
+    public long getPhotoId() {
+        return photoId;
+    }
+
+    public void setPhotoId(long photoId) {
+        this.photoId = photoId;
+    }
+
     public UploadResultVO() {
     }
 
@@ -155,6 +164,7 @@ public class UploadResultVO implements Serializable {
                 ", \"name\"" + ":" + "\"" + name + "\"" +
                 ", \"data\":{\"" + data + "}" +
                 ", \"size\"" + ":" + size +
+                ", \"photoId\"" + ":" + photoId +
                 '}';
     }
 

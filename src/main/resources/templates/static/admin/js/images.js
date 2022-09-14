@@ -81,20 +81,25 @@ layui.config({
     //多图片上传
     upload.render({
         elem: '.uploadNewImg',
-        url: '/up/lay?type=product' ,//接口url
+        url: '/up/lay?type=photo' ,//接口url
         multiple: true,
         before: function(obj){
             //预读本地文件示例，不支持ie8
             obj.preview(function(index, file, result){
-                $('#Images').prepend('<li><img layer-src="'+ result +'" src="'+ result +'" alt="'+ file.name +'" class="layui-upload-img"><div class="operate"><div class="check"><input type="checkbox" name="belle" lay-filter="choose" lay-skin="primary" title="'+file.name+'"></div><i class="layui-icon img_del">&#xe640;</i></div></li>')
-                //设置图片的高度
-                $("#Images li img").height($("#Images li img").width());
-                form.render("checkbox");
+
             });
         },
         done: function(res){
             //上传完毕
             console.log(res);
+            $('#Images').prepend('<li data-id="'+res.photoId+'" id="li_'+res.photoId+'">' +
+                '<img layer-src="'+ res.key +'" src="'+ res.key +'" alt="'+ res.name +'" class="layui-upload-img">' +
+                '<div class="operate"><div class="check">' +
+                '<input type="checkbox" name="belle" lay-filter="choose" lay-skin="primary" title="'+res.name+'"></div>' +
+                '<i class="layui-icon img_del">&#xe640;</i></div></li>')
+            //设置图片的高度
+            $("#Images li img").height($("#Images li img").width());
+            form.render("checkbox");
         }
     });
 
@@ -125,6 +130,17 @@ layui.config({
         });
     })
 
+    //删除单张图片
+    $("body").on("click",".img_delete",function(){
+        var _this = $(this);
+        console.log(_this);
+        _this.parents("li").hide(1000);
+        let id = _this.parents("li").data("id");
+        console.log(id);
+        setTimeout(function(){_this.parents("li").remove();},950);
+        $("#li_"+id).find("div.layui-form-checked").removeClass("layui-form-checked");
+    })
+
     //全选
     form.on('checkbox(selectAll)', function(data){
         var child = $("#Images li input[type='checkbox']");
@@ -145,14 +161,14 @@ layui.config({
         if(data.elem.checked){
             let append = '<li data-id="'+id+'" id="selectedli_'+id+'" >\n' +
                 '<input type="hidden" value="{{item.id}}"/>\n' +
-                '<img layer-src="'+src+'" src="'+src+'" style="max-height: 100px;">\n' +
+                '<img layer-src="'+src+'" src="'+src+'" style="max-height: 150px;">\n' +
                 ' <div class="operate">\n' +
-                ' <i class="layui-icon img_del">&#xe640;</i>\n' +
+                ' <i class="layui-icon img_delete">&#xe640;</i>\n' +
                 ' </div>\n' +
                 '</li>';
             document.getElementById("selectedList").innerHTML = html+append;
         }else{
-
+            $("#selectedli_"+id).remove();
         }
     })
 
@@ -196,6 +212,23 @@ layui.config({
         }else{
             layer.msg("请选择需要删除的图片");
         }
+    })
+
+    //删除单张图片
+    $("body").on("click",".doneSelect",function(index){
+        var lis = $("#selectedList>li");
+        if(lis.length==0){
+            layer.msg("请选择图片")
+            return false;
+        }
+        var images = [];
+        localStorage.setItem("images",images);
+        for(var i = 0; i<lis.length;i++){
+            images.push($(lis[i]).children("img").attr("src"));
+        }
+        localStorage.setItem("images",images);
+        var index = parent.layer.getFrameIndex(window.name);
+        parent.layer.close(index);
     })
 
 })

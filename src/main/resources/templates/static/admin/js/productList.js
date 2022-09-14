@@ -115,36 +115,15 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
     }
 
     //添加产品
-    function addNews(edit) {
-        console.log(edit);
-        var index = layui.layer.open({
+    function addNews() {
+        var index = layer.open({
             title: "添加产品",
             type: 2,
-            content: "add.html",
+            area: ['100%', '100%'],
+            content: "/admin/product/0",
             success: function (layero, index) {
-                var body = layui.layer.getChildFrame('body', index);
-                if (edit) {
-                    body.find(".productName").val(edit.name);  //登录名
-                    body.find(".productDesc").val(edit.desc);  //邮箱
-                    body.find(".product_content").val(111111111);  //邮箱
-                    layedit.build('product_content');  //渲染 build
-                    body.find(".userSex input[value=" + edit.userSex + "]").prop("checked", "checked");  //性别
-                    body.find(".userGrade").val(edit.userGrade);  //会员等级
-                    body.find(".userStatus").val(edit.userStatus);    //用户状态
-                    body.find(".userDesc").text(edit.userDesc);    //用户简介
-                    form.render();
-                }
-                setTimeout(function () {
-                    layui.layer.tips('点击此处返回用户列表', '.layui-layer-setwin .layui-layer-close', {
-                        tips: 3
-                    });
-                }, 500)
+
             }
-        })
-        layui.layer.full(index);
-        //改变窗口大小时，重置弹窗的宽高，防止超出可视区域（如F12调出debug的操作）
-        $(window).on("resize", function () {
-            layui.layer.full(index);
         })
     }
 

@@ -178,6 +178,14 @@ public class ProductDAO extends CommonDao<Product> {
                     if (product.getId() == null || product.getId() <= 0L) {
                         product.setSort(System.currentTimeMillis());
                         long save = product.save();
+                        if (CollectionUtil.isNotEmpty(product.getImgUrls())) {
+                            for (int i = 0; i < product.getImgUrls().size(); i++) {
+                                ProductImage image = new ProductImage();
+                                image.setImage(product.getImgUrls().get(i));
+                                image.setProduct_id(product.getId());
+                                image.save();
+                            }
+                        }
                         List<Long> selectCategoryIds = product.getSelectCategoryIds();
                         for (Long selectCategoryId : selectCategoryIds) {
                             Category category = Category.ME.get(selectCategoryId);
@@ -191,6 +199,7 @@ public class ProductDAO extends CommonDao<Product> {
                             item.save();
                         }
                     } else {
+                        ProductImageDAO.ME.deleteByProductId(product.getId());
                         List<Long> selectCategoryIds = product.getSelectCategoryIds();
                         ItemDAO.ME.deleteByItem(product.getId(), CategoryContants.Type.PRODUCT.getCode());
                         for (Long selectCategoryId : selectCategoryIds) {
@@ -203,6 +212,14 @@ public class ProductDAO extends CommonDao<Product> {
                             item.setItem_id(product.getId());
                             item.setCategory_id(category.getId());
                             item.save();
+                        }
+                        if (CollectionUtil.isNotEmpty(product.getImgUrls())) {
+                            for (int i = 0; i < product.getImgUrls().size(); i++) {
+                                ProductImage image = new ProductImage();
+                                image.setImage(product.getImgUrls().get(i));
+                                image.setProduct_id(product.getId());
+                                image.save();
+                            }
                         }
                         product.doUpdate(true);
                     }

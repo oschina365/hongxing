@@ -60,11 +60,16 @@ public class AdminProductController extends AdminBaseController {
      */
     @GetMapping("/{id}")
     public String edit(@PathVariable Long id) {
+        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
         Product product = Product.ME.get(id);
+        if (product == null) {
+            request.setAttribute("product", new Product());
+            return ADMIN_BASE_PAGE + "product/edit";
+        }
         request.setAttribute("product", product);
         List<ProductImage> productImages = ProductImageDAO.ME.listByProductId(product.getId());
         request.setAttribute("productImages", productImages);
-        request.setAttribute("categorys", CategoryDAO.ME.listByType(CategoryContants.Type.PRODUCT.getCode()));
+
         return ADMIN_BASE_PAGE + "product/edit";
     }
 
@@ -110,10 +115,6 @@ public class AdminProductController extends AdminBaseController {
     @PostMapping("/xm/{id}")
     @ResponseBody
     public ApiResult detailXm(@PathVariable Long id) {
-        Product exist = Product.ME.get(id);
-        if (exist == null) {
-            return ApiResult.fail();
-        }
         int type = CategoryContants.Type.PRODUCT.getCode();
         List<Long> categoryIds = ItemDAO.ME.listByItem(id, type);
         List<Category> categoryList = CategoryDAO.ME.listByType(type);
@@ -199,8 +200,9 @@ public class AdminProductController extends AdminBaseController {
         if (product.getSelectCategoryIds().size() > 5) {
             return ApiResult.failWithMessage("最多关联5个产品分类");
         }
+        boolean save = (product.getId() == null || product.getId() <= 0L) ? true : false;
         ProductDAO.ME.edit(product);
-        return ApiResult.success();
+        return ApiResult.success(save ? "添加产品成功" : "编辑产品成功");
     }
 
     /**
