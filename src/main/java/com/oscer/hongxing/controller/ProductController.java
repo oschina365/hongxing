@@ -75,7 +75,7 @@ public class ProductController extends BaseController {
             request.setAttribute("randomProducts", ProductDAO.ME.randomList(4));
             return "/product/index_mobile";
         }
-        return "/product/index";
+        return "/product/index1";
     }
 
     /**

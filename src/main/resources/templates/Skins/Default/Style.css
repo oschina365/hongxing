@@ -1331,7 +1331,7 @@ ul.t05_ul table { *margin-left:-15px;}/*滚动板IE补丁*/
 
 /*pshow2.css*/
 /* sprite */
-.h2_prokinds,.div_buybtn .a_tobuy,.div_buybtn .a_addtofavor,.side_thumb .p_btn .a_buybtn,.addconsultbox .btn,.p_thumbpage b,.ajaxlogin .btn,.h2_progallery a.a_backpro,span.span_share .a_share,a#a_enlarge,.div_prokinds h3 a,.tabbox_a .tabtitle span,.h3_eachtitle,.ul_choosecolor li .span_lack,.floatquick,.div_prokinds h3 span,.crumb,.div_prothumb .span_prev,.div_prothumb .span_next,.ajaxlogin h3,.dl_consult .div_reply,.ul_prodinfo .li_jf .a_usejf,.span_comscont,.dl_comment dd.dd_comment,.store_nowarea,.storearea_list .span_close{background:url(/images/sprite.png) no-repeat;}
+.h2_prokinds,.div_buybtn .a_tobuy,.div_buybtn .a_addtofavor,.side_thumb .p_btn .a_buybtn,.addconsultbox .btn,.p_thumbpage b,.ajaxlogin .btn,.h2_progallery a.a_backpro,span.span_share .a_share,a#a_enlarge,.div_prokinds h3 a,.tabbox_a .tabtitle span,.h3_eachtitle,.ul_choosecolor li .span_lack,.floatquick,.div_prokinds h3 span,.crumb,.div_prothumb .span_prev,.div_prothumb .span_next,.ajaxlogin h3,.dl_consult .div_reply,.ul_prodinfo .li_jf .a_usejf,.span_comscont,.dl_comment dd.dd_comment,.store_nowarea,.storearea_list .span_close{background:url(/res/images/sprite.png) no-repeat;}
 /* ul_d1 */
 .ul_d1{padding:0 0 10px 8px; overflow:hidden;zoom:1;}
 .ul_d1 li{float:left;margin:10px 8px 0 0;width:84px;height:105px;overflow:hidden;_display:inline;}
@@ -1344,7 +1344,7 @@ ul.t05_ul table { *margin-left:-15px;}/*滚动板IE补丁*/
 div.jqZoomTitle { z-index: 5000; text-align: center; font-size: 11px; font-family: Tahoma; height: 16px; padding-top: 2px; position: absolute; top: 0px; left: 0px; width: 100%; color: #FFF; background: #999; }
 .jqZoomPup { overflow: hidden; background-color: #FFF; -moz-opacity: 0.6; opacity: 0.6; filter: alpha(opacity = 60); z-index: 10; border-color: #c4c4c4; border-style: solid; cursor: crosshair; }
 .jqZoomPup img { border: 0px; }
-.preload { -moz-opacity: 0.8; opacity: 0.8; filter: alpha(opacity = 80); color: #333; font-size: 12px; font-family: Tahoma; text-decoration: none; border: 1px solid #CCC; background-color: white; padding: 8px; text-align: center; background-image: url(/images/zoomloader.gif); background-repeat: no-repeat; background-position: 43px 30px; width: 90px; *width:100px;height:43px;*height:55px;z-index:10;position:absolute;top:3px;left:3px;}
+.preload { -moz-opacity: 0.8; opacity: 0.8; filter: alpha(opacity = 80); color: #333; font-size: 12px; font-family: Tahoma; text-decoration: none; border: 1px solid #CCC; background-color: white; padding: 8px; text-align: center; background-image: url(/res/images/zoomloader.gif); background-repeat: no-repeat; background-position: 43px 30px; width: 90px; *width:100px;height:43px;*height:55px;z-index:10;position:absolute;top:3px;left:3px;}
 .jqZoomWindow { border: 1px solid #999; background-color: #FFF; }
 /* proviewbox */
 .proviewbox{float:left;width:405px;position:relative;z-index:5;}
