@@ -32,7 +32,7 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
                     return '<input type="checkbox" name="newsTop" lay-filter="articleTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
                 }
             },
-            {field: 'create_time', title: '录入时间', align: 'center'},
+            {field: 'create_time', title: '录入时间', align: 'center',templet : "<div>{{layui.util.toDateString(d.create_time, 'yyyy年MM月dd日 HH:mm:ss')}}</div>"},
             {title: '操作', width: 140, templet: '#articleListBar', fixed: "right", align: "center"}
         ]]
     });

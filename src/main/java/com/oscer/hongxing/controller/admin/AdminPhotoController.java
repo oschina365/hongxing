@@ -30,9 +30,6 @@ public class AdminPhotoController extends AdminBaseController {
                           @RequestParam(value = "limit", defaultValue = "6") int limit) {
 
         List<Photo> photos = PhotoDAO.ME.photos(key, categoryId, page, limit);
-        if (CollectionUtil.isEmpty(photos)) {
-            return ApiResult.fail();
-        }
         long count = PhotoDAO.ME.count(key, categoryId);
         return ApiResult.successWithMapData(photos, count, null);
     }

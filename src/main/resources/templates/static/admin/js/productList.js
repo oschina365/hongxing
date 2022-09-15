@@ -15,34 +15,37 @@ layui.use(['form', 'layer', 'laydate', 'table', 'laytpl','layedit'], function ()
         page: true,
         height: "full-125",
         limit: 20,
-        limits: [10, 20, 50,100],
+        limits: [10, 20, 50],
         id: "productListTable",
         cols: [[
             {type: "checkbox", fixed: "left", width: 50},
-            {field: 'id', title: 'ID', width: 60, align: "center"},
+            {field: 'id', title: 'ID', width: 80, align: "center"},
             {
-                field: 'banner', title: '缩略图', align: 'center', templet: function (d) {
+                field: 'banner', title: '缩略图', align: 'center',width: 200, templet: function (d) {
                     return '<img src="'+d.banner+'">'
                 }
             },
-            {field: 'name', title: '产品名称', width: 200},
+            {field: 'name', title: '产品名称', width: 320, templet: function (d) {
+                    return '<a href="/product/'+d.id+'" target="_blank" style="color: blue;">'+d.name+'</a>'
+                }
+            },
             {field: 'all_category_name', title: '所属分类', align: 'center'},
             {
-                field: 'top', title: '是否置顶', align: 'center', templet: function (d) {
+                field: 'top', title: '是否置顶', align: 'center',width: 140, templet: function (d) {
                     return '<input type="checkbox" name="newsTop" lay-filter="productTop" lay-skin="switch" lay-text="是|否" ' + d.top + '>'
                 }
             },
             {
-                field: 'cream', title: '是否精华', align: 'center', templet: function (d) {
+                field: 'cream', title: '是否精华', align: 'center',width: 140, templet: function (d) {
                     return '<input type="checkbox" name="newsTop" lay-filter="productCream" lay-skin="switch" lay-text="是|否" ' + d.cream + '>'
                 }
             },
             {
-                field: 'recomm', title: '是否推荐', align: 'center', templet: function (d) {
+                field: 'recomm', title: '是否推荐', align: 'center',width: 140, templet: function (d) {
                     return '<input type="checkbox" name="newsTop" lay-filter="productRecomm" lay-skin="switch" lay-text="是|否" ' + d.recomm + '>'
                 }
             },
-            {field: 'create_time', title: '录入时间', align: 'center'},
+            {field: 'create_time', title: '录入时间', align: 'center',width: 220,templet : "<div>{{layui.util.toDateString(d.create_time, 'yyyy年MM月dd日 HH:mm:ss')}}</div>"},
             {title: '操作', width: 120, templet: '#productListBar', fixed: "right", align: "center"}
         ]]
     });

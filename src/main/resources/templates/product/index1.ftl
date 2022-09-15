@@ -10,6 +10,8 @@
 	<meta name="description" content="武汉办公家具，武汉红鑫办公家具20年品质沉淀，主营办公家具、保密文件柜定做、办公桌椅、武汉大小型会议桌椅厂家、档案密集柜报价、钢制铁皮文件柜厂家、储物柜、洽谈桌、武汉办公桌椅、办公前台、大班台等、武汉办公家具定制：400-678-5198"/>
 	<link key="resetcommon" href="/skins/default/resetcommon.css" rel="stylesheet" type="text/css" />
 	<link key="style" href="/skins/default/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/layui.js" integrity="sha512-mIKH3M2bRlIyhG4tBEbJ8dn8t8JFlNJU2NXlJePgpQ72CK4jAYsZyCGFcASRGtPBbcAQhz67KTkA1Jw6Kizk9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/layui/2.7.6/css/layui.css" integrity="sha512-SSF+OBDODWTSIqOivYBOyOKQ93PBDevipJEUEWtkUbTt4v34rmgPcCXcBMolxZIJcuobcdqmYJlonjUBEbOzNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script type="text/javascript" key="NSW_DetailsPro" src="/js/NSW_DetailsPro.js"></script>
 	<meta name="format-detection" content="telephone=no" />
 	<!-- hongxin.com.cn/Mobile Baidu tongji analytics -->
@@ -27,8 +29,7 @@
 <body>
 <!-- 代码部分begin -->
 <div id='cs_box'>
-	<div class='cs_img'>
-	</div>
+	<div class='cs_img'></div>
 	<div class='cs_btn'>
 		红鑫家具旗舰店
 		<li>
@@ -65,92 +66,47 @@
 <div class="ban-ss">
 	<div class="banan-t content">
 		<p>
-			<b>
-				热门搜索词：
-			</b>
-			<a href="http://www.hongxin.com.cn/" title="武汉办公家具专业定做定制厂家">
-				武汉办公家具专业定做定制厂家
-			</a>
-			<a href="http://www.hongxin.com.cn/" title="办公家具办公桌椅生产厂家厂商报价直销">
-				办公家具办公桌椅生产厂家厂商报价直销
-			</a>
-			<a href="http://www.hongxin.com.cn/sfcjxl.html" title="办公室办公沙发">
-				办公室办公沙发
-			</a>
-			<a href="http://www.hongxin.com.cn/sfcjxl.html" title="茶几">
-				茶几
-			</a>
-			<a href="http://www.hongxin.com.cn/hyzxl.html" title="办公会议桌椅大小型实木洽谈桌厂家">
-				办公会议桌椅大小型实木洽谈桌厂家
-			</a>
-			<a href="http://www.hongxin.com.cn/bgpfxl.html" title="办公屏风桌">
-				办公屏风桌
-			</a>
+			<b>热门搜索词：</b>
+			<a href="http://www.hongxin.com.cn/" title="武汉办公家具专业定做定制厂家">武汉办公家具专业定做定制厂家</a>
+			<a href="http://www.hongxin.com.cn/" title="办公家具办公桌椅生产厂家厂商报价直销">办公家具办公桌椅生产厂家厂商报价直销</a>
+			<a href="http://www.hongxin.com.cn/sfcjxl.html" title="办公室办公沙发">办公室办公沙发</a>
+			<a href="http://www.hongxin.com.cn/sfcjxl.html" title="茶几">茶几</a>
+			<a href="http://www.hongxin.com.cn/hyzxl.html" title="办公会议桌椅大小型实木洽谈桌厂家">办公会议桌椅大小型实木洽谈桌厂家</a>
+			<a href="http://www.hongxin.com.cn/bgpfxl.html" title="办公屏风桌">办公屏风桌</a>
 		</p>
 		<div class="banan-tr form">
-			<input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……"
-				   id="seachkeywords">
+			<input class="inp01s keypress" button="#sousuo" type="text" defvalue="请输入关键字……" id="seachkeywords">
 			<a>
-						<span>
-							<select class="" id="select">
-								<option value="">
-									不限栏目
-								</option>
-								<option value="0001,0009">
-									按用途分类
-								</option>
-								<option value="0001,0010">
-									按行业分类
-								</option>
-								<option value="0001,0011">
-									大班台系列
-								</option>
-								<option value="0001,0012">
-									办公屏风系列
-								</option>
-								<option value="0001,0013">
-									办公桌系列
-								</option>
-								<option value="0001,0014">
-									会议桌系列
-								</option>
-								<option value="0001,0015">
-									办公椅系列
-								</option>
-								<option value="0001,0016">
-									文件柜系列
-								</option>
-								<option value="0001,0017">
-									办公前台系列
-								</option>
-								<option value="0001,0018">
-									沙发茶几系列
-								</option>
-								<option value="0001,0019">
-									高隔断系列
-								</option>
-								<option value="0001,0020">
-									办公装饰系列
-								</option>
-								<option value="0001,0076">
-									其它
-								</option>
-							</select>
-						</span>
+				<span>
+					<select class="" id="select">
+						<option value="">不限栏目</option>
+						<option value="0001,0009">按用途分类</option>
+						<option value="0001,0010">按行业分类</option>
+						<option value="0001,0011">大班台系列</option>
+						<option value="0001,0012">办公屏风系列</option>
+						<option value="0001,0013">办公桌系列</option>
+						<option value="0001,0014">会议桌系列</option>
+						<option value="0001,0015">办公椅系列</option>
+						<option value="0001,0016">文件柜系列</option>
+						<option value="0001,0017">办公前台系列</option>
+						<option value="0001,0018">沙发茶几系列</option>
+						<option value="0001,0019">高隔断系列</option>
+						<option value="0001,0020">办公装饰系列</option>
+						<option value="0001,0076">其它</option>
+					</select>
+				</span>
 			</a>
 			<input class="inp02s" type="bottom" id="sousuo">
 		</div>
 	</div>
 </div>
-<script src="/js/select2css.js" type="text/javascript">
-</script>
+<script src="/js/select2css.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(function() {
 		$('.ban-ss').before($('.topadcs'));
 	});
 </script>
-<link href="http://www.hongxin.com.cn/skins/default/animate.css" rel="stylesheet"
-	  type="text/css" />
+<link href="/skins/default/animate.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 	initCommonHeader();
 	var MARK = "product";
@@ -181,11 +137,13 @@
 	var OBJ_ID = "161";
 	var SID = "0001,0017,0063";
 	//图片路径数组
-	var ARR_IMG_PATH = ["http://www.hongxin.com.cn/uploadfiles/pictures/product/20170113111413_0787.jpg",
-		"http://img.oscer.net/hongxin/product/1662038243528652282.jpg",
-		"http://img.oscer.net/hongxin/product/1662038243528652282.jpg",
-		"http://img.oscer.net/hongxin/product/1662038243528652282.jpg",
-		"http://img.oscer.net/hongxin/product/1662038243528652282.jpg"];
+	var ARR_IMG_PATH =[];
+	<#if images??>
+	<#list images as item>
+	ARR_IMG_PATH.push("${item}");
+	</#list>
+	</#if>
+
 	window.jqzooms_ = false;
 	var jqzooms = function(src) {
 		if (!window.jqzooms_) {
@@ -202,13 +160,11 @@
 	}
 </script>
 <div class="topadcs">
-	<a class="fullad" href="/product/" title="免费提供专属办公空间设计解决方案" style="background:url(/res/images/banner10.jpg) no-repeat center top;">
-	</a>
+	<a class="fullad" href="/product/" title="免费提供专属办公空间设计解决方案" style="background:url(/res/images/banner10.jpg) no-repeat center top;"></a>
 </div>
 <div class="content">
 	<div class="rightl">
-		<div class="righttop">
-		</div>
+		<div class="righttop"></div>
 		<div class="plc">
 			<span class="red_x">当前位置：</span>
 			<a href="/" title="首页">首页</a>
@@ -241,7 +197,7 @@
 										<span class="span_next span_nextb">next</span>
 									</div>
 									<div class="div_prolinks">
-										<a id="a_enlarge" onclick="viewBigImage(161)" href="#">查看全部大图</a>
+										<button id="a_enlarge" onclick="viewProductImages();">查看全部大图</button>
 									</div>
 								</div>
 								<div class="clear">
@@ -393,6 +349,16 @@
 		$("#divHistoryRecommentCntr").hide();
 	} else {
 		$("#divHistoryRecommentCntr").show();
+	}
+
+	function viewProductImages(){
+		//图片层
+		$.get('/product/images/${product.id}', function(json){
+			layer.photos({
+				photos: json //格式见API文档手册页
+				,anim: 1 //0-6的选择，指定弹出图片动画类型，默认随机
+			});
+		});
 	}
 </script>
 <#include "../common/footer.ftl"/>

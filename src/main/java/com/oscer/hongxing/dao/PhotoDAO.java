@@ -37,19 +37,19 @@ public class PhotoDAO extends CommonDao<Photo> {
             sb.append(" and category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(key)) {
-            sb.append(" and key like '%" + key + "%'");
+            sb.append(" and  `key` like '%" + key + "%'");
         }
         sb.append("  order by create_time desc ");
         return getDbQuery().query_slice(Photo.class, sb.toString(), page, size);
     }
 
     public long count(String key, Long categoryId) {
-        StringBuilder sb = new StringBuilder("select count(*) from " + table());
+        StringBuilder sb = new StringBuilder("select count(*) from " + table() +" where 1=1 ");
         if (categoryId != null && categoryId > 0L) {
             sb.append(" and category_id = " + categoryId);
         }
         if (StrUtil.isNotBlank(key)) {
-            sb.append(" and key like '%" + key + "%'");
+            sb.append(" and `key` like '%" + key + "%'");
         }
         return getDbQuery().read(long.class, sb.toString());
     }

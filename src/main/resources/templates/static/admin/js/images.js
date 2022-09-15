@@ -17,11 +17,12 @@ layui.config({
      */
     function dataList(number) {
         var currentCategoryId =$("#currentCategoryId").val();
+        var key =$(".searchVal").val();
         $.ajax({
             url: '/admin/photo',
             method: 'get',
             dataType: 'json',
-            data: {"categoryId":currentCategoryId,"page": number,"limit":10},
+            data: {"key":key,"categoryId":currentCategoryId,"page": number,"limit":10},
             success: function (data) {
                 console.log(data);
                 if (data && data.code == 1) {
@@ -214,7 +215,7 @@ layui.config({
         }
     })
 
-    //删除单张图片
+    //选好了
     $("body").on("click",".doneSelect",function(index){
         var lis = $("#selectedList>li");
         if(lis.length==0){
@@ -229,6 +230,13 @@ layui.config({
         localStorage.setItem("images",images);
         var index = parent.layer.getFrameIndex(window.name);
         parent.layer.close(index);
+    })
+
+    //photoSearch
+    $("body").on("click",".photoSearch",function(index){
+       var key =$(".searchVal").val();
+       console.log(key);
+       dataList(1)
     })
 
 })
