@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Mobile.OtherPage.Page01, qwt" enableviewstate="false" enableviewstatemac="false" %>

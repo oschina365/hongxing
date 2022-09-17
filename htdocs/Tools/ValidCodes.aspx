@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="ValidCodes, qwt" enableviewstate="false" enableviewstatemac="false" %>

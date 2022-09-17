@@ -1,7 +1,0 @@
-﻿#foreach($css in $nt.GetStyles())
-<link key="$css.key" href="$css.value.url" rel="stylesheet" type="text/css" />
-#end
-#foreach($js in $nt.GetScripts())
-<script type="text/javascript" key="$js.key" src="$js.value.url"></script>
-#end
-</body></html>

@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Download.Download_List, qwt" enableviewstate="false" enableviewstatemac="false" %>

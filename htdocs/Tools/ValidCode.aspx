@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Tools.Tools_ValidCode, qwt" enableviewstate="false" enableviewstatemac="false" %>

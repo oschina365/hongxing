@@ -1,1 +1,0 @@
-﻿<%@ page language="C#" autoeventwireup="true" inherits="NSW.Web.Manager.MobileBatchImg_exporting, qwt" enableviewstate="false" enableviewstatemac="false" %>

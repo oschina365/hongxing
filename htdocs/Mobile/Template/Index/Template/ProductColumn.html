@@ -1,7 +1,0 @@
-﻿#set($curtype = $columntypes.product)
-<span class="clearfix">
-    #foreach($row in $mt.GetColumnDataView($curtype,"ParentID=1 and IsTop=1"))
-    <a href="$mt.GetColumnURL($row.row,$columntype)" title="$row.title">$row.title</a>
-    #end
-    <a href="/mobile/m$curtype/" title="更多农机">更多农机</a>
-</span>

@@ -1,3 +1,0 @@
-﻿<connectionStrings>
-  <add name="ConnectString_Local" connectionString="server=hds161730139.my3w.com;uid=hds161730139;pwd=kdfh211256352;database=hds161730139_db;"/>
-</connectionStrings>
